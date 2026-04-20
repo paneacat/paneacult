@@ -45,9 +45,34 @@ header p {
 /* ====== LAYOUT ====== */
 main {
   padding: 25px;
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
+    @media (min-width: 600px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+   .recensione {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+   }
+    .contenuto {
+  padding: 20px;
+  flex-grow: 1;
+    }
+    
 
 /* ====== CARD LINK ====== */
 .link-card {
@@ -236,7 +261,27 @@ a {
 
       <span class="leggi">Leggi recensione→</span>
     </div>
+<a href="uncut.html" class="link-card">
+  <div class="recensione">
 
+    <img class="cover" src="img/uncut.jpg">
+
+    <div class="contenuto">
+      <p class="rubrica">Cinema che resta</p>
+      <h2 class="titolo">#2 Uncut Gems</h2>
+      <p class="meta">Safdie Brothers (2019)</p>
+
+      <div class="stelle">★★★★☆</div>
+
+      <p class="mini">
+        Un’esperienza ansiogena e magnetica che vi terrà incollati fino all’ultimo secondo.
+      </p>
+
+      <span class="leggi">Leggi recensione →</span>
+    </div>
+
+  </div>
+</a>
   </div>
 </a>
 </main>
