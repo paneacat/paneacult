@@ -47,9 +47,9 @@
 
     .recensione {
       background: var(--card);
-      padding: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       border-radius: 12px;
+      overflow: hidden;
       border-left: 4px solid var(--gold);
       transition: 0.2s;
     }
@@ -59,15 +59,49 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     }
 
-    .recensione h2 {
-      margin: 0 0 10px 0;
+    .cover {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.85);
+    }
+
+    .contenuto {
+      padding: 20px;
+    }
+
+    .titolo {
+      font-size: 22px;
+      margin-bottom: 5px;
       color: white;
+    }
+
+    .meta {
+      font-size: 13px;
+      opacity: 0.6;
+      margin-bottom: 10px;
     }
 
     .stelle {
       color: var(--gold);
       font-size: 18px;
       letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .recensione p {
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .firma {
+      margin-top: 15px;
+      font-size: 13px;
+      opacity: 0.7;
+      text-align: right;
+      border-top: 1px solid #222;
+      padding-top: 10px;
     }
 
     footer {
@@ -84,77 +118,58 @@
 <body>
 
 <header>
-  <h1>paneacult_</h1>
-  <p>My therapist says cinema</p>
+  <h1>CineRecensioni</h1>
+  <p>Dark. Pulito. Diretto.</p>
 </header>
 
 <main>
 
   <div class="recensione">
-    <h2>Cinema che resta: #1 Il grande Dittatore</h2>
-    <h3>Charlie Chaplin (1940)
 
-Questo film mi è sembrato il punto di partenza naturale per la rubrica “Cinema che resta”. Alcuni film rimangono nella storia per sempre. È il caso del settimo lungometraggio del grande Charlie Chaplin: sceneggiatore, regista, musicista, produttore e interprete principale di questa pellicola. 
+    <img class="cover" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/The_Great_Dictator_poster.jpg" alt="Il grande dittatore">
 
-Protagonista delle vicende è un barbiere ebreo (Charlie Chaplin) di una cittadina tedesca. La sua peculiarità? Somiglia in modo impressionante ad Adenoid Hynkel (aka Adolf Hitler, interpretato dallo stesso Chaplin), dittatore sanguinario salito al potere e promotore di una feroce campagna razzista. Tra situazioni comiche, cospirazioni, equivoci, e uno scambio rocambolesco, il barbiere si troverà a impersonare proprio il malvagio dittatore, raggiungendo l’apice con il famoso "Discorso all’umanità", incentrato su valori quali libertà e uguaglianza.  
+    <div class="contenuto">
 
-Un film che, attraverso la satira, mostra il lato più ridicolo del nazismo, senza dimenticare di educare, prendendo in giro usi e personalità del tempo (come Benito Mussolini), e creando un’opera coraggiosa e senza pari. 
+      <h2 class="titolo">Il grande Dittatore</h2>
+      <p class="meta">Cinema che resta · Charlie Chaplin (1940)</p>
 
-Menzione d’onore per la "scena del mappamondo", con Wagner in sottofondo, potente come poche altre. 
+      <div class="stelle">★★★★★</div>
 
-Un film imperdibile, unico, ingombrante, divertente, riflessivo, simbolico, che tenta di mettere in guardia sul marcio del mondo e sul potere distruttivo dell’intolleranza.  
+      <p>
+        Questo film mi è sembrato il punto di partenza naturale per la rubrica 
+        <em>“Cinema che resta”</em>. Alcuni film rimangono nella storia per sempre. 
+        È il caso del settimo lungometraggio del grande Charlie Chaplin.
+      </p>
 
-Non ci sono altre parole per una pellicola che riesce ancora a essere, a distanza di 86 anni, attuale emozionante. </h3>
+      <p>
+        Protagonista delle vicende è un barbiere ebreo di una cittadina tedesca, 
+        incredibilmente simile al dittatore Adenoid Hynkel. Tra equivoci e scambi 
+        di identità, si troverà a impersonarlo.
+      </p>
 
-<h4>Patrizia Catania
-paneacult</h4>
-    <div class="stelle">★★★★★</div>
-  </div>
+      <p>
+        Il culmine arriva con il celebre <strong>“Discorso all’umanità”</strong>, 
+        momento potentissimo sui valori di libertà e uguaglianza.
+      </p>
 
-  <div class="recensione">
-    <h2>Cinema che resta: #2 Viale del tramonto </h2>
-    <h3>Billy Wilder (1950) Secondo appuntamento della rubrica con Viale del Tramonto, uno dei ritratti più spietati e sinceri mai realizzati su Hollywood.  
-Joe Gillis (William Holden), uno sceneggiatore sull’orlo della bancarotta, si rifugia in una vecchia villa di Sunset Boulevard per sfuggire ai suoi creditori. La casa, immersa in un silenzio sospeso, appartiene in realtà a Norma Desmond (Gloria Swanson), ex diva del cinema muto che vive prigioniera del proprio passato, aggrappata all’illusione di un ritorno impossibile.
+      <p>
+        Satira brillante e coraggiosa, capace di ridicolizzare il nazismo senza 
+        perdere forza educativa.
+      </p>
 
-Il loro incontro segna l’inizio di una relazione ambigua, fatta di dipendenza reciproca e illusioni condivise. Ma Viale del tramonto è molto più di una storia individuale: è il ritratto crudele di un’industria che crea miti e poi li abbandona, e di un cambiamento, l’avvento del sonoro, che non ha solo rivoluzionato il cinema, ma ha lasciato indietro chi non ha saputo sopravvivere alla trasformazione.
+      <p>
+        Menzione d’onore per la <strong>scena del mappamondo</strong>, una delle più iconiche 
+        della storia del cinema.
+      </p>
 
-Billy Wilder costruisce un film che si apre come un noir e si trasforma progressivamente in una tragedia. Norma Desmond diventa il simbolo di Hollywood stessa: incapace di accettare il tempo che passa, condannata a vivere nel riflesso della propria grandezza.
+      <p>
+        Un film imperdibile, ancora oggi attuale ed emozionante.
+      </p>
 
-Un’opera lucida e spietata, che racconta non solo la fine di un’attrice, ma la fine di un’illusione.</h3>
+      <p class="firma">— Patrizia Catania · paneacult</p>
 
-<h4>Patrizia Catania 
-paneacult</h4>
-    
-    <div class="stelle">★★★★★</div>
-  </div>
+    </div>
 
-  <div class="recensione">
-    <h2>Sguardi contemporanei: #1 Uncut Gems</h2>
-    <h3>Josh e Benny Safdie (2019)
-
-Primo appuntamento con Uncut Gems, film dei fratelli Safdie che mette in scena il caos come pochi altri film degli ultimi anni.
-      Howard Ratner (Adam Sandler) è un gioielliere ebreo di New York perennemente sommerso dai debiti, frutto di una vita fatta di scommesse azzardate e decisioni impulsive. Quando entra in possesso di un preziosissimo opale nero etiope, intravede finalmente una possibile via d’uscita: rivenderlo e saldare i conti con lo strozzino e cognato, Arno (Eric Bogosian).
-
-Ma le cose, naturalmente, si complicano. 
-
-A rimanere ipnotizzato dall’energia misteriosa della pietra è Kevin Garnett (qui interpreta sé stesso) che chiede di poterla usare come portafortuna durante una partita dei playoff NBA.
-
-Da quel momento prende forma l’odissea febbrile di Howard, lanciato in un inseguimento disperato dell’opale e di tutto ciò che rappresenta: fortuna, riscatto, sopravvivenza.
-
-Il film si muove su un equilibrio sottile tra tragico e comico, costruendo una parabola universale che riesce a generare una strana, quasi inspiegabile empatia per Howard e per la spirale di caos in cui continua a precipitare.
-
-Adam Sandler offre qui una delle migliori interpretazioni della sua carriera.
-
-Caotico, leale, spietato. </h3>
-
-<h4>Patrizia Catania 
-paneacult</h4>
-    <div class="stelle">★★★★★</div>
-  </div>
-
-  <div class="recensione">
-    <h2>Barbie</h2>
-    <div class="stelle">★★★☆☆</div>
   </div>
 
 </main>
