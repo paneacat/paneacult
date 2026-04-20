@@ -204,13 +204,12 @@ function filtra(categoria, btn) {
 
   cards.forEach(card => {
     if (categoria === 'tutti') {
-      card.style.display = 'block';
+      card.style.display = '';
     } else {
-      card.style.display = card.classList.contains(categoria) ? 'block' : 'none';
+      card.style.display = card.classList.contains(categoria) ? '' : 'none';
     }
   });
 }
 </script>
-
 </body>
 </html>
