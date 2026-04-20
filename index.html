@@ -263,6 +263,32 @@ a {
   background: rgba(92,200,255,0.15);
   color: #5cc8ff;
 }
+    .filtri {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filtri button {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filtri button:hover {
+  border-color: var(--gold);
+}
+
+.filtri .attivo {
+  background: var(--gold);
+  color: black;
+  border-color: var(--gold);
+}
   </style>
 </head>
 
