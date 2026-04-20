@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<div class="article">
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -7,18 +6,30 @@
   <title>Uncut Gems</title>
 
   <style>
+    :root {
+      --gold: #ffbf00;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: #0f1720;
       color: #e6edf3;
+    }
+
+    .article {
       max-width: 800px;
       margin: auto;
       padding: 20px;
     }
 
     h1 {
-      color: #ffbf00;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      margin-top: 0;
     }
 
     .meta {
@@ -27,108 +38,121 @@
     }
 
     .stelle {
-      color: #ffbf00;
+      color: var(--gold);
       margin-bottom: 20px;
     }
 
-    img {
+    .cover {
       width: 100%;
-      border-radius: 10px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 12px;
       margin-bottom: 20px;
+      filter: brightness(0.75);
     }
 
     p {
-      line-height: 1.6;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     .back {
       display: inline-block;
       margin-top: 20px;
-      color: #ffbf00;
-      text-decoration: none;
     }
+
     .nav-articoli {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 40px;
-}
+      display: flex;
+      gap: 10px;
+      margin-top: 40px;
+    }
 
-.nav-card {
-  flex: 1;
-  padding: 15px;
-  border-radius: 10px;
-  background: #16202a;
-  border: 1px solid rgba(255,255,255,0.05);
-  text-decoration: none;
-  color: white;
-  font-size: 14px;
-  transition: 0.2s;
-}
+    .nav-card {
+      flex: 1;
+      padding: 15px;
+      border-radius: 10px;
+      background: #16202a;
+      border: 1px solid rgba(255,255,255,0.05);
+      color: white;
+      text-align: center;
+      transition: 0.2s;
+    }
 
-.nav-card:hover {
-  border-color: rgba(255,191,0,0.4);
-  transform: translateY(-2px);
-}
+    .nav-card:hover {
+      border-color: rgba(255,191,0,0.4);
+      transform: translateY(-2px);
+    }
 
-.disabled {
-  opacity: 0.3;
-  pointer-events: none;
-}
-    .article a {
-  color: var(--gold);
-  text-decoration: none;
-}
-
-.article a:hover {
-  text-decoration: underline;
-}
+    footer {
+      text-align: center;
+      padding: 20px;
+      opacity: 0.6;
+    }
   </style>
 </head>
 
 <body>
-  <a href="uncut.html" class="link-card contemporanei">
-  <img src="img/uncut.jpg">
+
+<div class="article">
+
+  <img class="cover" src="img/uncut.jpg">
 
   <h1>Sguardi contemporanei</h1>
   <h2>#1 Uncut Gems</h2>
-  <p class="meta">Josh & Benny Safdie (2019)</p>
+  <p class="meta">Safdie Brothers (2019)</p>
 
   <div class="stelle">★★★★☆</div>
 
   <p>
-     Primo appuntamento con Uncut Gems, film dei fratelli Safdie che mette in scena il caos come pochi altri film degli ultimi anni.  
+    “Uncut Gems” non è un film: è un’esperienza. Un flusso continuo di ansia, rumore e tensione 
+    che non ti lascia mai respirare davvero. I fratelli Safdie costruiscono un racconto frenetico, 
+    quasi soffocante, che riflette perfettamente il caos interiore del protagonista.
   </p>
 
   <p>
-  Howard Ratner (Adam Sandler) è un gioielliere ebreo di New York perennemente sommerso dai debiti, frutto di una vita fatta di scommesse azzardate e decisioni impulsive. Quando entra in possesso di un preziosissimo opale nero etiope, intravede finalmente una possibile via d’uscita: rivenderlo e saldare i conti con lo strozzino e cognato, Arno (Eric Bogosian). 
+    Howard Ratner è un gioielliere newyorkese dipendente dal rischio, incapace di fermarsi, 
+    sempre un passo oltre il limite. Ogni scelta lo spinge più a fondo in una spirale autodistruttiva, 
+    in cui speranza e rovina convivono costantemente.
   </p>
 
   <p>
-     Ma le cose, naturalmente, si complicano. A rimanere ipnotizzato dall’energia misteriosa della pietra è Kevin Garnett (qui interpreta sé stesso) che chiede di poterla usare come portafortuna durante una partita dei playoff NBA.
+    Adam Sandler offre probabilmente la miglior performance della sua carriera: nervosa, 
+    autentica, mai caricaturale. È impossibile staccarsi da lui, anche quando diventa insopportabile.
   </p>
 
   <p>
-  Da quel momento prende forma l’odissea febbrile di Howard, lanciato in un inseguimento disperato dell’opale e di tutto ciò che rappresenta: fortuna, riscatto, sopravvivenza.
-Il film si muove su un equilibrio sottile tra tragico e comico, costruendo una parabola universale che riesce a generare una strana, quasi inspiegabile empatia per Howard e per la spirale di caos in cui continua a precipitare.
+    Il film gioca tutto sul ritmo: dialoghi sovrapposti, suoni invadenti, montaggio serrato. 
+    Non c’è tregua, e proprio per questo funziona.
   </p>
-<p> Adam Sandler offre qui una delle migliori interpretazioni della sua carriera.</p>
-<p> Caotico, reale, spietato.
+
+  <p>
+    Un’opera che divide, ma che lascia il segno. Non per tutti, ma impossibile da ignorare.
+  </p>
+
   <p><strong>— Patrizia Catania · paneacult</strong></p>
-<a href="index.html" class="back">← Torna alla home</a>
 
-  <a href="dittatore.html" class="nav-card">
-  ← Il grande Dittatore
-  </a>
-  </a>
-  </a>
-<a href="tramonto.html" class="nav-card">
-  Sunset Boulevard→
-</a>
- </div>
-  <footer>
+  <!-- NAV -->
+  <a href="index.html" class="back">← Torna alla home</a>
+
+  <div class="nav-articoli">
+    <a href="dittatore.html" class="nav-card">← Il grande Dittatore</a>
+    <a href="#" class="nav-card disabled">Prossimo articolo →</a>
+  </div>
+
+</div>
+
+<footer>
   <p>&copy; 2026 paneacult</p>
-  </footer>
+</footer>
+
 </body>
 </html>
-
