@@ -291,7 +291,30 @@ a {
 }
   </style>
 </head>
+<script>
+function filtra(categoria) {
+  const cards = document.querySelectorAll('.link-card');
+  const bottoni = document.querySelectorAll('.filtri button');
 
+  // reset bottoni
+  bottoni.forEach(btn => btn.classList.remove('attivo'));
+
+  // attiva quello cliccato
+  event.target.classList.add('attivo');
+
+  cards.forEach(card => {
+    if (categoria === 'tutti') {
+      card.style.display = 'block';
+    } else {
+      if (card.classList.contains(categoria)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    }
+  });
+}
+</script>
 <body>
 
 <header>
