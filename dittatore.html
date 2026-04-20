@@ -1,182 +1,111 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Il grande Dittatore</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Il grande Dittatore</title>
 
-  <style>
-    :root {
-      --gold: #ffbf00;
-    }
+<style>
+:root { --gold:#ffbf00; }
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0f1720;
-      color: #e6edf3;
-    }
+body {
+  margin:0;
+  font-family:'Georgia', serif;
+  background:#0f1720;
+  color:#e6edf3;
+}
 
-    .article {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-    }
+.article {
+  max-width:800px;
+  margin:auto;
+  padding:20px;
+}
 
-    h1 {
-      color: var(--gold);
-      margin-bottom: 5px;
-    }
+h1,h2,.meta {
+  font-family:'Segoe UI', sans-serif;
+}
 
-    h2 {
-      margin-top: 0;
-    }
+h1 { color:var(--gold); }
 
-    .meta {
-      opacity: 0.6;
-      margin-bottom: 10px;
-    }
+.meta { opacity:0.6; margin-bottom:20px; }
 
-    .stelle {
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
+.cover {
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:20px;
+  filter:brightness(0.75);
+}
 
-    img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
+p { line-height:1.8; margin-bottom:18px; font-size:17px; }
 
-    p {
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
+.stelle { color:var(--gold); margin-bottom:20px; }
 
-    /* link testo (NO viola) */
-    a {
-      color: var(--gold);
-      text-decoration: none;
-    }
+a { color:var(--gold); text-decoration:none; }
 
-    a:hover {
-      text-decoration: underline;
-    }
+.nav-articoli {
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  margin-top:40px;
+}
 
-    /* bottone back */
-    .back {
-      display: inline-block;
-      margin-top: 20px;
-    }
+.nav-card {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:18px;
+  border-radius:14px;
+  background:#16202a;
+  border:1px solid rgba(255,255,255,0.08);
+  color:white;
+}
 
-    /* navigazione articoli */
-    .nav-articoli {
-      display: flex;
-      gap: 10px;
-      margin-top: 40px;
-    }
+.nav-card:last-child {
+  border:1px solid rgba(255,191,0,0.6);
+  color:var(--gold);
+}
 
-    .nav-card {
-      flex: 1;
-      padding: 15px;
-      border-radius: 10px;
-      background: #16202a;
-      border: 1px solid rgba(255,255,255,0.05);
-      text-decoration: none;
-      color: white;
-      font-size: 14px;
-      transition: 0.2s;
-      text-align: center;
-    }
+.firma { margin-top:30px; }
 
-    .nav-card:hover {
-      border-color: rgba(255,191,0,0.4);
-      transform: translateY(-2px);
-    }
-
-    .disabled {
-      opacity: 0.3;
-      pointer-events: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      opacity: 0.6;
-    }
-    @media (max-width: 600px) {
-  .nav-articoli {
-    flex-direction: column;
-  }
-    }
-    .nav-card a {
-  color: inherit;
-  text-decoration: none;
-    }
-    .nav-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-    }
-  </style>
+footer { text-align:center; padding:20px; opacity:0.6; }
+</style>
 </head>
 
 <body>
 
 <div class="article">
 
-  <img src="img/Grandedittatore2.jpg">
+<img class="cover" src="img/Grandedittatore2.jpg">
 
-  <h1>Cinema che resta</h1>
-  <h2>#1 Il grande Dittatore</h2>
-  <p class="meta">Charlie Chaplin (1940)</p>
+<h1>Cinema che resta</h1>
+<h2>#1 Il grande Dittatore</h2>
+<p class="meta">Charlie Chaplin (1940)</p>
 
-  <div class="stelle">★★★★★</div>
+<div class="stelle">★★★★★</div>
 
-  <p>
-    Questo mi è sembrato il punto di partenza naturale per la rubrica “Cinema che resta”. 
-    Alcuni film rimangono nella storia per sempre. È il caso del settimo lungometraggio 
-    del grande Charlie Chaplin: sceneggiatore, regista, musicista, produttore e interprete 
-    principale di questa pellicola.
-  </p>
+<p>Questo film mi è sembrato il punto di partenza naturale per la rubrica “Cinema che resta”.</p>
 
-  <p>
-    Protagonista delle vicende è un barbiere ebreo di una cittadina tedesca. 
-    La sua peculiarità? Somiglia in modo impressionante ad Adenoid Hynkel, 
-    dittatore sanguinario promotore di una feroce campagna razzista. 
-    Tra equivoci e scambi di identità, il barbiere si troverà a impersonarlo.
-  </p>
+<p>
+Un film che, attraverso la satira, mostra il lato più ridicolo del nazismo.
+</p>
 
-  <p>
-    Il culmine arriva con il celebre “Discorso all’umanità”, 
-    incentrato su libertà e uguaglianza.
-  </p>
+<div class="firma">
+<strong>Patrizia Catania</strong><br>
+<em>paneacult</em>
+</div>
 
-  <p>
-    Un film che, attraverso la satira, mostra il lato più ridicolo del nazismo 
-    senza smettere di educare. Un’opera coraggiosa e senza pari.
-  </p>
+<a href="index.html">← Torna alla home</a>
 
-  <p>
-    Menzione d’onore per la scena del mappamondo, con Wagner in sottofondo.
-  </p>
+<div class="nav-articoli">
+<a href="#" class="nav-card">← Articolo precedente</a>
+<a href="sunset.html" class="nav-card">Sunset Boulevard →</a>
+</div>
 
-  <p>
-    Un film imperdibile, ancora oggi attuale ed emozionante.
-  </p>
+</div>
 
-  <p><strong>— Patrizia Catania · paneacult</strong></p>
-
-  <!-- NAV -->
-  <a href="index.html" class="back">← Torna alla home</a>
-<div class="nav-articoli"><a href="#" class="nav-card disabled">← </a>
-  <a href="uncut.html" class="nav-card">Uncut Gems →</a>
-  </div>
-
-<footer>
-  <p>&copy; 2026 paneacult</p>
-</footer>
+<footer>© 2026 paneacult</footer>
 
 </body>
 </html>
