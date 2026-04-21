@@ -44,28 +44,31 @@
 
     /* FILTRI */
     .filtri {
-      display:flex;
-      justify-content:center;
-      gap:10px;
-      flex-wrap:wrap;
-      margin:20px;
-    }
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:nowrap; /* ❗ tutto su una riga */
+  margin:20px;
+}
 
-    .filtri button {
-      padding:10px 16px;
-      border-radius:20px;
-      border:none;
-      background:#1f2a35;
-      color:white;
-      cursor:pointer;
-      transition:0.2s;
-    }
-
+.filtri button {
+  padding:6px 12px;       /* più piccoli */
+  font-size:13px;         /* testo più compatto */
+  border-radius:16px;
+  border:none;
+  background:#1f2a35;
+  color:white;
+  cursor:pointer;
+  transition:0.2s;
+  white-space:nowrap;     /* evita che il testo vada a capo */
+}
     .filtri button:hover {
       background:var(--gold);
       color:black;
     }
-
+    .filtri {
+  overflow-x:auto;
+}
     .featured img {
       width:100%;
       height:320px;
