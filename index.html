@@ -75,7 +75,44 @@ h1 {
   box-shadow: 0 0 6px rgba(255,191,0,0.5);
 }
 
-/* SEZIONE CARD */
+/* HERO */
+.hero {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.hero-card {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.hero-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  width: 100%;
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+}
+
+.hero-overlay h2 {
+  margin: 0;
+}
+
+.hero-overlay p {
+  color: var(--gold);
+}
+
+/* GRID */
 .section {
   max-width: 1100px;
   margin: 40px auto;
@@ -122,31 +159,25 @@ h1 {
   opacity: 1;
 }
 
-.overlay h3 {
-  margin: 0;
-  font-size: 14px;
-}
-
 .overlay p {
-  font-size: 12px;
   color: var(--gold);
+  font-size: 12px;
 }
 
-/* NASCONDI */
+/* HIDE */
 .nascosta {
   display: none;
 }
 
 /* NEWSLETTER */
-  .newsletter {
+.newsletter {
   max-width: 500px;
-  margin: 60px auto;
+  margin: 80px auto;
   text-align: center;
-  }
+}
 
 .newsletter h2 {
   color: var(--gold);
-  margin-bottom: 10px;
 }
 
 .newsletter p {
@@ -154,9 +185,6 @@ h1 {
   opacity: 0.8;
   margin-bottom: 20px;
 }
-  .section {
-  margin-top: 50px;
-  }
 
 /* FOOTER */
 footer {
@@ -185,18 +213,20 @@ footer {
   </div>
 </header>
 
-<!-- CARD SECTION -->
+<!-- HERO -->
+<section class="hero">
+  <a href="dittatore.html" class="hero-card" data-tag="resta">
+    <img src="img/dittatore.jpg">
+    <div class="hero-overlay">
+      <h2>Il grande dittatore</h2>
+      <p>#cinemacheresta</p>
+    </div>
+  </a>
+</section>
+
+<!-- GRID -->
 <section class="section">
   <div class="grid">
-
-    <a href="dittatore.html" class="card" data-tag="resta">
-      <img src="img/dittatore.jpg">
-      <div class="overlay">
-        <h3>Il grande dittatore</h3>
-        <p>#cinemacheresta</p>
-      </div>
-    </a>
-
     <a href="uncut.html" class="card" data-tag="sguardi">
       <img src="img/uncut.jpg">
       <div class="overlay">
@@ -204,7 +234,6 @@ footer {
         <p>#sguardicontemporanei</p>
       </div>
     </a>
-
     <a href="tramonto.html" class="card" data-tag="resta">
       <img src="img/viale-del-tramonto.jpg">
       <div class="overlay">
@@ -215,11 +244,10 @@ footer {
 
   </div>
 </section>
-
 <!-- NEWSLETTER -->
 <section class="newsletter">
-  <h2 style="color:#ffbf00;">Resta con paneacult</h2>
-  <p>Ricevi le nuive recensioni direttamente sulla tua mail preferita!</p>
+  <h2>Resta con paneacult</h2>
+  <p>Ricevi le nuove recensioni direttamente nella tua mail preferita!</p>
 
   <iframe src="https://paneacult.substack.com/embed"
           width="100%"
@@ -229,12 +257,12 @@ footer {
 </section>
 
 <footer>
-2026 © paneacult
+ 2026 © paneacult
 </footer>
 
 <script>
 const filtri = document.querySelectorAll('.filtro');
-const cards = document.querySelectorAll('.card');
+const cards = document.querySelectorAll('.card, .hero-card');
 
 filtri.forEach(filtro => {
   filtro.addEventListener('click', () => {
