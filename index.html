@@ -137,11 +137,27 @@
   transition: all 0.3s ease;
   border: 1px solid transparent;
 }
+    .filtro {
+  background: transparent;
+  color: white;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
 
+/* HOVER */
 .filtro:hover {
   color: #ffbf00;
-  box-shadow: 0 0 5px #ffbf00, 0 0 15px #ffbf00;
-    }
+  text-shadow: 0 0 6px rgba(255,191,0,0.6);
+}
+
+/* ATTIVO (cliccato) */
+.filtro.attivo {
+  color: #ffbf00;
+  border-color: #ffbf00;
+  box-shadow: 0 0 8px rgba(255,191,0,0.7);
+}
   </style>
 </head>
 
