@@ -17,15 +17,16 @@
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: white;
   font-family: 'Inter', sans-serif;
 }
-
+body {
+  background: #0b1f26;
+  color: white;
+}
 /* HERO */
 
 .hero {
-  padding: 60px 20px 30px;
+  padding: 40px 20px 20px;
   text-align: center;
 }
 
@@ -158,7 +159,18 @@ body {
   margin-top: 15px;
   border-radius: 8px;
 }
+.featured img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
 
+.featured {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
 /* FOOTER */
 
 footer {
@@ -194,19 +206,16 @@ footer {
   <button class="filtro" data-filtro="resta">Cinema che resta</button>
   <button class="filtro" data-filtro="sguardi">Sguardi contemporanei</button>
 </div>
-
+<section class="featured">
+  <a href="dittatore.html">
+    <img src="img/dittatore.jpg">
+    <h2>Il grande dittatore</h2>
+    <p>#cinemacheresta</p>
+  </a>
+</section>
 <!-- GRID -->
 <section class="section">
   <div class="grid">
-
-    <a href="dittatore.html" class="card" data-tag="resta">
-      <img src="img/dittatore.jpg">
-      <div class="card-info">
-        <h3>Il grande dittatore</h3>
-        <p>#cinemacheresta</p>
-      </div>
-    </a>
-
     <a href="uncut.html" class="card" data-tag="sguardi">
       <img src="img/uncut.jpg">
       <div class="card-info">
@@ -214,7 +223,6 @@ footer {
         <p>#sguardicontemporanei</p>
       </div>
     </a>
-
     <a href="tramonto.html" class="card" data-tag="resta">
       <img src="img/viale-del-tramonto.jpg">
       <div class="card-info">
@@ -222,10 +230,8 @@ footer {
         <p>#cinemacheresta</p>
       </div>
     </a>
-
   </div>
 </section>
-
 <!-- NEWSLETTER -->
 <section class="newsletter">
   <h2>Resta con paneacult</h2>
@@ -264,7 +270,6 @@ filtri.forEach(filtro => {
         card.style.display = "none";
       }
     });
-
   });
 });
 </script>
