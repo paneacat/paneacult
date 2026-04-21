@@ -3,53 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>paneacult</title>
 
 <style>
 :root {
   --gold:#ffbf00;
-  --dark:#0f1720;
+  --bg:#0f1720;
   --card:#16202a;
-  --text:#e6edf3;
 }
 
 body {
   margin:0;
   font-family:'Segoe UI', sans-serif;
-  background:var(--dark);
-  color:var(--text);
+  background:var(--bg);
+  color:#e6edf3;
 }
 
 /* HEADER */
 header {
   text-align:center;
   padding:30px 20px;
-  border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
-header h1 {
-  margin:0;
+h1 {
   color:var(--gold);
+  margin:0;
 }
 
-/* MAIN */
-main {
-  max-width:1100px;
-  margin:auto;
-  padding:25px;
+.subtitle {
+  opacity:0.6;
+  margin-top:5px;
 }
 
-/* FEATURED */
+/* FILTRI */
+.filtri {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:20px;
+}
+
+.filtri button {
+  padding:8px 14px;
+  border-radius:20px;
+  border:none;
+  background:#1f2a35;
+  color:white;
+  cursor:pointer;
+}
+
+.filtri button:hover {
+  background:var(--gold);
+  color:black;
+}
+
+/* HERO */
 .featured {
+  max-width:900px;
+  margin:20px auto;
   position:relative;
-  border-radius:18px;
+  border-radius:16px;
   overflow:hidden;
-  margin-bottom:30px;
 }
 
 .featured img {
   width:100%;
-  height:350px;
+  height:300px;
   object-fit:cover;
   filter:brightness(0.6);
 }
@@ -62,99 +83,70 @@ main {
 
 .featured h2 {
   margin:0;
-  font-size:28px;
 }
 
-.featured p {
-  opacity:0.8;
-}
-
-/* FILTRI */
-.filtri {
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:25px;
-}
-
-.filtri button {
-  background:transparent;
-  border:1px solid rgba(255,255,255,0.2);
+.featured a {
   color:white;
-  padding:8px 16px;
-  border-radius:20px;
-  cursor:pointer;
-}
-
-.filtri .attivo {
-  background:var(--gold);
-  color:black;
+  text-decoration:none;
 }
 
 /* GRID */
 .grid {
+  max-width:900px;
+  margin:auto;
   display:grid;
-  gap:20px;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  padding:20px;
 }
 
-@media(min-width:600px){
-  .grid { grid-template-columns:1fr 1fr; }
-}
-
-@media(min-width:900px){
-  .grid { grid-template-columns:1fr 1fr 1fr; }
-}
-
-/* CARD */
-.link-card, .link-card * {
-  text-decoration:none;
-  color:inherit;
-}
-
-.recensione {
+.card {
   background:var(--card);
-  border-radius:14px;
+  border-radius:12px;
   overflow:hidden;
   transition:0.2s;
 }
 
-.recensione:hover {
-  transform:translateY(-5px);
+.card:hover {
+  transform:translateY(-4px);
 }
 
-.cover {
+.card img {
   width:100%;
-  height:220px;
+  height:160px;
   object-fit:cover;
-  filter:brightness(0.75);
 }
 
-.contenuto {
-  padding:20px;
+.card-content {
+  padding:15px;
 }
 
-.rubrica {
-  font-size:11px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:var(--gold);
+.card h3 {
+  margin:0 0 5px;
 }
 
-.meta {
-  font-size:13px;
-  opacity:0.5;
+.card p {
+  margin:0;
+  opacity:0.6;
+  font-size:14px;
 }
 
-.stelle {
-  color:var(--gold);
-  margin:10px 0;
+.card a {
+  color:white;
+  text-decoration:none;
 }
 
-/* FOOTER */
+/* MOBILE */
+@media(max-width:700px){
+  .grid {
+    grid-template-columns:1fr;
+  }
+}
+
 footer {
   text-align:center;
-  padding:30px;
-  opacity:0.5;
+  padding:20px;
+  opacity:0.6;
 }
 </style>
 </head>
@@ -163,73 +155,71 @@ footer {
 
 <header>
   <h1>paneacult</h1>
-  <p>My therapist says cinema</p>
+  <div class="subtitle">Cinema che resta</div>
 </header>
-
-<main>
-
-<!-- ARTICOLO IN EVIDENZA -->
-<a href="tramonto.html" class="link-card">
-  <div class="featured">
-    <img src="img/viale-del-tramonto.jpg">
-    <div class="featured-content">
-      <p class="rubrica">Cinema che resta</p>
-      <h2>Sunset Boulevard</h2>
-      <p>Quando Hollywood dimentica le sue star.</p>
-    </div>
-  </div>
-</a>
 
 <!-- FILTRI -->
 <div class="filtri">
-  <button onclick="filtra('tutti', this)" class="attivo">Tutti</button>
-  <button onclick="filtra('resta', this)">Cinema che resta</button>
-  <button onclick="filtra('contemporanei', this)">Sguardi contemporanei</button>
+  <button onclick="filtra('tutti')">Tutti</button>
+  <button onclick="filtra('resta')">Cinema che resta</button>
+  <button onclick="filtra('drama')">Drama</button>
+  <button onclick="filtra('noir')">Noir</button>
+</div>
+
+<!-- HERO -->
+<div class="card featured" data-tags="resta satira anni40">
+  <a href="dittatore.html">
+    <img src="img/Grandedittatore2.jpg">
+    <div class="featured-content">
+      <h2>Il grande Dittatore</h2>
+      <p>Charlie Chaplin (1940)</p>
+    </div>
+  </a>
 </div>
 
 <!-- GRID -->
 <div class="grid">
 
-<a href="dittatore.html" class="link-card resta">
-  <div class="recensione">
-    <img class="cover" src="img/Grandedittatore2.jpg">
-    <div class="contenuto">
-      <p class="rubrica">Cinema che resta</p>
-      <h3>Il grande Dittatore</h3>
-      <p class="meta">1940</p>
-      <div class="stelle">★★★★★</div>
-    </div>
+  <!-- UNCUT -->
+  <div class="card" data-tags="crime drama anni2010">
+    <a href="uncut.html">
+      <img src="img/uncut.jpg">
+      <div class="card-content">
+        <h3>Uncut Gems</h3>
+        <p>Safdie Brothers (2019)</p>
+      </div>
+    </a>
   </div>
-</a>
 
-<a href="uncut.html" class="link-card contemporanei">
-  <div class="recensione">
-    <img class="cover" src="img/uncut.jpg">
-    <div class="contenuto">
-      <p class="rubrica">Sguardi contemporanei</p>
-      <h3>Uncut Gems</h3>
-      <p class="meta">2019</p>
-      <div class="stelle">★★★★☆</div>
-    </div>
+  <!-- SUNSET -->
+  <div class="card" data-tags="resta noir anni50">
+    <a href="tramonto.html">
+      <img src="img/viale-del-tramonto.jpg">
+      <div class="card-content">
+        <h3>Sunset Boulevard</h3>
+        <p>Billy Wilder (1950)</p>
+      </div>
+    </a>
   </div>
-</a>
 
 </div>
 
-</main>
-
-<footer>© 2026 paneacult</footer>
+<footer>
+© 2026 paneacult
+</footer>
 
 <script>
-function filtra(categoria, btn) {
-  const cards = document.querySelectorAll('.link-card');
-  const bottoni = document.querySelectorAll('.filtri button');
-
-  bottoni.forEach(b => b.classList.remove('attivo'));
-  btn.classList.add('attivo');
+function filtra(tag) {
+  const cards = document.querySelectorAll('.card');
 
   cards.forEach(card => {
-    card.style.display = (categoria === 'tutti' || card.classList.contains(categoria)) ? '' : 'none';
+    const tags = card.dataset.tags;
+
+    if (tag === 'tutti' || tags.includes(tag)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
   });
 }
 </script>
