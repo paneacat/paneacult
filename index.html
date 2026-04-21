@@ -202,7 +202,7 @@ function filtra(tag) {
   const cards = document.querySelectorAll('.card');
 
   cards.forEach(card => {
-    const tags = card.dataset.tags || "";
+    const tags = card.dataset.tags;
 
     if (tag === 'tutti' || tags.includes(tag)) {
       card.style.display = 'block';
@@ -211,7 +211,26 @@ function filtra(tag) {
     }
   });
 }
-</script>
 
+// HERO AUTOMATICO
+const cards = Array.from(document.querySelectorAll('.grid .card'));
+
+// ordina per data (più recente prima)
+cards.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date));
+
+// prendi il più recente
+const latest = cards[0];
+
+// crea HERO
+const hero = document.createElement('div');
+hero.className = 'card featured';
+hero.innerHTML = latest.innerHTML;
+
+// inserisci sopra la grid
+document.getElementById('featured-container').appendChild(hero);
+
+// rimuovi dalla grid (evita doppione)
+latest.remove();
+</script>
 </body>
 </html>
