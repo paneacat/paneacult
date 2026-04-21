@@ -1,242 +1,202 @@
+```html
 <!DOCTYPE html>
 <html lang="it">
 
 <head>
-  <!-- META BASE -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>paneacult</title>
 
-  <!-- ===== STILI ===== -->
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
 
-    /* VARIABILI COLORI */
     :root {
-      --gold:#ffbf00;
-      --bg:#0b1620;
-      --card:#121f2a;
+      --gold: #ffbf00;
+      --bg: #1b465b;
+      --card: #0f2f3d;
+      --text: #e6edf3;
     }
 
-    /* RESET BASE */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
 
     /* HEADER */
-   .main-header {
-  padding: 70px 20px 40px;
-  display: flex;
-  justify-content: center;
-}
 
-.header-inner {
-  text-align: center;
-  max-width: 500px;
-}
-.brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  color: var(--gold);
-  letter-spacing: 2px; /* meno spacing, più elegante */
-  font-weight: 600;
-}
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
 
-/* Linea elegante */
-.divider {
-  width: 80px;
-  height: 1px;
-  background: var(--gold);
-  margin: 20px auto;
-  opacity: 0.5;
-}
+    .topline {
+      font-size: 12px;
+      letter-spacing: 2px;
+      opacity: 0.5;
+      margin-bottom: 10px;
+    }
 
-/* Testo sotto */
-.tagline {
-  font-size: 14px;
-  opacity: 0.6;
-  letter-spacing: 2px;
-  font-family: 'Inter', sans-serif;
-}
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      color: var(--gold);
+      margin: 0;
+    }
 
-/* Firma */
-.author {
-  margin-top: 6px;
-  font-size: 12px;
-  opacity: 0.4;
-  letter-spacing: 1px;
-}    
+    .subtitle {
+      font-size: 16px;
+      opacity: 0.7;
+      margin-top: 10px;
+    }
+
     /* FILTRI */
-   .filtri {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 per riga */
-  gap: 8px;
-  margin: 20px;
-}
 
-.filtri button {
-  padding: 6px 8px;        /* molto più piccoli */
-  font-size: 12px;
-  border-radius: 12px;
-  border: none;
-  background: #1f2a35;
-  color: white;
-  cursor: pointer;
-  transition: 0.2s;
-}
+    .filtri {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      max-width: 400px;
+      margin: 20px auto;
+    }
 
-.filtri button:hover {
-  background: var(--gold);
-  color: black;
-}
     .filtri button {
-  padding: 4px 6px;
-  font-size: 11px;
-  border-radius: 10px;
-  background: transparent;
-  border: 1px solid #2a3a45;
-}
-    .featured img {
-      width:100%;
-      height:320px;
-      object-fit:cover;
-      filter:brightness(0.6);
+      padding: 6px;
+      border-radius: 20px;
+      border: none;
+      background: #2a4f60;
+      color: white;
+      font-size: 12px;
+      cursor: pointer;
     }
 
-    .featured-content {
-      position:absolute;
-      bottom:20px;
-      left:20px;
-    }
+    /* GRID */
 
-    /* GRID ARTICOLI */
     .grid {
-      max-width:900px;
-      margin:auto;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
-      padding:20px;
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
     }
 
     .card {
-      background:var(--card);
-      border-radius:14px;
-      overflow:hidden;
-      transition:0.3s;
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: 0.3s;
     }
 
-    /* HOVER STILE NETFLIX */
     .card:hover {
-      transform:scale(1.04);
-      box-shadow:0 10px 30px rgba(0,0,0,0.5);
+      transform: scale(1.02);
     }
 
     .card img {
-      width:100%;
-      height:180px;
-      object-fit:cover;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
 
     .card-content {
-      padding:15px;
+      padding: 15px;
     }
 
     .categoria {
-      font-size:11px;
-      letter-spacing:2px;
-      color:var(--gold);
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
     }
 
     .card a {
-      color:white;
-      text-decoration:none;
-    }
-
-    /* MOBILE */
-    @media(max-width:700px){
-      .grid {
-        grid-template-columns:1fr;
-      }
+      color: inherit;
+      text-decoration: none;
     }
 
     footer {
-      text-align:center;
-      padding:20px;
-      opacity:0.5;
+      text-align: center;
+      padding: 20px;
+      opacity: 0.5;
     }
-    a {
-  color: inherit;
-  text-decoration: none;
-}
 
-a:visited {
-  color: inherit;
-}
+    /* MOBILE */
+
+    @media(max-width:700px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
   </style>
 </head>
 
 <body>
 
-  <!-- ===== HEADER ===== -->
-<header class="main-header">
-  <div class="header-inner">
-    <div class="brand">paneacult</div>
-    <div class="header-text">
-      <p class="tagline">my therapist says cinema</p>
+  <!-- HEADER -->
+  <header>
+    <div class="topline">notes on cinema by Patrizia Catania</div>
+    <h1 class="brand">paneacult</h1>
+    <div class="subtitle">my therapist says cinema</div>
+  </header>
+
+  <!-- FILTRI -->
+  <div class="filtri">
+    <button onclick="filtra('tutti')">Tutti</button>
+    <button onclick="filtra('resta')">Cinema che resta</button>
+    <button onclick="filtra('contemporanei')">Contemporanei</button>
+  </div>
+
+  <!-- ARTICOLI -->
+  <div class="grid">
+
+    <div class="card" data-tags="resta">
+      <a href="dittatore.html">
+        <img src="img/grandedittatore2.jpg">
+        <div class="card-content">
+          <div class="categoria">Cinema che resta</div>
+          <h3>Il grande Dittatore</h3>
+          <p>Charlie Chaplin (1940)</p>
+        </div>
+      </a>
     </div>
-  </div>
-  <p class="author">notes on cinema by Patrizia Catania</p>
-</header>
-  <!-- ===== FILTRI ===== -->
-<div class="filtri">
-  <button onclick="filtra('tutti')">Tutti</button>
-  <button onclick="filtra('resta')">Cinema che resta</button>
-  <button onclick="filtra('contemporanei')">Sguardi contemporanei</button>
-</div>
 
-  <!-- ===== LISTA ARTICOLI ===== -->
-<div class="grid">
-
-  <!-- DITTATORE -->
-  <div class="card" data-tags="resta">
-    <a href="dittatore.html">
-      <img src="img/Grandedittatore2.jpg">
-      <div class="card-content">
-        <div class="categoria">Cinema che resta</div>
-        <h3>Il grande Dittatore</h3>
-        <p>Charlie Chaplin (1940)</p>
-      </div>
-    </a>
-  </div>
-
-  <!-- UNCUT -->
-  <div class="card" data-tags="contemporanei">
-    <a href="uncut.html">
-      <img src="img/uncut.jpg">
-      <div class="card-content">
-        <div class="categoria">Sguardi contemporanei</div>
-        <h3>Uncut Gems</h3>
-        <p>Safdie Brothers (2019)</p>
-      </div>
-    </a>
-  </div>
- <!-- SUNSET -->
-  <div class="card" data-tags="resta">
-    <a href="tramonto.html">
-      <img src="img/viale-del-tramonto.jpg">
-      <div class="card-content">
-        <div class="categoria">Cinema che resta</div>
-        <h3>Sunset Boulevard</h3>
-        <p>Billy Wilder (1950)</p>
-      </div>
-        </a>
-  </div>
+    <div class="card" data-tags="contemporanei">
+      <a href="uncut.html">
+        <img src="img/uncut.jpg">
+        <div class="card-content">
+          <div class="categoria">Sguardi contemporanei</div>
+          <h3>Uncut Gems</h3>
+          <p>Safdie Brothers (2019)</p>
+        </div>
+      </a>
     </div>
-  <footer>© 2026 paneacult</footer>
 
-  <!-- ===== SCRIPT ===== -->
+    <div class="card" data-tags="resta">
+      <a href="tramonto.html">
+        <img src="img/viale-del-tramonto.jpg">
+        <div class="card-content">
+          <div class="categoria">Cinema che resta</div>
+          <h3>Sunset Boulevard</h3>
+          <p>Billy Wilder (1950)</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 paneacult
+  </footer>
+
   <script>
-
-    /* FILTRO ARTICOLI */
     function filtra(tag) {
       const cards = document.querySelectorAll('.card');
 
@@ -248,21 +208,8 @@ a:visited {
         }
       });
     }
-
-    /* HERO AUTOMATICO (ARTICOLO PIÙ RECENTE) */
-    const cards = Array.from(document.querySelectorAll('.grid .card'));
-
-    // ordina per data
-    cards.sort((a,b)=> new Date(b.dataset.date)-new Date(a.dataset.date));
-
-    const latest = cards[0];
-
-    const hero = document.createElement('div');
-    hero.className = 'featured';
-    hero.innerHTML = latest.innerHTML;
-
-    document.getElementById('featured-container').appendChild(hero);
   </script>
 
 </body>
 </html>
+```
