@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>paneacult</title>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
@@ -192,6 +192,23 @@ a:visited {
   border-radius: 8px;
 }
 
+  .social {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.social a {
+  font-size: 18px;
+  opacity: 0.5;
+}
+
+.social a:hover {
+  color: var(--gold);
+  opacity: 1;
+  transform: translateY(-2px);
+}
 /* ===== FOOTER ===== */
 
 footer {
@@ -216,11 +233,15 @@ footer {
 </section>
 
 <!-- NAV -->
-<div class="nav">
-  <a href="https://www.instagram.com/paneacult_?igsh=anRrb3FoaDBwOTNx">Instagram</a>
-  <a href="https://substack.com/@paneacult?utm_source=share&utm_medium=android&r=7pkj8b">Newsletter</a>
+<div class="social">
+  <a href="https://www.instagram.com/paneacult_?igsh=anRrb3FoaDBwOTNx" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://substack.com/@paneacult?utm_source=share&utm_medium=android&r=7pkj8b" target="_blank">
+    <i class="fas fa-envelope"></i>
+  </a>
 </div>
-
+  
 <!-- FILTRI -->
 <div class="filtri">
   <button class="filtro attivo" data-filtro="tutti">Tutti</button>
@@ -273,8 +294,12 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  2026 © paneacult
-</footer>
+  <div class="social">
+    <a href="..."><i class="fab fa-instagram"></i></a>
+    <a href="..."><i class="fas fa-envelope"></i></a>
+  </div>
+  <p>2026 © paneacult</p>
+  </footer>
 
 <!-- SCRIPT FILTRI -->
 <script>
