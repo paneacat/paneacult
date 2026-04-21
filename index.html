@@ -1,236 +1,248 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- META BASE -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>paneacult</title>
+  <title>paneacult</title>
 
-<style>
-:root {
-  --gold:#ffbf00;
-  --bg:#0f1720;
-  --card:#16202a;
-}
+  <!-- ===== STILI ===== -->
+  <style>
 
-body {
-  margin:0;
-  font-family:'Segoe UI', sans-serif;
-  background:var(--bg);
-  color:#e6edf3;
-}
+    /* VARIABILI COLORI */
+    :root {
+      --gold:#ffbf00;
+      --bg:#0b1620;
+      --card:#121f2a;
+    }
 
-header {
-  text-align:center;
-  padding:30px 20px;
-}
+    /* RESET BASE */
+    body {
+      margin:0;
+      font-family:'Segoe UI', sans-serif;
+      background:var(--bg);
+      color:#e6edf3;
+    }
 
-h1 {
-  color:var(--gold);
-  margin:0;
-}
+    /* HEADER */
+    header {
+      text-align:center;
+      padding:30px 20px;
+    }
 
-.subtitle {
-  opacity:0.6;
-}
+    h1 {
+      color:var(--gold);
+      margin:0;
+      letter-spacing:2px;
+    }
 
-.filtri {
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin:20px;
-  flex-wrap:wrap;
-}
+    .subtitle {
+      opacity:0.6;
+    }
 
-.filtri button {
-  padding:8px 14px;
-  border-radius:20px;
-  border:none;
-  background:#1f2a35;
-  color:white;
-  cursor:pointer;
-}
+    /* FILTRI */
+    .filtri {
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:20px;
+    }
 
-.filtri button:hover {
-  background:var(--gold);
-  color:black;
-}
+    .filtri button {
+      padding:10px 16px;
+      border-radius:20px;
+      border:none;
+      background:#1f2a35;
+      color:white;
+      cursor:pointer;
+      transition:0.2s;
+    }
 
-/* HERO */
-.featured {
-  max-width:900px;
-  margin:20px auto;
-  position:relative;
-  border-radius:16px;
-  overflow:hidden;
-}
+    .filtri button:hover {
+      background:var(--gold);
+      color:black;
+    }
 
-.featured img {
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  filter:brightness(0.6);
-}
+    /* HERO (ARTICOLO IN EVIDENZA) */
+    .featured {
+      max-width:900px;
+      margin:20px auto;
+      position:relative;
+      border-radius:16px;
+      overflow:hidden;
+    }
 
-.featured-content {
-  position:absolute;
-  bottom:20px;
-  left:20px;
-}
+    .featured img {
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      filter:brightness(0.6);
+    }
 
-/* GRID */
-.grid {
-  max-width:900px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-  padding:20px;
-}
+    .featured-content {
+      position:absolute;
+      bottom:20px;
+      left:20px;
+    }
 
-.card {
-  background:var(--card);
-  border-radius:12px;
-  overflow:hidden;
-  transition:0.2s;
-}
+    /* GRID ARTICOLI */
+    .grid {
+      max-width:900px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      padding:20px;
+    }
 
-.card:hover {
-  transform:translateY(-4px);
-}
+    .card {
+      background:var(--card);
+      border-radius:14px;
+      overflow:hidden;
+      transition:0.3s;
+    }
 
-.card img {
-  width:100%;
-  height:160px;
-  object-fit:cover;
-}
+    /* HOVER STILE NETFLIX */
+    .card:hover {
+      transform:scale(1.04);
+      box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    }
 
-.card-content {
-  padding:15px;
-}
+    .card img {
+      width:100%;
+      height:180px;
+      object-fit:cover;
+    }
 
-.card a {
-  color:white;
-  text-decoration:none;
-}
+    .card-content {
+      padding:15px;
+    }
 
-@media(max-width:700px){
-  .grid { grid-template-columns:1fr; }
-}
+    .categoria {
+      font-size:11px;
+      letter-spacing:2px;
+      color:var(--gold);
+    }
 
-footer {
-  text-align:center;
-  padding:20px;
-  opacity:0.6;
-}
-</style>
+    .card a {
+      color:white;
+      text-decoration:none;
+    }
+
+    /* MOBILE */
+    @media(max-width:700px){
+      .grid {
+        grid-template-columns:1fr;
+      }
+    }
+
+    footer {
+      text-align:center;
+      padding:20px;
+      opacity:0.5;
+    }
+
+  </style>
 </head>
 
 <body>
 
-<header>
-  <h1>paneacult</h1>
-  <div class="subtitle">Cinema che resta</div>
-</header>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>paneacult</h1>
+    <div class="subtitle">Cinema che resta</div>
+  </header>
 
-<!-- FILTRI -->
-<div class="filtri">
-  <button onclick="filtra('tutti')">Tutti</button>
-  <button onclick="filtra('resta')">Cinema che resta</button>
-  <button onclick="filtra('contemporanei')">Sguardi contemporanei</button>
-</div>
+  <!-- ===== FILTRI ===== -->
+  <div class="filtri">
+    <button onclick="filtra('tutti')">Tutti</button>
+    <button onclick="filtra('resta')">Cinema che resta</button>
+    <button onclick="filtra('contemporanei')">Sguardi contemporanei</button>
+  </div>
 
-<!-- HERO -->
-<div class="featured card" data-tags="resta">
-  <a href="dittatore.html">
-    <img src="img/Grandedittatore2.jpg">
-    <div id="featured-container"></div>
-      <h2>Il grande Dittatore</h2>
-      <p>Charlie Chaplin (1940)</p>
+  <!-- ===== HERO DINAMICO ===== -->
+  <div id="featured-container"></div>
+
+  <!-- ===== LISTA ARTICOLI ===== -->
+  <div class="grid">
+
+    <!-- ARTICOLO 1 -->
+    <div class="card" data-tags="resta" data-date="2026-04-10">
+      <a href="dittatore.html">
+        <img src="./img/Grandedittatore2.jpg">
+        <div class="card-content">
+          <div class="categoria">Cinema che resta</div>
+          <h3>Il grande Dittatore</h3>
+          <p>Charlie Chaplin (1940)</p>
+        </div>
+      </a>
     </div>
-  </a>
-</div>
 
-<div class="grid" id="grid">
+    <!-- ARTICOLO 2 -->
+    <div class="card" data-tags="resta" data-date="2026-04-20">
+      <a href="tramonto.html">
+        <img src="./img/viale-del-tramonto.jpg">
+        <div class="card-content">
+          <div class="categoria">Cinema che resta</div>
+          <h3>Sunset Boulevard</h3>
+          <p>Billy Wilder (1950)</p>
+        </div>
+      </a>
+    </div>
 
-  <!-- DITTATORE -->
-  <div class="card" data-tags="resta satira anni40" data-date="2026-04-10">
-    <a href="dittatore.html">
-      <img src="./img/Grandedittatore2.jpg">
-      <div class="card-content">
-        <div class="categoria">Cinema che resta</div>
-        <h3>Il grande Dittatore</h3>
-        <p>Charlie Chaplin (1940)</p>
-      </div>
-    </a>
+    <!-- ARTICOLO 3 -->
+    <div class="card" data-tags="contemporanei" data-date="2026-04-18">
+      <a href="uncut.html">
+        <img src="./img/uncut.jpg">
+        <div class="card-content">
+          <div class="categoria">Sguardi contemporanei</div>
+          <h3>Uncut Gems</h3>
+          <p>Safdie Brothers (2019)</p>
+        </div>
+      </a>
+    </div>
+
   </div>
 
-  <!-- TRAMONTO -->
-  <div class="card" data-tags="resta noir anni50" data-date="2026-04-20">
-    <a href="tramonto.html">
-      <img src="./img/viale-del-tramonto.jpg">
-      <div class="card-content">
-        <div class="categoria">Cinema che resta</div>
-        <h3>Sunset Boulevard</h3>
-        <p>Billy Wilder (1950)</p>
-      </div>
-    </a>
-  </div>
+  <footer>© 2026 paneacult</footer>
 
-  <!-- UNCUT -->
-  <div class="card" data-tags="sguardi contemporanei drama anni2010" data-date="2026-04-18">
-    <a href="uncut.html">
-      <img src="./img/uncut.jpg">
-      <div class="card-content">
-        <div class="categoria">Sguardi contemporanei</div>
-        <h3>Uncut Gems</h3>
-        <p>Safdie Brothers (2019)</p>
-      </div>
-    </a>
-  </div>
+  <!-- ===== SCRIPT ===== -->
+  <script>
 
-</div>
+    /* FILTRO ARTICOLI */
+    function filtra(tag) {
+      const cards = document.querySelectorAll('.card');
 
-</div>
-
-<footer>
-© 2026 paneacult
-</footer>
-
-<script>
-function filtra(tag) {
-  const cards = document.querySelectorAll('.card');
-
-  cards.forEach(card => {
-    const tags = card.dataset.tags;
-
-    if (tag === 'tutti' || tags.includes(tag)) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
+      cards.forEach(card => {
+        if (tag === 'tutti' || card.dataset.tags.includes(tag)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     }
-  });
-}
 
-// HERO AUTOMATICO
-const cards = Array.from(document.querySelectorAll('.grid .card'));
+    /* HERO AUTOMATICO (ARTICOLO PIÙ RECENTE) */
+    const cards = Array.from(document.querySelectorAll('.grid .card'));
 
-// ordina per data (più recente prima)
-cards.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date));
+    // ordina per data
+    cards.sort((a,b)=> new Date(b.dataset.date)-new Date(a.dataset.date));
 
-// prendi il più recente
-const latest = cards[0];
+    const latest = cards[0];
 
-// crea HERO
-const hero = document.createElement('div');
-hero.className = 'card featured';
-hero.innerHTML = latest.innerHTML;
+    const hero = document.createElement('div');
+    hero.className = 'featured';
+    hero.innerHTML = latest.innerHTML;
 
-// inserisci sopra la grid
-document.getElementById('featured-container').appendChild(hero);
+    document.getElementById('featured-container').appendChild(hero);
 
-// rimuovi dalla grid (evita doppione)
-latest.remove();
-</script>
+    // rimuove duplicato dalla grid
+    latest.remove();
+
+  </script>
+
 </body>
 </html>
