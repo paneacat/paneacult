@@ -249,7 +249,32 @@ a:visited {
 
     // rimuove duplicato dalla grid
     latest.remove();
+const latest = cards[0];
 
+const link = latest.querySelector("a").getAttribute("href");
+const img = latest.querySelector("img").getAttribute("src");
+const title = latest.querySelector("h3").innerText;
+const subtitle = latest.querySelector("p").innerText;
+const category = latest.querySelector(".categoria").innerText;
+
+const hero = document.createElement('div');
+hero.className = 'featured';
+
+hero.innerHTML = `
+  <a href="${link}">
+    <img src="${img}">
+    <div class="featured-content">
+      <div class="categoria">${category}</div>
+      <h2>${title}</h2>
+      <p>${subtitle}</p>
+    </div>
+  </a>
+`;
+
+document.getElementById('featured-container').appendChild(hero);
+
+// rimuove duplicato
+latest.remove();
   </script>
 
 </body>
