@@ -303,7 +303,14 @@ footer {
   .menu a {
     font-size: 11px;
   }
-
+.hero h1 {
+  font-size: 24px;
+  line-height: 1.5;
+  margin: 20px auto 30px;
+  max-width: 90%;
+  font-weight: 400;
+  text-align: center;
+}
   .home .grid,
   .archivio .grid {
     grid-template-columns: 1fr;
