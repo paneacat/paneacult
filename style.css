@@ -129,6 +129,20 @@ header {
   border-color: var(--gold);
 }
 
+.filtri {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* spazio tra gruppi */
+  margin: 30px 0;
+}
+
+.filtro-gruppo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* spazio tra bottoni */
+  justify-content: center;
+}
+
 /* ===== SEZIONE ===== */
 .section {
   max-width: 1100px;
