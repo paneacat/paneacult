@@ -160,33 +160,42 @@ header {
 
 /* ===== FILTRI (FIX BRACE) ===== */
 .filtri {
-  padding: 0 20px;
+.filtri {
+  max-width: 700px;
   margin: 30px auto;
-  text-align: left;
+  padding: 0 20px;
 }
 
-.filtri > div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-  margin-bottom: 18px;
-  flex-direction: column;
-  align-items: flex-start;
+.filtri-group {
+  margin-bottom: 25px;
 }
 
-.filtri span,
-.filtri strong {
-  width: 100%;
+.filtri-group h4 {
   font-size: 13px;
   color: #aaa;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.filtri-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .filtro {
   font-size: 12px;
-  padding: 7px 14px;
+  padding: 6px 14px;
   border-radius: 20px;
+  border: 1px solid #444;
+  background: transparent;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filtro:hover {
+  border-color: var(--gold);
+  color: var(--gold);
 }
 
 .filtro.attivo {
