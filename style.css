@@ -40,6 +40,14 @@ body {
   height: 220px;
   object-fit: cover;
 }
+.home .container {
+  max-width: 900px;
+}
+
+.archivio .container {
+  max-width: 1100px;
+}
+
 <p class="genere">
   <span class="label">Genere:</span>
   <span class="tag">dramma</span>
