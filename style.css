@@ -94,6 +94,9 @@ header {
 .menu a:hover {
   color: var(--gold);
 }
+.menu a.active {
+  color: var(--gold);
+}
 
 /* ===== BANNER ===== */
 .banner-link {
