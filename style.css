@@ -399,3 +399,7 @@ footer {
   opacity: 1;
   transform: translateY(-2px);
 }
+.social {
+  display: flex;
+  justify-content: center !important;
+}
