@@ -97,10 +97,11 @@ header {
 }
 
 .menu a {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 1px;
   font-size: 13px;
   color: #aaa;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .menu a:hover {
@@ -236,7 +237,9 @@ header {
   grid-template-columns: 1fr;
   gap: 60px;
 }
-
+.review-text {
+  font-family: 'Inter', sans-serif;
+}
 /* ===== CARD ===== */
 
 .card:hover img {
