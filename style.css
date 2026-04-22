@@ -56,7 +56,10 @@ header {
   text-transform: uppercase;
 }
 
-.menu a.active,
+.menu a.active {
+  color: var(--text);
+}
+
 .menu a:hover {
   color: var(--gold);
 }
@@ -384,13 +387,9 @@ footer {
     color: #aaa;
   }
 
-  .menu a.active {
-    color: #aaa;
-  }
-
-  .menu a:active {
-    color: var(--gold);
-  }
+.menu a:hover {
+  color: var(--gold);
+}
 
   .banner-link {
     margin: 30px auto 40px;
