@@ -37,9 +37,9 @@ function aggiornaFiltri() {
       filtriAttivi.categoria === "tutti" ||
       categoria === filtriAttivi.categoria;
 
-    const matchGenere =
-      filtriAttivi.genere === "tutti" ||
-      genere === filtriAttivi.genere;
+   const matchGenere =
+  filtriAttivi.genere === "tutti" ||
+  genere.includes(filtriAttivi.genere);
 
     const matchRegista =
       filtriAttivi.regista === "tutti" ||
