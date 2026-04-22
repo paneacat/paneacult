@@ -4,7 +4,7 @@
   --gold: #ffbf00;
 }
 
-* {
+{
   box-sizing: border-box;
 }
 
@@ -165,13 +165,13 @@ a:hover {
 .card,
 .card h3,
 .card p {
-  color: white;
+  color: #bfbfbf;
 }
 
 .social a {
-  color: white;
+color: #bfbfbf;
 }
 
 .social a:visited {
-  color: white;
+color: #bfbfbf;
 }
