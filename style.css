@@ -412,4 +412,9 @@ footer {
   margin: 0 auto 40px !important;
   max-width: 500px !important;
 }
-
+.social {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 16px;
+  margin-top: 15px;
+}
