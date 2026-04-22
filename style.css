@@ -17,7 +17,29 @@ body {
   background: var(--bg);
   color: var(--text);
 }
+.home .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+}
 
+.home .card img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.archivio .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.archivio .card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
 <p class="genere">
   <span class="label">Genere:</span>
   <span class="tag">dramma</span>
