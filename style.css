@@ -252,6 +252,9 @@ header {
   font-family: 'Playfair Display', serif;
   color: var(--text);
 }
+.about-container p:nth-child(2) {
+  margin-bottom: 35px;
+}
 
 /* ===== CONTACT ===== */
 .contact-container {
