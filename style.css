@@ -188,6 +188,11 @@ header {
   font-weight: 300; /* più leggero, più editoriale */
   color: #ccc; /* leggermente più soft del bianco */
 }
+.newsletter-sub {
+  font-weight: 300;
+  color: #ccc;
+}
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
