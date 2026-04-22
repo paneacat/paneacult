@@ -61,7 +61,19 @@ header {
 }
 
 .menu a.active {
-  color: #aaa;
+  color: var(--gold);
+  position: relative;
+}
+
+.menu a.active::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  opacity: 0.6;
 }
 
 /* ===== CONTAINER ===== */
