@@ -103,6 +103,28 @@ header {
 .menu a.active {
   color: var(--gold);
 }
+.watch-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.watch-links a {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  color: var(--gold);
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.watch-links a:hover {
+  background: var(--gold);
+  color: #0b1f26;
+}
 
 /* ===== BANNER ===== */
 .banner-link {
