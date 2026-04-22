@@ -180,6 +180,14 @@ header {
 
 /* ===== CARD ===== */
 .card img {
+  transition: 0.3s;
+}
+
+.card:hover img {
+  opacity: 0.85;
+}
+
+.card img {
   width: 100%;
   height: 300px;
   object-fit: cover;
