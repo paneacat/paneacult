@@ -299,5 +299,17 @@ footer {
     font-size: 13px;
     opacity: 0.8;
   }
+}
+/* RESET LINK COMPLETO */
+a,
+a:link,
+a:visited,
+a:active {
+  color: #eaeaea;
+  text-decoration: none;
+}
 
+/* HOVER */
+a:hover {
+  color: var(--gold);
 }
