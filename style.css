@@ -343,6 +343,46 @@ footer {
 .back-home {
   display: none;
 }
+
+/* ABOUT PAGE */
+
+.about-section {
+  margin-top: 80px;
+}
+
+.about-container {
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.9;
+  font-size: 16px;
+  color: #d6d6d6;
+}
+
+.about-container p {
+  margin-bottom: 30px;
+}
+
+/* CITAZIONE */
+.quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin: 50px 0;
+  color: var(--gold);
+  line-height: 1.4;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .about-container {
+    padding: 0 20px;
+    font-size: 15px;
+  }
+
+  .quote {
+    font-size: 22px;
+  }
+}
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
   .hero img {
