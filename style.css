@@ -247,13 +247,18 @@ footer {
   font-size: 14px;
   opacity: 0.7;
 }
+.newsletter {
+  padding: 0 20px;
+  text-align: center;
+}
 .newsletter iframe {
   width: 100%;
-  max-width: 420px;
+  max-width: 380px;
   margin: 30px auto;
   display: block;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 .about-container {
   max-width: 520px;
@@ -261,6 +266,8 @@ footer {
   padding: 0 20px;
   text-align: center;
   line-height: 1.8;
+  letter-spacing: 0.2px;
+  font-size: 15px;
 }
 
 .about-container p {
