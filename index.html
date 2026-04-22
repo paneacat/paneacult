@@ -6,32 +6,35 @@
 
 <title>paneacult</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="./style.css?v=2">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 <header>
+  <div class="container">
 
-  <div class="hamburger" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="hero">
+      <h1>paneacult</h1>
+    </div>
+
+    <nav class="menu" id="menu">
+      <a href="featured.html">Chi sono</a>
+      <a href="archivio.html">Archivio</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+
   </div>
-
-  <div class="hero">
-    <h1>paneacult</h1>
-  </div>
-
-  <nav class="menu" id="menu">
-    <a href="featured.html">Chi sono</a>
-    <a href="archivio.html">Archivio</a>
-    <a href="contatti.html">Contatti</a>
-  </nav>
-
 </header>
 
 <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
@@ -44,56 +47,69 @@
 
 <!-- BANNER -->
 <section class="banner-link">
-  <h2>Il cinema non è intrattenimento.<br>È ciò che resta.</h2>
+  <div class="container">
+    <h2>Il cinema non è intrattenimento.<br>È ciò che resta.</h2>
+  </div>
 </section>
 
 <!-- FILTRI -->
-<div class="filtri">
+<div class="filtri container">
   <button class="filtro attivo" data-filtro="tutti">Tutti</button>
   <button class="filtro" data-filtro="resta">Cinema che resta</button>
   <button class="filtro" data-filtro="sguardi">Sguardi contemporanei</button>
 </div>
 
 <!-- GRID -->
-<section class="section grid">
+<section class="section">
+  <div class="container">
 
-  <a href="dittatore.html" class="card" data-tag="resta">
-    <img src="img/dittatore.png">
-    <div class="card-info">
-      <h3>Il Grande Dittatore</h3>
-      <p>Charlie Chaplin (1940)</p>
+    <div class="grid">
+
+      <a href="dittatore.html" class="card" data-tag="resta">
+        <img src="img/dittatore.png">
+        <div class="card-info">
+          <h3>Il Grande Dittatore</h3>
+          <p>Charlie Chaplin (1940)</p>
+        </div>
+      </a>
+
+      <a href="uncut.html" class="card" data-tag="sguardi">
+        <img src="img/uncut.png">
+        <div class="card-info">
+          <h3>Uncut Gems</h3>
+          <p>Safdie Brothers (2019)</p>
+        </div>
+      </a>
+
+      <a href="tramonto.html" class="card" data-tag="resta">
+        <img src="img/viale-del-tramonto.jpg">
+        <div class="card-info">
+          <h3>Sunset Boulevard</h3>
+          <p>Billy Wilder (1950)</p>
+        </div>
+      </a>
+
     </div>
-  </a>
 
-  <a href="uncut.html" class="card" data-tag="sguardi">
-    <img src="img/uncut.png">
-    <div class="card-info">
-      <h3>Uncut Gems</h3>
-      <p>Safdie Brothers (2019)</p>
-    </div>
-  </a>
-
-  <a href="tramonto.html" class="card" data-tag="resta">
-    <img src="img/viale-del-tramonto.jpg">
-    <div class="card-info">
-      <h3>Sunset Boulevard</h3>
-      <p>Billy Wilder (1950)</p>
-    </div>
-  </a>
-
+  </div>
 </section>
 
 <!-- NEWSLETTER -->
 <section class="newsletter">
-  <h2>Resta con paneacult</h2>
-  <h3>Ricevi le nuove recensioni sulla tua mail preferita!</h3>
-  <iframe src="https://paneacult.substack.com/embed" width="100%" height="150"></iframe>
+  <div class="container">
+    <h2>Resta con paneacult</h2>
+    <h3>Ricevi le nuove recensioni sulla tua mail preferita!</h3>
+
+    <iframe src="https://paneacult.substack.com/embed"></iframe>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <p>2026 © paneacult</p>
 </footer>
- <script src="script.js" defer></script>
+
+<script src="script.js"></script>
+
 </body>
 </html>
