@@ -56,8 +56,9 @@ header {
   text-transform: uppercase;
 }
 
+/* 🔥 niente giallo fisso */
 .menu a.active {
-  color: var(--text);
+  color: #aaa;
 }
 
 .menu a:hover {
@@ -71,23 +72,21 @@ header {
   padding: 0 20px;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO (UNIFICATO) ===== */
 .hero {
-  text-align: center; /* 🔥 centra tutto */
-  padding: 50px 20px 30px;
+  text-align: center;
+  padding: 40px 20px 20px;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 28px;
+  font-size: 26px;
   line-height: 1.4;
-  max-width: 500px;
-  margin: 0 auto 40px; /* spazio sotto = aria */
-  
-  font-weight: 400; /* 🔥 niente grassetto */
+  max-width: 420px;
+  margin: 20px auto 30px;
+  font-weight: 400;
   letter-spacing: 0.3px;
-  
-  text-align: center; /* sicurezza */
+  text-align: center;
 }
 
 /* ===== GRID ===== */
@@ -166,39 +165,35 @@ header {
   font-size: 15px;
 }
 
-/* ===== FILTRI ===== */
+/* ===== FILTRI (FIX BRACE) ===== */
 .filtri {
-    padding: 0 20px;
-    margin: 30px auto;
-    text-align: left;
-  }
-
-  /* sistema le righe */
-  .filtri div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    align-items: center;
-    margin-bottom: 18px;
-  }
-
-  /* titolo tipo "Categoria" */
-  .filtri span,
-  .filtri strong {
-    width: 100%;
-    font-size: 13px;
-    color: #aaa;
-    margin-bottom: 5px;
-  }
-
-  /* bottoni */
-  .filtro {
-    font-size: 12px;
-    padding: 6px 12px;
-    border-radius: 16px;
-  }
-
+  padding: 0 20px;
+  margin: 30px auto;
+  text-align: left;
 }
+
+.filtri div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.filtri span,
+.filtri strong {
+  width: 100%;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+.filtro {
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 16px;
+}
+
 .filtro.attivo {
   background: var(--gold);
   color: #0b1f26;
@@ -257,16 +252,6 @@ header {
 .about-container p {
   margin-bottom: 20px;
   color: #ccc;
-  text-align: center;
-}
-
-.about-container p:first-child {
-  font-size: 20px;
-  font-family: 'Playfair Display', serif;
-  color: var(--text);
-}
-.about-container p:nth-child(2) {
-  margin-bottom: 35px;
 }
 
 /* ===== CONTACT ===== */
@@ -275,45 +260,6 @@ header {
   max-width: 600px;
   margin: 120px auto;
   padding: 0 20px;
-}
-
-.contact-intro {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
-  margin-bottom: 5px;
-}
-
-.contact-sub {
-  font-size: 15px;
-  color: #aaa;
-  margin-bottom: 25px;
-}
-
-.contact-divider {
-  width: 50px;
-  height: 2px;
-  background: var(--gold);
-  margin: 30px auto;
-  opacity: 0.7;
-}
-
-.contact-cta {
-  display: inline-block;
-  font-size: 18px;
-  color: var(--gold);
-  margin-top: 15px;
-}
-
-.contact-email {
-  margin-top: 40px;
-  font-size: 14px;
-  color: #888;
-}
-
-.contact-email strong {
-  display: block;
-  margin-top: 6px;
-  color: var(--text);
 }
 
 /* ===== NEWSLETTER ===== */
@@ -331,6 +277,11 @@ header {
   filter: invert(1) hue-rotate(180deg);
 }
 
+.newsletter-title {
+  color: var(--gold);
+  font-size: 26px;
+}
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
@@ -340,34 +291,7 @@ footer {
   opacity: 0.5;
 }
 
-/* ===== ANIMAZIONE ===== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.hero {
-  text-align: center;
-  padding: 40px 20px 20px; /* meno spazio sopra */
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px; /* molto più piccolo */
-  line-height: 1.4;
-  max-width: 420px; /* più stretto = più elegante */
-  margin: 20px auto 30px;
-  opacity: 0.9;
-  letter-spacing: 0.3px;
-}
-
 /* ===== MOBILE ===== */
-
 @media (max-width: 600px) {
 
   header {
@@ -384,27 +308,11 @@ footer {
 
   .menu a {
     font-size: 11px;
-    color: #aaa;
   }
 
-.menu a:hover {
-  color: var(--gold);
-}
-
-  .banner-link {
-    margin: 30px auto 40px;
-    padding: 0 10px;
-  }
-
-  .banner-link h2 {
-  font-size: 20px;          
-  line-height: 1.4;
-  max-width: 100%;         
-  padding: 0 10px;          
-  margin: 0 auto;
-  text-align: center;
-  font-size: clamp(18px, 4.5vw, 22px);
-  font-weight: 400;
+  .hero h1 {
+    font-size: 22px;
+    max-width: 90%;
   }
 
   .social {
@@ -414,39 +322,9 @@ footer {
     margin-top: 10px;
   }
 
-   .filtri {
-    padding: 0 20px;
-    margin: 30px auto 40px;
-  }
-
-  /* BLOCCO (Categoria / Genere) */
-  .filtri-group {
-    margin-bottom: 25px;
-  }
-
-  /* TITOLO */
-  .filtri-group h4 {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: #ccc;
-  }
-
-  /* CONTENITORE BOTTONI */
-  .filtri-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  /* BOTTONI */
-  .filtro {
-    font-size: 12px;
-    padding: 6px 12px;
-    border-radius: 18px;
-  }
-}
-
-  .home .grid {
+  .home .grid,
+  .archivio .grid {
+    grid-template-columns: 1fr;
     gap: 40px;
   }
 
@@ -460,44 +338,18 @@ footer {
 
   .about-container {
     margin: 80px auto;
-    padding: 0 20px;
-    text-align: center;
-  }
-
-  .about-container p {
-    font-size: 15px;
-    line-height: 1.8;
-  }
-
-  .back-home {
-    display: block;
-    margin-top: 40px;
-    text-align: center;
-    font-size: 14px;
   }
 
   .newsletter {
     margin: 80px auto;
-    padding: 0 15px;
   }
 
   .newsletter h2 {
     font-size: 20px;
-    line-height: 1.4;
   }
 
   .newsletter iframe {
     transform: scale(0.95);
     transform-origin: top center;
   }
-}
-.newsletter-title {
-  color: var(--gold);
-  font-size: 26px;
-  letter-spacing: 0.5px;
-}
-
-.home .grid,
-.archivio .grid {
-  grid-template-columns: 1fr;
 }
