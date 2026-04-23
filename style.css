@@ -116,6 +116,8 @@ a:hover {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 25px; /* 🔥 questo mancava */
 }
 
 .filtro {
@@ -142,7 +144,13 @@ a:hover {
   color: var(--gold);
   background: rgba(255,191,0,0.1);
 }
-
+.filtri {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 40px 0 40px; /* 🔥 più aria sopra e sotto */
+}
 /* ===== CARD ===== */
 .card {
   position: relative;
@@ -186,7 +194,15 @@ a:hover {
   color: #aaa;
   line-height: 1.2;
 }
-
+.contact-container,
+.about-container {
+  max-width: 620px;
+  margin: 140px auto 0; /* 🔥 più spazio sopra */
+  padding: 0 20px;
+  text-align: left; /* 🔥 NON center (coerente con il sito) */
+  line-height: 1.9;
+  font-size: 17px;
+}
 /* ===== NEWSLETTER ===== */
 .newsletter {
   margin: 80px auto;
