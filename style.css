@@ -107,53 +107,47 @@ a:hover {
 /* ===== FILTRI ===== */
 .filtri {
   max-width: 720px;
+  margin: 30px auto 40px;
   padding: 0 20px;
-  margin: 20px auto 30px;
+
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 28px;
 }
 
-.filtri-group {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.filtri-group h4 {
-  font-size: 12px;
-  letter-spacing: 1px;
+.filtri-label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #888;
+  color: #777;
 }
 
-/* CONTENITORE BOTTONI */
 .filtri-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  justify-content: flex-start;
+  gap: 8px;
 }
-/* BOTTONI */
+
+/* BOTTONI = TAG */
 .filtro {
   font-size: 13px;
   padding: 6px 14px;
   border-radius: 999px;
 
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.12);
   color: #aaa;
 
   transition: all 0.25s ease;
 }
 
-/* HOVER */
+/* hover elegante */
 .filtro:hover {
   border-color: var(--gold);
   color: var(--gold);
 }
 
-/* ATTIVO */
+/* attivo */
 .filtro.attivo {
   background: var(--gold);
   color: #0b1f26;
