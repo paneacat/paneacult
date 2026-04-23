@@ -113,15 +113,20 @@ a:hover {
   padding: 5px 10px;
   border-radius: 999px;
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.15);
   color: #aaa;
   transition: all 0.25s ease;
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(4px);
 }
 
 .filtro.attivo {
   background: var(--gold);
   color: #0b1f26;
   border-color: var(--gold);
+}
+.filtro:hover {
+  border-color: var(--gold);
+  color: var(--gold);
 }
 /* ===== CARD ===== */
 .card {
@@ -305,12 +310,13 @@ footer {
 /* ===== FIX PC FINALI ===== */
 
 /* 1) CONTATTI + CHI SONO centrati di nuovo */
-.contact-container,
-.about-container {
-  max-width: 520px;
-  margin: 120px auto;
-  padding: 0 20px;
+.about-container,
+.contact-container {
+  max-width: 600px;
+  margin: 140px auto;
   text-align: center;
+  line-height: 1.7;
+  font-size: 16px;
 }
 
 /* 2) FILTRI (titoli Rubrica / Genere centrati) */
