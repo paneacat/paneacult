@@ -14,14 +14,11 @@ filtri.forEach(filtro => {
     const valore = filtro.dataset.valore;
 
     // TOGGLE: se clicchi quello già attivo → reset a "tutti"
-    if (filtro.classList.contains('attivo')) {
-      filtro.classList.remove('attivo');
-      filtriAttivi[tipo] = "tutti";
-    } else {
-      // reset solo del gruppo (categoria o genere)
-      document.querySelectorAll(`.filtro[data-tipo="${tipo}"]`)
-        .forEach(f => f.classList.remove('attivo'));
-
+if (matchCategoria && matchGenere) {
+  card.style.display = "";
+} else {
+  card.style.display = "none";
+}
       filtro.classList.add('attivo');
       filtriAttivi[tipo] = valore;
     }
