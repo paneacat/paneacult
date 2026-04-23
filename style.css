@@ -242,87 +242,30 @@ footer {
   .menu a {
     font-size: 11px;
   }
- .archivio .grid {
+
+  .grid {
     grid-template-columns: 1fr;
   }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  margin-top: 30px;
-}
+
   .card img {
     height: 240px;
-}
-.card-info h3 {
-  font-size: 22px;
-  margin-bottom: 4px;
-}
+  }
 
-.card-info p {
-  font-size: 14px;
-  opacity: 0.7;
-}
-.newsletter {
-  margin: 80px auto;
-  padding: 0 20px;
-  text-align: center;
-}
+  .card-info h3 {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
 
-.newsletter-inner {
-  max-width: 420px;
-  margin: 0 auto;
-}
+  .card-info p {
+    font-size: 14px;
+    opacity: 0.7;
+  }
 
-.newsletter h2 {
-  color: var(--gold);
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-
-.newsletter p {
-  font-size: 14px;
-  color: #aaa;
-  margin-bottom: 25px;
-}
-
-/* 🔥 bottone elegante */
-.newsletter-btn {
-  display: inline-block;
-  padding: 10px 22px;
-  border-radius: 24px;
-  background: var(--gold);
-  color: #0b1f26;
-  font-size: 14px;
-  transition: 0.3s ease;
-}
-
-.newsletter-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
-.about-container {
-  max-width: 520px;
-  margin: 100px auto;
-  padding: 0 20px;
-  text-align: center;
-  line-height: 1.8;
-  letter-spacing: 0.2px;
-  font-size: 15px;
-}
-
-.about-container p {
-  margin-bottom: 16px;
-  color: #ccc;
-}
-.card-info h3 {
-  font-size: 20px;
-}
-.filtri {
+  .filtri {
     gap: 25px;
   }
 
   .filtri-buttons {
     gap: 8px;
-}
+  }
 }
