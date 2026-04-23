@@ -334,15 +334,23 @@ footer {
 
 /* HOME SEMPRE VERTICALE */
 .archivio-grid {
+  display: grid;
+  gap: 40px;
+}
+
+/* mobile */
+.archivio-grid {
   grid-template-columns: 1fr;
 }
 
+/* tablet */
 @media (min-width: 768px) {
   .archivio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* desktop */
 @media (min-width: 1200px) {
   .archivio-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -375,7 +383,16 @@ footer {
   color: var(--gold);
   margin-bottom: 2px;
 }
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+}
 
+.home-grid .card img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
 .card-info p {
   font-size: 13px;
   color: #aaa;
