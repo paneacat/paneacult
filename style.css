@@ -524,7 +524,7 @@ footer {
   color: var(--gold);
 }
 .archivio-grid h3 {
-  font-size: 20px;
+  font-size: 30px !important;
   font-weight: 500;
   color: var(--gold);
   margin-top: 10px;
