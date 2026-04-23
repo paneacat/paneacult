@@ -425,7 +425,7 @@ footer {
 /* ===== CARD ===== */
 .card {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 16px;
 }
 
@@ -496,4 +496,21 @@ footer {
   border-radius: 999px;
 
   color: var(--gold);
+}
+.card h3 {
+  color: var(--text);
+}
+
+/* SOLO desktop hover */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover h3 {
+    color: var(--gold);
+  }
+}
+
+/* 🔥 reset mobile */
+.card:active h3,
+.card:focus h3,
+.card:visited h3 {
+  color: var(--text) !important;
 }
