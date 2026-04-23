@@ -137,17 +137,17 @@ a:hover {
 .card {
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 0;
   -webkit-tap-highlight-color: transparent;
 }
   .card img {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
+  border-radius: 0;
   object-position: center;
   }
-
-  
+ 
 /* 🔥 FIX: non copre il titolo */
 .card:hover img {
   transform: scale(1.02);
@@ -349,7 +349,13 @@ footer {
 .card-info {
   margin-top: 10px;
   padding-left: 0;
+  text-align: left;
 }
+.card-info h3,
+.card-info p {
+  text-align: left;
+}
+
 /* 5) FIX HOVER (non copre mai il titolo) */
 
 .card:hover img {
@@ -360,6 +366,9 @@ footer {
 .archivio-grid {
   display: grid;
   gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+
 }
 
 /* mobile */
@@ -406,6 +415,8 @@ footer {
   font-weight: 400;
   color: var(--gold);
   margin-bottom: 2px;
+  letter-spacing: 0.2px;
+  }
 }
 .home-grid {
   display: grid;
