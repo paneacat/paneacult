@@ -378,7 +378,13 @@ footer {
   .card img {
     aspect-ratio: 4/3;
   }
+@media (max-width: 600px) {
+  .contact-container,
+  .about-container {
+    margin: 50px auto 0; /* 🔥 più vicino al menu su mobile */
+  }
 
+}
   .logo { font-size: 36px; }
   .menu { gap: 16px; }
   .menu a { font-size: 11px; }
