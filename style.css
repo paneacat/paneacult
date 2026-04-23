@@ -352,3 +352,78 @@ footer {
   }
 
 }
+/* ===== REVIEW PAGE FIX ===== */
+
+.review {
+  padding-top: 10px;
+}
+
+/* HERO */
+.review-hero {
+  max-width: 700px;
+  margin: 20px auto 10px;
+  padding: 0 20px;
+}
+
+.review-hero img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+/* CONTENUTO */
+.review-container {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* TITOLO */
+.review-container h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+/* META */
+.meta {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* GENERE */
+.genere {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 25px;
+}
+
+/* TESTO */
+.review-text {
+  line-height: 1.8;
+  color: #d6d6d6;
+}
+
+.review-text p {
+  margin-bottom: 18px;
+}
+
+/* WATCH */
+.watch {
+  margin-bottom: 30px;
+}
+
+.watch-title {
+  display: block;
+  font-size: 13px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+/* BACK */
+.back-home {
+  text-align: center;
+  margin: 40px 0;
+}
