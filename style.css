@@ -235,7 +235,15 @@ a:hover {
   color: #0b1f26;
   font-size: 14px;
 }
-
+footer {
+  max-width: 1100px;        /* 🔥 come il resto del sito */
+  margin: 60px auto 30px;   /* spazio sopra + centrato */
+  padding: 0 20px;          /* allineato con container */
+  font-size: 12px;
+  color: #aaa;
+  opacity: 0.6;
+  text-align: left;         /* 🔥 coerente con le card */
+}
 /* ===== REVIEW ===== */
 .review-hero {
   position: relative;
