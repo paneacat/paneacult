@@ -456,3 +456,6 @@ footer {
   opacity: 0.85;
   transform: translateY(-1px);
 }
+.card-info h3 {
+  color: var(--gold) !important;
+}
