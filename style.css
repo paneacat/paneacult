@@ -33,6 +33,7 @@ a:hover {
 .site-header {
   text-align: center;
   padding: 15px 20px 5px;
+  padding-bottom: 0;
 }
 
 .logo {
@@ -284,15 +285,37 @@ footer {
 /* ===== FIX PC FINALI ===== */
 
 /* 1) CONTATTI + CHI SONO centrati di nuovo */
-.about-container,
 .contact-container {
+  .about-container {
   max-width: 600px;
-  margin: 140px auto;
+  margin: 120px auto;
   text-align: center;
-  line-height: 1.7;
-  font-size: 16px;
+  line-height: 1.9;
+  font-size: 17px;
+  color: #e6e6e6;
+}
+}
+.about-container p {
+  margin-bottom: 18px;
 }
 
+.about-container p:first-child {
+  font-size: 20px;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+}
+.about-container {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* 2) FILTRI (titoli Rubrica / Genere centrati) */
 .filtri {
   align-items: center;
