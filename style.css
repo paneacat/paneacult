@@ -503,3 +503,12 @@ footer {
 .watch a:hover {
   border-color: var(--gold);
 }
+.back-home a {
+  font-size: 14px;
+  color: #aaa;
+  transition: 0.2s;
+}
+
+.back-home a:hover {
+  color: var(--gold);
+}
