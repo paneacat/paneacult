@@ -425,3 +425,21 @@ footer {
   font-weight: 400;
   color: var(--gold);
 }
+.watch-links a {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 13px;
+  transition: 0.25s ease;
+}
+.watch-links a:hover {
+  background: var(--gold);
+  color: #0b1f26;
+}
+.watch-links a {
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
