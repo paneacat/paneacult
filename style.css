@@ -450,3 +450,12 @@ footer {
 .card-info h3 {
   transition: color 0.25s ease;
 }
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .card-info h3 {
+    color: var(--gold);
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+  }
+}
