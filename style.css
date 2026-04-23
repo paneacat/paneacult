@@ -118,6 +118,8 @@ a:hover {
   transition: all 0.25s ease;
   border: 1px solid rgba(255,255,255,0.25);
   backdrop-filter: blur(4px);
+  min-width: 70px;
+  text-align: center;
 }
 
 .filtro.attivo {
@@ -337,6 +339,11 @@ footer {
 
 .filtri-group h4 {
   text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 12px;
+  text-transform: uppercase;
 }
 
 /* 3) IMMAGINI PAGINA RECENSIONI (tutte identiche davvero) */
