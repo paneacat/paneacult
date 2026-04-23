@@ -1,50 +1,32 @@
-document.addEventListener("DOMContentLoaded", () => {
+const filtri = document.querySelectorAll(".filtro");
+const cards = document.querySelectorAll(".card");
 
-  const filtri = document.querySelectorAll('.filtro');
-  const cards = document.querySelectorAll('.card');
+filtri.forEach(btn => {
+  btn.addEventListener("click", () => {
 
-  console.log("Filtri:", filtri.length);
-  console.log("Cards:", cards.length);
+    filtri.forEach(b => b.classList.remove("attivo"));
+    btn.classList.add("attivo");
 
-  let filtriAttivi = {
-    categoria: "tutti",
-    genere: "tutti"
-  };
+    const tipo = btn.dataset.tipo;
+    const valore = btn.dataset.valore;
 
-  filtri.forEach(filtro => {
-    filtro.addEventListener('click', () => {
-
-      const tipo = filtro.dataset.tipo;
-      const valore = filtro.dataset.valore;
-
-      document.querySelectorAll(`.filtro[data-tipo="${tipo}"]`)
-        .forEach(f => f.classList.remove('attivo'));
-
-      filtro.classList.add('attivo');
-      filtriAttivi[tipo] = valore;
-
-      aggiornaFiltri();
-    });
-  });
-
-  function aggiornaFiltri() {
     cards.forEach(card => {
 
-      const categoria = card.dataset.categoria;
-      const genere = card.dataset.genere || "";
+      if (valore === "tutti") {
+        card.style.display = "block";
+        return;
+      }
 
-      const matchCategoria =
-        filtriAttivi.categoria === "tutti" ||
-        categoria === filtriAttivi.categoria;
+      if (tipo === "categoria") {
+        card.style.display =
+          card.dataset.categoria === valore ? "block" : "none";
+      }
 
-      const matchGenere =
-        filtriAttivi.genere === "tutti" ||
-        genere.includes(filtriAttivi.genere);
+      if (tipo === "genere") {
+        card.style.display =
+          card.dataset.genere.includes(valore) ? "block" : "none";
+      }
 
-   card.style.display = (matchCategoria && matchGenere)
-  ? ""
-  : "none";
     });
-  }
-
+  });
 });
