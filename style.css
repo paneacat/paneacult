@@ -181,7 +181,7 @@ header {
 }
 
 /* ===== ARCHIVIO ===== */
-.archivio .grid {
+.grid {
   grid-template-columns: repeat(2, 1fr);
 }
 
@@ -249,13 +249,11 @@ footer {
  .archivio .grid {
     grid-template-columns: 1fr;
   }
-  .grid {
+    .grid {
     grid-template-columns: 1fr;
   }
-
   .card img {
     height: 240px;
-  }
 }
 .card-info h3 {
   font-size: 22px;
@@ -327,5 +325,4 @@ footer {
 
   .filtri-buttons {
     gap: 8px;
-  }
 }
