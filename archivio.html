@@ -25,28 +25,42 @@
     <a href="contatti.html">Contatti</a>
   </nav>
 </header>
+<div class="grid">
 
+  <!-- CARD 1 -->
+  <a class="card" data-categoria="cinema-che-resta" data-genere="dramma">
+    ...
+  </a>
+
+  <!-- CARD 2 -->
+  <a class="card" data-categoria="sguardi-contemporanei" data-genere="thriller dramma">
+    ...
+  </a>
+
+</div>
 <!-- FILTRI -->
 
 <div class="filtri">
 
+  <!-- CATEGORIA -->
   <div class="filtri-group">
     <h4>Categoria</h4>
     <div class="filtri-buttons">
-      <button class="filtro attivo">Tutti</button>
-      <button class="filtro">Cinema che resta</button>
-      <button class="filtro">Sguardi contemporanei</button>
+      <button class="filtro attivo" data-tipo="categoria" data-valore="tutti">Tutti</button>
+      <button class="filtro" data-tipo="categoria" data-valore="cinema-che-resta">Cinema che resta</button>
+      <button class="filtro" data-tipo="categoria" data-valore="sguardi-contemporanei">Sguardi contemporanei</button>
     </div>
   </div>
 
+  <!-- GENERE -->
   <div class="filtri-group">
     <h4>Genere</h4>
     <div class="filtri-buttons">
-      <button class="filtro attivo">Tutti</button>
-      <button class="filtro">Commedia</button>
-      <button class="filtro">Dramma</button>
-      <button class="filtro">Thriller</button>
-      <button class="filtro">Giallo</button>
+      <button class="filtro attivo" data-tipo="genere" data-valore="tutti">Tutti</button>
+      <button class="filtro" data-tipo="genere" data-valore="dramma">Dramma</button>
+      <button class="filtro" data-tipo="genere" data-valore="commedia">Commedia</button>
+      <button class="filtro" data-tipo="genere" data-valore="thriller">Thriller</button>
+      <button class="filtro" data-tipo="genere" data-valore="giallo">Giallo</button>
     </div>
   </div>
 
