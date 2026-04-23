@@ -421,10 +421,6 @@ footer {
   font-weight: 500;
   letter-spacing: 0.3px;
 }
-.card-info h3 {
-  transition: color 0.25s ease;
-  color: var(--gold
-  }
 
 /* ===== CARD ===== */
 .card img {
