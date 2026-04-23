@@ -280,10 +280,10 @@ a:hover {
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
-  margin-top: 60px;
   padding: 20px;
   font-size: 12px;
   opacity: 0.5;
+  margin-top: 40px;
 }
 
 /* ===== MOBILE ===== */
@@ -377,6 +377,7 @@ margin-bottom: 4px;
 .archivio-grid {
   grid-template-columns: 1fr;
   gap: 40px;
+  margin-bottom: 80px;
 }
 .archivio-grid .card img {
   height: 220px;
