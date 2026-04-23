@@ -306,11 +306,15 @@ footer {
 }
 
 /* ===== DESKTOP CINEMA ===== */
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .card img {
-    height: 340px;
+    height: 220px;
   }
 }
+ .card-info {
+    margin-top: 10px;
+    padding: 0 4px;
+ }
 /* ===== FIX PC FINALI ===== */
 
 /* 1) CONTATTI + CHI SONO centrati di nuovo */
@@ -391,4 +395,9 @@ margin-bottom: 4px;
 
 .card:hover img {
  transform: scale(1.01);
+}
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
