@@ -41,9 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
         filtriAttivi.genere === "tutti" ||
         genere.includes(filtriAttivi.genere);
 
-      card.style.display = (matchCategoria && matchGenere)
-        ? "block"
-        : "none";
+   card.style.display = (matchCategoria && matchGenere)
+  ? ""
+  : "none";
     });
   }
 
