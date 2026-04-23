@@ -138,6 +138,8 @@ a:hover {
   overflow: hidden;
   border-radius: 0;
   -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex-direction: column;
 }
   .card img {
   width: 100%;
