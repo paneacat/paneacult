@@ -32,7 +32,7 @@ a:hover {
 /* ===== HEADER ===== */
 .site-header {
   text-align: center;
-  padding: 20px 20px 10px;
+  padding: 40px 20px 20px;
 }
 
 .logo {
@@ -40,13 +40,14 @@ a:hover {
   font-size: 52px;
   color: var(--gold);
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 }
 
 .menu {
   display: flex;
   justify-content: center;
   gap: 24px;
+  margin-bottom: 20px;
 }
 
 .menu a {
@@ -55,10 +56,12 @@ a:hover {
   color: var(--muted);
   text-transform: uppercase;
   position: relative;
+  opacity: 0.8;
 }
 
 .menu a.active {
   color: var(--gold);
+  opacity: 1;
 }
 
 .menu a.active::after {
