@@ -82,6 +82,7 @@ header {
 .hero {
   text-align: center;
   padding: 20px 0 30px;
+  display: none;
 }
 
 .hero h1 {
