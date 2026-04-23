@@ -196,11 +196,12 @@ a:hover {
 .contact-container,
 .about-container {
   max-width: 620px;
-  margin: 140px auto 0; /* 🔥 più spazio sopra */
+  margin: 140px auto 0;
   padding: 0 20px;
-  text-align: left; /* 🔥 NON center (coerente con il sito) */
+  text-align: center; /* ✅ centrato */
   line-height: 1.9;
   font-size: 17px;
+}
 }
 /* ===== NEWSLETTER ===== */
 .newsletter {
