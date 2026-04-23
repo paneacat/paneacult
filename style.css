@@ -248,6 +248,7 @@ footer {
   /* GRID */
   .grid {
     grid-template-columns: 1fr;
+    align-items: start;
   }
 
   /* CARD */
@@ -269,6 +270,7 @@ footer {
   .filtri {
     gap: 25px;
     margin: 40px auto 20px;
+    margin-top: 20px;
   }
 
   .filtri-buttons {
