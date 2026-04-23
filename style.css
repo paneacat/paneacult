@@ -294,11 +294,15 @@ footer {
   line-height: 1.9;
   font-size: 17px;
 }
+
+.about-container p {
+  margin-bottom: 14px;
+  color: #d6d6d6; /* colore base */
+}
+
+/* SOLO prima frase */
 .about-container p:first-of-type {
   color: var(--gold);
-}
-.about-container p:not(:first-of-type) {
-  color: #d6d6d6;
 }
 
 /* nome */
