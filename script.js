@@ -52,3 +52,17 @@ function aggiornaFiltri() {
 // ===== DEBUG (temporaneo) =====
 console.log("Filtri trovati:", filtri.length);
 console.log("Card trovate:", cards.length);
+const elements = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target); // 👈 importante (no bug)
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+elements.forEach(el => observer.observe(el));
