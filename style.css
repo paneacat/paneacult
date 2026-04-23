@@ -202,7 +202,8 @@ font-size: 36px;
 }
 
 .menu {
-gap: 16px;
+gap: 16px; 
+margin-bottom: 10px;
 }
 
 .menu a {
@@ -478,7 +479,7 @@ color: var(--gold);
 }
 
 .social {
-  margin: 5px 0 10px !important;
+  margin: 12px 0 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -524,4 +525,13 @@ color: var(--gold);
   object-position: center;
   border-radius: 16px;
   display: block;
+}
+.review-container h1 {
+  margin-bottom: 2px !important;
+}
+
+.meta {
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+  line-height: 1.2 !important;
 }
