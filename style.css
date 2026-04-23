@@ -225,8 +225,10 @@ footer {
 }
 
 /* ===== MOBILE ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 600px) {
 
+  /* HEADER */
   header {
     padding: 20px 15px 10px;
   }
@@ -243,10 +245,12 @@ footer {
     font-size: 11px;
   }
 
+  /* GRID */
   .grid {
     grid-template-columns: 1fr;
   }
 
+  /* CARD */
   .card img {
     height: 240px;
   }
@@ -261,11 +265,84 @@ footer {
     opacity: 0.7;
   }
 
+  /* FILTRI */
   .filtri {
     gap: 25px;
+    margin: 40px auto 20px;
   }
 
   .filtri-buttons {
     gap: 8px;
   }
+
+  .filtro {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 10px 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  /* NEWSLETTER */
+  .newsletter {
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .newsletter-inner {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .newsletter h2 {
+    color: var(--gold);
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .newsletter p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 25px;
+  }
+
+  .newsletter-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 24px;
+    background: var(--gold);
+    color: #0b1f26;
+    font-size: 14px;
+    transition: 0.3s ease;
+  }
+
+  .newsletter-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+  }
+
+  /* ABOUT */
+  .about-container {
+    max-width: 520px;
+    margin: 100px auto;
+    padding: 0 20px;
+    text-align: center;
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+    font-size: 15px;
+  }
+
+  .about-container p {
+    margin-bottom: 16px;
+    color: #ccc;
+  }
+
 }
