@@ -78,3 +78,21 @@ function revealOnScroll() {
 
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
+const filtri = document.querySelectorAll(".filtro");
+
+filtri.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    // se è già attivo → togli
+    if (btn.classList.contains("attivo")) {
+      btn.classList.remove("attivo");
+      return;
+    }
+
+    // altrimenti: resetta tutti
+    filtri.forEach(b => b.classList.remove("attivo"));
+
+    // attiva solo quello cliccato
+    btn.classList.add("attivo");
+  });
+});
