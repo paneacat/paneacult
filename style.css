@@ -444,3 +444,15 @@ footer {
   opacity: 0.85;
   transform: translateY(-1px);
 }
+
+/* ===== HOME TITOLI FILM ===== */
+
+.home .card-info h3 {
+  color: var(--gold) !important;
+}
+
+/* hover leggero (come recensione) */
+.home .card:hover .card-info h3 {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
