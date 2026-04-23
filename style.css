@@ -40,6 +40,8 @@ header {
   font-family: 'Playfair Display', serif;
   font-size: 48px;
   color: var(--gold);
+  display: block;
+  margin-bottom: 10px;
 }
 
 /* ===== MENU ===== */
