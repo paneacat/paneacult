@@ -96,39 +96,53 @@ header {
 /* ===== FILTRI ===== */
 .filtri {
   max-width: 720px;
-  margin: 50px auto 30px;
+  margin: 40px auto 20px;
   padding: 0 20px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
 }
 
 .filtri-group {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  margin-bottom: 30px;
 }
 
-/* TITOLI */
 .filtri-group h4 {
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #888;
+  margin-bottom: 12px;
 }
 
-/* BOTTONI CON LAYOUT MIGLIORATO */
+/* CONTENITORE BOTTONI */
 .filtri-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-
-  justify-content: flex-start; /* ← importante */
+  gap: 8px;
 }
-.filtri-group:not(:last-child) {
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+
+/* BOTTONI */
+.filtro {
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 999px;
+
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #aaa;
+
+  transition: all 0.25s ease;
+}
+
+/* HOVER */
+.filtro:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ATTIVO */
+.filtro.attivo {
+  background: var(--gold);
+  color: #0b1f26;
+  border-color: var(--gold);
 }
 /* ===== GRID ===== */
 .grid {
