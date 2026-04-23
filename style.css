@@ -154,7 +154,6 @@ a:hover {
 
 /* ===== RATING ===== */
 .rating {
-  position: absolute;
   top: 12px;
   left: 12px;
   background: rgba(0,0,0,0.6);
