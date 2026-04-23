@@ -106,7 +106,6 @@ a:hover {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  max-width: 420px;
   margin-top: 0;
 }
 .filtro {
