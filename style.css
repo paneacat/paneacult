@@ -344,10 +344,10 @@ footer {
 
 /* 4) HOME – testo leggermente più basso e centrato meglio */
 .card-info {
+  padding-left: 6px;
+  margin-top: 18px;
   position: relative;
   z-index: 2;
-  margin-top: 20px;
-  padding-left: 6px;
 }
 
 .card-info h3 {
@@ -363,6 +363,7 @@ margin-bottom: 4px;
 .card {
   overflow: hidden;
   position: relative;
+  border-radius: 16px;
 }
 
 .card img {
@@ -372,5 +373,5 @@ margin-bottom: 4px;
 }
 
 .card:hover img {
-  transform: scale(1.015);   /* ancora più delicato */
+ transform: scale(1.01);
 }
