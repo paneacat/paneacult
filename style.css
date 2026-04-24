@@ -429,13 +429,23 @@ a:hover {
 
 /* ===== FOOTER ===== */
 footer {
-  max-width: 1100px;
   margin: 60px auto 30px;
-  padding: 0 20px;
-  font-size: 12px;
-  color: #aaa;
-  opacity: 0.6;
+  padding: 20px 20px 10px;
   text-align: center;
+  font-size: 11px;
+  color: #777;
+  letter-spacing: 0.5px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  max-width: 500px;
+}
+footer::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 12px;
+  opacity: 0.5;
 }
 
 /* ===== REVIEW ===== */
@@ -474,12 +484,7 @@ footer {
 }
 .review-text p { margin-bottom: 20px; 
 }
-.rating {
-  margin-top: 10px;
-  margin-bottom: 6px;
-  font-size: 14px;
-  letter-spacing: 2px;
-}
+
 /* ===== HOME CINEMATICA ===== */
 
 .home-grid .card img {
