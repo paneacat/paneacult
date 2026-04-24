@@ -344,5 +344,19 @@ footer {
   .filtri-group {
     align-items: center;
   }
+.newsletter {
+    margin-top: 60px;   /* 🔥 separa dalle card */
+    margin-bottom: 60px;
+  }
+
+  .newsletter h2 {
+    font-size: 22px;    /* leggermente più equilibrato */
+    margin-bottom: 10px;
+  }
+
+  .newsletter p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
 
 }
