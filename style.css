@@ -274,7 +274,7 @@ a:hover {
 .contact-container,
 .about-container {
   max-width: 620px;
-  margin: 80px auto 20px;
+  margin: 120px auto 0;
   padding: 0 20px;
   text-align: center;
   line-height: 1.9;
@@ -298,14 +298,30 @@ a:hover {
 
 .contact-mail {
   display: inline-block;
-  font-size: 16px;
   color: var(--gold);
   border-bottom: 1px solid rgba(255,191,0,0.4);
   padding-bottom: 2px;
   margin-bottom: 25px;
   transition: 0.2s ease;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  position: relative;
+  }
+
+.contact-mail::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
 }
 
+.contact-mail:hover::after {
+  width: 100%;
+}
 .contact-mail:hover {
   border-color: var(--gold);
 }
@@ -504,20 +520,6 @@ footer {
   color: #fff;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-/* testo */
-.about-container {
-  text-align: left;
-  line-height: 1.9;
-  font-size: 16px;
-}
-
 /* incipit */
 .about-container p:first-child {
   color: var(--gold);
@@ -525,6 +527,12 @@ footer {
   margin-bottom: 20px;
 }
 
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
 /* desktop */
 @media (min-width: 900px) {
   .archivio-grid {
