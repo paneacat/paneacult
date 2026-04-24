@@ -38,6 +38,7 @@ a:hover {
 .site-header {
   position: relative;
   z-index: 10;
+  padding-bottom: 15px;
 }
 
 .menu {
