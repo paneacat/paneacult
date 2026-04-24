@@ -670,7 +670,17 @@ footer {
 @media (max-width: 599px) {
 
   /* HOME → cinematica */
-.home-grid {
+.menu {
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 4px 0;
+}
+  .home-grid {
   grid-template-columns: 1fr;
   gap: 40px;
 }
