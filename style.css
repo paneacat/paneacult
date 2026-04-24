@@ -274,11 +274,20 @@ a:hover {
 .contact-container,
 .about-container {
   max-width: 620px;
-  margin: 120px auto 0;
+  margin: 120px auto 40px;
   padding: 0 20px;
   text-align: center;
   line-height: 1.9;
   font-size: 17px;
+}
+.contact-container::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 20px;
+  opacity: 0.6;
 }
 /* ===== CONTACT DESIGN ===== */
 
@@ -296,17 +305,19 @@ a:hover {
   margin-bottom: 25px;
 }
 
-.contact-mail {
+.contact-email {
   display: inline-block;
+  margin: 25px 0;
+  font-size: 16px;
   color: var(--gold);
   border-bottom: 1px solid rgba(255,191,0,0.4);
   padding-bottom: 2px;
-  margin-bottom: 25px;
   transition: 0.2s ease;
-  font-size: 18px;
-  letter-spacing: 0.3px;
-  position: relative;
-  }
+}
+
+.contact-email:hover {
+  border-color: var(--gold);
+}
 
 .contact-mail::after {
   content: "";
@@ -322,13 +333,11 @@ a:hover {
 .contact-mail:hover::after {
   width: 100%;
 }
-.contact-mail:hover {
-  border-color: var(--gold);
-}
 
 .contact-extra {
+  margin-top: 20px;
   font-size: 13px;
-  color: #888;
+  color: #777;
 }
 
 .contact-extra a {
