@@ -550,15 +550,15 @@ footer {
   filter: grayscale(100%); /* 🔥 qui */
     transition: 0.4s ease;
   margin: 30px auto 10px;
-  border-radius: 12px;
-  max-width: 260px;
+  max-width: 240px;
+  border-radius: 14px;
 }
 .about-hero img:hover {
   filter: grayscale(0%);
 }
 /* testo */
 .about-container {
-  max-width: 520px;
+  max-width: 460px;
   margin: 0 auto 80px;
   padding: 0 20px;
   line-height: 1.9;
@@ -571,7 +571,9 @@ footer {
 .about-container p {
   margin-bottom: 18px;
   color: #ccc;
+   line-height: 1.7;
 }
+
 .about-container p:first-child {
   color: var(--gold);
   font-size: 18px;
@@ -598,11 +600,11 @@ footer {
 
 .about-grid {
   display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 24px; /* 🔥 prima era troppo largo */
   align-items: center;
-  max-width: 900px;
-  margin: 0 auto;
-  grid-template-columns: 260px 1fr;
-  gap: 30px;
+  max-width: 780px; /* 🔥 riduce il vuoto */
+  margin: 60px auto;
 }
 
 .firma-manifesto {
