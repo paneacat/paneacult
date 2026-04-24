@@ -818,7 +818,10 @@ footer {
     font-size: 36px;   /* ora è ~52px → troppo grande */
     margin-bottom: 12px;
     }
-
+.about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+}
 }
 
 
