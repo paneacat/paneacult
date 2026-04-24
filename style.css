@@ -538,11 +538,13 @@ footer {
 
   .filtri-buttons {
     justify-content: center;
+    gap: 6px;
   }
 
   .filtro {
-    padding: 8px 14px;
-    font-size: 12px;
+    padding: 4px 9px;
+    font-size: 10.5px;
+    border-radius: 999px;
   }
 
   .filtri-group {
