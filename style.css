@@ -554,6 +554,7 @@ footer {
   margin: 0 auto;   /* 🔥 centro perfetto */
   opacity: 0.85;
   width: 200px;   
+  transform: rotate(-1deg);
   filter: brightness(0) saturate(100%) invert(79%) sepia(88%) saturate(500%);
   }
 
