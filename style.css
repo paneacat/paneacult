@@ -221,7 +221,7 @@ a:hover {
 }
 
 .card-info p {
-  font-size: 13px;
+  font-size: 12px;
   color: #aaa;
   line-height: 1.2;
 }
@@ -229,7 +229,7 @@ a:hover {
 /* TITOLI FILM */
 .card-info h3 {
   color: var(--gold) !important;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.2px;
   transition: 0.2s ease;
@@ -705,8 +705,7 @@ footer {
   margin-top: 8px;
 }
   
-  
-  .archivio-grid {
+.archivio-grid {
     grid-template-columns: 1fr;
   }
 .about-grid {
@@ -727,11 +726,14 @@ footer {
   }
   
 .home .card img {
-  aspect-ratio: 21 / 9;
+  height: 140px;
   object-fit: cover;
-  object-position: center;
 }
-
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
   .logo { font-size: 36px; }
   .menu { gap: 16px; }
   .menu a { font-size: 11px; }
