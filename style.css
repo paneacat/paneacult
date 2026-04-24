@@ -694,16 +694,15 @@ footer {
   font-size: 11px;
 }
 
+  .rating {
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
 .archivio-grid .rating {
   font-size: 11px;
   letter-spacing: 1px;
 }
-
-  .rating {
-    font-size: 14px;
-    letter-spacing: 2px;
-  }
-
   /* ARCHIVIO → griglia */
   .archivio-grid {
     grid-template-columns: repeat(2, 1fr);
