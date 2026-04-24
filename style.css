@@ -856,8 +856,12 @@ footer {
 
   .contact-intro {
     font-size: 18px;
+    line-height: 1.4;
   }
-
+.about-intro .line {
+  display: inline-block;
+  margin-top: 4px;
+}
   .contact-sub {
     font-size: 16px;
   }
