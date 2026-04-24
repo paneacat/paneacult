@@ -412,6 +412,49 @@ footer {
   color: var(--gold);
   border-color: var(--gold);
 }
+
+/* ===== ABOUT PAGE ===== */
+
+.about {
+  text-align: center;
+}
+
+/* immagine */
+.about-hero img {
+  width: 100%;
+  max-width: 720px;
+  margin: 40px auto 40px;
+  display: block;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* testo */
+.about-container {
+  max-width: 520px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+/* paragrafi */
+.about-container p {
+  margin-bottom: 18px;
+  color: #ccc;
+}
+
+/* prima frase */
+.about-container .intro {
+  color: var(--gold);
+  font-size: 18px;
+}
+
+/* nome */
+.about-container .firma {
+  color: #fff;
+}
+
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
 
