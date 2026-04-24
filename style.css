@@ -702,6 +702,8 @@ footer {
   .rating {
   font-size: 14px;
   letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 6px;
 }
 
 .archivio-grid .rating {
