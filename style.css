@@ -629,7 +629,7 @@ footer::before {
 .firma-img {
   display: block;
   margin: 30px auto 0; /* 🔥 centro perfetto */
-  margin-top: 4px;
+  margin-top: 0;
   opacity: 0.75;
   width: 220px;   
   transform: rotate(-1deg);
