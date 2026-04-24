@@ -281,6 +281,14 @@ a:hover {
   object-fit: cover;
   border-radius: 10px;
 }
+.archivio-grid .rating {
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+
+.archivio-grid .card-info {
+  margin-top: 2px;
+}
 /* ===== PAGINE TESTO ===== */
 .contact-container,
 .about-container {
