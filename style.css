@@ -806,6 +806,10 @@ footer {
     font-size: 14px;
     margin-bottom: 20px;
   }
+    .logo {
+    font-size: 36px;   /* ora è ~52px → troppo grande */
+    margin-bottom: 12px;
+    }
 
 }
 
