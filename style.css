@@ -595,7 +595,7 @@ footer {
   margin-bottom: 20px;
 }
 .about-container p:last-of-type {
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 .about-grid {
   display: grid;
@@ -616,10 +616,10 @@ footer {
 .firma-img {
   display: block;   
   filter: brightness(0) invert(1);
-  margin: 12px auto 0; /* 🔥 prima era tipo 30px */
   opacity: 0.75;
   width: 200px;
   transform: rotate(-1deg);
+  margin: 6px auto 0; 
   }
 
 .firma-manifesto p {
