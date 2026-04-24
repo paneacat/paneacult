@@ -546,12 +546,12 @@ footer {
 /* immagine */
 .about-hero img {
   width: 100%;
-  max-width: 220px;
   display: block;
   filter: grayscale(100%); /* 🔥 qui */
     transition: 0.4s ease;
   margin: 30px auto 10px;
   border-radius: 12px;
+  max-width: 260px;
 }
 .about-hero img:hover {
   filter: grayscale(0%);
@@ -598,9 +598,11 @@ footer {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
   align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  grid-template-columns: 260px 1fr;
+  gap: 30px;
 }
 
 .firma-manifesto {
