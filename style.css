@@ -363,9 +363,6 @@ footer {
 
 @media (max-width: 600px) {
   .archivio-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .archivio-grid {
     grid-template-columns: repeat(3, 1fr);
   }
   .card img {
