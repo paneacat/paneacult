@@ -704,18 +704,35 @@ footer {
   font-size: 13px;
   margin-top: 8px;
 }
-  
+   .about {
+    margin: 40px auto;
+  }
+
+  .about-hero img {
+    max-width: 260px;   /* 🔥 più piccola */
+    margin: 0 auto 30px;
+    border-radius: 12px;
+  }
+
+  .about-container {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .about-container p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .about-container p:first-child {
+    font-size: 18px;
+  } 
 .archivio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 .about-grid {
     grid-template-columns: 1fr;
     gap: 30px;
-  }
-
-  .about-hero img {
-    margin: 0 auto;
-    max-width: 320px;
   }
 
   .about-container {
