@@ -665,7 +665,9 @@ footer {
   }
   
 .home .card img {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  object-position: center;
 }
 
   .logo { font-size: 36px; }
