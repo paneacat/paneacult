@@ -536,7 +536,13 @@ footer {
   margin: 80px auto;
   padding: 0 20px;
 }
-
+.about img {
+  width: 100%;
+  max-width: 200px;
+  display: block;
+  margin: 30px auto;
+  border-radius: 12px;
+}
 /* immagine */
 .about-hero img {
   width: 100%;
