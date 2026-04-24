@@ -351,13 +351,6 @@ a:hover {
 }
 .contact-extra a {
   color: var(--gold);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,191,0,0.3);
-  transition: 0.2s ease;
-}
-
-.contact-extra a:hover {
-  border-color: var(--gold);
 }
 }
 /* ===== NEWSLETTER ===== */
