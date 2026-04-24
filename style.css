@@ -457,18 +457,14 @@ footer {
 /* ===== HOME CINEMATICA ===== */
 
 .home-grid .card img {
-  border-radius: 6px;
-  
-}
-
-.home-grid {
-  gap: 70px;
+  border-radius: 6px
 }
 
 .home .card img {
   width: 100%;
-  height: 300px;       /* o 280px */
-  object-fit: cover;   /* taglia, NON deforma */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
 }
 .home .card-info {
   margin-top: 12px;
