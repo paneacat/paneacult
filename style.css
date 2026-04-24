@@ -670,32 +670,51 @@ footer {
 @media (max-width: 599px) {
 
   /* HOME → cinematica */
-.menu {
-  gap: 12px;
-  flex-wrap: wrap;
+.hero {
+  margin: 20px auto 30px;
+  padding: 0 20px;
 }
 
-.menu a {
-  font-size: 10px;
-  letter-spacing: 1px;
-  padding: 4px 0;
+.hero h1 {
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 320px;
+  margin: 0 auto;
+  opacity: 0.9;
 }
-  .home-grid {
+.home-grid {
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 50px;
+  padding: 0 16px;
 }
   .archivio-grid {
   padding: 0 14px;
     gap: 18px;
   }
+ .home .card {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+ }
   
 .home .card img {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 14px;
+}
+.home .card-info {
+  margin-top: 10px;
 }
 
+.home .card-info h3 {
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.home .card-info p {
+  font-size: 13px;
+  opacity: 0.8;
+}
   .card-info {
     margin-top: 12px;
   }
@@ -709,11 +728,11 @@ footer {
   font-size: 11px;
 }
 
-  .rating {
-  font-size: 14px;
-  letter-spacing: 2px;
-  margin-top: 10px;
-  margin-bottom: 6px;
+.rating {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  margin-top: 6px;
+  margin-bottom: 4px;
 }
 
 .archivio-grid .rating {
