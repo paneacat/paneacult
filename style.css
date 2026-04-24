@@ -22,8 +22,6 @@ body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
-  margin: 0;
-  padding: 0;
 }
 
 /* ===== LINK ===== */
@@ -85,7 +83,6 @@ a:hover {
 .social {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 16px;
   margin: 15px 0;
 }
@@ -111,16 +108,24 @@ a:hover {
 }
 
 /* ===== FILTRI ===== */
+.filtri {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin: 30px 0;
+}
+
 .filtri-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  justify-content: center; /* ✅ centrati */
+  justify-content: center;
   max-width: 600px;
 }
 
 .filtro {
-  padding: 5px 12px;     /* 🔥 leggermente più sottili */
+  padding: 5px 12px;
   font-size: 11px;
   border-radius: 999px;
   background: transparent;
@@ -140,28 +145,18 @@ a:hover {
   color: var(--gold);
   background: rgba(255,191,0,0.1);
 }
-.filtri {
-   display: flex;
-  flex-direction: column;
-  align-items: center; /* ✅ torna centrato */
-  gap: 14px;
-  margin: 30px 0 30px;
-}
+
 /* ===== CARD ===== */
 .card {
-  position: relative;
   overflow: hidden;
-  border-radius: 0;
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
 .card img {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
-  object-position: center;
 }
 
 /* hover */
@@ -171,11 +166,6 @@ a:hover {
 
 .card:hover p {
   color: #ccc;
-}
-
-/* 🔥 titolo NON cambia mai */
-.card-info h3 {
-  transition: 0.2s ease;
 }
 
 /* ===== CARD TEXT ===== */
@@ -189,21 +179,64 @@ a:hover {
   color: #aaa;
   line-height: 1.2;
 }
+
+/* TITOLI FILM */
+.card-info h3 {
+  color: var(--gold) !important;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: 0.2s ease;
+}
+
 .card:hover .card-info h3 {
   opacity: 0.85;
   transform: translateY(-1px);
 }
+
+/* ===== LAYOUT ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+}
+
+.archivio-grid {
+  display: grid;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+}
+
+.archivio-grid h3 {
+  font-weight: 500;
+  color: var(--gold);
+  margin-top: 10px;
+}
+
+.archivio-grid p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* ===== PAGINE TESTO ===== */
 .contact-container,
 .about-container {
   max-width: 620px;
-  margin: 80px auto 0;
-  margin-bottom: 20px;
+  margin: 80px auto 20px;
   padding: 0 20px;
-  text-align: center; /* ✅ centrato */
+  text-align: center;
   line-height: 1.9;
   font-size: 17px;
 }
-}
+
 /* ===== NEWSLETTER ===== */
 .newsletter {
   margin: 80px auto;
@@ -229,22 +262,23 @@ a:hover {
 }
 
 .newsletter-btn {
-  display: inline-block;
   padding: 10px 22px;
   border-radius: 24px;
   background: var(--gold);
   color: #0b1f26;
-  font-size: 14px;
 }
+
+/* ===== FOOTER ===== */
 footer {
-  max-width: 1100px;        /* 🔥 come il resto del sito */
-  margin: 60px auto 30px;   /* spazio sopra + centrato */
-  padding: 0 20px;          /* allineato con container */
+  max-width: 1100px;
+  margin: 60px auto 30px;
+  padding: 0 20px;
   font-size: 12px;
   color: #aaa;
   opacity: 0.6;
-  text-align: left;         /* 🔥 coerente con le card */
+  text-align: left;
 }
+
 /* ===== REVIEW ===== */
 .review-hero {
   position: relative;
@@ -270,192 +304,45 @@ footer {
   font-family: 'Playfair Display', serif;
   font-size: 28px;
   color: var(--gold);
-  margin-bottom: 2px;
 }
 
-.meta {
-  font-size: 14px;
-  color: #aaa;
-  margin-bottom: 4px;
-}
-
-.genere {
-  font-size: 13px;
-  color: #777;
-  margin-bottom: 18px;
-}
+.meta { font-size: 14px; color: #aaa; }
+.genere { font-size: 13px; color: #777; }
 
 .review-text {
   line-height: 1.8;
-  color: #d6d6d6;
   max-width: 650px;
 }
 
-.review-text p {
-  margin-bottom: 20px;
-}
+.review-text p { margin-bottom: 20px; }
 
-/* ===== WATCH ===== */
-.watch {
-  margin: 10px 0 25px;
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.watch span {
-  color: #666;
-  margin-right: 6px;
-}
-
-.watch a {
-  margin-right: 10px;
-  color: var(--gold);
-  border-bottom: 1px solid rgba(255,191,0,0.4);
-}
-
-.watch a:hover {
-  border-color: var(--gold);
-}
-
-/* ===== REVIEW END ===== */
-.review-end {
-  margin-top: 50px;
-  text-align: left;
-}
-
-.stelle {
-  color: var(--gold);
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-  margin: 8px 0 6px; /* 🔥 meno spazio sotto */
-  font-size: 14px;
-}
-
-.firma {
-  font-size: 14px;
-  color: #ccc;
-  line-height: 1.6;
-  margin: 15px 0 25px;
-}
-
-.firma em {
-  color: #888;
-  font-size: 12px;
-}
-
-.back-home a {
-  font-size: 13px;
-  color: #888;
-}
-
-.back-home a:hover {
-  color: var(--gold);
-}
-
-/* ===== GRID ARCHIVIO ===== */
-.archivio-grid {
-  display: grid;
-  gap: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-  grid-template-columns: 1fr;
-}
-/* ===== EXTRA ===== */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.home-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 50px;
-}
-
-.home-grid .card img {
-  aspect-ratio: 16/9;
-  object-fit: cover;
-}
-
-.archivio-grid h3 {
-  font-weight: 500;
-  color: var(--gold);
-  margin-top: 10px;
-}
-
-.archivio-grid p {
-  font-size: 14px;
-  color: #aaa;
-}
-
-/* TITOLI FILM */
-.card-info h3 {
-  color: var(--gold) !important;
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 0.2px;
-  transition: 0.2s ease;
-}
-
-.card:hover .card-info h3 {
-  opacity: 0.85;
-  transform: translateY(-1px);
-}
-
-.home .card-info h3 {
-  color: var(--gold) !important;
-}
-
-.home .card:hover .card-info h3 {
-  opacity: 0.85;
-  transform: translateY(-1px);
-}
+/* ===== MOBILE ===== */
 @media (max-width: 600px) {
-
-  /* ===== LAYOUT ===== */
-
-  .archivio-grid {
-    grid-template-columns: 1fr; /* 🔥 1 colonna su mobile */
-  }
-
-  .home-grid {
-    grid-template-columns: 1fr; /* già corretto */
-  }
 
   .card img {
     aspect-ratio: 4/3;
   }
 
-  /* ===== HEADER ===== */
-
   .logo { font-size: 36px; }
   .menu { gap: 16px; }
   .menu a { font-size: 11px; }
-
-  /* ===== TESTI PAGINE ===== */
 
   .contact-container,
   .about-container {
     margin: 50px auto 0;
   }
 
-  /* ===== FILTRI ===== */
-
   .filtri-buttons {
-    justify-content: center; /* 🔥 centrati come desktop */
-    gap: 8px;
+    justify-content: center;
   }
 
   .filtro {
     font-size: 11px;
     padding: 6px 10px;
-    min-width: auto;
   }
 
   .filtri-group {
-    width: 100%;
-    align-items: center; /* 🔥 centrato */
+    align-items: center;
   }
 
 }
