@@ -548,10 +548,10 @@ footer {
   width: 100%;
   display: block;
   filter: grayscale(100%); /* 🔥 qui */
-    transition: 0.4s ease;
-  margin: 30px auto 10px;
-  max-width: 240px;
+  transition: 0.4s ease;
   border-radius: 14px;
+  max-width: 260px;
+  margin: 0 auto 16px; /* 🔥 meno spazio sotto */
 }
 .about-hero img:hover {
   filter: grayscale(0%);
@@ -569,9 +569,10 @@ footer {
 
 /* paragrafi */
 .about-container p {
-  margin-bottom: 18px;
-  color: #ccc;
-   line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #aaa;
+  margin-bottom: 10px;
 }
 
 .about-container p:first-child {
@@ -582,9 +583,11 @@ footer {
 
 /* prima frase */
 .about-container .intro {
+  font-size: 16px;
+  line-height: 1.5;
   color: var(--gold);
-  font-size: 18px;
-}
+  margin-bottom: 14px;
+  }
 
 /* nome */
 .about-container .firma {
