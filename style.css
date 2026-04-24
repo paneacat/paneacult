@@ -170,13 +170,14 @@ a:hover {
 }
 
 .filtro {
-  padding: 5px 12px;
-  font-size: 11px;
+  padding: 9px 18px;
+  font-size: 12px;
   border-radius: 999px;
   background: transparent;
   color: #aaa;
   border: 1px solid rgba(255,255,255,0.25);
   transition: all 0.2s ease;
+  letter-spacing: 0.3px;
 }
 
 .filtro.attivo {
