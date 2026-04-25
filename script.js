@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const bottoniGenere = document.querySelectorAll('[data-genere]');
   const cards = document.querySelectorAll('.card');
   const empty = document.getElementById('emptyState');
-
+  const generi = (card.dataset.genere || "").split(" ");
   // ===== STATI =====
   let filtroCategoria = "tutti";
   let filtroGenere = "tutti";
