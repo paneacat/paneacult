@@ -880,7 +880,7 @@ margin: 0 auto;
 }
 
 .about-container p:first-child {
-  font-size: 18px;
+  font-size: 14px;
   color: var(--gold);
   line-height: 1.4;
   margin-bottom: 16px;
