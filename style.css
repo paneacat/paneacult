@@ -290,20 +290,29 @@ background: rgba(255,191,0,0.1);
 }
 
 /* ===== CARD ===== */
-.card {
-flex-direction: column;
-transition: 
-    opacity 0.4s ease,
-    transform 0.4s ease;
+..card {
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
+}
+.card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 12px;
   display: block;
-}  
+}
 
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.1)
+  );
+  z-index: 1; /* 🔥 fondamentale */
+}
 /* quando sparisce */
 .card.hide {
   opacity: 0;
@@ -316,10 +325,6 @@ transition:
 .card.show {
   opacity: 1;
   transform: translateY(0);
-}
-
-.card img {
-display: block;
 }
 
 /* hover */
@@ -340,9 +345,11 @@ color: #ccc;
 
 /* ===== CARD TEXT ===== */
 .card-info {
-text-align: left;
-margin-top: 6px;
-font-size: 18px;
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 2;
+  color: white;
 }
 
 .card-info,
@@ -364,19 +371,6 @@ font-size: 16px;
 font-weight: 500;
 letter-spacing: 0.2px;
 transition: 0.2s ease;
-}
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.7),
-    rgba(0,0,0,0.1)
-    z-index: 1;
-    display: none;
-  );
-
 }
 /* ===== LAYOUT ===== */
 .container {
@@ -403,7 +397,7 @@ min-height: 300px;
 
 .archivio-grid h3 {
 font-weight: 500;
-color: var(--gold);
+color: var(--gol);
 margin-top: 10px;
 }
 
@@ -662,11 +656,12 @@ font-size: 14px;
 }
 
 .rating {
-font-size: 14px;
-letter-spacing: 2px;
-  margin-top: 20px;
-  margin-bottom: 16px;
-  opacity: 0.9;
+  position: absolute;
+  bottom: 50px;
+  left: 12px;
+  z-index: 2;
+  color: #ffbf00;
+  font-size: 14px;
 }
 
 .firma-review {
