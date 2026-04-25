@@ -550,9 +550,7 @@ font-family: 'Playfair Display', serif;
 font-size: 28px;
 color: var(--gold);
 }
-.genre-bar {
-  width: 100%;
-}
+
 .review-container p {
   margin-bottom: 18px;
 }
