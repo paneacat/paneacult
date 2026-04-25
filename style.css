@@ -107,10 +107,17 @@ opacity: 1;
   display: none;
   text-align: center;
   margin-top: 50px;
-  color: var(--gold);
-  font-size: 16px;
   font-family: 'Playfair Display', serif;
-  opacity: 0.7;
+  letter-spacing: 0.5px;
+  color: #fff; /* testo bianco */
+opacity: 0.7;
+  font-size: 17px;
+}
+
+/* solo la stellina gialla */
+.empty-state::first-letter {
+  color: var(--gold);
+  margin-right: 4px;
 }
 .menu a.active::after {
 content: "";
