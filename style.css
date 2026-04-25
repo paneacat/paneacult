@@ -249,11 +249,25 @@ margin-top: 20px;
 }
 
 /* ===== FILTRI ===== */
+.filtri-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* 🔥 QUESTO È IL TRUCCO */
+.filtri-row.generi {
+  max-width: 420px; /* controlla larghezza riga */
+}
+
+/* opzionale: spaziatura più elegante */
+
 .filtri {
 display: flex;
 flex-direction: column;
 align-items: center;
-gap: 14px;
+gap: 18px;
 margin: 30px 0;
   position: relative;
   z-index: 2;
