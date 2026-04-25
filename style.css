@@ -189,6 +189,21 @@ transform: translateY(-2px);
   margin-bottom: 40px;
 }
 
+.genre-bar {
+  border: none;
+  padding: 0;
+  margin: 16px 0 28px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  opacity: 0.7;
+}
+
+.genre-bar::before {
+  content: "Genere — ";
+  color: #555;
+}
 .hero {
 position: relative;
 text-align: center;
