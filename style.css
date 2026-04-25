@@ -525,12 +525,16 @@ max-width: 500px;
 }
 
 .review-hero {
-position: relative;
-height: 300px;
-overflow: hidden;
-border-radius: 16px;
+  position: relative;
+  height: 300px;
+  max-width: 900px;
+  margin: 0 auto;   /* 🔥 QUESTO CENTRA */
+  border-radius: 16px;
+  overflow: hidden;
 }
 .review-hero img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -540,9 +544,9 @@ border-radius: 16px;
 }
 
 .review-container {
-max-width: 1100px;
-margin: 30px auto 0;
-padding: 0 20px;
+  max-width: 900px;
+  margin: 30px auto 0;  /* 🔥 centrato */
+  padding: 0 20px;
 }
 
 .review-container h1 {
