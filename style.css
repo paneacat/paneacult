@@ -874,17 +874,14 @@ margin: 0 auto;
   line-height: 1.6;
   margin-bottom: 10px;
 }
-.about-container .intro {
-    font-size: 14px;
-    line-height: 1.5;
-}
 
-.about-container p:first-child {
+.about-container .intro {
   font-size: 14px;
   color: var(--gold);
   line-height: 1.4;
   margin-bottom: 16px;
 }
+  
 /* firma più vicina */
 .firma-img {
   width: 140px;
