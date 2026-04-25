@@ -61,12 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ===== EMPTY STATE =====
-    if (visibili === 0) {
-  empty.style.display = "block";
-} else {
-  empty.style.display = "none";
+    if (empty) {
+  if (visibili === 0) {
+    empty.style.display = "block";
+  } else {
+    empty.style.display = "none";
+  }
     }
-
   }
 
 });
