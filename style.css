@@ -509,10 +509,14 @@ color: #777;
 }
 
 .review-text {
-line-height: 1.8;
 max-width: 650px;
-}
-.review-text p { margin-bottom: 20px;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #ddd;
+  }
+
+.review-text p {
+margin-bottom: 20px;
 }
 
 /* ===== HOME CINEMATICA ===== */
