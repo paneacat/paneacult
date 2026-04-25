@@ -30,6 +30,9 @@ bottoniGenere.forEach(btn => {
 });
 
 // LOGICA COMBINATA
+const bottoniCategoria = document.querySelectorAll('.filtri-buttons [data-filter]');
+const bottoniGenere = document.querySelectorAll('.filtri-buttons [data-genere]');
+
 function aggiornaFiltri() {
   cards.forEach(card => {
     const categoria = card.dataset.categoria;
