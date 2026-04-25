@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===== EMPTY STATE =====
     if (empty) {
-      empty.style.display = visibili === 0 ? "block" : "none";
+      empty.style.display = "flex";
     }
 
   }
