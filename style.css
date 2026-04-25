@@ -229,7 +229,7 @@ color: #0b1f26;
 border-color: var(--gold);
 }
 
-.filtro:hover {
+.filtro:not(.attivo):hover {
 border-color: var(--gold);
 color: var(--gold);
 background: rgba(255,191,0,0.1);
@@ -943,7 +943,7 @@ margin: 0 auto;
   margin-top: 12px;
 }
 .contact-container {
-font-size: 15px; /* 🔥 base più piccola */
+font-size: 15px; 
 max-width: 320px;
 margin: 60px auto 40px;
 text-align: center;
@@ -974,7 +974,7 @@ font-size: 15px;
 }
 .social {
 display: flex;
-justify-content: center; /* 🔥 fondamentale */
+justify-content: center;
 gap: 16px;
 margin-top: 16px;
 }
@@ -1003,14 +1003,14 @@ grid-template-columns: repeat(2, 1fr);
     display: block;
 }
 .menu a {
-font-size: 13.5px;   / prima era 12px */
+font-size: 13.5px;   
 letter-spacing: 1.8px;
 }
 .about-container {
 max-width: 520px;
 }
 .filtro {
-font-size: 12px;     / prima ~10.5/12 /
+font-size: 12px;   
 padding: 10px 20px;
 }
   
