@@ -260,11 +260,11 @@ margin: 30px 0;
 }
 
 .filtri-buttons {
-display: flex;
-flex-wrap: wrap;
-gap: 8px;
-justify-content: center;
-max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start; /* 🔥 NON PIÙ CENTER */
+  max-width: 600px;
 }
 
 .filtro {
@@ -277,7 +277,11 @@ border: 1px solid rgba(255,255,255,0.25);
 transition: all 0.2s ease;
 letter-spacing: 0.3px;
 }
-
+.filtro[data-genere="biopic"] {
+  flex-basis: 100%; /* 🔥 va a capo */
+  max-width: fit-content;
+  margin-top: 6px;
+}
 .filtro.attivo {
 background: var(--gold);
 color: #0b1f26;
