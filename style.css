@@ -554,7 +554,9 @@ border-color: var(--gold);
   align-items: center;
   gap: 60px;
 }
-
+.line {
+  display: inline;
+}
 .about-grid {
   display: grid;
   grid-template-columns: 220px 1fr;
@@ -886,7 +888,10 @@ margin: 0 auto;
   line-height: 1.4;
   margin-bottom: 16px;
 }
-
+.line {
+    display: block;
+    margin-top: 4px;
+}
 /* firma più vicina */
 .firma-img {
   width: 140px;
