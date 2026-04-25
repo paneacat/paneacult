@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const bottoniGenere = document.querySelectorAll('[data-genere]');
   const cards = document.querySelectorAll('.card');
   const empty = document.getElementById('emptyState');
+
   // ===== STATI =====
   let filtroCategoria = "tutti";
   let filtroGenere = "tutti";
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bottoniCategoria.forEach(btn => {
     btn.addEventListener('click', () => {
 
-      filtroCategoria = btn.dataset.filter;
+      filtroCategoria = btn.dataset.filter || "tutti";
 
       bottoniCategoria.forEach(b => b.classList.remove('attivo'));
       btn.classList.add('attivo');
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bottoniGenere.forEach(btn => {
     btn.addEventListener('click', () => {
 
-      filtroGenere = btn.dataset.genere;
+      filtroGenere = btn.dataset.genere || "tutti";
 
       bottoniGenere.forEach(b => b.classList.remove('attivo'));
       btn.classList.add('attivo');
@@ -35,47 +36,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ===== FILTRO COMBINATO =====
+  // ===== FILTRO =====
   function aggiornaFiltri() {
 
     let visibili = 0;
 
-cards.forEach(card => {
+    cards.forEach(card => {
 
-  const categoria = card.dataset.categoria;
-  const generi = (card.dataset.genere || "").split(" ");
+      const categoria = card.dataset.categoria || "";
+      const generi = (card.dataset.genere || "").split(" ");
 
-  const matchCategoria =
-    filtroCategoria === "tutti" || categoria === filtroCategoria;
+      const matchCategoria =
+        filtroCategoria === "tutti" || categoria === filtroCategoria;
 
-  const matchGenere =
-    filtroGenere === "tutti" || generi.includes(filtroGenere);
+      const matchGenere =
+        filtroGenere === "tutti" || generi.includes(filtroGenere);
 
-  if (matchCategoria && matchGenere) {
+      if (matchCategoria && matchGenere) {
+        card.style.display = "block";
+        visibili++;
+      } else {
+        card.style.display = "none";
+      }
 
-    card.classList.remove("hide");
-
-    requestAnimationFrame(() => {
-      card.classList.add("show");
     });
 
-    visibili++;
+    // ===== EMPTY STATE (SAFE) =====
+    if (!empty) return;
 
-  } else {
+    if (visibili === 0) {
 
-    card.classList.remove("show");
-    card.classList.add("hide");
+      empty.style.display = "block";
 
-  }
+      setTimeout(() => {
+        empty.classList.add("show");
+      }, 50);
 
-});
-    // ===== EMPTY STATE =====
-    if (empty) {
-  if (visibili === 0) {
-    empty.style.display = "block";
-  } else {
-    empty.style.display = "none";
-  }
+    } else {
+
+      empty.classList.remove("show");
+
+      setTimeout(() => {
+        empty.style.display = "none";
+      }, 300);
+
     }
+
+  }
 
 });
