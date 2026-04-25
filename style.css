@@ -556,14 +556,21 @@ color: var(--gold);
 border-color: var(--gold);
 }
 
-
-
 .about {
-max-width: 1000px;
-margin: 80px auto;
-padding: 0 20px;
-align-items: center; 
-gap: 60px;
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 0 20px;
+  align-items: center;
+  gap: 60px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 60px;
+  max-width: 800px;
+  margin: 60px auto 0;
+  align-items: center;
 }
 .about img {
 width: 100%;
