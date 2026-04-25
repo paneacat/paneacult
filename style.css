@@ -294,7 +294,9 @@ font-size: 12px;
 color: #aaa;
 line-height: 1.2;
 }
-
+.card.hide {
+  display: none;
+}
 /* TITOLI FILM */
 .card-info h3 {
 color: var(--gold) !important;
