@@ -701,14 +701,21 @@ font-size: 14px;
 }
 
 .firma-review {
-  margin-top: 14px;
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  opacity: 0.85;
+  margin: 20px 0 30px;
+  text-align: left;
 }
 
+.firma-review img {
+  width: 180px;
+  opacity: 0.9;
+  filter: brightness(0) invert(1);
+  transition: 0.3s ease;
+}
+
+.firma-review img:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
 .firma-review .nome {
   color: #fff;
   font-weight: 500;
