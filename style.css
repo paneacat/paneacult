@@ -1208,11 +1208,13 @@ letter-spacing: 1.8px;
 .about-hero img {
   width: 220px;
   height: 100%;
-  object-fit: cover;
+    border-radius: 50%;
+    object-fit: cover;
   transform: scale(1.05); /* leggero ingrandimento */
 }
   .about-container {
   margin: 0;
+  transform: translateY(25px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
