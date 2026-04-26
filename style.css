@@ -1224,7 +1224,7 @@ align-items: center;
 
 .filtri-row.generi {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, auto));
+    grid-template-columns: repeat(8, auto);
     justify-content: center;
     gap: 12px;
 }
