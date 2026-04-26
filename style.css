@@ -979,7 +979,7 @@ margin: 0 auto;
 .home-grid {
 grid-template-columns: repeat(2, 1fr);
 gap: 20px;
-  padding: 0 14px;
+  padding: 0 16px;
 }
   
 .archivio-grid {
@@ -987,8 +987,9 @@ grid-template-columns: repeat(2, 1fr);
 gap: 20px;
 padding: 0 14px;
 }
-  
-.home .card {
+
+  .home .card {
+width: 100%;
 padding-bottom: 10px;
 border-bottom: 1px solid rgba(255,255,255,0.05);
 }
