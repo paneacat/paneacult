@@ -285,8 +285,9 @@ margin-top: 20px;
 }
 .filtri-grid {
   display: grid;
+  grid-template-columns: repeat(2, auto); /* 🔥 mobile */
   justify-content: center;
-  gap: 12px 14px;
+  gap: 10px 12px;
 }
 /* bottoni */
 .filtro {
