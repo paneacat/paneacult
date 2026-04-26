@@ -327,9 +327,11 @@ background: rgba(255,191,0,0.1);
   height: 180px;
   object-fit: cover;
   display: block;
+  border-radius: 12px;
 }
 
 .card::after {
+  display: none;
   content: "";
   position: absolute;
   inset: 0;
@@ -340,6 +342,7 @@ background: rgba(255,191,0,0.1);
   );
   z-index: 1; /* 🔥 fondamentale */
 }
+
 /* quando sparisce */
 .card.hide {
   opacity: 0;
