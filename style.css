@@ -1211,10 +1211,16 @@ align-items: center;
   }
 .filtri {
     max-width: none; /* 🔥 IMPORTANTISSIMO */
+  align-items: center;
   }
-
+.filtri-row {
+  justify-content: center;
+  flex-wrap: nowrap; /* 🔥 niente a capo */
+  gap: 12px;
+}
   .filtri-row.generi {
     max-width: none;
+    overflow-x: auto
   }
 
 }
