@@ -257,6 +257,8 @@ margin-top: 20px;
   flex-direction: column;
   align-items: stretch;
   width: 100%;
+  gap: 18px; /* 🔥 più respiro tra le due righe */
+  margin: 30px auto 30px;
 }
 
 .filtri-row {
@@ -278,6 +280,7 @@ margin-top: 20px;
 
 .filtri-row.generi {
   max-width: 420px;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 /* bottoni */
@@ -289,6 +292,7 @@ margin-top: 20px;
   color: #aaa;
   border: 1px solid rgba(255,255,255,0.25);
   transition: all 0.2s ease;
+  flex: 0 0 auto;
 }
 
 /* attivo */
@@ -1217,11 +1221,19 @@ align-items: center;
   gap: 12px;
 }
 
-  .filtri-row.generi {
-    max-width: 900px;
-    margin: 0 auto;
-    justify-content: center;
+ .filtri-row.generi {
+    flex-wrap: nowrap;              /* 🔥 niente a capo */
+    overflow-x: auto;               /* 🔥 scroll */
+    justify-content: flex-start;    /* 🔥 parte da sinistra */
+    gap: 12px;
+    padding-bottom: 6px;            /* spazio per scroll */
+    scrollbar-width: none;          /* Firefox */
   }
+
+  .filtri-row.generi::-webkit-scrollbar {
+    display: none;                  /* Chrome */
+  }
+  
   .filtri-row.generi .filtro {
     flex: 0 0 auto;
     white-space: nowrap;
