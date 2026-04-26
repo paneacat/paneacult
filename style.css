@@ -380,17 +380,17 @@ color: #ccc;
   left: 12px;
   z-index: 2;
   color: white;
-  margin-top: 0;
+  margin-top: 6px;
   text-align: left;
   padding-top: 0;
 }
 
 .card-info p {
-color: #aaa;
 line-height: 1.2;
-   margin-top: 0;
-  opacity: 0.7;
-  font-size: 12px;
+opacity: 0.7;
+margin-top: 2px;  /* 🔥 quasi attaccato */
+font-size: 13px;
+color: #aaa;
 }
 
 /* TITOLI FILM */
@@ -400,7 +400,8 @@ font-size: 16px;
 font-weight: 500;
 letter-spacing: 0.2px;
 transition: 0.2s ease;  
-  margin-bottom: 2px; /* 🔥 più vicino al regista */
+  letter-spacing: 0.2px;
+  margin-bottom: 0; /* 🔥 più vicino al regista */
   line-height: 1.2;
 }
 
