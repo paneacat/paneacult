@@ -1214,7 +1214,7 @@ align-items: center;
   margin-top: 120px;
   }
   .filtri {
-    align-items: flex-start;
+  align-items: center;
   }
   .filtri-row {
   justify-content: center;
