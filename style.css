@@ -254,8 +254,8 @@ margin-top: 20px;
 .filtri-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
+  justify-content: flex-start; /* mobile */
 }
 
 /* 🔥 QUESTO È IL TRUCCO */
@@ -276,12 +276,11 @@ align-items: center;
   gap: 12px;
 }
 
-/* tutte le righe (default mobile) */
 .filtri-row {
   display: flex;
-  justify-content: center;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
 }
 
 /* 🔥 SOLO l’ultima riga (Biopic) */
@@ -319,11 +318,12 @@ letter-spacing: 0.3px;
   border: 1px solid rgba(255,255,255,0.25);
   transition: all 0.2s ease;
 }
+
 .filtro[data-genere="biopic"] {
-  flex-basis: 100%;     /* va a capo */
-  width: fit-content;   /* NON occupa tutta la riga */
-  margin-top: 6px;
+  flex-basis: 100%;
+  width: fit-content;
 }
+
 .filtri-row.generi {
   display: flex;
   justify-content: flex-start;
@@ -1242,12 +1242,6 @@ padding: 10px 20px;
 .filtri {
     align-items: flex-start;
   }
-
-  .filtri-row {
-    justify-content: flex-start;
-    width: 100%;
-    max-width: 900px;
-  }
   
 .archivio-grid {
 grid-template-columns: repeat(3, 1fr);
@@ -1283,4 +1277,7 @@ align-items: center;
 .newsletter {
   margin-top: 120px;
   }
+    .filtri-row {
+    justify-content: center;
+    }
 }
