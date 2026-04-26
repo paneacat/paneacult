@@ -1195,13 +1195,7 @@ letter-spacing: 1.8px;
 
 .about-hero img {
   width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-top: 45px; /* 👈 SPINGE LA FOTO GIÙ */
-}
-
-.about-hero img {
+  margin-top: 45px;
   height: 220px;      /* 🔥 fondamentale: deve essere uguale alla width */
   object-fit: cover;  /* 🔥 evita deformazioni */
   border-radius: 50%; /* 🔥 QUESTO la rende rotonda */
