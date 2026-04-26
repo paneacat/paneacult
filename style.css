@@ -316,6 +316,7 @@ background: rgba(255,191,0,0.1);
   position: relative;
   overflow: hidden;
   border-radius: 12px;
+  margin-bottom: 0;
 }
 
 .card img {
@@ -675,7 +676,9 @@ margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-
+.home-grid {
+  gap: 20px;
+}
 .home-grid .card img {
 border-radius: 6px
 }
