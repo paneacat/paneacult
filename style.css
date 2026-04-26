@@ -1290,3 +1290,12 @@ align-items: center;
     flex: 0 0 auto;
 }
 }
+/* ===== FIX HOME DEFINITIVO ===== */
+
+.home .home-grid {
+  display: grid;
+  grid-template-columns: 1fr !important;
+  max-width: 700px;
+  margin: 0 auto;
+  gap: 30px;
+}
