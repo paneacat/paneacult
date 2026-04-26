@@ -956,11 +956,9 @@ max-width: 95%;
 margin: 0 auto;
 }
 
- 
 .home-grid {
-  grid-template-columns: 1fr; /* 🔥 fix definitivo */
+    grid-template-columns: repeat(2, 1fr);
 }
-  
 .archivio-grid {
 grid-template-columns: repeat(2, 1fr);
 gap: 20px;
@@ -1227,7 +1225,6 @@ letter-spacing: 1.8px;
 /* HOME → cinematica */
   
 .home-grid {
-grid-template-columns: 260px 1fr;
 max-width: 900px;
 margin-bottom: 18px;
 margin: 0 auto;
@@ -1235,7 +1232,9 @@ margin: 0 auto;
   align-items: center; /* 🔥 cambia da end → center */
   gap: 40px;
 }
-
+  .home .home-grid {
+    grid-template-columns: 1fr;
+}
 .home .card img {
 aspect-ratio: 16 / 9;
 }
