@@ -1233,7 +1233,9 @@ letter-spacing: 1.8px;
     margin: 0 auto;
     gap: 60px;
 }
-
+.home .card {
+  margin-bottom: 10px;
+}
   .home .card img {
     width: 100%;
     object-fit: cover;
