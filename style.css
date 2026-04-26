@@ -398,25 +398,18 @@ color: #ccc;
   padding-top: 0;
 }
 
-.card-info p {
-line-height: 1.2;
-opacity: 0.7;
-margin-top: 2px;  /* 🔥 quasi attaccato */
-font-size: 13px;
-color: #aaa;
+/* TITOLO */
+.card-info h3 {
+  margin: 0; /* 🔥 reset totale */
+  margin-bottom: 2px; /* attaccato al regista */
+  line-height: 1.2;
 }
 
-/* TITOLI FILM */
-.card-info h3 {
-color: var(--gold) !important;
-font-size: 16px;
-font-weight: 500;
-letter-spacing: 0.2px;
-transition: 0.2s ease;  
-  letter-spacing: 0.2px;
-  margin-bottom: 0; /* 🔥 più vicino al regista */
+/* REGISTA */
+.card-info p {
+  margin: 0;
+  margin-top: 0; /* 🔥 niente stacco */
   line-height: 1.2;
-  margin-top: 0;
 }
 
 /* ===== LAYOUT ===== */
@@ -737,11 +730,9 @@ font-size: 14px;
 }
 
 .rating {
+  margin-top: 6px;
+  margin-bottom: 4px; /* 🔥 meno spazio sotto */
   display: block;
-  text-align: left;   /* 🔥 allineate a sinistra */
-  position: static;
-  margin-top: 8px;
-  margin-bottom: 6px;
 }
 
 .firma-review {
