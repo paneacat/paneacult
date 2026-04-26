@@ -1199,18 +1199,16 @@ letter-spacing: 1.8px;
   align-items: stretch;
   }
 
-  .about-hero {
+.about-hero {
   display: flex;
-    height: 100%;
-  align-items: flex-end; /* 🔥 allinea la foto in basso */
-  }
-  
+  align-items: flex-end;
+}
+
 .about-hero img {
   width: 220px;
-  height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-  transform: scale(1.05); /* leggero ingrandimento */
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
 }
   .about-container {
   margin: 0;
