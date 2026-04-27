@@ -1208,6 +1208,8 @@ margin: 0 auto 10px;
     max-width: 280px;
   text-align: left;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ===== TABLET ===== */
