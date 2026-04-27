@@ -1334,8 +1334,9 @@ align-items: center;
 .home .home-grid {
   grid-template-columns: 1fr !important;
 }
+
 .subtitle {
-  font-size: 13px;
+  font-size: 22px;
   line-height: 1.6;
   color: #888;
   margin-top: 12px;
@@ -1343,3 +1344,6 @@ align-items: center;
   max-width: 650px;
   font-weight: 300;
 }
+
+
+
