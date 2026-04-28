@@ -1219,7 +1219,6 @@ color: var(--gold);
     padding: 7px 14px;
   }
 
-  /* ===== REVIEW ===== */
 
   .subtitle {
     text-align: left;
@@ -1235,27 +1234,26 @@ color: var(--gold);
     color: #9aa3a8;
   }
 
-  .review-hero {
+  /* ===== REVIEW ===== */
+
+.review-hero {
   position: relative;
-  margin-bottom: 18px;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .review-hero img {
   width: 100%;
-  height: 260px; /* leggermente più alto */
+  height: 260px;
   object-fit: cover;
-  object-position: center;
   display: block;
 
-  filter: none; /* niente velo */
-
-  border-radius: 18px; /* morbido ma elegante */
-
-  /* ✨ effetto editoriale leggero */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  border-radius: 16px; /* 🔥 forza coerenza */
 }
 
-  .review-hero::after {
+/* 🚫 ELIMINA COMPLETAMENTE overlay */
+.review-hero::after {
+  content: none !important;
   display: none;
   }
 
