@@ -1212,7 +1212,25 @@ white-space: normal;   /* 🔥 cambia questo */
 overflow: visible;     /* 🔥 */
 text-overflow: unset;  /* 🔥 */
 }
+
+.review-hero {
+  position: relative;
+}
+
+.review-hero img {
+  filter: contrast(1.05) brightness(0.95);
+}
   
+.review-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 60%,
+    rgba(11,31,38,0.9) 100%
+  );
+}
 /* ===== TABLET ===== */
 @media (min-width: 600px) and (max-width: 899px) {
 
