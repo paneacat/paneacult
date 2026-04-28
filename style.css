@@ -108,13 +108,14 @@ opacity: 1;
 }
 
 .subtitle {
-  font-size: 1.05rem;
-  line-height: 1.45;
-  color: var(--muted);
   font-weight: 300;
   max-width: 520px;
   margin: 8px 0 16px;
   letter-spacing: 0.2px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #9aa3a8;
+  margin-top: 8px;
 }
 
 .series {
@@ -597,19 +598,35 @@ max-width: 500px;
 .review-hero {
   border-radius: 16px;
   overflow: hidden;
+  position: relative;
 }
 
 .review-hero img {
+  width: 100%;
+  height: 320px;
   object-fit: cover;
   display: block;
+}
+
+.review-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 240px;
+  height: 60%;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 31, 38, 0) 0%,
+    rgba(11, 31, 38, 0.9) 100%
+  );
 }
 
 .review-container {
   max-width: 900px; /* uguale alla barra */
   margin: 0 auto;
   padding: 0 24px;
+  margin-top: 20px;
 }
 
 .review-container h1 {
