@@ -963,13 +963,14 @@ color: var(--gold);
 .review-hero::after {
   content: none !important;
 }
-.logo-subtitle {
+
+.title-subtitle {
   text-align: center;
   font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--muted);
-  margin-top: -10px; /* 🔥 avvicina al logo */
+  margin-top: -10px; /* avvicina al titolo */
   margin-bottom: 18px;
   opacity: 0.8;
 }
@@ -1275,7 +1276,8 @@ color: var(--gold);
     margin-top: 20px;
     padding: 0 16px;
   }
-  .logo-subtitle {
+
+.title-subtitle {
   font-size: 10px;
   letter-spacing: 1.5px;
   margin-top: -6px;
