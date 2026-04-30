@@ -81,6 +81,8 @@ button {
   margin-top: 13px;
   scroll-snap-type: x mandatory;
   max-width: 1000px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .slider::-webkit-scrollbar {
@@ -130,11 +132,6 @@ button {
 .all-inner {
   text-align: center;
   color: var(--gold);
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.slider {
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -809,7 +806,6 @@ margin-bottom: 20px;
   margin-bottom: 20px;
 }
 .home-grid {
-  grid-template-columns: 1fr; /* 🔥 sempre 1 colonna */
   gap: 30px;
   max-width: 700px;
   margin: 0 auto;
@@ -1186,9 +1182,6 @@ color: var(--gold);
     margin: 0 auto;
   }
 
-  .home-grid {
-    grid-template-columns: 1fr;
-  }
 
   .archivio-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1466,9 +1459,6 @@ color: var(--gold);
   scroll-snap-align: start;
   scroll-snap-type: x mandatory;
 }
-  .home .home-grid {
-    grid-template-columns: 1fr;
-  }
   /* ===== CARD ===== */
 .slide-card {
   width: 100%;
@@ -1684,11 +1674,6 @@ padding-top: 15px;
 }
 }
 /* ===== FIX HOME DEFINITIVO ===== */
-
-.home .home-grid {
-  grid-template-columns: 1fr;
-}
-
 
   .slide-card {
     max-width: 320px;
