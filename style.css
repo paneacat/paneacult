@@ -51,22 +51,6 @@ button {
   margin-top: 40px;
 }
 
-/* 🎬 IMMAGINE CINEMA */
-.cinema-banner img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 0;
-  filter: brightness(0.85);
-  object-position: center 70%; /* 👈 SCENDE */
-  }
-
-
-/* TESTO */
-.home-intro {
-  padding: 20px;
-}
-
 .home-intro h2 {
   font-family: 'Playfair Display', serif;
   font-size: 22px;
