@@ -1493,14 +1493,14 @@ color: var(--gold);
   }
 
   .slider {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 6px;
+  padding-right: 6px;
   scroll-snap-align: start;
   scroll-snap-type: x mandatory;
   display: flex;
-  gap: 16px;
+  gap: 6px;
   overflow-x: auto;
-  scroll-padding-left: 16px; 
+  scroll-padding-left: 6px; 
  }
   
 .slide-card {
