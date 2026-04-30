@@ -81,8 +81,6 @@ button {
   margin-top: 13px;
   scroll-snap-type: x mandatory;
   max-width: 1000px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .slider::-webkit-scrollbar {
