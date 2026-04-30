@@ -44,12 +44,7 @@ button {
 --gold: #ffbf00;
 --text: #eaeaea;
 --muted: #aaa;
-}
-
-
-.home-cinema {
-  margin-top: 40px;
-}
+}  
 
 .home-intro {
   padding: 20px;
@@ -71,6 +66,7 @@ button {
 .home-cinema {
   margin: 0 auto;
   max-width: 1200px; /* prima 1100 */
+  margin-top: 40px;
   }
 
 /* 🎞️ SLIDER */
