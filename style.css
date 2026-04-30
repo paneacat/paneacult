@@ -1112,6 +1112,41 @@ color: var(--gold);
   margin: 8px auto 0;
   opacity: 0.6;
 }
+/* ===== FILTRI ===== */
+.filtri-row {
+  display: flex;
+  justify-content: flex-start; /* allineato a sinistra = più moderno */
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filtri-row.top {
+  margin-bottom: 6px;
+}
+
+.filtri-row.bottom {
+  max-width: 800px;
+}
+
+/* nasconde scrollbar (opzionale) */
+.filtri-row.generi::-webkit-scrollbar {
+  display: none;
+}
+
+.filtri-row.generi .filtro {
+  flex: 0 0 auto;
+}
+
+
+/* ===== HOME GRID ===== */
+
+/* Desktop (default) */
+.home .home-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonne pulite */
+  gap: 20px;
+}
+
 /* ===== MOBILE ===== */
 @media (max-width: 599px) {
 
@@ -1431,6 +1466,53 @@ color: var(--gold);
   scroll-snap-align: start;
   scroll-snap-type: x mandatory;
 }
+  .home .home-grid {
+    grid-template-columns: 1fr;
+  }
+  /* ===== CARD ===== */
+.slide-card {
+  width: 100%;
+}
+
+/* immagini proporzionate e pulite */
+.slide-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* IMPORTANTISSIMO */
+  border-radius: 12px;
+}
+
+
+/* ===== SLIDER ===== */
+.slider {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 0 20px;
+  scroll-snap-type: x mandatory;
+}
+
+/* card nello slider (stile Netflix) */
+.slider .slide-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+}
+
+
+/* ===== FIX GENERALI ===== */
+
+/* evita layout “schiacciato” */
+.container,
+.section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* centratura contenuti ma con respiro */
+body {
+  overflow-x: hidden;
+}
 }
 
 /* ===== TABLET ===== */
@@ -1604,7 +1686,7 @@ padding-top: 15px;
 /* ===== FIX HOME DEFINITIVO ===== */
 
 .home .home-grid {
-  grid-template-columns: 1fr !important;
+  grid-template-columns: 1fr;
 }
 
 
