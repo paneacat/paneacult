@@ -1644,14 +1644,4 @@ padding-top: 15px;
     flex: 0 0 auto;
 }
 }
-/* ===== FIX HOME DEFINITIVO ===== */
-
-.home .home-grid {
-  grid-template-columns: 1fr;
-}
-
-  .slide-card img {
-    height: 200px;
-    aspect-ratio: auto; /* evita schiacciamenti strani */
-  }
 
