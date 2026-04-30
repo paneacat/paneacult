@@ -58,7 +58,9 @@ button {
   object-fit: cover;
   border-radius: 0;
   filter: brightness(0.85);
-}
+  object-position: center 70%; /* 👈 SCENDE */
+  }
+
 
 /* TESTO */
 .home-intro {
