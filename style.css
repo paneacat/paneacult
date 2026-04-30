@@ -1420,6 +1420,8 @@ color: var(--gold);
   letter-spacing: 1.5px;
   margin-bottom: 10px;
   }
+
+
   .slider {
   padding-left: 16px;
   padding-right: 16px;
@@ -1428,12 +1430,9 @@ color: var(--gold);
   display: flex;
   gap: 16px;
   overflow-x: auto;
+  scroll-padding-left: 16px;
+ 
  }
-  
-  /* ===== CARD ===== */
-.slide-card {
-  width: 100%;
-}
 
 /* immagini proporzionate e pulite */
 .slide-card img {
@@ -1464,11 +1463,6 @@ color: var(--gold);
 body {
   overflow-x: hidden;
 }
-  .slider {
-    padding-left: 16px;
-    padding-right: 16px;
-    scroll-padding-left: 16px;
-  }
 }
 
 /* ===== TABLET ===== */
