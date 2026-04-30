@@ -1598,5 +1598,18 @@ padding-top: 15px;
   grid-template-columns: 1fr !important;
 }
 
+  .slider {
+    justify-content: center;
+  }
 
+  .slide-card {
+    flex: 0 0 320px; /* 🔥 larghezza fissa elegante */
+    max-width: 320px;
+  }
 
+  .slide-card img {
+    height: 200px; /* 🔥 controlli l’altezza */
+    aspect-ratio: auto; /* evita schiacciamenti strani */
+  }
+
+}
