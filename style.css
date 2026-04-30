@@ -1427,6 +1427,15 @@ color: var(--gold);
   letter-spacing: 1.5px;
   margin-bottom: 10px;
   }
+  .slider {
+  padding-left: 16px;
+  padding-right: 16px;
+  scroll-snap-align: start;
+}
+
+.slider {
+  scroll-snap-type: x mandatory;
+}
 }
 
 /* ===== TABLET ===== */
