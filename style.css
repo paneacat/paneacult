@@ -90,13 +90,9 @@ button {
 }
 
 .slide-card {
-  text-decoration: none;
   flex: 0 0 80%;
-  scroll-snap-align: center;
-  transform: scale(0.92);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0.6;
-  }
+  scroll-snap-align: start;
+}
 
 .slide-card img {
   flex: 0 0 480px;
