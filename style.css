@@ -95,7 +95,7 @@ button {
 }
 
 .slide-card img {
-  flex: 0 0 480px;
+  width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 14px;
@@ -125,6 +125,7 @@ button {
   border-radius: 12px;
   flex: 0 0 80%;
   height: 180px;
+  aspect-ratio: 16 / 9;
   }
 
 .all-inner {
@@ -132,9 +133,6 @@ button {
   color: var(--gold);
 }
 
-.slide-card:last-child {
-  margin-right: 4px;
-}
 .slide-card:focus-within,
 .slide-card:hover {
   transform: scale(1);
