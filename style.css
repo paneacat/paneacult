@@ -1465,6 +1465,11 @@ color: var(--gold);
 body {
   overflow-x: hidden;
 }
+  .slider {
+    padding-left: 16px;
+    padding-right: 16px;
+    scroll-padding-left: 16px;
+  }
 }
 
 /* ===== TABLET ===== */
