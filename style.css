@@ -132,6 +132,34 @@ button {
   text-align: center;
   color: var(--gold);
 }
+.slider {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.slide-card:first-child {
+  margin-left: 4px;
+}
+
+.slide-card:last-child {
+  margin-right: 4px;
+}
+
+.slide-card img {
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+}
+.slider {
+  scroll-snap-type: x mandatory;
+}
+
+.slide-card {
+  scroll-snap-align: start;
+}
+.slider {
+  -webkit-overflow-scrolling: touch;
+}
+
 
 
 
