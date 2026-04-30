@@ -66,7 +66,19 @@ document.querySelector('.prev').onclick = () => {
   slider.scrollBy({ left: -300, behavior: 'smooth' });
 };                  
 
+const slider = document.querySelector('.slider');
+const next = document.querySelector('.slider-btn.next');
+const prev = document.querySelector('.slider-btn.prev');
 
+const scrollAmount = 360; // distanza di scorrimento
+
+next.addEventListener('click', () => {
+  slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+});
+
+prev.addEventListener('click', () => {
+  slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+});
   // ===== FILTRO =====
   function aggiornaFiltri() {
 
