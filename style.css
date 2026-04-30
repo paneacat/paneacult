@@ -78,10 +78,11 @@ button {
   overflow-x: auto;
   padding-left: 20px;   /* 👈 QUESTO è quello che ti serve */
   padding-right: 20px;
-  scroll-padding-left: 20px;
   scroll-snap-type: x mandatory;
+  scroll-padding-left: 20px;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  position: relative;
 }
 
 .slider::-webkit-scrollbar {
@@ -89,9 +90,12 @@ button {
 }
 
 .slide-card {
-  flex: 0 0 480px;
   text-decoration: none;
-  scroll-snap-align: start;
+  flex: 0 0 80%;
+  scroll-snap-align: center;
+  transform: scale(0.92);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;
   }
 
 .slide-card img {
@@ -135,7 +139,30 @@ button {
 .slide-card:last-child {
   margin-right: 4px;
 }
+.slide-card:focus-within,
+.slide-card:hover {
+  transform: scale(1);
+  opacity: 1;
+}
+.slider::before,
+.slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.slider::before {
+  left: 0;
+  background: linear-gradient(to right, #0b1f26, transparent);
+}
 
+.slider::after {
+  right: 0;
+  background: linear-gradient(to left, #0b1f26, transparent);
+}
 
 /* ===== BASE ===== */
 body {
@@ -1431,13 +1458,15 @@ color: var(--gold);
   display: flex;
   gap: 16px;
   overflow-x: auto;
-  scroll-padding-left: 16px;
- 
+  scroll-padding-left: 16px; 
  }
+  
 .slide-card {
     flex: 0 0 85%;
 }
+  
 /* immagini proporzionate e pulite */
+  
 .slide-card img {
   width: 100%;
   height: 200px;
