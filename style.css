@@ -1,6 +1,10 @@
-/* =========================
-   RESET
-========================= */
+html {
+  overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== RESET ===== */
 *,
 *::before,
 *::after {
@@ -10,180 +14,169 @@
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
   display: block;
 }
 
-/* =========================
-   VARIABLES
-========================= */
-:root {
-  --bg: #0b1f26;
-  --gold: #fcc10e;
-  --text: #eaeaea;
-  --muted: #aaa;
-
-  --radius: 12px;
-  --max-width: 1200px;
+ul, ol {
+  list-style: none;
 }
 
-/* =========================
-   BASE
-========================= */
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* ===== VAR ===== */
+:root {
+  --bg: #0b1f26;
+  --gold: #ffbf00;
+  --text: #eaeaea;
+  --muted: #aaa;
+}
+
+/* ===== BASE ===== */
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
+  padding-top: 13px;
+  overflow-x: hidden;
 }
 
-.container {
-  max-width: var(--max-width);
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+/* ===== LAYOUT ===== */
+.container,
+.home-cinema {
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .section {
-  margin: 60px 0;
+  margin: 40px 0;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* ===== HEADER ===== */
+.site-header {
+  position: relative;
+  z-index: 10;
+  padding-bottom: 15px;
+}
+
 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 48px;
+  font-size: 55px;
   color: var(--gold);
   text-align: center;
-  margin: 20px 0 10px;
+  margin: 0 auto 14px;
+}
+
+.logo-subtitle {
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: -10px;
+  margin-bottom: 18px;
+  opacity: 0.8;
 }
 
 .menu {
   display: flex;
   justify-content: center;
   gap: 24px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .menu a {
   font-size: 12px;
   letter-spacing: 1.5px;
-  text-transform: uppercase;
   color: var(--muted);
+  text-transform: uppercase;
+  position: relative;
+  opacity: 0.8;
 }
 
 .menu a.active {
   color: var(--gold);
+  opacity: 1;
 }
 
-/* =========================
-   HERO
-========================= */
+/* ===== HERO ===== */
 .hero {
   text-align: center;
+  margin: 40px auto 30px;
   max-width: 600px;
-  margin: 40px auto;
 }
 
 .hero h1 {
-  font-size: clamp(22px, 4vw, 28px);
+  font-size: clamp(20px, 4vw, 26px);
   font-weight: 300;
 }
 
-.hero p {
-  font-size: 14px;
-  color: var(--muted);
-  margin-top: 10px;
+.hero-kicker {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.8;
+  margin-bottom: 12px;
 }
 
-/* =========================
-   FILTRI
-========================= */
+/* ===== FILTRI ===== */
 .filtri {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  margin: 30px 0;
+  gap: 14px;
+  margin: 30px auto;
 }
 
 .filtri-row {
   display: flex;
+  gap: 12px;
   flex-wrap: wrap;
-  gap: 10px;
   justify-content: flex-start;
+  width: 100%;
+  max-width: 900px;
 }
 
 .filtro {
-  padding: 6px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 16px;
   font-size: 12px;
-  color: var(--muted);
+  border-radius: 999px;
+  color: #aaa;
+  border: 1px solid rgba(255,255,255,0.25);
 }
 
 .filtro.attivo {
   background: var(--gold);
-  color: #000;
+  color: #0b1f26;
 }
 
-/* =========================
-   GRID (ARCHIVIO / HOME)
-========================= */
-.grid {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-@media (max-width: 899px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 599px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* =========================
-   CARD
-========================= */
-.card {
-  display: block;
-}
-
-.card img {
-  height: 200px;
-  object-fit: cover;
-  border-radius: var(--radius);
-}
-
-.card-info {
-  margin-top: 8px;
-}
-
-.card-info h3 {
-  font-size: 14px;
-  color: var(--gold);
-  margin-bottom: 2px;
-}
-
-.card-info p {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-/* =========================
-   SLIDER
-========================= */
+/* ===== SLIDER (UNIFICATO) ===== */
 .slider {
   display: flex;
   gap: 16px;
   overflow-x: auto;
   padding: 0 20px;
+  margin-top: 13px;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .slider::-webkit-scrollbar {
@@ -198,42 +191,96 @@ body {
 .slide-card img {
   height: 180px;
   object-fit: cover;
-  border-radius: var(--radius);
+  border-radius: 12px;
 }
 
-/* =========================
-   CTA / NEWSLETTER
-========================= */
+/* ===== GRID ===== */
+.grid {
+  display: grid;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* ===== HOME GRID FIX ===== */
+.home-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 899px) {
+  .home-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== CARD ===== */
+.card {
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-info {
+  margin-top: 6px;
+}
+
+.card-info h3 {
+  margin-bottom: 2px;
+}
+
+.card-info p {
+  margin: 0;
+}
+
+/* ===== ARCHIVIO ===== */
+.archivio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.archivio-grid .card img {
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+}
+
+/* ===== REVIEW ===== */
+.review-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 24px;
+}
+
+.review-text {
+  max-width: 650px;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* ===== NEWSLETTER ===== */
 .newsletter {
   text-align: center;
-  margin: 80px 0;
+  margin: 100px auto 80px;
 }
 
 .newsletter h2 {
   color: var(--gold);
-  margin-bottom: 10px;
 }
 
-.newsletter p {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 20px;
-}
-
-.newsletter button {
-  background: var(--gold);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-/* =========================
-   FOOTER
-========================= */
+/* ===== FOOTER ===== */
 footer {
+  margin: 60px auto 30px;
   text-align: center;
   font-size: 11px;
   color: #777;
-  margin: 60px 0 30px;
 }
