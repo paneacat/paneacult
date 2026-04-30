@@ -76,8 +76,8 @@ button {
   display: flex;
   gap: 16px;
   overflow-x: auto;
-  padding-left: 20px;   /* 👈 QUESTO è quello che ti serve */
-  padding-right: 20px;
+  padding-left: 10px;   /* 👈 QUESTO è quello che ti serve */
+  padding-right: 10px;
   margin-top: 20px;
   scroll-snap-type: x mandatory;
   scroll-padding-left: 20px;
@@ -137,25 +137,6 @@ button {
 .slide-card:hover {
   transform: scale(1);
   opacity: 1;
-}
-.slider::before,
-.slider::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 40px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
-.slider::before {
-  left: 0;
-  background: linear-gradient(to right, #0b1f26, transparent);
-}
-
-.slider::after {
-  right: 0;
-  background: linear-gradient(to left, #0b1f26, transparent);
 }
 
 .slider-wrapper {
@@ -1709,7 +1690,7 @@ padding-top: 15px;
   transform: translateY(-50%);
   width: 40px;
   height: 40px;
-
+  opacity: 0;
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.2);
 
@@ -1724,9 +1705,12 @@ padding-top: 15px;
   z-index: 5;
   font-size: 22px;
   }
+
   
-.slider-btn.prev { left: 10px; }
-.slider-btn.next { right: 10px; }
+  .slider-btn.next {
+    display: flex;
+    right: 10px;
+  }
   
   .slider-btn:hover {
   background: var(--gold);
