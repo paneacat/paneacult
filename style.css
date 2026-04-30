@@ -1108,6 +1108,7 @@ color: var(--gold);
   margin-bottom: 18px;
   opacity: 0.8;
 }
+
 .hero-kicker {
   text-align: center;
   font-size: 13px;
@@ -1117,6 +1118,7 @@ color: var(--gold);
   opacity: 0.8;
   margin-bottom: 12px;
 }
+
 .hero-kicker::after {
   content: "";
   display: block;
@@ -1725,6 +1727,16 @@ padding-top: 15px;
   
   .slide-card img {
     height: 280px;
+  }
+  .slide-card.all {
+  flex: 0 0 80%;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  border: 1px solid rgba(255,255,255,0.2);
+  align-items: center;
+  border-radius: 14px;
+  justify-content: center; 
+  scroll-snap-align: start;
   }
 }
 
