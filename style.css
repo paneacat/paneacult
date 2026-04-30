@@ -1430,9 +1430,6 @@ color: var(--gold);
   padding-left: 16px;
   padding-right: 16px;
   scroll-snap-align: start;
-}
-
-.slider {
   scroll-snap-type: x mandatory;
 }
 }
