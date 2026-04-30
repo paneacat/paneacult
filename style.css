@@ -78,6 +78,7 @@ button {
   overflow-x: auto;
   padding-left: 20px;   /* 👈 QUESTO è quello che ti serve */
   padding-right: 20px;
+  margin-top: 20px;
   scroll-snap-type: x mandatory;
   scroll-padding-left: 20px;
   scroll-behavior: smooth;
