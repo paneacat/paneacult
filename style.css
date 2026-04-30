@@ -164,6 +164,49 @@ button {
   background: linear-gradient(to left, #0b1f26, transparent);
 }
 
+.slider-wrapper {
+  position: relative;
+}
+
+/* frecce */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  background: rgba(11,31,38,0.8);
+  color: var(--gold);
+
+  font-size: 20px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 3;
+  transition: 0.2s ease;
+}
+
+.slider-btn:hover {
+  background: var(--gold);
+  color: #0b1f26;
+}
+
+/* posizioni */
+.slider-btn.prev {
+  left: 8px;
+}
+
+.slider-btn.next {
+  right: 8px;
+}
 /* ===== BASE ===== */
 body {
 font-family: 'Inter', sans-serif;
