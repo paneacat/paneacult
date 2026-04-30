@@ -80,6 +80,7 @@ button {
   padding-right: 20px;
   scroll-padding-left: 20px;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -122,8 +123,8 @@ button {
   justify-content: center;
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 12px;
+  flex: 0 0 80%;
   height: 180px;
-  flex: 0 0 480px; /* 👈 UGUALE alle altre */
   }
 
 .all-inner {
@@ -1433,7 +1434,9 @@ color: var(--gold);
   scroll-padding-left: 16px;
  
  }
-
+.slide-card {
+    flex: 0 0 85%;
+}
 /* immagini proporzionate e pulite */
 .slide-card img {
   width: 100%;
@@ -1446,6 +1449,11 @@ color: var(--gold);
 .slider .slide-card {
   flex: 0 0 300px;
   scroll-snap-align: start;
+
+}
+  
+  .slide-card.all {
+    flex: 0 0 85%;
 }
 
 
@@ -1631,5 +1639,9 @@ padding-top: 15px;
   .filtri-row.generi .filtro {
     flex: 0 0 auto;
 }
+.slide-card {
+  flex: 0 0 80%;
 }
+}
+
 
