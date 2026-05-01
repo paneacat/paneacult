@@ -67,7 +67,23 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+function updateArrow() {
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
 
+    if (slider.scrollLeft >= maxScroll - 5) {
+      next.style.opacity = "0";
+      next.style.pointerEvents = "none";
+    } else {
+      next.style.opacity = "0.6";
+      next.style.pointerEvents = "auto";
+    }
+  }
+
+  slider.addEventListener('scroll', updateArrow);
+  window.addEventListener('resize', updateArrow);
+
+  updateArrow(); // 👈 importantissimo all’avvio
+}
   // ===== FILTRO =====
   function aggiornaFiltri() {
 
