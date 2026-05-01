@@ -1576,11 +1576,7 @@ padding-top: 15px;
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-
-  padding-left: 20vw;
-  padding-right: 20vw;
+  padding: 0 40px;
 }
 
 /* fade laterale più soft */
@@ -1608,12 +1604,7 @@ padding-top: 15px;
 /* CARD */
 .slide-card,
 .slide-card-cta {
-  flex: 0 0 60%;
-  scroll-snap-align: center;
-
-  opacity: 0.4;
-  transform: scale(0.85);
-  transition: all 0.4s ease;
+  flex: 0 0 70%;
 }
 
 /* CARD ATTIVA */
