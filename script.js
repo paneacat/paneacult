@@ -85,23 +85,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== EFFETTO CINEMA DESKTOP =====
-function updateActive() {
-  if (!slider) return;
+  if (slider && slideCards.length > 0 && window.innerWidth >= 900) {
 
-  const center = slider.scrollLeft + slider.clientWidth / 2;
+    function updateActive() {
+      const center = slider.scrollLeft + slider.clientWidth / 2;
 
-    slideCards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      const cardCenter = rect.left + rect.width / 2;
+      slideCards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.left + rect.width / 2;
 
-      const isActive =
-        Math.abs(center - (cardCenter + slider.scrollLeft)) < rect.width / 2;
+        const isActive =
+          Math.abs(center - (cardCenter + slider.scrollLeft)) < rect.width / 2;
 
-      card.classList.toggle('is-active', isActive);
-    });
-  }
+        card.classList.toggle('is-active', isActive);
+      });
+    }
 
-  if (slider && window.innerWidth >= 900) {
     slider.addEventListener('scroll', updateActive);
     window.addEventListener('load', updateActive);
   }
@@ -137,8 +136,7 @@ function updateActive() {
     filtrati.forEach((card, i) => {
       card.style.display = i < visibiliMax ? "block" : "none";
     });
-if (!slider || slideCards.length === 0) return;
-    
+
     if (empty) {
       if (filtrati.length === 0) {
         empty.style.display = "block";
