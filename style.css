@@ -1125,13 +1125,17 @@ color: var(--gold);
   content: none !important;
 }
 
+.logo {
+  margin-bottom: 6px; /* 👈 prima era tipo 14px */
+}
+
 .logo-subtitle {
   text-align: center;
   font-size: 12px;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--muted);
-  margin-top: -8px; /* avvicina al titolo */
+  margin-top: -4px; /* avvicina al titolo */
   margin-bottom: 18px;
   opacity: 0.8;
 }
