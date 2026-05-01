@@ -149,13 +149,8 @@ button {
 .slider {
   display: flex;
   gap: 24px;
-
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-
-  padding-left: calc((100vw - 900px) / 2);
-  padding-right: calc((100vw - 900px) / 2);
-
+  scroll-snap-type: x mandatory;  
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
