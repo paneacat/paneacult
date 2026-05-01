@@ -1557,14 +1557,25 @@ padding-top: 15px;
   .filtri-row.generi .filtro {
     flex: 0 0 auto;
 }
-.slide-card,
-  .slide-card-cta {
-    flex: 0 0 32%;
-  }
+
+.slider {
+  justify-content: flex-start;
+}
+  
+.slide-card {
+  flex: 0 0 42%;
+  opacity: 0.6;
+}
+
+.slide-card-cta {
+  flex: 0 0 42%;
+  overflow: hidden;
+}
 
   .slide-card:hover,
   .slide-card-cta:hover {
     transform: scale(1.04);
+    opacity: 1;
   }
 
   .slide-card-cta:hover .cta-overlay {
