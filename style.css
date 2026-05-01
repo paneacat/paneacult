@@ -179,6 +179,23 @@ button {
 .slide-card-cta {
   flex: 0 0 40%;
   scroll-snap-align: start;
+  position: relative;
+}
+
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(11,31,38,0.6);
+  border-radius: 14px;
+
+  color: var(--gold);
+  font-size: 18px;
+  text-align: center;
 }
 
 .slide-card-cta img {
