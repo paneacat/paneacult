@@ -83,18 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== EFFETTO CINEMA DESKTOP =====
-  let cinemaInitialized = false;
-
-function initCinema() {
-
-  if (cinemaInitialized) return; // 👈 blocca duplicazioni
-  cinemaInitialized = true;
+  
+document.addEventListener('DOMContentLoaded', () => {
 
   const slider = document.querySelector('.slider');
   if (!slider) return;
 
   const cards = document.querySelectorAll('.slide-card, .slide-card-cta');
 
+  // ===== EFFETTO CINEMA =====
   function updateActive() {
     const center = slider.scrollLeft + slider.clientWidth / 2;
 
@@ -109,23 +106,12 @@ function initCinema() {
     });
   }
 
-  slider.addEventListener('scroll', updateActive);
-  window.addEventListener('load', updateActive);
-
-}
-
-// init iniziale
-if (window.innerWidth >= 900) {
-  initCinema();
-}
-
-// resize safe
-window.addEventListener('resize', () => {
   if (window.innerWidth >= 900) {
-    initCinema();
+    slider.addEventListener('scroll', updateActive);
+    window.addEventListener('load', updateActive);
   }
-});
 
+});
   // ===== FILTRO =====
   function aggiornaFiltri() {
 
