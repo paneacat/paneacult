@@ -100,18 +100,24 @@ button {
 
 /* bottone */
 .hero-cta {
-  margin-top: 25px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
 }
+.hero p {
+  text-align: center;
+}
+
 
 .hero-cta a {
-  padding: 12px 26px;
+  display: inline-block;
+  padding: 12px 24px;
   border-radius: 30px;
   background: var(--gold);
   color: #0b1f26;
   font-size: 14px;
-  transition: 0.2s ease;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 .hero-cta:hover {
