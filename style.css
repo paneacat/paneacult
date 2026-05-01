@@ -1581,8 +1581,8 @@ padding-top: 15px;
 /* CARD */
 .slide-card,
 .slide-card-cta {
-  flex: 0 0 60%;
-  min-width: 60%; /* 🔥 QUESTA È LA CHIAVE */
+  flex: 0 0 400px;
+  min-width: 400px;
   scroll-snap-align: center;
   opacity: 0.4;
   transform: scale(0.85);
