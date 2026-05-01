@@ -90,9 +90,12 @@ button {
 .slider::-webkit-scrollbar {
   display: none;
 }
-
+.slide-card {
+  flex: 0 0 75%;
+}
 .slide-card-cta {
   position: relative;
+  flex: 0 0 75%;
 }
 
 .slide-card-cta img {
