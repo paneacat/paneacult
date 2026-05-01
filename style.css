@@ -1383,18 +1383,19 @@ color: var(--gold);
   }
   
   .slide-card {
-  flex: 0 0 80%;
+  flex: 0 0 88%;
+  opacity: 1;
 }
 
 .slide-card-cta {
-  flex: 0 0 80%;
+  flex: 0 0 88%;
 }
-
-  .slide-card:hover,
+  
+.slide-card:hover,
   .slide-card-cta:hover {
-    transform: none;
-    box-shadow: none;
+    transform: none !important;
   }
+  
 .slide-card-cta:hover .cta-overlay {
     background: rgba(11,31,38,0.55);
 }
