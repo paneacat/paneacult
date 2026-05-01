@@ -1620,4 +1620,8 @@ padding-top: 15px;
     transform: scale(1);
     z-index: 2;
   }
+  .slider-wrapper {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  }
 }
