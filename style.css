@@ -167,13 +167,13 @@ button {
 }
 
 .slide-card {
-  flex: 0 0 32%;
+  flex: 0 0 45%;
   scroll-snap-align: start;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .slide-card-cta {
-  flex: 0 0 40%;
+  flex: 0 0 45%;
   scroll-snap-align: start;
   position: relative;
 }
@@ -195,7 +195,6 @@ button {
 }
 
 .slide-card-cta img {
-  width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 14px;
