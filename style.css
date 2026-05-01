@@ -138,7 +138,7 @@ button {
 }
 
 .home-section-title em {
-  font-family: 'Playfair Display', serif;
+  font-style: italic;
   color: var(--gold);
 }
 
