@@ -1592,4 +1592,7 @@ padding-top: 15px;
   transform: scale(1);
   z-index: 2;
 }
+  body {
+  background: red !important;
+  }
 }
