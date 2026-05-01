@@ -121,7 +121,6 @@ button {
 /* CTA FINALE */
 .slide-card.all {
   flex: 0 0 420px; /* stessa larghezza delle card desktop */
-  height: 280px;   /* 👈 IDENTICA alle immagini */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,6 +129,7 @@ button {
   background: rgba(255,255,255,0.02);
   transition: all 0.25s ease;
   position: relative;
+  height: 180px;
   overflow: hidden;
   }
   
