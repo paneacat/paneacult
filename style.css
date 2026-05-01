@@ -101,7 +101,6 @@ button {
 .slide-card-cta .cta-overlay {
   position: absolute;
   inset: 0;
-
   background: rgba(11,31,38,0.6);
 
   display: flex;
@@ -111,7 +110,8 @@ button {
   color: var(--gold);
   font-size: 18px;
   font-weight: 500;
-  text-align: center;
+
+  z-index: 2; /* 🔥 QUESTA È LA CHIAVE */
 }
 
 .slide-card img {
@@ -155,14 +155,12 @@ button {
   position: relative;
   overflow: hidden;
 }
-
-.slide-card-all img {
+.slide-card-cta img {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 14px;
 }
-
 .cta-overlay span {
   border-bottom: 1px solid var(--gold);
   padding-bottom: 4px;
@@ -188,24 +186,6 @@ button {
 
 .slider-btn.next {
   right: -20px;
-}
-
-.slide-card.all:hover .all-inner {
-  transform: translateX(4px);
-}
-
-.slide-card.all .overlay {
-  position: absolute;
-  inset: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(11,31,38,0.6);
-  color: var(--gold);
-
-  font-size: 18px;
 }
 
 .slider-wrapper {
@@ -1415,7 +1395,7 @@ color: var(--gold);
   }
 
 
-  .slide-card-cta .cta-overlay span {
+ .slide-card-cta .cta-overlay span {
     font-size: 16px;
   }
   
