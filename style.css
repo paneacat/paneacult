@@ -1508,8 +1508,14 @@ color: var(--gold);
   
 /* immagini proporzionate e pulite */
 .slide-card.all {
-    flex: 0 0 70%;
+  flex: 0 0 420px; /* stessa larghezza delle card desktop */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  position: relative;
   height: 200px;
+  overflow: hidden;
 }
   
 .slide-card img {
