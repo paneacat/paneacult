@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const next = document.querySelector(".slider-btn.next");
   const prev = document.querySelector(".slider-btn.prev");
 
+  const slideCards = document.querySelectorAll('.slide-card, .slide-card-cta');
+
   let filtroCategoria = "tutti";
   let filtroGenere = "tutti";
 
@@ -83,19 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== EFFETTO CINEMA DESKTOP =====
-  
-document.addEventListener('DOMContentLoaded', () => {
-
-  const slider = document.querySelector('.slider');
-  if (!slider) return;
-
-  const cards = document.querySelectorAll('.slide-card, .slide-card-cta');
-
-  // ===== EFFETTO CINEMA =====
   function updateActive() {
     const center = slider.scrollLeft + slider.clientWidth / 2;
 
-    cards.forEach(card => {
+    slideCards.forEach(card => {
       const rect = card.getBoundingClientRect();
       const cardCenter = rect.left + rect.width / 2;
 
@@ -106,12 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (window.innerWidth >= 900) {
+  if (slider && window.innerWidth >= 900) {
     slider.addEventListener('scroll', updateActive);
     window.addEventListener('load', updateActive);
   }
 
-});
   // ===== FILTRO =====
   function aggiornaFiltri() {
 
