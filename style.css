@@ -1434,13 +1434,17 @@ color: var(--gold);
     flex: 0 0 auto; /* 🔥 fondamentale */
   }
 
+  .slider {
+  padding-left: 16px;
+  padding-right: 16px;
+  }
 
  .slide-card {
-  flex: 0 0 95%;
+  flex: 0 0 88%;
 }
 
 .slide-card-cta {
-  flex: 0 0 95%;
+  flex: 0 0 88%;
 } 
   
   
