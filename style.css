@@ -184,7 +184,6 @@ button {
 /* CARD */
 .slide-card,
 .slide-card-cta {
-  flex: 0 0 60%;
   scroll-snap-align: center;
   transition: all 0.4s ease;
 }
@@ -1361,7 +1360,6 @@ color: var(--gold);
   }
   
   .slide-card {
-  flex: 0 0 88%;
   opacity: 1;
 }
 
@@ -1583,7 +1581,6 @@ padding-top: 15px;
     transform: scale(0.85);
     opacity: 0.4;
     transition: all 0.4s ease;
-    flex: 0 0 60%;
   }
   
   .slide-card:hover,
