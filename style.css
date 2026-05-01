@@ -70,12 +70,15 @@ button {
   margin-left: auto;
   margin-right: auto;
   }
+
 .hero-sub {
   margin-top: 16px;
   font-size: 13px;
   color: #aaa;
   line-height: 1.6;
-  position: center;
+  margin: 16px auto 0;
+  max-width: 420px;
+  text-align: center;
 }
 
 .hero-cta {
@@ -87,13 +90,14 @@ button {
   color: #0b1f26;
   font-size: 13px;
   transition: 0.2s ease;
-  position: center;
+  margin: 20px auto 0;
 }
 
 .hero-cta:hover {
   transform: translateY(-1px);
   background: #ffd54a;
 }
+
 /* 🎞️ SLIDER */
 .slider {
   display: flex;
@@ -450,7 +454,11 @@ left: 50%;
 transform: translate(-50%, -50%);
 z-index: 0;
 }
-
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /* ===== GRID ===== */
 .grid {
 display: grid;
