@@ -1617,9 +1617,6 @@ padding-top: 15px;
   .filtri-row.generi .filtro {
     flex: 0 0 auto;
 }
-  .slide-card {
- flex: 0 0 420px;
-  }
   
   .slider-wrapper {
   position: relative;
@@ -1667,7 +1664,8 @@ padding-top: 15px;
     height: 280px;
   }
   
-  .slide-card-all {
+.slide-card-cta {
+  flex: 0 0 75%;
   aspect-ratio: 16 / 9;
   display: flex;
   border: 1px solid rgba(255,255,255,0.2);
@@ -1677,11 +1675,11 @@ padding-top: 15px;
   scroll-snap-align: start;
   }
   
-  .slide-car-all:hover {
+  .slide-car-cta:hover {
   background: rgba(255,255,255,0.06);
   border-color: var(--gold);
   }
-  .slide-card-all:hover .overlay {
+  .slide-card-cta:hover .overlay {
   background: rgba(11, 31, 38, 0.8);
   transform: scale(1.02);
   }
