@@ -102,10 +102,6 @@ button {
   border-radius: 14px;
 }
 
-.slide-card-cta .cta-overlay span {
-  border-bottom: 1px solid var(--gold);
-  padding-bottom: 4px;
-}
 /* TESTO CARD */
 .slide-info {
   margin-top: 10px;
