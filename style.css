@@ -1571,7 +1571,7 @@ padding-top: 15px;
   gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 0 20vw; /* 🔥 spazio laterale per effetto cinema */
+  padding: 0 40px;
 }
 
 .slider::-webkit-scrollbar {
