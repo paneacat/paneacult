@@ -53,16 +53,7 @@
   <!-- SLIDER -->
   <div class="slider">
 <div class="slider-wrapper">
-
-  <button class="slider-btn prev">‹</button>
-
-  <div class="slider">
-    <!-- le tue card -->
-  </div>
-
-  <button class="slider-btn next">›</button>
-
-</div>
+  <div class="slider" id="slider">
     <!-- CARD 1 -->
     <a href="dittatore.html" class="slide-card">
       <img src="img/dittatore.png">
@@ -95,10 +86,14 @@
   <img src="img/cinema.png" alt="tutte le recensioni">
   
   <div class="cta-overlay">
-    <span>Tutte le recensioni →</span>
+    <span>Tutte le recensioni</span>
   </div>
     </a>
+     <button class="slider-btn next" onclick="scrollSlider()">
+    →
+     </button>
   </div>
+</div>
 </section>
   
 <!-- NEWSLETTER -->
