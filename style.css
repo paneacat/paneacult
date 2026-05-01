@@ -92,7 +92,7 @@ button {
 }
 
 .slide-card {
-  flex: 0 0 80%;
+  flex: 0 0 75%;
   scroll-snap-align: start;
   position: relative;
   overflow: hidden;
