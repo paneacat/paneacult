@@ -226,6 +226,18 @@ button {
   display: block;
 }
 
+@media (hover: none) {
+
+  .slide-card:hover,
+  .slide-card-cta:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .slide-card-cta:hover .cta-overlay {
+    background: rgba(11,31,38,0.55);
+  }
+}
 
 /* ===== BASE ===== */
 body {
@@ -1357,19 +1369,12 @@ color: var(--gold);
     flex: 0 0 auto; /* 🔥 fondamentale */
   }
 
-.slide-card,
-  .slide-card-cta {
-    flex: 0 0 92%;
+   .slide-card-cta:active {
+    transform: scale(0.97);
   }
-
-  .slide-card-cta:active {
-    transform: scale(0.98);
-  }
-
-  /* niente frecce */
-  .slider-btn {
-    display: none !important;
-  }
+  
+  
+  
   /* evita layout “schiacciato” */
 .container,
 .section {
