@@ -130,8 +130,6 @@ button {
   margin-bottom: 8px;
 
   padding-left: 22px;  /* 👈 spazio solo a sinistra */
-  padding-right: 8px;
-
   font-size: 13px;
   letter-spacing: 0.5px;
 
@@ -140,7 +138,7 @@ button {
 }
 
 .home-section-title em {
-  font-style: italic;
+  font-family: 'Playfair Display', serif;
   color: var(--gold);
 }
 
