@@ -157,6 +157,7 @@ button {
   scroll-padding-left: 16px !important;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  position: relative;
 }
 
 .slider::-webkit-scrollbar {
@@ -1606,7 +1607,27 @@ padding-top: 15px;
   .slide-card-cta:hover {
     transform: scale(1.04);
   }
+.slider::before,
+  .slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    pointer-events: none;
+    z-index: 2;
+  }
 
+  .slider::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--bg), transparent);
+  }
+
+  .slider::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--bg), transparent);
+  }
+  
   .slide-card-cta:hover .cta-overlay {
     background: rgba(11,31,38,0.75);
   }
