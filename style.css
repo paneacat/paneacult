@@ -1504,9 +1504,6 @@ color: var(--gold);
 }
 
 /* card nello slider (stile Netflix) */
- .slide-card.all {
-    flex: 0 0 85%;
-}
   .slider-btn {
     display: none;
   }
