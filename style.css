@@ -1400,7 +1400,7 @@ body {
 }
 
 /* ===== DESKTOP ===== */
-@ (min-width: 900px) {
+@media (min-width: 900px) {
 
 .break-desktop {
     display: block;
