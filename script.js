@@ -143,3 +143,21 @@ function updateArrow() {
   aggiornaFiltri();
 
 });
+const slider = document.querySelector('.slider');
+const cards = document.querySelectorAll('.slide-card, .slide-card-cta');
+
+function updateActive() {
+  const center = slider.scrollLeft + slider.clientWidth / 2;
+
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    const cardCenter = rect.left + rect.width / 2;
+
+    const isActive = Math.abs(center - (cardCenter + slider.scrollLeft)) < rect.width / 2;
+
+    card.classList.toggle('is-active', isActive);
+  });
+}
+
+slider.addEventListener('scroll', updateActive);
+window.addEventListener('load', updateActive);
