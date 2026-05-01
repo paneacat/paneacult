@@ -120,10 +120,11 @@ button {
 
 /* CTA FINALE */
 .slide-card.all {
+  flex: 0 0 420px; /* stessa larghezza delle card desktop */
+  height: 280px;   /* 👈 IDENTICA alle immagini */
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 16 / 9;
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 14px;
   background: rgba(255,255,255,0.02);
