@@ -1354,6 +1354,36 @@ color: var(--gold);
   margin-bottom: 10px;
   }
 
+.filtri-row {
+    flex-wrap: nowrap; /* 🔥 niente wrap */
+    overflow-x: auto;  /* 🔥 scroll */
+    justify-content: flex-start;
+    padding-left: 14px;
+  }
+
+.filtri-row.bottom {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    padding-left: 14px;
+  }
+
+  .filtri-row.bottom::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filtri-row.bottom .filtro {
+    flex: 0 0 auto;
+  }
+
+.filtri-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filtro {
+    flex: 0 0 auto; /* 🔥 fondamentale */
+  }
+
   .slider {
   padding-left: 6px;
   padding-right: 6px;
