@@ -1,15 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ===== ELEMENTI =====
   const bottoni = document.querySelectorAll('.filtro');
   const cards = Array.from(document.querySelectorAll('.card'));
   const empty = document.getElementById('emptyState');
   const loadMoreBtn = document.getElementById('loadMoreBtn');
-
-  const slider = document.querySelector(".slider");
-  const next = document.querySelector(".slider-btn.next");
-  const prev = document.querySelector(".slider-btn.prev");
-
-  const slideCards = document.querySelectorAll('.slide-card, .slide-card-cta');
 
   let filtroCategoria = "tutti";
   let filtroGenere = "tutti";
@@ -55,64 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
       aggiornaFiltri();
     });
   }
-
-  // ===== SLIDER BUTTONS =====
-  if (slider && next && prev) {
-
-    next.onclick = () => {
-      slider.scrollBy({ left: 300, behavior: "smooth" });
-    };
-
-    prev.onclick = () => {
-      slider.scrollBy({ left: -300, behavior: "smooth" });
-    };
-
-    function updateArrow() {
-      const maxScroll = slider.scrollWidth - slider.clientWidth;
-
-      if (slider.scrollLeft >= maxScroll - 5) {
-        next.style.opacity = "0";
-        next.style.pointerEvents = "none";
-      } else {
-        next.style.opacity = "0.6";
-        next.style.pointerEvents = "auto";
-      }
-    }
-
-    slider.addEventListener('scroll', updateArrow);
-    window.addEventListener('resize', updateArrow);
-    updateArrow();
-  }
-
-  // ===== EFFETTO CINEMA DESKTOP =====
-function initCinema() {
-  const slider = document.querySelector('.slider');
-  const cards = document.querySelectorAll('.slide-card, .slide-card-cta');
-
-  if (!slider || cards.length === 0) return;
-
-  function updateActive() {
-    const center = slider.scrollLeft + slider.clientWidth / 2;
-
-    cards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      const cardCenter = rect.left + rect.width / 2;
-
-      const offset = Math.abs(center - (cardCenter + slider.scrollLeft));
-
-      const isActive = offset < rect.width / 2;
-
-      card.classList.toggle('is-active', isActive);
-    });
-  }
-
-  slider.addEventListener('scroll', updateActive);
-  window.addEventListener('load', updateActive);
-}
-
-if (window.innerWidth >= 900) {
-  initCinema();
-}
 
   // ===== FILTRO =====
   function aggiornaFiltri() {
@@ -172,34 +109,43 @@ if (window.innerWidth >= 900) {
       aggiornaFiltri();
     }
   });
-const slider = document.querySelector('.slider');
-const cards = document.querySelectorAll('.slide-card, .slide-card-cta');
 
-function updateActive() {
-  if (!slider) return;
-
-  const center = slider.scrollLeft + slider.clientWidth / 2;
-
-  cards.forEach(card => {
-    const rect = card.getBoundingClientRect();
-    const cardCenter = rect.left + rect.width / 2;
-
-    const offset = Math.abs(center - (cardCenter + slider.scrollLeft));
-
-    const isActive = offset < rect.width / 2;
-
-    card.classList.toggle('is-active', isActive);
-  });
-}
-
-if (window.innerWidth >= 900) {
-  slider.addEventListener('scroll', updateActive);
-
-  // 🔥 QUESTO È CRUCIALE
-  setTimeout(updateActive, 100);
-}
-  slider.scrollLeft = slider.clientWidth / 2;
-  // ===== INIT =====
+  // ===== INIT FILTRI =====
   aggiornaFiltri();
+
+  // ===== 🎬 CINEMA SLIDER (SEPARATO E PULITO) =====
+
+  function initCinema() {
+    const slider = document.querySelector('.slider');
+    const slideCards = document.querySelectorAll('.slide-card, .slide-card-cta');
+
+    if (!slider || slideCards.length === 0) return;
+
+    function updateActive() {
+      const center = slider.scrollLeft + slider.clientWidth / 2;
+
+      slideCards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.left + rect.width / 2;
+
+        const offset = Math.abs(center - (cardCenter + slider.scrollLeft));
+        const isActive = offset < rect.width / 2;
+
+        card.classList.toggle('is-active', isActive);
+      });
+    }
+
+    slider.addEventListener('scroll', updateActive);
+
+    // attiva subito
+    setTimeout(updateActive, 100);
+
+    // centra inizialmente
+    slider.scrollLeft = slider.clientWidth / 2;
+  }
+
+  if (window.innerWidth >= 900) {
+    initCinema();
+  }
 
 });
