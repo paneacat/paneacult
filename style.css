@@ -1434,19 +1434,26 @@ color: var(--gold);
   }
 
   .slider {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 14px;
+  padding-right: 14px;
   }
 
  .slide-card {
   flex: 0 0 88%;
 }
-
+.slider .slide-card {
+    flex: 0 0 92%;  /* 👈 più grandi (prima 75%) */
+}
+  .slider .slide-card-cta {
+    flex: 0 0 92%;
+  }
+  
 .slide-card-cta {
   flex: 0 0 88%;
-} 
-  
-  
+}   
+  .slider-btn {
+    display: none;
+  }
   /* evita layout “schiacciato” */
 .container,
 .section {
