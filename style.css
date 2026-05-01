@@ -1436,11 +1436,11 @@ color: var(--gold);
 
 
  .slide-card {
-  flex: 0 0 75%;
+  flex: 0 0 95%;
 }
 
 .slide-card-cta {
-  flex: 0 0 75%;
+  flex: 0 0 95%;
 } 
   
   
