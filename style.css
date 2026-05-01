@@ -150,13 +150,12 @@ button {
 .slider {
   display: flex;
   gap: 16px;
-
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-padding-left: 20px;
-
+  scroll-padding-left: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
   padding: 0 20px;
-
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
@@ -224,6 +223,11 @@ button {
 
 .slide-card-cta .cta-overlay span {
   display: block;
+}
+.slide-card-cta .cta-overlay span {
+  display: inline-block;
+  text-align: center;
+  transform: translateX(-6px); /* 👈 micro correzione ottica */
 }
 
 @media (hover: none) {
