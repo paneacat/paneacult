@@ -170,6 +170,13 @@ button {
   position: relative;
 }
 
+.slide-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
 .slider-btn {
   position: absolute;
   top: 50%;
@@ -221,7 +228,7 @@ color: var(--gold);
 /* ===== HEADER ===== */
 
 .site-header {
-osition: relative;
+position: relative;
 z-index: 10;
 padding-bottom: 15px;
 }
