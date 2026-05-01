@@ -84,6 +84,7 @@ button {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   position: relative;
+  align-items: flex-start;
 }
 
 .slider::-webkit-scrollbar {
@@ -122,10 +123,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  aspect-ratio: 16 / 9;
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 14px;
-
   background: rgba(255,255,255,0.02);
   transition: all 0.25s ease;
   }
