@@ -198,6 +198,7 @@ if (window.innerWidth >= 900) {
   // 🔥 QUESTO È CRUCIALE
   setTimeout(updateActive, 100);
 }
+  slider.scrollLeft = slider.clientWidth / 2;
   // ===== INIT =====
   aggiornaFiltri();
 
