@@ -1,5 +1,7 @@
 html {
 overflow-y: scroll;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
 }
 
 /* ===== RESET ===== */
@@ -10,12 +12,6 @@ overflow-y: scroll;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-/* Migliora rendering base */
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Evita comportamenti strani delle immagini */
