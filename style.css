@@ -223,11 +223,8 @@ scroll-snap-align: center;
   width: 100%;
   display: block;
   text-align: center;
-  transform: none !important;
   transform: none;
 }
-
-@media (hover: none) {
 
   .slide-card:hover,
   .slide-card-cta:hover {
