@@ -152,11 +152,11 @@ button {
   gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 0 16px;
   scroll-padding-left: 16px;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   position: relative;
+  padding: 0 16px;
 }
 
 .slider::-webkit-scrollbar {
@@ -236,6 +236,21 @@ scroll-snap-align: center;
   .slide-card-cta:hover .cta-overlay {
     background: rgba(11,31,38,0.55);
   }
+/* ===== CINEMA EFFECT ===== */
+
+.slide-card,
+.slide-card-cta {
+  transform: scale(0.85);
+  opacity: 0.4;
+  filter: blur(1px);
+  transition: all 0.4s ease;
+}
+
+.slide-card.is-active,
+.slide-card-cta.is-active {
+  transform: scale(1);
+  opacity: 1;
+  filter: blur(0);
 }
 
 /* ===== BASE ===== */
