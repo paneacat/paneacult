@@ -165,6 +165,22 @@ button {
   display: none;
 }
 
+.slide-info {
+  margin-top: 14px;
+}
+
+.slide-info h3 {
+  font-size: 16px;
+  color: #ffffff; /* 👈 bianco */
+  margin-top: 12px; /* 👈 stacca dall'immagine */
+}
+
+.slide-info p {
+  font-size: 12px;
+  color: var(--gold); /* 👈 giallo */
+  margin-top: 4px;
+}
+
 /* CARD */
 .slide-card,
 .slide-card-cta {
@@ -194,6 +210,12 @@ button {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 14px;
+}
+.slide-card-cta .cta-overlay {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(2px);
 }
 
 /* ===== BASE ===== */
