@@ -120,22 +120,16 @@ button {
 
 /* CTA FINALE */
 .slide-card.all {
-  flex: 0 0 420px; /* stessa larghezza delle card desktop */
+  flex: 0 0 80%; /* 🔥 UGUALE alle altre */
+  aspect-ratio: 16 / 9; /* 🔥 stessa altezza */
+  
   display: flex;
   align-items: center;
   justify-content: center;
+
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 14px;
   background: rgba(255,255,255,0.02);
-  transition: all 0.25s ease;
-  position: relative;
-  height: 280px;
-  overflow: hidden;
-  }
-
-.slide-card img,
-.slide-card.all {
-  height: 280px;
 }
 
 .all-inner {
@@ -1513,12 +1507,7 @@ color: var(--gold);
   
 /* immagini proporzionate e pulite */
 .slide-card.all {
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
-  position: relative;
-  height: 180px;
-  overflow: hidden;
+  flex: 0 0 80%;
   aspect-ratio: 16 / 9;
 }
   
