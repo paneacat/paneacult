@@ -1,47 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ===== ELEMENTI =====
   const bottoni = document.querySelectorAll('.filtro');
   const cards = Array.from(document.querySelectorAll('.card'));
   const empty = document.getElementById('emptyState');
   const loadMoreBtn = document.getElementById('loadMoreBtn');
 
+  // ===== FILTRI =====
   let filtroCategoria = "tutti";
   let filtroGenere = "tutti";
 
+  const norm = (v) => (v || "").trim().toLowerCase();
+
   function getStep() {
-  return window.innerWidth >= 900 ? 3 : 4;
+    return window.innerWidth >= 900 ? 3 : 4;
   }
-  
+
   let step = getStep();
   let visibiliMax = step;
 
-  const norm = (v) => (v || "").trim().toLowerCase();
-
-  // ===== CLICK =====
+  // ===== CLICK FILTRI =====
   bottoni.forEach(btn => {
     btn.addEventListener('click', () => {
 
       const filtro = norm(btn.dataset.filter);
 
-      // capisce se è categoria o genere
       if (btn.closest('.top')) {
         filtroCategoria = filtro;
 
-        // reset attivi categoria
         document.querySelectorAll('.top .filtro')
           .forEach(b => b.classList.remove('attivo'));
 
       } else {
         filtroGenere = filtro;
 
-        // reset attivi genere
         document.querySelectorAll('.bottom .filtro')
           .forEach(b => b.classList.remove('attivo'));
       }
 
       btn.classList.add('attivo');
 
-      // reset load more
       step = getStep();
       visibiliMax = step;
 
@@ -56,40 +54,38 @@ document.addEventListener('DOMContentLoaded', () => {
       aggiornaFiltri();
     });
   }
-const slider = document.querySelector('.slider');
 
-document.querySelector('.next').onclick = () => {
-  slider.scrollBy({ left: 300, behavior: 'smooth' });
-};
+  // ===== SLIDER (freccia destra) =====
+  const slider = document.querySelector('.slider');
+  const next = document.querySelector('.slider-btn.next');
 
-document.querySelector('.prev').onclick = () => {
-  slider.scrollBy({ left: -300, behavior: 'smooth' });
-};                  
+  if (slider && next) {
 
-const slider = document.querySelector('.slider');
-const next = document.querySelector('.slider-btn.next');
-const prev = document.querySelector('.slider-btn.prev');
+    next.addEventListener('click', () => {
+      const card = slider.querySelector('.slide-card');
 
-const scrollAmount = 360; // distanza di scorrimento
+      slider.scrollBy({
+        left: card.offsetWidth + 16, // gap tra card
+        behavior: 'smooth'
+      });
+    });
 
-next.addEventListener('click', () => {
-  slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-});
+    // nasconde freccia quando sei alla fine
+    slider.addEventListener('scroll', () => {
+      const maxScroll = slider.scrollWidth - slider.clientWidth;
 
-prev.addEventListener('click', () => {
-  slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-});
+      if (slider.scrollLeft >= maxScroll - 10) {
+        next.style.opacity = "0";
+        next.style.pointerEvents = "none";
+      } else {
+        next.style.opacity = "0.6";
+        next.style.pointerEvents = "auto";
+      }
+    });
 
-  function scrollSlider() {
-  const slider = document.getElementById("slider");
-  const card = slider.querySelector(".slide-card");
-
-  slider.scrollBy({
-    left: card.offsetWidth + 16, // 16 = gap
-    behavior: "smooth"
-  });
   }
-  // ===== FILTRO =====
+
+  // ===== FILTRO LOGICA =====
   function aggiornaFiltri() {
 
     let filtrati = [];
@@ -117,7 +113,6 @@ prev.addEventListener('click', () => {
 
     });
 
-    // mostra progressiva
     filtrati.forEach((card, i) => {
       card.style.display = i < visibiliMax ? "block" : "none";
     });
@@ -133,7 +128,7 @@ prev.addEventListener('click', () => {
       }
     }
 
-    // load more visibilità
+    // load more
     if (loadMoreBtn) {
       loadMoreBtn.style.display =
         filtrati.length > visibiliMax ? "inline-block" : "none";
