@@ -80,6 +80,7 @@ button {
 .hero h1 {
   font-size: 16px;
   line-height: 1.6;
+  text-align: center;
 }
 .hero .container {
   display: flex;
@@ -94,6 +95,7 @@ button {
   font-size: 14px;
   color: #9aa3a8;
   line-height: 1.6;
+  text-align: center;
 }
 
 /* bottone */
