@@ -1391,7 +1391,7 @@ color: var(--gold);
   
 .slide-card:hover,
   .slide-card-cta:hover {
-    transform: none !important;
+    transform: none;
   }
   
 .slide-card-cta:hover .cta-overlay {
