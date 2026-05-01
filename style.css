@@ -151,6 +151,30 @@ button {
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 14px;
   background: rgba(255,255,255,0.02);
+  
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-overlay {
+  position: absolute;
+  inset: 0; /* 🔥 copre tutta la card */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(11, 31, 38, 0.6); /* overlay scuro */
+  
+  color: var(--gold);
+  font-size: 18px;
+  font-weight: 500;
+
+  z-index: 2; /* 🔥 sopra l'immagine */
+}
+
+.slide-card-all img {
+  display: block;
 }
 
 .all-inner {
