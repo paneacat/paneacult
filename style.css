@@ -141,13 +141,13 @@ button {
 
 /* CTA FINALE */
 .slide-card.all {
-  flex: 0 0 80%; /* 🔥 UGUALE alle altre */
+  flex: 0 0 75%; /* 🔥 UGUALE alle altre */
   aspect-ratio: 16 / 9; /* 🔥 stessa altezza */
   
   display: flex;
   align-items: center;
   justify-content: center;
-
+  
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 14px;
   background: rgba(255,255,255,0.02);
