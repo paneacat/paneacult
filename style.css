@@ -1564,15 +1564,12 @@ padding-top: 15px;
 }
 
 .slider {
-    display: flex;
-    gap: 24px;
+  display: flex;
+  gap: 24px;
 
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-  }
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
 
   .slide-card,
   .slide-card-cta {
@@ -1618,7 +1615,10 @@ padding-top: 15px;
 
   transition: 0.2s;
 }
-
+.slide-card {
+  min-width: 700px !important;
+}
+  
 .slider-btn.prev { left: 20px; }
 .slider-btn.next { right: 20px; }
 
@@ -1626,4 +1626,8 @@ padding-top: 15px;
   background: var(--gold);
   color: #0b1f26;
 }
+  .slider-wrapper {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  }
 }
