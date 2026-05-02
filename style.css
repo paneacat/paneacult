@@ -1572,26 +1572,18 @@ padding-top: 15px;
 
     width: 100vw;
     margin-left: calc(50% - 50vw);
-
-    padding: 0 0; /* ❌ togli padding laterali */
   }
 
+  .slide-card,
+  .slide-card-cta {
+    flex: 0 0 420px;
+    min-width: 420px;
+
+    scroll-snap-align: center;
+  }
+  
 .slider::-webkit-scrollbar {
   display: none;
-}
-
-.slide-card,
-.slide-card-cta {
-  display: block;
-
-  flex: 0 0 420px;
-  min-width: 420px;
-
-  scroll-snap-align: center;
-
-  opacity: 0.4;
-  transform: scale(0.85);
-  transition: all 0.35s ease;
 }
 
 .slide-card.is-active,
