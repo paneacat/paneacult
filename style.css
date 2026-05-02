@@ -148,17 +148,19 @@ button {
 .slider {
   display: flex;
   gap: 24px;
-  overflow-x: auto;
   scroll-snap-type: x mandatory;  
   scroll-behavior: smooth;
   padding-left: 60px;
   padding-right: 60px;
+  overflow-x: auto;
+  overflow-y: visible;
 }
   
 .slider-wrapper {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   position: relative;
+  overflow: visible;
 }
 .slider,
 .slider-wrapper {
@@ -194,6 +196,8 @@ button {
   transition: 
     opacity 0.4s ease;
   transform: none;
+  transform-origin: center bottom;
+}
 }
 .cta-overlay {
   position: absolute;
