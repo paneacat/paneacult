@@ -151,12 +151,34 @@ button {
   overflow-x: auto;
   scroll-snap-type: x mandatory;  
   scroll-behavior: smooth;
-  padding-left: calc(50vw - 250px);
-  padding-right: calc(50vw - 250px);
+  padding-left: max(40px, calc(50vw - 250px));
+  padding-right: max(40px, calc(50vw - 250px));
 }
 .slider-wrapper {
   width: 100vw;
   margin-left: calc(50% - 50vw);
+  position: relative;
+}
+
+.slider-wrapper::before,
+.slider-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.slider-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #193c4e, transparent);
+}
+
+.slider-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #193c4e, transparent);
 }
 
 .slider::-webkit-scrollbar {
