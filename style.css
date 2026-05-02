@@ -1597,8 +1597,9 @@ scroll-padding-right: 40px;
   .slide-card-cta {
     flex: 0 0 420px;
     scroll-snap-align: center;
-
     opacity: 0.4;
+    border-radius: 14px;
+  overflow: hidden;
     transform: scale(0.85);
     transition: all 0.4s ease;
   filter: brightness(0.7);
@@ -1617,8 +1618,14 @@ scroll-padding-right: 40px;
     opacity: 0.3;
     transform: scale(0.9);
   }
-  .slide-card img {
+  .slide-card img,
+  .slide-card-cta img {
   transition: transform 0.4s ease;
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 }
 
 .slide-card:hover img {
