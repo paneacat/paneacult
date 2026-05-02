@@ -1581,7 +1581,6 @@ padding-top: 15px;
 .slider {
     display: flex;
     gap: 32px;
-    overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-left: 40px;
   padding-right: 40px;
