@@ -1553,7 +1553,9 @@ padding-top: 15px;
     gap: 32px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding: 40px 0;
+    padding: 0 40px;
+  position: relative;
+  scroll-behavior: smooth;
   }
 
   .slider::-webkit-scrollbar {
