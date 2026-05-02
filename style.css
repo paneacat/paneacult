@@ -198,9 +198,34 @@ background: linear-gradient(
   margin-top: 4px;
 }
 
-/* CARD */
-.slide-card,
 .slide-card-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-card-cta img {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fcc10e;
+  font-weight: 600;
+  font-size: 18px;
+
+  z-index: 3; /* 🔥 sopra tutto */
+  opacity: 1; /* 🔥 visibile sempre */
+}
+
+/* CARD */
+.slide-card {
   flex: 0 0 420px;
   min-width: 420px;
   position: relative;
@@ -227,8 +252,7 @@ background: linear-gradient(
   z-index: 3;
 }
 /* IMMAGINI */
-.slide-card img,
-.slide-card-cta img {
+.slide-card img {
   aspect-ratio: 16 / 9;
   border-radius: 14px;
   transition: transform 0.4s ease;
