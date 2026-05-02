@@ -73,11 +73,17 @@ button {
 }
 
 .hero h1 {
-  font-size: 16px;
-  line-height: 1.6;
   text-align: center;
   color: white;
+  font-size: 42px;
+  line-height: 1.2;
 }
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
 .hero .container {
   display: flex;
   flex-direction: column;
@@ -231,12 +237,11 @@ background: linear-gradient(
   min-width: 420px;
   position: relative;
   scroll-snap-align: center;
-
-  opacity: 1; /* 🔥 */
   transform-origin: center bottom;
   overflow: hidden;
   border-radius: 14px;
-
+  opacity: 0.4;
+  transform: scale(0.9);
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 .cta-overlay {
@@ -283,6 +288,9 @@ background: linear-gradient(
 .slide-card.is-active,
 .slide-card-cta.is-active {
   border-radius: 14px;
+  opacity: 1;
+  transform: scale(1.08);
+  z-index: 2;
 }
 
 /* ===== BASE ===== */
