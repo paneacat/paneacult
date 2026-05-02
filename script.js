@@ -148,44 +148,45 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // 👇 SCROLL + SNAP
-    let scrollTimeout;
+// 👇 SCROLL + SNAP affidabile
+let scrollTimeout;
 
-    slider.addEventListener('scroll', () => {
-      updateActive();
+slider.addEventListener('scroll', () => {
+  updateActive();
 
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        snapToClosest();
-      }, 120);
-    });
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => {
+    snapToClosest();
+  }, 120);
+});
 
-    function snapToClosest() {
-      const sliderRect = slider.getBoundingClientRect();
-      const center = sliderRect.left + sliderRect.width / 2;
+function snapToClosest() {
+  const sliderRect = slider.getBoundingClientRect();
+  const sliderCenter = slider.scrollLeft + slider.clientWidth / 2;
 
-      let closest = null;
-      let minOffset = Infinity;
+  let closest = null;
+  let minOffset = Infinity;
 
-      slideCards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        const cardCenter = rect.left + rect.width / 2;
+  slideCards.forEach(card => {
+    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+    const offset = Math.abs(sliderCenter - cardCenter);
 
-        const offset = Math.abs(center - cardCenter);
-
-        if (offset < minOffset) {
-          minOffset = offset;
-          closest = card;
-        }
-      });
-
-      if (closest) {
-        closest.scrollIntoView({
-          behavior: "smooth",
-          inline: "center"
-        });
-      }
+    if (offset < minOffset) {
+      minOffset = offset;
+      closest = card;
     }
+  });
+
+  if (closest) {
+    const target =
+      closest.offsetLeft - (slider.clientWidth / 2 - closest.offsetWidth / 2);
+
+    slider.scrollTo({
+      left: target,
+      behavior: "smooth"
+    });
+  }
+}
 
     // attiva subito
     setTimeout(updateActive, 100);
