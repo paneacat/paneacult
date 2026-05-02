@@ -1728,5 +1728,10 @@ background: #0f2a33;
 
     scroll-snap-align: center !important;
   }
-
+}
+.slider-wrapper,
+.container,
+.section,
+body {
+  overflow: visible !important;
 }
