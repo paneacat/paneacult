@@ -195,22 +195,6 @@ button {
     opacity 0.4s ease;
 }
 
-/* 🎬 card centrale */
-.slide-card.is-active,
-.slide-card-cta.is-active {
-  opacity: 1;
-  transform: scale(1.05);
-  z-index: 3;
-}
-.slide-card:not(.is-active) img {
-  filter: brightness(0.8);
-}
-/* 👀 quelle vicine */
-.slide-card.is-near {
-  opacity: 0.6;
-  transform: scale(0.9);
-}
-
 /* IMMAGINI */
 .slide-card img,
 .slide-card-cta img {
