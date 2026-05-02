@@ -1561,32 +1561,24 @@ padding-top: 15px;
 }
 
 /* ===== CINEMA DESKTOP ===== */
-.slider-wrapper {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+.slider {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
   }
 
-  .slider {
-  display: flex;
-  gap: 24px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding-left: 500px !important;
-  padding-right: 500px !important;
-}
-
-/* SPAZI FINTI AI LATI (LA CHIAVE) */
-.slider::before,
-.slider::after {
-  content: "";
-  flex: 0 0 calc(50% - 200px);
-}
+  /* 👇 QUESTO È IL FIX VERO */
+  .slider::before,
+  .slider::after {
+    content: "";
+    flex: 0 0 calc(50% - 210px);
+  }
 
   .slide-card,
   .slide-card-cta {
+    flex: 0 0 420px;
     min-width: 420px;
-    flex: 0 0 400px;
     scroll-snap-align: center;
   }
 }
