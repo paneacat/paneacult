@@ -1574,13 +1574,10 @@ padding-top: 15px;
 
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
 
-  /* 🔥 esce dal container centrato */
-  width: 100vw;
+  width: 100vw; /* 🔥 rompe il container */
   margin-left: calc(50% - 50vw);
 
-  /* 🔥 spazio per centrare la card */
   padding-left: calc(50vw - 200px);
   padding-right: calc(50vw - 200px);
 }
