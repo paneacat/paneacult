@@ -1396,8 +1396,10 @@ color: var(--gold);
 }
 
 /* centratura contenuti ma con respiro */
+@media (max-width: 599px) {
 body {
   omediaverflow-x: hidden;
+}
 }
 }
 
