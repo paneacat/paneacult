@@ -1564,35 +1564,32 @@ padding-top: 15px;
 }
 
 /* ===== CINEMA DESKTOP ===== */
-.slider {
+ .slider {
     display: flex;
     gap: 24px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-  min-width: 700px !important;
-  padding-left: calc(50vw - 210px);
-  padding-right: calc(50vw - 210px);
+
+    padding-left: calc(50vw - 180px);
+padding-right: calc(50vw - 180px);;
   }
-  
-.slide-card {
-  flex: 0 0 420px;
-}
 
   .slide-card,
-.slide-card-cta {
-  flex: 0 0 380px;
-  min-width: 420px;
-  opacity: 0.3;
-  transform: scale(0.8);
-  transition: all 0.4s ease;
-}
+  .slide-card-cta {
+    flex: 0 0 420px;
+    min-width: 420px;
 
-.slide-card.is-active,
-.slide-card-cta.is-active {
-  opacity: 1;
-  transform: scale(1.05);
-}
+    opacity: 0.4;
+    transform: scale(0.85);
+    transition: all 0.4s ease;
+  }
 
+  .slide-card.is-active,
+  .slide-card-cta.is-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
 .slide-card.is-near {
   opacity: 0.6;
   transform: scale(0.9);
