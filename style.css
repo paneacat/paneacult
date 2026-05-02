@@ -172,6 +172,21 @@ button {
 
 .slide-info {
   margin-top: 14px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 12px;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.8),
+    rgba(0,0,0,0)
+  );
+
+  color: white;
+  }
 }
 
 .slide-info h3 {
