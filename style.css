@@ -1583,9 +1583,8 @@ padding-top: 15px;
 
   .slide-card,
   .slide-card-cta {
-    flex: 0 0 420px;
     min-width: 420px;
-
+    flex: 0 0 400px;
     scroll-snap-align: center;
   }
 }
