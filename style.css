@@ -1430,14 +1430,17 @@ color: var(--gold);
   scroll-padding-left: 16px;
   scroll-padding-right: 16px;
 }
+.slide-item {
+    flex: 0 0 85%;
+  }
 
-.slide-card,
-.slide-card-cta {
+  .slide-card,
+  .slide-card-cta {
+    min-width: unset;
+    width: 100%;
   flex: 0 0 85%;   /* 👈 leggermente meno → UX migliore */
   min-width: 85%;
-
   scroll-snap-align: center;
-
   opacity: 1;
   transform: none;
 }
