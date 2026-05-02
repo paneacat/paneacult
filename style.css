@@ -1388,17 +1388,24 @@ color: var(--gold);
   padding-right: 16px;
   gap: 16px;
   }
+
+  .slide-card:active,
+.slide-card-cta:active {
+  transform: scale(0.97);
   
-   .slide-card-cta:active {
-    transform: scale(0.97);
-  }
   
   .slide-card {
+  flex: 0 0 88%;
+  min-width: 88%;
   opacity: 1;
+  transform: none;
 }
 
 .slide-card-cta {
-  flex: 0 0 88%;
+flex: 0 0 88%;
+  min-width: 88%;
+  opacity: 1;
+  transform: none;
 }
   
 .slide-card:hover,
