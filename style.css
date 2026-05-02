@@ -1394,13 +1394,6 @@ color: var(--gold);
   max-width: 1200px;
   margin: 0 auto;
 }
-
-/* centratura contenuti ma con respiro */
-@media (max-width: 599px) {
-body {
-  omediaverflow-x: hidden;
-}
-}
 }
 
 /* ===== DESKTOP ===== */
