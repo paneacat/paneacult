@@ -244,7 +244,6 @@ button {
 /* ===== BASE ===== */
 body {
 font-family: 'Inter', sans-serif;
-color: var(--text);
 padding-top: 13px;
 background: #0f2a33;
 }
