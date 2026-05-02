@@ -1570,8 +1570,8 @@ padding-top: 15px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
 
-    padding-left: calc(50vw - 180px);
-padding-right: calc(50vw - 180px);;
+    padding-left: calc(50vw - 140px);
+padding-right: calc(50vw - 140px);;
   }
 
   .slide-card,
