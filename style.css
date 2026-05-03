@@ -1390,30 +1390,6 @@ color: var(--gold);
   .filtro {
     flex: 0 0 auto; /* 🔥 fondamentale */
   }
-
-.slider {
-    padding: 0 16px;
-    gap: 16px;
-  }
-
-  .slide-item {
-    flex: 0 0 85%;
-  }
-
-  .slide-card {
-    transform: none !important;
-    opacity: 1 !important;
-  }
-.slide-item {
-    opacity: 0.5;
-    transform: scale(0.92);
-  }
-
-  /* prima card attiva */
-  .slide-item:first-child {
-    opacity: 1;
-    transform: scale(1);
-  }
   /* evita layout “schiacciato” */
 .container,
 .section {
@@ -1421,6 +1397,28 @@ color: var(--gold);
   max-width: 1200px;
   margin: 0 auto;
 }
+  .slider {
+    padding: 0 20px;
+    gap: 16px;
+  }
+
+  .slide-item {
+    flex: 0 0 78%; /* 👈 più elegante */
+    scroll-snap-align: center;
+
+    opacity: 1;
+    transform: none;
+  }
+
+  .slide-card {
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  /* niente scaling aggressivo su mobile */
+  .slide-card img {
+    transform: none !important;
+  }
 }
 
 /* ===== DESKTOP ===== */
