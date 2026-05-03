@@ -53,6 +53,7 @@ button {
 
 .home-cinema {
 	margin-top: 40px;
+	position: relative;
 }
 
 .section-label {
@@ -347,6 +348,10 @@ a:hover {
   display: flex;
   justify-content: flex-end;
   margin-top: 10px;
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .slider-next {
@@ -358,11 +363,10 @@ a:hover {
   color: white;
   font-size: 18px;
   cursor: pointer;
-
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-
   transition: all 0.25s ease;
 }
 
