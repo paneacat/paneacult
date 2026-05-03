@@ -1599,12 +1599,17 @@ padding-top: 15px;
   padding: 100px 20px 60px;
 }
 
-/* ===== TESTO SINISTRA ===== */
+.hero-inner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .hero-text {
   max-width: 520px;
 }
-
+  
 .hero-text h1 {
   font-family: 'Playfair Display', serif;
   font-size: 44px;
@@ -1632,16 +1637,13 @@ padding-top: 15px;
   display: inline-block;
   padding: 16px 34px;
   border-radius: 999px;
-
   background: var(--gold);
   color: #0b1f26;
   font-size: 14px;
   text-decoration: none;
-
   box-shadow:
     0 12px 40px rgba(255,191,0,0.35),
     0 0 30px rgba(255,191,0,0.2);
-
   transition: all 0.2s ease;
 }
 
@@ -1654,15 +1656,11 @@ padding-top: 15px;
 
 .cta-arrow {
   position: absolute;
-
-  right: 100%;
-  top: 50%;
-
   transform: translateY(-20%);
   margin-right: 25px;
-
-  width: 180px;
-
+  left: 60px;
+  top: 160px;
+  width: 340px;
   pointer-events: none;
 }
 
