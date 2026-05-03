@@ -176,7 +176,6 @@ color: var(--gold);
 }
 
 .hero-inner {
-  max-width: 600px;
   margin: 0;              /* ❗ niente auto */
   text-align: left;       /* ❗ sinistra */
 }
@@ -197,7 +196,6 @@ color: var(--gold);
 
 /* TESTO */
 .hero-text {
-  max-width: 520px;
   align-items: left;
 }
 
