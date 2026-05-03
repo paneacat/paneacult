@@ -118,13 +118,14 @@ color: var(--gold);
   padding: 20px;
   justify-content: space-between;
   display: flex;
-  align-items: center;
+  align-items: left;
 }
 
 /* blocco logo */
 .logo-block {
   display: flex;
   flex-direction: column;
+  align-items: left;
 }
 
 /* logo */
@@ -132,6 +133,7 @@ color: var(--gold);
   font-size: 48px;
   margin: 0;
   font-family: 'Playfair Display', serif;
+  align-items: left;
 }
 
 /* sottotitolo */
@@ -140,6 +142,7 @@ color: var(--gold);
   letter-spacing: 2px;
   margin-top: 2px;
   opacity: 0.7;
+  align-items: left;
 }
 
 /* menu */
