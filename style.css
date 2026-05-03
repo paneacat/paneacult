@@ -140,7 +140,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
+  -webkit-tap-highlight-color: transparent;
   padding: 6px 20px 10px 20px; /* 👈 top più leggero */
   line-height: 1;
   border-radius: 999px;
@@ -162,6 +162,11 @@ button {
 .hero-cta a:hover {
   transform: translateY(-2px);
   background: #ffd54a;
+}
+
+.hero-cta a:active {
+  background: var(--gold);
+  transform: scale(0.97);
 }
 
 .section-label {
