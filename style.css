@@ -382,7 +382,7 @@ a:hover {
 }
 .slider-btn {
   position: absolute;
-  top: calc(50% - 80px);
+  top: calc(50% - 60px);
   right: 10px;
   transform: translateY(-50%);;
   
@@ -397,27 +397,13 @@ a:hover {
   cursor: pointer;
   transition: all 0.25s ease;
 }
+
 .slider-btn:hover {
   background: var(--gold);
   color: #0b1f26;
   box-shadow:
     0 0 12px rgba(255,191,0,0.6),
     0 0 30px rgba(255,191,0,0.3);
-}
-.slider-next {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.2);
-  background: transparent;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.25s ease;
 }
 
 	.credits-label {
