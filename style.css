@@ -226,6 +226,7 @@ a:hover {
 	align-items: flex-end;   /* 👈 QUESTO è il punto */
     justify-content: center;
     text-align: right;
+	padding-right: 40px;
 }
 
 .cta-label {
