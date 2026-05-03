@@ -120,25 +120,29 @@ button {
   text-align: center;
 }
 
-
 .hero-cta a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 20px 10px 20px; /* 👈 top più leggero */
+  line-height: 1;
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 500;
+
   background: var(--gold);
   color: #0b1f26;
-  text-decoration: none;
-  padding: 6px 20px 10px 20px;
-  font-size: 14px;
-  border-radius: 999px;
-  font-weight: 600;
-  line-height: 1.2;
+
   transition: all 0.2s ease;
-  box-shadow: 0 6px 20px rgba(255,191,0,0.25);
 }
 
 .hero-cta:hover {
   transform: translateY(-2px);
   background: #ffd54a;
 }
+
 .hero-cta a:hover {
   transform: translateY(-2px);
   background: #ffd54a;
