@@ -444,33 +444,22 @@ a:hover {
 /* wrapper freccia */
 .slider-controls {
   position: absolute;
-  top: 35%;              /* 👈 ALZA/ABBASSA QUI */
-  right: 40px;           /* 👈 SINISTRA/DESTRA */
-
-  transform: translateY(-50%);
+  top: -40px;     /* 👈 la porta sopra */
+  right: 40px;    /* 👈 allineata a destra */
   z-index: 20;
 }
 
 /* bottone */
 .slider-next {
-  width: 48px;
-  height: 48px;
-
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.3);
-
-  background: transparent;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
   color: white;
-  font-size: 18px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   cursor: pointer;
-
-  transition: all 0.25s ease;
 }
+
 .slider-next:hover {
   background: #fcc10e;
   color: #193c4e;
