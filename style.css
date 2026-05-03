@@ -1884,19 +1884,19 @@ padding-top: 15px;
 
   /* HERO FULL CENTER */
   .hero {
-    text-align: center;
+    text-align: left;
     padding: 0 20px;
   }
 
   .hero-inner {
-    max-width: 100%;
-    margin: 0 auto;
+    max-width: 600%;
+    margin: 0;
   }
 
   .hero h1 {
     font-size: 26px;
     line-height: 1.3;
-    margin: 0 auto;
+    margin: 0;
   }
 
   .hero-sub {
