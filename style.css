@@ -223,6 +223,7 @@ color: var(--gold);
   display: flex;
   justify-content: flex-end; /* 🔥 spinge a destra */
   min-width: 300px;
+  position: relative;
 }
 
 .cta-button {
@@ -245,7 +246,51 @@ color: var(--gold);
   background: #ffd54a;
 }
 
+/* freccia */
+.cta-arrow {
+  position: absolute;
+  left: -160px;   /* parte dal testo */
+  top: 20px;
 
+  width: 180px;
+  height: auto;
+
+  pointer-events: none;
+}
+
+/* linea curva */
+.arrow-line {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+
+  animation: drawLine 1s ease forwards;
+}
+
+/* punta */
+.arrow-head {
+  fill: var(--gold);
+  opacity: 0;
+
+  animation: fadeHead 0.3s ease forwards;
+  animation-delay: 0.9s;
+}
+
+/* animazioni */
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeHead {
+  to {
+    opacity: 1;
+  }
+}
 .slider {
   display: flex;
   gap: 18px;
