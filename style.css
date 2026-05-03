@@ -255,6 +255,55 @@ color: var(--gold);
   border-radius: 999px;
 }
 
+.hero-cta-wrapper {
+  position: relative;
+  text-align: center;
+}
+
+/* la freccia nasce dal testo */
+.arrow-trigger {
+  position: relative;
+  display: inline-block;
+}
+
+/* linea curva */
+.arrow-trigger::after {
+  content: "";
+  position: absolute;
+
+  width: 120px;
+  height: 60px;
+
+  border-bottom: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+
+  border-radius: 0 0 60px 0;
+
+  right: -130px;
+  top: 60%;
+
+  transform: translateY(-50%) rotate(8deg);
+
+  opacity: 0.8;
+}
+
+/* punta della freccia */
+.arrow-trigger::before {
+  content: "";
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+
+  border-top: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+
+  right: -130px;
+  top: calc(60% + 22px);
+
+  transform: rotate(45deg);
+}
+
 /* ===== SLIDER BASE CLEAN ===== */
 
 .slider-wrapper {
@@ -1204,6 +1253,11 @@ color: var(--gold);
 
   .about-container .intro {
     text-align: center;
+  }
+  
+  .arrow-trigger::after,
+  .arrow-trigger::before {
+    display: none;
   }
   
   .menu {
