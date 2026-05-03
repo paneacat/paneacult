@@ -131,9 +131,9 @@ a:hover {
 }
 
 .menu {
-	display: flex;
-	gap: 28px;
 	margin-right: 10px;
+	display: flex;
+  gap: 30px;
 }
 
 .menu a {
