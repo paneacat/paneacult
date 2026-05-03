@@ -291,6 +291,7 @@ a:hover {
   display: inline-flex;       /* 👈 cambia da inline-block */
   align-items: center;        /* verticale */
   justify-content: center;    /* orizzontale */
+  text-align: center;
   padding: 14px 28px;
   border-radius: 999px;
   background: #fcc10e;
