@@ -255,7 +255,6 @@ padding: 20px 32px;
   gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 20px 0 40px;
   -webkit-overflow-scrolling: touch;
   padding-left: 20px;
   padding-right: 0;
