@@ -1257,9 +1257,14 @@ color: var(--gold);
     display: none;
   }
   
+  .header-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
   .menu {
     flex-wrap: wrap;
-    gap: 10px;
+    justify-content: center;
   }
 
   .menu a {
