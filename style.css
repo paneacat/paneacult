@@ -232,8 +232,7 @@ a:hover {
 	margin-right: 120px;
 	position: relative;
     right: 80px;
-  flex-direction: column;
-  gap: 14px;
+    gap: 14px;
 }
 
 .cta-label {
