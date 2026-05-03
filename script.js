@@ -170,18 +170,6 @@ setupSlider();
 window.addEventListener('resize', () => {
   setupSlider();
 });
-
-  const credits = document.querySelector('.credits');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        credits.classList.add('show');
-      }
-    });
-  });
-
-  observer.observe(credits);
   
   // ===== INIT =====
   aggiornaFiltri();
