@@ -59,11 +59,7 @@ button {
   margin-top: 6px;
 }
 .home-cinema {
-  margin: 0 auto;
-  max-width: 1200px; /* prima 1100 */
   margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
   }
 
 .section-label {
@@ -108,7 +104,6 @@ color: var(--gold);
 
 
 .header-inner {
-  max-width: 1100px;
   margin: 0 auto;
   padding: 20px;
 
@@ -177,8 +172,9 @@ color: var(--gold);
 /* ===== HERO BASE ===== */
 
 .hero {
-  padding: 0 40px;
+  padding: 80px 0 60px
 }
+
 .hero-inner {
   max-width: 600px;
   margin: 0;              /* ❗ niente auto */
@@ -194,9 +190,9 @@ color: var(--gold);
   display: flex;
   justify-content: space-between;
   align-items: left;
-  max-width: 1100px;
   margin: 0 auto;
   gap: 60px;
+  padding: 0 20px; /*
 }
 
 /* TESTO */
@@ -1521,7 +1517,6 @@ letter-spacing: 1.8px;
   }
 
 .card-info h3 {
-.arrow-line {
   fill: none;
   stroke: var(--gold);
   stroke-width: 2;
