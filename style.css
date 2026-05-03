@@ -1197,3 +1197,23 @@ a:hover {
 		}
 	}
 }
+.slider-section {
+  position: relative;
+}
+
+.slider-cta {
+  position: absolute;
+  right: 0;
+  top: -30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.slider-cta .cta-label {
+  font-size: 14px;
+  opacity: 0.6;
+  text-align: center;
+}
