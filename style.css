@@ -225,21 +225,27 @@ color: var(--gold);
   justify-content: flex-end; /* 🔥 spinge a destra */
   min-width: 300px;
   position: relative;
+  align-items: center;
+  width: auto;        /* 🔥 importante */
+  flex: 0 0 auto; 
 }
 
 .cta-button {
-  padding: 14px 32px;
+  display: inline-block; /* 🔥 fondamentale */
+  width: auto;           /* 🔥 evita che si allarghi */
+  max-width: none;
+  padding: 12px 26px;
   border-radius: 999px;
-
   background: var(--gold);
   color: #0b1f26;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+  font-size: 14px;
   text-decoration: none;
-
   box-shadow:
-    0 10px 40px rgba(255,191,0,0.3),
-    0 0 30px rgba(255,191,0,0.2);
-
-  transition: 0.2s ease;
+    0 8px 30px rgba(255,191,0,0.3),
+    0 0 20px rgba(255,191,0,0.2);
+  white-space: nowrap; /* 🔥 evita che il testo vada a capo */
 }
 
 .cta-button:hover {
