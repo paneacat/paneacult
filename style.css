@@ -407,7 +407,7 @@ a:hover {
 .slider-next {
   position: absolute;
   right: 70px;   /* 👈 più a sinistra (prima era tipo 20px) */
-  top: 28%;      /* 👈 più su (prima 35% o 50%) */
+  top: calc(50% - 80px);      
   transform: translateY(-50%);
   z-index: 10;
 }
