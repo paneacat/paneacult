@@ -136,15 +136,16 @@ color: var(--gold);
 /* logo */
 .logo {
   font-size: 48px;
-  margin: 0;
+  margin-left: 0;
   text-align: left;
+  color: var(--gold);
 }
 
 /* sottotitolo */
 .logo-subtitle {
   font-size: 11px;
   letter-spacing: 2px;
-  margin-top: -6px;
+  margin-top: -4px;
   text-align: left;
 }
 
@@ -191,7 +192,7 @@ color: var(--gold);
 .hero-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: left;
   max-width: 1100px;
   margin: 0 auto;
   gap: 60px;
@@ -200,6 +201,7 @@ color: var(--gold);
 /* TESTO */
 .hero-text {
   max-width: 520px;
+  align-items: left;
 }
 
 .hero-text h1 {
@@ -208,12 +210,14 @@ color: var(--gold);
   line-height: 1.2;
   color: white;
   margin-bottom: 20px;
+  align-items: left;
 }
 
 .hero-text p {
   font-size: 16px;
   color: #9aa3a8;
   line-height: 1.6;
+  align-items: left;
 }
 
 /* CTA */
