@@ -1446,31 +1446,21 @@ color: var(--gold);
 
 /* ===== MOBILE SLIDER CLEAN ===== */
 
-.slider {
-  display: flex;
-  gap: 16px;
+  .slider {
+    padding: 0 16px;
+    gap: 16px;
+  }
 
-  padding-left: 16px;
-  padding-right: 16px;
-
-  scroll-snap-type: x mandatory;
-  scroll-padding-left: 16px;
-  scroll-padding-right: 16px;
-}
-.slide-item {
+  .slide-item,
+  .slide-card-cta {
     flex: 0 0 85%;
   }
 
-  .slide-card,
-  .slide-card-cta {
-    min-width: unset;
-    width: 100%;
-  flex: 0 0 85%;   /* 👈 leggermente meno → UX migliore */
-  min-width: 85%;
-  scroll-snap-align: center;
-  opacity: 1;
-  transform: none;
-}
+  .slide-card {
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
 
 /* feedback touch */
 .slide-card:active,
@@ -1652,23 +1642,35 @@ padding-top: 15px;
 
 /* ===== CINEMA DESKTOP ===== */
 .slider {
-    display: flex;
-    gap: 32px;
-    scroll-snap-type: x mandatory;
-    padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 30px !important;
-  position: relative;
-  scroll-padding-left: 40px;
-scroll-padding-right: 40px;
-  scroll-behavior: smooth;
+    padding: 0 40px;
+    gap: 24px;
+  }
+
+  .slide-item,
+  .slide-card-cta {
+    flex: 0 0 420px;
+  }
+
+  .slide-card {
+    transition: all 0.4s ease;
+  }
+
+  .slider:hover .slide-card {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+
+  .slide-card:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    z-index: 2;
+    filter: brightness(1);
   }
 
   .slider::-webkit-scrollbar {
     display: none;
   }
 
-  .slide-card,
   .slide-card-cta {
     flex: 0 0 420px;
     scroll-snap-align: center;
@@ -1680,14 +1682,6 @@ scroll-padding-right: 40px;
     transform-origin: center bottom !important;
   filter: brightness(0.7);
 }
-
-  /* 👇 HOVER = PROTAGONISTA */
-  .slide-card:hover {
-    opacity: 1;
-    z-index: 2;
-    filter: brightness(1);
-    transform: none;
-  }
 
   /* 👇 VICINE AL MOUSE */
   .slider:hover .slide-card:not(:hover) {
