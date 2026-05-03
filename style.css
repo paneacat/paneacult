@@ -581,10 +581,6 @@ a:hover {
 		text-align: center;
 	}
 
-	.arrow-trigger::after, .arrow-trigger::before {
-		display: none;
-	}
-
 	.header-inner {
 		flex-direction: column;
 		align-items: center;
