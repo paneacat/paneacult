@@ -344,9 +344,9 @@ a:hover {
 	}
 }
 /* ===== SLIDER ===== */
-.slider-wrapper {
-  position: relative;
-  padding-top: 100px;
+.slider-section {
+  max-width: 1100px;
+  margin: 80px auto 0;
 }
 
 .slider {
