@@ -82,7 +82,7 @@ button {
   text-align: center;
   color: white;
   margin-bottom: var(--space-md);
-  margin-bottom: 22px;
+  margin-bottom: 14px;
   font-size: 22px;
   line-height: 1.25;
   max-width: 380px; /* 🔥 aumenta */
@@ -113,15 +113,16 @@ button {
 /* sottotesto */
 .hero-sub {
   color: #9aa3a8;
-  line-height: 1.6;
   text-align: center;
   margin-top: var(--space-sm);
-  margin-bottom: 8px;
-  font-size: 13px;
-  margin-top: 18px;
+  margin-top: 10px;
+  margin-bottom: 22px;
+  line-height: 1.6;
   max-width: 340px;
   margin-left: auto;
   margin-right: auto;
+  font-size: 13px;
+  opacity: 0.75;
 }
 
 /* bottone */
@@ -141,16 +142,19 @@ button {
   align-items: center;
   justify-content: center;
   -webkit-tap-highlight-color: transparent;
-  padding: 6px 20px 10px 20px; /* 👈 top più leggero */
   line-height: 1;
+
+  padding: 8px 22px 10px;
   border-radius: 999px;
 
+  box-shadow:
+    0 6px 20px rgba(255,191,0,0.25),
+    0 0 20px rgba(255,191,0,0.15);
+  
   font-size: 13px;
   font-weight: 500;
-
   background: var(--gold);
   color: #0b1f26;
-
   transition: all 0.2s ease;
 }
 
