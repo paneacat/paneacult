@@ -1217,8 +1217,14 @@ color: var(--gold);
     transform: translateY(0);
   }
 }
+.hidden {
+  display: none !important;
 }
 
+.hidden-by-limit {
+  display: none !important;
+}
+}
 
 /* ===== MOBILE ===== */
 @media (max-width: 767px) {
