@@ -105,10 +105,11 @@ color: var(--gold);
 
 .header-inner {
   margin: 0 auto;
-padding: 20px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1100px;
+  padding: 20px 20px;
 }
 
 /* blocco logo */
@@ -183,15 +184,6 @@ padding: 20px 32px;
 .hero-sub {
   text-align: left;
   margin: 0;
-}
-
-.hero-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: left;
-  margin: 0 auto;
-  gap: 100px;
-  padding: 0 20px; /*
 }
 
 /* TESTO */
