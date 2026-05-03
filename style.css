@@ -241,6 +241,7 @@ a:hover {
 .cta-button {
 	display: inline-block;
 	width: auto;
+	align-self: flex-end;
 	max-width: none;
 	letter-spacing: 0.3px;
 	font-size: 14px;
