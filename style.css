@@ -303,6 +303,7 @@ padding: 20px 32px;
 /* ===== TAGLIO LATERALE (IMPORTANTISSIMO) ===== */
 .slider-wrapper {
   position: relative;
+  padding-left: 20px;
 }
 
 .slider-wrapper::after {
@@ -510,7 +511,7 @@ max-width: 1100px;
 margin: 0 auto;
 margin-bottom: 6px;
 overflow: visible;
-  padding: 0 32px;
+  padding: 0 20px;
 }
 
 
