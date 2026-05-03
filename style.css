@@ -269,19 +269,13 @@ a:hover {
 }
 
 .hero-cta {
-	display: flex;
-	min-width: 300px;
-	position: relative;
-	align-items: center;
-	width: auto;
-	flex: 0 0 auto;
-	margin-right: 120px;
-	position: relative;
-    right: 80px;
-    gap: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  width: 100%;
+  gap: 14px;
 }
+
 .cta-label {
   font-size: 18px;
   color: white;
@@ -296,12 +290,8 @@ a:hover {
   background: #fcc10e;
   color: #193c4e;
   font-size: 14px;
-  font-weight: 500;
   text-decoration: none;
-  white-space: nowrap;
-  letter-spacing: 0.3px;
-
-  box-shadow: 0 0 0 rgba(252,193,14,0.6);
+  font-weight: 500;
   animation: pulse 2.2s infinite;
 }
 
@@ -330,7 +320,7 @@ a:hover {
 
 @keyframes draw {
   to {
-    stroke-dashoffset: 0;
+    sroke-dashoffset: 0;
   }
 }
 
