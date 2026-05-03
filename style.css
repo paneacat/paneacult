@@ -255,6 +255,7 @@ a:hover {
   top: 200px;
   width: 520px;
   pointer-events: none;
+display: none;
 }
 
 .cta-arrow path {
