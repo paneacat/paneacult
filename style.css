@@ -289,26 +289,21 @@ a:hover {
 }
 
 .cta-button {
-	display: inline-block;
-	width: auto;
-	align-self: flex-end;
-	max-width: none;
-	letter-spacing: 0.3px;
-	font-size: 14px;
-	text-decoration: none;
- 	white-space: nowrap;
-    padding: 14px 28px;
-    border-radius: 999px;
-    background: #fcc10e;
-    color: #193c4e;
-    font-weight: 500;
-	top: -100;
-	right: 40px;
-	position: absolute;
-    box-shadow:
-    0 0 0 rgba(252,193,14,0.6);
-    animation: pulse 2.2s infinite;
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: #fcc10e;
+  color: #193c4e;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+
+  box-shadow: 0 0 0 rgba(252,193,14,0.6);
+  animation: pulse 2.2s infinite;
 }
+
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(252,193,14,0.6);
@@ -368,15 +363,15 @@ a:hover {
 
 .slider-cta {
   position: absolute;
-  top: -60px;
-  right: 40px;
+  top: -100px;   /* 👈 regola questo */
+  right: 40px;   /* 👈 regola questo */
 
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
 
-  z-index: 10;
+  z-index: 20;
 }
 
 .slider::-webkit-scrollbar {
