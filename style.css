@@ -246,12 +246,9 @@ padding: 20px 32px;
 .slider {
   display: flex;
   gap: 18px;
-
   overflow-x: auto;
   scroll-behavior: smooth;
-
-  padding: 20px 0 40px 32px;
-
+  padding: 20px 0 40px 0; /* 🔥 niente left */
   -webkit-overflow-scrolling: touch;
 }
 
@@ -263,11 +260,6 @@ padding: 20px 32px;
 .slide-item {
   flex: 0 0 200px;
   }
-
-  .slider {
-    padding-left: 20px;
-  }
-}
 
 /* ===== CARD VISIVA ===== */
 .slide-card {
