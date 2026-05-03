@@ -227,8 +227,8 @@ a:hover {
 }
 .cta-label {
   font-size: 14px;
-  color: #9aa3a8;
-  opacity: 0.8;
+  color: white;
+  opacity: 0.5;
 }
 
 .cta-button {
