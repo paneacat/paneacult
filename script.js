@@ -108,17 +108,14 @@ function initSliderSnap() {
   const slider = document.querySelector('.slider');
   const items = Array.from(document.querySelectorAll('.slide-item'));
 
-  if (!slider || items.length === 0) return;
+  if (!slider || items.length === 0) {
+    console.log("❌ slider non trovato");
+    return;
+  }
+
+  console.log("✅ slider attivo");
 
   let timeout;
-
-  slider.addEventListener('scroll', () => {
-    clearTimeout(timeout);
-
-    timeout = setTimeout(() => {
-      snapToClosest();
-    }, 120);
-  });
 
   function snapToClosest() {
     const center = slider.scrollLeft + slider.clientWidth / 2;
@@ -146,12 +143,33 @@ function initSliderSnap() {
       });
     }
   }
+
+  // scroll con debounce migliorato
+  slider.addEventListener('scroll', () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(snapToClosest, 100);
+  });
+
+  // snap anche quando finisci di scrollare (più affidabile)
+  slider.addEventListener('touchend', snapToClosest);
+  slider.addEventListener('mouseup', snapToClosest);
 }
 
-// avvia solo su desktop
-if (window.innerWidth >= 900) {
-  initSliderSnap();
+
+// ===== INIT SLIDER =====
+function setupSlider() {
+  if (window.innerWidth >= 900) {
+    initSliderSnap();
+  }
 }
+
+// avvio iniziale
+setupSlider();
+
+// riattiva su resize (🔥 importante)
+window.addEventListener('resize', () => {
+  setupSlider();
+});
   // ===== INIT =====
   aggiornaFiltri();
 
