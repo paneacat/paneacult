@@ -147,7 +147,7 @@ color: var(--gold);
 }
 
 .menu a {
-  font-size: 18px;
+  font-size: 13.5px;
   letter-spacing: 1.6px;
   text-transform: uppercase;
   color: #9aa3a8;
@@ -1315,7 +1315,7 @@ color: var(--gold);
     display: block;
 }
 .menu a {
-font-size: 3.5px;   
+font-size: 13.5px;   
 letter-spacing: 1.8px;
 }
 .archivio-grid {
