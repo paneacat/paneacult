@@ -321,16 +321,16 @@ color: var(--gold);
   fill: none;
   stroke: var(--gold);
   stroke-width: 2;
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
-  animation: drawLine 1s ease forwards;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  animation: drawLine 1.2s ease forwards;
 }
 
 .arrow-head {
   fill: var(--gold);
   opacity: 0;
   animation: fadeHead 0.3s ease forwards;
-  animation-delay: 0.9s;
+  animation-delay: 1s;
 }
 
 @keyframes drawLine {
@@ -342,21 +342,22 @@ color: var(--gold);
 @keyframes fadeHead {
   to {
     opacity: 1;
+  }
 }
 
 .cta-row {
-  display: flex;
-  align-items: center;
-  gap: 20px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .cta-arrow {
   position: absolute;
-  transform: translate(-10%, 10%); /* 🔥 allinea visivamente */
-  left: 60%;   /* spostala verso bottone */
-  top: 20%;    /* più in alto */
-  width: 120px;
+  bottom: -40px;   /* 🔥 parte da sotto */
+  left: 50%;
+  transform: translateX(-70%); /* sposta verso bottone */
+  width: 200px;
   pointer-events: none;
 }
 
@@ -1523,7 +1524,7 @@ color: var(--gold);
   }
 
   .cta-arrow {
-    display: none; /* 🔥 giusto */
+    display: none;
   }
   
   /* evita layout “schiacciato” */
