@@ -276,6 +276,7 @@ a:hover {
     justify-content: center;
     text-align: right;
 	padding-right: 40px;
+  width: 100%;              /* 👈 QUESTO è il missing piece */
 }
 
 .cta-label {
