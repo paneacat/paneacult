@@ -246,14 +246,17 @@ color: var(--gold);
   transform: translateY(-2px);
   background: #ffd54a;
 }
-
+.cta-hook {
+  display: inline-block;
+  position: relative;
+}
 /* freccia */
 .cta-arrow {
   position: absolute;
   height: auto;
   pointer-events: none;
   position: absolute;
-  left: 120px;   /* parte sotto il testo */
+  left: 80px;   /* parte sotto il testo */
   top: 140px;    /* altezza sotto "vuoi scrivere..." */
   width: 300px;
 }
