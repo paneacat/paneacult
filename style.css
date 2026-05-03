@@ -223,16 +223,16 @@ a:hover {
 	display: flex;
 	flex-direction: column;
     gap: 14px;
-	align-items: center;
-	position: relative;
-	display: flex;
-  justify-content: center;
+	align-items: flex-end;   /* 👈 QUESTO è il punto */
+    justify-content: center;
+    text-align: right;
 }
 
 .cta-label {
   font-size: 18px;
   color: white;
   opacity: 0.5;
+  text-align: right;
 }
 
 .cta-button {
