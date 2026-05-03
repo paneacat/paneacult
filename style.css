@@ -363,7 +363,7 @@ a:hover {
 
 .slider-cta {
   position: absolute;
-  top: -100px;   /* 👈 regola questo */
+  top: -250px;   /* 👈 regola questo */
   right: 40px;   /* 👈 regola questo */
 
   display: flex;
