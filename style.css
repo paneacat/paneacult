@@ -87,6 +87,16 @@ button {
   line-height: 1.25;
   max-width: 380px; /* 🔥 aumenta */
   margin: 0 auto;
+  text-shadow: 0 0 30px rgba(255,191,0,0.15);
+}
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+  margin: 10px auto 0;
+  opacity: 0.7;
 }
 
 .hero p {
