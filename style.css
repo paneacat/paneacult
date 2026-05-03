@@ -39,12 +39,6 @@ button {
 --gold: #ffbf00;
 --text: #eaeaea;
 --muted: #aaa;
---space-xs: 6px;
-  --space-sm: 10px;
-  --space-md: 16px;
-  --space-lg: 28px;
-  --space-xl: 48px;
-  --space-xxl: 72px;
 }  
 
 .home-intro {
