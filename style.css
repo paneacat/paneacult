@@ -348,14 +348,13 @@ a:hover {
 /* ===== SLIDER ===== */
 .slider-wrapper {
   position: relative;
-  max-width: 1100px;
-  margin: 0 auto;
+  padding-top: 100px;
 }
 
 .slider {
   display: flex;
   overflow-x: auto;
-  gap: 28px; /* 👉 più spazio tra le card */
+  gap: 20px; /* 👉 più spazio tra le card */
   padding: 10px 0 20px;
   scroll-snap-type: x mandatory;
   padding-left: 0;
@@ -364,15 +363,13 @@ a:hover {
 
 .slider-cta {
   position: absolute;
-  top: -309px;   /* 👈 regola questo */
-  right: 40px;   /* 👈 regola questo */
-
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
-
   z-index: 20;
+  top: 0;
+  right: 40px;
 }
 
 .slider::-webkit-scrollbar {
@@ -397,7 +394,7 @@ a:hover {
 /* immagine */
 .slide-card img {
   width: 100%;
-  height: 170px;
+  height: 180px;
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
