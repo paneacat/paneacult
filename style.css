@@ -406,10 +406,8 @@ a:hover {
 }
 .slider-next {
   position: absolute;
-
-  right: 20px;   /* distanza dal bordo */
-  top: 35%;      /* centrata verticalmente */
-
+  right: 60px;   /* 👈 più a sinistra (prima era tipo 20px) */
+  top: 30%;      /* 👈 più su (prima 35% o 50%) */
   transform: translateY(-50%);
   z-index: 10;
 }
