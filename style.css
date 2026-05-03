@@ -250,8 +250,8 @@ a:hover {
 
 .cta-arrow {
   position: absolute;
-  left: 180px;   /* punto di partenza vicino al testo */
-  top: 210px;
+  left: 60px;   /* punto di partenza vicino al testo */
+  top: 160px;
   width: 260px;
   pointer-events: none;
   opacity: 0.9;
