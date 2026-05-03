@@ -77,8 +77,9 @@ button {
 .hero {
   display: flex;
   justify-content: center;
+   position: relative;
+  padding: 60px 20px 40px;
   text-align: center;
-  padding: 40px 20px 20px;
   margin: var(--space-xl) auto var(--space-xl);
 }
 
@@ -89,14 +90,12 @@ button {
 /* TITOLO */
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  line-height: 1.25;
   color: white;
-  margin-bottom: 18px;
    text-align: center;
-  margin-bottom: var(--space-md);
-  max-width: 380px; /* 🔥 aumenta */
-  margin: 0 auto;
+   font-size: 32px;
+  line-height: 1.25;
+  max-width: 380px;
+  margin: 0 auto 16px;
   text-shadow: 0 0 30px rgba(255,191,0,0.15);
 }
 
@@ -175,16 +174,6 @@ button {
   transform: scale(0.97);
 }
 
-.hero-cta:hover {
-  transform: translateY(-2px);
-  background: #ffd54a;
-}
-
-.hero-cta a:hover {
-  transform: translateY(-2px);
-  background: #ffd54a;
-}
-
 .section-label {
   margin-top: 60px;
 
@@ -204,7 +193,8 @@ button {
   width: 30px;
   height: 1px;
   background: var(--gold);
-  opacity: 0.5margin-top: var(--space-xl);
+  opacity: 0.5;
+  margin-top: var(--space-xl);
   margin-bottom: var(--space-md);
 }
 
@@ -223,9 +213,7 @@ button {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scroll-padding: 0 40px;
-  padding-top: 20px;
   padding: var(--space-sm) 40px var(--space-lg);
-  padding-bottom: 30px;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -372,12 +360,12 @@ margin-bottom: 20px;
 }
 
 .menu a {
-font-size: 12px;
-letter-spacing: 1.5px;
 color: var(--muted);
 text-transform: uppercase;
 position: relative;
 opacity: 0.8;
+  font-size: 13.5px;
+  letter-spacing: 1.6px;
 }
 
 .menu a.active {
