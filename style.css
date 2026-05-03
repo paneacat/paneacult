@@ -228,9 +228,11 @@ a:hover {
 }
 
 .hero-inner {
-  display: grid;
-  grid-template-columns: 520px 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
   gap: 80px;
 }
 
@@ -274,32 +276,30 @@ a:hover {
 .hero-cta {
   display: flex;
   flex-direction: column;
+  align-items: center;   /* centra label + bottone */
   justify-content: center;
-  align-items: center; /* 👈 QUESTO è il punto chiave */
+  min-width: 280px;
   gap: 10px;
 }
 
 .cta-label {
-  font-size: 18px;
-  color: white;
-  opacity: 0.5;
+  
  justify-content: center;
- text-align: right;
+  font-size: 16px;
+  color: white;
+  opacity: 0.6;
+  text-align: center;
 }
 
 .cta-button {
-  display: inline-flex;       /* 👈 cambia da inline-block */
-  align-items: center;        /* verticale */
-  justify-content: center;    /* orizzontale */
-  text-align: center;
+  display: inline-block;
   padding: 14px 28px;
   border-radius: 999px;
   background: #fcc10e;
   color: #193c4e;
-  font-size: 14px;
-  text-decoration: none;
   font-weight: 500;
-  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
   animation: pulse 2.2s infinite;
 }
 
