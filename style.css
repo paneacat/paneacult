@@ -161,14 +161,8 @@ button {
   gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-
   padding: 0 20px;
-
   -webkit-overflow-scrolling: touch;
-}
-
-.slider::-webkit-scrollbar {
-  display: none;
 }
 
 /* contenitore card + testo */
