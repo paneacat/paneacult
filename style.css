@@ -1771,7 +1771,6 @@ letter-spacing: 1.8px;
 .arrow-head {
   fill: var(--gold);
   opacity: 0;
-
   animation: fadeHead 0.3s ease forwards;
   animation-delay: 0.9s;
 }font-size: 26px;
@@ -1884,11 +1883,12 @@ padding-top: 15px;
   .logo {
     font-size: 42px;
     text-align: center;
+    color: var(--gold);
   }
 
   .logo-subtitle {
     text-align: center;
-    margin-top: -4px;
+    margin-top: -4px;  
   }
 
   /* MENU SOTTO LOGO */
@@ -1897,6 +1897,7 @@ padding-top: 15px;
     flex-wrap: wrap;
     gap: 18px;
     margin-top: 6px;
+    font-size: 13.5px;
   }
 
   /* HERO FULL CENTER */
