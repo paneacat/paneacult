@@ -304,15 +304,6 @@ color: var(--gold);
   right: 120px;
   top: 55px;
 }
-.cta-arrow {
-  position: absolute;
-  left: 160px;
-  top: 20px;
-  width: 140px;
-  height: auto;
-
-  pointer-events: none;
-}
 
 .cta-arrow path {
   fill: none;
@@ -324,18 +315,36 @@ color: var(--gold);
 
   animation: drawLine 1s ease forwards;
 }
+
+.arrow-line {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+
+  animation: drawLine 1s ease forwards;
+}
+
 .arrow-head {
   fill: var(--gold);
   opacity: 0;
 
   animation: fadeHead 0.3s ease forwards;
-  animation-delay: 1s;
+  animation-delay: 0.9s;
 }
+  
 
-@keyframes fadeHead {
-  to {
-    opacity: 1;
-  }
+.cta-arrow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-10%, 10%); /* 🔥 allinea visivamente */
+
+  width: 180px;
+  pointer-events: none;
 }
 
 .cta-hook {
