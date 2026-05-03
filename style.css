@@ -251,10 +251,74 @@ a:hover {
 		opacity: 1;
 	}
 }
+/* ===== SLIDER ===== */
+
 .slider {
   display: flex;
   overflow-x: auto;
-  gap: 20px;
+  gap: 28px; /* 👉 più spazio tra le card */
+  padding: 10px 0 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD */
+.slide-item {
+  flex: 0 0 280px; /* 👉 dimensione desktop */
+  scroll-snap-align: start;
+}
+
+/* contenitore card */
+.slide-card {
+  display: block;
+  border-radius: 18px; /* 👉 più arrotondate */
+  overflow: hidden;
+  background: #0f2a33;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* immagine */
+.slide-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* hover desktop */
+.slide-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.4),
+    0 0 12px rgba(255,191,0,0.08);
+}
+
+.slide-card:hover img {
+  transform: scale(1.06);
+}
+
+/* TESTO */
+.slide-info {
+  margin-top: 10px;
+}
+
+/* titolo */
+.slide-info h3 {
+  font-size: 16px; /* 👉 più grande */
+  color: white;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+/* stelle */
+.slide-info p {
+  font-size: 15px; /* 👉 più grandi */
+  color: var(--gold);
+  letter-spacing: 2px;
 }
 	.credits-label {
 		font-size: 11px;
@@ -644,29 +708,18 @@ a:hover {
 		flex: 0 0 auto;
 	}
 
-	.slider {
-		padding: 0 20px;
-		gap: 16px;
-		padding-left: 20px;
-	}
+.slider {
+    gap: 18px;
+    padding-left: 20px;
+  }
 
-	.slide-item {
-		opacity: 1 !important;
-		transform: none !important;
-		flex: 0 0 80%;
-	}
+  .slide-item {
+    flex: 0 0 80%; /* 👉 effetto “scorro e intravedo le altre” */
+  }
 
-	.slide-card img {
-		transform: none !important;
-	}
-
-	.slide-card {
-		border-radius: 14px;
-	}
-
-	.slide-item:active {
-		transform: scale(0.97);
-	}
+  .slide-card img {
+    height: 160px;
+  }
 
 	.hero-inner {
 		flex-direction: column;
