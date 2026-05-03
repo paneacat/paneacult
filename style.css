@@ -186,7 +186,17 @@ color: var(--gold);
 /* ===== HERO BASE ===== */
 
 .hero {
-  padding: 80px 20px;
+  padding: 0 40px;
+}
+.hero-inner {
+  max-width: 600px;
+  margin: 0;              /* ❗ niente auto */
+  text-align: left;       /* ❗ sinistra */
+}
+
+.hero-sub {
+  text-align: left;
+  margin: 0;
 }
 
 .hero-container {
@@ -1374,7 +1384,20 @@ color: var(--gold);
   .slide-item:active {
   transform: scale(0.97);
   }
+.hero {
+    padding: 0 20px;
+    text-align: center;
+  }
 
+  .hero-inner {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-sub {
+    text-align: center;
+  }
+  
 .hero-container {
     flex-direction: column;
     text-align: center;
