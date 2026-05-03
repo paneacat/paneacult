@@ -72,6 +72,24 @@ button {
   margin-right: auto;
   }
 
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.logo-subtitle {
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: -4px; /* avvicina al titolo */
+  margin-bottom: 18px;
+  opacity: 0.8;
+}
+
 .section-label {
   margin-top: 60px;
 
@@ -119,13 +137,6 @@ color: var(--gold);
 .site-header {
   text-align: center;
   padding-top: 20px;
-}
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 56px;
-  color: var(--gold);
-  margin-bottom: 6px;
 }
 
 .logo-subtitle {
@@ -1045,12 +1056,16 @@ border-color: var(--gold);
 
 #loadMoreBtn {
 background: transparent;
-border: 1px solid rgba(255,255,255,0.2);
-color: #aaa;
 padding: 8px 16px;
 font-size: 12px;
 border-radius: 20px;
 transition: 0.2s ease;
+color: #bbb;
+border: 1px solid rgba(255,255,255,0.25);
+}
+
+#loadMoreBtn:hover {
+  background: rgba(255,191,0,0.08);
 }
 
 #loadMoreBtn:hover {
@@ -1080,21 +1095,6 @@ color: var(--gold);
 
 .review-hero::after {
   content: none !important;
-}
-
-.logo {
-  margin-bottom: 6px; /* 👈 prima era tipo 14px */
-}
-
-.logo-subtitle {
-  text-align: center;
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: -4px; /* avvicina al titolo */
-  margin-bottom: 18px;
-  opacity: 0.8;
 }
 
 .hero-kicker {
