@@ -233,11 +233,9 @@ color: var(--gold);
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
-
   box-shadow:
     0 6px 20px rgba(255,191,0,0.25),
     0 0 20px rgba(255,191,0,0.15);
-
   transition: transform 0.15s ease, background 0.2s ease;
   -webkit-tap-highlight-color: transparent;
 }
@@ -267,22 +265,15 @@ color: var(--gold);
 .hero-cta-wrapper::after {
   content: "";
   position: absolute;
-
   width: 120px;
   height: 60px;
-
   left: 180px;
   top: 40px;
-
   border-top: 2px solid var(--gold);
   border-right: 2px solid var(--gold);
-
   border-radius: 0 100px 0 0;
-
   transform: rotate(20deg);
-
   opacity: 0.7;
-
   /* 👇 ANIMAZIONE */
   stroke-dasharray: 200;
   stroke-dashoffset: 200;
@@ -292,45 +283,24 @@ color: var(--gold);
 .hero-cta-wrapper::before {
   content: "";
   position: absolute;
-
   width: 8px;
   height: 8px;
-
   border-top: 2px solid var(--gold);
   border-right: 2px solid var(--gold);
-
-  transform: rotate(45deg);
-
-  right: 120px;
-  top: 55px;
-}
-
-.cta-arrow path {
-  fill: none;
-  stroke: var(--gold);
-  stroke-width: 2;
-
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
-
-  animation: drawLine 1s ease forwards;
 }
 
 .arrow-line {
   fill: none;
   stroke: var(--gold);
   stroke-width: 2;
-
   stroke-dasharray: 200;
   stroke-dashoffset: 200;
-
   animation: drawLine 1s ease forwards;
 }
 
 .arrow-head {
   fill: var(--gold);
   opacity: 0;
-
   animation: fadeHead 0.3s ease forwards;
   animation-delay: 0.9s;
 }
@@ -338,13 +308,11 @@ color: var(--gold);
 
 .cta-arrow {
   position: absolute;
-  left: 50%;
-  top: 50%;
-
   transform: translate(-10%, 10%); /* 🔥 allinea visivamente */
-
-  width: 180px;
   pointer-events: none;
+  left: 60%;   /* spostala verso bottone */
+  top: 20%;    /* più in alto */
+  width: 160px;
 }
 
 .cta-hook {
@@ -357,17 +325,13 @@ color: var(--gold);
 .cta-button {
   padding: 10px 24px;
   border-radius: 999px;
-
   background: var(--gold);
   color: #0b1f26;
-
   font-size: 14px;
   text-decoration: none;
-
   box-shadow:
     0 8px 30px rgba(255,191,0,0.3),
     0 0 20px rgba(255,191,0,0.2);
-
   transition: 0.2s ease;
 }
 
