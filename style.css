@@ -221,7 +221,7 @@ a:hover {
 
 .hero-cta {
 	display: flex;
-	min-width: 300px;
+    transform: translateY(-20px);
 	position: relative;
 	width: auto;
   	flex: 0 0 auto;
