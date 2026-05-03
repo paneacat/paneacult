@@ -264,11 +264,13 @@ a:hover {
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke: var(--gold);
+  stroke: white;
+  stroke-width: 3;
+  fill: none;
 }
 
 .cta-arrow polygon {
-  fill: #fcc10e;
+  fill: white;
 }
 
 @keyframes draw {
