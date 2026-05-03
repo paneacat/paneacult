@@ -270,20 +270,22 @@ a:hover {
 
 .hero-cta {
 	display: flex;
-	flex-direction: column;
+	min-width: 300px;
+	position: relative;
+	align-items: center;
+	width: auto;
+	flex: 0 0 auto;
+	margin-right: 120px;
+	position: relative;
+    right: 80px;
     gap: 14px;
-	align-items: flex-end;   /* 👈 QUESTO è il punto */
-    justify-content: center;
-    text-align: right;
-	padding-right: 40px;
-  width: 100%;              /* 👈 QUESTO è il missing piece */
+  justify-content: center;
+  width: 100%;
 }
-
 .cta-label {
   font-size: 18px;
   color: white;
   opacity: 0.5;
-  text-align: right;
 }
 
 .cta-button {
