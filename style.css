@@ -192,7 +192,7 @@ color: var(--gold);
 }
 
 /* titolo */
-.hero h2 {
+.hero-inner h2 {
   font-family: 'Playfair Display', serif;
   font-size: 25px;
   text-align: center;
@@ -209,6 +209,7 @@ color: var(--gold);
   align-items: center;
   gap: 12px; /* 👈 li unisce visivamente */
 }
+
 /* sottotesto */
 .hero-sub {
   font-size: 14px;
