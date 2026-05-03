@@ -251,9 +251,9 @@ a:hover {
 
 .cta-arrow {
   position: absolute;
-  left: 280px;
-top: 200px;
-width: 420px;
+  left: 320px;
+  top: 200px;
+  width: 420px;
   pointer-events: none;
 }
 
