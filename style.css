@@ -253,6 +253,7 @@ a:hover {
   left: 0;
   top: 180px;
   transform: translateX(260px);
+  width: 420px;
 }
 
 @keyframes drawLine {
