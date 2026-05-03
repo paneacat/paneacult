@@ -243,30 +243,22 @@ padding: 20px 32px;
 }
 
 
-/* ===== SLIDER WRAPPER ===== */
 .slider {
   display: flex;
-  gap: 18px;
-
   overflow-x: auto;
-  scroll-behavior: smooth;
+  gap: 16px;
+  padding: 20px;
+  background: red; /* DEBUG */
+}
 
-  padding: 20px 0 40px 32px; /* 👈 spazio a sinistra */
-  
-  scroll-snap-type: x mandatory;
-
-  -webkit-overflow-scrolling: touch;
+.slide-item {
+  flex: 0 0 200px;
+  background: yellow; /* DEBUG */
 }
 
 /* nasconde scrollbar */
 .slider::-webkit-scrollbar {
   display: none;
-}
-
-/* ===== CARD ===== */
-.slide-item {
-  flex: 0 0 240px; /* 🔥 dimensione perfetta */
-  scroll-snap-align: start;
 }
 
 /* ===== CARD VISIVA ===== */
