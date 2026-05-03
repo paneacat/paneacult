@@ -265,10 +265,7 @@ padding: 20px 32px;
 .slide-card {
   display: block;
   border-radius: 14px;
-  overflow: hidden;
-
   transition: transform 0.4s ease, opacity 0.4s ease;
-
   opacity: 0.6;
 }
 
