@@ -19,6 +19,9 @@
         opacity="0.5" />
 
   <!-- TRIANGOLO pieno -->
-  <polygon points="290,65 305,75 290,85" fill="#fcc10e"/>
+  <polygon points="290,65 305,75 290,85" 
+         fill="none" 
+         stroke="#fcc10e" 
+         stroke-width="2"/>
 
 </svg>
