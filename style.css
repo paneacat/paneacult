@@ -1390,14 +1390,8 @@ color: var(--gold);
   .filtro {
     flex: 0 0 auto; /* 🔥 fondamentale */
   }
-  /* evita layout “schiacciato” */
-.container,
-.section {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-  .slider {
+
+      .slider {
     padding: 0 20px;
     gap: 16px;
   }
@@ -1419,6 +1413,18 @@ color: var(--gold);
   .slide-card img {
     transform: none !important;
   }
+  .slide-item:active {
+  transform: scale(0.97);
+  }
+
+  
+  /* evita layout “schiacciato” */
+.container,
+.section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 }
 
 /* ===== DESKTOP ===== */
