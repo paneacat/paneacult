@@ -234,16 +234,10 @@ a:hover {
 }
 
 .cta-arrow {
-	position: absolute;
-	pointer-events: none;
-	position: absolute;
-	left: 60px;
-	top: 160px;
-	width: 340px;
-}
-
-body {
-	border: 10px solid red;
+  position: absolute;
+  left: 120px;
+  top: 200px;
+  width: 280px;
 }
 
 @keyframes drawLine {
@@ -257,8 +251,11 @@ body {
 		opacity: 1;
 	}
 }
-
 .slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+}
 	.credits-label {
 		font-size: 11px;
 		letter-spacing: 2px;
@@ -272,7 +269,7 @@ body {
 		font-size: 18px;
 		color: white;
 		margin-top: 6px;
-	}
+    }
 
 	.fade {
 		opacity: 0;
@@ -335,7 +332,6 @@ body {
 			}
 		}
 	}
-}
 
 @media (max-width: 767px) {
 	.about-grid {
