@@ -363,6 +363,19 @@ a:hover {
   padding-right: 0;
 }
 
+.slider-cta {
+  position: absolute;
+  top: -60px;
+  right: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+
+  z-index: 10;
+}
+
 .slider::-webkit-scrollbar {
   display: none;
 }
