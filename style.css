@@ -256,8 +256,8 @@ color: var(--gold);
   height: auto;
   pointer-events: none;
   position: absolute;
-  left: 80px;   /* parte sotto il testo */
-  top: 140px;    /* altezza sotto "vuoi scrivere..." */
+  left: 30px;   /* parte sotto il testo */
+  top: 500px;    /* altezza sotto "vuoi scrivere..." */
   width: 300px;
 }
 
