@@ -251,17 +251,22 @@ a:hover {
 
 .cta-arrow {
   position: absolute;
-  left: 260px;
-  top: 180px;
-  width: 380px;
-  height: auto;
+  left: 280px;
+top: 200px;
+width: 420px;
   pointer-events: none;
 }
 
 .cta-arrow path {
-  stroke-dasharray: 500;
-  stroke-dashoffset: 500;
-  animation: draw 1.5s ease forwards;
+  fill: none; /* 🔴 QUESTO TI MANCAVA */
+  stroke: #fcc10e;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cta-arrow polygon {
+  fill: #fcc10e;
 }
 
 @keyframes draw {
