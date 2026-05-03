@@ -100,11 +100,13 @@ button {
 /* sottotesto */
 .hero-sub {
   max-width: 420px;
-  font-size: 14px;
   color: #9aa3a8;
   line-height: 1.6;
   text-align: center;
   margin-top: var(--space-sm);
+  margin-top: 14px;
+  margin-bottom: 18px;
+  font-size: 13px;
 }
 
 /* bottone */
@@ -121,13 +123,14 @@ button {
 
 .hero-cta a {
   display: inline-block;
-  padding: 8px 18px;
-  font-size: 12.5px;
-  border-radius: 20px;
   background: var(--gold);
   color: #0b1f26;
-  font-weight: 500;
   text-decoration: none;
+  padding: 12px 22px;
+  font-size: 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(255,191,0,0.25);
 }
 
 .hero-cta:hover {
@@ -1417,7 +1420,16 @@ color: var(--gold);
   transform: scale(0.97);
   }
 
-  
+  .hero {
+    padding: 0 20px;
+    margin: 30px auto 20px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+    line-height: 1.2;
+    font-weight: 600;
+  }
   /* evita layout “schiacciato” */
 .container,
 .section {
