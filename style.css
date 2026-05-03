@@ -1102,14 +1102,17 @@ color: var(--gold);
 }
 
 .credits {
-  margin: 120px auto 22px;
-  padding: 60px 20px;
+  margin: 80px auto 40px;
+  padding: 40px 20px;  
   text-align: center;
+  opacity: 0.85;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .credits-inner {
   animation: fadeUp 1.2s ease;
+  max-width: 220px; /* 🔥 più stretto */
+  margin: 0 auto;
 }
 
 @keyframes fadeUp {
