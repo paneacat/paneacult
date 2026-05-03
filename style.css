@@ -1233,12 +1233,6 @@ color: var(--gold);
   letter-spacing: 1.5px;
   margin-top: -3px;
   }
-  
-  .hero-kicker {
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  margin-bottom: 10px;
-  }
 
 .filtri-row {
     flex-wrap: nowrap; /* 🔥 niente wrap */
