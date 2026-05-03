@@ -1097,25 +1097,6 @@ color: var(--gold);
   content: none !important;
 }
 
-.hero-kicker {
-  text-align: center;
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  opacity: 0.8;
-  margin-bottom: 12px;
-}
-
-.hero-kicker::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 1px;
-  background: var(--gold);
-  margin: 8px auto 0;
-  opacity: 0.6;
-}
 /* ===== FILTRI ===== */
 
 .filtri-row.top { 
