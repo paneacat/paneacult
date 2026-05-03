@@ -129,7 +129,6 @@ color: var(--gold);
 /* blocco logo */
 .logo-block {
   display: flex;
-  flex-direction: column;
   align-items: flex-start; /* 🔥 QUESTO È IL SEGRETO */
 }
 
@@ -139,6 +138,7 @@ color: var(--gold);
   margin-left: 0;
   text-align: left;
   color: var(--gold);
+  font-family: 'Playfair Display', serif;
 }
 
 /* sottotitolo */
