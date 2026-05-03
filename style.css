@@ -116,40 +116,36 @@ color: var(--gold);
 }
 
 
-
-/* ===== HEADER ===== */
 .header-inner {
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px;
-  justify-content: space-between;
+
   display: flex;
-  align-items: left;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* blocco logo */
 .logo-block {
   display: flex;
-  align-items: left;
+  flex-direction: column;
+  align-items: flex-start; /* 🔥 QUESTO È IL SEGRETO */
 }
 
 /* logo */
 .logo {
   font-size: 48px;
   margin: 0;
-  color: var(--gold);
-  font-family: 'Playfair Display', serif;
-  align-items: left;
+  text-align: left;
 }
 
 /* sottotitolo */
 .logo-subtitle {
   font-size: 11px;
   letter-spacing: 2px;
-  margin-top: 2px;
-  opacity: 0.7;
-  align-items: left;
-  color: white;
+  margin-top: -6px;
+  text-align: left;
 }
 
 /* menu */
@@ -196,7 +192,6 @@ color: var(--gold);
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   max-width: 1100px;
   margin: 0 auto;
   gap: 60px;
