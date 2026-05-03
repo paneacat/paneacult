@@ -250,11 +250,9 @@ a:hover {
 
 .cta-arrow {
   position: absolute;
-  left: 60px;   /* punto di partenza vicino al testo */
-  top: 160px;
-  width: 260px;
-  pointer-events: none;
-  opacity: 0.9;
+  left: 220px;   /* sposta a destra */
+  top: 170px;
+  width: 360px;
 }
 
 @keyframes drawLine {
