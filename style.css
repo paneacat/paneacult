@@ -304,6 +304,39 @@ color: var(--gold);
   right: 120px;
   top: 55px;
 }
+.cta-arrow {
+  position: absolute;
+  left: 160px;
+  top: 20px;
+  width: 140px;
+  height: auto;
+
+  pointer-events: none;
+}
+
+.cta-arrow path {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+
+  animation: drawLine 1s ease forwards;
+}
+.arrow-head {
+  fill: var(--gold);
+  opacity: 0;
+
+  animation: fadeHead 0.3s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeHead {
+  to {
+    opacity: 1;
+  }
+}
 
 .cta-hook {
   display: inline-block;
@@ -1472,6 +1505,9 @@ color: var(--gold);
   .hero-cta-wrapper::after {
     display: none;
   }
+  .cta-arrow {
+    display: none;
+  }
   /* evita layout “schiacciato” */
 .container,
 .section {
@@ -1680,5 +1716,10 @@ padding-top: 15px;
   
   .slide-card:hover img {
     transform: scale(1.08);
+  }
+}
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
   }
 }
