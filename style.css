@@ -192,6 +192,7 @@ a:hover {
 .hero-text {
 	max-width: 520px;
 	text-align: left;
+	position: relative;
 }
 
 .hero-text h1 {
@@ -251,19 +252,19 @@ a:hover {
 
 .cta-arrow {
   position: absolute;
-  left: 240px;
-  top: 200px;
-  width: 520px;
+  left: 0;
   pointer-events: none;
-display: none;
+  top: 140px;
+  width: 500px;
+  pointer-events: none;
 }
 
 .cta-arrow path {
   fill: none; /* 🔴 QUESTO TI MANCAVA */
-  stroke: #fcc10e;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
+  stroke: var(--gold);
 }
 
 .cta-arrow polygon {
