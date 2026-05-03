@@ -194,6 +194,15 @@ a:hover {
 	text-align: left;
 	position: relative;
 }
+.highlight {
+  color: #fcc10e;
+}
+.hero-sub {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;   /* 👈 IMPORTANTISSIMO per non farlo brutto */
+  font-size: 13px;         /* leggermente più piccolo */
+  color: #9aa3a8;
+}
 
 .hero-text h1 {
 	font-family: 'Playfair Display', serif;
