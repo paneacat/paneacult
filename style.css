@@ -1374,7 +1374,6 @@ color: var(--gold);
 
   .slide-card {
     border-radius: 14px;
-    overflow: hidden;
   }
 
   .slide-item:active {
