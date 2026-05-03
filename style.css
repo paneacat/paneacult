@@ -251,10 +251,23 @@ a:hover {
 
 .cta-arrow {
   position: absolute;
-  left: 0;
+  left: 260px;
   top: 180px;
-  transform: translateX(260px);
-  width: 420px;
+  width: 380px;
+  height: auto;
+  pointer-events: none;
+}
+
+.cta-arrow path {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: draw 1.5s ease forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes drawLine {
