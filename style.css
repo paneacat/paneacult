@@ -286,6 +286,7 @@ a:hover {
   font-size: 18px;
   color: white;
   opacity: 0.5;
+ justify-content: center;
 }
 
 .cta-button {
@@ -363,7 +364,7 @@ a:hover {
 
 .slider-cta {
   position: absolute;
-  top: -250px;   /* 👈 regola questo */
+  top: -309px;   /* 👈 regola questo */
   right: 40px;   /* 👈 regola questo */
 
   display: flex;
