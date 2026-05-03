@@ -262,8 +262,6 @@ color: var(--gold);
   width: 340px;
 }
 
-/* linea curva */
-.
 /* animazioni */
 @keyframes drawLine {
   to {
@@ -276,6 +274,7 @@ color: var(--gold);
     opacity: 1;
   }
 }
+
 .slider {
   display: flex;
   gap: 18px;
@@ -288,19 +287,16 @@ color: var(--gold);
   fill: none;
   stroke: var(--gold);
   stroke-width: 2.5;
-
   stroke-linecap: round;
   stroke-linejoin: round;
-
   stroke-dasharray: 600;
   stroke-dashoffset: 600;
-
+  filter: drop-shadow(0 0 6px rgba(255,191,0,0.3));
   animation: drawLine 1.2s ease forwards;
 }
 
 .arrow-head {
   fill: var(--gold);
-
   opacity: 0;
   animation: fadeHead 0.3s ease forwards;
   animation-delay: 1s;
