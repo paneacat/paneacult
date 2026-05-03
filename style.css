@@ -713,19 +713,6 @@ text-align: center;
     0 0 14px rgba(255,191,0,0.15);
 }
 
-
-
-footer {
-margin: 60px auto 30px;
-padding: 20px 20px 10px;
-text-align: center;
-font-size: 11px;
-color: #777;
-letter-spacing: 0.5px;
-border-top: 1px solid rgba(255,255,255,0.08);
-max-width: 500px;
-}
-
 .review-hero {
   border-radius: 16px;
   position: relative;
@@ -1114,7 +1101,34 @@ color: var(--gold);
   gap: 20px;
 }
 
+.credits {
+  margin: 120px auto 60px;
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
 
+.credits-inner {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* etichette */
+.credits-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  margin-top: 24px;
+}
+
+/* nomi */
+.credits-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: white;
+  margin-top: 6px;
+}
 
 
 /* ===== MOBILE ===== */
