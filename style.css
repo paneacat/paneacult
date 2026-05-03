@@ -393,24 +393,6 @@ transform: translateY(-2px);
   color: #555;
 }
 
-.hero::before 
-{content: "";
-position: absolute;
-width: 320px;
-height: 320px;
-border-radius: 50%;
-pointer-events: none;
-background: radial-gradient(
-circle,
-rgba(255,191,0,0.12) 0%,
-transparent 70%
-);
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-z-index: 0;
-}
-.
 /* ===== GRID ===== */
 .grid {
 display: grid;
@@ -467,12 +449,14 @@ margin-top: 20px;
   border-radius: 0; /* 🔥 via curve */
   background: transparent;
   box-shadow: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .card img {
   width: 100%;
   object-fit: cover;
 }
+
 .card::after {
   display: none;
   content: "";
@@ -484,20 +468,6 @@ margin-top: 20px;
     rgba(0,0,0,0.1)
   );
   z-index: 1; /* 🔥 fondamentale */
-}
-
-/* quando sparisce */
-.card.hide {
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-  display: none;
-}
-
-/* quando appare */
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* hover */
@@ -541,6 +511,19 @@ color: #ccc;
   margin-top: 0; /* 🔥 niente stacco */
   line-height: 1.2;
   color: var(--gold);
+}
+
+/* stato iniziale nascosto */
+.card.hidden {
+opacity: 0;
+pointer-events: none;
+transform: translateY(20px);
+}
+
+/* animazione quando appare */
+.card.show {
+opacity: 1;
+transform: translateY(0);
 }
 
 /* ===== LAYOUT ===== */
@@ -1053,18 +1036,6 @@ transition: 0.2s ease;
 color: var(--gold);
 border-color: var(--gold);
 }
-/* stato iniziale nascosto */
-.card.hidden {
-opacity: 0;
-transform: translateY(20px);
-}
-
-/* animazione quando appare */
-.card.show {
-opacity: 1;
-transform: translateY(0);
-transition: opacity 0.5s ease, transform 0.5s ease;
-}
 
 .load-more {
   display: flex;
@@ -1457,8 +1428,7 @@ letter-spacing: 1.8px;
 .about-hero img:hover {
   filter: grayscale(0%);
 }
-  
-  
+    
   .about-container p {
   margin-bottom: 12px;
   }
