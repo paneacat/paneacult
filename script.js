@@ -102,7 +102,56 @@ document.addEventListener('DOMContentLoaded', () => {
       aggiornaFiltri();
     }
   });
+// ===== SNAP AUTOMATICO SLIDER =====
 
+function initSliderSnap() {
+  const slider = document.querySelector('.slider');
+  const items = Array.from(document.querySelectorAll('.slide-item'));
+
+  if (!slider || items.length === 0) return;
+
+  let timeout;
+
+  slider.addEventListener('scroll', () => {
+    clearTimeout(timeout);
+
+    timeout = setTimeout(() => {
+      snapToClosest();
+    }, 120);
+  });
+
+  function snapToClosest() {
+    const center = slider.scrollLeft + slider.clientWidth / 2;
+
+    let closest = null;
+    let minOffset = Infinity;
+
+    items.forEach(item => {
+      const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+      const offset = Math.abs(center - itemCenter);
+
+      if (offset < minOffset) {
+        minOffset = offset;
+        closest = item;
+      }
+    });
+
+    if (closest) {
+      const target =
+        closest.offsetLeft - (slider.clientWidth / 2 - closest.offsetWidth / 2);
+
+      slider.scrollTo({
+        left: target,
+        behavior: "smooth"
+      });
+    }
+  }
+}
+
+// avvia solo su desktop
+if (window.innerWidth >= 900) {
+  initSliderSnap();
+}
   // ===== INIT =====
   aggiornaFiltri();
 
