@@ -1502,9 +1502,13 @@ color: var(--gold);
 
   .hero-inner {
     max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .hero h1 {
+    margin-left: auto;
+    margin-right: auto;
     font-size: 26px;
     line-height: 1.25;
     margin-bottom: 20px;
@@ -1539,9 +1543,9 @@ color: var(--gold);
     text-align: center;
   }
 
-  .cta-arrow {
-    display: none; /* 🔥 fondamentale */
-  }
+.cta-arrow {
+    display: none !important;
+}
   /* evita layout “schiacciato” */
 .container,
 .section {
