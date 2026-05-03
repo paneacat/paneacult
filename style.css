@@ -203,16 +203,6 @@ color: var(--gold);
   color: #fff !important;
 }
 
-/* lineetta sotto */
-.hero h2::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background: var(--gold);
-  opacity: 0.7;
-}
-
 .hero-action {
   display: flex;
   flex-direction: column;
