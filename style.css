@@ -168,7 +168,7 @@ button {
   margin-left: calc(50% - 50vw);
   position: relative;
   overflow: visible;
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 .slider,
