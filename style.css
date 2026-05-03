@@ -1439,38 +1439,24 @@ color: var(--gold);
   .slide-item:active {
   transform: scale(0.97);
   }
-.hero {
-    padding: 0 20px;
-    text-align: center;
-  }
-
-  .hero-inner {
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .hero-sub {
-    text-align: center;
-  }
-  
-.hero-container {
+.hero-inner {
     flex-direction: column;
+    align-items: center;
     text-align: center;
-    gap: 30px;
   }
 
   .hero-text {
     max-width: 100%;
   }
 
-  .hero-text h1 {
-    font-size: 26px;
+  .hero-cta {
+    margin-top: 16px;
   }
 
-  .hero-cta {
-    justify-content: center;
+  /* 🔴 NASCONDI FRECCIA */
+  .cta-arrow {
+    display: none !important;
   }
-  
   /* evita layout “schiacciato” */
 .container,
 .section {
