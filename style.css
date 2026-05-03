@@ -1544,8 +1544,8 @@ color: var(--gold);
 }
 
 /* ===== DESKTOP ===== */
-@media (min-width: 900px) {
-
+@media (min-width: 1024px) {
+  
 .break-desktop {
     display: block;
 }
