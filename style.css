@@ -1713,71 +1713,6 @@ letter-spacing: 1.8px;
     object-fit: cover;
   }
 
-.hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-  .hero-layout {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 60px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.hero-left {
-  max-width: 520px;
-}
-
-.hero-right {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-  
-.hero-cta-block {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 80px;
-}
-  
-  .cta-row {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex: 1;
-  }
-  
-  .cta-button {
-  padding: 14px 30px;
-  border-radius: 999px;
-  background: var(--gold);
-  color: #0b1f26;
-  font-size: 15px;
-  text-decoration: none;
-  box-shadow:
-    0 12px 35px rgba(255,191,0,0.35),
-    0 0 25px rgba(255,191,0,0.2);
-  transition: 0.25s ease;
-}
-
-.cta-button:hover {
-  transform: translateY(-3px);
-  background: #ffd54a;
-}
-  
-  @keyframes drawLine {
-  to { stroke-dashoffset: 0; }
-}
-
-@keyframes fadeHead {
-  to { opacity: 1; }
-}
-  
 .card-info h3 {
 .arrow-line {
   fill: none;
@@ -1790,13 +1725,106 @@ letter-spacing: 1.8px;
   animation: drawLine 1s ease forwards;
 }
 
+/* ===== HERO DESKTOP CLEAN ===== */
+
+.hero {
+  padding: 80px 20px;
+}
+
+.hero-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* SINISTRA */
+.hero-left {
+  max-width: 520px;
+}
+
+.hero-left h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  line-height: 1.2;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: #9aa3a8;
+  line-height: 1.6;
+}
+
+/* DESTRA */
+.hero-right {
+  position: relative;
+}
+
+/* BOTTONE */
+.cta-button {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #0b1f26;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow:
+    0 10px 40px rgba(255,191,0,0.3),
+    0 0 30px rgba(255,191,0,0.2);
+  transition: 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  background: #ffd54a;
+}
+
+/* FRECCIA */
+.cta-arrow {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+
+  transform: translateY(-20%);
+  width: 180px;
+  margin-right: 20px;
+
+  pointer-events: none;
+}
+
+/* LINEA */
+.arrow-line {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+
+  animation: drawLine 1s ease forwards;
+}
+
+/* PUNTA */
 .arrow-head {
   fill: var(--gold);
   opacity: 0;
+
   animation: fadeHead 0.3s ease forwards;
   animation-delay: 0.9s;
-}font-size: 26px;
-color: var(--gold);
+}
+
+/* ANIMAZIONI */
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeHead {
+  to { opacity: 1; }
 }
 
 .card-info p {
