@@ -1372,9 +1372,10 @@ color: var(--gold);
     flex: 0 0 auto; /* 🔥 fondamentale */
   }
 
-      .slider {
+   .slider {
     padding: 0 20px;
     gap: 16px;
+     padding-left: 20px;
   }
 
   .slide-item {
