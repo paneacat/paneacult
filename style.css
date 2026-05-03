@@ -174,9 +174,8 @@ a:hover {
 }
 
 .hero-inner {
-  display: flex;
-  flex-direction: row;  
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 👈 due colonne */
   align-items: center;
   max-width: 1100px;
   margin: 0 auto;
