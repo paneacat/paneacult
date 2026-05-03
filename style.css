@@ -1457,7 +1457,7 @@ color: var(--gold);
 
   .hero h1 {
   font-weight: 600;
-  font-size: 22px;   /* 👈 ridotto */
+  font-size: 18px;   /* 👈 ridotto */
   line-height: 1.25; /* 👈 più compatto */
   margin: 0 auto;
   max-width: 300px; /* 🔥 chiave */
