@@ -1380,6 +1380,7 @@ color: var(--gold);
   .menu {
     flex-wrap: wrap;
     justify-content: center;
+    font-size: 13.5px;
   }
 
   .menu a {
