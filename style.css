@@ -116,12 +116,14 @@ color: var(--gold);
 .logo-block {
   display: flex;
   align-items: flex-start; /* 🔥 QUESTO È IL SEGRETO */
+  flex-direction: column;
 }
+
 
 /* logo */
 .logo {
   font-size: 48px;
-  margin-left: 0;
+  margin: 0;
   text-align: left;
   color: var(--gold);
   font-family: 'Playfair Display', serif;
@@ -131,8 +133,9 @@ color: var(--gold);
 .logo-subtitle {
   font-size: 11px;
   letter-spacing: 2px;
-  margin-top: -4px;
+  margin-top: 4px;
   text-align: left;
+  position: static;
 }
 
 /* menu */
