@@ -249,10 +249,10 @@ color: var(--gold);
 /* freccia */
 .cta-arrow {
   position: absolute;
-  left: -160px;   /* parte dal testo */
-  top: 20px;
+  left: -260px;   /* 🔥 più lontana */
+  top: 40px;
 
-  width: 180px;
+  width: 320px;   /* 🔥 più grande */
   height: auto;
 
   pointer-events: none;
