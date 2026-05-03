@@ -1448,10 +1448,13 @@ color: var(--gold);
   }
 
   .hero h1 {
-    font-size: 26px;
-    line-height: 1.2;
-    font-weight: 600;
+    font-weight: 600.
+  font-size: 22px;   /* 👈 ridotto */
+  line-height: 1.25; /* 👈 più compatto */
+  max-width: 280px;  /* 👈 forza le 2 righe */
+  margin: 0 auto;
   }
+  
   /* evita layout “schiacciato” */
 .container,
 .section {
