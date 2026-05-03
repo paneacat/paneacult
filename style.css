@@ -210,9 +210,9 @@ color: var(--gold);
   width: 40px;
   height: 2px;
   background: var(--gold);
-  margin: 12px auto 0;
   opacity: 0.7;
 }
+
 .hero-action {
   display: flex;
   flex-direction: column;
