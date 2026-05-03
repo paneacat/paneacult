@@ -253,9 +253,8 @@ a:hover {
 .cta-arrow {
   position: absolute;
   left: 0;
-  pointer-events: none;
-  top: 160px;
-  width: 500px;
+  top: 180px;   /* 🔥 più bassa → non tocca più il testo */
+  width: 600px; /* 🔥 più lunga davvero */
   pointer-events: none;
 }
 
