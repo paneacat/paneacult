@@ -156,6 +156,18 @@ a:hover {
 	width: 100%;
 }
 
+.home-cinema .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px; /* 👉 questo è il vero segreto */
+}
+
 .hero {
 	padding: 100px 0 60px;
 }
@@ -259,6 +271,8 @@ a:hover {
   gap: 28px; /* 👉 più spazio tra le card */
   padding: 10px 0 20px;
   scroll-snap-type: x mandatory;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .slider::-webkit-scrollbar {
@@ -320,6 +334,12 @@ a:hover {
   color: var(--gold);
   letter-spacing: 2px;
 }
+
+.slider::after {
+  content: "";
+  flex: 0 0 40px;
+}
+
 	.credits-label {
 		font-size: 11px;
 		letter-spacing: 2px;
