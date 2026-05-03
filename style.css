@@ -343,7 +343,40 @@ a:hover {
   content: "";
   flex: 0 0 40px;
 }
+.slider-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
 
+.slider-next {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.25s ease;
+}
+
+/* HOVER WOW */
+.slider-next:hover {
+  background: #fcc10e;
+  color: #0b1f26;
+
+  box-shadow:
+    0 0 20px rgba(252,193,14,0.6),
+    0 0 40px rgba(252,193,14,0.3);
+
+  transform: scale(1.1);
+}
 	.credits-label {
 		font-size: 11px;
 		letter-spacing: 2px;
