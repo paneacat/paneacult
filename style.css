@@ -1109,10 +1109,21 @@ color: var(--gold);
 }
 
 .credits-inner {
-  max-width: 320px;
-  margin: 0 auto;
+  animation: fadeUp 1.2s ease;
 }
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
 /* etichette */
 .credits-label {
   font-size: 11px;
