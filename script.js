@@ -6,17 +6,58 @@ document.addEventListener('DOMContentLoaded', () => {
   const empty = document.getElementById('emptyState');
   const loadMoreBtn = document.getElementById('loadMoreBtn');
 
+  const slider = document.querySelector('.slider');
+
   let filtroCategoria = "tutti";
   let filtroGenere = "tutti";
 
+  const norm = (v) => (v || "").trim().toLowerCase();
+
+  // ===== STEP RESPONSIVE =====
   function getStep() {
-    return window.innerWidth >= 900 ? 3 : 4;
+    return window.innerWidth >= 900 ? 6 : 3;
   }
 
   let step = getStep();
   let visibiliMax = step;
 
-  const norm = (v) => (v || "").trim().toLowerCase();
+  // ===== FILTRI =====
+  function aggiornaFiltri() {
+    let filtrati = [];
+
+    cards.forEach(card => {
+
+      const categoria = norm(card.dataset.categoria);
+      const generi = norm(card.dataset.genere).split(" ").filter(Boolean);
+
+      const matchCategoria =
+        filtroCategoria === "tutti" || categoria === filtroCategoria;
+
+      const matchGenere =
+        filtroGenere === "tutti" || generi.includes(filtroGenere);
+
+      const visibile = matchCategoria && matchGenere;
+
+      card.classList.toggle("hidden", !visibile);
+
+      if (visibile) filtrati.push(card);
+    });
+
+    filtrati.forEach((card, i) => {
+      card.classList.toggle("hidden-by-limit", i >= visibiliMax);
+    });
+
+    // empty state
+    if (empty) {
+      empty.classList.toggle("show", filtrati.length === 0);
+    }
+
+    // load more
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display =
+        filtrati.length > visibiliMax ? "inline-block" : "none";
+    }
+  }
 
   // ===== CLICK FILTRI =====
   bottoni.forEach(btn => {
@@ -36,8 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       btn.classList.add('attivo');
 
-      step = getStep();
-      visibiliMax = step;
+      visibiliMax = getStep();
 
       aggiornaFiltri();
     });
@@ -51,126 +91,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ===== FILTRO =====
-  function aggiornaFiltri() {
-    let filtrati = [];
+  // ===== RESIZE (STABILE) =====
+  let resizeTimeout;
 
-    cards.forEach(card => {
-
-      const categoria = norm(card.dataset.categoria);
-
-      const generi = (card.dataset.genere || "")
-        .split(" ")
-        .map(g => g.trim().toLowerCase())
-        .filter(Boolean);
-
-      const matchCategoria =
-        filtroCategoria === "tutti" || categoria === filtroCategoria;
-
-      const matchGenere =
-        filtroGenere === "tutti" || generi.includes(filtroGenere);
-
-      if (matchCategoria && matchGenere) {
-        filtrati.push(card);
-      } else {
-        card.style.display = "none";
-      }
-    });
-
-    filtrati.forEach((card, i) => {
-      card.style.display = i < visibiliMax ? "block" : "none";
-    });
-
-    if (empty) {
-      empty.style.display = filtrati.length === 0 ? "block" : "none";
-      empty.classList.toggle("show", filtrati.length === 0);
-    }
-
-    if (loadMoreBtn) {
-      loadMoreBtn.style.display =
-        filtrati.length > visibiliMax ? "inline-block" : "none";
-    }
-  }
-
-  // ===== RESIZE =====
   window.addEventListener('resize', () => {
-    const newStep = getStep();
+    clearTimeout(resizeTimeout);
 
-    if (newStep !== step) {
-      step = newStep;
-      visibiliMax = step;
-      aggiornaFiltri();
-    }
-  });
-// ===== SNAP AUTOMATICO SLIDER =====
+    resizeTimeout = setTimeout(() => {
+      const newStep = getStep();
 
-function initSliderSnap() {
-  const slider = document.querySelector('.slider');
-  const items = Array.from(document.querySelectorAll('.slide-item'));
-
-  if (!slider || items.length === 0) {
-    console.log("❌ slider non trovato");
-    return;
-  }
-
-  console.log("✅ slider attivo");
-
-  let timeout;
-
-  function snapToClosest() {
-    const center = slider.scrollLeft + slider.clientWidth / 2;
-
-    let closest = null;
-    let minOffset = Infinity;
-
-    items.forEach(item => {
-      const itemCenter = item.offsetLeft + item.offsetWidth / 2;
-      const offset = Math.abs(center - itemCenter);
-
-      if (offset < minOffset) {
-        minOffset = offset;
-        closest = item;
+      if (newStep !== step) {
+        step = newStep;
+        visibiliMax = step;
+        aggiornaFiltri();
       }
-    });
-
-    if (closest) {
-      const target =
-        closest.offsetLeft - (slider.clientWidth / 2 - closest.offsetWidth / 2);
-
-      slider.scrollTo({
-        left: target,
-        behavior: "smooth"
-      });
-    }
-  }
-
-  // scroll con debounce migliorato
-  slider.addEventListener('scroll', () => {
-    clearTimeout(timeout);
-    timeout = setTimeout(snapToClosest, 100);
+    }, 150);
   });
 
-  // snap anche quando finisci di scrollare (più affidabile)
-  slider.addEventListener('touchend', snapToClosest);
-  slider.addEventListener('mouseup', snapToClosest);
-}
+  // ===== SLIDER CONTROLS (OPZIONALE) =====
+  if (slider) {
+    window.scrollSlider = function(direction) {
+      const amount = slider.clientWidth * 0.8;
 
-
-// ===== INIT SLIDER =====
-function setupSlider() {
-  if (window.innerWidth >= 900) {
-    initSliderSnap();
+      slider.scrollBy({
+        left: direction === 'next' ? amount : -amount,
+        behavior: 'smooth'
+      });
+    };
   }
-}
 
-// avvio iniziale
-setupSlider();
-
-// riattiva su resize (🔥 importante)
-window.addEventListener('resize', () => {
-  setupSlider();
-});
-  
   // ===== INIT =====
   aggiornaFiltri();
 
