@@ -263,6 +263,7 @@ width: 420px;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
+  stroke-dasharray: 8 6;
 }
 
 .cta-arrow polygon {
