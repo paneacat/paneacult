@@ -370,47 +370,49 @@ a:hover {
   content: "";
   flex: 0 0 40px;
 }
+
+/* wrapper freccia */
 .slider-controls {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
   position: absolute;
-  right: 40px;
-  top: 50%;
+  top: 35%;              /* 👈 ALZA/ABBASSA QUI */
+  right: 40px;           /* 👈 SINISTRA/DESTRA */
+
   transform: translateY(-50%);
-}
-.slider-btn {
-  position: absolute;
-  top: calc(50% - 60px);
-  right: 10px;
-  transform: translateY(-50%);;
-  
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  
-  border: 1px solid rgba(255,255,255,0.2);
-  background: transparent;
-  color: white;
-  
-  cursor: pointer;
-  transition: all 0.25s ease;
+  z-index: 20;
 }
 
-.slider-btn:hover {
-  background: var(--gold);
-  color: #0b1f26;
-  box-shadow:
-    0 0 12px rgba(255,191,0,0.6),
-    0 0 30px rgba(255,191,0,0.3);
-}
+/* bottone */
 .slider-next {
-  position: absolute;
-  right: 70px;   /* 👈 più a sinistra (prima era tipo 20px) */
-  top: calc(50% - 80px);      
-  transform: translateY(-50%);
-  z-index: 10;
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+
+  background: transparent;
+  color: white;
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
 }
+.slider-next:hover {
+  background: #fcc10e;
+  color: #193c4e;
+
+  box-shadow:
+    0 0 12px rgba(255,193,14,0.6),
+    0 0 24px rgba(255,193,14,0.4);
+
+  transform: scale(1.1);
+}
+
+
 	.credits-label {
 		font-size: 11px;
 		letter-spacing: 2px;
