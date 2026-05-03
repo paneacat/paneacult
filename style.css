@@ -223,6 +223,7 @@ a:hover {
 
 .hero-cta {
 	display: flex;
+	justify-content: flex-end;
 	min-width: 300px;
 	position: relative;
 	align-items: center;
@@ -231,10 +232,10 @@ a:hover {
 	margin-right: 120px;
 	position: relative;
     right: 80px;
-    gap: 14px;
-  justify-content: center;
-  width: 100%;
+  flex-direction: column;
+  gap: 14px;
 }
+
 .cta-label {
   font-size: 18px;
   color: white;
