@@ -88,6 +88,7 @@ button {
   margin-top: -4px; /* avvicina al titolo */
   margin-bottom: 18px;
   opacity: 0.8;
+  font-style: italic;
 }
 
 .section-label {
