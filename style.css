@@ -404,7 +404,15 @@ a:hover {
     0 0 12px rgba(255,191,0,0.6),
     0 0 30px rgba(255,191,0,0.3);
 }
+.slider-next {
+  position: absolute;
 
+  right: 20px;   /* distanza dal bordo */
+  top: 35%;      /* centrata verticalmente */
+
+  transform: translateY(-50%);
+  z-index: 10;
+}
 	.credits-label {
 		font-size: 11px;
 		letter-spacing: 2px;
