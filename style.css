@@ -1352,7 +1352,22 @@ margin-bottom: 38px;
     transform: translateY(-50%) translateX(0);
   }
 	}
+.contact-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
 
+.contact-left {
+  max-width: 500px;
+}
+
+.contact-right img {
+  width: 260px;
+  opacity: 0.15;
+  filter: brightness(0) invert(1) contrast(1.2);
+}
 /* ===== NEWSLETTER ===== */
 .newsletter {
     margin-top: 100px;   /* spazio dalla section sopra */
