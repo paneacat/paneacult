@@ -181,7 +181,7 @@ a:hover {
   gap: 14px;
   margin: 30px auto;
 	margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 	display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -191,10 +191,14 @@ a:hover {
 .filtri-row {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
   width: 100%;
   max-width: 900px; /* 🔥 fondamentale */
+}
+
+.filtri-row.top {
+  margin-bottom: 10px;
 }
 
 /* bottoni */
