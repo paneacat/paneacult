@@ -549,14 +549,6 @@ a:hover {
   justify-content: center;
   overflow: hidden;
 }
-.poster::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 200px;
-  background: linear-gradient(to top, #0d425e 20%, transparent);
-}
 
 .poster-img {
   display: flex;
