@@ -550,7 +550,7 @@ a:hover {
 
   min-height: 70vh;
 
-  padding: 120px 40px 40px;
+  padding: 300px 40px 13px;
  }
 
 .poster-big-title {
@@ -681,7 +681,7 @@ a:hover {
   grid-template-columns: repeat(3, 1fr);
   gap: 60px;
   max-width: 1100px;
-  margin: 10px auto 0;
+  margin: 13px auto 0;
   padding: 0 40px;
   position: relative;
   border-top: 1px solid rgba(255,255,255,0.08);
