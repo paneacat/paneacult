@@ -552,6 +552,64 @@ a:hover {
   overflow: hidden;
 }
 
+/* CONTENITORE ALLINEATO AL SITO */
+.poster-inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* LAYOUT */
+.poster-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* TITOLO */
+.poster-big-title {
+  font-size: 100px;
+  margin-bottom: 30px;
+}
+
+/* BOX TESTO */
+.poster-box {
+  max-width: 420px;
+
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+
+  padding: 25px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* TESTI */
+.poster-sub {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.poster-sub.intro {
+  color: #fcc10e;
+  font-size: 16px;
+}
+
+.poster-sub.identity {
+  color: white;
+  font-weight: 600;
+}
+
+/* IMMAGINE */
+.poster-img img {
+  width: 360px;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+}
+
 /* TITOLO GRANDE */
 .poster-big-title {
   font-size: 90px;
@@ -897,6 +955,17 @@ a:hover {
 	.about-hero {
 		justify-content: center;
 	}
+
+	.poster-layout {
+  flex-direction: column;
+  text-align: center;
+}
+
+.poster-img img {
+  width: 260px;
+}
+
+	
 .sections {
   grid-template-columns: 1fr;
   gap: 40px;
