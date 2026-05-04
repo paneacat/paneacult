@@ -612,9 +612,10 @@ a:hover {
 
 .firma {
   margin-top: 20px;
-  width: 160px;
+  width: 200px;
   transform: translateX(40px);
   opacity: 0.9;
+	color: white;
 }
 
 .film-title {
