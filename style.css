@@ -617,8 +617,12 @@ a:hover {
   align-items: flex-end;
   margin-top: 40px;
   height: 40vh;
-	position: relative;
+  position: relative;
+  overflow: hidden;
+  /* lato quasi dritto, curva solo sotto */
+  clip-path: ellipse(55% 35% at 50% 100%);
 }
+
 .poster-img::before {
   content: "";
   position: absolute;
