@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>paneacult</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="icon" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+
+  <meta name="theme-color" content="#ffbf00">
+
+  <!-- 🔥 PWA iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+
+</head>
+<div id="toast"></div>
+
+<body class="home">
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo-block">
+      <h1 class="logo">paneacult</h1>
+      <p class="logo-subtitle">MY THERAPIST SAYS CINEMA</p>
+    </div>
+
+    <nav class="menu">
+      <a class="active" href="#">HOME</a>
+      <a href="archivio.html">RECENSIONI</a>
+      <a href="featured.html">CHI SONO</a>
+      <a href="contatti.html">CONTATTI</a>
+    </nav>
+
+  </div>
+
+</header>
+<div id="auth">
+  <input id="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password">
+  <button onclick="login()">Entra</button>
+</div>
+  <div class="container">
+
+    <h1>paneacult</h1>
+    
+<div class="search-wrapper">
+  <span class="search-icon">🔍</span>
+  <input class="search-bar" placeholder="Cerca film..." oninput="setSearch(this.value)">
+</div>
+
+    <div id="list"></div>
+
+  </div>
+
+  <div id="addModal" class="modal">
+    <div class="modal-content">
+
+      <h2>Aggiungi film</h2>
+
+      <input 
+        id="title" 
+        placeholder="Titolo..." 
+        autocomplete="off"
+        oninput="handleInput(this.value)"
+      >
+
+      <div id="suggestions"></div>
+
+      <button onclick="addFilm()">Salva</button>
+      <button onclick="closeModal()">Chiudi</button>
+
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button onclick="scrollToTop()">🎬</button>
+  </nav>
+<button class="fab">+</button>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="script.js" defer></script>
+
+</body>
+</html>
