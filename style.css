@@ -660,6 +660,8 @@ a:hover {
   filter: contrast(1.05) brightness(0.95);
   object-fit: contain;
 border-radius: 0 0 50% 50%;
+	display: block;
+  width: 100%;
 }
 
 /* STILE LOCANDINA */
