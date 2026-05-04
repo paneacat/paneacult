@@ -593,10 +593,29 @@ a:hover {
   margin: 10px 0;
 }
 
+/* base testo */
 .poster-sub {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
-  opacity: 0.9;
+  color: rgba(255,255,255,0.9);
+  margin: 6px 0;
+}
+
+/* PRIMA FRASE GIALLA */
+.poster-sub.intro {
+  color: #fcc10e;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* BLOCCO IDENTITÀ PIÙ IN BASSO */
+.poster-sub.identity {
+  margin-top: 14px;
+}
+
+/* ancora più respiro tra i due gruppi */
+.poster-sub.identity:first-of-type {
+  margin-top: 20px;
 }
 
 /* FIRMA */
