@@ -593,12 +593,13 @@ a:hover {
 }
 
 .firma {
-  width: 180px;
-  margin-top: 30px;
-  filter: brightness(0) invert(1);
   transform: translateX(50px);
   opacity: 0.95;
+  width: 160px;
+  margin-top: 20px;
+  filter: brightness(0) invert(1);
 }
+
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
