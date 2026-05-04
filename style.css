@@ -1305,6 +1305,7 @@ color: white;
 /* blocco testo */
 .contact-text {
   max-width: 500px;
+margin-bottom: 13px;
 }
 
 .contact-intro {
