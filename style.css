@@ -146,6 +146,7 @@ button {
 .home-cinema {
     margin-top: 13px;
     position: relative;
+	margin-bottom: 80px;
 }
 .about-text {
   font-weight: 400; /* niente grassetto */
