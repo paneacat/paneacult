@@ -1008,6 +1008,11 @@ a:hover {
 }
 
 /* testo recensione */
+.review-text {
+  max-width: 680px; /* 🔥 prima era troppo largo */
+margin-left: 0;
+	
+}
 .review-text p {
     color: rgba(255,255,255,0.85);
 }
@@ -1036,16 +1041,17 @@ a:hover {
 }
 
 .watch a {
-    color: #fcc10e;
     text-decoration: none;
     font-weight: 500;
     border-bottom: 1px solid #fcc10e;
     padding-bottom: 2px;
     transition: opacity 0.2s ease;
+	color: white;
 }
 
 .watch a:hover {
     opacity: 0.7;
+	color: #fcc10e;
 }
 
 .watch a::after {
@@ -1098,63 +1104,58 @@ a:hover {
     transform: scaleX(1);
 }
 
+.review-end {
+  margin-top: 60px;
+}
+
 /* ⭐ STELLINE → SINISTRA */
 .rating {
-    text-align: left;
-    color: #fcc10e;
-    font-size: 20px;
-    margin-bottom: 30px;
+  text-align: left;
+  color: #fcc10e;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 
 /* ✍️ FIRMA → CENTRATA + PIÙ IMPORTANTE */
 .firma-review {
-    text-align: center;
-    margin: 20px 0;
-    color: white;
-    max-width: 680px;
-}
-
-.review-text {
-    margin-left: 0;
+  text-align: center;
+  margin: 40px 0;
 }
 
 .firma-review img {
-    width: 250px;
- /* più grande */
-    opacity: 0.95;
-    filter: brightness(1.2);
- /* più bianca */;
+  width: 160px; /* più grande */
+  opacity: 0.95;
+  filter: brightness(1.2); /* più bianca */
 }
 
 /* 🔙 TORNA → SINISTRA ALLINEATO AL TESTO */
 .back-home {
-    text-align: left;
-    margin-top: 30px;
+  text-align: left;
+  margin-top: 30px;
 }
 
 .back-home a {
-    color: #fcc10e;
-    text-decoration: none;
-    font-weight: 500;
-    position: relative;
+  color: #fcc10e;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
 }
 
 /* underline animata coerente col sito */
 .back-home a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0;
-    height: 2px;
-    background: #fcc10e;
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #fcc10e;
+  transition: width 0.3s ease;
 }
 
 .back-home a:hover::after {
-    width: 100%;
+  width: 100%;
 }
-
 
 
     /* ===== NEWSLETTER ===== */
