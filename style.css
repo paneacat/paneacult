@@ -863,6 +863,92 @@ border-radius: 0 0 50% 50%;
 .hidden-by-limit {
   display: none !important;
 }
+
+.review-hero {
+  width: 100%;
+  max-width: 1100px;
+  margin: 80px auto 40px;
+  padding: 0 40px;
+}
+
+.review-hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+}
+.review-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.review-container h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.meta,
+.genre-bar,
+.series {
+  font-size: 13px;
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+.watch {
+  margin: 20px 0 30px;
+  font-size: 14px;
+}
+
+.watch a {
+  color: #fcc10e;
+  text-decoration: none;
+  border-bottom: 1px solid #fcc10e;
+}
+
+.review-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  color: rgba(255,255,255,0.9);
+}
+
+
+.review-end {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.rating {
+  font-size: 22px;
+  color: #fcc10e;
+  margin-bottom: 20px;
+}
+
+.firma-review img {
+  width: 120px;
+  opacity: 0.9;
+}
+
+.back-home {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.back-home a {
+  color: #fcc10e;
+  text-decoration: none;
+  border-bottom: 1px solid #fcc10e;
+}
     /* ===== NEWSLETTER ===== */
 .newsletter {
   margin: 140px auto 100px;
