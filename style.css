@@ -1089,8 +1089,11 @@ border-radius: 0 0 50% 50%;
   text-align: center;
   margin: 20px 0;
 	color: white; 
+	max-width: 680px;
 }
-
+.review-text {
+  margin-left: 0;
+}
 .firma-review img {
   width: 250px; /* più grande */
   opacity: 0.95;
