@@ -83,37 +83,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== CREDITS =====
-  const credits = document.querySelector('.credits');
+const credits = document.querySelector('.credits');
 
-  if (credits) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          credits.classList.add('show');
-        }
-      });
-    }, { threshold: 0.3 });
-
-    observer.observe(credits);
-  }
-
-  // ===== SLIDER =====
-  const slider = document.querySelector('.slider');
-  const arrow = document.querySelector('.slider-arrow');
-  const card = document.querySelector('.slide-item');
-
-  if (slider && arrow && card) {
-    arrow.addEventListener('click', () => {
-      const cardWidth = card.offsetWidth + 20;
-      slider.scrollBy({
-        left: cardWidth,
-        behavior: 'smooth'
-      });
+if (credits) {
+  const observerCredits = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        credits.classList.add('show');
+      }
     });
-  }
+  }, { threshold: 0.3 });
+
+  observerCredits.observe(credits);
+}
+
+// ===== FADE-UP =====
 const elements = document.querySelectorAll('.fade-up');
 
-const observer = new IntersectionObserver(entries => {
+const observerFade = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('show');
@@ -121,7 +108,8 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.2 });
 
-elements.forEach(el => observer.observe(el)); 
+elements.forEach(el => observerFade.observe(el));
+  
   // ===== INIT =====
   aggiornaFiltri();
 
