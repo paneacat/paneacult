@@ -58,27 +58,32 @@ button {
   text-decoration: none;
   font-weight: 500;
 }
-.login-cta a:hover {
-  opacity: 0.8;
-}
+
 /* linea */
 .login-cta a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -4px;
+
   width: 100%;
   height: 2px;
-  background: linear-gradient(
-    to right,
-    #fcc10e,
-    rgba(252,193,14,0.5),
-    transparent
-  );
+
+  background: #fcc10e;
+
   transform: scaleX(0);
   transform-origin: left;
 
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
+}
+
+/* hover */
+.login-cta a:hover::after {
+  transform: scaleX(1);
+}
+}
+.login-cta a:hover {
+  opacity: 0.8;
 }
 
 /* hover */
