@@ -646,9 +646,8 @@ a:hover {
     align-items: flex-end;
     margin-top: 40px;
     position: relative;
+  border-radius: 0 0 200px 200px;
     overflow: hidden;
-  /* lato quasi dritto, curva solo sotto */
-    clip-path: ellipse(55% 35% at 50% 100%);
 }
 
 .poster-img::before {
@@ -683,12 +682,11 @@ a:hover {
 /* IMMAGINE */
 .poster-img img {
   filter: contrast(1.05) brightness(0.95);
-    object-fit: contain;
-    border-radius: 0 0 50% 50%;
     display: block;
     width: 100%;
 	max-height: none;
   height: auto;
+  object-fit: cover;
 }
 
 /* STILE LOCANDINA */
