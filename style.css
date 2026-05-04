@@ -570,12 +570,12 @@ a:hover {
   color: rgba(255,255,255,0.9);
 }
 
-.firma {
-  margin-top: 30px;
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
-  color: white;
-  opacity: 0.9;
+.firma img {
+  width: 200px;
+  opacity: 0.85;
+  filter: brightness(0) invert(1);
+
+  transform: translateY(5px);
 }
 .film-title {
   color: #ffffff;
