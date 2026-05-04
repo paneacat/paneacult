@@ -1291,6 +1291,7 @@ color: white;
   align-items: flex-start; /* 👈 allineato a sinistra */
   gap: 10px;
   margin-top: 80px;
+	position: relative;
 }
 
 /* titolo */
@@ -1330,8 +1331,19 @@ margin-bottom: 38px;
   background: url('img/firma.png') no-repeat center;
   background-size: contain;
   opacity: 0.08;
-  transform: translateY(-50%);
   pointer-events: none;
+	animation: fadeSignature 1.2s ease forwards;
+}
+
+@keyframes fadeSignature {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(20px);
+  }
+  to {
+    opacity: 0.08;
+    transform: translateY(-50%) translateX(0);
+  }
 	}
 
 /* ===== NEWSLETTER ===== */
