@@ -549,7 +549,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: radial-gradient(circle at 70% 30%, #123040, #0b1d26 70%);
   overflow: hidden;
 }
 
