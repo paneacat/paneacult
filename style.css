@@ -904,47 +904,6 @@ border-radius: 0 0 50% 50%;
   margin-bottom: 6px;
 }
 
-.watch {
-  margin-top: 30px;
-}
-
-.watch span {
-  display: block;
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
-  margin-bottom: 10px;
-}
-
-/* CTA BUTTON */
-.watch-btn {
-  display: inline-block;
-  padding: 10px 22px;
-  border-radius: 999px;
-
-  background: #fcc10e;
-  color: #0b1f26;
- 
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-
-  transition: all 0.25s ease;
-}
-
-/* hover pulito */
-.watch-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(252,193,14,0.25);
-}
-
-.watch a {
-  color: #fcc10e;
-  text-decoration: none;
-  border-bottom: 1px solid #fcc10e;
-}
-
 .review-text p {
   font-size: 16px;
   line-height: 1.7;
@@ -1027,51 +986,55 @@ border-radius: 0 0 50% 50%;
 .rating {
   color: #fcc10e;
 }
+/* ===== WATCH BLOCK ===== */
 .watch {
   display: flex;
-  align-items: center;
+  align-items: baseline;   /* allinea perfettamente testo + link */
   gap: 14px;
-  margin: 25px 0;
+
+  margin: 24px 0 28px;
 }
 
-/* titolo */
-.watch span {
+/* label */
+.watch-label {
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: rgba(255,255,255,0.6);
 }
 
-/* bottone versione editoriale */
-.watch-btn-inline {
+/* link editoriale */
+.watch-link {
   font-size: 13px;
-  color: #fcc10e;
-  text-decoration: none;
   font-weight: 500;
+  color: #fcc10e;
+
+  text-decoration: none;
+  line-height: 1;
+
   position: relative;
   padding-bottom: 2px;
 }
 
-/* linea sotto */
-.watch-btn-inline::after {
+/* underline animata pulita */
+.watch-link::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
+
   width: 100%;
   height: 1px;
   background: #fcc10e;
 
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
 }
 
-/* hover elegante */
-.watch-btn-inline:hover::after {
+.watch-link:hover::after {
   transform: scaleX(1);
 }
-
 
 
     /* ===== NEWSLETTER ===== */
