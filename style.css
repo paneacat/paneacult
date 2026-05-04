@@ -1331,14 +1331,14 @@ margin-bottom: 38px;
 }
 
 .contact-left {
-  flex: 1;
   max-width: 520px;
+  margin-left: 80px; /* ← spinge verso destra */
 }
 
 .contact-right {
-  flex: 1;
+  margin-right: 80px; /* ← la tira verso il centro */
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .contact-right img {
