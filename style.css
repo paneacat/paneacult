@@ -905,8 +905,38 @@ border-radius: 0 0 50% 50%;
 }
 
 .watch {
-  margin: 20px 0 30px;
+  margin-top: 30px;
+}
+
+.watch span {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 10px;
+}
+
+/* CTA BUTTON */
+.watch-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 999px;
+
+  background: #fcc10e;
+  color: #0b1f26;
+
   font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+}
+
+/* hover pulito */
+.watch-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(252,193,14,0.25);
 }
 
 .watch a {
