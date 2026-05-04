@@ -1285,7 +1285,39 @@ color: white;
   width: 100%;
 }
 
+.contact-hero {
+  display: flex;
+  flex-direction: column; /* 👈 verticale */
+  align-items: flex-start; /* 👈 allineato a sinistra */
+  gap: 10px;
+  margin-top: 80px;
+}
 
+/* titolo */
+.contact-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  color: #fcc10e;
+  margin: 0;
+  letter-spacing: -1px;
+	}
+
+/* blocco testo */
+.contact-text {
+  max-width: 500px;
+}
+
+.contact-intro {
+  font-size: 18px;
+  color: white;
+  margin: 0;
+}
+
+.contact-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  margin: 4px 0 0 0;
+}
     /* ===== NEWSLETTER ===== */
 .newsletter {
     margin-top: 100px;   /* spazio dalla section sopra */
