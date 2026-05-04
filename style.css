@@ -601,7 +601,6 @@ a:hover {
 }
 
 .fade-up {
-  transition: all 0.8s ease;
   opacity: 1 !important;
   transform: none !important;
 }
