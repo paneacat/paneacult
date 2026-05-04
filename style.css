@@ -563,10 +563,21 @@ a:hover {
 
 /* IMMAGINE */
 .poster-img {
-  position: absolute;
-  right: 80px;
-  bottom: 0;
   z-index: 1;
+  position: absolute;
+  right: 100px;
+  bottom: 0;
+}
+.poster::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 75% 35%,
+    rgba(0,0,0,0) 0%,
+    rgba(11,29,38,0.85) 70%
+  );
+  z-index: 0;
 }
 
 .poster-img img {
