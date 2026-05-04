@@ -361,13 +361,18 @@ a:hover {
 
 .slider-cta {
   position: absolute;
+  right: 20px; /* 👈 prima sarà tipo 0 o 5 → così rientra */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%; /* 👈 CERCHIO perfetto */
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-  z-index: 20;
-  top: 0;
-  right: 40px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.1); /* o quello che hai */
+  backdrop-filter: blur(6px);
+  cursor: pointer;
 }
 
 .slider::-webkit-scrollbar {
