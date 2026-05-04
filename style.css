@@ -1035,6 +1035,31 @@ border-radius: 0 0 50% 50%;
   margin: 24px 0 28px;
 }
 
+.watch a {
+  color: #fcc10e;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid #fcc10e;
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.watch a:hover {
+  opacity: 0.7;
+}
+.watch a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fcc10e;
+  transition: width 0.3s ease;
+}
+
+.watch a:hover::after {
+  width: 100%;
+}
+
 /* label */
 .watch-label {
   font-size: 13px;
