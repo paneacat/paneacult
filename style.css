@@ -546,7 +546,9 @@ a:hover {
   margin: 0 auto;
   gap: 80px;
 }
-
+.chi-sono-img {
+  transform: translateX(-20px);
+}
 .chi-sono-img img {
   width: 380px;
   height: auto;
