@@ -895,6 +895,7 @@ a:hover {
     max-width: 1100px;
     margin: 80px auto 40px;
     padding: 0 40px;
+  position: relative;
 }
 
 .review-hero img {
@@ -1135,7 +1136,11 @@ margin-left: 0;
 .back-home {
   text-align: left;
   margin-top: 30px;
-}
+  position: absolute;
+  top: 10px;
+  left: 0;
+  z-index: 2;
+	}
 
 .back-home a {
   color: #fcc10e;
