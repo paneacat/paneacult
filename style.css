@@ -609,10 +609,11 @@ a:hover {
 
 /* FIRMA */
 .poster-signature {
-  width: 120px;
+  width: 300px;
   margin-top: 15px;
   filter: brightness(0) invert(1);
   color: white;
+  align-items: center;
 }
  
 .film-title {
