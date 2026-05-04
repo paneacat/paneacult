@@ -608,12 +608,13 @@ a:hover {
   font-weight: 600;
 }
 
-.firma img {
-  width: 300px;
-  opacity: 0.85;
-  filter: brightness(0) invert(1);
-  transform: translateY(5px);
+.firma {
+  margin-top: 20px;
+  width: 160px;
+  transform: translateX(40px);
+  opacity: 0.9;
 }
+
 .film-title {
   color: #ffffff;
   font-family: 'Playfair Display', serif;
