@@ -4,12 +4,58 @@
 
 /* ===== BASE ===== */
 body {
-  font-family: 'Playfair Display', serif;
-  background: #0b1f26;
   color: #eaeaea;
   margin: 0;
   padding: 0;
   padding-bottom: 90px; /* evita overlap con menu */
+	font-family: 'Inter', sans-serif;
+	padding-top: 13px;
+	background: #0f2a33;
+}
+
+.home-intro {
+	padding: 20px;
+	margin-top: 10px;
+}
+
+.home-intro h2 {
+	font-family: 'Playfair Display', serif;
+	font-size: 22px;
+	color: var(--text);
+}
+
+.home-intro p {
+	font-size: 12px;
+	letter-spacing: 2px;
+	color: var(--gold);
+	margin-top: 6px;
+}
+
+.home-cinema {
+	margin-top: 13px;
+	position: relative;
+}
+
+.section-label {
+	margin-top: 15px;
+	padding-left: 0;
+	font-size: 15px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+	margin-left: 0;
+	color: var(--gold);
+	opacity: 0.7;
+}
+
+.section-label::after {
+	content: "";
+	display: block;
+	width: 30px;
+	height: 1px;
+	background: var(--gold);
+	opacity: 0.5;
+	margin-bottom: var(--space-md);
 }
 
 .logo-block {
