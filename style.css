@@ -269,7 +269,7 @@ button {
   font-family: 'Playfair Display', serif;
 }
 
-body {
+.body {
     font-family: 'Inter', sans-serif;
     padding-top: 13px;
     background: #f5f3ef;
