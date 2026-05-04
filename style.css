@@ -1260,7 +1260,29 @@ color: white;
     box-shadow: 0 8px 25px rgba(255,191,0,0.25),
     0 0 18px rgba(255,191,0,0.15);
 }
+.newsletter {
+  margin-top: 80px;
+  padding: 60px 20px;
+  text-align: center;
+}
 
+.newsletter h2 {
+  color: #ffffff;
+}
+
+.newsletter-sub {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 20px;
+}
+
+.newsletter-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 20px;
+}
 /* ===== FOOTER ===== */
 
 .credits {
@@ -1314,6 +1336,21 @@ color: white;
     margin-top: 6px;
 }
 
+	.credits {
+  margin-top: 80px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.credits-label {
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+}
+
+.credits-name {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
 /* animazione singoli elementi (opzionale ma bello) */
 .fade {
     opacity: 0;
