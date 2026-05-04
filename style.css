@@ -1292,7 +1292,7 @@ color: white;
   gap: 10px;
   margin-top: 80px;
 	position: relative;
-max-width: 1200px;
+	padding: 0; /* 👈 importante */
 }
 
 /* titolo */
@@ -1300,7 +1300,6 @@ max-width: 1200px;
   font-family: 'Playfair Display', serif;
   font-size: 72px;
   color: #fcc10e;
-  margin: 0;
   letter-spacing: -1px;
 }
 
