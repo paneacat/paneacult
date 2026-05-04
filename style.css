@@ -1324,17 +1324,22 @@ margin-bottom: 38px;
 .contact-hero::after {
   content: "";
   position: absolute;
-  top: 50%;
-  width: 500px;
-  height: 300px;
+
+  left: 42%;
+  transform: translateX(-50%) translateY(-50%);
+
+  top: 42%;
+
+  width: 300px;
+  height: 200px;
+
   background: url('img/firma.png') no-repeat center;
   background-size: contain;
-  opacity: 0.22;
+
+  filter: brightness(0) invert(1) contrast(1.2);
+  opacity: 0.1;
+
   pointer-events: none;
-	right: 0;
-transform: translateY(-50%) translateX(20%);
-	filter: brightness(0) invert(1) contrast(1.2);
-	animation: fadeSignature 1.2s ease forwards;
 }
 
 @keyframes fadeSignature {
