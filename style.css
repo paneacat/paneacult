@@ -610,7 +610,9 @@ a:hover {
 
 /* BLOCCO IDENTITÀ PIÙ IN BASSO */
 .poster-sub.identity {
-  margin-top: 14px;
+  opacity: 0.85;
+  font-size: 14px;
+	margin-top: 14px;
 }
 
 /* ancora più respiro tra i due gruppi */
