@@ -580,23 +580,6 @@ a:hover {
   object-fit: contain;
 }
 
-/* OVERLAY TESTO */
-.poster-overlay {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-
-  max-width: 420px;
-  width: 85%;
-
-  padding: 24px 28px;
-
-  background: rgba(10, 40, 60, 0.9);
-  backdrop-filter: blur(12px);
-
-  border-radius: 16px;
-}
 /* STILE LOCANDINA */
 /* base testo */
 .poster-sub {
