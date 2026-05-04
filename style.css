@@ -107,8 +107,8 @@ a:hover {
 	justify-content: space-between;
 	max-width: 1100px;
 	padding: 20px 20px;
-  align-items: flex-start;
   padding-top: 20px;
+  align-items: center;   /* 🔥 allinea verticalmente */
 }
 
 .logo-block {
