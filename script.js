@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
       aggiornaFiltri();
     });
   }
-<script>
+  
 document.addEventListener('DOMContentLoaded', () => {
 
   // ===== CREDITS ANIMATION =====
@@ -120,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-</script>
 
   // ===== INIT =====
   aggiornaFiltri();
