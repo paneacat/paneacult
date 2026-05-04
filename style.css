@@ -573,10 +573,7 @@ a:hover {
   color: #0b1f26;
 }
 
-.hidden {
-  display: none !important;
-}
-
+.hidden,
 .hidden-by-limit {
   display: none !important;
 }
