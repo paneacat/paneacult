@@ -577,12 +577,16 @@ a:hover {
 /* TESTO */
 .poster-sub {
   color: #ccc;
-  max-width: 500px;
   margin-bottom: 10px;
   z-index: 2;
+  font-size: 22px;
+  line-height: 1.5;
+  max-width: 420px;
 }
 
 .poster-sub.intro {
+  font-size: 16px;
+  margin-bottom: 12px;
   color: #fcc10e;
 }
 
