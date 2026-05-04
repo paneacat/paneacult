@@ -896,6 +896,9 @@ a:hover {
     margin: 80px auto 40px;
     padding: 0 40px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .review-hero img {
@@ -915,6 +918,7 @@ a:hover {
     font-family: 'Playfair Display', serif;
     font-size: 38px;
     line-height: 1.2;
+	color: #fcc10e;
     margin-bottom: 10px;
 }
 
@@ -1112,6 +1116,31 @@ margin-left: 0;
     transform: scaleX(1);
 }
 
+	.watch span {
+  color: #ffffff;
+  letter-spacing: 1px;
+	}
+
+	.watch-btn-inline {
+  color: #fcc10e;
+  text-decoration: none;
+  position: relative;
+	}
+	.watch-btn-inline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #fcc10e;
+  transition: width 0.3s ease;
+}
+
+.watch-btn-inline:hover::after {
+  width: 100%;
+}
+
 /* ⭐ STELLINE → SINISTRA */
 .rating {
   text-align: left;
@@ -1127,9 +1156,11 @@ margin-left: 0;
 }
 
 .firma-review img {
-  width: 160px; /* più grande */
+  width: 300px; /* più grande */
   opacity: 0.95;
-  filter: brightness(1.2); /* più bianca */
+	filter: brightness(0) invert(1);
+  opacity: 0.9;
+color: white;
 }
 
 /* 🔙 TORNA → SINISTRA ALLINEATO AL TESTO */
