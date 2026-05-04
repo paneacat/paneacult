@@ -547,7 +547,7 @@ a:hover {
 }
 
 /* ===== SEZIONE ===== */
- .poster {
+  .poster {
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -557,6 +557,8 @@ a:hover {
 
   padding: 120px 40px 40px;
  }
+
+
 
 
 .poster-big-title {
@@ -578,7 +580,7 @@ a:hover {
 /* IMMAGINE */
 .poster-img img {
   height: 65vh; /* prima era tipo 80-90 */
-  max-height: 600px;
+  max-height: 600px
   filter: contrast(1.05) brightness(0.95);
   object-fit: contain;
 }
