@@ -90,45 +90,44 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== SLIDER COMPLETO 🔥
   // ===============================
   const slider = document.getElementById("slider");
-  const next = document.getElementById("next");
-  const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+const prev = document.getElementById("prev");
 
-  if (slider) {
+if (slider && next && prev) {
 
-    function updateArrows() {
-      const maxScroll = slider.scrollWidth - slider.clientWidth;
+  function updateArrows() {
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
 
-      if (prev) {
-        prev.style.opacity = slider.scrollLeft > 10 ? "1" : "0";
-        prev.style.pointerEvents = slider.scrollLeft > 10 ? "auto" : "none";
-      }
-
-      if (next) {
-        next.style.opacity = slider.scrollLeft < maxScroll - 10 ? "1" : "0";
-        next.style.pointerEvents = slider.scrollLeft < maxScroll - 10 ? "auto" : "none";
-      }
+    // mostra ← solo quando sei alla fine
+    if (slider.scrollLeft >= maxScroll - 10) {
+      prev.style.opacity = "1";
+      prev.style.pointerEvents = "auto";
+    } else {
+      prev.style.opacity = "0";
+      prev.style.pointerEvents = "none";
     }
+  }
 
-    if (next) {
-      next.addEventListener("click", () => {
-        slider.scrollBy({
-          left: slider.clientWidth,
-          behavior: "smooth"
-        });
-      });
-    }
+  next.addEventListener("click", () => {
+    slider.scrollBy({
+      left: slider.clientWidth,
+      behavior: "smooth"
+    });
+  });
 
-    if (prev) {
-      prev.addEventListener("click", () => {
-        slider.scrollBy({
-          left: -slider.clientWidth,
-          behavior: "smooth"
-        });
-      });
-    }
+  prev.addEventListener("click", () => {
+    slider.scrollTo({
+      left: 0,
+      behavior: "smooth"
+    });
+  });
 
-    slider.addEventListener("scroll", updateArrows);
+  slider.addEventListener("scroll", updateArrows);
 
+  // stato iniziale
+  prev.style.opacity = "0";
+  prev.style.pointerEvents = "none";
+}
     // stato iniziale
     updateArrows();
   }
