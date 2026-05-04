@@ -37,6 +37,10 @@ button {
   display: none;
 }
 
+.empty-state.show {
+  display: block;
+}
+
 .home-intro {
 	padding: 20px;
 	margin-top: 10px;
@@ -230,10 +234,10 @@ a:hover {
 }
 
 .archivio-grid {
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-	margin-top: 40px;
+  margin-top: 40px;
 }
 
 .archive-card img {
