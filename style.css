@@ -543,7 +543,7 @@ a:hover {
 /* ===== SEZIONE ===== */
  .poster {
   position: relative;
-  height: 90vh;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -555,7 +555,7 @@ a:hover {
   justify-content: center;
   align-items: flex-end;
   margin-top: 70px;
-  height: 60vh;
+  height: 40vh;
 }
 
 /* IMMAGINE */
@@ -571,7 +571,7 @@ a:hover {
   position: absolute;
   bottom: 8%;
   text-align: center;
-  max-width: 600px;
+  max-width: 400px;
   padding: 30px;
   background: rgba(10, 40, 60, 0.75); /* meno trasparente */
   backdrop-filter: blur(12px);
