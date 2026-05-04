@@ -558,9 +558,6 @@ a:hover {
   padding: 120px 40px 40px;
  }
 
-
-
-
 .poster-big-title {
   font-size: clamp(56px, 6vw, 90px);
   line-height: 0.9;
