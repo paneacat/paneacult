@@ -688,7 +688,7 @@ a:hover {
   grid-template-columns: repeat(3, 1fr);
   gap: 60px;
   max-width: 1100px;
-  margin: 20px auto 0;
+  margin: 10px auto 0;
   padding: 0 40px;
   position: relative;
   border-top: 1px solid rgba(255,255,255,0.08);
