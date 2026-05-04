@@ -243,7 +243,27 @@ button {
   opacity: 0.8;
 }
 
+.card p a {
+  color: #fcc10e;
+  text-decoration: none;
+  position: relative;
+}
 
+/* underline animata */
+.card p a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: #fcc10e;
+  transition: width 0.3s ease;
+}
+
+.card p a:hover::after {
+  width: 100%;
+}
 
 body {
     font-family: 'Inter', sans-serif;
