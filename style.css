@@ -47,6 +47,14 @@ button {
   color: #fcc10e;
 }
 
+.login-cta a {
+  color: #fcc10e;
+  text-decoration: underline !important;
+  text-underline-offset: 3px; /* 🔥 più elegante */
+  text-decoration-thickness: 1px;
+}
+
+
 .home-intro {
 	padding: 20px;
 	margin-top: 10px;
