@@ -362,27 +362,29 @@ a:hover {
 .slider-cta {
   position: absolute;
 
-  right: 30px;      /* 👈 più a sinistra */
-  top: 60%;         /* 👈 più giù */
+  right: 30px;
+  top: 60%;
   transform: translateY(-50%);
 
   width: 48px;
   height: 48px;
-  border-radius: 50%; /* 👈 CERCHIO */
+  border-radius: 50%;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: #fcc10e;
-  color: #193c4e;
+  background: transparent;              /* 👈 vuoto */
+  border: 2px solid #fcc10e;            /* 👈 contorno giallo */
+  color: #fcc10e;                      /* 👈 freccia gialla */
 
   cursor: pointer;
 }
 
 .slider-cta:hover {
-background: rgba(255,255,255,0.2);
-  transform: translateY(-50%) scale(1.05);
+  background: #fcc10e;
+  color: #193c4e;
+  transform: translateY(-50%) scale(1.08);
 }
 
 .slider-cta i,
