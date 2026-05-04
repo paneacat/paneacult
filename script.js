@@ -1,11 +1,11 @@
+<script>
 document.addEventListener('DOMContentLoaded', () => {
 
   // ===== ELEMENTI =====
   const bottoni = document.querySelectorAll('.filtro');
-  const cards = Array.from(document.querySelectorAll('.card'));
+  const cards = Array.from(document.querySelectorAll('.card-film'));
   const empty = document.getElementById('emptyState');
   const loadMoreBtn = document.getElementById('loadMoreBtn');
-
   const slider = document.querySelector('.slider');
 
   let filtroCategoria = "tutti";
@@ -13,13 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const norm = (v) => (v || "").trim().toLowerCase();
 
-  // ===== STEP RESPONSIVE =====
-  function getStep() {
-    return window.innerWidth >= 900 ? 6 : 3;
-  }
-
-  let step = getStep();
-  let visibiliMax = step;
+  // ===== MOSTRA SEMPRE 3 ALLA VOLTA =====
+  const STEP = 3;
+  let visibiliMax = STEP;
 
   // ===== FILTRI =====
   function aggiornaFiltri() {
@@ -43,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (visibile) filtrati.push(card);
     });
 
+    // limita a STEP
     filtrati.forEach((card, i) => {
       card.classList.toggle("hidden-by-limit", i >= visibiliMax);
     });
@@ -52,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       empty.classList.toggle("show", filtrati.length === 0);
     }
 
-    // load more
+    // bottone load more
     if (loadMoreBtn) {
       loadMoreBtn.style.display =
         filtrati.length > visibiliMax ? "inline-block" : "none";
@@ -77,8 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       btn.classList.add('attivo');
 
-      visibiliMax = getStep();
-
+      visibiliMax = STEP; // reset a 3
       aggiornaFiltri();
     });
   });
@@ -86,55 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== LOAD MORE =====
   if (loadMoreBtn) {
     loadMoreBtn.addEventListener('click', () => {
-      visibiliMax += step;
+      visibiliMax += STEP;
       aggiornaFiltri();
     });
   }
 
-  const cards = document.querySelectorAll('.card-film');
-const loadBtn = document.getElementById('loadMore');
-
-let visible = 3;
-
-// nasconde tutto tranne i primi 3
-cards.forEach((card, index) => {
-  if (index >= visible) {
-    card.style.display = "none";
-  }
-});
-
-loadBtn.addEventListener('click', () => {
-  visible += 3;
-
-  cards.forEach((card, index) => {
-    if (index < visible) {
-      card.style.display = "block";
-    }
-  });
-
-  if (visible >= cards.length) {
-    loadBtn.style.display = "none";
-  }
-});
-  
-  // ===== RESIZE (STABILE) =====
-  let resizeTimeout;
-
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-
-    resizeTimeout = setTimeout(() => {
-      const newStep = getStep();
-
-      if (newStep !== step) {
-        step = newStep;
-        visibiliMax = step;
-        aggiornaFiltri();
-      }
-    }, 150);
-  });
-
-  // ===== SLIDER CONTROLS (OPZIONALE) =====
+  // ===== SLIDER (SE USATO) =====
   if (slider) {
     window.scrollSlider = function(direction) {
       const amount = slider.clientWidth * 0.8;
@@ -150,3 +103,4 @@ loadBtn.addEventListener('click', () => {
   aggiornaFiltri();
 
 });
+</script>
