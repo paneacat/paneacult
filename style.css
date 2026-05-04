@@ -361,23 +361,33 @@ a:hover {
 
 .slider-cta {
   position: absolute;
-  right: 20px; /* 👈 prima sarà tipo 0 o 5 → così rientra */
-  top: 50%;
+
+  right: 30px;      /* 👈 più a sinistra */
+  top: 60%;         /* 👈 più giù */
   transform: translateY(-50%);
+
   width: 48px;
   height: 48px;
-  border-radius: 50%; /* 👈 CERCHIO perfetto */
+  border-radius: 50%; /* 👈 CERCHIO */
+
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.1); /* o quello che hai */
-  backdrop-filter: blur(6px);
+
+  background: #fcc10e;
+  color: #193c4e;
+
   cursor: pointer;
 }
 
 .slider-cta:hover {
 background: rgba(255,255,255,0.2);
   transform: translateY(-50%) scale(1.05);
+}
+
+.slider-cta i,
+.slider-cta svg {
+  font-size: 16px;
 }
 
 .slider::-webkit-scrollbar {
