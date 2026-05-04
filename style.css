@@ -572,6 +572,13 @@ a:hover {
   background: var(--gold);
   color: black;
 }
+.hidden {
+  display: none;
+}
+
+.hidden-by-limit {
+  display: none;
+}
     /* ===== NEWSLETTER ===== */
 .newsletter {
   margin: 140px auto 100px;
