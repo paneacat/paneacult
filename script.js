@@ -1,4 +1,3 @@
-<script>
 document.addEventListener('DOMContentLoaded', () => {
 
   // ===============================
@@ -53,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // click filtri SOLO se esistono
     if (bottoni.length) {
       bottoni.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -78,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // load more
     if (loadMoreBtn) {
       loadMoreBtn.addEventListener('click', () => {
         visibiliMax += STEP;
@@ -107,11 +104,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===============================
-  // ===== FADE-UP
+  // ===== FADE-UP (CON FALLBACK 🔥)
   // ===============================
   const elements = document.querySelectorAll('.fade-up');
 
   if (elements.length) {
+
+    // 🔥 fallback: evita pagina vuota
+    setTimeout(() => {
+      elements.forEach(el => el.classList.add('show'));
+    }, 200);
+
     const observerFade = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -124,4 +127,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-</script>
