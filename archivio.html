@@ -136,11 +136,9 @@
   </div>
 </section>
 
-<div class="load-more">
-  <button id="loadMore" class="load-more">
+<button id="loadMoreBtn" class="load-more-btn">
   Carica altre recensioni
-  </button>
-</div>
+</button>
 
 <!-- NEWSLETTER -->
 <section class="newsletter">
@@ -182,12 +180,13 @@
   </div>
 
 </footer>
-<script src="script.js">
-document.addEventListener('DOMContentLoaded', () => {
+<script src="script.js"></script>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
   const credits = document.querySelector('.credits');
 
-  if (!credits) return; // 🔥 evita errori se manca
+  if (!credits) return;
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -195,12 +194,9 @@ document.addEventListener('DOMContentLoaded', () => {
         credits.classList.add('show');
       }
     });
-  }, {
-    threshold: 0.2
-  });
+  }, { threshold: 0.2 });
 
   observer.observe(credits);
-
 });
 </script>
 </body>
