@@ -6,14 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const cards = Array.from(document.querySelectorAll('.card-film'));
   const empty = document.getElementById('emptyState');
   const loadMoreBtn = document.getElementById('loadMoreBtn');
-  const slider = document.querySelector('.slider');
 
   let filtroCategoria = "tutti";
   let filtroGenere = "tutti";
 
   const norm = (v) => (v || "").trim().toLowerCase();
 
-  // ===== MOSTRA SEMPRE 3 ALLA VOLTA =====
+  // ===== MOSTRA 3 ALLA VOLTA =====
   const STEP = 3;
   let visibiliMax = STEP;
 
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let filtrati = [];
 
     cards.forEach(card => {
-
       const categoria = norm(card.dataset.categoria);
       const generi = norm(card.dataset.genere).split(" ").filter(Boolean);
 
@@ -39,17 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (visibile) filtrati.push(card);
     });
 
-    // limita a STEP
     filtrati.forEach((card, i) => {
       card.classList.toggle("hidden-by-limit", i >= visibiliMax);
     });
 
-    // empty state
     if (empty) {
       empty.classList.toggle("show", filtrati.length === 0);
     }
 
-    // bottone load more
     if (loadMoreBtn) {
       loadMoreBtn.style.display =
         filtrati.length > visibiliMax ? "inline-block" : "none";
@@ -74,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       btn.classList.add('attivo');
 
-      visibiliMax = STEP; // reset a 3
+      visibiliMax = STEP;
       aggiornaFiltri();
     });
   });
@@ -86,10 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
       aggiornaFiltri();
     });
   }
-  
-document.addEventListener('DOMContentLoaded', () => {
 
-  // ===== CREDITS ANIMATION =====
+  // ===== CREDITS =====
   const credits = document.querySelector('.credits');
 
   if (credits) {
@@ -118,8 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-
-});
 
   // ===== INIT =====
   aggiornaFiltri();
