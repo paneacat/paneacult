@@ -590,10 +590,9 @@ a:hover {
 }
 
 .firma img {
-  width: 200px;
+  width: 300px;
   opacity: 0.85;
   filter: brightness(0) invert(1);
-
   transform: translateY(5px);
 }
 .film-title {
