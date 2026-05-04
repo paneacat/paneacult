@@ -1324,7 +1324,7 @@ margin-bottom: 38px;
 .contact-hero::after {
   content: "";
   position: absolute;
-  right: 25%;
+  right: 15%;
   top: 50%;
   width: 500px;
   height: 300px;
