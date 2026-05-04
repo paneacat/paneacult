@@ -98,6 +98,21 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
   }
+  const credits = document.querySelector('.credits');
+
+if (credits) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        credits.classList.add('show');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  observer.observe(credits);
+}
 
   // ===== INIT =====
   aggiornaFiltri();
