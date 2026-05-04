@@ -626,9 +626,8 @@ a:hover {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 130px 40px 8px;
+    padding: 80px 8px 40px;
 	height: auto;
-  min-height: 80vh;
 	overflow: visible;
 }
 
