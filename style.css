@@ -42,6 +42,11 @@ button {
   display: block;
 }
 
+.line-break {
+  display: block;
+  color: #fcc10e;
+}
+
 .home-intro {
 	padding: 20px;
 	margin-top: 10px;
