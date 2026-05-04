@@ -1076,10 +1076,6 @@ border-radius: 0 0 50% 50%;
   transform: scaleX(1);
 }
 
-.review-end {
-  margin-top: 60px;
-}
-
 /* ⭐ STELLINE → SINISTRA */
 .rating {
   text-align: left;
@@ -1095,7 +1091,7 @@ border-radius: 0 0 50% 50%;
 }
 
 .firma-review img {
-  width: 160px; /* più grande */
+  width: 250px; /* più grande */
   opacity: 0.95;
   filter: brightness(1.2); /* più bianca */
 }
