@@ -604,6 +604,7 @@ a:hover {
   width: 120px;
   margin-top: 15px;
   filter: brightness(0) invert(1);
+  color: white;
 }
  
 .film-title {
