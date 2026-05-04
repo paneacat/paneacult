@@ -86,33 +86,41 @@ document.addEventListener('DOMContentLoaded', () => {
       aggiornaFiltri();
     });
   }
+<script>
+document.addEventListener('DOMContentLoaded', () => {
 
-  // ===== SLIDER (SE USATO) =====
-  if (slider) {
-    window.scrollSlider = function(direction) {
-      const amount = slider.clientWidth * 0.8;
-
-      slider.scrollBy({
-        left: direction === 'next' ? amount : -amount,
-        behavior: 'smooth'
-      });
-    };
-  }
+  // ===== CREDITS ANIMATION =====
   const credits = document.querySelector('.credits');
 
-if (credits) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        credits.classList.add('show');
-      }
-    });
-  }, {
-    threshold: 0.2
-  });
+  if (credits) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          credits.classList.add('show');
+        }
+      });
+    }, { threshold: 0.3 });
 
-  observer.observe(credits);
-}
+    observer.observe(credits);
+  }
+
+  // ===== SLIDER =====
+  const slider = document.querySelector('.slider');
+  const arrow = document.querySelector('.slider-arrow');
+  const card = document.querySelector('.slide-item');
+
+  if (slider && arrow && card) {
+    arrow.addEventListener('click', () => {
+      const cardWidth = card.offsetWidth + 20;
+      slider.scrollBy({
+        left: cardWidth,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+});
+</script>
 
   // ===== INIT =====
   aggiornaFiltri();
