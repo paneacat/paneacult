@@ -600,11 +600,7 @@ a:hover {
     display: flex;
     overflow-x: auto;
     gap: 20px;
- /* 👉 più spazio tra le card */
-    padding: 10px 0 20px;
     scroll-snap-type: x mandatory;
-    padding-left: 0;
-    padding-right: 0;
     scroll-behavior: smooth;
   padding-bottom: 10px;
   /* 🔥 QUESTO È IL FIX */
