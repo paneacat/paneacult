@@ -549,15 +549,14 @@ a:hover {
 /* ===== SEZIONE ===== */
  .poster {
   position: relative;
-  height: 70vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-padding-top: 80px;
-  padding-bottom: 20px;
-  padding: 80px 0 40px;
-}
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  min-height: 70vh;
+
+  padding: 120px 40px 40px;
+ }
 
 
 .poster-big-title {
