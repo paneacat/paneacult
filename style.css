@@ -598,21 +598,6 @@ a:hover {
   width: 140px;
 }
 
-/* BOX (effetto vetro) */
-.poster::after {
-  content: "";
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 180px;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  z-index: 0;
-}
-
 .film-title {
   color: #ffffff;
   font-family: 'Playfair Display', serif;
