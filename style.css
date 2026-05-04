@@ -548,16 +548,16 @@ a:hover {
 /* ===== LAYOUT ===== */
 .chi-sono-inner {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   max-width: 1100px;
   margin: 0 auto;
   gap: 80px;
+  align-items: flex-start;
 }
 
 /* ===== BLOCCO IMMAGINE ===== */
 .chi-sono-img {
-  transform: translateX(60px);
+  transform: translateX(100px);
 }
 
 /* wrapper per sfumatura */
@@ -586,15 +586,14 @@ a:hover {
 .chi-sono-img img {
   width: 380px;
   height: auto;
-  object-fit: contain;
-  filter: contrast(1.1) brightness(1.05);
-  background: transparent;
+  border-radius: 0 0 30px 30px;
 }
 
 /* ===== TESTO ===== */
 .chi-sono-text {
   max-width: 400px;
   color: white;
+	transform: translateX(-20px);
 }
 
 .chi-sono-text p {
@@ -611,11 +610,11 @@ a:hover {
 }
 
 .firma {
-  margin-top: 20px;
-  width: 200px;
+  width: 180px;
+  margin-top: 25px;
+  filter: brightness(0) invert(1); /* la rende bianca */
   transform: translateX(40px);
   opacity: 0.9;
-	color: white;
 }
 
 .film-title {
