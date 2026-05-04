@@ -290,6 +290,14 @@ a:hover {
   opacity: 0.6;
   text-align: center;
 }
+
+.cta-sub {
+  font-size: 14px;
+  color: #9aa3a8;
+  line-height: 1.5;
+  max-width: 260px;
+}
+
 .cta-button {
   position: static; /* 🔥 fondamentale */
   
