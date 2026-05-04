@@ -113,9 +113,8 @@ a:hover {
 
 .logo-block {
 	display: flex;
-	align-items: flex-start;
 	flex-direction: column;
-	text-align: left;
+  justify-content: center;
 }
 
 .logo {
@@ -144,6 +143,7 @@ a:hover {
 .menu {
 	margin-right: 10px;
 	display: flex;
+	align-items: center;
   gap: 30px;
 }
 
