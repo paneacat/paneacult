@@ -887,6 +887,15 @@ a:hover {
     margin-top: 120px;
 }
 
+.contact-right img {
+  mask-image: none;
+  -webkit-mask-image: none;
+	border-radius: 50%;
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+}
+
 /* ===== SECTIONS (CHI SONO) ===== */
 
 .sections {
