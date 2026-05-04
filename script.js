@@ -127,3 +127,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+const slider = document.getElementById("slider");
+const next = document.getElementById("next");
+
+next.addEventListener("click", () => {
+  slider.scrollBy({
+    left: 300, // distanza scroll
+    behavior: "smooth"
+  });
+});
