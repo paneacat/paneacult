@@ -957,7 +957,7 @@ a:hover {
 }
 
 .back-home.top {
-  margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 .back-home.top a {
@@ -1147,7 +1147,10 @@ margin-left: 0;
   text-decoration: none;
   font-weight: 500;
   position: relative;
-}
+  background: rgba(11,31,38,0.6);
+  padding: 6px 10px;
+  border-radius: 6px;
+	}
 
 /* underline animata coerente col sito */
 .back-home a::after {
