@@ -573,20 +573,6 @@ a:hover {
   margin-bottom: 30px;
 }
 
-/* BOX TESTO */
-.poster-box {
-  max-width: 420px;
-
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-
-  padding: 25px;
-
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-}
-
 /* TESTI */
 .poster-sub {
   font-size: 15px;
