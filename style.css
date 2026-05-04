@@ -52,7 +52,7 @@ button {
   text-underline-offset: 3px; /* 🔥 più elegante */
   text-underline-offset: 4px;
   transition: opacity 0.2s ease;
-  margin-top: 18px;
+  margin-top: 18px !important;
   position: relative;
   color: #fcc10e;
   text-decoration: none;
