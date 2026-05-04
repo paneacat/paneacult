@@ -370,9 +370,10 @@ a:hover {
 }
 
 .container {
-    margin: 0 auto;
-    padding: 0 20px;
-    max-width: var(--container-width);
+    max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px; 
+	
 }
 
 .filtri {
@@ -598,6 +599,7 @@ a:hover {
     padding-left: 0;
     padding-right: 0;
     scroll-behavior: smooth;
+	margin-bottom: 80px;
 }
 
 /* ===== HEADER SLIDER (titolo + frecce) ===== */
