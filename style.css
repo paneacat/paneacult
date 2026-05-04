@@ -78,7 +78,6 @@ button {
 .login-cta a:hover::after {
     transform: scaleX(1);
 }
-}
 
 .login-cta a:hover {
     opacity: 0.8;
@@ -953,7 +952,7 @@ a:hover {
 .review-end img {
 	color: white;
 	align-items: center;
-
+}
 .rating {
     font-size: 22px;
     color: #fcc10e;
@@ -1050,7 +1049,7 @@ margin-left: 0;
    /* allinea perfettamente testo + link */
     gap: 14px;
     margin: 24px 0 28px;
-	
+}
 	
 	.watch a {
   color: #fcc10e;
@@ -1402,7 +1401,7 @@ color: white;
         transform: translateY(0);
     }
 
-		@    keyframes fadeUp {
+		@keyframes fadeUp {
         from {
 				opacity: 0;
         transform: translateY(20px);
@@ -1661,13 +1660,13 @@ to {
         -webkit-tap-highlight-color: transparent;
     }
 
-	@    keyframes fadeUp {
+	@keyframes fadeUp {
         to {
 			opacity: 1;
         transform: translateY(0);
     }
 
-		@    keyframes fadeUp {
+		@keyframes fadeUp {
         from {
 				opacity: 0;
         transform: translateY(20px);
@@ -1943,12 +1942,12 @@ to {
         transform: scale(1.08);
     }
 
-	@    keyframes fadeHead {
+	@keyframes fadeHead {
         to {
 			opacity: 1;
     }
 
-		@    keyframes fadeUp {
+		@keyframes fadeUp {
         from {
 				opacity: 0;
         transform: translateY(20px);
