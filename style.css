@@ -1793,7 +1793,10 @@ to {
 .cta-arrow {
         display: none !important;
     }
-
+.contact-hero::after {
+    display: none;
+}
+	
 .container, .section {
         width: 100%;
         max-width: 1200px;
