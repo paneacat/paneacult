@@ -31,6 +31,7 @@ button {
 	--gold: #ffbf00;
 	--text: #eaeaea;
 	--muted: #aaa;
+	--container-width: 1100px;
 }
 
 .empty-state {
@@ -175,9 +176,9 @@ a:hover {
 }
 
 .container {
-  max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
+	max-width: var(--container-width);
 }
 
 .filtri {
@@ -234,7 +235,7 @@ a:hover {
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 100px;
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
