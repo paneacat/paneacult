@@ -540,90 +540,77 @@ a:hover {
   transform: scale(1.1);
 }
 
-/* ===== SEZIONE ===== */
- .poster {
+/* POSTER HERO (CHI SONO) */
+
+.poster {
   position: relative;
-  height: 70vh;
+  min-height: 100vh;
+  padding: 120px 60px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  background: radial-gradient(circle at 70% 30%, #123040, #0b1d26 70%);
   overflow: hidden;
 }
 
+/* TITOLO GRANDE */
 .poster-big-title {
-  position: absolute;
-  left: 5%;
-  top: 40%;
-  transform: translateY(-50%);
-
   font-size: 90px;
-  font-weight: 700;
   color: #fcc10e;
-  font-family: 'Playfair Display', serif;
-
-  opacity: 0.9;
-}
-
-.poster-img {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  margin-top: 70px;
-  height: 40vh;
+  margin-bottom: 30px;
+  line-height: 0.9;
+  z-index: 2;
 }
 
 /* IMMAGINE */
+.poster-img {
+  position: absolute;
+  right: 80px;
+  bottom: 0;
+  z-index: 1;
+}
+
 .poster-img img {
-  height: 65vh; /* prima era tipo 80-90 */
-  max-height: 600px;
-  filter: contrast(1.05) brightness(0.95);
-  object-fit: contain;
+  width: 420px;
+  border-radius: 10px;
 }
 
-/* STILE LOCANDINA */
-/* base testo */
+/* TESTO */
 .poster-sub {
-  font-size: 15px;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.9);
-  margin: 6px 0;
+  color: #ccc;
+  max-width: 500px;
+  margin-bottom: 10px;
+  z-index: 2;
 }
 
-/* PRIMA FRASE GIALLA */
 .poster-sub.intro {
   color: #fcc10e;
-  font-weight: 600;
-  margin-bottom: 10px;
 }
 
-/* BLOCCO IDENTITÀ PIÙ IN BASSO */
 .poster-sub.identity {
-  opacity: 0.85;
-  font-size: 14px;
-	margin-top: 14px;
-}
-
-/* ancora più respiro tra i due gruppi */
-.poster-sub.identity:first-of-type {
-  margin-top: 20px;
+  font-weight: 600;
+  color: white;
 }
 
 /* FIRMA */
 .poster-signature {
-  display: block;
-  margin: 20px auto 0;
-
+  margin-top: 20px;
   width: 140px;
-
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
 }
 
-.poster-columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
-  margin-top: 120px;
+/* BOX (effetto vetro) */
+.poster::after {
+  content: "";
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 180px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  z-index: 0;
 }
 
 .film-title {
