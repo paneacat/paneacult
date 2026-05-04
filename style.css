@@ -90,7 +90,37 @@ button {
 .login-cta a:hover::after {
   transform: scaleX(1);
 }
+/* SOTTOTITOLO */
+.subtitle {
+  color: rgba(255,255,255,0.75);
+  font-style: italic;
+  font-size: 18px;
+  margin-top: 6px;
+}
 
+/* AUTORE (PIÙ IMPORTANTE) */
+.author {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* HASHTAG */
+.series {
+  color: rgba(255,255,255,0.45);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 14px;
+}
+
+/* GENERE */
+.genre-bar {
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+  margin-top: 4px;
+}
 
 .home-intro {
 	padding: 20px;
