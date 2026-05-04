@@ -182,24 +182,21 @@
   </div>
 
 </footer>
-<script src="script.js"></script>
+<script src="script.js">const credits = document.querySelector('.credits');
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const credits = document.querySelector('.credits');
-
-  if (!credits) return;
-
+if (credits) {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         credits.classList.add('show');
       }
     });
-  }, { threshold: 0.2 });
+  }, {
+    threshold: 0.2
+  });
 
   observer.observe(credits);
-});
-</script>
+}</script>
+
 </body>
 </html>
