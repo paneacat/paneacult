@@ -624,15 +624,16 @@ a:hover {
 
 /* testo */
 .poster-text {
-  max-width: 500px;
+  max-width: 520px;
 }
 
 /* titolo */
 .poster-big-title {
-  font-size: 90px;
-  line-height: 0.9;
   color: var(--gold);
+  font-size: 72px; /* 🔥 prima era troppo enorme */
+  line-height: 0.9;
   margin-bottom: 20px;
+  word-break: break-word;
 }
 
 /* testi */
