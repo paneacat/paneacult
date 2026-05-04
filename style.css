@@ -97,15 +97,16 @@ a:hover {
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 	max-width: 1100px;
 	padding: 20px 20px;
+  align-items: flex-start;
 }
 
 .logo-block {
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
+	text-align: left;
 }
 
 .logo {
@@ -175,11 +176,15 @@ a:hover {
   padding: 0 40px; /* 👉 questo è il vero segreto */
 }
 .filtri {
-  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
   margin: 30px auto;
+	margin-top: 20px;
+  margin-bottom: 20px;
+	display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 /* righe */
@@ -214,6 +219,18 @@ a:hover {
   color: var(--gold);
   background: rgba(255,191,0,0.1);
 }
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+.archive-card img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+}
+
 /* ===== CARD ===== */
 .card {
   position: relative;
@@ -789,12 +806,18 @@ a:hover {
 	}
 
 	.archivio-grid {
-		grid-template-columns: repeat(2,1fr);
 		padding: 0 14px;
 		display: grid;
 		gap: 24px;
-	}
+    grid-template-columns: 1fr;
+}
 
+	.archivio-card img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+	}
+	
 	.home .card img {
 		width: 100%;
 		aspect-ratio: 16 / 9;
