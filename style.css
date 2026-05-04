@@ -370,9 +370,9 @@ a:hover {
 }
 
 .container {
-    max-width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px; 
+  padding: 0 32px;
 	
 }
 
@@ -599,7 +599,10 @@ a:hover {
     padding-left: 0;
     padding-right: 0;
     scroll-behavior: smooth;
-	margin-bottom: 80px;
+  padding-bottom: 10px;
+  /* 🔥 QUESTO È IL FIX */
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* ===== HEADER SLIDER (titolo + frecce) ===== */
