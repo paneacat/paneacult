@@ -925,7 +925,7 @@ border-radius: 0 0 50% 50%;
 
   background: #fcc10e;
   color: #0b1f26;
-
+ 
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
@@ -979,6 +979,101 @@ border-radius: 0 0 50% 50%;
   text-decoration: none;
   border-bottom: 1px solid #fcc10e;
 }
+/* ===== TITOLI ===== */
+
+.review-container h1 {
+  color: #fcc10e; /* GIALLO */
+}
+
+.review-container h2,
+.review-container h3 {
+  color: #ffffff;
+}
+
+/* ===== TESTO ===== */
+
+.review-container {
+  color: rgba(255,255,255,0.85);
+}
+
+/* sottotitolo */
+.subtitle {
+  color: rgba(255,255,255,0.7);
+}
+
+/* meta info */
+.meta,
+.series,
+.genre-bar {
+  color: rgba(255,255,255,0.5);
+}
+
+/* testo recensione */
+.review-text p {
+  color: rgba(255,255,255,0.85);
+}
+
+/* strong dentro il testo → leggermente più pieno */
+.review-text strong {
+  color: #ffffff;
+}
+
+/* corsivo */
+.review-text em {
+  color: rgba(255,255,255,0.7);
+}
+
+/* rating */
+.rating {
+  color: #fcc10e;
+}
+.watch {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 25px 0;
+}
+
+/* titolo */
+.watch span {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
+/* bottone versione editoriale */
+.watch-btn-inline {
+  font-size: 13px;
+  color: #fcc10e;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+/* linea sotto */
+.watch-btn-inline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #fcc10e;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* hover elegante */
+.watch-btn-inline:hover::after {
+  transform: scaleX(1);
+}
+
+
+
     /* ===== NEWSLETTER ===== */
 .newsletter {
   margin: 140px auto 100px;
