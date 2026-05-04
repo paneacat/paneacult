@@ -639,6 +639,8 @@ a:hover {
     flex: 0 0 280px;
  /* 👉 dimensione desktop */
     scroll-snap-align: start;
+	min-width: 260px;
+  flex-shrink: 0;
 }
 
 /* contenitore card */
