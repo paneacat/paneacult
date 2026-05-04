@@ -554,7 +554,8 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  margin-top: 40px;
+  margin-top: 70px;
+  height: 60vh;
 }
 
 /* IMMAGINE */
@@ -627,6 +628,7 @@ a:hover {
   filter: brightness(0) invert(1);
   color: white;
   align-items: center;
+  text-align: center;
 }
  
 .film-title {
