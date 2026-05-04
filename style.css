@@ -541,73 +541,71 @@ a:hover {
 }
 
 /* ===== SEZIONE ===== */
-.chi-sono {
-	padding: 140px 20px 80px;
-}
-
-/* ===== LAYOUT ===== */
-.chi-sono-inner {
+ .poster {
+  position: relative;
+  height: 90vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1100px;
-  margin: 0 auto;
-  gap: 100px;
+  justify-content: center;
+  overflow: hidden;
 }
 
-/* ===== BLOCCO IMMAGINE ===== */
-.chi-sono {
-  padding: 120px 20px;
+/* IMMAGINE */
+.poster-img img {
+  height: 80%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+/* OVERLAY TESTO */
+.poster-overlay {
+  position: absolute;
+  bottom: 8%;
   text-align: center;
+  max-width: 600px;
+  padding: 30px;
+  background: rgba(10, 40, 60, 0.75); /* meno trasparente */
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  z-index: 2;
 }
 
-.chi-sono-center {
-  position: relative;
-  max-width: 700px;
-  margin: 0 auto;
+/* STILE LOCANDINA */
+.poster-kicker {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.7;
 }
 
-.chi-sono-img img {
-  width: 100%;
-  max-width: 420px;
-  display: block;
-  margin: 0 auto;
-}
-
-/* 💥 TESTO SOPRA IMMAGINE */
-.chi-sono-overlay {
-  position: relative;
-  margin-top: -50px;
-  background: rgba(11, 31, 38, 0.95); /* meno trasparente */
-  backdrop-filter: blur(6px);
-  padding: 36px 28px; /* un po' più aria */
-  border-radius: 20px;
-}
-
-/* testo più piccolo e più raffinato */
-.chi-sono-overlay p {
-  color: rgba(255,255,255,0.9);
-  line-height: 1.65;
-  margin-bottom: 10px;
-  font-size: 16px; /* prima ~18 */
-}
-
-/* frase gialla leggermente più importante */
-.chi-sono-overlay .intro {
+.poster-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
   color: #fcc10e;
-  font-weight: 600;
-  font-size: 17px;
-  margin-bottom: 14px;
+  margin: 10px 0;
 }
 
-/* FIRMA CENTRATA */
-.firma {
-  display: block;
-  margin: 24px auto 0; /* centro perfetto */
-  width: 170px; /* leggermente più grande */
+.poster-sub {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.poster-credits {
+  margin-top: 20px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
+
+/* FIRMA */
+.poster-signature {
+  width: 120px;
+  margin-top: 15px;
   filter: brightness(0) invert(1);
 }
-
+ 
 .film-title {
   color: #ffffff;
   font-family: 'Playfair Display', serif;
