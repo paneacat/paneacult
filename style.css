@@ -265,11 +265,7 @@ button {
   width: 100%;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    padding-top: 13px;
-    background: #0f2a33;
-}
+
 
 a {
     text-decoration: none;
