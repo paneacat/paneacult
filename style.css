@@ -276,9 +276,7 @@ a:hover {
 .hero-cta {
   display: flex;
   flex-direction: column;
-  align-items: center;   /* centra label + bottone */
-  justify-content: center;
-  min-width: 280px;
+  align-items: flex-start;
   gap: 10px;
 }
 
@@ -291,31 +289,19 @@ a:hover {
   text-align: center;
 }
 .cta-button {
-  position: absolute;
+  position: static; /* 🔥 fondamentale */
+  
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
 
-  right: 30px;           /* più a sinistra rispetto al bordo */
-  top: 65%;              /* più giù */
-  transform: translateY(-50%);
+  background: #fcc10e;
+  color: #193c4e;
 
-  width: 48px;
-  height: 48px;
-  padding: 0;
-
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: transparent;
-  border: 2px solid #fcc10e;
-  color: #fcc10e;
-
-  font-size: 18px;
   text-decoration: none;
-  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
 }
-
 .cta-button:hover {
   background: #fcc10e;
   color: #193c4e;
@@ -366,6 +352,7 @@ a:hover {
 .slider-section {
   max-width: 1100px;
   margin: 80px auto 0;
+  position: relative;
 }
 
 .slider {
@@ -378,24 +365,25 @@ a:hover {
   padding-right: 0;
 }
 
-.slider-cta {
-  position: absolute !important;
-  right: 30px !important;
-  top: 60% !important;
+.slider-arrow {
+  position: absolute;
 
-  width: 48px !important;
-  height: 48px !important;
-  padding: 0 !important;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
 
-  border-radius: 50% !important;
+  width: 48px;
+  height: 48px;
 
-  background: transparent !important;
-  border: 2px solid #fcc10e !important;
-  color: #fcc10e !important;
+  border-radius: 50%;
 
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #fcc10e;
+  color: #fcc10e;
+  background: transparent;
 }
 
 .slider-cta i,
