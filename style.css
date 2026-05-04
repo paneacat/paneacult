@@ -942,6 +942,8 @@ a:hover {
 .review-end {
     margin-top: 40px;
     text-align: center;
+	color: white;
+	align-items: center;
 }
 
 .rating {
