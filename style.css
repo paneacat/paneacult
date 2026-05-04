@@ -548,20 +548,17 @@ a:hover {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+padding-top: 140px; 
+  padding: 80px 0 40px;
 }
 
+
 .poster-big-title {
-  position: absolute;
-  left: 5%;
-  top: 40%;
-  transform: translateY(-50%);
-
-  font-size: 90px;
-  font-weight: 700;
-  color: #fcc10e;
-  font-family: 'Playfair Display', serif;
-
-  opacity: 0.9;
+  font-size: clamp(56px, 6vw, 90px);
+  line-height: 0.9;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+  word-break: break-word;
 }
 
 .poster-img {
@@ -587,13 +584,14 @@ a:hover {
   line-height: 1.6;
   color: rgba(255,255,255,0.9);
   margin: 6px 0;
+  margin-bottom: 8px;
 }
 
 /* PRIMA FRASE GIALLA */
 .poster-sub.intro {
   color: #fcc10e;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 /* BLOCCO IDENTITÀ PIÙ IN BASSO */
@@ -609,10 +607,6 @@ a:hover {
 }
 
 /* ===== POSTER CONTAINER VERSION ===== */
-
-.poster {
-  padding: 80px 0 40px;
-}
 
 /* layout come home */
 .poster-layout {
