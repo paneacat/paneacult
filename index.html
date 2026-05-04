@@ -188,6 +188,7 @@
 </footer>
 
 <script>
+  // ===== CREDITS ANIMATION =====
   const credits = document.querySelector('.credits');
 
   const observer = new IntersectionObserver(entries => {
@@ -201,18 +202,21 @@
   });
 
   observer.observe(credits);
-</script>
-  <script>
+
+
+  // ===== SLIDER =====
   const slider = document.querySelector('.slider');
   const arrow = document.querySelector('.slider-arrow');
+  const card = document.querySelector('.slide-item');
 
   arrow.addEventListener('click', () => {
+    const cardWidth = card.offsetWidth + 20;
     slider.scrollBy({
-      left: 300, // quanto scorre
+      left: cardWidth,
       behavior: 'smooth'
     });
   });
-  </script>
+</script>
 </body>
 </html>
 
