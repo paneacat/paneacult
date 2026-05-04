@@ -91,6 +91,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const cards = document.querySelectorAll('.card-film');
+const loadBtn = document.getElementById('loadMore');
+
+let visible = 3;
+
+// nasconde tutto tranne i primi 3
+cards.forEach((card, index) => {
+  if (index >= visible) {
+    card.style.display = "none";
+  }
+});
+
+loadBtn.addEventListener('click', () => {
+  visible += 3;
+
+  cards.forEach((card, index) => {
+    if (index < visible) {
+      card.style.display = "block";
+    }
+  });
+
+  if (visible >= cards.length) {
+    loadBtn.style.display = "none";
+  }
+});
+  
   // ===== RESIZE (STABILE) =====
   let resizeTimeout;
 
