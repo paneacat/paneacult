@@ -587,16 +587,6 @@ a:hover {
     }
 }
 /* ===== SLIDER ===== */
-.slider-header {
-    max-width: 1100px;
-    margin: 80px auto 0;
-    position: relative;
-	display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-    padding-left: 0;
-}
 
 .slider {
     display: flex;
@@ -610,56 +600,57 @@ a:hover {
     scroll-behavior: smooth;
 }
 
+/* ===== HEADER SLIDER (titolo + frecce) ===== */
+
+.slider-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* titolo */
+.section-label {
+  margin: 0;
+}
+
+/* ===== CONTENITORE FRECCE ===== */
+
 .slider-arrows {
-  margin-left: auto; /* 🔥 QUESTO le spinge a destra */
+  margin-left: auto; /* 🔥 spinge a destra */
   display: flex;
   gap: 10px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 2px solid #fcc10e;
-    color: #fcc10e;
-    background: transparent;
-	z-index: 10;
-  justify-content: flex-end;
-  margin-top: 20px;
 }
 
-.arrow.prev {
-  left: -10px;
-	width: 42px;
+/* ===== FRECCE ===== */
+
+.arrow {
+  width: 42px;
   height: 42px;
+
   border: 1px solid #fcc10e;
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: #fcc10e;
+  font-size: 18px;
+
   cursor: pointer;
-  transition: 0.3s;
+
+  transition: all 0.3s ease;
 }
 
-.arrow.next {
-    left: -10px;
-	width: 42px;
-  height: 42px;
-  border: 1px solid #fcc10e;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fcc10e;
-  cursor: pointer;
-  transition: 0.3s;
-}
+/* hover */
 .arrow:hover {
   background: #fcc10e;
   color: #193c4e;
+  transform: scale(1.05);
 }
 
+/* stato disattivo (quando sei all'inizio o fine) */
 .arrow.disabled {
   opacity: 0.3;
   pointer-events: none;
@@ -733,25 +724,6 @@ a:hover {
 .slider::after {
     content: "";
     flex: 0 0 40px;
-}
-
-/* bottone */
-.slider-next {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white;
-    cursor: pointer;
-}
-
-.slider-next:hover {
-    background: #fcc10e;
-    color: #193c4e;
-    box-shadow: 0 0 12px rgba(255,193,14,0.6),
-    0 0 24px rgba(255,193,14,0.4);
-    transform: scale(1.1);
 }
 
 /* ===== SEZIONE ===== */
@@ -1836,9 +1808,6 @@ to {
         margin-top: 16px;
     }
 
-.cta-arrow {
-        display: none !important;
-    }
 .contact-hero::after {
     display: none;
 }
@@ -1848,7 +1817,12 @@ to {
         max-width: 1200px;
         margin: 0 auto;
     }
-
+  .arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+}
+	
 .newsletter-btn:active {
         background: var(--gold);
         color: #0b1f26;
@@ -2032,49 +2006,6 @@ to {
         position: relative;
         display: flex;
         align-items: center;
-    }
-
-.cta-button {
-        display: inline-block;
-        padding: 16px 34px;
-        border-radius: 999px;
-        background: var(--gold);
-        color: #0b1f26;
-        font-size: 14px;
-        text-decoration: none;
-        box-shadow: 0 12px 40px rgba(255,191,0,0.35), 0 0 30px rgba(255,191,0,0.2);
-        transition: all 0.2s ease;
-    }
-
-.cta-button:hover {
-        transform: translateY(-3px);
-        background: #ffd54a;
-    }
-
-.cta-arrow {
-        position: absolute;
-        transform: translateY(-20%);
-        margin-right: 25px;
-        left: 60px;
-        top: 160px;
-        width: 340px;
-        pointer-events: none;
-    }
-
-.arrow-line {
-        fill: none;
-        stroke: var(--gold);
-        stroke-width: 2;
-        stroke-dasharray: 300;
-        stroke-dashoffset: 300;
-        animation: drawLine 1s ease forwards;
-    }
-
-.arrow-head {
-        fill: var(--gold);
-        opacity: 0;
-        animation: fadeHead 0.3s ease forwards;
-        animation-delay: 0.9s;
     }
 
 .newsletter {
