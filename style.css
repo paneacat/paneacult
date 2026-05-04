@@ -272,9 +272,7 @@ button {
 body {
     font-family: 'Inter', sans-serif;
     padding-top: 13px;
-    background: #f5f3ef;
-  color: #1a1a1a;
-	background: linear-gradient(#f5f3ef, #f2efe9);
+  color: #0f3a42;
 }
 
 a {
