@@ -887,15 +887,6 @@ a:hover {
     margin-top: 120px;
 }
 
-.contact-right img {
-  mask-image: none;
-  -webkit-mask-image: none;
-	border-radius: 50%;
-  width: 320px;
-  height: 320px;
-  object-fit: cover;
-}
-
 /* ===== SECTIONS (CHI SONO) ===== */
 
 .sections {
@@ -1330,6 +1321,19 @@ color: white;
   letter-spacing: 1px;
 }
 
+.contact-right img {
+  width: 420px;
+  max-width: 100%;
+  display: block;
+
+  /* forma sotto rotonda ma pulita */
+  border-radius: 50% 50% 0 0;
+
+  /* IMPORTANTISSIMO */
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
 /* blocco testo */
 .contact-text {
   max-width: 500px;
@@ -1352,19 +1356,6 @@ margin-bottom: 38px;
   max-width: 520px;
 	transform: translateX(40px);
   margin-left: 80px; /* ← spinge verso destra */
-}
-
-.contact-right {
-  margin-right: 80px; /* ← la tira verso il centro */
-  display: flex;
-	transform: translateX(40px);
-  justify-content: center;
-}
-
-.contact-right img {
-  width: 300px;
-  opacity: 0.9;
-  filter: brightness(0) invert(1) contrast(1.2);
 }
 
 /* CHI SONO + CONTATTI → stile editoriale */
