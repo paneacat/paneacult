@@ -1087,7 +1087,8 @@ border-radius: 0 0 50% 50%;
 /* ✍️ FIRMA → CENTRATA + PIÙ IMPORTANTE */
 .firma-review {
   text-align: center;
-  margin: 40px 0;
+  margin: 20px 0;
+	color: white; 
 }
 
 .firma-review img {
