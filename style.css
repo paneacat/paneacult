@@ -608,7 +608,7 @@ a:hover {
 .slider-arrow {
     position: absolute;
     right: 30px;
-    top: 0%;
+    top: 50%;
     transform: translateY(-50%);
     width: 48px;
     height: 48px;
@@ -619,17 +619,15 @@ a:hover {
     border: 2px solid #fcc10e;
     color: #fcc10e;
     background: transparent;
+	z-index: 10;
 }
 
-.slider-cta i,
-.slider-cta svg {
-    font-size: 16px;
+.arrow.prev {
+  left: -10px;
 }
 
-.slider-cta:hover {
-    background: #fcc10e;
-    color: #193c4e;
-    transform: translateY(-50%) scale(1.08);
+.arrow.next {
+  right: -10px;
 }
 
 .slider::-webkit-scrollbar {
