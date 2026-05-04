@@ -625,6 +625,7 @@ a:hover {
 /* testo */
 .poster-text {
   max-width: 520px;
+  text-align: left;
 }
 
 /* titolo */
@@ -651,12 +652,6 @@ a:hover {
 .poster-sub.identity {
   color: white;
   font-weight: 600;
-}
-
-/* firma */
-.poster-signature {
-  margin-top: 20px;
-  width: 140px;
 }
 
 /* immagine */
