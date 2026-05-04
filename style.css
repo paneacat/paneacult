@@ -945,6 +945,9 @@ a:hover {
 	color: white;
 	align-items: center;
 }
+.review-end img {
+	color: white;
+	align-items: center;
 
 .rating {
     font-size: 22px;
@@ -1104,10 +1107,6 @@ margin-left: 0;
 
 .watch-link:hover::after {
     transform: scaleX(1);
-}
-
-.review-end {
-  margin-top: 60px;
 }
 
 /* ⭐ STELLINE → SINISTRA */
