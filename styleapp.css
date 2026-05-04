@@ -12,13 +12,86 @@ body {
   padding-bottom: 90px; /* evita overlap con menu */
 }
 
+.logo-block {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+.logo {
+	font-size: 48px;
+	margin: 0;
+	text-align: left;
+	color: var(--gold);
+	font-family: 'Playfair Display', serif;
+}
+
+.logo-subtitle {
+	font-size: 11px;
+	margin-top: 4px;
+	text-align: left;
+	position: static;
+	opacity: 0.7;
+	letter-spacing: 3px;
+	color: white;
+}
 .container {
-  max-width: 500px;
+  max-width: 1100px;
   margin: 0 auto;
-  width: 100%;
-  position: relative; /* 🔥 fondamentale */
-  padding: 20px; 
-  display: none;
+  padding: 0 20px;
+}
+
+.menu {
+	margin-right: 10px;
+	display: flex;
+  gap: 30px;
+}
+
+.menu a {
+	position: relative;
+	font-size: 13px;
+	letter-spacing: 2px;
+	opacity: 0.8;
+}
+
+.menu a.active {
+	color: var(--gold);
+}
+
+.menu a::after {
+	content: "";
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	width: 0;
+	height: 1px;
+	background: var(--gold);
+	transition: 0.3s;
+}
+
+.menu a:hover::after, .menu a.active::after {
+	width: 100%;
+}
+
+.home-cinema .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px; /* 👉 questo è il vero segreto */
+}
+
+.header-inner {
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1100px;
+	padding: 20px 20px;
 }
 
 /* ===== TITOLO ===== */
