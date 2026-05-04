@@ -202,6 +202,17 @@
 
   observer.observe(credits);
 </script>
+  <script>
+  const slider = document.querySelector('.slider');
+  const arrow = document.querySelector('.slider-arrow');
+
+  arrow.addEventListener('click', () => {
+    slider.scrollBy({
+      left: 300, // quanto scorre
+      behavior: 'smooth'
+    });
+  });
+  </script>
 </body>
 </html>
 
