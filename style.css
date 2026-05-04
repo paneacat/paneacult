@@ -614,20 +614,25 @@ a:hover {
     height: 48px;
     border-radius: 50%;
     display: flex;
-    align-items: center;
-    justify-content: center;
     border: 2px solid #fcc10e;
     color: #fcc10e;
     background: transparent;
 	z-index: 10;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .arrow.prev {
   left: -10px;
+	cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
 .arrow.next {
   right: -10px;
+	cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
 .slider::-webkit-scrollbar {
