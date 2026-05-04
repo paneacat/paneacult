@@ -52,6 +52,12 @@ button {
   text-decoration: underline !important;
   text-underline-offset: 3px; /* 🔥 più elegante */
   text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.login-cta a:hover {
+  opacity: 0.8;
 }
 
 
