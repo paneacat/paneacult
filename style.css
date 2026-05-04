@@ -1300,7 +1300,7 @@ color: white;
   color: #fcc10e;
   margin: 0;
   letter-spacing: -1px;
-	}
+}
 
 /* blocco testo */
 .contact-text {
@@ -1319,20 +1319,20 @@ margin-bottom: 38px;
   color: rgba(255,255,255,0.7);
   margin: 4px 0 0 0;
 }
-  
-.contact-hero {
-  position: relative;
-}
 
-.contact-hero::before {
+.contact-hero::after {
   content: "";
   position: absolute;
-  top: 80px;
-  left: 0;
-  width: 60%;
-  height: 1px;
-  background: rgba(255,255,255,0.2);
-}
+  right: 5%;
+  top: 50%;
+  width: 300px;
+  height: 200px;
+  background: url('img/firma.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.08;
+  transform: translateY(-50%);
+  pointer-events: none;
+	}
 
 /* ===== NEWSLETTER ===== */
 .newsletter {
