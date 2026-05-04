@@ -149,6 +149,12 @@ button {
 	margin-bottom: 80px;
 	padding: 0 20px
 }
+
+.home-cinema .container {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
 .about-text {
   font-weight: 400; /* niente grassetto */
   line-height: 1.6;
@@ -613,6 +619,7 @@ a:hover {
   align-items: center;
   width: 100%;
   margin-bottom: 20px;
+	padding-left: 32px;
 }
 
 /* titolo */
