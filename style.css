@@ -59,10 +59,6 @@ button {
 	color: var(--gold);
 	margin-top: 6px;
 }
-.intro {
-  color: #fcc10e;
-  font-weight: 600;
-}
 
 .about-content {
   display: flex;
@@ -602,6 +598,13 @@ a:hover {
     #0d425e 100%
   );
 }
+
+chi-sono-text intro {
+  color: #fcc10e;
+  font-weight: 600;
+}
+
+
 .firma img {
   width: 300px;
   opacity: 0.85;
