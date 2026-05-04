@@ -608,6 +608,63 @@ a:hover {
   margin-top: 20px;
 }
 
+/* ===== POSTER CONTAINER VERSION ===== */
+
+.poster {
+  padding: 80px 0 40px;
+}
+
+/* layout come home */
+.poster-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* testo */
+.poster-text {
+  max-width: 500px;
+}
+
+/* titolo */
+.poster-big-title {
+  font-size: 90px;
+  line-height: 0.9;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+/* testi */
+.poster-sub {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.poster-sub.intro {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.poster-sub.identity {
+  color: white;
+  font-weight: 600;
+}
+
+/* firma */
+.poster-signature {
+  margin-top: 20px;
+  width: 140px;
+}
+
+/* immagine */
+.poster-img img {
+  width: 360px;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+}
+
+
 /* FIRMA */
 .poster-signature {
   display: block;
@@ -929,6 +986,19 @@ a:hover {
 		text-align: center;
 	}
 
+	.poster-layout {
+  flex-direction: column;
+  text-align: center;
+}
+
+.poster-big-title {
+  font-size: 52px;
+}
+
+.poster-img img {
+  width: 260px;
+}
+	
 	.header-inner {
 		flex-direction: column;
 		align-items: center;
