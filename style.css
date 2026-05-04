@@ -655,7 +655,7 @@ a:hover {
   max-height: 600px
   filter: contrast(1.05) brightness(0.95);
   object-fit: contain;
-	border-radius: 16px;
+  border-radius: 0 0 200px 200px;
 }
 
 /* STILE LOCANDINA */
