@@ -587,7 +587,7 @@ a:hover {
     }
 }
 /* ===== SLIDER ===== */
-.slider-section {
+.slider-header {
     max-width: 1100px;
     margin: 80px auto 0;
     position: relative;
@@ -610,21 +610,21 @@ a:hover {
     scroll-behavior: smooth;
 }
 
-.slider-arrow {
+.slider-arrows {
+  margin-left: auto; /* 🔥 QUESTO le spinge a destra */
+  display: flex;
+  gap: 10px;
     position: absolute;
-    right: 30px;
     top: 50%;
     transform: translateY(-50%);
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    display: flex;
     border: 2px solid #fcc10e;
     color: #fcc10e;
     background: transparent;
 	z-index: 10;
   justify-content: flex-end;
-  gap: 12px;
   margin-top: 20px;
 }
 
