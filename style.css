@@ -1371,6 +1371,7 @@ margin-bottom: 38px;
 .contact-title,
 .poster-big-title {
   font-family: 'Playfair Display', serif;
+  margin-bottom: 8px;
 }
 .sections .card h2 {
   font-family: 'Playfair Display', serif;
