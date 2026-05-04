@@ -955,33 +955,35 @@ a:hover {
     margin-bottom: 20px;
 }
 
-.back-home {
-    margin: 40px 0;
-    text-align: center;
+.back-home.top {
+  margin-bottom: 15px;
 }
 
-.back-home a {
-    color: #fcc10e;
-    text-decoration: none;
- /* ✔ niente linea fissa */
-    font-weight: 500;
-    position: relative;
+.back-home.top a {
+  color: #fcc10e;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  position: relative;
 }
 
-.back-home a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0;
-    height: 2px;
-    background: #fcc10e;
-    transition: width 0.3s ease;
+/* underline animata */
+.back-home.top a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #fcc10e;
+  transition: width 0.3s ease;
 }
 
-.back-home a:hover::after {
-    width: 100%;
+.back-home.top a:hover::after {
+  width: 100%;
 }
+
+
 /* ===== TITOLI ===== */
 
 .review-container h1 {
