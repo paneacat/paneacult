@@ -1346,6 +1346,15 @@ margin-bottom: 38px;
   opacity: 0.9;
   filter: brightness(0) invert(1) contrast(1.2);
 }
+
+/* CHI SONO + CONTATTI → stile editoriale */
+.contact-title,
+.poster-big-title {
+  font-family: 'Playfair Display', serif;
+}
+.sections .card h2 {
+  font-family: 'Playfair Display', serif;
+}
 /* ===== NEWSLETTER ===== */
 .newsletter {
     margin-top: 100px;   /* spazio dalla section sopra */
