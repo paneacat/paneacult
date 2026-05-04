@@ -147,7 +147,16 @@ button {
     margin-top: 13px;
     position: relative;
 }
+.about-text {
+  font-weight: 400; /* niente grassetto */
+  line-height: 1.6;
+  margin-top: 10px;
+	font-weight: 400;
+}
 
+.about-text::first-line {
+  opacity: 0.9;
+}
 .section-label {
     margin-top: 15px;
     padding-left: 0;
