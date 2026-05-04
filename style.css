@@ -1319,7 +1319,22 @@ margin-bottom: 13px;
   color: rgba(255,255,255,0.7);
   margin: 4px 0 0 0;
 }
-    /* ===== NEWSLETTER ===== */
+  
+.contact-hero {
+  position: relative;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 60%;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+}
+
+/* ===== NEWSLETTER ===== */
 .newsletter {
     margin-top: 100px;   /* spazio dalla section sopra */
   margin-bottom: 30px;
