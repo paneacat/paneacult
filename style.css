@@ -9,11 +9,12 @@ html {
     margin: 0;
     padding: 0;
 }
-/* 
+
 * {
-  outline: 1px solid red;
+  outline: none !important;
+  border: none !important;
 }
-*/
+
 
 img {
     max-width: 100%;
