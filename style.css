@@ -265,7 +265,15 @@ button {
   width: 100%;
 }
 
+.card-title {
+  font-family: 'Playfair Display', serif;
+}
 
+body {
+    font-family: 'Inter', sans-serif;
+    padding-top: 13px;
+    background: #0f2a33;
+}
 
 a {
     text-decoration: none;
@@ -1298,6 +1306,8 @@ color: white;
   font-size: 72px;
   color: #fcc10e;
   letter-spacing: -1px;
+	font-weight: 600;
+  letter-spacing: 1px;
 }
 
 /* blocco testo */
