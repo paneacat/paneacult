@@ -1,117 +1,127 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ===== ELEMENTI =====
+  // ===============================
+  // ===== FILTRI (solo se esistono)
+  // ===============================
   const bottoni = document.querySelectorAll('.filtro');
   const cards = Array.from(document.querySelectorAll('.card-film'));
   const empty = document.getElementById('emptyState');
   const loadMoreBtn = document.getElementById('loadMoreBtn');
 
-  let filtroCategoria = "tutti";
-  let filtroGenere = "tutti";
+  if (cards.length) {
 
-  const norm = (v) => (v || "").trim().toLowerCase();
+    let filtroCategoria = "tutti";
+    let filtroGenere = "tutti";
 
-  // ===== MOSTRA 3 ALLA VOLTA =====
-  const STEP = 3;
-  let visibiliMax = STEP;
+    const norm = (v) => (v || "").trim().toLowerCase();
 
-  // ===== FILTRI =====
-  function aggiornaFiltri() {
-    let filtrati = [];
+    const STEP = 3;
+    let visibiliMax = STEP;
 
-    cards.forEach(card => {
-      const categoria = norm(card.dataset.categoria);
-      const generi = norm(card.dataset.genere).split(" ").filter(Boolean);
+    function aggiornaFiltri() {
+      let filtrati = [];
 
-      const matchCategoria =
-        filtroCategoria === "tutti" || categoria === filtroCategoria;
+      cards.forEach(card => {
+        const categoria = norm(card.dataset.categoria);
+        const generi = norm(card.dataset.genere).split(" ").filter(Boolean);
 
-      const matchGenere =
-        filtroGenere === "tutti" || generi.includes(filtroGenere);
+        const matchCategoria =
+          filtroCategoria === "tutti" || categoria === filtroCategoria;
 
-      const visibile = matchCategoria && matchGenere;
+        const matchGenere =
+          filtroGenere === "tutti" || generi.includes(filtroGenere);
 
-      card.classList.toggle("hidden", !visibile);
+        const visibile = matchCategoria && matchGenere;
 
-      if (visibile) filtrati.push(card);
-    });
+        card.classList.toggle("hidden", !visibile);
 
-    filtrati.forEach((card, i) => {
-      card.classList.toggle("hidden-by-limit", i >= visibiliMax);
-    });
+        if (visibile) filtrati.push(card);
+      });
 
-    if (empty) {
-      empty.classList.toggle("show", filtrati.length === 0);
+      filtrati.forEach((card, i) => {
+        card.classList.toggle("hidden-by-limit", i >= visibiliMax);
+      });
+
+      if (empty) {
+        empty.classList.toggle("show", filtrati.length === 0);
+      }
+
+      if (loadMoreBtn) {
+        loadMoreBtn.style.display =
+          filtrati.length > visibiliMax ? "inline-block" : "none";
+      }
     }
 
+    // click filtri SOLO se esistono
+    if (bottoni.length) {
+      bottoni.forEach(btn => {
+        btn.addEventListener('click', () => {
+
+          const filtro = norm(btn.dataset.filter);
+
+          if (btn.closest('.top')) {
+            filtroCategoria = filtro;
+            document.querySelectorAll('.top .filtro')
+              .forEach(b => b.classList.remove('attivo'));
+          } else {
+            filtroGenere = filtro;
+            document.querySelectorAll('.bottom .filtro')
+              .forEach(b => b.classList.remove('attivo'));
+          }
+
+          btn.classList.add('attivo');
+
+          visibiliMax = STEP;
+          aggiornaFiltri();
+        });
+      });
+    }
+
+    // load more
     if (loadMoreBtn) {
-      loadMoreBtn.style.display =
-        filtrati.length > visibiliMax ? "inline-block" : "none";
+      loadMoreBtn.addEventListener('click', () => {
+        visibiliMax += STEP;
+        aggiornaFiltri();
+      });
     }
+
+    aggiornaFiltri();
   }
 
-  // ===== CLICK FILTRI =====
-  bottoni.forEach(btn => {
-    btn.addEventListener('click', () => {
+  // ===============================
+  // ===== CREDITS
+  // ===============================
+  const credits = document.querySelector('.credits');
 
-      const filtro = norm(btn.dataset.filter);
+  if (credits) {
+    const observerCredits = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          credits.classList.add('show');
+        }
+      });
+    }, { threshold: 0.3 });
 
-      if (btn.closest('.top')) {
-        filtroCategoria = filtro;
-        document.querySelectorAll('.top .filtro')
-          .forEach(b => b.classList.remove('attivo'));
-      } else {
-        filtroGenere = filtro;
-        document.querySelectorAll('.bottom .filtro')
-          .forEach(b => b.classList.remove('attivo'));
-      }
-
-      btn.classList.add('attivo');
-
-      visibiliMax = STEP;
-      aggiornaFiltri();
-    });
-  });
-
-  // ===== LOAD MORE =====
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', () => {
-      visibiliMax += STEP;
-      aggiornaFiltri();
-    });
+    observerCredits.observe(credits);
   }
 
-  // ===== CREDITS =====
-const credits = document.querySelector('.credits');
+  // ===============================
+  // ===== FADE-UP
+  // ===============================
+  const elements = document.querySelectorAll('.fade-up');
 
-if (credits) {
-  const observerCredits = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        credits.classList.add('show');
-      }
-    });
-  }, { threshold: 0.3 });
+  if (elements.length) {
+    const observerFade = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
 
-  observerCredits.observe(credits);
-}
-
-// ===== FADE-UP =====
-const elements = document.querySelectorAll('.fade-up');
-
-const observerFade = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-}, { threshold: 0.2 });
-
-elements.forEach(el => observerFade.observe(el));
-  
-  // ===== INIT =====
-  aggiornaFiltri();
+    elements.forEach(el => observerFade.observe(el));
+  }
 
 });
 </script>
