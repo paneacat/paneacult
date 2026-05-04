@@ -277,7 +277,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 13px;
   margin-right: 80px;
 }
 
