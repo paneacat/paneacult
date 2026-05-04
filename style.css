@@ -272,7 +272,8 @@ button {
 body {
     font-family: 'Inter', sans-serif;
     padding-top: 13px;
-  color: #0f3a42;
+  background: var(--bg);
+    color: #ffffff;
 }
 
 a {
