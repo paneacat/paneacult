@@ -556,59 +556,52 @@ a:hover {
 }
 
 /* ===== BLOCCO IMMAGINE ===== */
-.chi-sono-img {
-  transform: translateX(40px);
+.chi-sono {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.chi-sono-center {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .chi-sono-img img {
-  width: 380px;
+  width: 100%;
+  max-width: 420px;
   display: block;
-  border-radius: 0 0 60px 60px;
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  margin: 0 auto;
 }
 
-/* effetto hover */
-.chi-sono-img img:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+/* 💥 TESTO SOPRA IMMAGINE */
+.chi-sono-overlay {
+  position: relative;
+  margin-top: -80px; /* magia */
+  backdrop-filter: blur(6px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 
-/* ===== TESTO ===== */
-.chi-sono-text {
-  max-width: 360px;
-  transform: translateX(-20px);
-}
-
-.chi-sono-text p {
-  font-size: 16.5px;
-  line-height: 1.9;
-  letter-spacing: 0.2px;
+/* testo */
+.chi-sono-overlay p {
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+  margin-bottom: 12px;
 }
 
 /* frase gialla */
-.chi-sono-text .intro {
+.chi-sono-overlay .intro {
   color: #fcc10e;
   font-weight: 600;
-  font-size: 18px;
 }
 
+/* firma */
 .firma {
-  transform: translateX(50px);
-  opacity: 0.95;
   width: 160px;
   margin-top: 20px;
   filter: brightness(0) invert(1);
-}
-
-.fade-up {
-  opacity: 1;                 /* visibile di default */
-  transform: translateY(10px);
-  transition: all 0.6s ease;
-}
-
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .film-title {
