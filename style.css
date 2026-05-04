@@ -1330,7 +1330,7 @@ margin-bottom: 38px;
   height: 200px;
   background: url('img/firma.png') no-repeat center;
   background-size: contain;
-  opacity: 0.08;
+  opacity: 0.12;
   pointer-events: none;
 	animation: fadeSignature 1.2s ease forwards;
 }
