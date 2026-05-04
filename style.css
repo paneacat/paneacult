@@ -540,14 +540,12 @@ a:hover {
   transform: scale(1.1);
 }
 
+/* ===== SEZIONE ===== */
 .chi-sono {
   padding: 120px 20px 60px;
-	max-width: 300px;
-  display: block;
-  position: relative;
-	filter: contrast(1.05) brightness(0.98);
 }
 
+/* ===== LAYOUT ===== */
 .chi-sono-inner {
   display: flex;
   align-items: center;
@@ -556,30 +554,13 @@ a:hover {
   margin: 0 auto;
   gap: 80px;
 }
+
+/* ===== BLOCCO IMMAGINE ===== */
 .chi-sono-img {
   transform: translateX(-20px);
 }
-.chi-sono-img img {
-  width: 380px;
-  height: auto;
-  object-fit: contain;
-  filter: contrast(1.1) brightness(1.05);
-  /* IMPORTANTISSIMO */
-  background: transparent;
-  image-rendering: auto;
-}
 
-.chi-sono-text {
-  max-width: 500px;
-  color: white;
-}
-
-.chi-sono-text p {
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 14px;
-  color: rgba(255,255,255,0.9);
-}
+/* wrapper per sfumatura */
 .chi-sono-wrapper {
   position: relative;
   display: inline-block;
@@ -599,11 +580,33 @@ a:hover {
   );
 }
 
-chi-sono-text intro {
+/* immagine */
+.chi-sono-img img {
+  width: 380px;
+  height: auto;
+  object-fit: contain;
+  filter: contrast(1.1) brightness(1.05);
+  background: transparent;
+}
+
+/* ===== TESTO ===== */
+.chi-sono-text {
+  max-width: 500px;
+  color: white;
+}
+
+.chi-sono-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 14px;
+  color: rgba(255,255,255,0.9);
+}
+
+/* frase gialla */
+.chi-sono-text .intro {
   color: #fcc10e;
   font-weight: 600;
 }
-
 
 .firma img {
   width: 300px;
