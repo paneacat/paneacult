@@ -627,8 +627,10 @@ a:hover {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    min-height: 70vh;
     padding: 230px 40px 13px;
+	height: auto;
+  min-height: 80vh;
+	overflow: visible;
 }
 
 .poster-big-title {
@@ -644,7 +646,6 @@ a:hover {
     justify-content: center;
     align-items: flex-end;
     margin-top: 40px;
-    height: 40vh;
     position: relative;
     overflow: hidden;
   /* lato quasi dritto, curva solo sotto */
@@ -682,14 +683,13 @@ a:hover {
 
 /* IMMAGINE */
 .poster-img img {
-    height: 65vh;
- /* prima era tipo 80-90 */
-    max-height: 600px
   filter: contrast(1.05) brightness(0.95);
     object-fit: contain;
     border-radius: 0 0 50% 50%;
     display: block;
     width: 100%;
+	max-height: none;
+  height: auto;
 }
 
 /* STILE LOCANDINA */
