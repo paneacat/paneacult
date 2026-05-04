@@ -1332,12 +1332,14 @@ margin-bottom: 38px;
 
 .contact-left {
   max-width: 520px;
+	transform: translateX(40px);
   margin-left: 80px; /* ← spinge verso destra */
 }
 
 .contact-right {
   margin-right: 80px; /* ← la tira verso il centro */
   display: flex;
+	transform: translateX(40px);
   justify-content: center;
 }
 
