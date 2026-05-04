@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ===============================
-  // ===== FILTRI (solo se esistono)
+  // ===== FILTRI
   // ===============================
   const bottoni = document.querySelectorAll('.filtro');
   const cards = Array.from(document.querySelectorAll('.card-film'));
@@ -87,6 +87,53 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===============================
+  // ===== SLIDER COMPLETO 🔥
+  // ===============================
+  const slider = document.getElementById("slider");
+  const next = document.getElementById("next");
+  const prev = document.getElementById("prev");
+
+  if (slider) {
+
+    function updateArrows() {
+      const maxScroll = slider.scrollWidth - slider.clientWidth;
+
+      if (prev) {
+        prev.style.opacity = slider.scrollLeft > 10 ? "1" : "0";
+        prev.style.pointerEvents = slider.scrollLeft > 10 ? "auto" : "none";
+      }
+
+      if (next) {
+        next.style.opacity = slider.scrollLeft < maxScroll - 10 ? "1" : "0";
+        next.style.pointerEvents = slider.scrollLeft < maxScroll - 10 ? "auto" : "none";
+      }
+    }
+
+    if (next) {
+      next.addEventListener("click", () => {
+        slider.scrollBy({
+          left: slider.clientWidth,
+          behavior: "smooth"
+        });
+      });
+    }
+
+    if (prev) {
+      prev.addEventListener("click", () => {
+        slider.scrollBy({
+          left: -slider.clientWidth,
+          behavior: "smooth"
+        });
+      });
+    }
+
+    slider.addEventListener("scroll", updateArrows);
+
+    // stato iniziale
+    updateArrows();
+  }
+
+  // ===============================
   // ===== CREDITS
   // ===============================
   const credits = document.querySelector('.credits');
@@ -104,13 +151,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===============================
-  // ===== FADE-UP (CON FALLBACK 🔥)
+  // ===== FADE-UP
   // ===============================
   const elements = document.querySelectorAll('.fade-up');
 
   if (elements.length) {
 
-    // 🔥 fallback: evita pagina vuota
     setTimeout(() => {
       elements.forEach(el => el.classList.add('show'));
     }, 200);
@@ -126,13 +172,4 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.forEach(el => observerFade.observe(el));
   }
 
-});
-const slider = document.getElementById("slider");
-const next = document.getElementById("next");
-
-next.addEventListener("click", () => {
-  slider.scrollBy({
-    left: 300, // distanza scroll
-    behavior: "smooth"
-  });
 });
