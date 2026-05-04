@@ -1332,6 +1332,7 @@ margin-bottom: 38px;
   background-size: contain;
   opacity: 0.12;
   pointer-events: none;
+	filter: brightness(0) invert(1);
 	animation: fadeSignature 1.2s ease forwards;
 }
 
