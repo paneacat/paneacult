@@ -557,12 +557,20 @@ a:hover {
   height: 200px;
   background: linear-gradient(to top, #0d425e 20%, transparent);
 }
+
+.poster-img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 40px;
+}
+
 /* IMMAGINE */
 .poster-img img {
-  height: 80%;
+  height: 65vh; /* prima era tipo 80-90 */
+  max-height: 600px;
+  filter: contrast(1.05) brightness(0.95);
   object-fit: contain;
-  position: relative;
-  z-index: 1;
 }
 
 /* OVERLAY TESTO */
