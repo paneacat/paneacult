@@ -169,6 +169,8 @@ button {
   flex-direction: column;
   align-items: flex-start;
   gap: 30px;
+	  align-items: center;
+  text-align: center;
   }
 
   .poster-big-title {
@@ -203,9 +205,24 @@ button {
   object-position: center top; /* per vedere meglio la testa */
 }
 
-  .poster-signature {
-    width: 140px;
-  }
+.poster-text {
+  max-width: 90%;
+  margin: 0 auto;
+  transform: none !important;
+}
+
+.poster-big-title {
+  text-align: center;
+}
+
+.poster-sub,
+.about-text {
+  text-align: center;
+}
+
+.poster-signature {
+  margin: 20px auto 0;
+}
 
 .firma-recensione {
   margin-top: 40px;
