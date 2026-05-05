@@ -311,6 +311,10 @@ a {
 a:hover {
     color: var(--gold);
 }
+.cta-link:hover {
+  color: #193c4e;
+	text-decoration: none;
+}
 
 .header-inner {
 	display: flex;
@@ -624,9 +628,9 @@ padding: 0;
 
 .cta-link {
   color: #fcc10e;
-  text-decoration: underline;
   display: inline-block;
   margin-top: 6px;
+	text-decoration: none;
 }
 
 .cta-button:hover {
