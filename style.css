@@ -1213,7 +1213,7 @@ color: white;
 }
 
 .contact-hero {
-  margin-top: 80px;
+  margin-top: 0;
 }
 
 .contact-layout {
@@ -1802,8 +1802,11 @@ width: 100%;
 	transform: translateX(-40px);  
   }
 
-	
-.slider {
+  .contact-hero {
+    margin-top: 20px;
+  }
+
+	.slider {
     overflow: hidden;
 }
 	
