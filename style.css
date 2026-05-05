@@ -334,6 +334,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  gap: 6px;
 }
 
 .logo {
