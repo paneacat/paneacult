@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===============================
   const buttons = document.querySelectorAll('.filter');
   const cards = document.querySelectorAll('.archivio-card');
+  const resetBtn = document.getElementById('resetFilters');
 
   let activeFilters = {
     tipo: "all",
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    // ===== FUNZIONE FILTRI
     function filterCards() {
       cards.forEach(card => {
 
@@ -52,6 +54,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
       });
     }
+
+    // ===============================
+    // ===== RESET FILTRI ↺
+    // ===============================
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+
+        // reset stato
+        activeFilters.tipo = "all";
+        activeFilters.genere = "all";
+
+        // rimuove active da tutti
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        // riattiva "Tutti"
+        document.querySelectorAll('.filter[data-group="tipo"][data-filter="all"]')
+          .forEach(btn => btn.classList.add('active'));
+
+        // mostra tutte le card
+        cards.forEach(card => {
+          card.style.display = "block";
+        });
+
+      });
+    }
+
   }
 
   // ===============================
