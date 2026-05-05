@@ -222,10 +222,6 @@ button {
   text-align: center;
 }
 
-.poster-signature {
-  margin: 20px auto 0;
-}
-
 .firma-recensione {
   margin-top: 40px;
   font-family: 'Playfair Display', serif;
@@ -371,10 +367,6 @@ button {
   margin-top: 40px;
 }
 
-.poster-signature {
-  filter: brightness(0) invert(1);
-  opacity: 0.8;
-}
 
 .card p a {
   color: #fcc10e;
@@ -1589,6 +1581,7 @@ width: 100%;
 .contact-sub {
   text-align: center;
 }
+
  .contact-columns {
     display: flex;
     flex-direction: column;
@@ -1597,6 +1590,12 @@ width: 100%;
 
 .contact-columns .card {
   max-width: 100%;
+}
+
+.poster-signature {
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  margin: 20px auto 0;
 }
 }
 
@@ -1881,13 +1880,6 @@ width: 100%;
   filter: contrast(1.05) brightness(0.95);
 }
 
-/* FIRMA */
-.poster-signature {
-  margin-top: 20px;
-  width: 220px;
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
-}
 	
 .filters-top,
   .filters-bottom {
@@ -1956,10 +1948,7 @@ width: 100%;
 	  margin-top: 50px;
 	margin-left: 100px;
   }
-.poster-signature {
-  width: 160px; /* prima troppo grande */
-  margin-top: 20px;
-}
+
   .contact-hero {
     margin-top: 90px;
   }
@@ -2058,10 +2047,6 @@ width: 100%;
     padding: 0 40px;
     padding-top: 60px;
 	}
-}
-/* ===== RIPRISTINO LAYOUT DESKTOP ===== */
-@media (min-width: 1024px) {
-
   /* HEADER */
   .header-inner {
     flex-direction: row;
@@ -2115,5 +2100,12 @@ width: 100%;
     margin-left: 0;
     transform: none;
   }
+	/* FIRMA */
+.poster-signature {
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+  width: 160px; /* prima troppo grande */
+  margin-top: 20px;
+}
 
 }
