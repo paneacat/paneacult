@@ -462,11 +462,13 @@ margin: 0;
 }
 
 .filter-btn {
-  flex: 0 0 auto; /* 👈 IMPORTANTISSIMO per slider */
+  flex: 0 0 auto;
   padding: 8px 14px;
   border-radius: 999px;
-  border: 1px solid #fcc10e;
+
+  border: 1px solid #fcc10e; /* 👈 SEMPRE visibile */
   background: transparent;
+
   color: #fcc10e;
   font-size: 12px;
   letter-spacing: 1px;
