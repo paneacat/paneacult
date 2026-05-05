@@ -1316,7 +1316,6 @@ margin-bottom: 38px;
 
 .contact-left {
   max-width: 520px;
-	transform: translateX(40px);
   margin-left: 80px; /* ← spinge verso destra */
 }
 
