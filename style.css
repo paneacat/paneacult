@@ -1587,13 +1587,6 @@ width: 100%;
 .contact-title {
   text-align: center;
 }
-
-.contact-intro,
-.contact-sub {
-  text-align: center;
-}
-}
-
 .contact-columns .card {
   max-width: 100%;
 }
@@ -1603,8 +1596,39 @@ width: 100%;
   opacity: 0.8;
   margin: 20px auto 0;
 }
+.contact-intro,
+.contact-sub {
+  text-align: center;
+}
 }
 
+@media (max-width: 768px) {
+
+  .poster-layout,
+  .contact-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .poster-text,
+  .contact-left {
+    text-align: center;
+    max-width: 90%;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .sections,
+  .contact-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+}
 
 
 
@@ -1950,7 +1974,6 @@ width: 100%;
 
   .poster-text {
     max-width: 520px;
-	transform: translateX(-40px);  
 	  margin-top: 50px;
 	margin-left: 100px;
   }
@@ -2053,6 +2076,16 @@ width: 100%;
     padding: 0 40px;
     padding-top: 60px;
 	}
+	.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
 	}
 
 	@media (min-width: 1024px) {
@@ -2159,4 +2192,37 @@ width: 100%;
     grid-template-columns: repeat(3, 1fr);
     gap: 60px;
   }
+}
+
+@media (min-width: 1024px) {
+
+  .poster-layout,
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .poster-text,
+  .contact-left {
+    max-width: 520px;
+    margin: 0;
+    text-align: left;
+  }
+
+  .poster-img {
+    justify-self: end;
+  }
+
+}
+@media (min-width: 1024px) {
+
+  .sections,
+  .contact-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+  }
+
 }
