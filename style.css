@@ -679,7 +679,16 @@ margin: 0;
     margin-top: 30px;
 	max-width: 280px;
 }
+.cta-link {
+  color: #f4c430;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
 
+.cta-link:hover {
+  opacity: 0.8;
+}
 .hero-cta a {
   color: var(--gold);
   font-weight: 500;
