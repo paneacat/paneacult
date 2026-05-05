@@ -356,7 +356,7 @@ margin: 0;
     flex-wrap: wrap;
     gap: 16px; /* 👈 QUESTO ; mancava */
     margin-top: 6px;
-    font-size: 13.5px;
+    font-size: 10.5px;
 }
 
 .menu a {
