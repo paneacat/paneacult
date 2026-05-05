@@ -1310,7 +1310,9 @@ margin-bottom: 38px;
   max-width: 520px;
   margin-left: 80px; /* ← spinge verso destra */
 }
-
+.contact-right {
+  display: none;
+}
 /* CHI SONO + CONTATTI → stile editoriale */
 .contact-title,
 .poster-big-title {
@@ -2114,5 +2116,47 @@ width: 100%;
   width: 160px; /* prima troppo grande */
   margin-top: 20px;
 }
+	}
 
+
+@media (min-width: 1024px) {
+
+  .header-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-block {
+    text-align: left;
+  }
+
+  .menu {
+    justify-content: flex-end;
+    gap: 24px;
+}
+}
+@media (min-width: 1024px) {
+
+  .poster-layout,
+  .contact-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .poster-text,
+  .contact-left {
+    text-align: left;
+    margin-left: 0;
+    transform: none;
+  }
+	.sections,
+  .contact-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+  }
 }
