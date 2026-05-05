@@ -2047,3 +2047,57 @@ width: 100%;
     margin-left: 0 !important;
   }
 }
+/* ===== RIPRISTINO LAYOUT DESKTOP ===== */
+@media (min-width: 1024px) {
+
+  /* HEADER */
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-block {
+    text-align: left;
+  }
+
+  .menu {
+    justify-content: flex-end;
+  }
+
+  /* HERO GENERICO */
+  .hero-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  /* CHI SONO */
+  .poster-layout {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .poster-text {
+    text-align: left;
+    margin-left: 0;
+    transform: none;
+  }
+
+  /* CONTATTI */
+  .contact-layout {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .contact-left {
+    margin-left: 0;
+    transform: none;
+  }
+
+}
