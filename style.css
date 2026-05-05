@@ -1557,12 +1557,19 @@ width: 100%;
     background: #fcc10e;
     border-radius: 999px;
     text-decoration: none;
-	color: #000;
-		padding: 14px 32px;
   font-weight: 500;
+  padding: 10px 26px;   /* prima era più alto */
+  background: #fcc10e;
+  color: #000;          /* 👈 testo nero */
+  font-size: 14px;
 }
 	
-    .break-desktop {
+  .cta-label {
+  display: block;
+  text-align: center;
+  }
+	
+	.break-desktop {
         display: block;
     }
 
@@ -1713,8 +1720,8 @@ width: 100%;
     }
 
 .hero-cta {
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
 }
 
 .newsletter {
