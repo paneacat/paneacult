@@ -483,13 +483,12 @@ margin: 0;
     display: grid;
   grid-template-columns: repeat(2, 1fr); /* 📱 2 colonne */
   gap: 16px;
-	padding: 0 20px ;
     margin-top: 100px;
     width: 100%;
+	background: none;
+  padding: 0;
     margin: 0 auto;
-	border-radius: 18px;
   overflow: hidden; /* 👈 QUESTO è fondamentale */
-  background: #0f2a33;
 }
 
 .archivio-card {
