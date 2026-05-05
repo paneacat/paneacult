@@ -191,7 +191,8 @@ button {
 
   border-radius: 50%;
   overflow: hidden; /* 🔥 fondamentale */
-
+	  
+  align-self: center !important;
   position: static !important;
   transform: none !important;
 }
@@ -213,6 +214,7 @@ button {
 
 .poster-big-title {
   text-align: center;
+	 color: #fcc10e;
 }
 
 .poster-sub,
