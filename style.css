@@ -495,9 +495,9 @@ margin: 0;
 }
 
 .container {
-  max-width: 1200px;
+    max-width: 1100px; /* puoi fare anche 1200px se lo vuoi più arioso */
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
     
 }
 
@@ -639,7 +639,11 @@ margin: 0;
 .highlight {
     color: #fdc103;
 }
-
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 40px 40px;
+}
 .hero-sub {
     text-transform: uppercase;
     letter-spacing: 1.2px;
@@ -848,10 +852,9 @@ flex: 0 0 58%;
   display: flex;
   flex-direction: column;
   gap: 40px;
-
-  padding: 0 20px;
-  margin-top: 40px;
-
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 40px;
   border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 40px;
 }
