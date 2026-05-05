@@ -1955,6 +1955,7 @@ margin-bottom: 38px;
         position: relative;
         display: flex;
 	align-items: flex-start;
+    max-width: 300px;
     }
 
 .newsletter {
