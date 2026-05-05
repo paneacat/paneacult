@@ -1783,10 +1783,11 @@ width: 100%;
 
 	.cta-button {
     background: #fcc10e;
-    padding: 14px 28px;
     border-radius: 999px;
     text-decoration: none;
 	color: #000;
+		padding: 14px 32px;
+  font-weight: 500;
 }
 	
     .break-desktop {
