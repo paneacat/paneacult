@@ -182,14 +182,14 @@ button {
   }
 
   .poster-img {
-  width: 240px;
-  height: 240px;
   margin: 40px auto 0;
-
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+ 
+  object-fit: cover;
   display: flex;
   justify-content: center;
-
-  border-radius: 50%;
   overflow: hidden; /* 🔥 fondamentale */
 	  
   align-self: center !important;
@@ -204,6 +204,10 @@ button {
 
   border-radius: 50%; /* sicurezza */
   object-position: center top; /* per vedere meglio la testa */
+}
+
+.poster-title {
+  color: #f4c430;
 }
 
 .poster-text {
