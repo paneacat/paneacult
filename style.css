@@ -165,9 +165,10 @@ button {
   }
 
   .poster-layout {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 30px;
+	  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
   }
 
   .poster-big-title {
@@ -182,8 +183,8 @@ button {
     width: 220px;
     height: 220px;
     border-radius: 20px; /* 🔥 più moderno su mobile */
-
     align-self: center;
+  margin-top: 30px;
   }
 
   .poster-img img {
@@ -1756,7 +1757,22 @@ width: 100%;
 .poster-img {
     width: 320px;
     height: 320px;
+	align-self: flex-end; /* oppure center se lo vuoi più alto */
+    margin-top: 0;
 }
+
+	.poster-layout {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  .poster-text {
+    max-width: 520px;
+  }
+
+	
 .slider {
     overflow: hidden;
 }
