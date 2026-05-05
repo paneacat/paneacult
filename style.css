@@ -1789,6 +1789,14 @@ margin-bottom: 38px;
   justify-content: space-between;
   align-items: center;
 	}
+
+	.cta-button {
+    background: #fcc10e;
+    color: #193c4e;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+	}
 	
     .break-desktop {
         display: block;
