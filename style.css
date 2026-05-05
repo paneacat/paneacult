@@ -1614,18 +1614,22 @@ width: 100%;
 	}
 
 	.cta-button {
-    border-radius: 999px;
-    text-decoration: none;
-  font-weight: 500;
-  padding: 10px 26px;   /* prima era più alto */
-  color: #000;          /* 👈 testo nero */
-  font-size: 14px;
-}
+  color: #fcc10e;
+  font-size: 16px;
+  text-decoration: underline;
+  display: inline-block;
+	}
 	
   .cta-label {
   display: block;
   text-align: center;
   }
+
+	.cta-text {
+  color: #9aa3a8;
+  font-size: 14px;
+  margin-bottom: 8px;
+	}
 	
 	.break-desktop {
         display: block;
@@ -1781,6 +1785,7 @@ width: 100%;
   align-items: center;
 	gap: 8px;
   text-align: center;
+margin-top: 30px;	
 }
 
 .newsletter {
