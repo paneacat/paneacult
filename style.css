@@ -185,7 +185,7 @@ button {
 .section-label {
     margin-top: 15px;
     padding-left: 0;
-    font-size: 15px;
+    font-size: 13px;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 5px;
@@ -540,6 +540,12 @@ margin: 0;
     margin-top: 10px;
 }
 
+.hero-cta a {
+  color: var(--gold);
+  font-weight: 500;
+  text-decoration: underline;
+  font-size: 16px;
+}
 .cta-label {
     justify-content: center;
     font-size: 16px;
@@ -621,7 +627,7 @@ margin: 0;
   gap: 16px;
   overflow-x: auto;
   padding-left: 20px;
-  padding-right: 10px;
+    padding-right: 20px;
   scroll-snap-type: x mandatory;
 }
 
@@ -645,7 +651,7 @@ padding-left: 20px;
     scroll-snap-align: start;
 	min-width: 260px;
   flex-shrink: 0;
-flex: 0 0 78%;
+flex: 0 0 85%;
 }
 
 /* contenitore card */
@@ -687,7 +693,7 @@ flex: 0 0 78%;
 
 /* titolo */
 .slide-info h3 {
-    font-size: 16px;
+    font-size: 15px;
  /* 👉 più grande */
     color: white;
     font-weight: 400;
@@ -712,37 +718,8 @@ flex: 0 0 78%;
   opacity: 0.6;
 }
 /* ===== FRECCE ===== */
-
-.arrow {
-  width: 42px;
-  height: 42px;
-
-  border: 1px solid #fcc10e;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: #fcc10e;
-  font-size: 18px;
-
-  cursor: pointer;
-
-  transition: all 0.3s ease;
-}
-
-/* hover */
-.arrow:hover {
-  background: #fcc10e;
-  color: #193c4e;
-  transform: scale(1.05);
-}
-
-/* stato disattivo (quando sei all'inizio o fine) */
-.arrow.disabled {
-  opacity: 0.3;
-  pointer-events: none;
+.slider-arrows {
+    display: none;
 }
 
 /* titolo */
@@ -1398,7 +1375,7 @@ margin-bottom: 38px;
 .newsletter {
   margin-bottom: 30px;
     text-align: center;
-    padding: 0 20px;
+    padding: 60px 24px;
 	margin-top: 60px;
 }
 
@@ -1420,9 +1397,9 @@ margin-bottom: 38px;
 /* titolo */
 .newsletter h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 30px;
     color: white;
     margin-bottom: 14px;
+	font-size: 28px;
 }
 
 /* sottotesto */
@@ -1435,17 +1412,23 @@ margin-bottom: 38px;
 
 /* bottone */
 .newsletter-btn {
-  display: inline-block;
-  margin-top: 20px;
   padding: 14px 26px;
   background: #fcc10e;
   color: #193c4e;
   border-radius: 999px;
   font-size: 14px;
+width: 100%;
+    max-width: 300px;
+    margin: 20px auto 0;
+    display: block;
 }
 
 /* hover */
 .newsletter-btn:hover {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto 0;
+    display: block;
     background: var(--gold);
     color: #0b1f26;
     border-color: var(--gold);
@@ -1994,6 +1977,40 @@ margin-bottom: 38px;
 .filtri-row.generi .filtro {
         flex: 0 0 auto;
     }
+
+	
+.arrow {
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #fcc10e;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fcc10e;
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* hover */
+.arrow:hover {
+  background: #fcc10e;
+  color: #193c4e;
+  transform: scale(1.05);
+}
+
+/* stato disattivo (quando sei all'inizio o fine) */
+.arrow.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 	
 .slider {
     overflow: hidden;
