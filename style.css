@@ -10,10 +10,6 @@ html {
     padding: 0;
 }
 
-* {
-  outline: none !important;
-  border: none !important;
-}
 
 
 img {
@@ -358,7 +354,7 @@ margin: 0;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 16px; /* 👈 QUESTO ; mancava */
+    gap: 10px; /* 👈 QUESTO ; mancava */
     margin-top: 6px;
     font-size: 10.5px;
 }
@@ -366,8 +362,8 @@ margin: 0;
 .menu a {
     position: relative;
     opacity: 0.8;
-	font-size: 11.5px;
-  letter-spacing: 1.5px;
+	font-size: 12px;
+    letter-spacing: 1px;
 }
 
 .menu a.active {
@@ -417,53 +413,15 @@ margin: 0;
 /* righe */
 .filtri-row {
     display: flex;
-    gap: 10px;
-    width: 100%;
-    max-width: 900px;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        justify-content: flex-start;
-        padding-left: 14px;
+  gap: 10px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
 }
 
 .filtri-row.top {
     margin-bottom: 10px;
 }
 
-/* bottoni */
-.filtro {
-    padding: 8px 16px;
-    font-size: 12px;
-    border-radius: 999px;
-    background: transparent;
-    color: #aaa;
-    border: 1px solid rgba(255,255,255,0.25);
-    transition: all 0.2s ease;
-}
-
-.filtro.attivo {
-    background: var(--gold);
-    color: #0b1f26;
-    border-color: var(--gold);
-}
-
-.filtro:not(.attivo):hover {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: rgba(255,191,0,0.1);
-}
-
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 0 20px;
-  margin-bottom: 20px;
-}
-
-.filter-bar::-webkit-scrollbar {
-  display: none;
-}
 
 .filter-btn {
   color: #fcc10e;
@@ -643,13 +601,10 @@ margin: 0;
 }
 
 .cta-button {
-  border-radius: 0;
-  font-size: 16px;
-padding: 0;
-  background: none;
-  color: #fcc10e;
-  text-decoration: underline;
-  font-size: 16px;
+    background: none;
+    padding: 0;
+    color: #fcc10e;
+    text-decoration: underline;
 }
 
 @keyframes pulse {
@@ -788,8 +743,7 @@ flex: 0 0 78%;
 }
 
 .slider::after {
-  content: "";
-  min-width: 40px;
+    min-width: 20px;
 }
 
 .slide-item:first-child {
@@ -1864,21 +1818,16 @@ width: 100%;
         margin-top: 120px;
     }
 
-.filtri {
-        max-width: none;
-        align-items: center;
-    }
 
 .filtri-grid {
         grid-template-columns: repeat(6,auto);
     }
 
 .filtri-row {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        flex-wrap: wrap;
-    }
+    overflow: visible;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .filtri-row.top {
         margin-bottom: 6px;
@@ -1929,16 +1878,6 @@ width: 100%;
   pointer-events: none;
 }
 
-.filter-bar {
-  overflow: visible;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-	.filter-bar::after {
-  content: "";
-  min-width: 20px;
-	}
 
 .slider {
     overflow: hidden;
