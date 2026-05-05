@@ -484,10 +484,14 @@ margin: 0;
 }
 
 .hero-inner {
-  display: flex;
   flex-direction: column;
-  gap: 30px;
+	display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
   text-align: center;
+	max-width: 1000px; /* più stretto = tutto rientra */
+  margin: 0 auto;
 }
 
 .hero-sub {
@@ -499,7 +503,7 @@ margin: 0;
     text-align: left;
     position: relative;
     flex: 1;
-        max-width: 100%;
+	max-width: 520px;
 }
 
 .highlight {
@@ -537,7 +541,9 @@ margin: 0;
   align-items: flex-start;
   text-align: left;
   gap: 12px;
+	margin-right: auto;
     margin-top: 10px;
+	max-width: 280px;
 }
 
 .hero-cta a {
