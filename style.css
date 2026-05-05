@@ -757,9 +757,8 @@ flex: 0 0 58%;
 }
 
 .poster-img {
-  width: 220px;
-  height: 220px;
-
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   object-fit: cover;
 
@@ -1778,7 +1777,10 @@ width: 100%;
   pointer-events: none;
 }
 
-
+.poster-img {
+    width: 320px;
+    height: 320px;
+}
 .slider {
     overflow: hidden;
 }
@@ -1801,14 +1803,6 @@ width: 100%;
   display: flex;
   gap: 10px;
 	}
-
-	@keyframes fadeHead {
-        to {
-			opacity: 1;
-    }
-}
-}
-
 
 .cta-link,
 .cta-link:visited,
