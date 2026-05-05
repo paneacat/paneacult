@@ -581,7 +581,7 @@ margin: 0;
   text-align: left;
   gap: 12px;
 	margin-right: auto;
-    margin-top: 10px;
+    margin-top: 30px;
 	max-width: 280px;
 }
 
@@ -615,6 +615,18 @@ padding: 0;
   color: #fcc10e;
   text-decoration: underline;
   font-size: 16px;
+}
+.cta-text {
+  color: #9aa3a8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cta-link {
+  color: #fcc10e;
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 6px;
 }
 
 .cta-button:hover {
@@ -1772,8 +1784,18 @@ width: 100%;
   }
 
   .cta-text {
-    text-align: center;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-link {
+    text-decoration: none;
+    background: #fcc10e;
+    color: #193c4e;
+    padding: 10px 22px;
+    border-radius: 999px;
+    margin-top: 10px;
   }
 
   .cta-button {
