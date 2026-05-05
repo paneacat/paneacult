@@ -1826,6 +1826,7 @@ width: 100%;
   .poster-text {
     max-width: 520px;
 	transform: translateX(-40px);  
+	  margin-top: 40px;
   }
 
   .contact-hero {
