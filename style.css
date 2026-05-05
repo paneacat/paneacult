@@ -466,22 +466,25 @@ margin: 0;
 }
 
 .filter-btn {
-  flex: 0 0 auto;
-  padding: 8px 14px;
-  border-radius: 999px;
-
-  border: 1px solid #fcc10e; /* 👈 SEMPRE visibile */
+  color: white;
+  border: 1px solid #fcc10e;
   background: transparent;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
 
-  color: #fcc10e;
-  font-size: 12px;
-  letter-spacing: 1px;
-  white-space: nowrap;
+.filter-btn:hover {
+  background: rgba(252,193,14,0.1);
+  border-color: #fcc10e;
 }
 
 .filter-btn.active {
-  background: #fcc10e;
-  color: #193c4e;
+  background: rgba(252,193,14,0.15);
+  border-color: #fcc10e;
+  color: white;
 }
 .archivio-grid {
     display: grid;
