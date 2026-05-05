@@ -487,6 +487,9 @@ margin: 0;
     margin-top: 100px;
     width: 100%;
     margin: 0 auto;
+	border-radius: 18px;
+  overflow: hidden; /* 👈 QUESTO è fondamentale */
+  background: #0f2a33;
 }
 
 .archivio-card {
@@ -503,7 +506,8 @@ margin: 0;
   object-fit: cover;
   display: block;
 	border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0
+  border-radius: 18px; /* 👈 opzionale ma aiuta */
 }
 
 /* ===== CARD ===== */
