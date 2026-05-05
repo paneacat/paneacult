@@ -615,6 +615,8 @@ padding: 0;
         opacity: 1;
     }
 }
+
+
 /* ===== SLIDER ===== */
 
 .slider {
@@ -624,7 +626,7 @@ padding: 0;
   gap: 16px;
   overflow-x: auto;
   padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 0;
   scroll-snap-type: x mandatory;
 }
 
@@ -648,7 +650,7 @@ padding-left: 20px;
     scroll-snap-align: start;
 	min-width: 260px;
   flex-shrink: 0;
-flex: 0 0 85%;
+flex: 0 0 80%;
 }
 
 /* contenitore card */
@@ -711,6 +713,18 @@ flex: 0 0 85%;
   display: none;
 }
 
+.slider::after {
+  content: "";
+  min-width: 40px; /* spazio finale */
+}
+
+.slide-item:first-child {
+  margin-left: 0;
+}
+
+.slide-item:last-child {
+  margin-right: 20px;
+}
 /* ===== SEZIONE ===== */
 .poster {
     position: relative;
