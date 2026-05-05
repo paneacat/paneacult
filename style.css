@@ -450,18 +450,30 @@ margin: 0;
 }
 
 .archivio-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 📱 2 colonne */
+  gap: 16px;
+	padding: 0 20px ;
     margin-top: 100px;
     width: 100%;
     margin: 0 auto;
 }
 
-.archive-card img {
+.archivio-card {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0f2a33;
+}
+
+.archivio-card img {
     width: 100%;
     border-radius: 14px;
     display: block;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+	border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 /* ===== CARD ===== */
@@ -1593,10 +1605,10 @@ width: 100%;
     }
 
 .archivio-grid {
-        grid-template-columns: repeat(3,1fr);
         max-width: 1250px;
         margin: 0 auto;
-        gap: 30px;
+	 grid-template-columns: repeat(3, 1fr); /* 💻 3 colonne */
+    gap: 24px;
     }
 
 .archivio-grid .card img {
