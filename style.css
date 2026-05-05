@@ -160,7 +160,41 @@ button {
   padding-right: 32px;
 	padding: 0 32px;
 }
+.poster {
+    padding: 60px 16px 20px;
+  }
 
+  .poster-layout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .poster-big-title {
+    font-size: 48px;
+  }
+
+  .poster-sub {
+    font-size: 16px;
+  }
+
+  .poster-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 20px; /* 🔥 più moderno su mobile */
+
+    align-self: center;
+  }
+
+  .poster-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .poster-signature {
+    width: 140px;
+  }
 
 .about-text {
   font-weight: 400; /* niente grassetto */
@@ -293,55 +327,7 @@ button {
 }
 
 
-/* ===============================
-   CHI SONO — MOBILE FIX
-================================ */
-@media (max-width: 768px) {
-
-  .poster-layout {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .poster-text {
-    width: 100%;
-  }
-
-  .poster-big-title {
-    font-size: 48px;
-    line-height: 0.9;
-  }
-
-  .poster-sub,
-  .about-text {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  .poster-img {
-    width: 100%;
-    margin-top: 40px;
-
-    display: flex;
-    justify-content: center;
-
-    position: static !important;
-    transform: none !important;
-  }
-
-  .poster-img img {
-    width: 240px;
-    height: auto;
-
-    border-radius: 16px; /* opzionale, ma elegante */
-  }
-
-  .poster-signature {
-    margin-top: 20px;
-    width: 140px;
-  }
-
+  
 
 
 
@@ -791,141 +777,6 @@ flex: 0 0 58%;
   margin-right: 20px;
 }
 /* ===== SEZIONE ===== */
-.poster {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 80px 8px 40px;
-	height: auto;
-	overflow: visible;
-}
-
-.poster-big-title {
-    font-size: clamp(56px, 6vw, 90px);
-    line-height: 0.9;
-    margin-bottom: 24px;
-    letter-spacing: -1px;
-    word-break: break-word;
-}
-
-.poster-img {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  object-fit: cover;
-
-  display: block;
-  margin: 60px auto 30px;
-
-  box-shadow:
-    0 10px 40px rgba(0,0,0,0.5),
-    0 0 40px rgba(252,193,14,0.08);
-
-  position: relative;
-  z-index: 2;
-}
-
-
-/* IMMAGINE */
-.poster-img img {
-  filter: contrast(1.05) brightness(0.95);
-    display: block;
-    width: 100%;
-	max-height: none;
-  height: auto;
-  object-fit: cover;
-	width: 360px;
-}
-
-/* STILE LOCANDINA */
-/* base testo */
-.poster-sub {
-    font-size: 15px;
-    line-height: 1.6;
-    color: rgba(255,255,255,0.9);
-    margin: 6px 0;
-    margin-bottom: 8px;
-}
-
-/* PRIMA FRASE GIALLA */
-.poster-sub.intro {
-    color: #fcc10e;
-    font-weight: 600;
-    margin-bottom: 14px;
-}
-
-/* BLOCCO IDENTITÀ PIÙ IN BASSO */
-.poster-sub.identity {
-    opacity: 0.85;
-    font-size: 14px;
-    margin-top: 14px;
-}
-
-/* ancora più respiro tra i due gruppi */
-.poster-sub.identity:first-of-type {
-    margin-top: 20px;
-}
-
-/* ===== POSTER CONTAINER VERSION ===== */
-
-/* layout come home */
-.poster-layout {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-    margin-bottom: 0;
-}
-
-/* testo */
-.poster-text {
-    max-width: 520px;
-    text-align: left;
-}
-
-/* titolo */
-.poster-big-title {
-    color: var(--gold);
-    font-size: 72px;
- /* 🔥 prima era troppo enorme */
-    line-height: 0.9;
-    margin-bottom: 20px;
-    word-break: break-word;
-}
-
-/* testi */
-.poster-sub {
-    font-size: 15px;
-    color: #ccc;
-}
-
-.poster-sub.intro {
-    color: var(--gold);
-    font-weight: 500;
-}
-
-.poster-sub.identity {
-    color: white;
-    font-weight: 600;
-}
-
-
-/* FIRMA */
-.poster-signature {
-    display: block;
-    margin: 20px auto 0;
-    width: 300px;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-}
-
-.poster-columns {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
-    margin-top: 120px;
-}
 
 /* ===== SECTIONS (CHI SONO) ===== */
 
@@ -1790,7 +1641,79 @@ width: 100%;
         margin-top: 120px;
     }
 
+/* ===============================
+   POSTER (DESKTOP BASE)
+================================ */
 
+.poster {
+  position: relative;
+  padding: 80px 20px 40px;
+}
+
+.poster-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* TESTO */
+.poster-text {
+  max-width: 520px;
+  text-align: left;
+}
+
+.poster-big-title {
+  color: var(--gold);
+  font-size: 72px;
+  line-height: 0.9;
+  margin-bottom: 20px;
+}
+
+.poster-sub {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.poster-sub.intro {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* IMMAGINE CONTENITORE */
+.poster-img {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.5),
+    0 0 40px rgba(252,193,14,0.08);
+}
+
+/* IMMAGINE */
+.poster-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.05) brightness(0.95);
+}
+
+/* FIRMA */
+.poster-signature {
+  margin-top: 20px;
+  width: 220px;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+	
 .filters-top,
   .filters-bottom {
     justify-content: center;
