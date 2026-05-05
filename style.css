@@ -311,14 +311,14 @@ a:hover {
 }
 
 .header-inner {
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
     max-width: 1100px;
     padding: 20px 20px;
     padding-top: 20px;
-    align-items: center;
-   /* 🔥 allinea verticalmente */;
 }
 
 .logo-block {
@@ -1641,13 +1641,6 @@ to {
         width: 260px;
     }
 
-.header-inner {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 10px;
-    }
-
 .logo-block {
         align-items: center;
     }
@@ -1863,6 +1856,13 @@ to {
 }
 
 @media (min-width: 1024px) {
+
+	.header-inner {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+	}
+	
     .break-desktop {
         display: block;
     }
@@ -2053,7 +2053,11 @@ to {
 .filtri-row.generi .filtro {
         flex: 0 0 auto;
     }
-
+	
+.slider {
+    overflow: hidden;
+}
+	
 .slide-item {
         flex: 0 0 320px;
     }
