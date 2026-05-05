@@ -1556,6 +1556,32 @@ width: 100%;
     transform: translateY(0);
   }
 }
+	.contact-hero {
+  text-align: center;
+  padding: 60px 20px 20px;
+}
+
+.contact-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-left {
+  max-width: 90%;
+  margin: 0 auto;
+  transform: none !important;
+}
+
+.contact-title {
+  text-align: center;
+}
+
+.contact-intro,
+.contact-sub {
+  text-align: center;
+}
+}
 
 
 
