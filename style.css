@@ -2021,9 +2021,9 @@ width: 100%;
     background: rgba(255,255,255,0.15);
   }
 	.header-inner {
-    display: flex !important;
     flex-direction: row !important;
-    justify-content: space-between;
+    justify-content: space-between !important;
+    align-items: center !important;
   }
 
   .logo-block {
@@ -2031,8 +2031,20 @@ width: 100%;
   }
 
   .menu {
-    display: flex;
-    justify-content: flex-end;
+    display: flex !important;
+    justify-content: flex-end !important;
     gap: 24px;
+  }
+
+  /* HERO torna a sinistra */
+  .contact-layout,
+  .poster-layout {
+    justify-content: flex-start !important;
+  }
+
+  .contact-left,
+  .poster-text {
+    transform: none !important;
+    margin-left: 0 !important;
   }
 }
