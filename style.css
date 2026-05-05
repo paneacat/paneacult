@@ -486,6 +486,34 @@ margin: 0;
   color: #193c4e;
   border-color: #fcc10e;
 }
+
+
+.filter-btn,
+.filter-top {
+  color: #fcc10e;
+  border: 1px solid #fcc10e;
+  background: rgba(252,193,14,0.08);
+  
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  
+  transition: all 0.25s ease;
+}
+
+.filter-btn.active,
+.filter-top.active {
+  background: #fcc10e;
+  color: #193c4e;
+  border-color: #fcc10e;
+}
+
+.filter-btn:hover,
+.filter-top:hover {
+  background: rgba(252,193,14,0.15);
+}
+
+
 .archivio-grid {
     display: grid;
   grid-template-columns: repeat(2, 1fr); /* 📱 2 colonne */
@@ -1950,6 +1978,3 @@ width: 100%;
   text-decoration: none !important;
 }
 
-.filter-btn {
-  color: #fcc10e !important;
-}
