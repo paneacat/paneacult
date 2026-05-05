@@ -139,6 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
     observerCredits.observe(credits);
   }
 
+  window.addEventListener("load", () => {
+  const splash = document.getElementById("splash");
+  setTimeout(() => {
+    splash.style.opacity = "0";
+    splash.style.transition = "0.4s";
+    setTimeout(() => splash.remove(), 400);
+  }, 800);
+});
+
   // ===============================
   // ===== FADE-UP GENERALE
   // ===============================
