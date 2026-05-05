@@ -2021,18 +2021,19 @@ width: 100%;
     background: rgba(255,255,255,0.15);
   }
 	.header-inner {
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important;
     justify-content: space-between;
     align-items: center;
   }
 
   .logo-block {
-    text-align: left;
+    text-align: left !important;
   }
 
   .menu {
     display: flex;
-    gap: 24px;
     justify-content: flex-end;
+    gap: 24px;
   }
 }
