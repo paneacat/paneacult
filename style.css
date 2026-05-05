@@ -525,8 +525,9 @@ margin: 0;
 .hero-cta {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 13px;
+	text-align: center;
     margin-right: 100px;
         margin-top: 16px;
 }
@@ -557,6 +558,9 @@ margin: 0;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
+	width: 100%;
+  max-width: 280px;
+  text-align: center;
 }
 
 .cta-button:hover {
@@ -614,10 +618,9 @@ margin: 0;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
   padding-bottom: 10px;
-  /* 🔥 QUESTO È IL FIX */
-  padding-right: 0;
- gap: 18px;
-padding-left: 20px;
+	gap: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* ===== HEADER SLIDER (titolo + frecce) ===== */
@@ -630,53 +633,6 @@ padding-left: 20px;
 	padding-left: 32px;
 }
 
-/* titolo */
-.section-label {
-  margin: 0;
-}
-
-/* ===== CONTENITORE FRECCE ===== */
-
-.slider-arrows {
-  margin-left: auto; /* 🔥 spinge a destra */
-  display: flex;
-  gap: 10px;
-}
-
-/* ===== FRECCE ===== */
-
-.arrow {
-  width: 42px;
-  height: 42px;
-
-  border: 1px solid #fcc10e;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: #fcc10e;
-  font-size: 18px;
-
-  cursor: pointer;
-
-  transition: all 0.3s ease;
-}
-
-/* hover */
-.arrow:hover {
-  background: #fcc10e;
-  color: #193c4e;
-  transform: scale(1.05);
-}
-
-/* stato disattivo (quando sei all'inizio o fine) */
-.arrow.disabled {
-  opacity: 0.3;
-  pointer-events: none;
-}
-
 .slider::-webkit-scrollbar {
     display: none;
 }
@@ -686,7 +642,7 @@ padding-left: 20px;
     scroll-snap-align: start;
 	min-width: 260px;
   flex-shrink: 0;
-        flex: 0 0 80%;
+    flex: 0 0 85%;
 }
 
 /* contenitore card */
@@ -704,8 +660,8 @@ padding-left: 20px;
     width: 100%;
     object-fit: cover;
     display: block;
-        height: 160px;
-        transition: transform 0.5s ease;
+    height: 200px;
+   transition: transform 0.5s ease;
 }
 
 /* hover desktop */
@@ -746,6 +702,50 @@ padding-left: 20px;
 .slider::after {
     content: "";
     flex: 0 0 40px;
+}
+/* ===== FRECCE ===== */
+
+.arrow {
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #fcc10e;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fcc10e;
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* hover */
+.arrow:hover {
+  background: #fcc10e;
+  color: #193c4e;
+  transform: scale(1.05);
+}
+
+/* stato disattivo (quando sei all'inizio o fine) */
+.arrow.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* titolo */
+.section-label {
+  margin: 0;
+}
+
+/* ===== CONTENITORE FRECCE ===== */
+
+.slider-arrows {
+  display: none;
 }
 
 /* ===== SEZIONE ===== */
@@ -1427,15 +1427,13 @@ margin-bottom: 38px;
 
 /* bottone */
 .newsletter-btn {
-    display: inline-block;
-    padding: 12px 28px;
-    border-radius: 999px;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.25);
-    color: #aaa;
-    font-size: 13px;
-    letter-spacing: 0.5px;
-    transition: all 0.25s ease;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 26px;
+  background: #fcc10e;
+  color: #193c4e;
+  border-radius: 999px;
+  font-size: 14px;
 }
 
 /* hover */
@@ -1999,6 +1997,12 @@ margin-bottom: 38px;
 .slide-card:hover img {
         transform: scale(1.08);
     }
+
+	.slider-arrows {
+  margin-left: auto; /* 🔥 spinge a destra */
+  display: flex;
+  gap: 10px;
+	}
 
 	@keyframes fadeHead {
         to {
