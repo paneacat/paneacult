@@ -1834,7 +1834,7 @@ width: 100%;
   }
 	
  .contact-left {
-    transform: translate(40px, 20px);
+  transform: none;
  }
 
 	
