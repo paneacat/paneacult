@@ -527,9 +527,8 @@ margin: 0;
     flex-direction: column;
     align-items: center;
     gap: 13px;
-	text-align: center;
-    margin-right: 100px;
-        margin-top: 16px;
+    text-align: center;
+    margin-top: 16px;
 }
 
 .cta-label {
@@ -630,7 +629,8 @@ margin: 0;
   align-items: center;
   width: 100%;
   margin-bottom: 20px;
-	padding-left: 32px;
+padding-left: 20px;
+  padding-right: 20px;
 }
 
 .slider::-webkit-scrollbar {
@@ -1460,14 +1460,7 @@ margin-bottom: 38px;
   margin-bottom: 20px;
 }
 
-.newsletter-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 20px;
-}
+
 /* ===== FOOTER ===== */
 
 .credits {
@@ -1912,7 +1905,10 @@ margin-bottom: 38px;
 .hero {
         padding: 100px 20px 60px;
     }
-
+.hero-cta {
+  align-items: flex-start;
+  text-align: left;
+}
 .hero-inner {
   flex-direction: row;
   justify-content: space-between;
