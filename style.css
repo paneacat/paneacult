@@ -1660,8 +1660,8 @@ width: 100%;
 
 /* TESTO */
 .poster-text {
-  max-width: 520px;
-  text-align: left;
+    max-width: 520px;
+    margin-left: auto;   /* spinge a destra */
 }
 
 .poster-big-title {
@@ -1689,7 +1689,7 @@ width: 100%;
   height: 320px;
   border-radius: 50%;
   overflow: hidden;
-
+ margin-right: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
