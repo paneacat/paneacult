@@ -2047,6 +2047,9 @@ width: 100%;
     padding: 0 40px;
     padding-top: 60px;
 	}
+	}
+
+	@media (min-width: 1024px) {
   /* HEADER */
   .header-inner {
     flex-direction: row;
