@@ -1783,12 +1783,11 @@ width: 100%;
 
 	.cta-button {
     background: #fcc10e;
-    color: #193c4e;
     padding: 14px 28px;
     border-radius: 999px;
     text-decoration: none;
-		
-	}
+	color: #000;
+}
 	
     .break-desktop {
         display: block;
@@ -1944,8 +1943,10 @@ width: 100%;
 
 .hero-cta {
         position: relative;
-        display: flex;
-	align-items: flex-start;
+	display: flex;
+  flex-direction: column;
+  align-items: center; /* centra tutto */
+  text-align: center;
     max-width: 300px;
     }
 
