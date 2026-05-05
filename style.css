@@ -1775,9 +1775,11 @@ width: 100%;
 }
 
 	 .poster {
-    padding-top: 120px;
+	padding-top: 160px; /* prima era ~120 */
 	 }
-
+.poster-big-title {
+  margin-top: 40px;
+}
 	
 .poster-img {
     width: 320px;
