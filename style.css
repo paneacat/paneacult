@@ -623,10 +623,10 @@ padding: 0;
     scroll-behavior: smooth;
   padding-bottom: 10px;
 	display: flex;
-  gap: 16px;
-  overflow-x: auto;
+  gap: 14px;
   padding-left: 20px;
-    padding-right: 0;
+  padding-right: 0;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
 }
 
@@ -650,7 +650,7 @@ padding-left: 20px;
     scroll-snap-align: start;
 	min-width: 260px;
   flex-shrink: 0;
-flex: 0 0 80%;
+flex: 0 0 78%;
 }
 
 /* contenitore card */
@@ -668,7 +668,7 @@ flex: 0 0 80%;
     width: 100%;
     object-fit: cover;
     display: block;
-    height: 200px;
+    height: 180px;
    transition: transform 0.5s ease;
 }
 
@@ -692,7 +692,7 @@ flex: 0 0 80%;
 
 /* titolo */
 .slide-info h3 {
-    font-size: 15px;
+    font-size: 14px;
  /* 👉 più grande */
     color: white;
     font-weight: 400;
@@ -701,7 +701,7 @@ flex: 0 0 80%;
 
 /* stelle */
 .slide-info p {
-    font-size: 15px;
+    font-size: 13px;
  /* 👉 più grandi */
     color: var(--gold);
     letter-spacing: 2px;
@@ -715,7 +715,7 @@ flex: 0 0 80%;
 
 .slider::after {
   content: "";
-  min-width: 40px; /* spazio finale */
+  min-width: 40px;
 }
 
 .slide-item:first-child {
