@@ -573,9 +573,9 @@ padding: 0;
 }
 
 .cta-button:hover {
-    background: #fcc10e;
-    color: #000;
-    transform: translateY(-2px);
+  transform: translateY(-2px);
+  opacity: 0.95;
+	color: #000;
 }
 
 @keyframes pulse {
