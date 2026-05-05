@@ -563,17 +563,17 @@ margin: 0;
 }
 
 .cta-button {
-  background: none;
-  color: #fcc10e;
   padding: 0;
   border-radius: 0;
   font-size: 16px;
-  text-decoration: underline;
+  text-decoration: underline;	
+	background: #fcc10e;
+  color: #000;
 }
 
 .cta-button:hover {
     background: #fcc10e;
-    color: #193c4e;
+    color: #000;
     transform: translateY(-2px);
 }
 
