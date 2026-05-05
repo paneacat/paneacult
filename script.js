@@ -168,3 +168,41 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+const buttons = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.archivio-card');
+
+let activeFilters = [];
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    const filter = btn.dataset.filter;
+
+    // toggle visivo
+    btn.classList.toggle('active');
+
+    // aggiorna array filtri attivi
+    if (activeFilters.includes(filter)) {
+      activeFilters = activeFilters.filter(f => f !== filter);
+    } else {
+      activeFilters.push(filter);
+    }
+
+    filterCards();
+  });
+});
+
+function filterCards() {
+  cards.forEach(card => {
+    const tags = card.dataset.category.split(' ');
+
+    if (activeFilters.length === 0) {
+      card.style.display = 'block';
+      return;
+    }
+
+    const match = activeFilters.every(f => tags.includes(f));
+
+    card.style.display = match ? 'block' : 'none';
+  });
+}
