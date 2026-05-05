@@ -197,6 +197,27 @@ button {
     width: 140px;
   }
 
+
+.archivio-title {
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-size: clamp(28px, 3vw, 42px);
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 35px;
+  letter-spacing: 1px;
+  }
+
+
+.archivio-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+  margin: 12px auto 0;
+}
+
 .about-text {
   font-weight: 400; /* niente grassetto */
   line-height: 1.6;
