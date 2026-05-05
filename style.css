@@ -1903,7 +1903,11 @@ width: 100%;
   display: flex;
   gap: 10px;
 	}
-
+.contact-right img {
+  width: 320px;
+  opacity: 0.9;
+  filter: contrast(1.1) brightness(0.9);
+}
 .cta-link,
 .cta-link:visited,
 .cta-link:active {
