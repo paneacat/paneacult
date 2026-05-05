@@ -328,11 +328,11 @@ a:hover {
 }
 
 .logo {
-    font-size: 48px;
-    margin: 0;
-    text-align: left;
-    color: var(--gold);
+margin: 0;
     font-family: 'Playfair Display', serif;
+        font-size: 42px;
+        text-align: center;
+        color: var(--gold);
 }
 
 .logo-subtitle {
@@ -349,8 +349,12 @@ a:hover {
     margin-right: 10px;
     display: flex;
     align-items: center;
-    gap: 30px;
-}
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 6px;
+        font-size: 13.5px;
+	}
 
 .menu a {
     position: relative;
@@ -406,12 +410,13 @@ a:hover {
 /* righe */
 .filtri-row {
     display: flex;
-    justify-content: center;
     gap: 10px;
-    flex-wrap: wrap;
     width: 100%;
     max-width: 900px;
- /* 🔥 fondamentale */;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-left: 14px;
 }
 
 .filtri-row.top {
@@ -482,10 +487,10 @@ a:hover {
 }
 
 .hero-text {
-    max-width: 520px;
     text-align: left;
     position: relative;
     flex: 1;
+        max-width: 100%;
 }
 
 .highlight {
@@ -523,6 +528,7 @@ a:hover {
     align-items: flex-start;
     gap: 13px;
     margin-right: 100px;
+        margin-top: 16px;
 }
 
 .cta-label {
@@ -605,13 +611,13 @@ a:hover {
 .slider {
     display: flex;
     overflow-x: auto;
-    gap: 20px;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
   padding-bottom: 10px;
   /* 🔥 QUESTO È IL FIX */
-  padding-left: 0;
   padding-right: 0;
+ gap: 18px;
+padding-left: 20px;
 }
 
 /* ===== HEADER SLIDER (titolo + frecce) ===== */
@@ -677,11 +683,10 @@ a:hover {
 
 /* CARD */
 .slide-item {
-    flex: 0 0 280px;
- /* 👉 dimensione desktop */
     scroll-snap-align: start;
 	min-width: 260px;
   flex-shrink: 0;
+        flex: 0 0 80%;
 }
 
 /* contenitore card */
@@ -697,10 +702,10 @@ a:hover {
 /* immagine */
 .slide-card img {
     width: 100%;
-    height: 180px;
     object-fit: cover;
     display: block;
     transition: transform 0.4s ease;
+        height: 160px;
 }
 
 /* hover desktop */
@@ -1575,26 +1580,6 @@ margin-bottom: 38px;
         transform: translateY(0);
     }
 }
-
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-		@keyframes fadeUp {
-        from {
-				opacity: 0;
-        transform: translateY(20px);
-    }
-
-to {
-        opacity: 1;
-        transform: translateY(0);
-        max-width: 320px;
-        margin: 0 auto;
-    }
-}
 	}
 
 @media (max-width: 767px) {
@@ -1645,23 +1630,10 @@ to {
         align-items: center;
     }
 
-.logo {
-        font-size: 42px;
-        text-align: center;
-        color: var(--gold);
-    }
 
 .logo-subtitle {
         text-align: center;
         margin-top: -4px;
-    }
-
-.menu {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 18px;
-        margin-top: 6px;
-        font-size: 13.5px;
     }
 
 .menu a {
@@ -1758,12 +1730,6 @@ to {
         margin-top: -3px;
     }
 
-.filtri-row {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        justify-content: flex-start;
-        padding-left: 14px;
-    }
 
 .filtri-row.bottom {
         flex-wrap: nowrap;
@@ -1788,27 +1754,6 @@ to {
         flex: 0 0 auto;
     }
 
-.slider {
-        gap: 18px;
-        padding-left: 20px;
-    }
-
-.slide-item {
-        flex: 0 0 80%;
- /* 👉 effetto “scorro e intravedo le altre” */;
-    }
-
-.slide-card img {
-        height: 160px;
-    }
-
-.hero-text {
-        max-width: 100%;
-    }
-
-.hero-cta {
-        margin-top: 16px;
-    }
 
 .contact-hero::after {
     display: none;
@@ -1832,27 +1777,6 @@ to {
         transform: scale(0.97);
         -webkit-tap-highlight-color: transparent;
     }
-
-	@keyframes fadeUp {
-        to {
-			opacity: 1;
-        transform: translateY(0);
-    }
-
-		@keyframes fadeUp {
-        from {
-				opacity: 0;
-        transform: translateY(20px);
-    }
-
-to {
-        opacity: 1;
-        transform: translateY(0);
-        max-width: 320px;
-        margin: 0 auto;
-    }
-}
-	}
 }
 
 @media (min-width: 1024px) {
