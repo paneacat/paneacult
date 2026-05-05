@@ -1753,11 +1753,17 @@ width: 100%;
   pointer-events: none;
 }
 
+	 .poster {
+    padding-top: 120px;
+	 }
+
+	
 .poster-img {
     width: 320px;
     height: 320px;
 	align-self: flex-end; /* oppure center se lo vuoi più alto */
     margin-top: 0;
+	transform: translateX(-30px);
 	object-position: center top;
 }
 
@@ -1770,6 +1776,7 @@ width: 100%;
 
   .poster-text {
     max-width: 520px;
+	transform: translateX(-40px);  
   }
 
 	
