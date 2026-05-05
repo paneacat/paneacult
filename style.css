@@ -1796,6 +1796,7 @@ margin-bottom: 38px;
     padding: 14px 28px;
     border-radius: 999px;
     text-decoration: none;
+		
 	}
 	
     .break-desktop {
@@ -1928,8 +1929,8 @@ margin-bottom: 38px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 80px;
   text-align: left;
+	gap: 40px;
 }
 
 .hero-text {
@@ -1953,7 +1954,7 @@ margin-bottom: 38px;
 .hero-cta {
         position: relative;
         display: flex;
-        align-items: center;
+	align-items: flex-start;
     }
 
 .newsletter {
