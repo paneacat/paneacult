@@ -155,7 +155,16 @@ button {
 	padding: 0 20px
 	 margin-top: 40px;
 }
-
+.home-cinema::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(to left, #0b1f26, transparent);
+  pointer-events: none;
+}
 .home-cinema .container {
   padding-left: 32px;
   padding-right: 32px;
@@ -618,7 +627,7 @@ margin: 0;
   gap: 16px;
   overflow-x: auto;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 10px;
   scroll-snap-type: x mandatory;
 }
 
@@ -642,7 +651,7 @@ padding-left: 20px;
     scroll-snap-align: start;
 	min-width: 260px;
   flex-shrink: 0;
-    flex: 0 0 85%;
+flex: 0 0 78%;
 }
 
 /* contenitore card */
@@ -700,8 +709,13 @@ padding-left: 20px;
 }
 
 .slider::after {
-    content: "";
-    flex: 0 0 40px;
+  content: "→";
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  color: #fcc10e;
+  font-size: 18px;
+  opacity: 0.6;
 }
 /* ===== FRECCE ===== */
 
