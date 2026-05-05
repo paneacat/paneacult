@@ -197,6 +197,14 @@ button {
     width: 140px;
   }
 
+.firma-recensione {
+  margin-top: 40px;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
 
 .archivio-title {
   font-family: 'Playfair Display', serif;
