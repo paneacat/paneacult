@@ -1948,3 +1948,11 @@ width: 100%;
     }
 }
 }
+
+
+.cta-link,
+.cta-link:visited,
+.cta-link:active {
+  color: #193c4e !important;
+  text-decoration: none !important;
+}
