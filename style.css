@@ -1589,14 +1589,12 @@ width: 100%;
 .contact-sub {
   text-align: center;
 }
-.contact-columns {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+ .contact-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+ }
 
-  padding: 0 20px;
-  margin-top: 40px;
-}
 .contact-columns .card {
   max-width: 100%;
 }
@@ -2108,7 +2106,11 @@ width: 100%;
     align-items: center;
     text-align: left;
   }
-
+.contact-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
   .contact-left {
     margin-left: 0;
     transform: none;
