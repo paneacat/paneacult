@@ -1556,6 +1556,9 @@ width: 100%;
     transform: translateY(0);
   }
 }
+
+@media (max-windth: 768px) {
+
 	.contact-hero {
   text-align: center;
   padding: 60px 20px 20px;
@@ -1573,6 +1576,12 @@ width: 100%;
   transform: none !important;
 }
 
+ .contact-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+ }
+
 .contact-title {
   text-align: center;
 }
@@ -1581,12 +1590,7 @@ width: 100%;
 .contact-sub {
   text-align: center;
 }
-
- .contact-columns {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
- }
+}
 
 .contact-columns .card {
   max-width: 100%;
