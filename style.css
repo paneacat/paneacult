@@ -1830,7 +1830,12 @@ width: 100%;
   .contact-hero {
     margin-top: 50px;
   }
+	
+ .contact-left {
+    transform: translate(40px, 20px);
+ }
 
+	
 	.slider {
     overflow: hidden;
 }
