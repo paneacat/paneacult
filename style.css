@@ -307,7 +307,6 @@ button {
   left: 0;
   bottom: -4px;
   width: 0;
-  height: 2px;
   background: #fdc103;
   transition: width 0.3s ease;
 }
@@ -1822,6 +1821,7 @@ width: 100%;
 
 .newsletter {
         margin-top: 120px;
+  text-align: center;
     }
 
 /* ===============================
@@ -1965,7 +1965,18 @@ width: 100%;
  .contact-left {
   transform: none;
  }
+.contact-hero {
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
 
+.contact-hero h1 {
+  margin-bottom: 20px;
+}
+.contact-grid {
+  margin-top: 80px;
+}
+    
     
     .slider {
     overflow: hidden;
@@ -2008,7 +2019,10 @@ width: 100%;
     max-width: 1100px;
     margin: 0 auto;
   }
-
+.separator {
+  margin: 60px 0;
+  opacity: 0.3;
+}
   .contact-columns .card:not(:last-child)::after {
     content: "";
     position: absolute;
