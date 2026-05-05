@@ -1219,7 +1219,7 @@ margin-left: 0;
 }
 
 .firma-review img {
-  width: 300px; /* più grande */
+  width: 120px; /* più grande */
   opacity: 0.95;
 	filter: brightness(0) invert(1);
   opacity: 0.9;
