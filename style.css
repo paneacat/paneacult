@@ -1589,6 +1589,9 @@ width: 100%;
   padding: 0 20px;
   margin-top: 40px;
 }
+.contact-columns .card {
+  max-width: 100%;
+}
 }
 
 
@@ -1990,4 +1993,22 @@ width: 100%;
   color: #193c4e !important;
   text-decoration: none !important;
 }
+.contact-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
 
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .contact-columns .card:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 1px;
+    height: 100%;
+    background: rgba(255,255,255,0.15);
+  }
+}
