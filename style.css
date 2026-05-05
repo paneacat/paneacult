@@ -1775,7 +1775,7 @@ width: 100%;
 }
 
 	 .poster {
-	padding-top: 160px; /* prima era ~120 */
+	padding-top: 40px; /* prima era ~120 */
 	 }
 .poster-big-title {
   margin-top: 40px;
@@ -1803,7 +1803,7 @@ width: 100%;
   }
 
   .contact-hero {
-    margin-top: 20px;
+    margin-top: 40px;
   }
 
 	.slider {
