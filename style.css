@@ -2176,4 +2176,27 @@ width: 100%;
     grid-template-columns: repeat(3, 1fr);
     gap: 60px;
   }
+    .slider {
+  position: relative;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: none;
+  border: none;
+  color: #f5c518;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.arrow.left {
+  left: -50px;
+}
+
+.arrow.right {
+  right: -50px;
+}
 }
