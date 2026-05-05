@@ -302,6 +302,22 @@ button {
   text-decoration: none;
 }
 
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+
+  color: var(--gold);
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  opacity: 0.8;
+}
+
+.back-link:hover {
+  opacity: 1;
+}
+
 /* social */
 .social {
   display: flex;
