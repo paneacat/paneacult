@@ -2010,3 +2010,6 @@ margin-bottom: 38px;
     }
 }
 }
+.hero-cta {
+  background: red !important;
+}
