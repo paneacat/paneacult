@@ -1,93 +1,61 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ===============================
-  // ===== FILTRI
+  // ===== FILTRI (NUOVO SISTEMA)
   // ===============================
-  const bottoni = document.querySelectorAll('.filtro');
-  const cards = Array.from(document.querySelectorAll('.card-film'));
-  const empty = document.getElementById('emptyState');
-  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  const buttons = document.querySelectorAll('.filter');
+  const cards = document.querySelectorAll('.archivio-card');
 
-  if (cards.length) {
+  let activeFilters = {
+    tipo: "all",
+    genere: "all"
+  };
 
-    let filtroCategoria = "tutti";
-    let filtroGenere = "tutti";
+  if (buttons.length && cards.length) {
 
-    const norm = (v) => (v || "").trim().toLowerCase();
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
 
-    const STEP = 3;
-    let visibiliMax = STEP;
+        const group = btn.dataset.group; // tipo / genere
+        const filter = btn.dataset.filter;
 
-    function aggiornaFiltri() {
-      let filtrati = [];
+        // reset gruppo
+        document.querySelectorAll(`.filter[data-group="${group}"]`)
+          .forEach(b => b.classList.remove('active'));
 
+        btn.classList.add('active');
+
+        activeFilters[group] = filter;
+
+        filterCards();
+      });
+    });
+
+    function filterCards() {
       cards.forEach(card => {
-        const categoria = norm(card.dataset.categoria);
-        const generi = norm(card.dataset.genere).split(" ").filter(Boolean);
 
-        const matchCategoria =
-          filtroCategoria === "tutti" || categoria === filtroCategoria;
+        const tags = (card.dataset.category || "").split(' ');
+
+        const matchTipo =
+          activeFilters.tipo === "all" ||
+          tags.includes(activeFilters.tipo);
 
         const matchGenere =
-          filtroGenere === "tutti" || generi.includes(filtroGenere);
+          activeFilters.genere === "all" ||
+          tags.includes(activeFilters.genere);
 
-        const visibile = matchCategoria && matchGenere;
+        if (matchTipo && matchGenere) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
 
-        card.classList.toggle("hidden", !visibile);
-
-        if (visibile) filtrati.push(card);
-      });
-
-      filtrati.forEach((card, i) => {
-        card.classList.toggle("hidden-by-limit", i >= visibiliMax);
-      });
-
-      if (empty) {
-        empty.classList.toggle("show", filtrati.length === 0);
-      }
-
-      if (loadMoreBtn) {
-        loadMoreBtn.style.display =
-          filtrati.length > visibiliMax ? "inline-block" : "none";
-      }
-    }
-
-    if (bottoni.length) {
-      bottoni.forEach(btn => {
-        btn.addEventListener('click', () => {
-
-          const filtro = norm(btn.dataset.filter);
-
-          if (btn.closest('.top')) {
-            filtroCategoria = filtro;
-            document.querySelectorAll('.top .filtro')
-              .forEach(b => b.classList.remove('attivo'));
-          } else {
-            filtroGenere = filtro;
-            document.querySelectorAll('.bottom .filtro')
-              .forEach(b => b.classList.remove('attivo'));
-          }
-
-          btn.classList.add('attivo');
-
-          visibiliMax = STEP;
-          aggiornaFiltri();
-        });
       });
     }
-
-    if (loadMoreBtn) {
-      loadMoreBtn.addEventListener('click', () => {
-        visibiliMax += STEP;
-        aggiornaFiltri();
-      });
-    }
-
-    aggiornaFiltri();
   }
 
   // ===============================
-  // ===== SLIDER 🔥 (FIX VERO)
+  // ===== SLIDER
   // ===============================
   const slider = document.getElementById("slider");
   const next = document.getElementById("next");
@@ -98,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateArrows() {
       const maxScroll = slider.scrollWidth - slider.clientWidth;
 
-      // ← compare solo alla fine
       if (slider.scrollLeft >= maxScroll - 10) {
         prev.style.opacity = "1";
         prev.style.pointerEvents = "auto";
@@ -124,12 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     slider.addEventListener("scroll", updateArrows);
 
-    // stato iniziale
     updateArrows();
   }
 
   // ===============================
-  // ===== CREDITS
+  // ===== CREDITS (fade)
   // ===============================
   const credits = document.querySelector('.credits');
 
@@ -146,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===============================
-  // ===== FADE-UP
+  // ===== FADE-UP GENERALE
   // ===============================
   const elements = document.querySelectorAll('.fade-up');
 
@@ -168,41 +134,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-const buttons = document.querySelectorAll('.filter-btn');
-const cards = document.querySelectorAll('.archivio-card');
-
-let activeFilters = [];
-
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-
-    const filter = btn.dataset.filter;
-
-    // toggle visivo
-    btn.classList.toggle('active');
-
-    // aggiorna array filtri attivi
-    if (activeFilters.includes(filter)) {
-      activeFilters = activeFilters.filter(f => f !== filter);
-    } else {
-      activeFilters.push(filter);
-    }
-
-    filterCards();
-  });
-});
-
-function filterCards() {
-  cards.forEach(card => {
-    const tags = card.dataset.category.split(' ');
-
-    if (activeFilters.length === 0) {
-      card.style.display = 'block';
-      return;
-    }
-
-    const match = activeFilters.every(f => tags.includes(f));
-
-    card.style.display = match ? 'block' : 'none';
-  });
-}
