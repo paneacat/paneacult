@@ -494,7 +494,8 @@ margin: 0;
 .archivio-card {
   border-radius: 18px;
   overflow: hidden;
-  background: #0f2a33;
+  background: transparent;
+  box-shadow: none;
 }
 
 .archivio-card img {
