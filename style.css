@@ -399,6 +399,52 @@ margin: 0;
 }
 
 
+/* CONTENITORE */
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 60px auto 40px;
+  padding: 0 20px;
+}
+
+/* RIGHE */
+.filters-top,
+.filters-bottom {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.filters-top::-webkit-scrollbar,
+.filters-bottom::-webkit-scrollbar {
+  display: none;
+}
+
+/* BOTTONI */
+.filter {
+  flex: 0 0 auto;
+
+  padding: 6px 14px;
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  color: #fcc10e;
+  border: 1px solid #fcc10e;
+
+  background: rgba(252,193,14,0.08);
+
+  white-space: nowrap;
+}
+
+/* STATO ATTIVO */
+.filter.active {
+  background: #fcc10e;
+  color: #193c4e;
+}
+
 
 .archivio-grid {
     display: grid;
@@ -1749,8 +1795,12 @@ width: 100%;
     }
 
 
-
-
+.filters-top,
+  .filters-bottom {
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: visible;
+  }
 	
 .arrow {
   width: 42px;
