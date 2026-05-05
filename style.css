@@ -1575,12 +1575,15 @@ margin-bottom: 38px;
 
 /* animazione */
 @keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-	}
 
 @media (max-width: 767px) {
     .about-grid {
@@ -2012,19 +2015,5 @@ margin-bottom: 38px;
         to {
 			opacity: 1;
     }
-
-		@keyframes fadeUp {
-        from {
-				opacity: 0;
-        transform: translateY(20px);
-    }
-
-to {
-        opacity: 1;
-        transform: translateY(0);
-        max-width: 320px;
-        margin: 0 auto;
-    }
 }
-	}
 }
