@@ -1938,8 +1938,8 @@ width: 100%;
 }
 	
 .poster-img {
-    width: 320px;
-    height: 320px;
+    width: 420px;
+  height: 420px;
 	align-self: flex-end; /* oppure center se lo vuoi più alto */
     margin-top: 0;
 	transform: none;
@@ -1958,7 +1958,10 @@ width: 100%;
 	  margin-top: 50px;
 	margin-left: 100px;
   }
-
+.poster-signature {
+  width: 160px; /* prima troppo grande */
+  margin-top: 20px;
+}
   .contact-hero {
     margin-top: 90px;
   }
@@ -2046,6 +2049,17 @@ width: 100%;
     transform: none !important;
     margin-left: 0 !important;
   }
+	.sections {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 60px;
+
+    max-width: 1100px;
+    margin: 0 auto;
+
+    padding: 0 40px;
+    padding-top: 60px;
+	}
 }
 /* ===== RIPRISTINO LAYOUT DESKTOP ===== */
 @media (min-width: 1024px) {
