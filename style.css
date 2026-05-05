@@ -352,12 +352,12 @@ margin: 0;
     margin-right: 10px;
     display: flex;
     align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 16px
-        margin-top: 6px;
-        font-size: 13.5px;
-	}
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px; /* 👈 QUESTO ; mancava */
+    margin-top: 6px;
+    font-size: 13.5px;
+}
 
 .menu a {
     position: relative;
