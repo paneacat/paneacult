@@ -574,27 +574,6 @@ margin: 0;
 	margin-top: 10px;
 }
 
-.cta-button {
-    background: none;
-    padding: 0;
-    color: #fcc10e;
-    text-decoration: underline;
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(252,193,14,0.6);
-    }
-
-70% {
-        box-shadow: 0 0 0 18px rgba(252,193,14,0);
-    }
-
-100% {
-        box-shadow: 0 0 0 0 rgba(252,193,14,0);
-    }
-}
-
 
 .cta-hook {
     display: inline-block;
@@ -1586,9 +1565,6 @@ width: 100%;
   .archivio-card:hover img {
     transform: scale(1.05);
   }
-
-}
-	
 	
 	.break-desktop {
         display: block;
