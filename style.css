@@ -1759,6 +1759,7 @@ width: 100%;
     height: 320px;
 	align-self: flex-end; /* oppure center se lo vuoi più alto */
     margin-top: 0;
+	object-position: center top;
 }
 
 	.poster-layout {
