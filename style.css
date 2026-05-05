@@ -1827,6 +1827,7 @@ width: 100%;
     max-width: 520px;
 	transform: translateX(-40px);  
 	  margin-top: 50px;
+	  margin-left: -20px;
   }
 
   .contact-hero {
