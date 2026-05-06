@@ -184,10 +184,9 @@ margin: 0 auto 18px;
 .hero-login{
   min-height:100vh;
   display:flex;
-  align-items:center;
   justify-content:space-between;
   padding:80px;
-	padding-top: 140px;
+	padding-top: 250px;
 }
 
 .hero-login::before{
