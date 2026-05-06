@@ -223,8 +223,11 @@ body {
   color: #fdc103;
   text-size: 22px;
 }
-
-
+.poster-signature img {
+  width: 220px;
+  opacity: 0.95;
+  margin-top: 32px;
+}
 .firma-recensione {
   margin-top: 40px;
   font-family: 'Playfair Display', serif;
