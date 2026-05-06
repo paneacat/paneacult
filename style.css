@@ -277,6 +277,7 @@ body {
     margin-left: 0;
     color: var(--gold);
     opacity: 0.7;
+    font-family: 'Inter', sans-serif;
 }
 
 .section-label::after {
