@@ -598,17 +598,19 @@ margin: 0;
 }
 
 .archivio-card {
-  overflow: hidden;
   background: transparent;
   box-shadow: none;
+    border-radius: 22px;
+  overflow: visible;
 }
 
 .archivio-card img {
     width: 100%;
-    border-radius: 14px;
-    display: block;
+  display: block;
+  border-radius: 22px;
   height: 180px;
   object-fit: cover;
+    aspect-ratio: 16 / 9;
   display: block;
     overflow: hidden;
   border-radius: 22px;
