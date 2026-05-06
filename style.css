@@ -2267,20 +2267,39 @@ p {
   }
     .slider {
   position: relative;
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.slider-arrows {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
 }
 
 .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 20;
-  background: none;
-  border: none;
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #fdc103;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   color: #fdc103;
-  font-size: 24px;
+  background: transparent;
+
   cursor: pointer;
+
+  transition: 0.3s ease;
 }
 
+.arrow:hover {
+  background: #fdc103;
+  color: #0d2e40;
+}
 .arrow.left {
   left: 10px;
 }
@@ -2288,7 +2307,8 @@ p {
 .arrow.right {
   right: 10px;
 }
-   .poster-img {
+    
+    .poster-img {
   width: 380px;   /* prima ~320 */
   height: 380px;
   object-fit: cover;
