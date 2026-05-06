@@ -1,8 +1,88 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-if (buttons.length && cards.length) {
-  // tutto il codice filter-btn qui dentro
-}        
+ 
+  const cards = Array.from(document.querySelectorAll('.card-film'));
+  const empty = document.getElementById('emptyState');
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+  if (cards.length) {
+
+    let filtroCategoria = "tutti";
+    let filtroGenere = "tutti";
+
+    const norm = (v) => (v || "").trim().toLowerCase();
+
+    const STEP = 3;
+    let visibiliMax = STEP;
+
+    function aggiornaFiltri() {
+      let filtrati = [];
+
+      cards.forEach(card => {
+        const categoria = norm(card.dataset.categoria);
+        const generi = norm(card.dataset.genere).split(" ").filter(Boolean);
+
+        const matchCategoria =
+          filtroCategoria === "tutti" || categoria === filtroCategoria;
+
+        const matchGenere =
+          filtroGenere === "tutti" || generi.includes(filtroGenere);
+
+        const visibile = matchCategoria && matchGenere;
+
+        card.classList.toggle("hidden", !visibile);
+
+        if (visibile) filtrati.push(card);
+      });
+
+      filtrati.forEach((card, i) => {
+        card.classList.toggle("hidden-by-limit", i >= visibiliMax);
+      });
+
+      if (empty) {
+        empty.classList.toggle("show", filtrati.length === 0);
+      }
+
+      if (loadMoreBtn) {
+        loadMoreBtn.style.display =
+          filtrati.length > visibiliMax ? "inline-block" : "none";
+      }
+    }
+
+    if (bottoni.length) {
+      bottoni.forEach(btn => {
+        btn.addEventListener('click', () => {
+
+          const filtro = norm(btn.dataset.filter);
+
+          if (btn.closest('.top')) {
+            filtroCategoria = filtro;
+            document.querySelectorAll('.top .filtro')
+              .forEach(b => b.classList.remove('attivo'));
+          } else {
+            filtroGenere = filtro;
+            document.querySelectorAll('.bottom .filtro')
+              .forEach(b => b.classList.remove('attivo'));
+          }
+
+          btn.classList.add('attivo');
+
+          visibiliMax = STEP;
+          aggiornaFiltri();
+        });
+      });
+    }
+
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener('click', () => {
+        visibiliMax += STEP;
+        aggiornaFiltri();
+      });
+    }
+
+    aggiornaFiltri();
+  }
+
   // ===============================
   // ===== SLIDER 🔥 (FIX VERO)
   // ===============================
