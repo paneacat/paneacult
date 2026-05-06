@@ -3340,6 +3340,65 @@ margin:0 auto;
     padding-top:10px;
   }
 
+  .poster-layout,
+  .sections,
+  .about-wrapper,
+  .about-grid{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+
+    gap:50px;
+  }
+
+  .about-hero{
+    width:100%;
+  }
+
+  .about-text{
+    width:100%;
+  }
+
+  .about-text h1{
+    font-size:72px;
+    line-height:0.9;
+    margin-bottom:24px;
+  }
+
+  .intro-text{
+    max-width:100%;
+    font-size:18px;
+    line-height:1.7;
+  }
+
+  .about-image{
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+
+  .about-image img{
+    width:240px;
+    max-width:80%;
+  }
+
+  .sections{
+    margin-top:60px;
+  }
+
+  .card{
+    width:100%;
+    max-width:100%;
+  }
+
+  .newsletter{
+    width:100%;
+    margin-top:60px;
+  }
+
+  .credits{
+    margin-top:70px;
+  }
 }
 .film-author,
 .film-rating{
