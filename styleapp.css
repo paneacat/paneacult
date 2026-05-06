@@ -297,7 +297,220 @@ width:50%;
   margin-bottom:10px;
   line-height:0.95;
 	}
-	
+
+/* =========================
+   LOGIN PAGE — HERO TOP
+========================= */
+
+.header{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:100;
+  background:transparent;
+}
+
+.header-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  max-width:1200px;
+  margin:0 auto;
+
+  padding:28px 40px;
+}
+
+/* LOGO */
+
+.logo-block{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.logo{
+  margin:0;
+
+  font-family:'Playfair Display', serif;
+  font-size:52px;
+  line-height:0.9;
+
+  color:#fdc103;
+}
+
+.logo-subtitle{
+  font-size:11px;
+  letter-spacing:4px;
+  color:rgba(255,255,255,0.75);
+}
+
+/* MENU */
+
+.menu{
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+
+.menu a{
+  position:relative;
+
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  color:white;
+  opacity:0.8;
+
+  transition:0.3s ease;
+}
+
+.menu a:hover,
+.menu a.active{
+  color:#fdc103;
+  opacity:1;
+}
+
+.menu a::after{
+  content:"";
+
+  position:absolute;
+  left:0;
+  bottom:-6px;
+
+  width:0%;
+  height:1px;
+
+  background:#fdc103;
+
+  transition:0.3s ease;
+}
+
+.menu a:hover::after,
+.menu a.active::after{
+  width:100%;
+}
+
+/* HERO */
+
+.hero-login{
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:80px;
+
+  padding:
+    180px
+    80px
+    80px;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+/* LUCE CINEMATOGRAFICA */
+
+.hero-login::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0,140,255,0.18),
+      transparent 60%
+    );
+
+  pointer-events:none;
+}
+
+/* BLOCCO TESTO */
+
+.hero-left{
+  width:42%;
+  position:relative;
+  z-index:2;
+}
+
+.hero-title{
+  font-family:'Playfair Display', serif;
+
+  font-size:82px;
+  line-height:0.92;
+
+  color:white;
+
+  margin-bottom:24px;
+
+  letter-spacing:-2px;
+}
+
+.hero-text{
+  max-width:500px;
+
+  font-size:18px;
+  line-height:1.7;
+
+  color:rgba(255,255,255,0.78);
+
+  margin-bottom:34px;
+}
+
+/* LOGIN CARD */
+
+.login-card{
+  width:100%;
+  max-width:420px;
+
+  padding:34px;
+
+  border-radius:28px;
+
+  background:
+    rgba(255,255,255,0.06);
+
+  backdrop-filter:blur(16px);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+}
+
+  .hero-login{
+    flex-direction:column;
+    justify-content:center;
+
+    padding:
+      150px
+      24px
+      60px;
+  }
+
+  .hero-left{
+    width:100%;
+  }
+
+  .hero-title{
+    font-size:56px;
+  }
+
+  .header-inner{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .menu{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
 .poster{
   position:absolute;
   width:240px;
