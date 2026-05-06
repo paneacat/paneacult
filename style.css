@@ -2424,6 +2424,28 @@ p {
   margin-top: 30px;
   width: 140px;
 }
+     .menu{
+    gap:26px;
+  }
+
+  .menu a{
+    font-size:12px;
+  }
+
+
+  .header-inner{
+    flex-direction:row;
+    justify-content:space-between;
+    padding:34px 40px;
+  }
+
+  .logo{
+    font-size:56px;
+  }
+
+  .logo-subtitle{
+    font-size:11px;
+  }
 }
 
 /* ===== FILM CARD ===== */
@@ -2505,6 +2527,22 @@ p {
 .menu a.active::after {
   width: 100%;
 }
+.header-inner{
+  flex-direction:column;
+  gap:18px;
+
+  padding:24px;
+}
+
+.menu{
+  gap:14px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.menu a{
+  font-size:11px;
+}
 }
 
 .archivio-card,
@@ -2558,4 +2596,33 @@ p {
 
 .poster-text p {
   text-align: left;
+}
+.menu a {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: #fdc103;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #fdc103;
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after,
+.menu a.active::after {
+  width: 100%;
 }
