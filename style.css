@@ -3182,16 +3182,11 @@ margin:0 auto;
   }
     .poster-layout{
   display:flex;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
 
   text-align:center;
-
-  max-width:900px;
   margin:0 auto;
-
-  min-height:75vh;
   padding:120px 20px 80px;
 }
 
@@ -3220,8 +3215,6 @@ margin:0 auto;
 
 .about-image img{
   width:100%;
-  max-width:420px;
-
   border-radius:24px;
   display:block;
 }
@@ -3231,15 +3224,19 @@ margin:0 auto;
   width:140px;
   opacity:0.9;
 }
+
+    
     .login-hero{
 
   display:flex;
-
-  transform:translateY(-90px);
     }
+
+    
     .login-content{
   gap:70px;
     }
+
+    
     .poster-layout{
   width:100%;
   max-width:1100px;
@@ -3253,8 +3250,6 @@ margin:0 auto;
   justify-content:center;
 
   text-align:center;
-
-  min-height:80vh;
     }
     .about-text,
 .intro-text,
