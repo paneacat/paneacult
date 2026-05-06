@@ -142,8 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 const buttons = document.querySelectorAll('.filter-btn');
-const cards = document.querySelectorAll('.archivio-card');
-
+const cardsArchivio = document.querySelectorAll('.archivio-card');
 let activeFilters = [];
 
 buttons.forEach(btn => {
@@ -166,7 +165,7 @@ buttons.forEach(btn => {
 });
 
 function filterCards() {
-  cards.forEach(card => {
+  cardsArchivio.forEach(card => {
     const tags = card.dataset.category.split(' ');
 
     if (activeFilters.length === 0) {
