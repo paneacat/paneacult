@@ -3240,3 +3240,34 @@ p {
 
   object-fit: cover;
   }
+
+
+
+.login-posters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+
+  flex-wrap: nowrap;
+
+  margin-top: 30px;
+}
+
+  .login-posters img {
+  width: 90px;
+  height: 140px;
+
+  object-fit: cover;
+
+  border-radius: 14px;
+
+  opacity: 0.45;
+  }
+.login-posters img:nth-child(2),
+.login-posters img:nth-child(3) {
+  transform: translateY(20px);
+}
+  
+  
+  
