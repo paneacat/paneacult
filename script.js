@@ -165,17 +165,14 @@ if(openFilters && filtersWrapper){
   });
 
 }
-const toggle = document.querySelector('.filters-toggle');
-const dropdown = document.querySelector('.filters-dropdown');
 
-toggle.addEventListener('click', () => {
-  dropdown.classList.toggle('active');
-});
+const filtersToggle = document.querySelector('.filters-toggle');
+const filtersWrapper = document.querySelector('.filters-wrapper');
 
-document.addEventListener('click', (e) => {
+if(filtersToggle && filtersWrapper){
 
-  if(!e.target.closest('.filters-wrapper')){
-    dropdown.classList.remove('active');
-  }
+  filtersToggle.addEventListener('click', () => {
+    filtersWrapper.classList.toggle('active');
+  });
 
-});
+}
