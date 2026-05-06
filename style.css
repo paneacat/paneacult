@@ -103,6 +103,14 @@ button {
   color: #0d2e40;
 }
 
+.film-poster{
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     padding-top: 13px;
