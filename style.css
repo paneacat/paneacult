@@ -3266,16 +3266,17 @@ margin:0 auto;
   max-width:100%;
   display:block;
     } 
+    
     .login-hero{
   min-height:auto;
   height:auto;
-
-  padding:40px 0 20px;
-
+  margin-top: 13px;
+  padding: 40px 0 20px;
   display:flex;
   align-items:flex-start;
   justify-content:center;
     }
+    
   .login-content{
   margin-top:40px;
   }  
