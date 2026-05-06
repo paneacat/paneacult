@@ -317,59 +317,66 @@ width:50%;
 	z-index: 10;
 }
 
+/* STAR WARS */
 .poster-1{
-  top:0;
-  left:80px;
-  transform:rotate(-8deg);
-	z-index: 2;
-}
-
-.poster-2{
-  top:120px;
-  right:40px;
-  transform:rotate(6deg);
-	z-index: 2;
-}
-
-.poster-3{
-  bottom:20px;
+  top:20px;
   left:40px;
-  transform:rotate(-5deg);
-	z-index: 2;
+  transform:rotate(-10deg);
+  z-index:4;
 }
 
+/* METROPOLIS */
+.poster-2{
+  top:40px;
+  right:10px;
+  transform:rotate(7deg);
+  z-index:2;
+}
+
+/* LEBOWSKI */
+.poster-3{
+  top:280px;
+  left:0px;
+  transform:rotate(-6deg);
+  z-index:5;
+}
+
+/* LA LA LAND */
 .poster-4{
-  bottom:0;
-  right:90px;
-  transform:rotate(8deg);
-	z-index: 2;
+  top:250px;
+  left:190px;
+  transform:rotate(4deg);
+  z-index:6;
 }
 
+/* IL PADRINO */
 .poster-5{
-  top: 40px;
-  right: 40px;
-  transform: rotate(8deg);
-	z-index: 2;
+  top:300px;
+  right:20px;
+  transform:rotate(9deg);
+  z-index:7;
 }
 
+/* BATMAN RETURNS */
 .poster-6{
-  top: 340px;
-  right: 120px;
-  transform: rotate(-6deg);
-	z-index: 2;
+  top:470px;
+  left:120px;
+  transform:rotate(-8deg);
+  z-index:1;
 }
 
+/* I TENENBAUM */
 .poster-7{
-  bottom: 80px;
-  right: 260px;
-  transform: rotate(5deg);
-	z-index: 2;
+  top:470px;
+  right:120px;
+  transform:rotate(6deg);
+  z-index:0;
 }
 
+/* TEMPI MODERNI */
 .poster-8{
-  bottom: 20px;
-  right: 20px;
-  transform: rotate(-9deg);
-	z-index: 2;
+  top:140px;
+  left:300px;
+  transform:rotate(-4deg);
+  z-index:3;
 }
-
