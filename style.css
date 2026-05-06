@@ -1440,7 +1440,7 @@ width: 100%;
 .loader {
   width: 60px;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: var(--gold);
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 10px;
@@ -2370,7 +2370,7 @@ p {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: var(--gold);
 }
 
 .modal-content {
@@ -2393,7 +2393,7 @@ p {
   border-radius: 50%;
   font-size: 28px;
   cursor: pointer;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  box-shadow: background: var(--gold);
 }
 /* ===== FILM CARD ===== */
 
