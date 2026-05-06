@@ -2281,18 +2281,20 @@ p {
 }
 
 .arrow.left {
-  left: -50px;
+  left: 10px;
 }
 
 .arrow.right {
-  right: -50px;
+  right: 10px;
 }
    .poster-img {
   width: 380px;   /* prima ~320 */
   height: 380px;
   object-fit: cover;
    } 
-
+.slider-wrapper {
+  position: relative;
+}
 .poster-text h1 {
   text-align: center;
 }
