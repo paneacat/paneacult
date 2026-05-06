@@ -202,6 +202,19 @@ margin: 0 auto 18px;
   padding:80px;
 }
 
+.hero-login::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background-image:
+  url("grain.png");
+
+  opacity:0.04;
+  pointer-events:none;
+}
+
+
 .hero-left{
   width:45%;
   z-index:2;
