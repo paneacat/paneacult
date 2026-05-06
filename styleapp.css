@@ -92,38 +92,38 @@ body {
 
   gap:14px;
 }
-
 .menu a{
   position:relative;
 
-  font-size:11px;
-
+  font-size:12px;
   letter-spacing:2px;
-
   text-transform:uppercase;
 
   color:white;
-
   opacity:0.8;
 
   transition:0.3s ease;
 }
 
-.menu a:hover,
+/* hover SOLO colore */
+.menu a:hover{
+  color:#fdc103;
+  opacity:1;
+}
+
+/* pagina attiva */
 .menu a.active{
   color:#fdc103;
   opacity:1;
 }
 
-/* LINEA */
-
+/* linea nascosta */
 .menu a::after{
   content:"";
 
   position:absolute;
-
   left:0;
-  bottom:-5px;
+  bottom:-6px;
 
   width:0%;
   height:1px;
@@ -133,9 +133,14 @@ body {
   transition:0.3s ease;
 }
 
-.menu a:hover::after,
+/* linea SOLO active */
 .menu a.active::after{
   width:100%;
+}
+.menu a:hover,
+.menu a.active{
+  color:#fdc103;
+  opacity:1;
 }
 
 /* =========================
