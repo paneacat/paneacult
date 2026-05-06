@@ -3280,6 +3280,19 @@ margin:0 auto;
   .login-content{
   margin-top:40px;
   }  
+    .poster-wall img{
+  width:170px;
+  height:auto;
+
+  object-fit:contain;
+
+  opacity:0.35;
+    }
+    .poster-wall{
+  display:flex;
+  gap:22px;
+  align-items:center;
+    } 
 }
 
 
