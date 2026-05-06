@@ -2509,9 +2509,9 @@ p {
 
 .film-card {
   background: rgba(255,255,255,0.03);
-  border-radius: 12px;
+  border-radius: 22px;
   overflow: hidden;
-  transition: 0.3s;
+  transition: 0.3s;  
   cursor: pointer;
 }
 
