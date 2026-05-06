@@ -2540,9 +2540,7 @@ p {
 }
  .hero-login{
     flex-direction:row;
-    align-items:center;
     justify-content:space-between;
-
     padding:180px 80px 80px;
   }
 
@@ -2649,12 +2647,7 @@ p {
   }   
 
   .hero-login{
-    min-height:100vh;
-
     display:flex;
-    align-items:center;
-      justify-content:center;
-
     gap:120px;
 
     padding:
