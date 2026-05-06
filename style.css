@@ -13,14 +13,6 @@ html {
 }
 
 
-:root {
-  --gold: #fdc103;
-  --bg: #0d2e40;
-  --text: #ffffff;
-  --muted: rgba(255,255,255,0.65);
-  --container-width: 1100px;
-
-}
 img {
   max-width: 100%;
   display: block;
