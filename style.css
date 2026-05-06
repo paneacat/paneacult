@@ -567,7 +567,6 @@ a:hover {
 
 }
 
-
 .archivio-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -601,7 +600,6 @@ a:hover {
   border-radius: 22px;
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.18);
-  filter: brightness(1.02) contrast(1.03);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0
 }
@@ -663,9 +661,6 @@ a:hover {
   letter-spacing: 1.2px;
   /* 👈 IMPORTANTISSIMO per non farlo brutto */
   font-size: 10px;
-  /* leggermente più piccolo */
-  color: #var(--muted);
-  ;
 }
 
 .hero-text h1 {
@@ -679,8 +674,6 @@ a:hover {
 
 .hero-text p {
   font-size: 16px;
-  color: #var(--muted);
-  ;
   line-height: 1.6;
   align-items: left;
 }
@@ -711,8 +704,6 @@ a:hover {
 
 .cta-sub {
   font-size: 14px;
-  color: #var(--muted);
-  ;
   line-height: 1.5;
   max-width: 260px;
   margin-top: 10px;
@@ -747,126 +738,6 @@ a:hover {
   }
 }
 
-
-/* ===== SLIDER ===== */
-
-.slider {
-  scroll-behavior: smooth;
-  padding-bottom: 10px;
-  display: flex;
-  gap: 14px;
-  padding-left: 20px;
-  padding-right: 0;
-  overflow-x: auto;
-  overflow-y: visible;
-  scroll-snap-type: x mandatory;
-  scroll-padding-left: 20px;
-  mask-image: none !important;
-  -webkit-mask-image: none !important;
-}
-
-/* ===== HEADER SLIDER (titolo + frecce) ===== */
-
-.slider-header {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.slider::-webkit-scrollbar {
-  display: none;
-}
-
-/* CARD */
-.slide-item {
-  scroll-snap-align: start;
-  min-width: 260px;
-  flex-shrink: 0;
-  flex: 0 0 58%;
-
-  opacity: 1;
-
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
-}
-
-/* contenitore card */
-.slide-card {
-  display: block;
-  border-radius: 18px;
-  /* 👉 più arrotondate */
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.03);
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-/* immagine */
-.slide-card img {
-  width: 100%;
-  object-fit: cover;
-  display: block;
-  height: 180px;
-  transition: transform 0.5s ease;
-}
-
-/* hover desktop */
-.slide-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4),
-    0 0 12px rgba(255, 191, 0, 0.08);
-  opacity: 1;
-  z-index: 2;
-}
-
-.slide-card:hover img {
-  transform: scale(1.06);
-}
-
-/* TESTO */
-.slide-info {
-  margin-top: 10px;
-}
-
-/* titolo */
-.slide-info h3 {
-  font-size: 18px;
-  /* 👉 più grande */
-  color: white;
-  font-weight: 400;
-  margin-bottom: 6px;
-}
-
-/* stelle */
-.slide-info p {
-  font-size: 13px;
-  /* 👉 più grandi */
-  color: var(--gold);
-  letter-spacing: 2px;
-}
-
-/* ===== CONTENITORE FRECCE ===== */
-
-.slider-arrows {
-  display: none;
-}
-
-.slider::after {
-  min-width: 20px;
-}
-
-.slide-item:first-child {
-  margin-left: 0;
-}
-
-.slide-item:last-child {
-  margin-right: 20px;
-}
-
-/* ===== SEZIONE ===== */
 
 /* ===== SECTIONS (CHI SONO) ===== */
 
@@ -913,8 +784,6 @@ a:hover {
 .sections .card p {
   font-size: 14px;
   line-height: 1.6;
-  color: #var(--muted);
-  ;
   max-width: 260px;
 }
 
@@ -1106,14 +975,6 @@ a:hover {
 /* sottotitolo */
 .subtitle {
   color: rgba(255, 255, 255, 0.7);
-}
-
-/* meta info */
-.meta,
-.series,
-.genre-bar {
-  color: var(--muted);
-  ;
 }
 
 /* testo recensione */
@@ -1408,8 +1269,6 @@ a:hover {
 /* sottotesto */
 .newsletter-sub {
   font-size: 15px;
-  color: #var(--muted);
-  ;
   margin-bottom: 28px;
   line-height: 1.5;
 }
@@ -1592,34 +1451,6 @@ h4 {
 p {
   font-size: 16px;
   line-height: 1.6;
-}
-
-
-.highlight {
-  color: var(--giallo);
-  font-weight: 500;
-}
-
-.highlight,
-.active,
-.menu a:hover {
-  color: var(--gold);
-}
-
-.hero-left {
-  position: relative;
-  z-index: 2;
-
-  width: 100%;
-}
-
-.hero-right {
-  z-index: 0;
-  display: grid;
-  gap: 14px;
-  padding: 140px 20px 40px;
-  opacity: 0.12;
-  pointer-events: none;
 }
 
 /* animazione singoli elementi (opzionale ma bello) */
