@@ -782,7 +782,6 @@ margin: 0;
 .hero-cta a {
   color: var(--gold);
   font-weight: 500;
-  text-decoration: underline;
 }
 .cta-label {
     justify-content: center;
