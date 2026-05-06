@@ -15,7 +15,18 @@ let search = ""
 
 // ===== UX =====
 async function signUp(email, password) {
-  return await supabaseClient.auth.signUp({ email, password })
+
+  return await supabaseClient.auth.signUp({
+
+    email,
+    password,
+
+    options: {
+      emailRedirectTo:
+        "https://paneacat.github.io/paneacult/welcome.html"
+    }
+
+  })
 }
 
 async function signIn(email, password) {
