@@ -102,6 +102,8 @@ body {
 
 .menu a.active{
   color:#fdc103;
+  opacity:1;
+  width:100%;
 }
 
 .menu a::after{
@@ -120,41 +122,6 @@ body {
   transition:0.3s ease;
 }
 
-.menu a.active::after{
-  width:100%;
-}
-
-/* pagina attiva */
-.menu a.active{
-  color:#fdc103;
-  opacity:1;
-}
-
-/* linea nascosta */
-.menu a::after{
-  content:"";
-
-  position:absolute;
-  left:0;
-  bottom:-6px;
-
-  width:0%;
-  height:1px;
-
-  background:#fdc103;
-
-  transition:0.3s ease;
-}
-
-/* linea SOLO active */
-.menu a.active::after{
-  width:100%;
-}
-.menu a:hover,
-.menu a.active{
-  color:#fdc103;
-  opacity:1;
-}
 
 /* =========================
    MOBILE = DEFAULT
@@ -341,10 +308,6 @@ top:220px;
     max-width:500px;
   }
 
-  .header-inner{
-    flex-direction:row;
-    justify-content:space-between;
-  }
 
   .menu{
     gap:26px;
@@ -360,9 +323,7 @@ top:220px;
 
   .header-inner{
     flex-direction:row;
-
     justify-content:space-between;
-
     padding:34px 40px;
   }
 
