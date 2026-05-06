@@ -2605,11 +2605,6 @@ p {
       letter-spacing: 1.5px;
     }
 
-    .hero-login {
-      display: flex;
-      margin: 0 auto;
-    }
-
     .hero-left {
       width: 42%;
 
@@ -3137,8 +3132,6 @@ p {
   object-fit:contain;
 }
   }
-
-
   
   .film-author,
   .film-rating {
