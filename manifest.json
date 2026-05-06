@@ -1,19 +1,20 @@
 {
   "name": "paneacult",
   "short_name": "paneacult",
-  "start_url": "/index.html",
+  "start_url": "/paneacult/",
   "display": "standalone",
-  "background_color": "#fcc10e",
-  "theme_color": "#fcc10e",
+  "background_color": "#0d2e40",
+  "theme_color": "#fdc103",
   "icons": [
-  {
-    "src": "img/icon-192.png",
-    "sizes": "192x192",
-    "type": "image/png"
-  },
-  {
-    "src": "img/icon-512.png",
-    "sizes": "512x512",
-    "type": "image/png"
-  }
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ]
+}
