@@ -2621,6 +2621,35 @@ p {
 }
 }
 
+@media (max-width:768px){
+
+  .slider{
+    gap:12px;
+
+    padding-left:24px;
+    padding-right:24px;
+  }
+
+  .slide-item{
+    flex:0 0 78%;
+    min-width:78%;
+  }
+
+  .slide-card img{
+    height:260px;
+
+    border-radius:22px;
+  }
+
+  .slide-info h3{
+    font-size:18px;
+
+    line-height:1.15;
+
+    margin-top:12px;
+  }
+
+}
 .archivio-card,
 .card-film {
   border-radius: 22px;
