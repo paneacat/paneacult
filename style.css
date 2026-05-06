@@ -593,7 +593,6 @@ margin: 0;
 /* CONTENITORE */
 .filters {
   display: flex;
-  flex-direction: column;
   gap: 12px;
   margin: 60px auto 40px;
   padding: 0 20px;
@@ -2630,6 +2629,9 @@ p {
 
     margin-top:12px;
   }
+    .filters {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width:1024px){
