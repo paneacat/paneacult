@@ -2995,23 +2995,7 @@ p {
 
   @media (min-width:1024px) {
 
-    .hero-right {
-      position: absolute;
-      inset: 0;
-
-      display: grid;
-      gap: 26px;
-
-      justify-content: center;
-      align-content: center;
-
-      opacity: 0.22;
-
-      z-index: 1;
-
-      pointer-events: none;
-    }
-
+    
     .hero-right {
       position: absolute;
       inset: 0;
@@ -3112,8 +3096,6 @@ p {
       margin: 0 auto;
     }
 
-    /* BLOCCO TESTO */
-
     .hero-copy {
       max-width: 420px;
     }
@@ -3132,19 +3114,7 @@ p {
       max-width: 420px;
     }
 
-    /* LOGIN */
-
-    .login-card {
-      width: 360px;
-
-      flex-shrink: 0;
-    }
-
     .poster-layout {
-      align-items: center;
-      justify-content: center;
-
-      text-align: center;
       margin: 0 auto;
       padding: 120px 20px 80px;
     }
@@ -3184,28 +3154,6 @@ p {
       opacity: 0.9;
     }
 
-
-    .login-hero {
-
-      display: flex;
-    }
-
-
-    .login-content {
-      gap: 70px;
-    }
-
-
-    .poster-layout {
-      width: 100%;
-      max-width: 1100px;
-
-      align-items: center;
-      justify-content: center;
-
-      text-align: center;
-    }
-
     .about-text,
     .intro-text,
     .poster-signature,
@@ -3220,19 +3168,6 @@ p {
       display: block;
     }
 
-    .login-hero {
-      min-height: auto;
-      height: auto;
-      margin-top: 13px;
-      padding: 40px 0 20px;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-    }
-
-    .login-content {
-      margin-top: 40px;
-    }
 
     .poster-wall img {
       width: 170px;
@@ -3248,46 +3183,12 @@ p {
       gap: 22px;
       align-items: center;
     }
-
-    .login-hero {
-      padding-top: 80px;
-    }
-
   }
 
   
 
   @media (min-width: 1024px) {
-
-  
-.login-hero{
-  min-height: 70vh;
-
-  display:flex;
-  justify-content:center;
-  align-items: center;
-
-  padding:120px 80px 80px;
-}
-
-.login-layout{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  gap:70px;
-
-  width:100%;
-  max-width:1200px;
-
-  margin:0 auto;
-}
-    .login-text{
-  max-width:420px;
-    }
-    .login-box{
-  width:340px;
-    }
+    
     .about-hero{
   min-height:100vh;
 
@@ -3406,99 +3307,92 @@ p {
     margin-top: 70px;
   }
 
+  /* ===== FILTRI ===== */
+
 .filters-wrapper{
-  position:relative;
+  width:100%;
+  max-width:1100px;
 
-  display:flex;
-  justify-content:center;
+  margin:40px auto 50px;
 
-  margin:50px 0 70px;
+  padding:0 40px;
 }
 
+/* bottone */
 .filters-toggle{
   display:flex;
   align-items:center;
   gap:10px;
 
-  padding:12px 24px;
+  color:var(--gold);
 
-  border-radius:999px;
-
-  border:1px solid #d4a017;
-
-  background:transparent;
-
-  color:#d4a017;
-
-  font-family:'Inter', sans-serif;
   font-size:14px;
-  letter-spacing:.08em;
+  letter-spacing:1px;
+  text-transform:uppercase;
 
   cursor:pointer;
 
-  transition:.3s;
+  margin-bottom:20px;
 }
 
-.filters-toggle:hover{
-  background:#d4a017;
-  color:#082032;
-}
-
-.filters-dropdown{
-  position:absolute;
-
-  top:70px;
-
-  width:520px;
-
-  display:none;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:12px;
-
-  padding:24px;
-
-  border-radius:28px;
-
-  background:rgba(255,255,255,.08);
-
-  backdrop-filter:blur(18px);
-
-  border:1px solid rgba(255,255,255,.15);
-
-  box-shadow:0 10px 40px rgba(0,0,0,.2);
-
-  z-index:100;
-}
-
-.filters-dropdown.active{
+/* pannello filtri */
+.filters-panel{
   display:flex;
+  flex-wrap:wrap;
+
+  gap:12px;
 }
 
-.filter,
-.filter-reset{
+/* chip */
+.filter-btn{
   padding:10px 18px;
 
+  border:1px solid var(--gold);
   border-radius:999px;
 
-  border:1px solid #d4a017;
+  color:var(--gold);
 
-  background:transparent;
+  font-size:15px;
 
-  color:#d4a017;
-
-  cursor:pointer;
-
-  transition:.3s;
-
-  font-size:14px;
+  transition:0.25s ease;
 }
 
-.filter:hover,
-.filter.active,
-.filter-reset:hover{
-  background:#d4a017;
-  color:#082032;
+/* hover */
+.filter-btn:hover{
+  background:var(--gold);
+  color:var(--bg);
+}
+
+/* attivo */
+.filter-btn.active{
+  background:var(--gold);
+  color:var(--bg);
+}
+
+@media (max-width: 768px){
+
+  .filters-wrapper{
+    padding:0 20px;
+    margin-top:30px;
+  }
+
+  .filters-panel{
+    display:none;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+  }
+
+  .filters-panel.open{
+    display:flex;
+  }
+
+  .filter-btn{
+    width:100%;
+    text-align:left;
+  }
+
 }
 
 
