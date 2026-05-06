@@ -3295,7 +3295,48 @@ margin:0 auto;
     } 
 }
 
+/* MOBILE */
+@media (max-width: 768px){
 
+  .mobile-filters-toggle{
+    display:flex;
+    justify-content:center;
+    margin-bottom:24px;
+  }
+
+  .mobile-filters-toggle button{
+    background:transparent;
+    border:1px solid #d4a017;
+    color:#d4a017;
+
+    padding:12px 24px;
+    border-radius:999px;
+
+    font-size:15px;
+    font-family:'Inter', sans-serif;
+  }
+
+  .filters-wrapper{
+    max-height:0;
+    overflow:hidden;
+
+    opacity:0;
+
+    transition:0.4s ease;
+  }
+
+  .filters-wrapper.open{
+    max-height:500px;
+    opacity:1;
+
+    margin-bottom:30px;
+  }
+
+  .filters{
+    padding-top:10px;
+  }
+
+}
 .film-author,
 .film-rating{
   display:none;
