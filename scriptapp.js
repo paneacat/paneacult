@@ -512,5 +512,21 @@ window.addEventListener("load", async () => {
   }
 })
 
+ // ===============================
+  // ===== CREDITS
+  // ===============================
+  const credits = document.querySelector('.credits');
+
+  if (credits) {
+    const observerCredits = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          credits.classList.add('show');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observerCredits.observe(credits);
+  }
 // ===== AVVIO =====
 loadFilms()
