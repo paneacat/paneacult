@@ -279,11 +279,10 @@ window.register = async function () {
 
   } else {
 
-    alert("Registrazione completata 🎬")
+    alert("Controlla la mail per confermare l'account 📩")
 
   }
 }
-
 // ===== SUGGESTIONS =====
 async function fetchSuggestions(query) {
 
@@ -431,29 +430,6 @@ window.addEventListener("load", async () => {
     loadFilms()
   }
 })
-
-window.register = async function () {
-
-  const email = document.getElementById("email").value
-  const password = document.getElementById("password").value
-
-  if (!email || !password) {
-    alert("Inserisci email e password")
-    return
-  }
-
-  const { error } = await signUp(email, password)
-
-  if (error) {
-
-    alert(error.message)
-
-  } else {
-
-    alert("Controlla la mail per confermare l'account 📩")
-
-  }
-}
 
 // ===== AVVIO =====
 loadFilms()
