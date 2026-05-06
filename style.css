@@ -2608,11 +2608,6 @@ p {
     margin-top: 12px;
   }
 
-  .filters {
-    display: flex;
-    flex-direction: column;
-  }
-
   @media (min-width:1024px) {
 
     .menu a {
@@ -3312,36 +3307,6 @@ p {
   .filter-btn{
     width:100%;
     text-align:left;
-  }
-
-}
-
-
-@media (max-width: 1420px){
-
-  .login-layout{
-    flex-direction:column;
-
-    gap:40px;
-
-    text-align:center;
-  }
-
-  .login-text{
-    max-width:100%;
-  }
-
-  .login-text h1{
-    font-size:3.8rem;
-  }
-
-  .login-text p{
-    max-width:100%;
-  }
-
-  .login-box{
-    width:100%;
-    max-width:360px;
   }
 
 }
