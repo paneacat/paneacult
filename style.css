@@ -37,6 +37,51 @@ button {
 
 }
 
+.add-modal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.add-modal.active{
+  display: flex;
+}
+
+.modal-content{
+  width: 90%;
+  max-width: 420px;
+  background: #0d2e40;
+  border: 1px solid #fdc103;
+  border-radius: 24px;
+  padding: 30px;
+}
+
+.modal-content input{
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: white;
+}
+
+.modal-content button{
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #fdc103;
+  color: #0d2e40;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     padding-top: 13px;
