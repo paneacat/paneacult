@@ -143,13 +143,20 @@ body {
 ========================= */
 
 .hero-login{
+  max-width:1100px;
+
+  margin:0 auto;
+
+  padding:
+    180px
+    40px
+    100px;
+
   display:flex;
-  flex-direction:column;
+  justify-content:space-between;
+  align-items:flex-start;
 
-  padding:140px 24px 80px;
-  gap:50px;
-
-  overflow:hidden;
+  gap:80px;
 }
 
 .hero-left{
@@ -167,9 +174,8 @@ body {
 }
 
 .hero-title{
-  font-size:58px;
   line-height:0.92;
-
+    font-size:64px;
   max-width:320px;
 }
 
