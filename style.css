@@ -2719,7 +2719,18 @@ p {
 
     height:760px;
   }
+.hero-title{
+    font-size:92px;
+    line-height:0.92;
+  }
 
+  .cta-text{
+    font-size:22px;
+
+    max-width:540px;
+
+    line-height:1.5;
+  }
 }
 
 .archivio-card,
