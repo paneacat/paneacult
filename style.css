@@ -212,9 +212,10 @@ body {
 }
 
 .poster-text {
-  max-width: 90%;
   margin: 0 auto;
   transform: none !important;
+    max-width: 520px;
+  margin-right: auto;
 }
 
 .poster-big-title {
@@ -223,10 +224,6 @@ body {
   text-size: 22px;
 }
 
-.poster-sub,
-.about-text {
-  text-align: center;
-}
 
 .firma-recensione {
   margin-top: 40px;
@@ -263,7 +260,11 @@ body {
   line-height: 1.6;
   margin-top: 10px;
 }
-
+.about-text,
+.poster-text {
+  text-align: left;
+  align-items: flex-start;
+}
 .about-text::first-line {
   opacity: 0.9;
 }
