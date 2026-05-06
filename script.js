@@ -174,9 +174,7 @@ toggle.addEventListener('click', () => {
 
 document.addEventListener('click', (e) => {
 
-  if (
-    !e.target.closest('.filters-wrapper')
-  ) {
+  if(!e.target.closest('.filters-wrapper')){
     dropdown.classList.remove('active');
   }
 
