@@ -2663,29 +2663,24 @@ p {
     }
 
   .poster-1{
-  top:20px;
-  left:40px;
+  top:180px;
+  left:18%;
 }
 
 .poster-2{
-  top:40px;
-  right:40px;
+  top:170px;
+  right:18%;
 }
 
 .poster-3{
-  top:300px;
-  left:0;
+  bottom:80px;
+  left:14%;
 }
 
 .poster-4{
-  top:260px;
-  left:240px;
+  bottom:60px;
+  right:14%;
 }
-
-.poster-5{
-  top:320px;
-  right:10px;
-}  
 
   .hero-login{
     min-height:100vh;
@@ -2731,6 +2726,56 @@ p {
 
     line-height:1.5;
   }
+
+  .hero-login{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:80px 40px 40px;
+
+    position:relative;
+    overflow:hidden;
+  }
+.hero-left{
+    position:relative;
+    z-index:5;
+
+    width:100%;
+    max-width:620px;
+
+    text-align:left;
+
+    margin:0 auto;
+
+    padding:60px;
+
+    border-radius:32px;
+
+    background:
+      rgba(8,25,36,0.35);
+
+    backdrop-filter:blur(8px);
+}
+.hero-right{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+}
+    .poster{
+    width:160px
+    opacity:0.32;
+    filter:
+      brightness(0.9)
+      contrast(1.1);
+    z-index:1;
+    }   
 }
 
 .archivio-card,
