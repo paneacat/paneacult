@@ -199,27 +199,97 @@ window.addFilm = async function () {
 }
 
 // ===== AZIONI =====
-window.deleteFilm = function(index) {
+window.deleteFilm = async function(index) {
+
   vibrate()
+
+  const film = films[index]
+
+  const { error } = await supabaseClient
+    .from("films")
+    .delete()
+    .eq("id", film.id)
+
+  if (error) {
+    console.log(error)
+    return
+  }
+
   films.splice(index, 1)
+
   renderFilms()
 }
 
-window.setRating = function(index, rating) {
+window.setRating = async function(index, rating) {
+
   vibrate()
+
+  const film = films[index]
+
+  const { error } = await supabaseClient
+    .from("films")
+    .update({
+      rating: rating
+    })
+    .eq("id", film.id)
+
+  if (error) {
+    console.log(error)
+    return
+  }
+
   films[index].rating = rating
+
   renderFilms()
 }
 
-window.toggleWatched = function(index) {
+window.toggleWatched = async function(index) {
+
   vibrate()
-  films[index].watched = !films[index].watched
+
+  const film = films[index]
+
+  const nuovoValore = !film.watched
+
+  const { error } = await supabaseClient
+    .from("films")
+    .update({
+      watched: nuovoValore
+    })
+    .eq("id", film.id)
+
+  if (error) {
+    console.log(error)
+    return
+  }
+
+  films[index].watched = nuovoValore
+
   renderFilms()
 }
 
-window.toggleFavorite = function(index) {
+window.toggleFavorite = async function(index) {
+
   vibrate()
-  films[index].favorite = !films[index].favorite
+
+  const film = films[index]
+
+  const nuovoValore = !film.favorite
+
+  const { error } = await supabaseClient
+    .from("films")
+    .update({
+      favorite: nuovoValore
+    })
+    .eq("id", film.id)
+
+  if (error) {
+    console.log(error)
+    return
+  }
+
+  films[index].favorite = nuovoValore
+
   renderFilms()
 }
 
