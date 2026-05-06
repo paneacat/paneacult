@@ -3268,6 +3268,34 @@ margin:0 auto;
     .login-content{
   gap:70px;
     }
+    .poster-layout{
+  width:100%;
+  max-width:1100px;
+
+  margin:0 auto;
+
+  display:flex;
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  min-height:80vh;
+    }
+    .about-text,
+.intro-text,
+.poster-signature,
+.about-image{
+  margin-left:auto;
+  margin-right:auto;
+}
+    .about-image img{
+  width:320px;
+  max-width:100%;
+  display:block;
+    } 
 }
 
 
