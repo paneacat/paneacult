@@ -171,3 +171,96 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+// ===============================
+// ===== APP FILM (LOGIN PAGE)
+// ===============================
+
+let films = [
+  {
+    id: "1",
+    title: "Diamanti grezzi",
+    poster: "https://image.tmdb.org/t/p/w500/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg",
+    rating: 4
+  },
+  {
+    id: "2",
+    title: "Il grande dittatore",
+    poster: "https://image.tmdb.org/t/p/w500/9uSg7JQq2z8S9oCz6YtYyqS9K2k.jpg",
+    rating: 5
+  }
+];
+
+// render film
+function renderFilms(listFilms = films) {
+  const list = document.getElementById("list");
+  if (!list) return;
+
+  list.innerHTML = listFilms.map(film => `
+    <div class="film-card">
+
+      <img src="${film.poster}" />
+
+      <div class="film-info">
+        <h3>${film.title}</h3>
+
+        <div class="stars">
+          ${[1,2,3,4,5].map(n => `
+            <span onclick="rateFilm('${film.id}', ${n})">
+              ${n <= film.rating ? "★" : "☆"}
+            </span>
+          `).join("")}
+        </div>
+      </div>
+
+    </div>
+  `).join("");
+}
+
+// rating
+function rateFilm(id, rating) {
+  films = films.map(f =>
+    f.id === id ? { ...f, rating } : f
+  );
+
+  renderFilms();
+}
+
+// search
+function setSearch(value) {
+  const filtered = films.filter(f =>
+    f.title.toLowerCase().includes(value.toLowerCase())
+  );
+
+  renderFilms(filtered);
+}
+
+// modal
+function openModal() {
+  document.getElementById("addModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("addModal").style.display = "none";
+}
+
+// aggiungi film
+function addFilm() {
+  const title = document.getElementById("title").value;
+
+  if (!title) return;
+
+  films.push({
+    id: Date.now().toString(),
+    title,
+    poster: "https://via.placeholder.com/300x450",
+    rating: 0
+  });
+
+  closeModal();
+  renderFilms();
+}
+
+// primo render
+document.addEventListener("DOMContentLoaded", () => {
+  renderFilms();
+});
