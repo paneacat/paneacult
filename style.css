@@ -2469,11 +2469,6 @@ p {
     transition: color 0.3s ease;
   }
 
-  .menu a:hover,
-  .menu a.active {
-    color: #fdc103;
-  }
-
   .menu a::after {
     content: "";
     position: absolute;
@@ -2483,11 +2478,6 @@ p {
     height: 2px;
     background: #fdc103;
     transition: width 0.3s ease;
-  }
-
-  .menu a:hover::after,
-  .menu a.active::after {
-    width: 100%;
   }
 
   .header-inner {
@@ -2687,26 +2677,6 @@ p {
     transition: color 0.3s ease;
   }
 
-  .menu a:hover,
-  .menu a.active {
-    color: #fdc103;
-  }
-
-  .menu a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background: #fdc103;
-    transition: width 0.3s ease;
-  }
-
-  .menu a:hover::after,
-  .menu a.active::after {
-    width: 100%;
-  }
 
   .cta-text {
     max-width: 340px;
@@ -2715,7 +2685,7 @@ p {
 
     line-height: 1.45;
 
-    margin-top: 18px;
+    margin-top: 18x;
   }
 
 
