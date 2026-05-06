@@ -165,3 +165,19 @@ if(openFilters && filtersWrapper){
   });
 
 }
+const toggle = document.querySelector('.filters-toggle');
+const dropdown = document.querySelector('.filters-dropdown');
+
+toggle.addEventListener('click', () => {
+  dropdown.classList.toggle('active');
+});
+
+document.addEventListener('click', (e) => {
+
+  if (
+    !e.target.closest('.filters-wrapper')
+  ) {
+    dropdown.classList.remove('active');
+  }
+
+});
