@@ -3610,3 +3610,26 @@ p {
   }
 
 }
+/* PANEL CHIUSO */
+
+.filters-panel{
+  max-height:0;
+
+  overflow:hidden;
+
+  opacity:0;
+
+  transition:
+    max-height .35s ease,
+    opacity .25s ease;
+}
+
+/* PANEL APERTO */
+
+.filters-wrapper.active .filters-panel{
+  max-height:500px;
+
+  opacity:1;
+
+  margin-top:10px;
+}
