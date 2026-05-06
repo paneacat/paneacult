@@ -2660,6 +2660,43 @@ p {
 
 }
 
+@media (min-width:1024px){
+
+  .hero-login{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:120px;
+
+    padding:
+      120px
+      100px
+      80px;
+
+    max-width:1600px;
+
+    margin:0 auto;
+  }
+
+  .hero-left{
+    width:42%;
+
+    max-width:620px;
+  }
+
+  .hero-right{
+    position:relative;
+
+    width:58%;
+
+    height:760px;
+  }
+
+}
+
 .archivio-card,
 .card-film {
   border-radius: 22px;
