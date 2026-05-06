@@ -3399,9 +3399,17 @@ margin:0 auto;
   }
 
   .credits{
-    margin-top:70px;
-  }
+    margin-top:70px;  
 }
+}
+@media (min-width: 1024px){
+  
+  .filters-label{
+    display:none;
+  }
+
+}
+    
 .film-author,
 .film-rating{
   display:none;
