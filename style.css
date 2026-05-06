@@ -3441,7 +3441,34 @@ p {
     .filters-label {
       display: none;
     }
+.login-hero{
+  min-height: 70vh;
 
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:120px 80px 80px;
+}
+
+.login-layout{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:70px;
+
+  width:100%;
+  max-width:1200px;
+
+  margin:0 auto;
+}
+    .login-text{
+  max-width:420px;
+    }
+    .login-box{
+  width:340px;
+    }
   }
 
   .film-author,
