@@ -226,6 +226,8 @@ margin: 0 auto 18px;
   line-height:1.7;
   opacity:0.85;
   max-width:500px;
+	margin-top:0;
+  margin-bottom:18px
 }
 
 .login-card{
@@ -298,12 +300,22 @@ margin: 0 auto 18px;
   width:45%;
   height:700px;
 }
+.hero-left{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
 
+  gap:18px;
+
+  padding-top:40px;
+}
 	.hero-title {
   font-family:'Playfair Display', serif;
   font-size:72px;
-  line-height:0.95;
   max-width:500px;
+		margin-top:0;
+  margin-bottom:10px;
+  line-height:0.95;
 	}
 	
 .poster{
