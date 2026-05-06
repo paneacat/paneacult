@@ -4,14 +4,14 @@
 
 /* ===== BASE ===== */
 body {
-  color: #eaeaea;
   margin: 0;
   padding: 0;
   padding-bottom: 90px; /* evita overlap con menu */
-	font-family: 'Inter', sans-serif;
-	padding-top: 13px;
-	background: #0f2a33;
-}
+    font-family: 'Inter', sans-serif;
+    padding-top: 13px;
+  background: var(--bg);
+    color: #ffffff;
+	}
 
 .home-intro {
 	padding: 20px;
