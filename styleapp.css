@@ -454,9 +454,35 @@ width: 100%;
     gap:26px;
   }
 
-  .menu a{
-    font-size:12px;
-  }
+  .menu a {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: #fdc103;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #fdc103;
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after,
+.menu a.active::after {
+  width: 100%;
+}
 
   .poster{
     width:240px;
