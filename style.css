@@ -81,6 +81,27 @@ button {
   font-weight: bold;
   cursor: pointer;
 }
+#suggestions{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.suggestion{
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.suggestion:hover{
+  background: #fdc103;
+  color: #0d2e40;
+}
 
 body {
     font-family: 'Inter', sans-serif;
