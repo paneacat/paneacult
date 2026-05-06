@@ -342,5 +342,27 @@ margin: 0 auto 18px;
   transform:rotate(8deg);
 }
 
+.poster-5{
+  top: 40px;
+  right: 40px;
+  transform: rotate(8deg);
+}
 
+.poster-6{
+  top: 340px;
+  right: 120px;
+  transform: rotate(-6deg);
+}
+
+.poster-7{
+  bottom: 80px;
+  right: 260px;
+  transform: rotate(5deg);
+}
+
+.poster-8{
+  bottom: 20px;
+  right: 20px;
+  transform: rotate(-9deg);
+}
 
