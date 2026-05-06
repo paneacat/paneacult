@@ -779,14 +779,14 @@ padding-left: 20px;
 .slide-item {
     scroll-snap-align: start;
     min-width: 260px;
-  flex-shrink: 0;
-flex: 0 0 58%;
-    opacity: 0.6;
-  transition: opacity 0.3s;
-}
+    flex-shrink: 0;
+    flex: 0 0 58%;
 
-.slide-item:first-child {
-  opacity: 1;
+    opacity: 1;
+
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
 }
 
 /* contenitore card */
