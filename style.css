@@ -3205,5 +3205,10 @@ margin:0 auto;
 
     flex-shrink:0;
   }
+}
 
+
+.film-author,
+.film-rating{
+  display:none;
 }
