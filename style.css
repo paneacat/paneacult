@@ -1659,12 +1659,6 @@ p {
 
  .hero-login{
     position:relative;
-
-    padding:
-      120px
-      32px
-      80px;
-
     overflow:hidden;
   }
 
@@ -2541,7 +2535,6 @@ p {
  .hero-login{
     flex-direction:row;
     justify-content:space-between;
-    padding:180px 80px 80px;
   }
 
   .hero-left{
@@ -2648,15 +2641,6 @@ p {
 
   .hero-login{
     display:flex;
-    gap:120px;
-
-    padding:
-      120px
-      100px
-      80px;
-
-    max-width:1600px;
-
     margin:0 auto;
   }
 
@@ -2687,13 +2671,9 @@ p {
   }
 
   .hero-login{
-    min-height:100vh;
 
     display:flex;
-    justify-content:center;
     align-items:center;
-
-    padding:80px 40px 40px;
 
     position:relative;
     overflow:hidden;
@@ -3250,11 +3230,8 @@ margin:0 auto;
   opacity:0.9;
 }
     .login-hero{
-  min-height:100vh;
 
   display:flex;
-  justify-content:center;
-  align-items:center;
 
   transform:translateY(-90px);
     }
