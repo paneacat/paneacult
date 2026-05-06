@@ -59,7 +59,6 @@ body {
 
 .login-cta a {
     color: #fdc103;
-    text-underline-offset: 4px;
  /* 🔥 più elegante */
     transition: opacity 0.2s ease;
     margin-top: 18px !important;
