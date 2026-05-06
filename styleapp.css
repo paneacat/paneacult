@@ -71,36 +71,75 @@ body {
   padding: 0 20px;
 }
 
+.logo-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  gap: 6px;
+}
+
+.logo {
+margin: 0;
+    font-family: 'Playfair Display', serif;
+        font-size: 42px;
+        text-align: center;
+        color: #fdc103;
+}
+
+.logo-subtitle {
+    font-size: 11px;
+    margin-top: 4px;
+    text-align: left;
+    position: static;
+    opacity: 0.7;
+    letter-spacing: 3px;
+    color: white;
+}
+
 .menu {
-	margin-right: 10px;
-	display: flex;
-  gap: 30px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* mobile */
+    flex-wrap: wrap;
+    gap: 10px; /* 👈 QUESTO ; mancava */
+    margin-top: 6px;
+    font-size: 15px;
 }
 
 .menu a {
-	position: relative;
-	font-size: 13px;
-	letter-spacing: 2px;
-	opacity: 0.8;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
 }
 
+.menu a:hover,
 .menu a.active {
-	color: var(--gold);
+  color: var(--gold);
 }
 
 .menu a::after {
-	content: "";
-	position: absolute;
-	bottom: -4px;
-	left: 0;
-	width: 0;
-	height: 1px;
-	background: var(--gold);
-	transition: 0.3s;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
 }
 
+.menu a:hover::after,
+.menu a.active::after {
+  width: 100%;
+}
+
+
 .menu a:hover::after, .menu a.active::after {
-	width: 100%;
+    width: 100%;
 }
 
 .home-cinema .container {
