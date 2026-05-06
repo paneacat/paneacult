@@ -40,7 +40,7 @@ button {
 body {
     font-family: 'Inter', sans-serif;
     padding-top: 13px;
-  background: var(--text);
+  background: var(--bg);
     color: #ffffff;
 
 }
