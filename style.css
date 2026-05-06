@@ -2476,3 +2476,8 @@ p {
 }
 }
 
+.archivio-card,
+.card-film {
+  border-radius: 22px;
+  overflow: hidden;
+}
