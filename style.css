@@ -29,9 +29,9 @@ button {
 }
 
 :root {
-    --bg: #0b1f26;
-    --gold: #ffbf00;
-    --text: #eaeaea;
+    --giallo: #fdc103;
+  --blu: #0d2e40;
+  --testo: #ffffff;
     --muted: #aaa;
     --container-width: 1100px;
 }
@@ -1512,6 +1512,40 @@ width: 100%;
   color: #ffffff;
   margin-bottom: 15px;
 }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  background-color: #0d2e40;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  color: #fdc103;
+}
+h1 {
+  font-size: 56px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+.highlight {
+  color: var(--giallo);
+  font-weight: 500;
+}
+
+
+
+
 /* animazione singoli elementi (opzionale ma bello) */
 .fade {
     opacity: 0;
@@ -2236,3 +2270,9 @@ width: 100%;
   width: 140px;
 }
 }
+
+
+
+
+
+
