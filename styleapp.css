@@ -11,579 +11,176 @@
   --container-width: 1100px;
 }
 
-
-/* ===== BASE ===== */
-body {
-  margin: 0;
-  padding: 0;
-  padding-bottom: 90px; /* evita overlap con menu */
-    font-family: 'Inter', sans-serif;
-    padding-top: 13px;
-  background: var(--bg);
-    color: #ffffff;
-	}
-
-.home-intro {
-	padding: 20px;
-	margin-top: 10px;
-}
-
-.home-intro h2 {
-	font-family: 'Playfair Display', serif;
-	font-size: 22px;
-	color: var(--text);
-}
-
-.home-intro p {
-	font-size: 12px;
-	letter-spacing: 2px;
-	color: var(--gold);
-	margin-top: 6px;
-}
-
-.home-cinema {
-	margin-top: 13px;
-	position: relative;
-}
-
-.section-label {
-	margin-top: 15px;
-	padding-left: 0;
-	font-size: 15px;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	margin-bottom: 5px;
-	margin-left: 0;
-	color: var(--gold);
-	opacity: 0.7;
-}
-
-
-.logo-block {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  gap: 6px;
-}
-
-.logo {
-margin: 0;
-    font-family: 'Playfair Display', serif;
-        font-size: 42px;
-        text-align: center;
-}
-
-.logo-subtitle {
-    font-size: 11px;
-    margin-top: 4px;
-    text-align: left;
-    position: static;
-    opacity: 0.7;
-    letter-spacing: 3px;
-    color: white;
-}
-
-.menu {
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* mobile */
-    flex-wrap: wrap;
-    gap: 10px; /* 👈 QUESTO ; mancava */
-    margin-top: 6px;
-    font-size: 15px;
-}
-
-.menu a {
-  font-family: 'Inter', sans-serif;
-  color: white;
-  text-decoration: none;
-  position: relative;
-  padding-bottom: 4px;
-  transition: color 0.3s ease;
-}
-
-.menu a:hover,
-.menu a.active {
-  color: var(--gold);
-}
-
-.menu a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--gold);
-  transition: width 0.3s ease;
-}
-
-.menu a:hover::after,
-.menu a.active::after {
-  width: 100%;
-}
-
-
-.home-cinema .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 40px; /* 👉 questo è il vero segreto */
-}
-
-.header {
-  position:absolute;
-  width:100%;
-  top:0;
-  left:0;
-  z-index:20;
-  background:transparent;
-  border:none;
-}
-
-.header-inner {
-	margin: 0 auto;
-	display: flex;
-	align-items: center;
-	max-width: 1100px;
-	padding: 20px 20px;
-}
-
-/* ===== TITOLO ===== */
-
-h1 {
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(12px);
-  padding: 18px;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.2;
-  z-index: 20;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  font-family: 'Playfair Display', serif;
-font-size: 55px;
-color: #ffbf00;
-margin: 0 auto 18px;
-  margin-bottom: 14px;
-}
-	
-.hero-login{
-  min-height:100vh;
-  display:flex;
-  justify-content:space-between;
-  padding:80px;
-	padding-top: 250px;
-}
-
-.hero-login::before{
-  content:"";
-  position:absolute;
-  inset:0;
-
-  background-image:
-  url("grain.png");
-
-  opacity:0.04;
-  pointer-events:none;
-}
-
-
-.hero-text{
-  font-family:Inter,sans-serif;
-  color:#f5f1e8;
-  font-size:18px;
-  line-height:1.7;
-  opacity:0.85;
-  max-width:500px;
-	margin-top:0;
-  margin-bottom:18px
-}
-
-.login-card{
-  margin-top:50px;
-  width:100%;
-  max-width:420px;
-  padding:35px;
-  border-radius:28px;
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(14px);
-  border:1px solid rgba(255,255,255,0.08);
-}
-
-.login-card input{
-  width:100%;
-  padding:16px;
-  margin-bottom:16px;
-  border:none;
-  border-radius:14px;
-  background:rgba(255,255,255,0.06);
-  color:#f5f1e8;
-  font-family:Inter,sans-serif;
-  font-size:15px;
-}
-
-.login-card input::placeholder{
-  color:rgba(245,241,232,0.6);
-}
-
-.login-buttons{
-  display:flex;
-  gap:14px;
-  margin-top:10px;
-}
-
-.login-buttons button{
-  flex:1;
-  padding:15px;
-  border:none;
-  border-radius:999px;
-  background:#fdc103;
-  color:#0d2e40;
-  font-family:Inter,sans-serif;
-  font-weight:700;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.login-buttons button:hover{
-  transform:translateY(-2px);
-  box-shadow:0 0 30px rgba(253,193,3,0.4);
-}
-
-.secondary-btn{
-  background:transparent !important;
-  color:#f5f1e8 !important;
-  border:1px solid rgba(255,255,255,0.2) !important;
-}
-
-.hero-quote{
-  margin-top:30px;
-  font-family:'Playfair Display',serif;
-  color:#fdc103;
-  font-size:18px;
-  opacity:0.9;
-}
-
-.hero-right{
-  position:relative;
-  width:50%;
-	padding-top: 230px;
-	padding-right: 30px;
-}
-
-.hero-left{
-  display:flex;
-  flex-direction:column;
-   justify-content:flex-start;
-  gap:18px;
-  padding-top:80px;
-  z-index:2;
-width:50%;
-  padding-left: 100px;
-}
-	.hero-title {
-  font-family:'Playfair Display', serif;
-  font-size:72px;
-  max-width:500px;
-		margin-top:0;
-  margin-bottom:10px;
-  line-height:0.95;
-	}
-
 /* =========================
-   LOGIN PAGE — HERO TOP
+   MOBILE = DEFAULT
 ========================= */
 
-.header{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:100;
-  background:transparent;
-}
-
-.header-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  max-width:1200px;
-  margin:0 auto;
-
-  padding:28px 40px;
-}
-
-/* LOGO */
-
-.logo-block{
+.hero-login{
   display:flex;
   flex-direction:column;
-  gap:6px;
-}
 
-.logo{
-  margin:0;
-
-  font-family:'Playfair Display', serif;
-  font-size:52px;
-  line-height:0.9;
-
-  color:#fdc103;
-}
-
-.logo-subtitle{
-  font-size:11px;
-  letter-spacing:4px;
-  color:rgba(255,255,255,0.75);
-}
-
-/* MENU */
-
-.menu{
-  display:flex;
-  align-items:center;
-  gap:26px;
-}
-
-.menu a{
-  position:relative;
-
-  font-size:12px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-
-  color:white;
-  opacity:0.8;
-
-  transition:0.3s ease;
-}
-
-.menu a:hover,
-.menu a.active{
-  color:#fdc103;
-  opacity:1;
-}
-
-.menu a::after{
-  content:"";
-
-  position:absolute;
-  left:0;
-  bottom:-6px;
-
-  width:0%;
-  height:1px;
-
-  background:#fdc103;
-
-  transition:0.3s ease;
-}
-
-.menu a:hover::after,
-.menu a.active::after{
-  width:100%;
-}
-
-/* HERO */
-
-.hero-login{
-  min-height:100vh;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  gap:80px;
-
-  padding:
-    180px
-    80px
-    80px;
-
-  position:relative;
+  padding:140px 24px 80px;
+  gap:50px;
 
   overflow:hidden;
 }
 
-/* LUCE CINEMATOGRAFICA */
-
-.hero-login::before{
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(0,140,255,0.18),
-      transparent 60%
-    );
-
-  pointer-events:none;
+.hero-left{
+  width:100%;
+  padding:0;
 }
 
-/* BLOCCO TESTO */
+.hero-right{
+  width:100%;
+  height:520px;
 
-.hero-left{
-  width:42%;
   position:relative;
-  z-index:2;
+
+  margin-top:10px;
 }
 
 .hero-title{
-  font-family:'Playfair Display', serif;
-
-  font-size:82px;
+  font-size:58px;
   line-height:0.92;
 
-  color:white;
-
-  margin-bottom:24px;
-
-  letter-spacing:-2px;
+  max-width:320px;
 }
 
 .hero-text{
-  max-width:500px;
+  font-size:15px;
+  line-height:1.6;
 
-  font-size:18px;
-  line-height:1.7;
-
-  color:rgba(255,255,255,0.78);
-
-  margin-bottom:34px;
+  max-width:320px;
 }
-
-/* LOGIN CARD */
 
 .login-card{
+  margin-top:24px;
+
   width:100%;
-  max-width:420px;
-
-  padding:34px;
-
-  border-radius:28px;
-
-  background:
-    rgba(255,255,255,0.06);
-
-  backdrop-filter:blur(16px);
-
-  border:
-    1px solid rgba(255,255,255,0.08);
+  max-width:100%;
 }
 
-  .hero-login{
-    flex-direction:column;
-    justify-content:center;
+.header-inner{
+  flex-direction:column;
+  gap:18px;
 
-    padding:
-      150px
-      24px
-      60px;
-  }
+  padding:24px;
+}
 
-  .hero-left{
-    width:100%;
-  }
+.menu{
+  gap:14px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
 
-  .hero-title{
-    font-size:56px;
-  }
+.menu a{
+  font-size:11px;
+}
 
-  .header-inner{
-    flex-direction:column;
-    gap:20px;
-  }
-
-  .menu{
-    flex-wrap:wrap;
-    justify-content:center;
-  }
+/* POSTER MOBILE */
 
 .poster{
-  position:absolute;
-  width:240px;
-  border-radius:18px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.4);
-  transition:0.4s;
-}
-
-.poster:hover{
-  transform:scale(1.03);
-	z-index: 10;
+  width:140px;
 }
 
 /* STAR WARS */
 .poster-1{
-  top:20px;
-  left:40px;
-  transform:rotate(-10deg);
-  z-index:4;
+  top:0;
+  left:20px;
 }
 
 /* METROPOLIS */
 .poster-2{
-  top:40px;
+  top:10px;
   right:10px;
-  transform:rotate(7deg);
-  z-index:2;
 }
 
 /* LEBOWSKI */
 .poster-3{
-  top:280px;
-  left:0px;
-  transform:rotate(-6deg);
-  z-index:5;
+  top:180px;
+  left:0;
 }
 
 /* LA LA LAND */
 .poster-4{
-  top:250px;
-  left:190px;
-  transform:rotate(4deg);
-  z-index:6;
-}
-
-/* IL PADRINO */
-.poster-5{
-  top:300px;
-  right:20px;
-  transform:rotate(9deg);
-  z-index:7;
-}
-
-/* BATMAN RETURNS */
-.poster-6{
-  top:470px;
+  top:170px;
   left:120px;
-  transform:rotate(-8deg);
-  z-index:1;
 }
 
-/* I TENENBAUM */
+/* PADRINO */
+.poster-5{
+  top:220px;
+  right:0;
+}
+
+/* BATMAN */
+.poster-6{
+  top:340px;
+  left:40px;
+}
+
+/* TENENBAUM */
 .poster-7{
-  top:470px;
-  right:120px;
-  transform:rotate(6deg);
-  z-index:0;
+  top:340px;
+  right:30px;
 }
 
 /* TEMPI MODERNI */
 .poster-8{
-  top:140px;
-  left:300px;
-  transform:rotate(-4deg);
-  z-index:3;
+  top:90px;
+  left:180px;
+}
+
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width:1024px){
+
+  .hero-login{
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:180px 80px 80px;
+  }
+
+  .hero-left{
+    width:42%;
+  }
+
+  .hero-right{
+    width:50%;
+    height:700px;
+  }
+
+  .hero-title{
+    font-size:82px;
+    max-width:500px;
+  }
+
+  .hero-text{
+    font-size:18px;
+    max-width:500px;
+  }
+
+  .header-inner{
+    flex-direction:row;
+    justify-content:space-between;
+  }
+
+  .menu{
+    gap:26px;
+  }
+
+  .menu a{
+    font-size:12px;
+  }
+
+  .poster{
+    width:240px;
+  }
+
 }
