@@ -261,6 +261,29 @@ window.login = async function () {
   }
 }
 
+window.register = async function () {
+
+  const email = document.getElementById("email").value
+  const password = document.getElementById("password").value
+
+  if (!email || !password) {
+    alert("Inserisci email e password")
+    return
+  }
+
+  const { error } = await signUp(email, password)
+
+  if (error) {
+
+    alert(error.message)
+
+  } else {
+
+    alert("Registrazione completata 🎬")
+
+  }
+}
+
 // ===== SUGGESTIONS =====
 async function fetchSuggestions(query) {
 
