@@ -64,23 +64,7 @@ body {
 	flex-direction: column;
 }
 
-.logo {
-	font-size: 48px;
-	margin: 0;
-	text-align: left;
-	color: var(--gold);
-	font-family: 'Playfair Display', serif;
-}
 
-.logo-subtitle {
-	font-size: 11px;
-	margin-top: 4px;
-	text-align: left;
-	position: static;
-	opacity: 0.7;
-	letter-spacing: 3px;
-	color: white;
-}
 .container {
   max-width: 1100px;
   margin: 0 auto;
