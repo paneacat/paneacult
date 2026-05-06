@@ -155,3 +155,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+const openFilters = document.getElementById("openFilters");
+const filtersWrapper = document.getElementById("filtersWrapper");
+
+if(openFilters && filtersWrapper){
+
+  openFilters.addEventListener("click", () => {
+    filtersWrapper.classList.toggle("open");
+  });
+
+}
