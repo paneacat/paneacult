@@ -1844,11 +1844,17 @@ p {
   }
 
   .archivio-grid {
-    max-width: 1250px;
-    margin: 0 auto;
-    grid-template-columns: repeat(3, 1fr);
-    /* 💻 3 colonne */
-    gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 28px; /* più spazio tra le card */
+
+  width: 100%;
+  max-width: 780px; /* griglia più stretta */
+  
+  margin: 40px auto 0;
+
+  padding: 0 20px;
   }
 
   .archivio-grid .card img {
