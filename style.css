@@ -795,7 +795,7 @@ padding-left: 20px;
     border-radius: 18px;
  /* 👉 più arrotondate */
     overflow: hidden;
-    background: #0f2a33;
+    background: rgba(255,255,255,0.03);
         transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
