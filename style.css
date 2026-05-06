@@ -3633,3 +3633,34 @@ p {
 
   margin-top:10px;
 }
+
+/* HERO CENTRATO */
+
+.login-hero{
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:
+    140px
+    40px
+    80px;
+}
+
+/* BLOCCO CENTRALE */
+
+.login-layout{
+  width:100%;
+  max-width:1200px;
+
+  margin:0 auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  transform:translateY(-30px);
+  gap:90px;
+}
