@@ -49,30 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    if (bottoni.length) {
-      bottoni.forEach(btn => {
-        btn.addEventListener('click', () => {
-
-          const filtro = norm(btn.dataset.filter);
-
-          if (btn.closest('.top')) {
-            filtroCategoria = filtro;
-            document.querySelectorAll('.top .filtro')
-              .forEach(b => b.classList.remove('attivo'));
-          } else {
-            filtroGenere = filtro;
-            document.querySelectorAll('.bottom .filtro')
-              .forEach(b => b.classList.remove('attivo'));
-          }
-
-          btn.classList.add('attivo');
-
-          visibiliMax = STEP;
-          aggiornaFiltri();
-        });
-      });
-    }
-
     if (loadMoreBtn) {
       loadMoreBtn.addEventListener('click', () => {
         visibiliMax += STEP;
