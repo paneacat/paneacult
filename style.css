@@ -2978,3 +2978,62 @@ p {
 
   margin-top:18px;
 }
+
+
+
+@media (min-width:1024px){
+
+  .about-hero{
+    max-width:1100px;
+
+    margin:0 auto;
+
+    padding:
+      180px
+      40px
+      120px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:120px;
+  }
+    .about-text{
+    flex:1;
+    max-width:480px;
+  }
+
+  .about-text h1{
+    font-size:92px;
+    line-height:0.88;
+
+    margin-bottom:28px;
+  }
+
+  .about-text p{
+    font-size:20px;
+    line-height:1.8;
+
+    color:rgba(255,255,255,0.82);
+  }
+.about-image{
+    flex:1;
+
+    display:flex;
+    justify-content:center;
+  }
+
+  .about-image img{
+    width:100%;
+    max-width:420px;
+
+    border-radius:28px;
+
+    object-fit:cover;
+
+    box-shadow:
+      0 30px 60px rgba(0,0,0,0.35);
+  }
+    
+}
