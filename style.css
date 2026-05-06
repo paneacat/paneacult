@@ -604,9 +604,17 @@ margin: 0;
   height: 180px;
   object-fit: cover;
   display: block;
+    overflow: hidden;
+  border-radius: 22px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.18);
+    filter: brightness(1.02) contrast(1.03);
     border-bottom-left-radius: 0;
   border-bottom-right-radius: 0
-  border-radius: 18px; /* 👈 opzionale ma aiuta */
+}
+.archivio-card:hover {
+  transform: translateY(-4px);
+  transition: 0.3s ease;
 }
 
 /* ===== CARD ===== */
