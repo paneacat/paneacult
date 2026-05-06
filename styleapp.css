@@ -177,9 +177,6 @@ margin: 0 auto 18px;
   align-items:center;
   justify-content:space-between;
   padding:80px;
-  background:
-    radial-gradient(circle at top,#145b84 0%,#0d2e40 60%);
-  overflow:hidden;
 }
 
 .hero-left{
