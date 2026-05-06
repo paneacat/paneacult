@@ -59,22 +59,54 @@
     Filtri
   </button>
 </div>
-    <div class="filters-wrapper" id="filtersWrapper">
+<div class="filters-wrapper">
 
-  <!-- FILTRI TOP -->
-  <div class="filters-top">
-    <button class="filter active" data-group="tipo" data-filter="all">Tutti</button>
-    <button class="filter" data-group="tipo" data-filter="cinema">Cinema che resta</button>
-    <button class="filter" data-group="tipo" data-filter="sguardi">Sguardi contemporanei</button>
+  <button class="filters-toggle">
+    Filtri
+    <i class="fa-solid fa-sliders"></i>
+  </button>
+
+  <div class="filters-dropdown">
+
+    <button class="filter active" data-filter="all">
+      Tutti
+    </button>
+
+    <button class="filter" data-filter="cinema-resta">
+      Cinema che resta
+    </button>
+
+    <button class="filter" data-filter="sguardi">
+      Sguardi contemporanei
+    </button>
+
+    <button class="filter" data-filter="dramma">
+      Dramma
+    </button>
+
+    <button class="filter" data-filter="commedia">
+      Commedia
+    </button>
+
+    <button class="filter" data-filter="thriller">
+      Thriller
+    </button>
+
+    <button class="filter" data-filter="giallo">
+      Giallo
+    </button>
+
+    <button class="filter" data-filter="biopic">
+      Biopic
+    </button>
+
+    <button class="filter-reset">
+      <i class="fa-solid fa-rotate-left"></i>
+    </button>
+
   </div>
 
-  <!-- GENERI -->
-  <div class="filters-bottom">
-    <button class="filter" data-group="genere" data-filter="dramma">Dramma</button>
-    <button class="filter" data-group="genere" data-filter="commedia">Commedia</button>
-    <button class="filter" data-group="genere" data-filter="thriller">Thriller</button>
-    <button class="filter" data-group="genere" data-filter="giallo">Giallo</button>
-    <button class="filter" data-group="genere" data-filter="biopic">Biopic</button>
+</div>
    <!-- RESET -->
   <button class="filter-reset" id="resetFilters">↺</button>
   
