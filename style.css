@@ -3308,5 +3308,305 @@ p {
     width:100%;
     text-align:left;
   }
+}
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page{
+  position:relative;
+
+  min-height:100vh;
+
+  overflow:hidden;
+
+  background:#0d2e40;
+}
+
+/* =========================
+   WALL POSTER
+========================= */
+
+.poster-wall{
+  position:absolute;
+  inset:0;
+
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+
+  gap:20px;
+
+  padding:140px 40px 40px;
+
+  opacity:.14;
+
+  pointer-events:none;
+}
+
+.poster-wall img{
+  width:100%;
+  height:320px;
+
+  object-fit:cover;
+
+  border-radius:12px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.login-hero{
+  position:relative;
+  z-index:2;
+
+  min-height:80vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:
+    120px
+    40px
+    80px;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.login-layout{
+  width:100%;
+  max-width:1200px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:80px;
+
+  margin:0 auto;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.login-text{
+  max-width:430px;
+}
+
+.login-text h1{
+  font-family:'Playfair Display', serif;
+
+  font-size:78px;
+  line-height:.92;
+
+  color:white;
+
+  margin-bottom:24px;
+}
+
+.login-text p{
+  font-size:17px;
+  line-height:1.8;
+
+  color:rgba(255,255,255,.78);
+}
+
+/* =========================
+   LOGIN BOX
+========================= */
+
+.login-box{
+  width:380px;
+
+  padding:34px;
+
+  border-radius:28px;
+
+  background:
+    rgba(255,255,255,.08);
+
+  backdrop-filter:blur(14px);
+
+  border:
+    1px solid rgba(255,255,255,.12);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.25);
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.login-box input{
+  width:100%;
+  height:56px;
+
+  margin-bottom:14px;
+
+  padding:0 18px;
+
+  border:none;
+  outline:none;
+
+  border-radius:16px;
+
+  background:
+    rgba(255,255,255,.08);
+
+  color:white;
+
+  font-size:15px;
+}
+
+.login-box input::placeholder{
+  color:rgba(255,255,255,.55);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.login-buttons{
+  display:flex;
+  gap:12px;
+
+  margin-top:12px;
+}
+
+.login-buttons button{
+  flex:1;
+
+  height:52px;
+
+  border-radius:999px;
+
+  font-size:14px;
+  font-weight:600;
+
+  transition:.25s ease;
+}
+
+/* ACCEDI */
+
+.btn-primary{
+  background:#fdc103;
+  color:#0d2e40;
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(253,193,3,.25);
+}
+
+/* REGISTRATI */
+
+.btn-secondary{
+  border:1px solid rgba(255,255,255,.18);
+
+  color:white;
+
+  background:transparent;
+}
+
+.btn-secondary:hover{
+  background:white;
+  color:#0d2e40;
+}
+
+/* =========================
+   QUOTE
+========================= */
+
+.login-quote{
+  margin-top:28px;
+
+  font-family:'Playfair Display', serif;
+  font-style:italic;
+
+  color:#fdc103;
+
+  opacity:.9;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1420px){
+
+  .login-layout{
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:50px;
+  }
+
+  .login-text{
+    max-width:680px;
+  }
+
+  .login-text h1{
+    font-size:64px;
+  }
+
+  .login-box{
+    width:100%;
+    max-width:400px;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px){
+
+  .poster-wall{
+    grid-template-columns:repeat(2,1fr);
+
+    gap:14px;
+
+    padding:
+      160px
+      20px
+      40px;
+  }
+
+  .poster-wall img{
+    height:240px;
+  }
+
+  .login-hero{
+    padding:
+      140px
+      20px
+      60px;
+  }
+
+  .login-text h1{
+    font-size:52px;
+  }
+
+  .login-text p{
+    font-size:16px;
+  }
+
+  .login-box{
+    padding:26px;
+  }
+
+  .login-buttons{
+    flex-direction:column;
+  }
 
 }
