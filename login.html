@@ -67,24 +67,28 @@
 </main>
 
 <!-- MODAL -->
-<div id="addModal" class="modal">
+<div id="addModal" class="add-modal">
+
   <div class="modal-content">
 
     <h2>Aggiungi film</h2>
 
-    <input 
-      id="title" 
-      placeholder="Titolo..." 
-      autocomplete="off"
+    <input
+      type="text"
+      id="title"
+      placeholder="Titolo film"
       oninput="handleInput(this.value)"
     >
 
     <div id="suggestions"></div>
 
-    <button onclick="addFilm()">Salva</button>
-    <button onclick="closeModal()">Chiudi</button>
+    <button onclick="addFilm()">
+      Aggiungi
+    </button>
 
   </div>
+
+</div>
 </div>
 
 <!-- FAB -->
