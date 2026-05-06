@@ -1,89 +1,93 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ===============================
-  // ===== FILTRI (NUOVO SISTEMA)
+  // ===== FILTRI
   // ===============================
-  const buttons = document.querySelectorAll('.filter');
-  const cards = document.querySelectorAll('.archivio-card');
-  const resetBtn = document.getElementById('resetFilters');
+  const bottoni = document.querySelectorAll('.filtro');
+  const cards = Array.from(document.querySelectorAll('.card-film'));
+  const empty = document.getElementById('emptyState');
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
 
-  let activeFilters = {
-    tipo: "all",
-    genere: "all"
-  };
+  if (cards.length) {
 
-  if (buttons.length && cards.length) {
+    let filtroCategoria = "tutti";
+    let filtroGenere = "tutti";
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
+    const norm = (v) => (v || "").trim().toLowerCase();
 
-        const group = btn.dataset.group; // tipo / genere
-        const filter = btn.dataset.filter;
+    const STEP = 3;
+    let visibiliMax = STEP;
 
-        // reset gruppo
-        document.querySelectorAll(`.filter[data-group="${group}"]`)
-          .forEach(b => b.classList.remove('active'));
+    function aggiornaFiltri() {
+      let filtrati = [];
 
-        btn.classList.add('active');
-
-        activeFilters[group] = filter;
-
-        filterCards();
-      });
-    });
-
-    // ===== FUNZIONE FILTRI
-    function filterCards() {
       cards.forEach(card => {
+        const categoria = norm(card.dataset.categoria);
+        const generi = norm(card.dataset.genere).split(" ").filter(Boolean);
 
-        const tags = (card.dataset.category || "").split(' ');
-
-        const matchTipo =
-          activeFilters.tipo === "all" ||
-          tags.includes(activeFilters.tipo);
+        const matchCategoria =
+          filtroCategoria === "tutti" || categoria === filtroCategoria;
 
         const matchGenere =
-          activeFilters.genere === "all" ||
-          tags.includes(activeFilters.genere);
+          filtroGenere === "tutti" || generi.includes(filtroGenere);
 
-        if (matchTipo && matchGenere) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
+        const visibile = matchCategoria && matchGenere;
 
+        card.classList.toggle("hidden", !visibile);
+
+        if (visibile) filtrati.push(card);
       });
+
+      filtrati.forEach((card, i) => {
+        card.classList.toggle("hidden-by-limit", i >= visibiliMax);
+      });
+
+      if (empty) {
+        empty.classList.toggle("show", filtrati.length === 0);
+      }
+
+      if (loadMoreBtn) {
+        loadMoreBtn.style.display =
+          filtrati.length > visibiliMax ? "inline-block" : "none";
+      }
     }
 
-    // ===============================
-    // ===== RESET FILTRI ↺
-    // ===============================
-    if (resetBtn) {
-      resetBtn.addEventListener('click', () => {
+    if (bottoni.length) {
+      bottoni.forEach(btn => {
+        btn.addEventListener('click', () => {
 
-        // reset stato
-        activeFilters.tipo = "all";
-        activeFilters.genere = "all";
+          const filtro = norm(btn.dataset.filter);
 
-        // rimuove active da tutti
-        buttons.forEach(btn => btn.classList.remove('active'));
+          if (btn.closest('.top')) {
+            filtroCategoria = filtro;
+            document.querySelectorAll('.top .filtro')
+              .forEach(b => b.classList.remove('attivo'));
+          } else {
+            filtroGenere = filtro;
+            document.querySelectorAll('.bottom .filtro')
+              .forEach(b => b.classList.remove('attivo'));
+          }
 
-        // riattiva "Tutti"
-        document.querySelectorAll('.filter[data-group="tipo"][data-filter="all"]')
-          .forEach(btn => btn.classList.add('active'));
+          btn.classList.add('attivo');
 
-        // mostra tutte le card
-        cards.forEach(card => {
-          card.style.display = "block";
+          visibiliMax = STEP;
+          aggiornaFiltri();
         });
-
       });
     }
 
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener('click', () => {
+        visibiliMax += STEP;
+        aggiornaFiltri();
+      });
+    }
+
+    aggiornaFiltri();
   }
 
   // ===============================
-  // ===== SLIDER
+  // ===== SLIDER 🔥 (FIX VERO)
   // ===============================
   const slider = document.getElementById("slider");
   const next = document.getElementById("next");
@@ -94,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateArrows() {
       const maxScroll = slider.scrollWidth - slider.clientWidth;
 
+      // ← compare solo alla fine
       if (slider.scrollLeft >= maxScroll - 10) {
         prev.style.opacity = "1";
         prev.style.pointerEvents = "auto";
@@ -119,11 +124,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     slider.addEventListener("scroll", updateArrows);
 
+    // stato iniziale
     updateArrows();
   }
 
   // ===============================
-  // ===== CREDITS (fade)
+  // ===== CREDITS
   // ===============================
   const credits = document.querySelector('.credits');
 
@@ -139,17 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
     observerCredits.observe(credits);
   }
 
-  window.addEventListener("load", () => {
-  const splash = document.getElementById("splash");
-  setTimeout(() => {
-    splash.style.opacity = "0";
-    splash.style.transition = "0.4s";
-    setTimeout(() => splash.remove(), 400);
-  }, 800);
-});
-
   // ===============================
-  // ===== FADE-UP GENERALE
+  // ===== FADE-UP
   // ===============================
   const elements = document.querySelectorAll('.fade-up');
 
@@ -171,96 +168,41 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-// ===============================
-// ===== APP FILM (LOGIN PAGE)
-// ===============================
+const buttons = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.archivio-card');
 
-let films = [
-  {
-    id: "1",
-    title: "Diamanti grezzi",
-    poster: "https://image.tmdb.org/t/p/w500/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg",
-    rating: 4
-  },
-  {
-    id: "2",
-    title: "Il grande dittatore",
-    poster: "https://image.tmdb.org/t/p/w500/9uSg7JQq2z8S9oCz6YtYyqS9K2k.jpg",
-    rating: 5
-  }
-];
+let activeFilters = [];
 
-// render film
-function renderFilms(listFilms = films) {
-  const list = document.getElementById("list");
-  if (!list) return;
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
 
-  list.innerHTML = listFilms.map(film => `
-    <div class="film-card">
+    const filter = btn.dataset.filter;
 
-      <img src="${film.poster}" />
+    // toggle visivo
+    btn.classList.toggle('active');
 
-      <div class="film-info">
-        <h3>${film.title}</h3>
+    // aggiorna array filtri attivi
+    if (activeFilters.includes(filter)) {
+      activeFilters = activeFilters.filter(f => f !== filter);
+    } else {
+      activeFilters.push(filter);
+    }
 
-        <div class="stars">
-          ${[1,2,3,4,5].map(n => `
-            <span onclick="rateFilm('${film.id}', ${n})">
-              ${n <= film.rating ? "★" : "☆"}
-            </span>
-          `).join("")}
-        </div>
-      </div>
-
-    </div>
-  `).join("");
-}
-
-// rating
-function rateFilm(id, rating) {
-  films = films.map(f =>
-    f.id === id ? { ...f, rating } : f
-  );
-
-  renderFilms();
-}
-
-// search
-function setSearch(value) {
-  const filtered = films.filter(f =>
-    f.title.toLowerCase().includes(value.toLowerCase())
-  );
-
-  renderFilms(filtered);
-}
-
-// modal
-function openModal() {
-  document.getElementById("addModal").style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById("addModal").style.display = "none";
-}
-
-// aggiungi film
-function addFilm() {
-  const title = document.getElementById("title").value;
-
-  if (!title) return;
-
-  films.push({
-    id: Date.now().toString(),
-    title,
-    poster: "https://via.placeholder.com/300x450",
-    rating: 0
+    filterCards();
   });
-
-  closeModal();
-  renderFilms();
-}
-
-// primo render
-document.addEventListener("DOMContentLoaded", () => {
-  renderFilms();
 });
+
+function filterCards() {
+  cards.forEach(card => {
+    const tags = card.dataset.category.split(' ');
+
+    if (activeFilters.length === 0) {
+      card.style.display = 'block';
+      return;
+    }
+
+    const match = activeFilters.every(f => tags.includes(f));
+
+    card.style.display = match ? 'block' : 'none';
+  });
+}
