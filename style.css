@@ -3158,8 +3158,52 @@ margin:0 auto;
   z-index:5;
 
   max-width:520px;
-   }
-
-    
+   }  
 }
 
+@media (min-width:1024px){
+
+  .hero-left{
+    position:relative;
+    z-index:5;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:70px;
+
+    max-width:1100px;
+
+    margin:0 auto;
+  }
+
+  /* BLOCCO TESTO */
+
+  .hero-copy{
+    max-width:420px;
+  }
+
+  .hero-title{
+    font-size:72px;
+    line-height:0.9;
+
+    margin-bottom:20px;
+  }
+
+  .hero-text{
+    font-size:18px;
+    line-height:1.6;
+
+    max-width:420px;
+  }
+
+  /* LOGIN */
+
+  .login-card{
+    width:360px;
+
+    flex-shrink:0;
+  }
+
+}
