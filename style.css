@@ -2318,7 +2318,10 @@ p {
     gap: 24px;
 }
 }
+
+
 @media (min-width: 1024px) {
+    
 .poster-layout,
 .contact-layout {
   display: flex;
@@ -2423,87 +2426,6 @@ p {
 }
 }
 
-/* ===== LOGIN APP ===== */
-
-.app {
-  max-width: 1200px;
-  margin: 80px auto;
-  padding: 0 40px;
-}
-
-/* LOGIN */
-#auth {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 40px;
-}
-
-#auth input {
-  padding: 10px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: white;
-  font-family: 'Inter', sans-serif;
-}
-
-#auth button {
-  background: #fdc103;
-  color: #0d2e40;
-  border: none;
-  padding: 10px 16px;
-  cursor: pointer;
-}
-
-/* SEARCH */
-.search-wrapper {
-  margin-bottom: 30px;
-}
-
-.search-bar {
-  width: 100%;
-  padding: 12px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: white;
-}
-
-/* LISTA FILM */
-#list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 20px;
-}
-
-/* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: var(--gold);
-}
-
-.modal-content {
-  background: #0d2e40;
-  padding: 30px;
-  max-width: 400px;
-  margin: 100px auto;
-}
-
-/* FAB */
-.fab {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #fdc103;
-  color: #0d2e40;
-  border: none;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  font-size: 28px;
-  cursor: pointer;
-  box-shadow: background: var(--gold);
-}
 /* ===== FILM CARD ===== */
 
 .film-card {
@@ -2542,6 +2464,8 @@ p {
   cursor: pointer;
 }
 }
+
+
 /* MOBILE */
 @media (max-width: 768px) {
   .app {
