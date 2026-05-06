@@ -2155,15 +2155,23 @@ width: 100%;
 }
 }
 @media (min-width: 1024px) {
-
-  .poster-layout,
-  .contact-layout {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
+.poster-layout,
+.contact-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact-left {
+  text-align: left;
+  margin-left: 0;
+  transform: none;
+}
+    .contact-hero {
+  padding-top: 120px;
+  padding-bottom: 60px;
+    }
+    
   .poster-text,
   .contact-left {
     text-align: left;
