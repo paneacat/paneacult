@@ -6,25 +6,13 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="apple-touch-icon" href="img/icon-192.png">  
-  <link rel="icon" type="image/png" href="icon-512.png">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css?v=9">
+
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="icon" href="icon-192.png">
-  <link rel="apple-touch-icon" href="icon-192.png">
-
-  <meta name="theme-color" content="#ffbf00">
-
-  <!-- 🔥 PWA iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="mobile-web-app-capable" content="yes">
-<link rel="stylesheet" href="style.css?v=8">
 </head>
-<div id="toast"></div>
 
-<body class="home">
+<body>
 
 <header class="header">
   <div class="container header-inner">
@@ -35,56 +23,70 @@
     </div>
 
     <nav class="menu">
-  <a href="index.html">HOME</a>
-  <a href="archivio.html">RECENSIONI</a>
-  <a href="featured.html">CHI SONO</a>
-  <a href="contatti.html">CONTATTI</a>
-  <a href="login.html" class="active">LOGIN</a>
+      <a href="index.html">HOME</a>
+      <a href="archivio.html">RECENSIONI</a>
+      <a href="featured.html">CHI SONO</a>
+      <a href="contatti.html">CONTATTI</a>
+      <a href="login.html" class="active">LOGIN</a>
     </nav>
-  </div>
 
+  </div>
 </header>
 
-<div id="auth">
-  <input id="email" placeholder="Email">
-  <input id="password" type="password" placeholder="Password">
-  <button onclick="login()">Entra</button>
-</div>
-  <div class="container">   
-<div class="search-wrapper">
-  <span class="search-icon">🔍</span>
-  <input class="search-bar" placeholder="Cerca film..." oninput="setSearch(this.value)">
-</div>
+<!-- APP -->
+<main class="app">
 
-    <div id="list"></div>
-
-  </div>
-
-  <div id="addModal" class="modal">
-    <div class="modal-content">
-
-      <h2>Aggiungi film</h2>
-
-      <input 
-        id="title" 
-        placeholder="Titolo..." 
-        autocomplete="off"
-        oninput="handleInput(this.value)"
-      >
-
-      <div id="suggestions"></div>
-
-      <button onclick="addFilm()">Salva</button>
-      <button onclick="closeModal()">Chiudi</button>
-
+  <!-- LOGIN -->
+  <div class="app-top">
+    <div id="auth">
+      <input id="email" placeholder="Email">
+      <input id="password" type="password" placeholder="Password">
+      <button onclick="login()">Entra</button>
     </div>
   </div>
 
-  <nav class="bottom-nav">
-    <button onclick="scrollToTop()">🎬</button>
-  </nav>
-<button class="fab">+</button>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <!-- CONTENUTO -->
+  <div class="app-content">
+
+    <div class="app-left">
+
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input class="search-bar" placeholder="Cerca film..." oninput="setSearch(this.value)">
+      </div>
+
+      <div id="list"></div>
+
+    </div>
+
+  </div>
+
+</main>
+
+<!-- MODAL -->
+<div id="addModal" class="modal">
+  <div class="modal-content">
+
+    <h2>Aggiungi film</h2>
+
+    <input 
+      id="title" 
+      placeholder="Titolo..." 
+      autocomplete="off"
+      oninput="handleInput(this.value)"
+    >
+
+    <div id="suggestions"></div>
+
+    <button onclick="addFilm()">Salva</button>
+    <button onclick="closeModal()">Chiudi</button>
+
+  </div>
+</div>
+
+<!-- FAB -->
+<button class="fab" onclick="openModal()">+</button>
+
 <script src="scriptapp.js" defer></script>
 
 </body>
