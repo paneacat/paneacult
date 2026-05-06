@@ -2702,3 +2702,12 @@ p {
 .menu a.active::after {
   width: 100%;
 }
+.cta-text{
+  max-width:340px;
+
+  font-size:17px;
+
+  line-height:1.45;
+
+  margin-top:18px;
+}
