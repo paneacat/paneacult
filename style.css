@@ -2480,4 +2480,15 @@ p {
 .card-film {
   border-radius: 22px;
   overflow: hidden;
+  background: rgba(255,255,255,0.03);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.18);
+
+  transition: 0.3s ease;
+}
+
+.archivio-card:hover,
+.card-film:hover {
+  transform: translateY(-4px);
 }
