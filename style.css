@@ -3664,3 +3664,38 @@ p {
   transform:translateY(-30px);
   gap:90px;
 }
+/* BOTTONI FILTRI */
+
+.filter-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  border:1px solid rgba(253,193,3,.35);
+
+  background:rgba(255,255,255,.04);
+
+  color:white;
+
+  font-size:14px;
+
+  white-space:nowrap;
+
+  transition:.25s ease;
+}
+
+.filter-btn.active{
+  background:#fdc103;
+  color:#0d2e40;
+}
+
+.filters-panel{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:12px;
+}
