@@ -58,7 +58,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     aggiornaFiltri();
   }
+document.addEventListener("DOMContentLoaded", () => {
+  const splash = document.getElementById("splash");
+  if (splash) {
+    setTimeout(() => {
+      splash.style.opacity = "0";
+      splash.style.transition = "0.4s";
+      setTimeout(() => splash.remove(), 400);
+    }, 400);
+  }
+});
 
+ setTimeout(() => {
+  const splash = document.getElementById("splash");
+  if (splash) splash.remove();
+}, 1500);
   // ===============================
   // ===== SLIDER 🔥 (FIX VERO)
   // ===============================
