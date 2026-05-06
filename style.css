@@ -3336,7 +3336,20 @@ margin:0 auto;
   .filters{
     padding-top:10px;
   }
+}
+@media (min-width: 1024px){
+  
+  .filters-label{
+    display:none;
+  }
 
+}
+    
+.film-author,
+.film-rating{
+  display:none;
+}
+    
   .poster-layout,
   .sections,
   .about-wrapper,
@@ -3395,17 +3408,4 @@ margin:0 auto;
 
   .credits{
     margin-top:70px;  
-}
-}
-@media (min-width: 1024px){
-  
-  .filters-label{
-    display:none;
   }
-
-}
-    
-.film-author,
-.film-rating{
-  display:none;
-}
