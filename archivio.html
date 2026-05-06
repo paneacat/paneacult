@@ -52,45 +52,67 @@
 <h1 class="archivio-title">Tutte le recensioni</h1>
 
 <!-- FILTRI -->
-  <section class="archivio">
-  
-<div class="filters-wrapper">
+<section class="archivio">
 
-  <button class="filters-toggle">
-    Filtri
-  </button>
+  <div class="container">
 
-  <div class="filters-panel">
+    <div class="filters-wrapper">
 
-    <button class="filter-btn active">Tutti</button>
-    <button class="filter-btn">Cinema che resta</button>
-    <button class="filter-btn">Sguardi contemporanei</button>
-    <button class="filter-btn">Dramma</button>
-    <button class="filter-btn">Commedia</button>
-    <button class="filter-btn">Thriller</button>
-    <button class="filter-btn">Giallo</button>
-    <button class="filter-btn">Biopic</button>
+      <button class="filters-toggle">
+        Filtri
+      </button>
+
+      <div class="filters-panel">
+
+        <!-- RUBRICHE -->
+
+        <button class="filter-btn active" data-filter="all">
+          Tutti
+        </button>
+
+        <button class="filter-btn" data-filter="cinema-che-resta">
+          Cinema che resta
+        </button>
+
+        <button class="filter-btn" data-filter="sguardi-contemporanei">
+          Sguardi contemporanei
+        </button>
+
+        <!-- GENERI -->
+
+        <button class="filter-btn" data-filter="dramma">
+          Dramma
+        </button>
+
+        <button class="filter-btn" data-filter="commedia">
+          Commedia
+        </button>
+
+        <button class="filter-btn" data-filter="thriller">
+          Thriller
+        </button>
+
+        <button class="filter-btn" data-filter="giallo">
+          Giallo
+        </button>
+
+        <button class="filter-btn" data-filter="biopic">
+          Biopic
+        </button>
+
+        <!-- RESET -->
+
+        <button class="filter-reset" id="resetFilters">
+          ↺
+        </button>
+
+      </div>
+
+    </div>
+
   </div>
-  
-  <div class="filters-panel">
 
-    <!-- RUBRICHE -->
-
-    <button class="filter-btn active" data-filter="all">
-      Tutti
-    </button>
-
-    <button class="filter-btn" data-filter="cinema-che-resta">
-      Cinema che resta
-    </button>
-
-    <button class="filter-btn" data-filter="sguardi-contemporanei">
-      Sguardi contemporanei
-    </button>
-    
-   <!-- RESET -->
-  <button class="filter-reset" id="resetFilters">↺</button>
-  </div>
+</section>
   
 <!-- GRID -->
 <section class="section">
@@ -105,7 +127,7 @@
 <div class="archivio-grid">
 
   <!-- DIAMANTI GREZZI -->
-  <div class="archivio-card" data-category="dramma thriller sguardi">
+  <div class="archivio-card" data-category="dramma thriller sguardi-contemporanei">
     <a href="uncut.html">
       <img src="img/uncut.png" alt="Diamanti grezzi">
     </a>
@@ -117,7 +139,7 @@
   </div>
 
   <!-- IL GRANDE DITTATORE -->
-  <div class="archivio-card" data-category="commedia dramma cinema">
+  <div class="archivio-card" data-category="commedia dramma cinema-che-resta">
     <a href="dittatore.html">
       <img src="img/dittatore.png" alt="Il Grande Dittatore">
     </a>
@@ -129,7 +151,7 @@
   </div>
 
   <!-- VIALE DEL TRAMONTO -->
-  <div class="archivio-card" data-category="dramma giallo cinema">
+  <div class="archivio-card" data-category="dramma giallo cinema-che-resta">
     <a href="tramonto.html">
       <img src="img/viale-del-tramonto.jpg" alt="Viale del tramonto">
     </a>
@@ -141,7 +163,7 @@
   </div>
 
   <!-- UNA GIUSTA CAUSA -->
-  <div class="archivio-card" data-category="biopic dramma sguardi">
+  <div class="archivio-card" data-category="biopic dramma sguardi-contemporanei">
     <a href="sex.html">
       <img src="img/sex.jpg" alt="Una giusta causa">
     </a>
