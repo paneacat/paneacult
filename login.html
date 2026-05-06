@@ -36,65 +36,84 @@
   </div>
 </header>
 
-<!-- APP -->
-<main class="app">
+<section class="hero-login">
 
-  <div id="auth">
+  <div class="hero-left">
 
-  <input type="email" id="email" placeholder="Email">
+    <p class="mini-brand">
+      MY THERAPIST SAYS CINEMA
+    </p>
 
-  <input type="password" id="password" placeholder="Password">
+    <h1 class="logo-title">
+      paneacult
+    </h1>
 
-  <button onclick="login()">
-    Login
-  </button>
+    <h2 class="hero-title">
+      I film che restano.
+    </h2>
 
-  <button onclick="register()">
-  Registrati
-</button>
+    <p class="hero-text">
+      Recensioni, archivi personali,
+      film salvati e ossessioni cinematografiche.
+    </p>
 
-  </div>
+    <div class="login-card">
 
-  <!-- CONTENUTO -->
-  <div class="app-content">
+      <input
+        type="email"
+        id="email"
+        placeholder="Email"
+      >
 
-    <div class="app-left">
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+      >
 
-      <div class="search-wrapper">
-        <span class="search-icon">🔍</span>
-        <input class="search-bar" placeholder="Cerca film..." oninput="setSearch(this.value)">
+      <div class="login-buttons">
+        <button onclick="login()">
+          Accedi
+        </button>
+
+        <button onclick="register()" class="secondary-btn">
+          Registrati
+        </button>
       </div>
-
-      <div id="list"></div>
 
     </div>
 
+    <p class="hero-quote">
+      “That rug really tied the room together.”
+    </p>
+
   </div>
 
-</main>
+  <div class="hero-right">
 
-<!-- MODAL -->
-<div id="addModal" class="add-modal">
-
-  <div class="modal-content">
-
-    <h2>Aggiungi film</h2>
-
-    <input
-      type="text"
-      id="title"
-      placeholder="Titolo film"
-      oninput="handleInput(this.value)"
+    <img
+      src="starwars.jpg"
+      class="poster poster-1"
     >
 
-    <div id="suggestions"></div>
+    <img
+      src="batmanreturns.jpg"
+      class="poster poster-2"
+    >
 
-    <button onclick="addFilm()"    Aggiungi
-    </button>
+    <img
+      src="lebowski.jpg"
+      class="poster poster-3"
+    >
+
+    <img
+      src="tenenbaum.jpg"
+      class="poster poster-4"
+    >
 
   </div>
-</div>
-</div
+
+</section>
 
 
 <!-- FAB -->
