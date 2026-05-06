@@ -3293,6 +3293,10 @@ margin:0 auto;
   gap:22px;
   align-items:center;
     } 
+    .login-hero{
+  padding-top: 80px;
+    }
+    
 }
 
 /* MOBILE */
