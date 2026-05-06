@@ -553,12 +553,6 @@ a:hover {
   width: 100%;
 }
 
-
-.menu a:hover::after,
-.menu a.active::after {
-  width: 100%;
-}
-
 .home-cinema .container {
   max-width: 1100px;
   margin: 0 auto;
