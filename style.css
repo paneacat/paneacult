@@ -2611,6 +2611,7 @@ p {
 
 .menu{
   gap:14px;
+    font-size: 30px;
   flex-wrap:wrap;
   justify-content:center;
 }
