@@ -2195,7 +2195,7 @@ width: 100%;
   z-index: 20;
   background: none;
   border: none;
-  color: #f5c518;
+  color: #fdc103;
   font-size: 24px;
   cursor: pointer;
 }
@@ -2206,5 +2206,33 @@ width: 100%;
 
 .arrow.right {
   right: -50px;
+}
+   .poster-img {
+  width: 380px;   /* prima ~320 */
+  height: 380px;
+  object-fit: cover;
+   } 
+
+.poster-text h1 {
+  text-align: center;
+}
+    .intro-highlight {
+  color: #fdc103;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.intro-text {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+    .poster-text h1 {
+  margin-bottom: 20px;
+    }
+
+.post-signature {
+  margin-top: 30px;
+  width: 140px;
 }
 }
