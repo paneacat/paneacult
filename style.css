@@ -2494,10 +2494,6 @@ p {
     justify-content: center;
   }
 
-  .menu a {
-    font-size: 11px;
-  }
-
   .slider {
     gap: 12px;
 
@@ -2537,13 +2533,6 @@ p {
       max-width: 620px;
     }
 
-    .hero-right {
-      position: relative;
-
-      width: 58%;
-
-      height: 760px;
-    }
 
     .hero-title {
       font-size: 92px;
@@ -2667,27 +2656,6 @@ p {
   .poster-text p {
     text-align: left;
   }
-
-  .menu a {
-    font-family: 'Inter', sans-serif;
-    color: white;
-    text-decoration: none;
-    position: relative;
-    padding-bottom: 4px;
-    transition: color 0.3s ease;
-  }
-
-
-  .cta-text {
-    max-width: 340px;
-
-    font-size: 17px;
-
-    line-height: 1.45;
-
-    margin-top: 18x;
-  }
-
 
   @media (min-width:1024px) {
 
@@ -2829,16 +2797,6 @@ p {
 
       border-radius: 18px;
     }
-
-    /* RESET COMPLETO */
-
-    
-    .hero-left {
-      position: relative;
-      z-index: 5;
-
-      max-width: 520px;
-  }
   }
 
   @media (min-width:1024px) {
@@ -2895,7 +2853,6 @@ p {
     .intro-text {
       max-width: 650px;
       margin: 0 auto;
-
       font-size: 1.2rem;
       line-height: 1.8;
     }
@@ -2908,12 +2865,6 @@ p {
       width: 100%;
       border-radius: 24px;
       display: block;
-    }
-
-    .poster-signature {
-      margin-top: 30px;
-      width: 140px;
-      opacity: 0.9;
     }
 
     .about-text,
@@ -2972,13 +2923,6 @@ p {
   line-height:1.9;
 
   max-width:520px;
-}
-
-.poster-signature{
-  width:150px;
-
-  margin-top:35px;
-  margin-left:0;
 }
 
 .about-image img{
@@ -3042,37 +2986,6 @@ p {
   }
 
 
-/* =========================
-   WALL POSTER
-========================= */
-
-.poster-wall{
-  position:absolute;
-  inset:0;
-
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-
-  gap:20px;
-
-  padding:140px 40px 40px;
-
-  opacity:.14;
-
-  pointer-events:none;
-}
-
-.poster-wall img{
-  width:100%;
-  height:320px;
-
-  object-fit:cover;
-
-  border-radius:12px;
-}
-
-/* ACCEDI */
-
 .btn-primary{
   background:#fdc103;
   color:#0d2e40;
@@ -3116,7 +3029,6 @@ p {
   }
 
 
-
 .login-posters {
   display: flex;
   justify-content: center;
@@ -3138,6 +3050,7 @@ p {
 
   opacity: 0.45;
   }
+  
 .login-posters img:nth-child(2),
 .login-posters img:nth-child(3) {
   transform: translateY(20px);
