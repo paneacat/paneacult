@@ -166,7 +166,7 @@ body {
     width:100%;
   }
 
-  .hero-right{
+.hero-right{
     position:absolute;
     inset:0;
 
@@ -174,13 +174,16 @@ body {
 
     display:grid;
 
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns:repeat(4, 1fr);
 
-    gap:14px;
+    gap:10px;
 
-    padding:140px 20px 40px;
+    padding:
+      160px
+      14px
+      40px;
 
-    opacity:0.12;
+    opacity:0.10;
 
     pointer-events:none;
   }
@@ -192,13 +195,13 @@ body {
 
     transform:none !important;
 
-    border-radius:10px;
+    border-radius:8px;
 
     box-shadow:none;
 
     filter:
-      saturate(0.9)
-      contrast(1.05);
+      contrast(1.05)
+      saturate(0.9);
   }
  
 
