@@ -3671,3 +3671,16 @@ p {
 
   gap:12px;
 }
+.archivio-card {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+  .archivio-card img {
+  height: 210px;
+
+  border-radius: 22px;
+
+  object-fit: cover;
+  }
