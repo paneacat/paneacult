@@ -3452,6 +3452,56 @@ p {
     .login-box{
   width:340px;
     }
+    .about-hero{
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:120px 80px;
+}
+
+.about-content{
+  width:100%;
+  max-width:1200px;
+
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+
+  gap:80px;
+}
+
+.about-text{
+  max-width:520px;
+}
+
+.about-text h1{
+  font-size:6rem;
+  line-height:.9;
+
+  margin-bottom:30px;
+}
+
+.about-text p{
+  font-size:1.1rem;
+  line-height:1.9;
+
+  max-width:520px;
+}
+
+.poster-signature{
+  width:150px;
+
+  margin-top:35px;
+  margin-left:0;
+}
+
+.about-image img{
+  width:230px;
+  object-fit:contain;
+}
   }
 
 
