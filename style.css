@@ -2955,14 +2955,6 @@ p {
       z-index: auto;
     }
 
-    .login-buttons button {
-      padding: 12px 16px;
-
-      font-size: 14px;
-
-      border-radius: 999px;
-    }
-
     .hero-left {
       position: relative;
       z-index: 5;
