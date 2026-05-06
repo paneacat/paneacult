@@ -1843,24 +1843,6 @@ p {
     letter-spacing: 1.8px;
   }
 
-  .archivio-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  gap: 28px; /* più spazio tra le card */
-
-  width: 100%;
-  max-width: 780px; /* griglia più stretta */
-  
-  margin: 40px auto 0;
-
-  padding: 0 20px;
-  }
-
-  .archivio-grid .card img {
-    aspect-ratio: 1 / 1;
-  }
-
   .archivio-grid .card-info h3 {
     font-size: 16px;
   }
