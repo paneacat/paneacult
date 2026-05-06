@@ -2546,3 +2546,10 @@ p {
 .cta-link:hover::after {
   width: 100%;
 }
+.poster-text h1 {
+  text-align: left;
+}
+
+.poster-text p {
+  text-align: left;
+}
