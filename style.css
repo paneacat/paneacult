@@ -3256,6 +3256,18 @@ margin:0 auto;
   width:140px;
   opacity:0.9;
 }
+    .login-hero{
+  min-height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  transform:translateY(-90px);
+    }
+    .login-content{
+  gap:70px;
+    }
 }
 
 
