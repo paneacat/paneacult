@@ -2517,3 +2517,32 @@ p {
 .card-film:hover {
   transform: translateY(-4px);
 }
+
+.cta-link {
+  color: #fdc103;
+  text-decoration: none;
+  position: relative;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.cta-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+
+  width: 0%;
+  height: 2px;
+
+  background: #fdc103;
+  transition: width 0.3s ease;
+}
+
+.cta-link:hover {
+  color: #fdc103;
+}
+
+.cta-link:hover::after {
+  width: 100%;
+}
