@@ -177,7 +177,6 @@ h1 {
   position: sticky;
   top: 0;
   backdrop-filter: blur(12px);
-  background: rgba(11, 31, 38, 0.8);
   padding: 18px;
   text-align: center;
   font-size: 20px;
@@ -191,6 +190,7 @@ color: #ffbf00;
 margin: 0 auto 18px;
   margin-bottom: 14px;
 }
+	
 .hero-login{
   min-height:100vh;
   display:flex;
