@@ -2650,6 +2650,16 @@ p {
   }
 
 }
+
+@media (min-width:1024px){
+
+  .menu a{
+    font-size:17px;
+    letter-spacing:1.5px;
+  }
+
+}
+
 .archivio-card,
 .card-film {
   border-radius: 22px;
