@@ -1619,11 +1619,6 @@ p {
   color: var(--gold);
 }
 
-.hero-login {
-  position: relative;
-  overflow: hidden;
-}
-
 .hero-left {
   position: relative;
   z-index: 2;
@@ -2507,11 +2502,6 @@ p {
   cursor: pointer;
 }
 
-.hero-login {
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .hero-left {
   width: 42%;
 }
@@ -2645,15 +2635,6 @@ p {
       max-width: 540px;
 
       line-height: 1.5;
-    }
-
-    .hero-login {
-
-      display: flex;
-      align-items: center;
-
-      position: relative;
-      overflow: hidden;
     }
 
     .hero-left {
