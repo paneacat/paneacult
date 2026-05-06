@@ -221,8 +221,9 @@ body {
 }
 
 .poster-big-title {
-  text-align: center;
-     color: #fdc103;
+  text-align: left;
+  color: #fdc103;
+  text-size: 22px;
 }
 
 .poster-sub,
