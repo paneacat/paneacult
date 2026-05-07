@@ -470,58 +470,6 @@ body {
   border-color:#fdc103;
 }
 
-.archivio-card{
-  background:transparent;
-  display:flex;
-  flex-direction:column;
-  width: 78vw;
-}
-
-.section {
- padding:0 16px;
-  margin-top:34px;
-  display:grid;
-  grid-template-columns:1fr;
-  gap:28px;
-  padding-left:16px;
-  padding-right:16px;
-  margin-top:40px;
-}
-/* IMMAGINE */
-
-.archivio-card img {
-  height:120px;
-  object-fit:cover;
-  width:100%;
-  display:block;
-  border-radius:18px;
-}
-
-/* INFO */
-
-.card-info {
-padding-top: 15px;
-}
-
-.film-title{
- margin-bottom:6px;
-  font-size:14px;
-  line-height:1.3;
-}
-
-.film-director{
-
-  font-size:12px;
-
-  opacity:.72;
-}
-
-.film-stars{
-
-  font-size:12px;
-
-  margin-top:4px;
-}
 /* =========================
    EMPTY STATE
 ========================= */
@@ -532,8 +480,7 @@ padding-top: 15px;
   width:100%;
 
   margin:
-    50px auto
-    0;
+    50px auto 0;
 
   text-align:center;
 
@@ -2053,12 +2000,6 @@ p {
     rgba(255,255,255,.68);
 }
 
-/* BUTTON */
-
-.cta-link{
-
-  
-}
 
 /* HOVER */
 
@@ -2136,16 +2077,6 @@ p {
 
   pointer-events:none;
 }
-/* =========================
-   CONTAINER GENERALE
-========================= */
-
-.container{
-
-  width:min(1024px, calc(100% - 48px));
-
-  margin:0 auto;
-}
 
 /* =========================
    FILTRI
@@ -2183,62 +2114,6 @@ p {
   font-size:.9rem;
 }
 
-/* =========================
-   GRID DESKTOP
-========================= */
-
-@media(min-width:1024px){
-
-  .slider{
-
-    display:grid;
-
-    grid-template-columns:
-      repeat(3, 1fr);
-
-    gap:28px;
-
-    overflow:visible;
-  }
-
-  .slide-item{
-
-    min-width:unset;
-  }
-
-  .slide-card img{
-
-    width:100%;
-
-    aspect-ratio:16/10;
-
-    object-fit:cover;
-
-    border-radius:18px;
-  }
-
-  .slide-info{
-
-    padding-top:12px;
-  }
-
-  .film-title{
-
-    font-size:1rem;
-  }
-
-  .film-director{
-
-    font-size:.82rem;
-  }
-
-  /* NASCONDI FRECCE */
-
-  .slider-arrows{
-
-    display:none;
-  }
-}
 
 
 
@@ -2429,7 +2304,10 @@ p {
     font-size: 22px;
     text-align: center;
 }
-
+  .slider-arrows{
+    display:none;
+  }
+}
 
 
 
@@ -2906,15 +2784,12 @@ font-size: 18px;
   }
 
   .slider{
-
-    display:flex;
-
-    gap:18px;
-
+    display:grid;
+    grid-template-columns:
+      repeat(3, 1fr);
+    gap:28px;
     overflow-x:auto;
-
     scroll-snap-type:x mandatory;
-
     padding-inline:2px;
   }
 
@@ -2928,5 +2803,36 @@ font-size: 18px;
     aspect-ratio:16/8;
 
     object-fit:cover;
+  }
+
+  .slide-item{
+
+    min-width:unset;
+  }
+
+  .slide-card img{
+
+    width:100%;
+
+    aspect-ratio:16/10;
+
+    object-fit:cover;
+
+    border-radius:18px;
+  }
+
+  .slide-info{
+
+    padding-top:12px;
+  }
+
+  .film-title{
+
+    font-size:1rem;
+  }
+
+  .film-director{
+
+    font-size:.82rem;
   }
 }
