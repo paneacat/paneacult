@@ -2345,16 +2345,14 @@ line-height: 0.95;
 ========================= */
 
 .archivio-grid{
-
-  display:grid;
-
-  grid-template-columns:repeat(2,1fr);
-
-  gap:18px;
-
-  padding:0 16px;
-
+ padding:0 16px;
   margin-top:34px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:28px;
+  padding-left:16px;
+  padding-right:16px;
+  margin-top:40px;
 }
 
 /* =========================
@@ -2362,27 +2360,20 @@ line-height: 0.95;
 ========================= */
 
 .archivio-card{
-
+  width: 100%;
   background:transparent;
-
   display:flex;
-
   flex-direction:column;
 }
 
 /* IMMAGINE */
 
-.archivio-card img{
-
-  width:100%;
-
+.archivio-card img {
   height:120px;
-
   object-fit:cover;
-
-  border-radius:18px;
-
+  width:100%;
   display:block;
+  border-radius:18px;
 }
 
 /* INFO */
