@@ -862,9 +862,682 @@ a:hover {
   margin-top: 4px;
 }
 
+.cta-label {
+  justify-content: center;
+  font-size: 16px;
+  color: white;
+  opacity: 0.6;
+  text-align: left;
+}
+
+.cta-sub {
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 260px;
+  margin-top: 10px;
+}
+
+.cta a {
+  color: #fdc103 !important;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.cta-hook {
+  display: inline-block;
+  position: relative;
+}
+
+@keyframes draw {
+  to {
+    sroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeHead {
+  to {
+    opacity: 1;
+  }
+}
 
 
 
+
+.film-title {
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.film-director {
+  font-size: 13px;
+  color: #cfcfcf;
+  margin-top: 4px;
+}
+
+.film-stars {
+  color: var(--gold);
+  margin-top: 6px;
+  font-size: 14px;
+  spacing: 2px;
+}
+
+.load-more-wrapper {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.load-more-btn:hover {
+  background: var(--gold);
+  color: #0b1f26;
+}
+
+.hidden,
+.hidden-by-limit {
+  display: none !important;
+}
+
+.review-hero {
+  width: 100%;
+  max-width: 1100px;
+  margin: 80px auto 40px;
+  padding: 0 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+  transform: none !important;
+}
+
+.review-hero img {
+  height: auto;
+  width: 100%;
+  max-width: 800px;
+
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+}
+
+.review-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.review-container h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  line-height: 1.2;
+  color: #fdc103;
+  margin-bottom: 10px;
+}
+.firma-recensione {
+  margin-top: 40px;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+
+  color: var(--gold);
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.back-link:hover {
+  opacity: 1;
+}
+
+/* firma */
+.poster-signature-block {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta-link:hover {
+  color: #0d2e40;
+  text-decoration: none;
+}
+.meta,
+.genre-bar,
+.series {
+  font-size: 13px;
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+.review-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.review-end {
+  margin-top: 40px;
+  text-align: center;
+  color: white;
+  align-items: center;
+}
+
+.review-end img {
+  color: white;
+  align-items: center;
+}
+
+.rating {
+  font-size: 22px;
+  color: #fdc103;
+  margin-bottom: 20px;
+}
+
+.back-home.top {
+  margin-bottom: 15px;
+}
+
+.back-home.top a {
+  color: #fdc103;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  position: relative;
+}
+
+/* underline animata */
+.back-home.top a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #fdc103;
+  transition: width 0.3s ease;
+}
+
+.back-home.top a:hover::after {
+  width: 100%;
+}
+
+.hero-cta {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.hero-cta span {
+  color: #fdc103;
+  font-weight: 500;
+}
+
+/* ===== TITOLI ===== */
+
+.review-container h1 {
+  color: #fdc103;
+}
+
+.review-container h2,
+.review-container h3 {
+  color: #ffffff;
+}
+
+/* ===== TESTO ===== */
+
+.review-container {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* testo recensione */
+.review-text {
+  max-width: 680px;
+  /* 🔥 prima era troppo largo */
+  margin-left: 0;
+}
+
+.review-text p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* strong dentro il testo → leggermente più pieno */
+.review-text strong {
+  color: #ffffff;
+}
+
+/* corsivo */
+.review-text em {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* rating */
+.rating {
+  color: #fdc103;
+}
+
+/* ===== WATCH BLOCK ===== */
+.watch {
+  display: flex;
+  align-items: baseline;
+  /* allinea perfettamente testo + link */
+  gap: 14px;
+  margin: 24px 0 28px;
+}
+
+.watch a {
+  color: #fdc103;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid #fdc103;
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.watch a:hover {
+  opacity: 0.7;
+  color: #fdc103;
+}
+
+.watch a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fdc103;
+  transition: width 0.3s ease;
+}
+
+.watch a:hover::after {
+  width: 100%;
+}
+
+/* label */
+.watch-label {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* link editoriale */
+.watch-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: #fdc103;
+  text-decoration: none;
+  line-height: 1;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+/* underline animata pulita */
+.watch-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #fdc103;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.watch-link:hover::after {
+  transform: scaleX(1);
+}
+
+.watch span {
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.watch-btn-inline {
+  color: #fdc103;
+  text-decoration: none;
+  position: relative;
+}
+
+.watch-btn-inline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #fdc103;
+  transition: width 0.3s ease;
+}
+
+.watch-btn-inline:hover::after {
+  width: 100%;
+}
+
+
+/* ✍️ FIRMA → CENTRATA + PIÙ IMPORTANTE */
+.firma-review {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.firma-review img {
+  width: 120px;
+  /* più grande */
+  opacity: 0.95;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+  color: white;
+}
+
+/* 🔙 TORNA → SINISTRA ALLINEATO AL TESTO */
+.back-home {
+  text-align: left;
+  margin-top: 30px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  z-index: 2;
+}
+
+.back-home a {
+  color: #fdc103;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  background: rgba(11, 31, 38, 0.6);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+/* underline animata coerente col sito */
+.back-home a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #fdc103;
+  transition: width 0.3s ease;
+}
+
+.back-home a:hover::after {
+  width: 100%;
+}
+
+
+/* ===== NEWSLETTER ===== */
+.newsletter {
+  margin-bottom: 30px;
+  margin-top: 80px;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.newsletter-inner {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+/* kicker */
+.newsletter-kicker {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.6;
+  margin-bottom: 12px;
+}
+
+/* titolo */
+.newsletter h2 {
+  font-family: 'Playfair Display', serif;
+  color: white;
+  margin-bottom: 14px;
+  font-size: 28px;
+}
+
+/* sottotesto */
+.newsletter-sub {
+  font-size: 15px;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+/* bottone */
+.newsletter-btn {
+  padding: 14px 26px;
+  background: #fdc103;
+  color: #0d2e40;
+  border-radius: 999px;
+  font-size: 14px;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto 0;
+  display: block;
+}
+
+/* hover */
+.newsletter-btn:hover {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto 0;
+  display: block;
+  background: var(--gold);
+  color: #0b1f26;
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 191, 0, 0.25),
+    0 0 18px rgba(255, 191, 0, 0.15);
+}
+
+.newsletter h2 {
+  color: #ffffff;
+}
+
+.newsletter-sub {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+#splash {
+  position: fixed;
+  inset: 0;
+  background: #fdc103;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#splash img {
+  width: 140px;
+  margin-bottom: 40px;
+}
+
+.loader {
+  width: 60px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.loader::after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 100%;
+  background: black;
+  animation: loading 1.2s infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+#splash p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: black;
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Playfair Display', serif;
+  color: white;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+.fade {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
+}
+
+.credits.show .fade {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* delay progressivo */
+.credits.show .fade:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.credits.show .fade:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.credits.show .fade:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.credits.show .fade:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.credits.show .fade:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.credits.show .fade:nth-child(6) {
+  animation-delay: 1.2s;
+}
+
+/* animazione */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+  .poster-img {
+    width: 380px;
+    /* prima ~320 */
+    height: 380px;
+    object-fit: cover;
+  }
+
+  .poster-text h1 {
+    text-align: center;
+  }
+
+  .intro-highlight {
+    color: #fdc103;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .intro-text {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .poster-text h1 {
+    margin-bottom: 20px;
+  }
+
+  .post-signature {
+    margin-top: 30px;
+    width: 140px;
+  }
+
+  .menu {
+    gap: 26px;
+  }
+
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 34px 40px;
+  }
+
+  .logo {
+    font-size: 56px;
+  }
+
+  .logo-subtitle {
+    font-size: 11px;
+  }
 
 
 
