@@ -1599,6 +1599,59 @@ p {
 .credits.show .fade:nth-child(6) {
   animation-delay: 1.2s;
 }
+.rubriche-home{
+  padding: 100px 0;
+}
+
+.section-kicker{
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c9a227;
+  margin-bottom: 14px;
+}
+
+.section-title{
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 5vw, 52px);
+  color: #f5f1ea;
+  margin-bottom: 50px;
+  max-width: 700px;
+}
+
+.rubriche-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.rubrica-card{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px;
+  padding: 34px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.rubrica-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(201,162,39,0.4);
+}
+
+.rubrica-label{
+  display: block;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #c9a227;
+  margin-bottom: 18px;
+}
+
+.rubrica-card p{
+  color: #f5f1ea;
+  font-size: 18px;
+  line-height: 1.7;
+}
 
 /* animazione */
 @keyframes fadeUp {
@@ -1612,13 +1665,6 @@ p {
     transform: translateY(0);
   }
 }
-
-
-
-
-
-
-
   .poster-img {
     width: 380px;
     /* prima ~320 */
@@ -2219,5 +2265,19 @@ font-size: 18px;
 
   .film-director{
     font-size: 0.82rem;
+  }
+  .rubriche-grid{
+
+    grid-template-columns:
+      repeat(3,1fr);
+
+    gap:24px;
+  }
+
+  .rubrica-card{
+
+    min-height:240px;
+
+    padding:34px;
   }
 }
