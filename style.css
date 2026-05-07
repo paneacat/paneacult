@@ -2083,19 +2083,19 @@ p {
 ========================= */
 
 .archivio-filters{
-
   margin-top:48px;
 }
 
+.archivio-title {
+  font-size: 30px;
+  text-align: center;
+
 .filters-wrapper{
-
   width:min(760px, 100%);
-
   margin:0 auto;
 }
 
 .filter-group{
-
   margin-bottom:14px;
 }
 
