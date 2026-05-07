@@ -2771,3 +2771,76 @@ line-height: 0.95;
 
   pointer-events:none;
 }
+
+/* =========================
+   CREDITS
+========================= */
+
+.credits{
+
+  margin-top:120px;
+
+  padding:
+    40px 20px
+    80px;
+
+  text-align:center;
+}
+
+/* WRAPPER */
+
+.credits-inner{
+
+  max-width:320px;
+
+  margin:0 auto;
+}
+
+/* LINEA */
+
+.credits::before{
+
+  content:"";
+
+  display:block;
+
+  width:42px;
+
+  height:1px;
+
+  background:rgba(253,193,3,.35);
+
+  margin:
+    0 auto
+    34px;
+}
+
+/* LABEL */
+
+.credits-label{
+
+  font-size:10px;
+
+  letter-spacing:2.4px;
+
+  text-transform:uppercase;
+
+  color:rgba(255,255,255,.38);
+
+  margin-top:28px;
+
+  margin-bottom:8px;
+}
+
+/* NOME */
+
+.credits-name{
+
+  font-family:'Playfair Display',serif;
+
+  font-size:22px;
+
+  line-height:1.4;
+
+  color:white;
+}
