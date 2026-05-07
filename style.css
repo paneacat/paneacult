@@ -135,11 +135,6 @@ body {
   margin-top: 6px;
 }
 
-.about-content {
-  display: flex;
-  align-items: center;
-  gap: 80px;
-}
 
 .home-cinema {
   position: relative;
@@ -1102,6 +1097,13 @@ p {
   font-size: 16px;
   line-height: 1.6;
 }
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
 
 /* animazione singoli elementi (opzionale ma bello) */
 .fade {
@@ -1897,19 +1899,7 @@ p {
       max-width: 100%;
       display: block;
     }
-    
 
-.about-content{
-  width:100%;
-  max-width:1200px;
-
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-
-  gap:80px;
-
-  }
   
   .film-author,
   .film-rating {
