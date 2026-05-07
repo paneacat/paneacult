@@ -2227,7 +2227,6 @@ line-height: 0.95;
   .contact-sub {
     text-align: center;
   }
-}
 
 .contact-columns .card {
   max-width: 100%;
@@ -2238,6 +2237,135 @@ line-height: 0.95;
   opacity: 0.8;
   margin: 20px auto 0;
 }
+  * =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+  .filters-panel{
+    gap:10px;
+  }
+
+  .filter-btn,
+  .filter-reset{
+
+    font-size:12px;
+
+    height:38px;
+
+    padding:0 14px;
+  }
+
+}
+  
 }
 
-  
+  /* =========================
+   FILTRI ARCHIVIO
+========================= */
+
+.filters-wrapper{
+  width:100%;
+  max-width:820px;
+
+  margin:0 auto 40px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  gap:18px;
+}
+
+/* bottone toggle */
+
+.filters-toggle{
+  padding:12px 22px;
+
+  border-radius:999px;
+
+  border:1px solid rgba(255,255,255,.12);
+
+  background:rgba(255,255,255,.04);
+
+  color:white;
+
+  font-size:14px;
+  letter-spacing:.5px;
+
+  transition:var(--transition);
+}
+
+.filters-toggle:hover{
+  border-color:var(--gold);
+
+  color:var(--gold);
+}
+
+/* pannello */
+
+.filters-panel{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  justify-content:center;
+
+  gap:12px;
+}
+
+/* bottoni */
+
+.filter-btn,
+.filter-reset{
+
+  height:42px;
+
+  padding:0 18px;
+
+  border-radius:999px;
+
+  border:1px solid rgba(255,255,255,.10);
+
+  background:rgba(255,255,255,.04);
+
+  color:rgba(255,255,255,.82);
+
+  font-size:13px;
+
+  transition:var(--transition);
+}
+
+/* hover */
+
+.filter-btn:hover,
+.filter-reset:hover{
+
+  border-color:var(--gold);
+
+  color:var(--gold);
+
+  transform:translateY(-1px);
+}
+
+/* attivo */
+
+.filter-btn.active{
+
+  background:var(--gold);
+
+  color:#0d2e40;
+
+  border-color:var(--gold);
+
+  font-weight:600;
+}
+
+/* reset */
+
+.filter-reset{
+  width:42px;
+
+  padding:0;
+}
