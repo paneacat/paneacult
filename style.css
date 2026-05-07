@@ -1731,10 +1731,6 @@ p {
     padding: 22px;
   }
 
-  .hero-right {
-    gap: 10px;
-  }
-
   .poster {
     width: 72px;
 
@@ -1752,6 +1748,8 @@ p {
   .menu{
     gap:10px;
     margin-top:4px;
+    justify-content: flex-end;
+    gap: 24px;
   }
 
   .menu a{
@@ -2073,19 +2071,6 @@ p {
     text-align: left !important;
   }
 
-  .menu {
-    display: flex !important;
-    justify-content: flex-end !important;
-    gap: 24px;
-  }
-
-  .logo-block {
-    text-align: left;
-  }
-
-  .menu {
-    justify-content: flex-end;
-  }
 
   /* HERO GENERICO */
   .hero-inner {
@@ -2128,19 +2113,13 @@ p {
   .logo-block {
     text-align: left;
   }
-
-  .menu {
-    justify-content: flex-end;
-    gap: 24px;
-  }
-  
+ 
   .poster-text,
   .contact-left {
     text-align: left;
     margin-left: 0;
     transform: none;
   }
-
   
 .archivio-filters{
     max-width:900px;
