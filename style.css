@@ -1008,7 +1008,6 @@ p {
     padding: 100px 20px 60px;
   }
 
-
   .hero-inner {
     flex-direction: row;
     justify-content: space-between;
@@ -1230,7 +1229,6 @@ p {
     margin-left: 0;
     transform: none;
   }
-
   
   /* FIRMA */
   .poster-signature {
@@ -1370,8 +1368,27 @@ p {
 
     height:420px;
   }
-  .container{
-    width: 88%;
+  
+  body{
+    font-size: 16px;
+  }
+
+.menu a{
+    font-size: 0.72rem;
+}
+  .filter-btn,
+  .filter-reset,
+  .newsletter-btn,
+  .load-more-btn{
+    min-height: 44px;
+  }
+
+  .film-title{
+    font-size: 1rem;
+  }
+
+  .film-director{
+    font-size: 0.82rem;
   }
   }
 
