@@ -2321,6 +2321,18 @@ line-height: 0.95;
 
     font-size:12px;
   }
+  .archivio-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:28px;
+
+    max-width:1420px;
+
+    margin:40px auto 0;
+
+    padding:0 40px;
+  }
 }
 
 
@@ -2544,28 +2556,17 @@ line-height: 0.95;
 
   grid-template-columns:repeat(2,1fr);
 
-  gap:18px;
+  gap:16px;
 
-  padding:0 14px;
+  padding:0 16px;
 
   margin-top:30px;
 }
 
-/* =========================
-   CARD
-========================= */
+/* CARD */
 
 .archivio-card{
-
   background:transparent;
-
-  border:none;
-
-  box-shadow:none;
-
-  border-radius:0;
-
-  overflow:visible;
 }
 
 /* IMMAGINE */
@@ -2574,25 +2575,24 @@ line-height: 0.95;
 
   width:100%;
 
-  aspect-ratio:16/9;
+  aspect-ratio:16/10;
 
   object-fit:cover;
 
-  display:block;
+  border-radius:18px;
 
-  border-radius:20px;
+  display:block;
 }
 
-/* TESTO */
+/* INFO */
 
 .card-info{
-
-  padding-top:10px;
+  padding-top:8px;
 }
 
 .film-title{
 
-  font-size:15px;
+  font-size:14px;
 
   line-height:1.3;
 
@@ -2601,11 +2601,16 @@ line-height: 0.95;
 
 .film-director{
 
-  font-size:13px;
+  font-size:12px;
 
   opacity:.72;
+}
 
-  margin-bottom:6px;
+.film-stars{
+
+  font-size:12px;
+
+  margin-top:4px;
 }
 /* =========================
    LOAD MORE
