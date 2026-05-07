@@ -2185,12 +2185,19 @@ line-height: 0.95;
     flex-direction: column;
   }
 
-  .menu a {
+  .menu{
+    gap:10px;
+    margin-top:4px;
+  }
+
+  .menu a{
+    font-size:11px;
+    letter-spacing:.6px;
+    padding-bottom:2px;
     font-family: 'Inter', sans-serif;
     color: white;
     text-decoration: none;
     position: relative;
-    padding-bottom: 4px;
     transition: color 0.3s ease;
   }
 
