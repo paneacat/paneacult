@@ -120,18 +120,6 @@ body {
 
   display:block;
 }
-.login-hero{
-
-  position:relative;
-
-  min-height:100vh;
-
-  overflow:hidden;
-
-  background:#0d2e40;
-
-  padding:120px 24px 80px;
-}
 
 /* WALL */
 
@@ -185,19 +173,6 @@ body {
   margin:0 auto;
 
   text-align:center;
-}
-
-.login-hero{
-
-  position:relative;
-
-  overflow:hidden;
-
-  min-height:100vh;
-
-  background:#0d2e40;
-
-  padding:120px 24px 80px;
 }
 
 .container{
@@ -540,6 +515,22 @@ body {
 
   margin-left:4px;
 }
+  
+  /* =========================
+   LOGIN HERO
+========================= */
+
+.login-hero {
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin: 80px auto 0;
+
+  padding: 0 24px;
+
+  position: relative;
+}
 
 .login-posters {
   display: flex;
@@ -566,22 +557,6 @@ body {
 .login-posters img:nth-child(2),
 .login-posters img:nth-child(3) {
   transform: translateY(20px);
-}
-  
-  /* =========================
-   LOGIN HERO
-========================= */
-
-.login-hero {
-  width: 100%;
-
-  max-width: 1200px;
-
-  margin: 80px auto 0;
-
-  padding: 0 24px;
-
-  position: relative;
 }
 
 /* LAYOUT CENTRALE */
