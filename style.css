@@ -384,24 +384,7 @@ body {
 
   pointer-events:none;
 }
-/* =========================
-   GRID
-========================= */
 
-.archivio-grid{
- padding:0 16px;
-  margin-top:34px;
-  display:grid;
-  grid-template-columns:1fr;
-  gap:28px;
-  padding-left:16px;
-  padding-right:16px;
-  margin-top:40px;
-}
-
-/* =========================
-   CARD
-========================= */
 /* =========================
    CONTACT GRID
 ========================= */
@@ -494,6 +477,16 @@ body {
   width: 78vw;
 }
 
+.section {
+ padding:0 16px;
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:28px;
+  padding-left:16px;
+  padding-right:16px;
+  margin-top:40px;
+}
 /* IMMAGINE */
 
 .archivio-card img {
