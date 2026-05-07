@@ -885,6 +885,7 @@ line-height: 0.95;
 
   color:var(--gold);
 }
+
 #suggestions {
   margin-top: 10px;
   display: flex;
@@ -892,17 +893,6 @@ line-height: 0.95;
   gap: 8px;
 }
 
-
-.header-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin: 0 auto;
-  max-width: 1100px;
-  padding: 20px 20px;
-  padding-top: 20px;
-}
 
 .logo-block {
   display: flex;
