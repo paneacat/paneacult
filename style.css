@@ -40,51 +40,6 @@ button {
 
 }
 
-.add-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.add-modal.active {
-  display: flex;
-}
-
-.modal-content {
-  width: 90%;
-  max-width: 420px;
-  background: #0d2e40;
-  border: 1px solid #fdc103;
-  border-radius: 24px;
-  padding: 30px;
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 14px;
-  margin-top: 20px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: transparent;
-  color: white;
-}
-
-.modal-content button {
-  margin-top: 20px;
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 12px;
-  background: #fdc103;
-  color: #0d2e40;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 #suggestions {
   margin-top: 10px;
   display: flex;
@@ -272,84 +227,6 @@ body {
   margin: 12px auto 0;
 }
 
-.about-text {
-  font-weight: 400;
-  /* niente grassetto */
-  line-height: 1.6;
-  margin-top: 10px;
-}
-
-.about-text::first-line {
-  opacity: 0.9;
-  color: var(--gold);
-}
-
-.section-label {
-  margin-top: 15px;
-  padding-left: 0;
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  margin-left: 0;
-  color: var(--gold);
-  opacity: 0.7;
-  font-family: 'Inter', sans-serif;
-}
-
-.section-label::after {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 1px;
-  background: var(--gold);
-  opacity: 0.5;
-  margin-bottom: var(--space-md);
-}
-
-/* Mantiene stile featured */
-.contact-poster {
-  margin-bottom: 40px;
-}
-
-/* EMAIL protagonista */
-.contact-mail-block {
-  text-align: center;
-  margin: 60px 0 20px;
-}
-
-.contact-mail {
-  font-size: 22px;
-  color: #fdc103;
-  text-decoration: none;
-  position: relative;
-}
-
-/* underline animata */
-.contact-mail::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  background: #fdc103;
-  transition: width 0.3s ease;
-}
-
-.contact-mail:hover::after {
-  width: 100%;
-}
-
-/* testo secondario */
-.contact-extra {
-  margin-top: 10px;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.contact-extra a {
-  color: #fdc103;
-  text-decoration: none;
-}
 
 .back-link {
   display: inline-block;
@@ -359,7 +236,6 @@ body {
   font-size: 13px;
   letter-spacing: 1px;
   text-transform: uppercase;
-
   opacity: 0.8;
 }
 
@@ -1420,42 +1296,6 @@ p {
     align-items: center;
   }
 
-  .sections {
-    display: grid;
-    gap: 60px;
-
-    max-width: 1100px;
-    margin: 0 auto;
-
-    padding: 0 40px;
-    padding-top: 60px;
-  }
-
-  .sections .card {
-    position: relative;
-    padding-top: 20px;
-  }
-
-  /* linee verticali SOLO desktop */
-  .sections .card:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: -30px;
-    width: 1px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.08);
-  }
-
-  
-  .about-hero img:hover {
-    filter: grayscale(0%);
-  }
-
-  .about-container p {
-    margin-bottom: 12px;
-  }
-
   .subtitle {
     max-width: 520px;
     font-size: 1.1rem;
@@ -1731,28 +1571,6 @@ p {
     text-decoration: none !important;
   }
 
-  .contact-columns {
-    display: grid;
-    gap: 60px;
-
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .separator {
-    margin: 60px 0;
-    opacity: 0.3;
-  }
-
-  .contact-columns .card:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: -30px;
-    width: 1px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.15);
-  }
 
   .header-inner {
     flex-direction: row !important;
@@ -2593,6 +2411,22 @@ p {
   opacity: 0.75;
   transform: translateY(-4px);
 }
+  .contact-columns {
+    display: grid;
+    gap: 60px;
+
+    max-width: 1100px;
+    margin: 0 auto;
+}
+  .contact-columns .card:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+  }
   }
 
 
