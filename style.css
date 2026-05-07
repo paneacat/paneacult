@@ -44,7 +44,6 @@ body {
   padding-top: 13px;
   background: var(--bg);
   color: #ffffff;
-
 }
 
 #suggestions {
@@ -54,202 +53,6 @@ body {
   gap: 8px;
 }
 
-.suggestion {
-  padding: 12px 14px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.06);
-  color: white;
-  cursor: pointer;
-  transition: 0.2s;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.suggestion:hover {
-  background: #fdc103;
-  color: #0d2e40;
-}
-
-.empty-state {
-  display: none;
-}
-
-.empty-state.show {
-  display: block;
-}
-
-.line-break {
-  display: block;
-  color: #fdc103;
-}
-
-
-/* SOTTOTITOLO */
-.subtitle {
-  color: rgba(255, 255, 255, 0.75);
-  font-style: italic;
-  font-size: 18px;
-  margin-top: 6px;
-}
-
-/* AUTORE (PIÙ IMPORTANTE) */
-.author {
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 500;
-  margin-top: 10px;
-}
-
-/* HASHTAG */
-.series {
-  color: rgba(255, 255, 255, 0.45);
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin-top: 14px;
-}
-
-/* GENERE */
-.genre-bar {
-  color: var(--muted);
-  ;
-  font-size: 13px;
-  margin-top: 4px;
-}
-
-.home-intro {
-  padding: 20px;
-  margin-top: 10px;
-}
-
-.home-intro h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  color: var(--text);
-}
-
-.home-intro p {
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: var(--gold);
-  margin-top: 6px;
-}
-
-
-.home-cinema {
-  position: relative;
-  margin-bottom: 80px;
-  padding: 0 20px;
-  margin-top: 40px;
-}
-
-.home-cinema::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height: 100%;
-  pointer-events: none;
-}
-
-.home-cinema .container {
-  padding-left: 32px;
-  padding-right: 32px;
-  padding: 0 32px;
-}
-
-.firma-recensione {
-  margin-top: 40px;
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.6;
-  letter-spacing: 0.5px;
-  text-align: left;
-}
-
-.archivio-title {
-  font-family: 'Playfair Display', serif;
-  color: white;
-  font-size: clamp(28px, 3vw, 42px);
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 35px;
-  letter-spacing: 1px;
-}
-
-
-.archivio-title::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background: var(--gold);
-  margin: 12px auto 0;
-}
-
-
-.back-link {
-  display: inline-block;
-  margin-bottom: 24px;
-
-  color: var(--gold);
-  font-size: 13px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  opacity: 0.8;
-}
-
-.back-link:hover {
-  opacity: 1;
-}
-
-/* firma */
-.poster-signature-block {
-  text-align: center;
-  margin-top: 40px;
-}
-
-
-.card p a {
-  color: #fdc103;
-  text-decoration: none;
-  position: relative;
-}
-
-/* underline animata */
-.card p a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0;
-  height: 1px;
-  background: #fdc103;
-  transition: width 0.3s ease;
-}
-
-.card p a:hover::after {
-  width: 100%;
-}
-
-.card-title {
-  font-family: 'Playfair Display', serif;
-}
-
-a {
-  text-decoration: none;
-  color: var(--text);
-}
-
-a:hover {
-  color: var(--gold);
-}
-
-.cta-link:hover {
-  color: #0d2e40;
-  text-decoration: none;
-}
 
 .header-inner {
   display: flex;
@@ -330,6 +133,175 @@ a:hover {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+.suggestion {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.suggestion:hover {
+  background: #fdc103;
+  color: #0d2e40;
+}
+
+.line-break {
+  display: block;
+  color: #fdc103;
+}
+
+
+/* SOTTOTITOLO */
+.subtitle {
+  color: rgba(255, 255, 255, 0.75);
+  font-style: italic;
+  font-size: 18px;
+  margin-top: 6px;
+}
+
+/* AUTORE (PIÙ IMPORTANTE) */
+.author {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* HASHTAG */
+.series {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 14px;
+}
+
+/* GENERE */
+.genre-bar {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.home-intro {
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.home-intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--text);
+}
+
+.home-intro p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-top: 6px;
+}
+
+
+.home-cinema {
+  position: relative;
+  margin-bottom: 80px;
+  padding: 0 20px;
+  margin-top: 40px;
+}
+
+.home-cinema::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.home-cinema .container {
+  padding-left: 32px;
+  padding-right: 32px;
+  padding: 0 32px;
+}
+
+.firma-recensione {
+  margin-top: 40px;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+
+  color: var(--gold);
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.back-link:hover {
+  opacity: 1;
+}
+
+/* firma */
+.poster-signature-block {
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+.card p a {
+  color: #fdc103;
+  text-decoration: none;
+  position: relative;
+}
+
+/* underline animata */
+.card p a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: #fdc103;
+  transition: width 0.3s ease;
+}
+
+.card p a:hover::after {
+  width: 100%;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+}
+
+.cta-link:hover {
+  color: #0d2e40;
+  text-decoration: none;
+}
+
+
 .home-cinema .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -385,7 +357,24 @@ a:hover {
   transform: translateY(-4px);
   transition: 0.3s ease;
 }
+.archivio-title {
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-size: clamp(28px, 3vw, 42px);
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 35px;
+  letter-spacing: 1px;
+}
 
+.archivio-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+  margin: 12px auto 0;
+}
 /* ===== CARD ===== */
 .card {
   position: relative;
@@ -689,11 +678,6 @@ a:hover {
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* sottotitolo */
-.subtitle {
-  color: rgba(255, 255, 255, 0.7);
-}
-
 /* testo recensione */
 .review-text {
   max-width: 680px;
@@ -819,13 +803,6 @@ a:hover {
   width: 100%;
 }
 
-/* ⭐ STELLINE → SINISTRA */
-.rating {
-  text-align: left;
-  color: #fdc103;
-  font-size: 20px;
-  margin-bottom: 30px;
-}
 
 /* ✍️ FIRMA → CENTRATA + PIÙ IMPORTANTE */
 .firma-review {
@@ -944,7 +921,6 @@ a:hover {
     0 0 18px rgba(255, 191, 0, 0.15);
 }
 
-
 .newsletter h2 {
   color: #ffffff;
 }
@@ -1003,77 +979,6 @@ a:hover {
   letter-spacing: 2px;
   color: black;
 }
-
-/* ===== FOOTER ===== */
-
-.credits {
-  margin: 120px auto 60px;
-  padding: 40px 20px 0;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
-  max-width: var(--container-width);
-}
-
-/* linea sopra */
-.credits::before {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 1px;
-  background: var(--gold);
-  opacity: 0.4;
-  margin: 0 auto 30px;
-}
-
-/* quando appare */
-.credits.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* contenuto interno */
-.credits-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* label (tipo “A cura di”) */
-.credits-label {
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #777;
-  margin-top: 18px;
-}
-
-/* nome */
-.credits-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  color: white;
-  margin-top: 6px;
-}
-
-.credits {
-  margin-top: 80px;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.credits-label {
-  color: var(--muted);
-  ;
-  font-size: 12px;
-}
-
-.credits-name {
-  color: #ffffff;
-  margin-bottom: 15px;
-}
-
 
 h1 {
   font-size: 56px;
@@ -1550,9 +1455,7 @@ p {
     display: flex;
     gap: 10px;
     margin-left: auto;
-  }
-
-  
+  }  
   }
 
 
@@ -2010,47 +1913,31 @@ p {
 
 .login-layout {
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
-
   text-align: center;
-
   gap: 30px;
-
   position: relative;
-
   z-index: 2;
 }
 
 /* TESTO */
 
 .login-text h1 {
-  font-family: 'Playfair Display', serif;
-
+font-family: 'Playfair Display', serif;
   font-size: clamp(48px, 7vw, 82px);
-
-  line-height: 0.95;
-
+line-height: 0.95;
   color: white;
-
-  margin-bottom: 18px;
-
+  margin-bottom: 18px
   letter-spacing: -2px;
 }
 
 .login-text p {
   font-size: 18px;
-
   line-height: 1.6;
-
   color: rgba(255,255,255,0.72);
-
   max-width: 620px;
-
   margin: 0 auto;
 }
 
@@ -2167,22 +2054,6 @@ p {
 }
 
 /* POSTER */
-
-.hero-right {
-  margin-top: 50px;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  gap: 14px;
-
-  flex-wrap: nowrap;
-
-  overflow: hidden;
-}
 
 .poster:nth-child(even) {
   transform: rotate(4deg) translateY(16px);
