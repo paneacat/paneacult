@@ -2369,3 +2369,15 @@ line-height: 0.95;
 
   padding:0;
 }
+/* chiuso di default */
+
+.filters-panel{
+  display:none;
+}
+
+/* aperto */
+
+.filters-wrapper.active .filters-panel{
+  display:flex;
+}
+
