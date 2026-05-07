@@ -1290,19 +1290,6 @@ p {
     justify-content: flex-start !important;
   }
 
-
-  .sections {
-    display: grid !important;
-    gap: 60px;
-
-    max-width: 1100px;
-    margin: 0 auto;
-
-    padding: 0 40px;
-    padding-top: 60px;
-  }
-
-
   .logo-block {
     text-align: left;
   }
@@ -1383,11 +1370,6 @@ p {
     transform: none;
   }
 
-  .sections,
-  .contact-columns {
-    display: grid;
-    gap: 60px;
-  }
   
 .archivio-filters{
     max-width:900px;
