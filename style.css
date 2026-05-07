@@ -2548,3 +2548,44 @@ line-height: 0.95;
 
   text-align:left;
 }
+
+.about-content{
+
+  display:flex;
+  flex-direction:column;
+
+  align-items:center;
+
+  gap:40px;
+
+  padding:40px 24px 0;
+}
+
+.about-text{
+
+  max-width:520px;
+
+  width:100%;
+}
+
+.about-image{
+
+  width:100%;
+
+  display:flex;
+
+  justify-content:center;
+}
+
+.about-image img{
+
+  width:100%;
+
+  max-width:420px;
+
+  height:auto;
+
+  object-fit:contain;
+
+  display:block;
+}
