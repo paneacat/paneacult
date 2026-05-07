@@ -2136,7 +2136,109 @@ p {
 
   pointer-events:none;
 }
+/* =========================
+   CONTAINER GENERALE
+========================= */
 
+.container{
+
+  width:min(1024px, calc(100% - 48px));
+
+  margin:0 auto;
+}
+
+/* =========================
+   FILTRI
+========================= */
+
+.archivio-filters{
+
+  margin-top:48px;
+}
+
+.filters-wrapper{
+
+  width:min(760px, 100%);
+
+  margin:0 auto;
+}
+
+.filter-group{
+
+  margin-bottom:14px;
+}
+
+.filter-group summary{
+
+  height:58px;
+
+  padding:0 22px;
+
+  border-radius:18px;
+
+  display:flex;
+
+  align-items:center;
+
+  font-size:.9rem;
+}
+
+/* =========================
+   GRID DESKTOP
+========================= */
+
+@media(min-width:1024px){
+
+  .slider{
+
+    display:grid;
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap:28px;
+
+    overflow:visible;
+  }
+
+  .slide-item{
+
+    min-width:unset;
+  }
+
+  .slide-card img{
+
+    width:100%;
+
+    aspect-ratio:16/10;
+
+    object-fit:cover;
+
+    border-radius:18px;
+  }
+
+  .slide-info{
+
+    padding-top:12px;
+  }
+
+  .film-title{
+
+    font-size:1rem;
+  }
+
+  .film-director{
+
+    font-size:.82rem;
+  }
+
+  /* NASCONDI FRECCE */
+
+  .slider-arrows{
+
+    display:none;
+  }
+}
 
 
 
@@ -2801,5 +2903,30 @@ font-size: 18px;
   .slide-card img{
 
     aspect-ratio:16/11;
+  }
+
+  .slider{
+
+    display:flex;
+
+    gap:18px;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+
+    padding-inline:2px;
+  }
+
+  .slide-item{
+
+    min-width:82%;
+  }
+
+  .slide-card img{
+
+    aspect-ratio:16/8;
+
+    object-fit:cover;
   }
 }
