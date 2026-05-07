@@ -1629,8 +1629,6 @@ p {
     .hero-left {
       position: relative;
       z-index: 5;
-      width: 100%;
-      max-width: 620px;
       text-align: left;
       margin: 0 auto;
       background: transparent;
