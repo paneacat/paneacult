@@ -39,6 +39,13 @@ button {
   --transition: 0.3s ease;
 
 }
+body {
+  font-family: 'Inter', sans-serif;
+  padding-top: 13px;
+  background: var(--bg);
+  color: #ffffff;
+
+}
 
 #suggestions {
   margin-top: 10px;
@@ -60,14 +67,6 @@ button {
 .suggestion:hover {
   background: #fdc103;
   color: #0d2e40;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  padding-top: 13px;
-  background: var(--bg);
-  color: #ffffff;
-
 }
 
 .empty-state {
