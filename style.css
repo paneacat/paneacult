@@ -290,74 +290,6 @@ a:hover {
 
 }
 
-.archivio-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  /* 📱 2 colonne */
-  gap: 16px;
-  margin-top: 100px;
-  width: 100%;
-  background: none;
-  padding: 0;
-  margin: 0 auto;
-  overflow: hidden;
-  /* 👈 QUESTO è fondamentale */
-}
-
-.archivio-card {
-  background: transparent;
-  box-shadow: none;
-  border-radius: 22px;
-  overflow: visible;
-}
-
-.archivio-card img {
-  width: 100%;
-  display: block;
-  border-radius: 22px;
-  height: 180px;
-  object-fit: cover;
-  aspect-ratio: 16 / 9;
-  display: block;
-  overflow: hidden;
-  border-radius: 22px;
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.18);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0
-}
-
-.archivio-card:hover {
-  transform: translateY(-4px);
-  transition: 0.3s ease;
-}
-.archivio-title {
-  font-family: 'Playfair Display', serif;
-  color: white;
-  font-size: clamp(28px, 3vw, 42px);
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 35px;
-  letter-spacing: 1px;
-}
-
-.archivio-title::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background: var(--gold);
-  margin: 12px auto 0;
-}
-/* ===== CARD ===== */
-.card {
-  position: relative;
-  margin: 0;
-  background: transparent;
-  box-shadow: none;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
 .hero {
   padding: 60px 0 30px;
 }
@@ -1432,6 +1364,7 @@ p {
     max-width:1420px;
 
     margin:40px auto 0;
+  
   }
     .credits{
 
@@ -1570,29 +1503,7 @@ p {
       line-height: 1.5;
     }
 
-    .hero-left {
-      position: relative;
-      z-index: 5;
-      text-align: left;
-      margin: 0 auto;
-      background: transparent;
-      backdrop-filter: none;
-      padding: 0;
-    }
-
-    .poster {
-      width: 160px opacity:0.32;
-      filter:
-        brightness(0.9) contrast(1.1);
-      z-index: 1;
-    }
-
-    .hero-title {
-      font-size: 82px;
-      line-height: 0.9;
-      margin-bottom: 20px;
-    }
-
+  
     .cta-text {
       font-size: 21px;
       line-height: 1.5;
@@ -1624,43 +1535,7 @@ p {
     }
 
 
-  .archivio-card,
-  .card-film {
-    border-radius: 22px;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.03);
-
-    box-shadow:
-      0 10px 30px rgba(0, 0, 0, 0.18);
-
-    transition: 0.3s ease;
-  }
-
-  .archivio-card:hover,
-  .card-film:hover {
-    transform: translateY(-4px);
-  }
-
-    .poster {
-      position: relative;
-
-      width: 220px;
-      height: auto;
-
-      border-radius: 18px;
-
-      object-fit: cover;
-
-      transform: none !important;
-    }
-
-    .poster img {
-      width: 100%;
-      display: block;
-
-      border-radius: 18px;
-    }
-
+    
     .hero-copy {
       max-width: 420px;
     }
@@ -2108,23 +1983,22 @@ line-height: 0.95;
 
     font-size:12px;
   }
-  .archivio-grid{
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:30px;
-
-    max-width:1420px;
-
-    margin:50px auto 0;
-
-    padding:
-      0
-      60px;
-  }
+  
+.archivio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* 📱 2 colonne */
+  gap: 16px;
+  margin-top: 100px;
+  width: 100%;
+  background: none;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  /* 👈 QUESTO è fondamentale */
+}
 
   .archivio-card img{
-
     height:180px;
   }
 }
