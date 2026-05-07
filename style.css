@@ -407,13 +407,8 @@ body {
 ========================= */
 
 .sections{
-
   display:grid;
-
-  grid-template-columns:1fr;
-
   gap:22px;
-
   margin-top:70px;
 }
 
@@ -424,9 +419,6 @@ body {
   padding:26px;
 
   border-radius:22px;
-
-  background:
-    rgba(255,255,255,.03);
 
   border:
     1px solid rgba(255,255,255,.06);
