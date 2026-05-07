@@ -3,29 +3,116 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===============================
   // ===== FILTRI ARCHIVIO
   // ===============================
-
-  const cards = Array.from(document.querySelectorAll(".archivio-card"));
-  const emptyState = document.getElementById("emptyState");
 const cards = document.querySelectorAll(".archivio-card");
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+const emptyState = document.getElementById("emptyState");
+
+let activeCategory = "all";
+let activeGenres = [];
+
+/* =========================
+   CLICK FILTRI
+========================= */
+
+filterButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const filter = button.dataset.filter;
+
+    /* =========================
+       RUBRICHE
+    ========================= */
+
+    if(
+      filter === "all" ||
+      filter === "cinema-che-resta" ||
+      filter === "sguardi-contemporanei"
+    ){
+
+      activeCategory = filter;
+
+      document
+        .querySelectorAll(
+          '[data-filter="all"], [data-filter="cinema-che-resta"], [data-filter="sguardi-contemporanei"]'
+        )
+        .forEach(btn => btn.classList.remove("active"));
+
+      button.classList.add("active");
+    }
+
+    /* =========================
+       GENERI
+    ========================= */
+
+    else {
+
+      if(activeGenres.includes(filter)){
+
+        activeGenres =
+          activeGenres.filter(g => g !== filter);
+
+        button.classList.remove("active");
+
+      } else {
+
+        activeGenres.push(filter);
+
+        button.classList.add("active");
+      }
+    }
+
+    aggiornaFiltri();
+  });
+
+});
+
+/* =========================
+   UPDATE
+========================= */
 
 function aggiornaFiltri(){
 
-  let visibili = 0;
+  let visibleCount = 0;
 
   cards.forEach(card => {
 
+    const categories =
+      card.dataset.category.split(" ");
+
+    /* rubrica */
+
+    const matchCategory =
+      activeCategory === "all" ||
+      categories.includes(activeCategory);
+
+    /* generi */
+
+    const matchGenres =
+      activeGenres.length === 0 ||
+      activeGenres.every(g =>
+        categories.includes(g)
+      );
+
     const visible =
-      card.style.display !== "none";
+      matchCategory && matchGenres;
+
+    card.style.display =
+      visible ? "block" : "none";
 
     if(visible){
-      visibili++;
+      visibleCount++;
     }
 
   });
 
+  /* EMPTY STATE */
+
   if(emptyState){
 
-    if(visibili === 0){
+    if(visibleCount === 0){
       emptyState.classList.add("show");
     } else {
       emptyState.classList.remove("show");
@@ -35,61 +122,34 @@ function aggiornaFiltri(){
 
 }
 
-  // BOTTONI FILTRI
-  const filterButtons = document.querySelectorAll(".filter-btn");
+/* =========================
+   RESET
+========================= */
 
-  filterButtons.forEach(button => {
+const resetBtn =
+  document.getElementById("resetFilters");
 
-    button.addEventListener("click", () => {
+if(resetBtn){
 
-      filterButtons.forEach(btn => btn.classList.remove("active"));
-      button.classList.add("active");
+  resetBtn.addEventListener("click", () => {
 
-      const filter = norm(button.dataset.filter);
+    activeCategory = "all";
 
-      if (
-        filter === "cinema" ||
-        filter === "sguardi" ||
-        filter === "tutti"
-      ) {
-        filtroCategoria = filter;
-      } else {
-        filtroGenere = filter;
-      }
+    activeGenres = [];
 
-      aggiornaFiltri();
-    });
+    filterButtons.forEach(btn =>
+      btn.classList.remove("active")
+    );
+
+    document
+      .querySelector('[data-filter="all"]')
+      .classList.add("active");
+
+    aggiornaFiltri();
 
   });
 
-  // RESET
-  const resetBtn = document.getElementById("resetFilters");
-
-  if (resetBtn) {
-
-    resetBtn.addEventListener("click", () => {
-
-      filtroCategoria = "tutti";
-      filtroGenere = "tutti";
-
-      filterButtons.forEach(btn =>
-        btn.classList.remove("active")
-      );
-
-      const tuttiBtn = document.querySelector(
-        '.filter-btn[data-filter="tutti"]'
-      );
-
-      if (tuttiBtn) {
-        tuttiBtn.classList.add("active");
-      }
-
-      aggiornaFiltri();
-    });
-
-  }
-
-  aggiornaFiltri();
+}
 
   // ===============================
   // ===== MENU FILTRI A TENDINA
