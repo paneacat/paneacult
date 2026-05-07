@@ -2612,3 +2612,55 @@ line-height: 0.95;
 
   margin-bottom:6px;
 }
+/* =========================
+   LOAD MORE
+========================= */
+
+.load-more-wrapper{
+
+  display:flex;
+
+  justify-content:center;
+
+  margin:
+    60px auto
+    20px;
+}
+
+.load-more-btn{
+
+  height:46px;
+
+  padding:0 26px;
+
+  border-radius:999px;
+
+  border:1px solid rgba(255,255,255,.10);
+
+  background:rgba(255,255,255,.03);
+
+  color:white;
+
+  font-size:13px;
+
+  letter-spacing:.4px;
+
+  transition:.25s ease;
+}
+
+/* hover */
+
+.load-more-btn:hover{
+
+  border-color:var(--gold);
+
+  color:var(--gold);
+
+  transform:translateY(-2px);
+}
+
+/* nascosto */
+
+.load-more-btn.hidden{
+  display:none;
+}
