@@ -2855,3 +2855,30 @@ line-height: 0.95;
 
   color:white;
 }
+/* =========================
+   FADE IN CREDITS
+========================= */
+
+.credits-label,
+.credits-name{
+
+  opacity:0;
+
+  transform:translateY(18px);
+
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+/* quando visibili */
+
+.credits.show .credits-label,
+.credits.show .credits-name{
+
+  opacity:1;
+
+  transform:translateY(0);
+}
+
+
