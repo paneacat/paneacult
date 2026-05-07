@@ -213,7 +213,6 @@ a:hover {
   margin-top: 6px;
 }
 
-
 .home-cinema {
   position: relative;
   margin-bottom: 80px;
@@ -241,7 +240,6 @@ a:hover {
   text-align: left;
 }
 
-
 .back-link {
   display: inline-block;
   margin-bottom: 24px;
@@ -263,14 +261,9 @@ a:hover {
   margin-top: 40px;
 }
 
-
 .cta-link:hover {
   color: #0d2e40;
   text-decoration: none;
-}
-
-.hero {
-  padding: 60px 0 30px;
 }
 
 .hero-inner {
@@ -388,6 +381,8 @@ a:hover {
     opacity: 1;
   }
 }
+
+
 
 
 .film-title {
@@ -945,10 +940,6 @@ p {
 
 
 
-
-
-
-
 @media (min-width: 1024px) {
 
   .header-inner {
@@ -962,36 +953,6 @@ p {
     font-size: 1.1rem;
   }
 
-  .home-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 60px;
-  }
-
-  .home .card {
-    margin-bottom: 10px;
-  }
-
-  .home .card img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 14px;
-    aspect-ratio: 24/9;
-    object-fit: cover;
-  }
-
-  .card-info h3 {
-    fill: none;
-    stroke: var(--gold);
-    stroke-width: 2;
-    stroke-dasharray: 300;
-    stroke-dashoffset: 300;
-    animation: drawLine 1s ease forwards;
-  }
-
-  .card-info p {
-    font-size: 15px;
-  }
 
   .rating {
     font-size: 15px;
@@ -1004,21 +965,6 @@ p {
     padding-top: 15px;
   }
 
-  .hero {
-    padding: 100px 20px 60px;
-  }
-
-  .hero-inner {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    gap: 40px;
-  }
-
-  .hero-text {
-    max-width: 520px;
-  }
 
   .hero-text h1 {
     font-family: 'Playfair Display', serif;
@@ -1051,24 +997,7 @@ p {
    POSTER (DESKTOP BASE)
 ================================ */
 
-  .poster {
-    position: relative;
-    padding: 80px 20px 40px;
-  }
-
-  .poster-layout {
-    display: flex;
-    justify-content: space-between;
-    gap: 60px;
-  }
-
-  /* TESTO */
-  .poster-text {
-    max-width: 520px;
-    margin-left: auto;
-    /* spinge a destra */
-  }
-
+  
   .poster-big-title {
     color: var(--gold);
     font-size: 72px;
@@ -1111,8 +1040,7 @@ p {
     object-fit: cover;
     filter: contrast(1.05) brightness(0.95);
   }
-
-
+  
   .arrow {
     width: 42px;
     height: 42px;
@@ -1172,7 +1100,6 @@ p {
     margin-left: 100px;
   }
 
-
   .cta-link,
   .cta-link:visited,
   .cta-link:active {
@@ -1194,10 +1121,6 @@ p {
     display: flex !important;
     justify-content: flex-end !important;
     gap: 24px;
-  }
-  
-  .poster-layout {
-    justify-content: flex-start !important;
   }
 
   .logo-block {
@@ -1254,24 +1177,7 @@ p {
     justify-content: flex-end;
     gap: 24px;
   }
-  .poster-layout,
-  .contact-layout {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .contact-left {
-    text-align: center;
-    margin-left: 0;
-    transform: none;
-  }
-
-  .contact-hero {
-    padding-top: 120px;
-    padding-bottom: 60px;
-  }
-
+  
   .poster-text,
   .contact-left {
     text-align: left;
