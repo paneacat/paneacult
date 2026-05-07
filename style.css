@@ -2002,17 +2002,12 @@ p {
 /* TITLE */
 
 .hero-text h1{
-
   font-family:'Playfair Display',serif;
-
-  font-size:clamp(54px,7vw,92px);
-
+  font-size:clamp(4.6rem, 6vw, 5.8rem);
   line-height:.95;
-
   letter-spacing:-2px;
-
+  max-width:620px;
   color:white;
-
   margin-bottom:22px;
 }
 
@@ -2062,18 +2057,7 @@ p {
 
 .cta-link{
 
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:15px 26px;
-  border-radius:999px;
-  background:#fdc103;
-  color:#071923;
-  font-size:18px;
-  font-weight:600;
-  transition:
-    transform .25s ease,
-    opacity .25s ease;
+  
 }
 
 /* HOVER */
@@ -2090,22 +2074,23 @@ p {
 /* =========================
    SLIDE CARD IMAGE
 ========================= */
+.cta-link{
 
-.slide-card{
+  display:flex;
 
-  display:block;
+  align-items:center;
 
-  overflow:hidden;
+  justify-content:center;
 
-  border-radius:22px;
+  text-align:center;
 
-  position:relative;
+  min-width:220px;
 
-  background:
-    rgba(255,255,255,.03);
+  height:58px;
 
-  transition:
-    transform .3s ease;
+  padding:0 28px;
+
+  border-radius:999px;
 }
 
 /* IMAGE */
@@ -2766,8 +2751,8 @@ font-size: 18px;
 
     gap:24px;
   }
+  
 .hero{
-
     padding-top:34px;
     padding-bottom:64px;
   }
@@ -2787,10 +2772,13 @@ font-size: 18px;
   }
 
   .hero-text h1{
+    font-size:clamp(3rem, 12vw, 4.8rem);
+    line-height:.98;
+  }
 
-    font-size:58px;
+  .cta-link{
 
-    line-height:.95;
+    width:100%;
   }
 
   .hero-sub{
