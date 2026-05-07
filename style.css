@@ -2247,10 +2247,10 @@ line-height: 0.95;
 ========================= */
 
 .archivio-card{
-  width: 100%;
   background:transparent;
   display:flex;
   flex-direction:column;
+  width: 78vw;
 }
 
 /* IMMAGINE */
