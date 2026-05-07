@@ -975,13 +975,7 @@ p {
   font-size: 16px;
   line-height: 1.6;
 }
-.about-content {
-  display: flex;
-  align-items: center;
-  gap: 80px;
-  padding-top: 80px;
-  padding-bottom: 80px;
-} 
+
 
 .fade {
   opacity: 0;
