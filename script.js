@@ -5,40 +5,35 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===============================
 
   const cards = Array.from(document.querySelectorAll(".archivio-card"));
-  const empty = document.getElementById("emptyState");
+  const emptyState = document.getElementById("emptyState");
+const cards = document.querySelectorAll(".archivio-card");
 
-  let filtroCategoria = "tutti";
-  let filtroGenere = "tutti";
+function aggiornaFiltri(){
 
-  const norm = (v) => (v || "").trim().toLowerCase();
+  let visibili = 0;
 
-  function aggiornaFiltri() {
+  cards.forEach(card => {
 
-    let trovati = 0;
+    const visible =
+      card.style.display !== "none";
 
-    cards.forEach(card => {
-
-      const categorie = norm(card.dataset.category).split(" ");
-
-      const matchCategoria =
-        filtroCategoria === "tutti" ||
-        categorie.includes(filtroCategoria);
-
-      const matchGenere =
-        filtroGenere === "tutti" ||
-        categorie.includes(filtroGenere);
-
-      const visibile = matchCategoria && matchGenere;
-
-      card.style.display = visibile ? "block" : "none";
-
-      if (visibile) trovati++;
-    });
-
-    if (empty) {
-      empty.classList.toggle("show", trovati === 0);
+    if(visible){
+      visibili++;
     }
+
+  });
+
+  if(emptyState){
+
+    if(visibili === 0){
+      emptyState.classList.add("show");
+    } else {
+      emptyState.classList.remove("show");
+    }
+
   }
+
+}
 
   // BOTTONI FILTRI
   const filterButtons = document.querySelectorAll(".filter-btn");
