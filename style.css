@@ -2639,13 +2639,14 @@ line-height: 0.95;
 
   background:rgba(255,255,255,.03);
 
-  color:white;
+  color: white;
 
   font-size:13px;
 
-  letter-spacing:.4px;
+  letter-spacing: .4px;
 
-  transition:.25s ease;
+  transition: .25s ease;
+  align-items: center;
 }
 
 /* hover */
