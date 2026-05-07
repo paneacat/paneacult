@@ -2087,6 +2087,75 @@ p {
   color:#071923;
 }
 
+/* =========================
+   SLIDE CARD IMAGE
+========================= */
+
+.slide-card{
+
+  display:block;
+
+  overflow:hidden;
+
+  border-radius:22px;
+
+  position:relative;
+
+  background:
+    rgba(255,255,255,.03);
+
+  transition:
+    transform .3s ease;
+}
+
+/* IMAGE */
+
+.slide-card img{
+
+  width:100%;
+
+  aspect-ratio:16/10;
+
+  object-fit:cover;
+
+  display:block;
+
+  transition:
+    transform .45s ease,
+    opacity .3s ease;
+}
+
+/* HOVER */
+
+.slide-card:hover img{
+
+  transform:scale(1.04);
+}
+
+/* OVERLAY */
+
+.slide-card::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.18),
+      transparent
+    );
+
+  pointer-events:none;
+}
+
+
+
+
+
 
 
 
@@ -2734,5 +2803,15 @@ font-size: 18px;
   .hero-cta{
 
     padding-bottom:0;
+  }
+  
+  .slide-card{
+
+    border-radius:18px;
+  }
+
+  .slide-card img{
+
+    aspect-ratio:16/11;
   }
 }
