@@ -1410,7 +1410,6 @@ a:hover {
   width: 100%;
 }
 
-
 /* ✍️ FIRMA → CENTRATA + PIÙ IMPORTANTE */
 .firma-review {
   text-align: center;
@@ -1745,30 +1744,6 @@ p {
     width: 140px;
   }
 
-.hero-posters{
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap:14px;
-
-  width:100%;
-  max-width:900px;
-  transform: scale(0.9);
-  margin:0 auto;
-
-  opacity:0.22;
-}
-
-.hero-posters img{
-  width:100%;
-  aspect-ratio: 2 / 3;
-
-  object-fit:contain;
-
-  border-radius:18px;
-
-  transform:none;
-}
-
 /* =========================
    HEADER
 ========================= */
@@ -1977,6 +1952,165 @@ p {
   color:
     rgba(255,255,255,.78);
 }
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+  padding-top:60px;
+  padding-bottom:90px;
+}
+
+/* LAYOUT */
+
+.hero-layout{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-end;
+
+  gap:60px;
+}
+
+/* LEFT */
+
+.hero-text{
+
+  max-width:760px;
+
+  padding-left:18px;
+}
+
+/* KICKER */
+
+.hero-kicker{
+
+  font-size:11px;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+
+  color:#fdc103;
+
+  opacity:.7;
+
+  margin-bottom:18px;
+}
+
+/* TITLE */
+
+.hero-text h1{
+
+  font-family:'Playfair Display',serif;
+
+  font-size:clamp(54px,7vw,92px);
+
+  line-height:.95;
+
+  letter-spacing:-2px;
+
+  color:white;
+
+  margin-bottom:22px;
+}
+
+/* HIGHLIGHT */
+
+.highlight{
+
+  color:#fdc103;
+}
+
+/* SUBTITLE */
+
+.hero-sub{
+
+  max-width:520px;
+
+  font-size:18px;
+
+  line-height:1.8;
+
+  color:
+    rgba(255,255,255,.75);
+}
+
+/* RIGHT CTA */
+
+.hero-cta{
+
+  min-width:240px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:flex-start;
+
+  gap:16px;
+
+  padding-bottom:14px;
+}
+
+/* CTA TEXT */
+
+.cta-text{
+
+  font-size:14px;
+
+  line-height:1.7;
+
+  color:
+    rgba(255,255,255,.68);
+}
+
+/* BUTTON */
+
+.cta-link{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:15px 26px;
+
+  border-radius:999px;
+
+  background:#fdc103;
+
+  color:#071923;
+
+  font-size:14px;
+
+  font-weight:600;
+
+  transition:
+    transform .25s ease,
+    opacity .25s ease;
+}
+
+/* HOVER */
+
+.cta-link:hover{
+
+  transform:translateY(-2px);
+
+  opacity:.92;
+
+  color:#071923;
+}
+
+
+
+
+
+
 
 
 
@@ -2582,5 +2716,42 @@ font-size: 18px;
 
     gap:24px;
   }
+.hero{
 
+    padding-top:34px;
+    padding-bottom:64px;
+  }
+
+  .hero-layout{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:36px;
+  }
+
+  .hero-text{
+
+    padding-left:0;
+  }
+
+  .hero-text h1{
+
+    font-size:58px;
+
+    line-height:.95;
+  }
+
+  .hero-sub{
+
+    font-size:16px;
+
+    max-width:100%;
+  }
+
+  .hero-cta{
+
+    padding-bottom:0;
+  }
 }
