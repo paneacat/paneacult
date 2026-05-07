@@ -2325,13 +2325,20 @@ line-height: 0.95;
 
     grid-template-columns:repeat(4,1fr);
 
-    gap:28px;
+    gap:30px;
 
     max-width:1420px;
 
-    margin:40px auto 0;
+    margin:50px auto 0;
 
-    padding:0 40px;
+    padding:
+      0
+      60px;
+  }
+
+  .archivio-card img{
+
+    height:180px;
   }
 }
 
@@ -2556,17 +2563,24 @@ line-height: 0.95;
 
   grid-template-columns:repeat(2,1fr);
 
-  gap:16px;
+  gap:18px;
 
   padding:0 16px;
 
-  margin-top:30px;
+  margin-top:34px;
 }
 
-/* CARD */
+/* =========================
+   CARD
+========================= */
 
 .archivio-card{
+
   background:transparent;
+
+  display:flex;
+
+  flex-direction:column;
 }
 
 /* IMMAGINE */
@@ -2575,7 +2589,7 @@ line-height: 0.95;
 
   width:100%;
 
-  aspect-ratio:16/10;
+  height:120px;
 
   object-fit:cover;
 
@@ -2587,6 +2601,7 @@ line-height: 0.95;
 /* INFO */
 
 .card-info{
+
   padding-top:8px;
 }
 
@@ -2612,6 +2627,7 @@ line-height: 0.95;
 
   margin-top:4px;
 }
+
 /* =========================
    LOAD MORE
 ========================= */
