@@ -1007,14 +1007,8 @@ p {
   gap: 80px;
   padding-top: 80px;
   padding-bottom: 80px;
-}
-.slider-arrows {
-    margin-left: auto;
-    /* 🔥 spinge a destra */
-    display: flex;
-    gap: 10px;
-}
-/* animazione singoli elementi (opzionale ma bello) */
+} 
+
 .fade {
   opacity: 0;
   transform: translateY(10px);
@@ -1432,25 +1426,6 @@ p {
     display: grid;
     gap: 60px;
   }
-
-  .slider {
-    position: relative;
-    overflow-x: auto;
-    overflow-y: visible;
-  }
-
-  .slide-item {
-    flex: 0 0 320px;
-  }
-
-  .slider::after {
-    content: "";
-    flex: 0 0 40px;
-  }
-
-  .slide-card:hover img {
-    transform: scale(1.08);
-  }
   
 .archivio-filters{
     max-width:900px;
@@ -1724,27 +1699,6 @@ p {
     transform: translateY(-4px);
   }
 
-    .about-text {
-      flex: 1;
-      max-width: 520px;
-    }
-
-    .about-image {
-      flex: 1;
-
-      display: flex;
-      justify-content: center;
-    }
-
-    .about-image img {
-      width: 100%;
-      max-width: 420px;
-
-      border-radius: 28px;
-
-      object-fit: cover;
-    }
-    
     .poster {
       position: relative;
 
@@ -1821,40 +1775,12 @@ p {
       border-radius: 24px;
       display: block;
     }
-
-    .about-text,
-    .intro-text,
-    .poster-signature,
-    .about-image {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .about-image img {
-      width: 320px;
-      max-width: 100%;
-      display: block;
-    }
-
-  
+ 
   .film-author,
   .film-rating {
     display: none;
   }
 
-  .about-hero {
-    width: 100%;
-  }
-
-  .about-text {
-    width: 100%;
-  }
-
-  .about-text h1 {
-    font-size: 72px;
-    line-height: 0.9;
-    margin-bottom: 24px;
-  }
 
   .intro-text {
     max-width: 100%;
@@ -1862,16 +1788,6 @@ p {
     line-height: 1.7;
   }
 
-  .about-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .about-image img {
-    width: 240px;
-    max-width: 80%;
-  }
 
   .sections {
     margin-top: 60px;
@@ -2699,6 +2615,7 @@ line-height: 0.95;
 .load-more-btn.hidden{
   display:none;
 }
+
 /* =========================
    SLIDER CONTROLS
 ========================= */
