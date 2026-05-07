@@ -231,12 +231,6 @@ a:hover {
   pointer-events: none;
 }
 
-.home-cinema .container {
-  padding-left: 32px;
-  padding-right: 32px;
-  padding: 0 32px;
-}
-
 .firma-recensione {
   margin-top: 40px;
   font-family: 'Playfair Display', serif;
@@ -273,21 +267,6 @@ a:hover {
 .cta-link:hover {
   color: #0d2e40;
   text-decoration: none;
-}
-
-
-.home-cinema .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.container {
-  max-width: 1100px;
-  /* puoi fare anche 1200px se lo vuoi più arioso */
-  margin: 0 auto;
-  padding: 0 40px;
-
 }
 
 .hero {
@@ -2681,4 +2660,15 @@ line-height: 0.95;
   background:#0d2e40;
 
   padding:120px 24px 80px;
+}
+.container{
+
+  width:100%;
+
+  max-width:1100px;
+
+  margin:0 auto;
+
+  padding-left:24px;
+  padding-right:24px;
 }
