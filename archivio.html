@@ -51,62 +51,107 @@
 </header>
 <h1 class="archivio-title">Tutte le recensioni</h1>
 
-<!-- FILTRI -->
-<section class="archivio">
+<!-- =========================
+     FILTRI ARCHIVIO
+========================= -->
 
-  <div class="container">
+<section class="archivio-filters">
 
-    <div class="filters-wrapper">
+  <div class="filters-wrapper">
 
-      <button class="filters-toggle">
-        Filtri
-      </button>
+    <!-- =========================
+         RUBRICHE
+    ========================= -->
+
+    <details class="filter-group" open>
+
+      <summary>
+        Rubriche
+      </summary>
 
       <div class="filters-panel">
 
-        <!-- RUBRICHE -->
-
-        <button class="filter-btn active" data-filter="tutti">
+        <button
+          class="filter-btn active"
+          data-filter="all">
           Tutti
         </button>
 
-        <button class="filter-btn" data-filter="cinema-che-resta">
+        <button
+          class="filter-btn"
+          data-filter="cinema-che-resta">
           Cinema che resta
         </button>
 
-        <button class="filter-btn" data-filter="sguardi-contemporanei">
+        <button
+          class="filter-btn"
+          data-filter="sguardi-contemporanei">
           Sguardi contemporanei
         </button>
 
-        <!-- GENERI -->
+      </div>
 
-        <button class="filter-btn" data-filter="dramma">
+    </details>
+
+    <!-- =========================
+         GENERI
+    ========================= -->
+
+    <details class="filter-group">
+
+      <summary>
+        Generi
+      </summary>
+
+      <div class="filters-panel">
+
+        <button
+          class="filter-btn"
+          data-filter="dramma">
           Dramma
         </button>
 
-        <button class="filter-btn" data-filter="commedia">
+        <button
+          class="filter-btn"
+          data-filter="commedia">
           Commedia
         </button>
 
-        <button class="filter-btn" data-filter="thriller">
+        <button
+          class="filter-btn"
+          data-filter="thriller">
           Thriller
         </button>
 
-        <button class="filter-btn" data-filter="giallo">
+        <button
+          class="filter-btn"
+          data-filter="giallo">
           Giallo
         </button>
 
-        <button class="filter-btn" data-filter="biopic">
+        <button
+          class="filter-btn"
+          data-filter="biopic">
           Biopic
         </button>
 
-        <!-- RESET -->
-
-        <button class="filter-reset" id="resetFilters">
-          ↺
-        </button>
-
       </div>
+
+    </details>
+
+    <!-- =========================
+         RESET
+    ========================= -->
+
+    <div class="filters-reset">
+
+      <button
+        class="filter-reset"
+        id="resetFilters">
+
+        Reset filtri
+
+      </button>
 
     </div>
 
