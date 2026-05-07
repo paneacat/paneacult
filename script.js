@@ -241,27 +241,35 @@ if(resetBtn){
   // ===== CREDITS
   // ===============================
 
-  const credits = document.querySelector(".credits");
+  /* =========================
+   CREDITS SCROLL
+========================= */
 
-  if (credits) {
+const credits =
+  document.querySelector(".credits");
 
-    const observerCredits = new IntersectionObserver(entries => {
+if(credits){
+
+  const observer =
+    new IntersectionObserver(entries => {
 
       entries.forEach(entry => {
 
-        if (entry.isIntersecting) {
+        if(entry.isIntersecting){
+
           credits.classList.add("show");
+
         }
 
       });
 
-    }, {
-      threshold: 0.3
+    },{
+      threshold:.2
     });
 
-    observerCredits.observe(credits);
-  }
+  observer.observe(credits);
 
+}
   // ===============================
   // ===== FADE-UP
   // ===============================
