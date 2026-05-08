@@ -302,14 +302,6 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   margin-bottom:28px;
 }
 
-.section-label{
-  font-family:'Playfair Display', serif;
-  font-size:clamp(2rem,3vw,3rem);
-  font-weight:600;
-  color:#f4efe8;
-  letter-spacing:-0.03em;
-}
-
 /* =========================
    SLIDER WRAPPER
 ========================= */
