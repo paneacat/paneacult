@@ -1510,29 +1510,20 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 ========================= */
 
 .poster-wall{
-
   position:absolute;
-
   inset:0;
-
   width:100%;
   height:100%;
-
+  background-position:center 38%;
   background:
     linear-gradient(
       rgba(7,18,28,.45),
       rgba(7,18,28,.60)
     ),
     url("img/wall.jpg");
-
   background-size:cover;
-
-  background-position:center;
-
-  background-repeat:no-repeat;
-
+background-repeat:no-repeat;
   overflow:hidden;
-
 }
 
 
