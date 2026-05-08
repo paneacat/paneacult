@@ -255,6 +255,56 @@ if(credits){
   observer.observe(credits);
 
 }
+
+  /* =========================
+   LOAD MORE
+========================= */
+
+const loadMoreBtn =
+  document.getElementById("loadMoreBtn");
+
+const archivioCards =
+  document.querySelectorAll(".archivio-card");
+
+let visibleCards = 3;
+
+/* nasconde tutte dopo la terza */
+
+archivioCards.forEach((card, index) => {
+
+  if(index >= visibleCards){
+    card.style.display = "none";
+  }
+
+});
+
+/* click */
+
+if(loadMoreBtn){
+
+  loadMoreBtn.addEventListener("click", () => {
+
+    visibleCards += 3;
+
+    archivioCards.forEach((card, index) => {
+
+      if(index < visibleCards){
+        card.style.display = "block";
+      }
+
+    });
+
+    /* nasconde bottone se finite */
+
+    if(visibleCards >= archivioCards.length){
+
+      loadMoreBtn.style.display = "none";
+
+    }
+
+  });
+
+}
   // ===============================
   // ===== FADE-UP
   // ===============================
