@@ -1284,29 +1284,27 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 }
 
-/* WALL */
 
-.login-hero::before{
+/* =========================
+   LOGIN PAGE WALL
+========================= */
 
-  content:"";
-
-  position:absolute;
-  inset:0;
+.login-page{
 
   background:
     linear-gradient(
-      rgba(8,24,36,.72),
-      rgba(8,24,36,.82)
+      rgba(8,24,36,.78),
+      rgba(8,24,36,.88)
     ),
     url("img/wall.jpg");
 
   background-size:cover;
-  background-position:center;
 
-  z-index:0;
+  background-position:center top;
+
+  background-attachment:fixed;
 
 }
-
 /* CENTRO */
 
 .login-hero .container{
