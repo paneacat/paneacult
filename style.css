@@ -914,7 +914,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 #splash img{
 
-  width:92px;
+  width:450px;
 
   margin-bottom:26px;
 
@@ -937,7 +937,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
   border-top:
     2px solid #fdc103;
-
+  color: #000000;
   animation:
     spin 1s linear infinite;
 
