@@ -11,7 +11,8 @@ const emptyState = document.getElementById("emptyState");
 
 let activeCategory = "all";
 let activeGenres = [];
-
+let visibleCards = 3;
+  
 /* =========================
    CLICK FILTRI
 ========================= */
@@ -280,10 +281,8 @@ if(credits){
 const loadMoreBtn =
   document.getElementById("loadMoreBtn");
 
-const archivioCards =
+const cards =
   document.querySelectorAll(".archivio-card");
-
-let visibleCards = 3;
 
 aggiornaFiltri();
 
@@ -305,7 +304,7 @@ if(loadMoreBtn){
 
     visibleCards += 3;
 
-    archivioCards.forEach((card, index) => {
+    cards.forEach((card, index) => {
 
       if(index < visibleCards){
         card.style.display = "block";
@@ -316,7 +315,7 @@ if(loadMoreBtn){
     /* nasconde bottone se finite */
 
   const visibleFiltered =
-  [...archivioCards].filter(card =>
+  [...cards].filter(card =>
     card.style.display !== "none"
   );
 
