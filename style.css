@@ -2247,7 +2247,7 @@ display:flex;
 
 .about-page h1{
 
-  font-size:7rem;
+  font-size:3rem;
   line-height:.9;
 
   margin-bottom:35px;
@@ -2271,7 +2271,7 @@ display:flex;
 
 .about-highlight{
 
-  font-size:3rem;
+  font-size:1.5rem;
   line-height:1.15;
 
   max-width:720px;
