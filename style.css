@@ -1379,14 +1379,13 @@ opacity:0.18;
   opacity:.7;
 }
 
-.section-label h2{
+.section-label{
   font-family: Inter, sans-serif;
-  font-size: 22px;
+  font-size:clamp(1.15rem, 1.8vw, 1.7rem);
   font-weight:600;
-  color: var(--gold);
-  letter-spacing:-0.03em;
-}
-
+  color:#fdc103;
+  letter-spacing:-0.02em;
+  }
 
 
 
