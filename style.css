@@ -647,6 +647,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   display: block;
   border-radius: 18px;
 }
+
 /* =========================
    FILTRI ARCHIVIO
 ========================= */
@@ -657,7 +658,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 .filters-top{
   display:flex;
-  align-items:flex-start;
+  align-items:center;
   gap:1rem;
   margin-top:2rem;
   margin-bottom:3rem;
@@ -666,15 +667,15 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 .filter-bar{
   flex:1;
   border:1px solid rgba(255,255,255,.12);
-  border-radius:999px;
-  padding:.8rem 1rem;
+  border-radius:16px;
+  padding:1rem 1rem;
   background:rgba(255,255,255,.03);
 }
 
 .filter-label{
-  font-size:.7rem;
+  font-size:.68rem;
   text-transform:uppercase;
-  letter-spacing:.12em;
+  letter-spacing:.14em;
   color:#f4b400;
   margin-bottom:.7rem;
 }
@@ -690,15 +691,20 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   color:#111;
   border:none;
   border-radius:999px;
-  padding:.55rem .9rem;
+  padding:.55rem .95rem;
   font-size:.78rem;
   font-weight:600;
   cursor:pointer;
+  transition:.2s;
+}
+
+.filter-btn:hover{
+  transform:translateY(-1px);
 }
 
 .filter-reset{
-  width:48px;
-  height:48px;
+  width:56px;
+  height:56px;
   border-radius:50%;
   border:none;
   background:#f4b400;
