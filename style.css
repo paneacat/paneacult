@@ -2716,10 +2716,73 @@ display:flex;
     margin:30px auto 0;
 
     text-align:center;
+}
+
+   /* margini globali */
+
+  .hero,
+  .home-login,
+  .newsletter,
+  .about-page,
+  .contact-hero,
+  .sections{
+
+    padding-left:24px;
+    padding-right:24px;
+
+    box-sizing:border-box;
 
   }
+
+  /* testo hero */
+
+  .hero-content{
+
+    max-width:100%;
+
+    margin:0 auto;
+
+  }
+
+  .hero h1{
+
+    font-size:4.2rem;
+
+    line-height:.95;
+
+  }
+
+  .hero p{
+
+    max-width:100%;
+
+    font-size:1.15rem;
+
+    line-height:1.8;
+
+  }
+
+  /* login section */
+
+  .home-login-content{
+
+    max-width:100%;
+
+  }
+
+  .home-login h2{
+
+    font-size:3.5rem;
+
+    line-height:1;
+
+  }
+
 }
-   
+
+
+
+
 
 
 
