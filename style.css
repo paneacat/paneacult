@@ -655,18 +655,6 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   padding:20px 0 40px;
 }
 
-/* PANEL */
-
-.filters-panel{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:10px;
-
-  padding:16px 10px 0;
-}
 .filters-top{
   display:flex;
   align-items:flex-start;
@@ -718,28 +706,6 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   font-size:1.2rem;
   cursor:pointer;
   flex-shrink:0;
-}
-
-.filter-reset:hover{
-
-  transform:rotate(-25deg);
-
-  opacity:.9;
-}
-
-.filter-group{
-
-  flex:1;
-
-  min-width:220px;
-}
-.filter-group summary{
-
-  padding:14px 18px;
-
-  font-size:.9rem;
-
-  min-height:auto;
 }
 
 /* =========================
