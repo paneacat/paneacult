@@ -1627,9 +1627,10 @@ opacity:0.18;
 }
 
 .poster-signature{
-  width:220px;
+  width:420px;
   filter:brightness(0) invert(1);
   opacity:.95;
+  
 }
 
 .about-image{
