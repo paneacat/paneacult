@@ -336,6 +336,79 @@ a:hover {
 .slide-card:hover img {
   transform: scale(1.04);
 }
+/* hover */
+
+.slider-arrow:hover{
+
+  border-color:var(--gold);
+
+  color:var(--gold);
+
+  transform:scale(1.06);
+}
+
+/* stato nascosto */
+
+.slider-arrow.hidden{
+
+  opacity:0;
+
+  pointer-events:none;
+}
+
+/* =========================
+   LOAD MORE
+========================= */
+
+.load-more-wrapper{
+
+  display:flex;
+
+  justify-content:center;
+
+  margin:
+    60px auto
+    20px;
+}
+
+.load-more-btn{
+
+  height:46px;
+
+  padding:0 26px;
+
+  border-radius:999px;
+
+  border:1px solid rgba(255,255,255,.10);
+
+  background:rgba(255,255,255,.03);
+
+  color: white;
+
+  font-size:13px;
+
+  letter-spacing: .4px;
+
+  transition: .25s ease;
+  align-items: center;
+}
+
+/* hover */
+
+.load-more-btn:hover{
+
+  border-color:var(--gold);
+
+  color:var(--gold);
+
+  transform:translateY(-2px);
+}
+
+/* nascosto */
+
+.load-more-btn.hidden{
+  display:none;
+}
 
 /* =========================
    9. CARDS
@@ -410,18 +483,22 @@ a:hover {
   border-radius: 22px;
   overflow: hidden;
   backdrop-filter: blur(12px);
+  margin-bottom:14px;
 }
 
-.filter-group summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 16px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
-  font-size: 14px;
-  transition: var(--transition);
+.filter-group summary{
+
+  height:58px;
+
+  padding:0 22px;
+
+  border-radius:18px;
+
+  display:flex;
+
+  align-items:center;
+
+  font-size:.9rem;
 }
 
 .filter-btn {
@@ -908,7 +985,36 @@ a:hover {
   }
 
 }
+/* AUTORE (PIÙ IMPORTANTE) */
+.author {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+}
 
+/* HASHTAG */
+.series {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 14px;
+}
+
+/* GENERE */
+.genre-bar {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+.meta,
+.genre-bar,
+.series {
+  font-size: 13px;
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
 
 
 
