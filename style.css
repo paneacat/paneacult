@@ -1462,23 +1462,20 @@ opacity:0.18;
 .line-break{
   display:block;
 }
+
 /* =========================
-   ABOUT QUOTE
+   ABOUT MEMORY
 ========================= */
 
 .about-quote{
 
-  margin:34px 0;
-
-  padding-left:18px;
-
-  border-left:
-    2px solid #fdc103;
+  margin:42px 0;
 
   font-family:
-    'Playfair Display', serif;
+    'Playfair Display',
+    serif;
 
-  font-size:1.2rem;
+  font-size:1.35rem;
 
   font-style:italic;
 
@@ -1486,10 +1483,16 @@ opacity:0.18;
 
   color:#f4efe8;
 
-  opacity:.92;
+  opacity:.95;
 
-  max-width:520px;
+  max-width:620px;
+
+  letter-spacing:-0.01em;
+
 }
+
+
+
 
 
 
