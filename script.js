@@ -72,7 +72,6 @@ filterButtons.forEach(button => {
 /* =========================
    UPDATE
 ========================= */
-
 function aggiornaFiltri(){
 
   let visibleCount = 0;
@@ -99,20 +98,40 @@ function aggiornaFiltri(){
     const visible =
       matchCategory && matchGenres;
 
-    if(visible && index < visibleCards){
-  card.style.display = "block";
-} else {
-  card.style.display = "none";
+    if(visible){
+
+      visibleCount++;
+
+      if(visibleCount <= visibleCards){
+
+        card.style.display = "block";
+
+      } else {
+
+        card.style.display = "none";
+
+      }
+
+    } else {
+
+      card.style.display = "none";
+
     }
+
+  });
 
   /* EMPTY STATE */
 
   if(emptyState){
 
     if(visibleCount === 0){
+
       emptyState.classList.add("show");
+
     } else {
+
       emptyState.classList.remove("show");
+
     }
 
   }
@@ -264,6 +283,8 @@ const archivioCards =
   document.querySelectorAll(".archivio-card");
 
 let visibleCards = 3;
+
+aggiornaFiltri();
 
 /* nasconde tutte dopo la terza */
 
