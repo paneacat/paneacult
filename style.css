@@ -34,6 +34,51 @@ button {
 }
 
 /* =========================
+   GLOBAL BUTTON STYLE
+========================= */
+
+button,
+.filter-btn,
+.filter-reset,
+.load-more-btn,
+.newsletter-btn,
+.cta-link,
+.btn-yellow,
+.btn-outline {
+
+  background: #fdc103;
+  color: #0b1f26;
+
+  border: none;
+
+  transition: .25s ease;
+}
+
+/* HOVER */
+
+button:hover,
+.filter-btn:hover,
+.filter-reset:hover,
+.load-more-btn:hover,
+.newsletter-btn:hover,
+.cta-link:hover,
+.btn-yellow:hover,
+.btn-outline:hover {
+
+  opacity: .92;
+  transform: translateY(-2px);
+
+  color: #000;
+}
+
+/* BOTTONI FILTRI ATTIVI */
+
+.filter-btn.active{
+
+  background:#fdc103;
+  color:#0b1f26;
+}
+/* =========================
    2. VARIABLES
 ========================= */
 
