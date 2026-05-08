@@ -1506,13 +1506,13 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   background:
     linear-gradient(
       rgba(7,18,28,.45),
-      rgba(7,18,28,.55)
+      rgba(7,18,28,.60)
     ),
     url("img/wall.jpg");
 
   background-size:cover;
 
-  background-position:center 20%;
+  background-position:center 25%;
 
   background-repeat:no-repeat;
 
