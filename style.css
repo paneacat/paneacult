@@ -1488,14 +1488,10 @@ font-weight:500;
 
   border-radius:28px;
 
-  background:rgba(255,255,255,.08);
 
   backdrop-filter:blur(14px);
 
   border:1px solid rgba(255,255,255,.14);
-
-  box-shadow:
-    0 10px 40px rgba(0,0,0,.25);
 
 }
 
@@ -1513,7 +1509,6 @@ font-weight:500;
 
   border:1px solid rgba(255,255,255,.14);
 
-  background:rgba(255,255,255,.10);
 
   color:#fff;
 
@@ -1525,8 +1520,6 @@ font-weight:500;
 
   transition:.25s ease;
 
-  backdrop-filter:blur(10px);
-
 }
 
 /* PLACEHOLDER */
@@ -1537,18 +1530,6 @@ font-weight:500;
 
 }
 
-/* FOCUS */
-
-.login-box input:focus{
-
-  border-color:rgba(244,180,0,.55);
-
-  background:rgba(255,255,255,.14);
-
-  box-shadow:
-    0 0 0 4px rgba(244,180,0,.10);
-
-}
 
 /* BUTTONS */
 
