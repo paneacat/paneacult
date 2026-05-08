@@ -2806,14 +2806,66 @@ display:flex;
   word-break:keep-all;
 
 }
+ .login-form input{
+
+  width:100%;
+  height:64px;
+
+  padding:0 24px;
+
+  border:none;
+  outline:none;
+
+  border-radius:22px;
+
+  background:rgba(255,255,255,.92);
+
+  color:#0b1f26;
+
+  font-size:1rem;
+  font-family:'Inter', sans-serif;
+
+  box-sizing:border-box;
+
+  transition:.25s;
 
 }
 
+/* placeholder */
 
+.login-form input::placeholder{
 
+  color:rgba(11,31,38,.45);
 
+  letter-spacing:.5px;
 
+}
 
+/* focus */
+
+.login-form input:focus{
+
+  background:white;
+
+  transform:scale(1.01);
+
+  box-shadow:
+    0 0 0 2px rgba(255,210,74,.35);
+}
+.login-form{
+
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+
+}
+
+.login-box{
+
+  backdrop-filter:blur(18px);
+
+}
+}
 
 
 
