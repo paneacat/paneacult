@@ -1287,6 +1287,9 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 .login-page{
   background:#0d2e40;
+}
+
+.login-page .login-hero{
   position:relative;
   min-height:100vh;
   display:flex;
