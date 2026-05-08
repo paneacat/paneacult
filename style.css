@@ -2740,7 +2740,7 @@ display:flex;
 }
 
 .logo-subtitle{
-  font-size:.9rem;
+  font-size:.7rem;
 }
 
  .container{
@@ -2788,6 +2788,25 @@ display:flex;
   margin:0 auto;
 
 }
+.hero-text{
+
+  width:100%;
+  padding:0 24px;
+  box-sizing:border-box;
+
+}
+
+.hero-text h1{
+
+  font-size:4.5rem;
+  line-height:.9;
+  letter-spacing:-2px;
+
+  max-width:100%;
+  word-break:keep-all;
+
+}
+
 }
 
 
