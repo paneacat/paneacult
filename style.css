@@ -1360,46 +1360,17 @@ font-weight:500;
   margin-bottom: 6px;
 }
 
+
 /* =========================
-   LOGIN HERO
-========================= */
-
-.login-hero{
-
-  min-height:100vh;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  padding-top:0;
-  padding-bottom:120px;
-  background:
-  linear-gradient(
-    180deg,
-    #0d2740 0%,
-    #091b2d 100%
-  );
-
-  position:relative;
-  overflow:hidden;
-}
-/* =========================
-   LOGIN BACKGROUND
+   LOGIN PAGE
 ========================= */
 
 .login-page{
 
-  position:relative;
-
-  min-height:100vh;
-
-  overflow:hidden;
-
   background:
     linear-gradient(
-      rgba(5,18,28,.78),
-      rgba(5,18,28,.88)
+      rgba(7,22,34,.76),
+      rgba(7,22,34,.88)
     ),
     url("img/posters-bg.jpg");
 
@@ -1409,9 +1380,17 @@ font-weight:500;
 
   background-repeat:no-repeat;
 
+  background-attachment:fixed;
+
+  min-height:100vh;
+
+  position:relative;
+
+  overflow-x:hidden;
+
 }
 
-/* glow centrale */
+/* glow cinematografico */
 
 .login-page::before{
 
@@ -1424,7 +1403,7 @@ font-weight:500;
   background:
     radial-gradient(
       circle at center,
-      rgba(0,153,255,.18),
+      rgba(0,153,255,.10),
       transparent 60%
     );
 
@@ -1432,64 +1411,86 @@ font-weight:500;
 
 }
 
-/* grain leggero */
+/* =========================
+   LOGIN SECTION
+========================= */
 
-.login-page::after{
+.login-section{
 
-  content:"";
-
-  position:absolute;
-
-  inset:0;
-
-  opacity:.05;
-
-  background-image:
-    url("https://grainy-gradients.vercel.app/noise.svg");
-
-  mix-blend-mode:soft-light;
-
-  pointer-events:none;
-
-}
-
-
-/* CENTRO */
-
-.login-hero .container{
   position:relative;
-  z-index:2;
-  width:100%;
+
+  min-height:85vh;
+
   display:flex;
-  justify-content:center;
   align-items:center;
+
+  padding:
+    140px 0
+    100px;
+
 }
 
-/* OVERLAY */
+/* =========================
+   LAYOUT
+========================= */
 
-.login-overlay{
-  position:relative;
-  z-index:2;
-  margin-top: -90px;
-  display:flex;
-  flex-direction:column;
+.login-layout{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 420px;
+
+  gap:90px;
+
   align-items:center;
-  text-align:center;
 
 }
 
-/* TESTO */
+/* =========================
+   TESTI
+========================= */
 
-.login-text h1{
-  font-size: 3.5rem;
-  margin-bottom:.7rem;
+.login-kicker{
+
+  font-size:.75rem;
+
+  letter-spacing:.25em;
+
+  text-transform:uppercase;
+
+  color:#f5c542;
+
+  opacity:.75;
+
+  margin-bottom:22px;
+
 }
 
-.login-text p{
-  font-size:1.5rem;
-  line-height:1.7;
-  opacity:.92;
-  margin-bottom:2rem;
+.login-title{
+
+  font-size:6rem;
+
+  line-height:.9;
+
+  margin-bottom:28px;
+
+  max-width:620px;
+
+}
+
+.login-subtitle{
+
+  font-size:1.08rem;
+
+  line-height:1.9;
+
+  max-width:520px;
+
+  color:#d8e4ea;
+
+  opacity:.9;
+
 }
 
 /* =========================
@@ -1498,41 +1499,49 @@ font-weight:500;
 
 .login-box{
 
-  width:100%;
-  max-width:340px;
+  background:
+    rgba(255,255,255,.04);
 
-  padding:28px;
+  border:
+    1px solid rgba(255,255,255,.08);
 
-  border-radius:28px;
+  border-radius:32px;
 
-  background:rgba(255,255,255,.08);
+  padding:40px;
 
-  backdrop-filter:blur(14px);
-
-  border:1px solid rgba(255,255,255,.14);
-
-  box-shadow:
-    0 10px 40px rgba(0,0,0,.25);
+  backdrop-filter:blur(10px);
 
 }
 
-/* INPUT */
+/* =========================
+   FORM
+========================= */
 
-.login-box input{
+.login-form{
+
+  display:flex;
+  flex-direction:column;
+
+  gap:18px;
+
+}
+
+.login-form input{
 
   width:100%;
 
-  padding:16px 18px;
+  height:58px;
 
-  margin-bottom:14px;
+  border:none;
 
   border-radius:16px;
 
-  border:1px solid rgba(255,255,255,.14);
+  padding:0 20px;
 
-  background:rgba(255,255,255,.10);
+  background:
+    rgba(255,255,255,.06);
 
-  color:#fff;
+  color:white;
 
   font-family:'Inter', sans-serif;
 
@@ -1540,44 +1549,97 @@ font-weight:500;
 
   outline:none;
 
-  transition:.25s ease;
+}
 
-  backdrop-filter:blur(10px);
+.login-form input::placeholder{
+
+  color:rgba(255,255,255,.55);
 
 }
 
-/* PLACEHOLDER */
+/* =========================
+   BUTTONS
+========================= */
 
-.login-box input::placeholder{
-
-  color:rgba(255,255,255,.58);
-
-}
-
-/* FOCUS */
-
-.login-box input:focus{
-
-  border-color:rgba(244,180,0,.55);
-
-  background:rgba(255,255,255,.14);
-
-  box-shadow:
-    0 0 0 4px rgba(244,180,0,.10);
-
-}
-
-/* BUTTONS */
-
-.login-buttons{
+.login-actions{
 
   display:flex;
 
-  gap:12px;
+  gap:14px;
 
-  margin-top:6px;
+  margin-top:10px;
 
 }
+
+.login-btn{
+
+  flex:1;
+
+  height:54px;
+
+  border:none;
+
+  border-radius:999px;
+
+  font-family:'Inter', sans-serif;
+
+  font-size:.92rem;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.25s ease;
+
+}
+
+.login-btn:hover{
+
+  transform:translateY(-2px);
+
+}
+
+.login-btn.primary{
+
+  background:#f5c542;
+
+  color:#071622;
+
+}
+
+.login-btn.secondary{
+
+  background:transparent;
+
+  border:1px solid rgba(255,255,255,.12);
+
+  color:white;
+
+}
+
+/* =========================
+   NOTE
+========================= */
+
+.login-note{
+
+  margin-top:28px;
+
+  text-align:center;
+
+  font-size:.9rem;
+
+  opacity:.5;
+
+  font-style:italic;
+
+}
+
+  .login-box{
+
+    padding:30px;
+
+  }
 
 .btn-yellow,
 .btn-outline{
@@ -2585,6 +2647,25 @@ display:flex;
     grid-template-columns:1fr;
 
    }
+   * =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+  .login-layout{
+
+    grid-template-columns:1fr;
+
+    gap:50px;
+
+  }
+
+  .login-title{
+
+    font-size:4rem;
+
+  }
    }
 
 
