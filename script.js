@@ -281,9 +281,6 @@ if(credits){
 const loadMoreBtn =
   document.getElementById("loadMoreBtn");
 
-const cards =
-  document.querySelectorAll(".archivio-card");
-
 aggiornaFiltri();
 
 /* nasconde tutte dopo la terza */
@@ -322,6 +319,9 @@ if(loadMoreBtn){
 if(visibleCards >= visibleFiltered.length){
 
   loadMoreBtn.style.display = "none";
+
+}
+    });
 
 }
   // ===============================
