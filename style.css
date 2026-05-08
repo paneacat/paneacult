@@ -1887,13 +1887,21 @@ font-size:1.06rem;
 
 }
 .home-cta{
-  text-align:center;
-  padding:140px 20px;
-  max-width:700px;
-  margin:auto;
-   position:relative;
+position:relative;
   overflow:hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f2c94c 0%,
+      #e5b92f 100%
+    );
+
+  padding:140px 20px;
+  text-align:center;
 }
+
+
 .home-cta::before{
   content:"";
   position:absolute;
@@ -1908,7 +1916,7 @@ font-size:1.06rem;
   font-size:.8rem;
   letter-spacing:3px;
   text-transform:uppercase;
-  color:#f2c94c;
+  color:#8a6510;
   margin-bottom:20px;
   opacity:.9;
 }
@@ -1917,16 +1925,16 @@ font-size:1.06rem;
   font-family:"Playfair Display", serif;
   font-size:4rem;
   line-height:1.05;
-  color:white;
+  color:#0b1f26;
   margin-bottom:24px;
 }
 
 .cta-sub{
   font-size:1.05rem;
   line-height:1.8;
-  color:rgba(255,255,255,.75);
   max-width:520px;
   margin:0 auto 40px;
+   color:rgba(11,31,38,.75);
 }
 
 .cta-button{
