@@ -17,12 +17,48 @@ let visibleCards = 3;
    CLICK FILTRI
 ========================= */
 
-filterButtons.forEach(button => {
+const categoryFilter =
+  document.getElementById("categoryFilter");
 
-  button.addEventListener("click", () => {
+const genreFilter =
+  document.getElementById("genreFilter");
 
-    const filter = button.dataset.filter;
+categoryFilter.addEventListener("change", aggiornaFiltri);
+genreFilter.addEventListener("change", aggiornaFiltri);
 
+function aggiornaFiltri(){
+
+  const category =
+    categoryFilter.value;
+
+  const genre =
+    genreFilter.value;
+
+  cards.forEach(card => {
+
+    const categories =
+      card.dataset.category.split(" ");
+
+    const matchCategory =
+      category === "all" ||
+      categories.includes(category);
+
+    const matchGenre =
+      genre === "all" ||
+      categories.includes(genre);
+
+    if(matchCategory && matchGenre){
+
+      card.style.display = "block";
+
+    } else {
+
+      card.style.display = "none";
+    }
+
+  });
+
+}
     /* =========================
        RUBRICHE
     ========================= */
