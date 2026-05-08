@@ -29,7 +29,7 @@ filterButtons.forEach(button => {
     if(
       filter === "all" ||
       filter === "cinema-che-resta" ||
-      filter === "sguardi-contemporanei"
+      filter === "sguardi-contemporanei" ||
       filter === "cinema-prescritto"
     ){
 
@@ -288,14 +288,14 @@ let visibleCards = 3;
 aggiornaFiltri();
 
 /* nasconde tutte dopo la terza */
+loadMoreBtn.addEventListener("click", () => {
 
-archivioCards.forEach((card, index) => {
+  visibleCards += 3;
 
-  if(index >= visibleCards){
-    card.style.display = "none";
-  }
+  aggiornaFiltri();
 
 });
+
 
 /* click */
 
@@ -315,13 +315,14 @@ if(loadMoreBtn){
 
     /* nasconde bottone se finite */
 
-    if(visibleCards >= archivioCards.length){
+  const visibleFiltered =
+  [...archivioCards].filter(card =>
+    card.style.display !== "none"
+  );
 
-      loadMoreBtn.style.display = "none";
+if(visibleCards >= visibleFiltered.length){
 
-    }
-
-  });
+  loadMoreBtn.style.display = "none";
 
 }
   // ===============================
