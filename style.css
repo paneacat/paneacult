@@ -1341,18 +1341,15 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 /* TESTO */
 
 .login-text h1{
-
-  font-size:4rem;
+  font-size: 3.5rem;
   margin-bottom:.7rem;
-
 }
 
 .login-text p{
-  font-size:1rem;
+  font-size:1.5rem;
   line-height:1.7;
   opacity:.92;
   margin-bottom:2rem;
-
 }
 
 /* =========================
