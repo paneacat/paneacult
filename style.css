@@ -1374,12 +1374,6 @@ font-weight:500;
 
   padding-top:0;
   padding-bottom:120px;
-  background:
-  linear-gradient(
-    180deg,
-    #0d2740 0%,
-    #091b2d 100%
-  );
 
   position:relative;
   overflow:hidden;
@@ -1408,24 +1402,6 @@ font-weight:500;
 /* =========================
    LOGIN PAGE WALL
 ========================= */
-
-.login-page::before{
-
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(7,35,58,.55),
-      rgba(7,35,58,.78)
-    );
-
-  z-index:0;
-
-}
 
 .login-page .login-hero{
   position:relative;
