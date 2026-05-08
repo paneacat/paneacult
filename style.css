@@ -1886,9 +1886,70 @@ font-size:1.06rem;
   margin-bottom:20px;
 
 }
+.home-cta{
+  text-align:center;
+  padding:140px 20px;
+  max-width:700px;
+  margin:auto;
+   position:relative;
+  overflow:hidden;
+}
+.home-cta::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("img/wall.jpg") center/cover;
+  opacity:.06;
+  filter:blur(4px);
+  transform:scale(1.1);
+}
 
+.cta-kicker{
+  font-size:.8rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#f2c94c;
+  margin-bottom:20px;
+  opacity:.9;
+}
 
+.home-cta h2{
+  font-family:"Playfair Display", serif;
+  font-size:4rem;
+  line-height:1.05;
+  color:white;
+  margin-bottom:24px;
+}
 
+.cta-sub{
+  font-size:1.05rem;
+  line-height:1.8;
+  color:rgba(255,255,255,.75);
+  max-width:520px;
+  margin:0 auto 40px;
+}
+
+.cta-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px 42px;
+  border-radius:999px;
+  background:#f2c94c;
+  color:#0b1f26;
+  font-weight:700;
+  text-decoration:none;
+  transition:.25s;
+}
+
+.cta-button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(242,201,76,.25);
+}
+.home-cta > *{
+  position:relative;
+  z-index:2;
+}
 
 
 
