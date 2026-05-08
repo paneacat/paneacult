@@ -1270,13 +1270,14 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 .login-hero{
 
-  position:relative;
   min-height:100vh;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:hidden;
-  padding:140px 20px 100px;
+
+  padding-top:0;
+  padding-bottom:120px;
 
 }
 
@@ -1330,7 +1331,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 .login-overlay{
   position:relative;
   z-index:2;
-  transform:translateY(-25px);
+  margin-top: -90px;
   display:flex;
   flex-direction:column;
   align-items:center;
