@@ -2470,7 +2470,16 @@ display:flex;
   opacity:.7;
 
 }
+/* =========================
+   CONTACT HERO
+========================= */
 
+.contact-hero{
+
+  padding:
+    180px 0 70px;
+
+}
 
 
 
@@ -2646,11 +2655,6 @@ display:flex;
     grid-template-columns:1fr;
 
    }
-   * =========================
-   MOBILE
-========================= */
-
-@media(max-width:900px){
 
   .login-layout{
 
@@ -2665,9 +2669,8 @@ display:flex;
     font-size:4rem;
 
   }
-   }
-
-
+}
+   
 
 
 
