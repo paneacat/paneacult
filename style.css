@@ -2237,7 +2237,7 @@ display:flex;
 
 .about-text{
 flex:1;
-   max-width:580px;
+   max-width:680px;
 }
 
 .about-text h1 {
@@ -2248,21 +2248,21 @@ flex:1;
 }
 
 .about-intro{
-  max-width:360px;
-  line-height:1.8;
-  font-size:1.1rem;
-  line-height:1.8;
   opacity:.9;
   margin-bottom:40px;
+   font-size:1.1rem;
+  line-height:1.8;
+  max-width:500px;
 }
 
 .about-highlight{
   font-family:'Playfair Display', serif;
-  max-width:420px;
-  line-height:1.1;
-  font-size:2rem;
   margin-bottom:40px;
  color:white;
+   font-size:2.4rem;
+  line-height:1.2;
+  max-width:650px;
+  margin:60px 0;
 }
 
 .about-highlight span{
@@ -2299,14 +2299,12 @@ position:relative;
 
 .about-photo img{
 
-  width:460px;
+  width:100%;
+  max-width:520px;
+
   height:auto;
 
   object-fit:cover;
-
-  border-radius:0;
-
-  box-shadow:none;
 
 }
 
@@ -2340,12 +2338,16 @@ position:relative;
 }
 
 .about-page{
-  margin-top:40px;
-  padding-top:20px;
-  background:none;
-  border:none;
-  box-shadow:none;
-  backdrop-filter:none;
+  display:grid;
+  grid-template-columns: 1fr 520px;
+
+  gap:100px;
+
+  align-items:center;
+
+  max-width:1300px;
+  margin:80px auto;
+  
 }
 
 .about-page::before{
