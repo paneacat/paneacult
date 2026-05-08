@@ -169,97 +169,61 @@
 
     <div class="container">
 
-      <div class="filters-top">
+      <div class="filters-bar">
 
-        <!-- RUBRICHE -->
+  <!-- RUBRICA -->
 
-        <div class="filter-bar">
+  <select id="categoryFilter" class="filter-select">
 
-          <p class="filter-label">
-            Rubriche
-          </p>
+    <option value="all">
+      Tutte le rubriche
+    </option>
 
-          <div class="filters-panel">
+    <option value="cinema-che-resta">
+      Cinema che resta
+    </option>
 
-            <button
-              class="filter-btn active"
-              data-filter="all"
-            >
-              Tutti
-            </button>
+    <option value="sguardi-contemporanei">
+      Sguardi contemporanei
+    </option>
 
-            <button
-              class="filter-btn"
-              data-filter="cinema-che-resta"
-            >
-              Cinema che resta
-            </button>
+    <option value="cinema-prescritto">
+      Cinema prescritto
+    </option>
 
-            <button
-              class="filter-btn"
-              data-filter="sguardi-contemporanei"
-            >
-              Sguardi contemporanei
-            </button>
-            <button
-  class="filter-btn"
-  data-filter="cinema-prescritto"
->
-  Cinema Prescritto
-            </button>
-            
-          </div>
+  </select>
 
-        </div>
+  <!-- GENERE -->
 
-        <!-- GENERI -->
+  <select id="genreFilter" class="filter-select">
 
-        <div class="filter-bar">
+    <option value="all">
+      Tutti i generi
+    </option>
 
-          <p class="filter-label">
-            Generi
-          </p>
+    <option value="dramma">
+      Dramma
+    </option>
 
-          <div class="filters-panel">
+    <option value="commedia">
+      Commedia
+    </option>
 
-            <button
-              class="filter-btn"
-              data-filter="dramma"
-            >
-              Dramma
-            </button>
+    <option value="thriller">
+      Thriller
+    </option>
 
-            <button
-              class="filter-btn"
-              data-filter="commedia"
-            >
-              Commedia
-            </button>
+    <option value="giallo">
+      Giallo
+    </option>
 
-            <button
-              class="filter-btn"
-              data-filter="thriller"
-            >
-              Thriller
-            </button>
+    <option value="biopic">
+      Biopic
+    </option>
 
-            <button
-              class="filter-btn"
-              data-filter="giallo"
-            >
-              Giallo
-            </button>
+  </select>
 
-            <button
-              class="filter-btn"
-              data-filter="biopic"
-            >
-              Biopic
-            </button>
-
-          </div>
-
-        </div>
+      </div>
 
         <!-- RESET -->
 
