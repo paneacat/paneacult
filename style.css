@@ -1660,88 +1660,162 @@ min-height:100vh;
 }
 
 /* =========================
-   REVIEW HERO
+   HEADER RECENSIONE
 ========================= */
 
-.review-hero{
-
-  margin-bottom:70px;
-
-}
-
-/* TITOLO */
-
-.review-title{
+.review-container h1{
 
   font-family:'Playfair Display', serif;
 
-  font-size:clamp(3rem, 7vw, 5.2rem);
+  font-size:clamp(3rem, 7vw, 5rem);
 
   line-height:.92;
 
   letter-spacing:-0.04em;
 
-  color:#f4efe8;
+  margin-bottom:18px;
 
-  margin-bottom:20px;
+  color:#f4efe8;
 
 }
 
-/* META */
+/* REGISTA */
 
-.review-meta{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:14px;
-
-  margin-bottom:28px;
+.author{
 
   font-size:.9rem;
 
-  color:rgba(255,255,255,.58);
+  text-transform:uppercase;
 
-  letter-spacing:.04em;
+  letter-spacing:.16em;
+
+  color:#f4b400;
+
+  margin-bottom:18px;
+
+}
+
+/* SOTTOTITOLO */
+
+.subtitle{
+
+  font-size:1.3rem;
+
+  line-height:1.6;
+
+  color:rgba(255,255,255,.82);
+
+  margin-bottom:24px;
+
+  max-width:620px;
+
+}
+
+/* RUBRICA */
+
+.series{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  padding:.5rem 1rem;
+
+  border:1px solid rgba(244,180,0,.3);
+
+  border-radius:999px;
+
+  color:#f4b400;
+
+  font-size:.72rem;
+
+  letter-spacing:.14em;
 
   text-transform:uppercase;
 
-}
-
-/* IMMAGINE HERO */
-
-.review-cover{
-
-  width:100%;
-
-  border-radius:30px;
-
-  overflow:hidden;
-
-  margin-top:36px;
+  margin-bottom:14px;
 
 }
 
-.review-cover img{
+/* GENERI */
 
-  width:100%;
+.genre-bar{
 
-  display:block;
+  color:rgba(255,255,255,.5);
 
-  object-fit:cover;
+  text-transform:uppercase;
+
+  letter-spacing:.08em;
+
+  font-size:.78rem;
+
+  margin-bottom:50px;
 
 }
 
 /* =========================
-   TESTO RECENSIONE
+   WATCH
 ========================= */
 
-.review-content{
+.watch{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:1rem;
+
+  flex-wrap:wrap;
+
+  margin-bottom:70px;
+
+}
+
+.watch span{
+
+  font-size:.72rem;
+
+  text-transform:uppercase;
+
+  letter-spacing:.14em;
+
+  color:rgba(255,255,255,.45);
+
+}
+
+.watch-btn-inline{
+
+  background:#f4b400;
+
+  color:#111;
+
+  text-decoration:none;
+
+  padding:.8rem 1.1rem;
+
+  border-radius:999px;
+
+  font-size:.82rem;
+
+  transition:.25s ease;
+
+}
+
+.watch-btn-inline:hover{
+
+  transform:translateY(-2px);
+
+}
+
+/* =========================
+   TESTO
+========================= */
+
+.review-text{
 
   font-size:1.08rem;
 
-  line-height:1.95;
+  line-height:2;
 
   color:rgba(255,255,255,.88);
 
@@ -1749,7 +1823,7 @@ min-height:100vh;
 
 /* PARAGRAFI */
 
-.review-content p{
+.review-text p{
 
   margin-bottom:2rem;
 
@@ -1757,41 +1831,17 @@ min-height:100vh;
 
 /* PRIMO PARAGRAFO */
 
-.review-content p:first-child{
+.review-text p:first-child{
 
-  font-size:1.22rem;
-
-  line-height:1.9;
+  font-size:1.2rem;
 
   color:#f4efe8;
 
 }
 
-/* CITAZIONI */
+/* STRONG */
 
-.review-content blockquote{
-
-  margin:70px 0;
-
-  padding-left:28px;
-
-  border-left:2px solid #f4b400;
-
-  font-family:'Playfair Display', serif;
-
-  font-size:2rem;
-
-  line-height:1.35;
-
-  color:#f4efe8;
-
-  font-style:italic;
-
-}
-
-/* PAROLE EVIDENZIATE */
-
-.review-content strong{
+.review-text strong{
 
   color:#f4b400;
 
@@ -1799,17 +1849,52 @@ min-height:100vh;
 
 }
 
-/* DIVISORE */
+/* CORSIVO */
 
-.review-divider{
+.review-text em{
 
-  width:60px;
+  color:#f4efe8;
 
-  height:1px;
+  font-style:italic;
 
-  background:rgba(255,255,255,.14);
+}
 
-  margin:80px auto;
+/* =========================
+   FINALE
+========================= */
+
+.review-end{
+
+  margin-top:90px;
+
+  text-align:center;
+
+}
+
+/* STELLE */
+
+.rating{
+
+  font-size:2rem;
+
+  color:#f4b400;
+
+  letter-spacing:.18em;
+
+  margin-bottom:24px;
+
+}
+
+/* FIRMA */
+
+.firma-recensione{
+
+  color:rgba(255,255,255,.55);
+
+  line-height:1.8;
+
+  font-size:.95rem;
+
 }
 
 
@@ -1942,31 +2027,36 @@ min-height:100vh;
 
   .review-container{
 
-    padding:80px 0 100px;
+    padding:90px 0 110px;
 
   }
 
-  .review-title{
+  .review-container h1{
 
     font-size:3rem;
 
   }
 
-  .review-content{
+  .subtitle{
+
+    font-size:1.08rem;
+
+  }
+
+  .review-text{
 
     font-size:1rem;
 
-    line-height:1.85;
+    line-height:1.9;
 
   }
 
-  .review-content blockquote{
+  .watch{
 
-    font-size:1.5rem;
-
-    margin:50px 0;
+    margin-bottom:50px;
 
   }
+
 }
 
 
