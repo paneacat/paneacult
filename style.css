@@ -188,8 +188,9 @@ a:hover {
   gap: 60px;
 }
 
-.hero-text {
-  max-width: 260px;
+.hero-text{
+max-width:650px;
+  width:100%;
   padding-left: 18px;
 }
 
@@ -962,14 +963,8 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   to{
     transform:rotate(360deg);
   }
+}  
 
-}
-
-
-
-
-
-   
 /* AUTORE (PIÙ IMPORTANTE) */
 .author {
   color: #ffffff;
@@ -1244,6 +1239,14 @@ opacity:0.18;
 
   text-align:center;
 }
+
+
+
+
+
+
+
+
 
 
 
