@@ -1958,6 +1958,158 @@ position:relative;
   position:relative;
   z-index:2;
 }
+/* =========================
+   MANIFESTO HOME
+========================= */
+
+.manifesto-home{
+
+  min-height:58vh;
+
+  display:flex;
+  align-items:center;
+
+  padding:120px 0 90px;
+
+  position:relative;
+  overflow:hidden;
+}
+
+/* WRAPPER */
+
+.manifesto-wrapper{
+
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+
+  gap:70px;
+
+  width:100%;
+}
+
+/* LEFT */
+
+.manifesto-left{
+
+  max-width:620px;
+}
+
+.manifesto-left h2{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:4.2rem;
+  line-height:.95;
+
+  color:white;
+
+  margin-bottom:24px;
+}
+
+.manifesto-left span{
+
+  color:#f4c542;
+}
+
+.manifesto-left p{
+
+  max-width:480px;
+
+  color:rgba(255,255,255,.75);
+
+  font-size:1.05rem;
+  line-height:1.8;
+}
+
+/* DIVIDER */
+
+.manifesto-divider{
+
+  width:1px;
+  height:240px;
+
+  background:
+  linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255,255,255,.15),
+    transparent
+  );
+}
+
+/* RIGHT */
+
+.manifesto-right{
+
+  max-width:340px;
+}
+
+.manifesto-kicker{
+
+  font-size:.7rem;
+  letter-spacing:.25em;
+
+  color:#f4c542;
+
+  margin-bottom:16px;
+
+  font-weight:700;
+}
+
+.manifesto-right h3{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:2.8rem;
+  line-height:1;
+
+  color:white;
+
+  margin-bottom:20px;
+}
+
+.manifesto-sub{
+
+  color:rgba(255,255,255,.72);
+
+  line-height:1.8;
+
+  margin-bottom:30px;
+}
+
+/* BUTTON */
+
+.manifesto-btn{
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:15px 34px;
+
+  border-radius:999px;
+
+  background:#f4c542;
+  color:#0b1f26;
+
+  font-weight:600;
+
+  text-decoration:none;
+
+  transition:.25s;
+}
+
+.manifesto-btn:hover{
+
+  transform:translateY(-2px);
+
+  background:#ffd95e;
+}
+
+
+
+
 
 
 
@@ -2102,7 +2254,32 @@ position:relative;
     height:72vh;
 
    }
-}
+
+  .manifesto-wrapper{
+
+    flex-direction:column;
+    align-items:flex-start;
+
+    gap:45px;
+  }
+
+  .manifesto-divider{
+
+    width:100%;
+    height:1px;
+  }
+
+  .manifesto-left h2{
+
+    font-size:3rem;
+  }
+
+  .manifesto-right h3{
+
+    font-size:2.2rem;
+  }
+   }
+
 
 
 
