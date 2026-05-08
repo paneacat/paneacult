@@ -30,13 +30,14 @@ filterButtons.forEach(button => {
       filter === "all" ||
       filter === "cinema-che-resta" ||
       filter === "sguardi-contemporanei"
+      filter === "cinema-prescritto"
     ){
 
       activeCategory = filter;
 
       document
         .querySelectorAll(
-          '[data-filter="all"], [data-filter="cinema-che-resta"], [data-filter="sguardi-contemporanei"]'
+          '[data-filter="all"], [data-filter="cinema-che-resta"], [data-filter="sguardi-contemporanei"], [data-filter="cinema-prescritto"]'
         )
         .forEach(btn => btn.classList.remove("active"));
 
