@@ -1666,6 +1666,58 @@ min-height:100vh;
 
 }
 
+.review-hero{
+
+  position:relative;
+
+  width:100%;
+
+  height:82vh;
+
+  overflow:hidden;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+}
+
+.review-hero::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+  linear-gradient(
+    to top,
+    rgba(0,0,0,.78) 0%,
+    rgba(0,0,0,.35) 40%,
+    rgba(0,0,0,.15) 100%
+  );
+
+}
+
+.hero-img{
+
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  object-position:center center;
+
+}
 /* =========================
    SIDEBAR
 ========================= */
@@ -1811,6 +1863,30 @@ font-size:1.06rem;
 
 }
 
+.hero-overlay{
+
+  position:relative;
+
+  z-index:2;
+
+  text-align:center;
+
+  max-width:800px;
+
+  padding:0 25px;
+
+}
+
+.hero-overlay h1{
+
+  font-size:clamp(3rem, 7vw, 6rem);
+
+  line-height:.95;
+
+  margin-bottom:20px;
+
+}
+
 
 
 
@@ -1952,6 +2028,11 @@ font-size:1.06rem;
     top:auto;
 
   }
+   .review-hero{
+
+    height:72vh;
+
+   }
 }
 
 
@@ -2002,4 +2083,7 @@ font-size:1.06rem;
 
     padding:34px;
   }
+   .hero img {
+      height: 82vh;
+}
 }
