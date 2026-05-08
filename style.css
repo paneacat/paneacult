@@ -1652,7 +1652,7 @@ min-height:100vh;
 
 .review-layout{
 
-  width:min(92%, 1300px);
+  width:min(88%, 1180px);
 
   margin:0 auto;
 
@@ -1660,7 +1660,7 @@ min-height:100vh;
 
   grid-template-columns:260px 1fr;
 
-  gap:90px;
+  gap:120px;
 
   padding:120px 0;
 
@@ -1746,15 +1746,13 @@ min-height:100vh;
 
 }
 
-/* STELLE */
-
-.sidebar-rating{
-
-  font-size:1.4rem;
+.sidebar-series{
 
   color:#f4b400;
 
-  letter-spacing:.12em;
+  font-weight:500;
+
+  letter-spacing:.08em;
 
 }
 
@@ -1763,16 +1761,17 @@ min-height:100vh;
 ========================= */
 
 .review-content{
-
-  max-width:760px;
-
+font-size:1.06rem;
+  letter-spacing:.01em;
+  max-width:640px;
+   padding-top:20px;
 }
 
 .review-content p{
 
   font-size:1.08rem;
 
-  line-height:2;
+  line-height:2.15;
 
   margin-bottom:2rem;
 
