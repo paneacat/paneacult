@@ -2331,7 +2331,27 @@ display:flex;
   min-height:220px;
 
 }
+.contact-links{
 
+  margin-top:18px;
+
+}
+
+.contact-links a{
+
+  color:#f5c542;
+
+  text-decoration:none;
+
+}
+
+.card-small{
+
+  margin-top:12px;
+
+  opacity:.7;
+
+}
 
 
 
