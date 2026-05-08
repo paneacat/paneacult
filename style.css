@@ -1384,7 +1384,26 @@ font-weight:500;
   position:relative;
   overflow:hidden;
 }
+.login-page{
 
+  position:relative;
+
+  min-height:100vh;
+
+  background-image:
+    linear-gradient(
+      rgba(8,35,58,.72),
+      rgba(8,35,58,.72)
+    ),
+    url("img/posters-bg.jpg");
+
+  background-size:cover;
+
+  background-position:center;
+
+  background-repeat:no-repeat;
+
+}
 
 /* =========================
    LOGIN PAGE WALL
