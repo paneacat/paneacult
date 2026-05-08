@@ -1269,9 +1269,40 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 .login-hero {
   width: 100%;
+   position:relative;
+  overflow:hidden;
   max-width: 1100px;
-  position: relative;
    padding:120px 0 120px;
+}
+.login-hero::before{
+
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      rgba(8,24,36,.78),
+      rgba(8,24,36,.82)
+    ),
+    url("img/wall.jpg");
+
+  background-size:cover;
+  background-position:center;
+
+  filter:saturate(.9);
+
+  z-index:0;
+
+}
+
+.login-overlay,
+.header{
+
+  position:relative;
+  z-index:2;
+
 }
 
 .login-hero .container{
