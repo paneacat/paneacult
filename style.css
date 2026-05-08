@@ -453,6 +453,61 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 }
 
 /* =========================
+   ARCHIVIO HERO
+========================= */
+
+.archivio-hero{
+
+  text-align:center;
+
+  margin-top:110px;
+  margin-bottom:70px;
+}
+
+/* KICKER */
+
+.archivio-kicker{
+
+  font-size:.72rem;
+
+  letter-spacing:.22em;
+
+  color:#f4c542;
+
+  margin-bottom:18px;
+
+  font-weight:700;
+}
+
+/* TITLE */
+
+.archivio-title{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:4rem;
+
+  color:white;
+
+  margin-bottom:20px;
+}
+
+/* SUBTITLE */
+
+.archivio-subtitle{
+
+  max-width:620px;
+
+  margin:0 auto;
+
+  color:rgba(255,255,255,.72);
+
+  line-height:1.8;
+
+  font-size:1.05rem;
+}
+
+/* =========================
    SLIDER ARROWS
 ========================= */
 
@@ -2320,6 +2375,16 @@ display:flex;
   .manifesto-right h3{
 
     font-size:2.2rem;
+  }
+   .archivio-hero{
+
+    margin-top:80px;
+    margin-bottom:50px;
+  }
+
+  .archivio-title{
+
+    font-size:2.8rem;
   }
    }
 
