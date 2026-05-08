@@ -47,10 +47,10 @@ button,
 .btn-outline {
 
   background: #fdc103;
-  color: #0b1f26;
-
+  color:#111;
+  font-weight:500;
+  letter-spacing:-0.01em;
   border: none;
-
   transition: .25s ease;
 }
 
@@ -552,11 +552,12 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 .load-more-btn{
   background:#f4b400;
   color:#111;
+   font-weight:500;
+  letter-spacing:-0.01em;
   border:none;
   padding:1rem 2rem;
   border-radius:999px;
   font-size:.9rem;
-  font-weight:700;
   cursor:pointer;
   transition:.3s;
 }
