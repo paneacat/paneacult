@@ -2828,8 +2828,8 @@ display:flex;
 
 .hero-text h1{
 
-  font-size:4.5rem;
-  line-height:.9;
+  font-size:4.2rem;
+  line-height:.92;
   letter-spacing:-2px;
 
   max-width:100%;
@@ -2891,11 +2891,38 @@ display:flex;
 }
 
 .login-box{
-
+  margin-top:42px;
   backdrop-filter:blur(18px);
+ border:1px solid rgba(255,255,255,.08);
+}
+.login-text{
+
+  padding:0 30px;
+}
+.login-hero::before{
+
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(6,18,27,.82),
+      rgba(6,18,27,.72)
+    );
+
+  z-index:1;
 
 }
+.login-overlay{
+
+  position:relative;
+  z-index:2;
+
 }
+ 
 
 
 
