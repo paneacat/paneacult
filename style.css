@@ -2236,7 +2236,7 @@ display:flex;
 }
 
 .about-text{
-
+flex:1;
   max-width:520px;
 }
 
@@ -2252,34 +2252,28 @@ display:flex;
   font-weight:700;
 }
 
-.about-text h1{
-
-  font-size:5.5rem;
+.about-text h1 {
+font-size:7rem;
   line-height:.9;
-
   margin-bottom:30px;
 }
 
 .about-intro{
-
+  max-width:360px;
+  line-height:1.8;
   font-size:1.1rem;
   line-height:1.8;
-
   opacity:.9;
-
   margin-bottom:40px;
 }
 
 .about-highlight{
-
   font-family:'Playfair Display', serif;
-
+  max-width:420px;
+  line-height:1.1;
   font-size:2rem;
-  line-height:1.3;
-
   margin-bottom:40px;
-
-  color:white;
+ color:white;
 }
 
 .about-highlight span{
@@ -2289,13 +2283,10 @@ display:flex;
 }
 
 .about-body{
-
   font-size:1rem;
-  line-height:2;
-
+  max-width:420px;
+  line-height:1.9;
   opacity:.85;
-
-  max-width:460px;
 }
 
 .about-sign{
@@ -2311,22 +2302,38 @@ display:flex;
   color:white;
 }
 
+.about-page{
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:120px;
+
+  max-width:1200px;
+  margin:120px auto;
+
+}
+
+.about-photo{
+
+  flex:0 0 420px;
+
+}
+
 .about-photo img{
 
-  width:420px;
-  height:620px;
-
-  object-fit:cover;
-
+  width:100%;
   border-radius:28px;
 
-  box-shadow:
-    0 25px 70px rgba(0,0,0,.35);
+  object-fit:cover;
+  display:block;
 
-  filter:
-    contrast(105%)
-    saturate(95%);
 }
+
+
+
+
 
 
 
