@@ -1292,7 +1292,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
       rgba(8,20,32,.70),
       rgba(8,20,32,.82)
     ),
-    url("img/wall.jpg");
+    url("img/wall.webp");
  background-size:cover;
   background-position:center 25%;
   background-repeat:no-repeat;
