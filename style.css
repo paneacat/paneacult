@@ -2788,6 +2788,29 @@ display:flex;
   margin:70px 0;
 
  }
+ .hero-text,
+.manifesto-left,
+.home-login-content{
+
+  width:100%;
+  padding-left:26px;
+  padding-right:26px;
+
+  box-sizing:border-box;
+
+}
+ .hero-text h1,
+.manifesto-left h2{
+
+  max-width:95%;
+
+}
+ .hero-text,
+.manifesto-left{
+
+  margin:0 auto;
+
+}
  
 }
 
