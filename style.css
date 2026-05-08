@@ -2682,7 +2682,7 @@ display:flex;
 
   .hero h1{
 
-    font-size:4.2rem;
+    font-size:22px;
 
     line-height:.95;
 
@@ -2731,9 +2731,10 @@ display:flex;
 }
 
 .menu a{
-  font-size: 18px;
+  font-size: 13px;
   letter-spacing:.12em;
 }
+ 
  .logo{
   font-size:4rem;
 }
@@ -2787,7 +2788,6 @@ display:flex;
   margin:0 auto;
 
 }
- 
 }
 
 
