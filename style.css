@@ -448,57 +448,118 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 }
 
 /* =========================
-   LOAD MORE
+   SPLASH SCREEN
 ========================= */
 
-.load-more-wrapper{
+#splash{
+
+  position:fixed;
+
+  inset:0;
+
+  width:100%;
+
+  height:100vh;
+
+  background:#fdc103;
+
+  z-index:99999;
 
   display:flex;
 
+  flex-direction:column;
+
+  align-items:center;
+
   justify-content:center;
 
-  margin:
-    60px auto
-    20px;
+  text-align:center;
 }
 
-.load-more-btn{
+/* LOGO */
 
-  height:46px;
+#splash img{
 
-  padding:0 26px;
+  width:120px;
+
+  margin-bottom:38px;
+}
+
+/* =========================
+   LOADING BAR
+========================= */
+
+.loader{
+
+  width:220px;
+
+  height:6px;
 
   border-radius:999px;
 
-  border:1px solid rgba(255,255,255,.10);
+  background:
+    rgba(0,0,0,.12);
 
-  background:rgba(255,255,255,.03);
+  overflow:hidden;
 
-  color: white;
+  position:relative;
 
-  font-size:13px;
-
-  letter-spacing: .4px;
-
-  transition: .25s ease;
-  align-items: center;
+  margin-bottom:24px;
 }
 
-/* hover */
+/* INNER BAR */
 
-.load-more-btn:hover{
+.loader::before{
 
-  border-color:var(--gold);
+  content:"";
 
-  color:var(--gold);
+  position:absolute;
 
-  transform:translateY(-2px);
+  top:0;
+
+  left:-40%;
+
+  width:40%;
+
+  height:100%;
+
+  background:#000;
+
+  border-radius:999px;
+
+  animation:
+    loadingBar 1.1s ease-in-out infinite;
 }
 
-/* nascosto */
+/* TEXT */
 
-.load-more-btn.hidden{
-  display:none;
+#splash p{
+
+  font-size:16px;
+
+  font-weight:700;
+
+  letter-spacing:4px;
+
+  text-transform:uppercase;
+
+  color:#000;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes loadingBar{
+
+  0%{
+    left:-40%;
+  }
+
+  100%{
+    left:100%;
+  }
+
 }
 
 /* =========================
@@ -969,91 +1030,6 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   opacity:.9;
 }
 
-/* =========================
-   SPLASH SCREEN
-========================= */
-
-#splash{
-
-  position:fixed;
-
-  inset:0;
-
-  width:100%;
-
-  height:100vh;
-
-  background:#0d2e40;
-
-  z-index:99999;
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-  justify-content:center;
-
-  text-align:center;
-}
-
-/* LOGO */
-
-#splash img{
-
-  width:120px;
-
-  margin-bottom:40px;
-}
-
-/* LOADER */
-
-.loader{
-
-  width:72px;
-
-  height:72px;
-
-  border-radius:50%;
-
-  border:
-    4px solid rgba(0,0,0,.15);
-
-  border-top:
-    4px solid #000;
-
-  animation:
-    spin 1s linear infinite;
-
-  margin-bottom:26px;
-}
-
-/* TEXT */
-
-#splash p{
-
-  font-size:18px;
-
-  font-weight:600;
-
-  letter-spacing:5px;
-
-  text-transform:uppercase;
-
-  color:#000;
-}
-
-/* =========================
-   ANIMATION
-========================= */
-
-@keyframes spin{
-
-  to{
-    transform:rotate(360deg);
-  }
-}  
 
 /* AUTORE (PIÙ IMPORTANTE) */
 .author {
