@@ -1239,7 +1239,79 @@ opacity:0.18;
 
   text-align:center;
 }
+/* =========================
+   EMPTY STATE
+========================= */
 
+.empty-state{
+
+  display:none;
+
+  width:100%;
+
+  text-align:center;
+
+  margin:60px 0;
+
+  font-family:'Inter', sans-serif;
+
+  font-size:1rem;
+
+  font-weight:600;
+
+  letter-spacing:.5px;
+
+  color:#f3efe7;
+
+  opacity:.9;
+}
+
+.empty-state.show{
+
+  display:block;
+}
+
+.empty-state .star{
+
+  color:#f2b90f;
+
+  margin-left:6px;
+}
+
+/* =========================
+   RESET BUTTON
+========================= */
+
+.filters-reset{
+
+  margin-top:18px;
+}
+
+.filter-reset{
+
+  background:transparent;
+
+  border:none;
+
+  color:#f2b90f;
+
+  font-family:'Inter', sans-serif;
+
+  font-size:.95rem;
+
+  font-weight:500;
+
+  cursor:pointer;
+
+  padding:0;
+
+  transition:.25s ease;
+}
+
+.filter-reset:hover{
+
+  opacity:.7;
+}
 
 
 
