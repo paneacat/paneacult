@@ -2237,7 +2237,7 @@ display:flex;
 
 .about-text{
 flex:1;
-  max-width:520px;
+   max-width:580px;
 }
 
 .about-kicker{
@@ -2253,9 +2253,10 @@ flex:1;
 }
 
 .about-text h1 {
-font-size:7rem;
-  line-height:.9;
   margin-bottom:30px;
+   font-size:9rem;
+  line-height:.82;
+  letter-spacing:-4px;
 }
 
 .about-intro{
@@ -2277,16 +2278,15 @@ font-size:7rem;
 }
 
 .about-highlight span{
-
   color:#f5c842;
   font-style:italic;
 }
 
 .about-body{
   font-size:1rem;
-  max-width:420px;
-  line-height:1.9;
   opacity:.85;
+   max-width:480px;
+  line-height:1.9;
 }
 
 .about-sign{
@@ -2310,16 +2310,16 @@ position:relative;
 }
 
 .about-photo img{
-   filter:
-  contrast(1.05)
-  saturate(.95)
-  brightness(.98);
 
-  width:100%;
-  border-radius:28px;
+  width:460px;
+  height:auto;
 
   object-fit:cover;
-  display:block;
+
+  border-radius:0;
+
+  box-shadow:none;
+
 }
 
 .about-photo{
@@ -2352,15 +2352,14 @@ position:relative;
 }
 
 .about-page{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:120px;
-  max-width:1200px;
-  margin:120px auto;
-  position:relative;
-  overflow:hidden;
+  margin-top:40px;
+  padding-top:20px;
+  background:none;
+  border:none;
+  box-shadow:none;
+  backdrop-filter:none;
 }
+
 .about-page::before{
 
   content:"";
@@ -2369,15 +2368,9 @@ position:relative;
   inset:0;
 
   opacity:.06;
-
-  background-image:
-  radial-gradient(#ffffff 1px, transparent 1px);
-
-  background-size:4px 4px;
-
   pointer-events:none;
-
 }
+
 .about-page::after{
 
   content:"";
@@ -2386,13 +2379,6 @@ position:relative;
 
   width:700px;
   height:700px;
-
-  background:
-  radial-gradient(
-    circle,
-    rgba(0,180,255,.18),
-    transparent 70%
-  );
 
   top:-200px;
   right:-100px;
