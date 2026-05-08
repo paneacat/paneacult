@@ -152,21 +152,6 @@ if(resetBtn){
 }
 
   // ===============================
-  // ===== MENU FILTRI A TENDINA
-  // ===============================
-
-  const filtersToggle = document.querySelector(".filters-toggle");
-  const filtersWrapper = document.querySelector(".filters-wrapper");
-
-  if (filtersToggle && filtersWrapper) {
-
-    filtersToggle.addEventListener("click", () => {
-      filtersWrapper.classList.toggle("active");
-    });
-
-  }
-
-  // ===============================
   // ===== SPLASH
   // ===============================
 
