@@ -1271,15 +1271,11 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 .login-hero{
 
   position:relative;
-
   min-height:100vh;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   overflow:hidden;
-
   padding:140px 20px 100px;
 
 }
@@ -1509,6 +1505,36 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
   font-size: 15px;
 }
+/* =========================
+   POSTER WALL
+========================= */
+
+.poster-wall{
+
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  background:
+    linear-gradient(
+      rgba(7,18,28,.45),
+      rgba(7,18,28,.60)
+    ),
+    url("img/wall.jpg");
+
+  background-size:cover;
+
+  background-position:center;
+
+  background-repeat:no-repeat;
+
+  overflow:hidden;
+
+}
+
 
 /* =========================
    EMPTY STATE
