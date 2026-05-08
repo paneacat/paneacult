@@ -773,56 +773,73 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 }
 
 /* =========================
-   RESET BUTTON
+   FILTERS TOP
 ========================= */
 
-.filters-reset{
-  display:flex;
-  justify-content:center;
-  margin-top:8px;
-}
-
-.filter-reset{
-
-  width:52px;
-
-  height:52px;
-
-  border-radius:50%;
-
-  border:none;
-
-  background:#fdc103;
-
-  color:#0b1f26;
-
-  font-size:1.2rem;
-
-  font-weight:700;
-
-  cursor:pointer;
+.filters-top{
 
   display:flex;
 
   align-items:center;
 
-  justify-content:center;
+  gap:14px;
 
-  transition:.25s ease;
+  margin-top:30px;
+
+  flex-wrap:wrap;
 }
 
-.filter-reset::before{
-  content:"↺";
+/* =========================
+   RESET BUTTON
+========================= */
+
+.filter-reset{
+
+  width:44px;
+  height:44px;
+
+  border-radius:999px;
+
+  background:#fdc103;
+
+  color:#000;
+
+  border:none;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  font-size:1.2rem;
+
+  cursor:pointer;
+
+  transition:.25s ease;
+
+  flex-shrink:0;
 }
 
 .filter-reset:hover{
-  transform:rotate(-90deg) scale(1.05);
+
+  transform:rotate(-25deg);
+
+  opacity:.9;
 }
 
-/* NASCONDE TESTO */
+.filter-group{
 
-.filter-reset{
-  font-size:0;
+  flex:1;
+
+  min-width:220px;
+}
+.filter-group summary{
+
+  padding:14px 18px;
+
+  font-size:.9rem;
+
+  min-height:auto;
 }
 
 /* =========================
