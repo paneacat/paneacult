@@ -1570,7 +1570,37 @@ opacity:0.18;
   color:#fdc103;
   letter-spacing:-0.02em;
   }
+.line-break{
+  display:block;
+}
+/* =========================
+   ABOUT QUOTE
+========================= */
 
+.about-quote{
+
+  margin:34px 0;
+
+  padding-left:18px;
+
+  border-left:
+    2px solid #fdc103;
+
+  font-family:
+    'Playfair Display', serif;
+
+  font-size:1.2rem;
+
+  font-style:italic;
+
+  line-height:1.6;
+
+  color:#f4efe8;
+
+  opacity:.92;
+
+  max-width:520px;
+}
 
 
 
@@ -1673,6 +1703,22 @@ opacity:0.18;
   .film-title{
     font-size:1rem;
   }
+   .about-content{
+    flex-direction:column;
+    gap:40px;
+  }
+
+  .about-image img{
+    width:100%;
+    max-width:320px;
+    margin:auto;
+  }
+   .poster-signature{
+  width:140px;
+  margin-top:24px;
+  filter:brightness(0) invert(1);
+  opacity:.9;
+ }
 }
 
 
