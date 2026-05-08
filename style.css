@@ -1367,29 +1367,28 @@ font-weight:500;
 
 .login-page{
 
-  background:
-    linear-gradient(
-      rgba(7,22,34,.76),
-      rgba(7,22,34,.88)
-    ),
-    url("img/poster.webp");
-
-  background-size:cover;
-
-  background-position:center;
-
-  background-repeat:no-repeat;
-
-  background-attachment:fixed;
-
   min-height:100vh;
 
   position:relative;
 
   overflow-x:hidden;
 
-}
+  background-image:
+    linear-gradient(
+      rgba(7,22,34,.72),
+      rgba(7,22,34,.84)
+    ),
+    url("img/poster.webp");
 
+  background-size:cover;
+
+  background-position:center top;
+
+  background-repeat:no-repeat;
+
+  background-color:#071622;
+
+}
 /* glow cinematografico */
 
 .login-page::before{
