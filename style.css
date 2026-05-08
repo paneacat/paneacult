@@ -1492,12 +1492,77 @@ opacity:0.18;
 .about-quote span{
   color:#f4b400;
 }
-  .poster-signature{
-  width:140px;
-  margin-top:24px;
+
+/* =========================
+   ABOUT HERO
+========================= */
+
+.about-hero{
+  padding:120px 0 90px;
+}
+
+.about-layout{
+  display:grid;
+  grid-template-columns:1fr 520px;
+  gap:5rem;
+  align-items:center;
+}
+
+.about-text h1{
+  font-family:'Playfair Display', serif;
+  font-size:5rem;
+  line-height:.95;
+  color:#f4efe8;
+  margin-bottom:1.4rem;
+}
+
+.about-intro{
+  font-size:1.1rem;
+  line-height:1.5;
+  color:#f4efe8;
+  opacity:.92;
+  max-width:500px;
+  margin-bottom:3rem;
+}
+
+.about-quote{
+  font-family:'Playfair Display', serif;
+  font-size:2rem;
+  line-height:1.45;
+  color:#f4efe8;
+  font-style:italic;
+  max-width:620px;
+  margin-bottom:2.2rem;
+}
+
+.about-quote span{
+  color:#f4b400;
+}
+
+.about-description{
+  font-size:1.15rem;
+  line-height:1.45;
+  color:#f4efe8;
+  margin-bottom:1.8rem;
+}
+
+.poster-signature{
+  width:220px;
   filter:brightness(0) invert(1);
-  opacity:.9;
-   }
+  opacity:.95;
+}
+
+.about-image{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.about-image img{
+  width:100%;
+  max-width:520px;
+  object-fit:cover;
+}
+
 
 
 
@@ -1594,16 +1659,31 @@ opacity:0.18;
   .film-title{
     font-size:1rem;
   }
-   .about-content{
-    flex-direction:column;
-    gap:40px;
+
+  .about-layout{
+    grid-template-columns:1fr;
+    gap:3rem;
+  }
+
+  .about-text h1{
+    font-size:3.5rem;
+  }
+
+  .about-quote{
+    font-size:1.5rem;
+  }
+
+  .about-image{
+    justify-content:center;
   }
 
   .about-image img{
-    width:100%;
-    max-width:320px;
-    margin:auto;
+    max-width:420px;
   }
+
+  .poster-signature{
+    width:160px;
+}
 }
 
 
