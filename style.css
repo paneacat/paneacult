@@ -284,77 +284,167 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 }
 
 /* =========================
-   8. SLIDER
+   HOME CINEMA
 ========================= */
 
-.slider-wrapper {
-  position: relative;
+.home-cinema{
+  padding: 40px 0 100px;
 }
 
-.slider-arrows {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  pointer-events: none;
-  z-index: 5;
-  padding: 0 10px;
+/* =========================
+   SECTION HEADER
+========================= */
+
+.section-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:28px;
 }
 
-.slider-arrow {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(8,25,35,.55);
-  backdrop-filter: blur(12px);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  transition: .25s ease;
-  pointer-events: auto;
+.section-label{
+  font-family:'Playfair Display', serif;
+  font-size:clamp(2rem,3vw,3rem);
+  font-weight:600;
+  color:#f4efe8;
+  letter-spacing:-0.03em;
 }
 
-.slider-arrow:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-  transform: scale(1.06);
+/* =========================
+   SLIDER WRAPPER
+========================= */
+
+.slider-wrapper{
+  position:relative;
 }
 
-.slide-card img {
-  width: 100%;
-  aspect-ratio: 16/10;
-  object-fit: cover;
-  display: block;
-  transition: transform .45s ease, opacity .3s ease;
+/* =========================
+   SLIDER
+========================= */
+
+.slider{
+  display:flex;
+  gap:24px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  padding-bottom:10px;
 }
 
-.slide-card:hover img {
-  transform: scale(1.04);
+.slider::-webkit-scrollbar{
+  display:none;
 }
-/* hover */
+
+/* =========================
+   SLIDE ITEM
+========================= */
+
+.slide-item{
+  min-width:320px;
+  flex:0 0 320px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.slide-card{
+  display:block;
+  width:100%;
+  border-radius:24px;
+  overflow:hidden;
+  background:#132e3a;
+  transition:transform .3s ease;
+}
+
+.slide-card:hover{
+  transform:translateY(-6px);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.slide-card img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  display:block;
+}
+
+/* =========================
+   CARD INFO
+========================= */
+
+.slide-info{
+  padding-top:18px;
+}
+
+.slide-info h3{
+  font-family:'Playfair Display', serif;
+  font-size:1.35rem;
+  color:#f4efe8;
+  margin-bottom:8px;
+  line-height:1.2;
+}
+
+.film-director{
+  font-size:.95rem;
+  color:rgba(255,255,255,.65);
+  margin-bottom:10px;
+  font-family:'Inter', sans-serif;
+}
+
+.film-stars{
+  color:#f3bf18;
+  letter-spacing:2px;
+  font-size:1rem;
+}
+
+/* =========================
+   ARCHIVIO CARD
+========================= */
+
+.archivio-more .slide-card{
+  position:relative;
+}
+
+.archivio-more .slide-info p{
+  color:rgba(255,255,255,.7);
+  font-size:.95rem;
+  margin-top:6px;
+}
+
+/* =========================
+   SLIDER ARROWS
+========================= */
+
+.slider-arrows{
+  position:absolute;
+  top:-75px;
+  right:0;
+  display:flex;
+  gap:12px;
+  z-index:5;
+}
+
+.slider-arrow{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04);
+  color:#f4efe8;
+  font-size:1rem;
+  cursor:pointer;
+  transition:.25s ease;
+  backdrop-filter:blur(12px);
+}
 
 .slider-arrow:hover{
-
-  border-color:var(--gold);
-
-  color:var(--gold);
-
-  transform:scale(1.06);
-}
-
-/* stato nascosto */
-
-.slider-arrow.hidden{
-
-  opacity:0;
-
-  pointer-events:none;
+  background:#f3bf18;
+  color:#0b1f26;
+  border-color:#f3bf18;
 }
 
 /* =========================
@@ -1367,7 +1457,48 @@ opacity:0.18;
   .ossessioni-grid {
     grid-template-columns: 1fr;
   }
+     .home-cinema{
+    padding:20px 0 70px;
+  }
+
+  .section-header{
+    margin-bottom:22px;
+  }
+
+  .section-label{
+    font-size:2rem;
+    line-height:1.1;
+  }
+
+  .slider{
+    gap:18px;
+  }
+
+  .slide-item{
+    min-width:78%;
+    flex:0 0 78%;
+  }
+
+  .slide-card img{
+    height:300px;
+  }
+
+  .slide-info h3{
+    font-size:1.15rem;
+  }
+
+  .slider-arrows{
+    display:none;
+  }
 }
+
+
+
+
+
+
+
+
 
 @media (min-width: 1024px) {
 
