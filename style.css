@@ -763,6 +763,39 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   border-radius:16px;
   padding:1rem 1rem;
   background:rgba(255,255,255,.03);
+  display:flex;
+  gap:18px;
+  margin:50px 0 70px;
+  flex-wrap:wrap;
+}
+
+.filter-select{
+
+  background:rgba(255,255,255,.06);
+
+  border:1px solid rgba(255,255,255,.1);
+
+  color:white;
+
+  padding:14px 20px;
+
+  border-radius:999px;
+
+  font-size:.95rem;
+
+  min-width:240px;
+
+  backdrop-filter:blur(12px);
+
+  outline:none;
+
+  cursor:pointer;
+}
+
+.filter-select option{
+
+  background:#0b1f26;
+  color:white;
 }
 
 .filter-label{
