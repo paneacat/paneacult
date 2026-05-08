@@ -77,7 +77,7 @@ function aggiornaFiltri(){
 
   let visibleCount = 0;
 
-  cards.forEach(card => {
+  cards.forEach((card, index) => {
 
     const categories =
       card.dataset.category.split(" ");
