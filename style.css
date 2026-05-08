@@ -2899,6 +2899,12 @@ display:flex;
 
   padding:0 30px;
 }
+ .login-text h1{
+
+  font-size:4rem;
+  line-height:.92;
+
+ }
 .login-hero::before{
 
   content:"";
@@ -2917,14 +2923,14 @@ display:flex;
 
 }
 .login-overlay{
-
+  padding-top:140px; 
   position:relative;
-  z-index:2;
-
+ z-index:2;
 }
- 
 
-
+.login-hero {
+  padding-top:320px;
+}
 
 
 
