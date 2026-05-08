@@ -1,143 +1,287 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
+
   <meta charset="UTF-8">
 
-  
   <title>paneacult</title>
 
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="mobile-web-app-capable"
+    content="yes"
+  >
 
-  
-  <link rel="apple-touch-icon" href="img/icon-192.png">
-<link rel="icon" type="image/png" href="img/icon-512.png">
-<link rel="icon" href="img/icon-192.png">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ICONS -->
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=9">
-  
-<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-  <script src="scriptapp.js" defer></script>
-  
+  <link
+    rel="apple-touch-icon"
+    href="img/icon-192.png"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="img/icon-512.png"
+  >
+
+  <link
+    rel="icon"
+    href="img/icon-192.png"
+  >
+
+  <!-- FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
+
+  <link
+    rel="stylesheet"
+    href="style.css?v=9"
+  >
+
+  <!-- SUPABASE -->
+
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+  <script
+    src="scriptapp.js"
+    defer
+  ></script>
+
 </head>
 
 <body>
 
- <div class="container header-inner">
-    <div class="logo-block">
-      <h1 class="logo">paneacult</h1>
-      <p class="logo-subtitle">MY THERAPIST SAYS CINEMA</p>
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header class="header">
+
+    <div class="container header-inner">
+
+      <div class="logo-block">
+
+        <h1 class="logo">
+          paneacult
+        </h1>
+
+        <p class="logo-subtitle">
+          MY THERAPIST SAYS CINEMA
+        </p>
+
+      </div>
+
+      <nav class="menu">
+
+        <a href="index.html">
+          HOME
+        </a>
+
+        <a href="archivio.html">
+          RECENSIONI
+        </a>
+
+        <a href="featured.html">
+          CHI SONO
+        </a>
+
+        <a href="contatti.html">
+          CONTATTI
+        </a>
+
+        <a
+          class="active"
+          href="login.html"
+        >
+          LOGIN
+        </a>
+
+      </nav>
+
     </div>
 
-    <nav class="menu">
-      <a href="index.html">HOME</a>
-      <a href="archivio.html">RECENSIONI</a>
-      <a href="featured.html">CHI SONO</a>
-      <a href="contatti.html">CONTATTI</a>
-      <a class="active" href="login.html">LOGIN</a>
-    </nav>
+  </header>
 
-  </div>
+  <!-- =========================
+       LOGIN HERO
+  ========================= -->
 
-</header>
-<section class="login-hero">
-<div class="container">
-  <!-- WALL POSTER -->
-  <div class="poster-wall">
+  <section class="login-hero">
 
-    <img src="img/starwars.jpg" class="wall-poster">
-    <img src="img/batmanreturns.jpg" class="wall-poster">
-    <img src="img/lebowski.jpg" class="wall-poster">
-    <img src="img/tenenbaum.jpg" class="wall-poster">
+    <div class="container">
 
-  </div>
+      <!-- WALL POSTER -->
 
-  <!-- CONTENUTO -->
-  <div class="login-overlay">
+      <div class="poster-wall">
 
-    <div class="login-text">
+        <img
+          src="img/starwars.jpg"
+          class="wall-poster"
+        >
 
-      <h1>I film che restano.</h1>
+        <img
+          src="img/batmanreturns.jpg"
+          class="wall-poster"
+        >
 
-      <p>
-  Recensioni, archivi personali, film salvati<br>
-  e ossessioni cinematografiche.
-      </p>
+        <img
+          src="img/lebowski.jpg"
+          class="wall-poster"
+        >
 
-    </div>
+        <img
+          src="img/tenenbaum.jpg"
+          class="wall-poster"
+        >
 
-    <div class="login-box">
+      </div>
 
-      <input type="email" placeholder="Email">
+      <!-- CONTENUTO -->
 
-      <input type="password" placeholder="Password">
+      <div class="login-overlay">
 
-      <div class="login-buttons">
+        <div class="login-text">
 
-        <button class="btn-yellow">
-          Accedi
-        </button>
+          <h1>
+            I film che restano.
+          </h1>
 
-        <button class="btn-outline">
-          Registrati
-        </button>
+          <p>
+            Recensioni, archivi personali, film salvati<br>
+            e ossessioni cinematografiche.
+          </p>
+
+        </div>
+
+        <!-- LOGIN BOX -->
+
+        <div class="login-box">
+
+          <input
+            type="email"
+            placeholder="Email"
+          >
+
+          <input
+            type="password"
+            placeholder="Password"
+          >
+
+          <div class="login-buttons">
+
+            <button class="btn-yellow">
+              Accedi
+            </button>
+
+            <button class="btn-outline">
+              Registrati
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- QUOTE -->
+
+        <p class="hero-quote">
+          Tu vuoi registrarti su paneacult ✨
+        </p>
 
       </div>
 
     </div>
 
-    <p class="hero-quote">
-      Tu vuoi registrarti su paneacult ✨
-    </p>
+  </section>
 
-  </div>
+  <!-- =========================
+       NEWSLETTER
+  ========================= -->
 
-</section>
-  <!-- NEWSLETTER -->
-<section class="newsletter">
-  <div class="newsletter-inner">
+  <section class="newsletter">
 
-    <p class="newsletter-kicker">
-      Non perderti nulla
-    </p>
+    <div class="newsletter-inner">
 
-    <h2>
-      Il cinema continua qui.
-    </h2>
+      <p class="newsletter-kicker">
+        Non perderti nulla
+      </p>
 
-    <p class="newsletter-sub">
-      Ricevi le nuove recensioni direttamente via mail.
-    </p>
+      <h2>
+        Il cinema continua qui.
+      </h2>
 
-    <a href="https://paneacult.substack.com/subscribe" class="newsletter-btn">
-      Iscriviti alla newsletter
- </a>
+      <p class="newsletter-sub">
+        Ricevi le nuove recensioni direttamente via mail.
+      </p>
 
-  </div>
-</section>
+      <a
+        href="https://paneacult.substack.com/subscribe"
+        class="newsletter-btn"
+      >
+        Iscriviti alla newsletter
+      </a>
 
-  
-  <!-- FOOTER -->
-<footer class="credits">
+    </div>
 
-  <div class="credits-inner">
+  </section>
 
-    <p class="credits-label fade">A cura di</p>
-    <p class="credits-name fade">paneacult</p>
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
-    <p class="credits-label fade">Ideazione &amp; Scrittura</p>
-    <p class="credits-name fade">Patrizia Catania</p>
+  <footer class="credits">
 
-    <p class="credits-label fade">Anno</p>
-    <p class="credits-name fade">2026</p>
+    <div class="credits-inner">
 
-  </div>
+      <p class="credits-label fade">
+        A cura di
+      </p>
 
-</footer>
-  
+      <p class="credits-name fade">
+        paneacult
+      </p>
+
+      <p class="credits-label fade">
+        Ideazione &amp; Scrittura
+      </p>
+
+      <p class="credits-name fade">
+        Patrizia Catania
+      </p>
+
+      <p class="credits-label fade">
+        Anno
+      </p>
+
+      <p class="credits-name fade">
+        2026
+      </p>
+
+    </div>
+
+  </footer>
+
 </body>
+
 </html>
