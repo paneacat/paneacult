@@ -892,7 +892,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
   height:100vh;
 
-  background: var(--gold);
+  background:#0d2e40;
 
   z-index:99999;
 
@@ -905,61 +905,56 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   justify-content:center;
 
   text-align:center;
-
-  transition:
-    opacity .4s ease;
 }
 
 /* LOGO */
 
 #splash img{
 
-  width:450px;
+  width:120px;
 
-  margin-bottom:26px;
-
-  animation:
-    splashFloat 2.2s ease-in-out infinite;
+  margin-bottom:40px;
 }
 
 /* LOADER */
 
 .loader{
 
-  width:42px;
+  width:72px;
 
-  height:42px;
+  height:72px;
 
   border-radius:50%;
 
   border:
-    2px solid rgba(255,255,255,.12);
+    4px solid rgba(0,0,0,.15);
 
   border-top:
-    2px solid #fdc103;
-  color: #000000;
+    4px solid #000;
+
   animation:
     spin 1s linear infinite;
 
-  margin-bottom:18px;
+  margin-bottom:26px;
 }
 
 /* TEXT */
 
 #splash p{
 
-  font-size:11px;
+  font-size:18px;
 
-  letter-spacing:3px;
+  font-weight:600;
+
+  letter-spacing:5px;
 
   text-transform:uppercase;
 
-  color:
-    rgba(255,255,255,.65);
+  color:#000;
 }
 
 /* =========================
-   ANIMATIONS
+   ANIMATION
 ========================= */
 
 @keyframes spin{
@@ -970,21 +965,11 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 }
 
-@keyframes splashFloat{
 
-  0%{
-    transform:translateY(0px);
-  }
 
-  50%{
-    transform:translateY(-6px);
-  }
 
-  100%{
-    transform:translateY(0px);
-  }
 
-}
+   
 /* AUTORE (PIÙ IMPORTANTE) */
 .author {
   color: #ffffff;
