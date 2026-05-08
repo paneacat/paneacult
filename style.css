@@ -892,7 +892,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
   height:100vh;
 
-  background:#0d2e40;
+  background: var(--gold);
 
   z-index:99999;
 
