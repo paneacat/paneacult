@@ -1566,10 +1566,6 @@ opacity:0.18;
     max-width: 100%;
   }
 
-  .slider-arrows {
-    display: none;
-  }
-
   .rubriche-grid {
     grid-template-columns: 1fr;
   }
