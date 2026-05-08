@@ -2303,6 +2303,13 @@ display:flex;
   font-family:"Playfair Display", serif;
 }
 
+.about-number{
+  opacity:.35;
+}
+
+.about-tag{
+  opacity:.65;
+}
 
 
 
