@@ -1645,6 +1645,173 @@ min-height:100vh;
   max-width:520px;
   object-fit:cover;
 }
+/* =========================
+   REVIEW CONTAINER
+========================= */
+
+.review-container{
+
+  width:min(92%, 760px);
+
+  margin:0 auto;
+
+  padding:120px 0 140px;
+
+}
+
+/* =========================
+   REVIEW HERO
+========================= */
+
+.review-hero{
+
+  margin-bottom:70px;
+
+}
+
+/* TITOLO */
+
+.review-title{
+
+  font-family:'Playfair Display', serif;
+
+  font-size:clamp(3rem, 7vw, 5.2rem);
+
+  line-height:.92;
+
+  letter-spacing:-0.04em;
+
+  color:#f4efe8;
+
+  margin-bottom:20px;
+
+}
+
+/* META */
+
+.review-meta{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:14px;
+
+  margin-bottom:28px;
+
+  font-size:.9rem;
+
+  color:rgba(255,255,255,.58);
+
+  letter-spacing:.04em;
+
+  text-transform:uppercase;
+
+}
+
+/* IMMAGINE HERO */
+
+.review-cover{
+
+  width:100%;
+
+  border-radius:30px;
+
+  overflow:hidden;
+
+  margin-top:36px;
+
+}
+
+.review-cover img{
+
+  width:100%;
+
+  display:block;
+
+  object-fit:cover;
+
+}
+
+/* =========================
+   TESTO RECENSIONE
+========================= */
+
+.review-content{
+
+  font-size:1.08rem;
+
+  line-height:1.95;
+
+  color:rgba(255,255,255,.88);
+
+}
+
+/* PARAGRAFI */
+
+.review-content p{
+
+  margin-bottom:2rem;
+
+}
+
+/* PRIMO PARAGRAFO */
+
+.review-content p:first-child{
+
+  font-size:1.22rem;
+
+  line-height:1.9;
+
+  color:#f4efe8;
+
+}
+
+/* CITAZIONI */
+
+.review-content blockquote{
+
+  margin:70px 0;
+
+  padding-left:28px;
+
+  border-left:2px solid #f4b400;
+
+  font-family:'Playfair Display', serif;
+
+  font-size:2rem;
+
+  line-height:1.35;
+
+  color:#f4efe8;
+
+  font-style:italic;
+
+}
+
+/* PAROLE EVIDENZIATE */
+
+.review-content strong{
+
+  color:#f4b400;
+
+  font-weight:500;
+
+}
+
+/* DIVISORE */
+
+.review-divider{
+
+  width:60px;
+
+  height:1px;
+
+  background:rgba(255,255,255,.14);
+
+  margin:80px auto;
+}
+
 
 
 
@@ -1770,6 +1937,34 @@ min-height:100vh;
   .sections{
 
     grid-template-columns:1fr;
+
+  }
+
+  .review-container{
+
+    padding:80px 0 100px;
+
+  }
+
+  .review-title{
+
+    font-size:3rem;
+
+  }
+
+  .review-content{
+
+    font-size:1rem;
+
+    line-height:1.85;
+
+  }
+
+  .review-content blockquote{
+
+    font-size:1.5rem;
+
+    margin:50px 0;
 
   }
 }
