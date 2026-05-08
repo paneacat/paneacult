@@ -1,388 +1,654 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>paneacult</title>
-  
-<link rel="stylesheet" href="style.css?v=8">
-  <link rel="icon" href="img/icon-192.png">
-<link rel="apple-touch-icon" href="img/icon-192.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-<!-- Open Graph -->
-<meta property="og:title" content="paneacult – scrittura e cinema">
-<meta property="og:description" content="Recensioni cinematografiche tra estetica, emozioni e attualità.">
-<meta property="og:image" content="https://paneacat.github.io/paneacult.github.io/logo.png">
-<meta property="og:url" content="https://paneacat.github.io/paneacult.github.io/index.html">
-<meta property="og:type" content="website">
-  
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0b1f26">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  
-<!-- Twitter (usato anche da alcune app) -->
-<meta name="twitter:card" content="summary_large_image">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>paneacult</title>
+
+  <!-- CSS -->
+
+  <link
+    rel="stylesheet"
+    href="style.css?v=8"
+  >
+
+  <!-- ICONS -->
+
+  <link
+    rel="icon"
+    href="img/icon-192.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="img/icon-192.png"
+  >
+
+  <!-- FONTS -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- SEO -->
+
+  <meta
+    property="og:title"
+    content="paneacult – scrittura e cinema"
+  >
+
+  <meta
+    property="og:description"
+    content="Recensioni cinematografiche tra estetica, emozioni e attualità."
+  >
+
+  <meta
+    property="og:image"
+    content="https://paneacat.github.io/paneacult.github.io/logo.png"
+  >
+
+  <meta
+    property="og:url"
+    content="https://paneacat.github.io/paneacult.github.io/index.html"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <!-- PWA -->
+
+  <link
+    rel="manifest"
+    href="manifest.json"
+  >
+
+  <meta
+    name="theme-color"
+    content="#0b1f26"
+  >
+
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+  >
+
+  <!-- TWITTER -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
 </head>
 
 <body class="home">
-<div id="splash">
-  <img src="img/logo.png" alt="paneacult logo">
-  <div class="loader"></div>
-  <p>CARICAMENTO...</p>
-</div>
-<header class="header">
-  <div class="container header-inner">
-    <div class="logo-block">
-      <h1 class="logo">paneacult</h1>
-      <p class="logo-subtitle">MY THERAPIST SAYS CINEMA</p>
-    </div>
 
-    <nav class="menu">
-      <a class="active" href="index.html">HOME</a>
-      <a href="archivio.html">RECENSIONI</a>
-      <a href="featured.html">CHI SONO</a>
-      <a href="contatti.html">CONTATTI</a>
-      <a href="login.html">LOGIN</a>
-    </nav>
+  <!-- =========================
+       SPLASH
+  ========================= -->
+
+  <div id="splash">
+
+    <img
+      src="img/logo.png"
+      alt="paneacult logo"
+    >
+
+    <div class="loader"></div>
+
+    <p>
+      CARICAMENTO...
+    </p>
 
   </div>
 
-</header>
-  
-<section class="hero">
+  <!-- =========================
+       HEADER
+  ========================= -->
 
-  <div class="container">
+  <header class="header">
 
-    <div class="hero-layout">
+    <div class="container header-inner">
 
-      <div class="hero-text">
-      <h1>
-        Il cinema non è intrattenimento.<br>
-        È ciò che <span class="highlight">resta</span>.
-      </h1>
+      <div class="logo-block">
 
-      <p class="hero-sub">
-        TUTTE LE MIE RECENSIONI A PORTATA DI CLICK!
-      </p>
-    </div>
+        <h1 class="logo">
+          paneacult
+        </h1>
 
-    <!-- CTA A DESTRA -->
-    <div class="hero-cta">
-  <p class="cta-text">
-    Vuoi scrivere le tue recensioni?<br></p>
-  <a href="login.html" class="cta-link">
-  Registrati e inizia.  </a>
-    </div>
-  </div>
-</section>
+        <p class="logo-subtitle">
+          MY THERAPIST SAYS CINEMA
+        </p>
 
-<!-- SEZIONE SLIDER -->
-<section class="home-cinema">
-
-  <div class="container">
-
-    <!-- HEADER -->
-    <div class="slider-header">
-
-      <h2 class="section-label">
-        LE RECENSIONI DI PANEACULT
-      </h2>
-  
-<!-- GRID -->
-<section class="section">
-
-  <div class="container">
-
-        <!-- DIAMANTI GREZZI -->
-        <div class="archivio-card" data-category="dramma thriller sguardi-contemporanei">
-          <a href="uncut.html">
-            <img src="img/uncut.png" alt="Diamanti grezzi">
-          </a>
-
-          <div class="card-info">
-            <h3 class="film-title">Diamanti grezzi (2019)</h3>
-            <p class="film-director">Benny Safdie, Josh Safdie</p>
-            <div class="film-stars">★★★★☆</div>
-          </div>
-        </div>
-
-        <!-- IL GRANDE DITTATORE -->
-        <div class="archivio-card" data-category="commedia dramma cinema-che-resta">
-          <a href="dittatore.html">
-            <img src="img/dittatore.png" alt="Il Grande Dittatore">
-          </a>
-
-          <div class="card-info">
-            <h3 class="film-title">Il Grande Dittatore (1940)</h3>
-            <p class="film-director">Charlie Chaplin</p>
-            <div class="film-stars">★★★★★</div>
-        </div>
-
-        <!-- VIALE DEL TRAMONTO -->
-        <div class="archivio-card" data-category="dramma giallo cinema-che-resta">
-          <a href="tramonto.html">
-            <img src="img/viale-del-tramonto.jpg" alt="Viale del tramonto">
-          </a>
-
-          <div class="card-info">
-            <h3 class="film-title">Viale del tramonto (1950)</h3>
-            <p class="film-director>Billy Wilder</p>
-            <div class="film-stars">★★★★★</div>
-          </div>
-    
-
-        <!-- UNA GIUSTA CAUSA -->
-        <div class="archivio-card" data-category="biopic dramma sguardi-contemporanei">
-          <a href="sex.html">
-            <img src="img/sex.jpg" alt="Una giusta causa">
-          </a>
-
-          <div class="card-info">
-            <h3 class="film-title">Una giusta causa (2018)</h3>
-            <p class="film-director">Mimi Leder</p>
-            <div class="film-stars">★★★★☆</div>
-       </div>
-
-      <!-- CARD 4 -->
-      <div class="slide-item">
-        <a href="archivio.html" class="slide-card">
-          <img src="img/cinema.png"class="archivio-img"alt="">
-        </a>
-        <div class="slide-info">
-          <h3>Tutte le recensioni</h3>
-          <p>Scopri l’archivio →</p>
-        </div>
       </div>
-  </div>  
-    </div>
-  </div>
-</section>
-  
- <section class="rubriche-home">
 
-  <div class="container">
+      <nav class="menu">
 
-    <p class="section-kicker">Rubriche</p>
+        <a
+          class="active"
+          href="index.html"
+        >
+          HOME
+        </a>
 
-    <h2 class="section-title">
-      Modi diversi di guardare il cinema.
-    </h2>
+        <a href="archivio.html">
+          RECENSIONI
+        </a>
 
-    <div class="rubriche-grid">
+        <a href="featured.html">
+          CHI SONO
+        </a>
 
-      <a href="archivio.html?categoria=cinema-che-resta"
-         class="rubrica-card">
+        <a href="contatti.html">
+          CONTATTI
+        </a>
 
-        <span class="rubrica-label">
-          CINEMA CHE RESTA
-        </span>
+        <a href="login.html">
+          LOGIN
+        </a>
 
-        <p>
-          Film che continuano
-          a vivere dopo i titoli di coda.
-        </p>
-
-      </a>
-
-      <a href="archivio.html?categoria=sguardi-contemporanei"
-         class="rubrica-card">
-
-        <span class="rubrica-label">
-          SGUARDI CONTEMPORANEI
-        </span>
-
-        <p>
-          Cinema recente,
-          inquietudini moderne,
-          immagini che rimangono.
-        </p>
-
-      </a>
-
-      <a href="#"
-         class="rubrica-card">
-
-        <span class="rubrica-label">
-          OSSESSIONI VISIVE
-        </span>
-
-        <p>
-          Fotografia, dettagli,
-          costumi, scene,
-          colori e atmosfere.
-        </p>
-
-      </a>
+      </nav>
 
     </div>
 
-  </div>
- </section>
-<!-- =========================
-     OSSESSIONI DEL MOMENTO
-========================= -->
+  </header>
 
-<section class="ossessioni-home">
+  <!-- =========================
+       HERO
+  ========================= -->
 
-  <div class="container">
+  <section class="hero">
 
-    <p class="section-kicker">
-      OSSESSIONI DEL MOMENTO
-    </p>
+    <div class="container">
 
-    <h2 class="section-title">
-      Film che continuano
-      a tornarmi in testa.
-    </h2>
+      <div class="hero-layout">
 
-    <div class="ossessioni-grid">
+        <!-- LEFT -->
 
-      <!-- FILM 1 -->
-      <article class="ossessione-card">
+        <div class="hero-text">
 
-        <img
-          src="img/eyes-wide-shut.jpg"
-          alt="Eyes Wide Shut"
-        >
+          <h1>
 
-        <div class="ossessione-info">
+            Il cinema non è intrattenimento.<br>
 
-          <h3>
-            Eyes Wide Shut
-          </h3>
+            È ciò che
+            <span class="highlight">
+              resta
+            </span>.
 
-          <p>
-            Kubrick,
-            desiderio,
-            gelo emotivo
-            e stanze che sembrano sogni.
+          </h1>
+
+          <p class="hero-sub">
+
+            Tutte le mie recensioni
+            a portata di click.
+
           </p>
 
         </div>
 
-      </article>
+        <!-- RIGHT -->
 
-      <!-- FILM 2 -->
-      <article class="ossessione-card">
+        <div class="hero-cta">
 
-        <img
-          src="img/zodiac.jpg"
-          alt="Zodiac"
-        >
+          <p class="cta-text">
 
-        <div class="ossessione-info">
+            Vuoi scrivere
+            le tue recensioni?
 
-          <h3>
-            Zodiac
-          </h3>
-
-          <p>
-            Ossessione pura.
-            Il dettaglio che diventa paranoia.
           </p>
+
+          <a
+            href="login.html"
+            class="cta-link"
+          >
+
+            Registrati e inizia
+
+          </a>
 
         </div>
 
-      </article>
-
-      <!-- FILM 3 -->
-      <article class="ossessione-card">
-
-        <img
-          src="img/carol.jpg"
-          alt="Carol"
-        >
-
-        <div class="ossessione-info">
-
-          <h3>
-            Carol
-          </h3>
-
-          <p>
-            Sguardi trattenuti,
-            colori morbidi
-            e silenzi perfetti.
-          </p>
-
-        </div>
-
-      </article>
-
-      <!-- FILM 4 -->
-      <article class="ossessione-card">
-
-        <img
-          src="img/perfect-blue.jpg"
-          alt="Perfect Blue"
-        >
-
-        <div class="ossessione-info">
-
-          <h3>
-            Perfect Blue
-          </h3>
-
-          <p>
-            Identità,
-            pressione,
-            realtà che si spezza.
-          </p>
-
-        </div>
-
-      </article>
+      </div>
 
     </div>
 
-  </div>
-</section>
-  
-  <!-- NEWSLETTER -->
-<section class="newsletter">
-  <div class="newsletter-inner">
+  </section>
 
-    <p class="newsletter-kicker">
-      Non perderti nulla
-    </p>
+  <!-- =========================
+       RECENSIONI
+  ========================= -->
 
-    <h2>
-      Il cinema continua qui.
-    </h2>
+  <section class="home-cinema">
 
-    <p class="newsletter-sub">
-      Ricevi le nuove recensioni direttamente via mail.
-    </p>
+    <div class="container">
 
-    <a href="https://paneacult.substack.com/subscribe" class="newsletter-btn">
-      Iscriviti alla newsletter
-    </a>
+      <div class="slider-header">
 
- </div>
-</section>
+        <h2 class="section-label">
+          LE RECENSIONI DI PANEACULT
+        </h2>
 
-  
-  <!-- FOOTER -->
-<footer class="credits">
+      </div>
 
-  <div class="credits-inner">
+      <!-- GRID -->
 
-    <p class="credits-label fade">A cura di</p>
-    <p class="credits-name fade">paneacult</p>
+      <div class="archivio-grid">
 
-    <p class="credits-label fade">Ideazione &amp; Scrittura</p>
-    <p class="credits-name fade">Patrizia Catania</p>
+        <!-- CARD 1 -->
 
-    <p class="credits-label fade">Anno</p>
-    <p class="credits-name fade">2026</p>
+        <article
+          class="archivio-card"
+          data-category="dramma thriller sguardi-contemporanei"
+        >
 
-  </div>
+          <a href="uncut.html">
 
-</footer>
+            <img
+              src="img/uncut.png"
+              alt="Diamanti grezzi"
+              class="archivio-img"
+            >
 
-<script src="script.js"></script>
+          </a>
+
+          <div class="card-info">
+
+            <h3 class="film-title">
+              Diamanti grezzi (2019)
+            </h3>
+
+            <p class="film-director">
+              Benny Safdie, Josh Safdie
+            </p>
+
+            <div class="film-stars">
+              ★★★★☆
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- CARD 2 -->
+
+        <article
+          class="archivio-card"
+          data-category="commedia dramma cinema-che-resta"
+        >
+
+          <a href="dittatore.html">
+
+            <img
+              src="img/dittatore.png"
+              alt="Il Grande Dittatore"
+              class="archivio-img"
+            >
+
+          </a>
+
+          <div class="card-info">
+
+            <h3 class="film-title">
+              Il Grande Dittatore (1940)
+            </h3>
+
+            <p class="film-director">
+              Charlie Chaplin
+            </p>
+
+            <div class="film-stars">
+              ★★★★★
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- CARD 3 -->
+
+        <article
+          class="archivio-card"
+          data-category="dramma giallo cinema-che-resta"
+        >
+
+          <a href="tramonto.html">
+
+            <img
+              src="img/viale-del-tramonto.jpg"
+              alt="Viale del tramonto"
+              class="archivio-img"
+            >
+
+          </a>
+
+          <div class="card-info">
+
+            <h3 class="film-title">
+              Viale del tramonto (1950)
+            </h3>
+
+            <p class="film-director">
+              Billy Wilder
+            </p>
+
+            <div class="film-stars">
+              ★★★★★
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- CARD 4 -->
+
+        <article
+          class="archivio-card"
+          data-category="biopic dramma sguardi-contemporanei"
+        >
+
+          <a href="sex.html">
+
+            <img
+              src="img/sex.jpg"
+              alt="Una giusta causa"
+              class="archivio-img"
+            >
+
+          </a>
+
+          <div class="card-info">
+
+            <h3 class="film-title">
+              Una giusta causa (2018)
+            </h3>
+
+            <p class="film-director">
+              Mimi Leder
+            </p>
+
+            <div class="film-stars">
+              ★★★★☆
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- ARCHIVIO -->
+
+        <article class="archivio-card archivio-more">
+
+          <a href="archivio.html">
+
+            <img
+              src="img/cinema.png"
+              alt="Archivio recensioni"
+              class="archivio-img"
+            >
+
+          </a>
+
+          <div class="card-info">
+
+            <h3 class="film-title">
+              Tutte le recensioni
+            </h3>
+
+            <p class="film-director">
+              Scopri l’archivio completo →
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       RUBRICHE
+  ========================= -->
+
+  <section class="rubriche-home">
+
+    <div class="container">
+
+      <p class="section-kicker">
+        Rubriche
+      </p>
+
+      <h2 class="section-title">
+
+        Modi diversi
+        di guardare il cinema.
+
+      </h2>
+
+      <div class="rubriche-grid">
+
+        <!-- RUBRICA 1 -->
+
+        <a
+          href="archivio.html?categoria=cinema-che-resta"
+          class="rubrica-card"
+        >
+
+          <span class="rubrica-label">
+            CINEMA CHE RESTA
+          </span>
+
+          <p>
+
+            Film che continuano
+            a vivere dopo
+            i titoli di coda.
+
+          </p>
+
+        </a>
+
+        <!-- RUBRICA 2 -->
+
+        <a
+          href="archivio.html?categoria=sguardi-contemporanei"
+          class="rubrica-card"
+        >
+
+          <span class="rubrica-label">
+            SGUARDI CONTEMPORANEI
+          </span>
+
+          <p>
+
+            Cinema recente,
+            inquietudini moderne
+            e immagini che rimangono.
+
+          </p>
+
+        </a>
+
+        <!-- RUBRICA 3 -->
+
+        <a
+          href="#"
+          class="rubrica-card"
+        >
+
+          <span class="rubrica-label">
+            OSSESSIONI VISIVE
+          </span>
+
+          <p>
+
+            Fotografia,
+            dettagli,
+            costumi,
+            scene e atmosfere.
+
+          </p>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       OSSESSIONI
+  ========================= -->
+
+  <section class="ossessioni-home">
+
+    <div class="container">
+
+      <p class="section-kicker">
+        OSSESSIONI DEL MOMENTO
+      </p>
+
+      <h2 class="section-title">
+
+        Film che continuano
+        a tornarmi in testa.
+
+      </h2>
+
+      <div class="ossessioni-grid">
+
+        <!-- CARD -->
+
+        <article class="ossessione-card">
+
+          <img
+            src="img/eyes-wide-shut.jpg"
+            alt="Eyes Wide Shut"
+          >
+
+          <div class="ossessione-info">
+
+            <h3>
+              Eyes Wide Shut
+            </h3>
+
+            <p>
+
+              Kubrick,
+              desiderio,
+              gelo emotivo
+              e stanze che sembrano sogni.
+
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       NEWSLETTER
+  ========================= -->
+
+  <section class="newsletter">
+
+    <div class="newsletter-inner">
+
+      <p class="newsletter-kicker">
+        Non perderti nulla
+      </p>
+
+      <h2>
+        Il cinema continua qui.
+      </h2>
+
+      <p class="newsletter-sub">
+
+        Ricevi le nuove recensioni
+        direttamente via mail.
+
+      </p>
+
+      <a
+        href="https://paneacult.substack.com/subscribe"
+        class="newsletter-btn"
+      >
+
+        Iscriviti alla newsletter
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer class="credits">
+
+    <div class="credits-inner">
+
+      <p class="credits-label fade">
+        A cura di
+      </p>
+
+      <p class="credits-name fade">
+        paneacult
+      </p>
+
+      <p class="credits-label fade">
+        Ideazione &amp; Scrittura
+      </p>
+
+      <p class="credits-name fade">
+        Patrizia Catania
+      </p>
+
+      <p class="credits-label fade">
+        Anno
+      </p>
+
+      <p class="credits-name fade">
+        2026
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+
 </body>
+
 </html>
