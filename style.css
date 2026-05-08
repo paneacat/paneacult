@@ -1384,16 +1384,22 @@ font-weight:500;
   position:relative;
   overflow:hidden;
 }
+/* =========================
+   LOGIN BACKGROUND
+========================= */
+
 .login-page{
 
   position:relative;
 
   min-height:100vh;
 
-  background-image:
+  overflow:hidden;
+
+  background:
     linear-gradient(
-      rgba(8,35,58,.72),
-      rgba(8,35,58,.72)
+      rgba(5,18,28,.78),
+      rgba(5,18,28,.88)
     ),
     url("img/posters-bg.jpg");
 
@@ -1405,14 +1411,46 @@ font-weight:500;
 
 }
 
+/* glow centrale */
 
-.login-page .login-hero{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
+.login-page::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0,153,255,.18),
+      transparent 60%
+    );
+
+  pointer-events:none;
+
+}
+
+/* grain leggero */
+
+.login-page::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  opacity:.05;
+
+  background-image:
+    url("https://grainy-gradients.vercel.app/noise.svg");
+
+  mix-blend-mode:soft-light;
+
+  pointer-events:none;
+
 }
 
 
