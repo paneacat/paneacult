@@ -1492,8 +1492,12 @@ opacity:0.18;
 .about-quote span{
   color:#f4b400;
 }
-
-
+  .poster-signature{
+  width:140px;
+  margin-top:24px;
+  filter:brightness(0) invert(1);
+  opacity:.9;
+   }
 
 
 
@@ -1577,14 +1581,6 @@ opacity:0.18;
     display:none;
   }
 
-  .filters-wrapper{
-    max-width:100%;
-  }
-
-  .filter-group summary{
-    height:48px;
-    font-size:.85rem;
-  }
 
   .archivio-grid{
     grid-template-columns: repeat(2,1fr);
@@ -1608,12 +1604,6 @@ opacity:0.18;
     max-width:320px;
     margin:auto;
   }
-   .poster-signature{
-  width:140px;
-  margin-top:24px;
-  filter:brightness(0) invert(1);
-  opacity:.9;
- }
 }
 
 
