@@ -1278,7 +1278,15 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
   padding-top:0;
   padding-bottom:120px;
+  background:
+  linear-gradient(
+    180deg,
+    #0d2740 0%,
+    #091b2d 100%
+  );
 
+  position:relative;
+  overflow:hidden;
 }
 
 
