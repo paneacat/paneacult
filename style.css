@@ -1286,21 +1286,9 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 ========================= */
 
 .login-page{
-
-  background:
-    linear-gradient(
-      rgba(8,24,36,.78),
-      rgba(8,24,36,.88)
-    ),
-    url("img/wall.jpg");
-
-  background-size:cover;
-
-  background-position:center top;
-
-  background-attachment:fixed;
-
+  background:#0d2e40;
 }
+
 /* CENTRO */
 
 .login-hero .container{
