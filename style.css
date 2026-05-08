@@ -1350,22 +1350,27 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 }
 
-/* BOX */
+/* =========================
+   LOGIN BOX
+========================= */
 
 .login-box{
 
   width:100%;
-  max-width:420px;
+  max-width:340px;
 
-  padding:2rem;
+  padding:28px;
 
-  border:1px solid rgba(255,255,255,.12);
+  border-radius:28px;
 
-  background:rgba(255,255,255,.06);
+  background:rgba(255,255,255,.08);
 
   backdrop-filter:blur(14px);
 
-  border-radius:28px;
+  border:1px solid rgba(255,255,255,.14);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,.25);
 
 }
 
@@ -1374,59 +1379,123 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 .login-box input{
 
   width:100%;
-  margin-bottom:1rem;
+
+  padding:16px 18px;
+
+  margin-bottom:14px;
+
+  border-radius:16px;
+
+  border:1px solid rgba(255,255,255,.14);
+
+  background:rgba(255,255,255,.10);
+
+  color:#fff;
+
+  font-family:'Inter', sans-serif;
+
+  font-size:.95rem;
+
+  outline:none;
+
+  transition:.25s ease;
+
+  backdrop-filter:blur(10px);
 
 }
 
-/* BOTTONI */
+/* PLACEHOLDER */
+
+.login-box input::placeholder{
+
+  color:rgba(255,255,255,.58);
+
+}
+
+/* FOCUS */
+
+.login-box input:focus{
+
+  border-color:rgba(244,180,0,.55);
+
+  background:rgba(255,255,255,.14);
+
+  box-shadow:
+    0 0 0 4px rgba(244,180,0,.10);
+
+}
+
+/* BUTTONS */
 
 .login-buttons{
 
   display:flex;
-  gap:1rem;
+
+  gap:12px;
+
+  margin-top:6px;
 
 }
 
 .btn-yellow,
-.btn-outline {
-  flex: 1;
+.btn-outline{
 
-  height: 50px;
+  flex:1;
 
-  border-radius: 999px;
+  height:50px;
 
-  font-size: 14px;
+  border-radius:999px;
 
-  font-weight: 600;
+  border:none;
 
-  transition: 0.25s ease;
-}
+  font-size:.88rem;
 
-.btn-yellow {
-  background: #fdc103;
-  color:#111;
+  font-family:'Inter', sans-serif;
+
   font-weight:500;
-  letter-spacing:-0.01em;
-  border: none;
-  transition: .25s ease;
+
+  cursor:pointer;
+
+  transition:.25s ease;
+
 }
 
-.btn-yellow:hover {
-  transform: translateY(-2px);
-}
+/* GIALLO */
 
-.btn-outline {
-  border: 1px solid rgba(255,255,255,0.2);
-background: #fdc103;
+.btn-yellow{
+
+  background:#f4c400;
+
   color:#111;
-  font-weight:500;
-  letter-spacing:-0.01em;
-  transition: .25s ease;
+
 }
 
-.btn-outline:hover {
-  border-color: #fdc103;
-  color: #fdc103;
+.btn-yellow:hover{
+
+  transform:translateY(-2px);
+
+  filter:brightness(1.03);
+
+}
+
+/* OUTLINE */
+
+.btn-outline{
+
+  background:rgba(255,255,255,.08);
+
+  color:#fff;
+
+  border:1px solid rgba(255,255,255,.18);
+
+}
+
+.btn-outline:hover{
+
+  background:rgba(255,255,255,.14);
+
+  transform:translateY(-2px);
+
 }
 
 /* FRASE */
