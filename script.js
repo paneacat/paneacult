@@ -99,14 +99,11 @@ function aggiornaFiltri(){
     const visible =
       matchCategory && matchGenres;
 
-    card.style.display =
-      visible ? "block" : "none";
-
-    if(visible){
-      visibleCount++;
+    if(visible && index < visibleCards){
+  card.style.display = "block";
+} else {
+  card.style.display = "none";
     }
-
-  });
 
   /* EMPTY STATE */
 
