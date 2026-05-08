@@ -3,146 +3,71 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===============================
   // ===== FILTRI ARCHIVIO
   // ===============================
-const cards = document.querySelectorAll(".archivio-card");
 
-const filterButtons = document.querySelectorAll(".filter-btn");
+  const cards =
+    document.querySelectorAll(".archivio-card");
 
-const emptyState = document.getElementById("emptyState");
+  const categoryFilter =
+    document.getElementById("categoryFilter");
 
-let activeCategory = "all";
-let activeGenres = [];
-let visibleCards = 3;
-  
-/* =========================
-   CLICK FILTRI
-========================= */
+  const genreFilter =
+    document.getElementById("genreFilter");
 
-const categoryFilter =
-  document.getElementById("categoryFilter");
+  const emptyState =
+    document.getElementById("emptyState");
 
-const genreFilter =
-  document.getElementById("genreFilter");
+  const loadMoreBtn =
+    document.getElementById("loadMoreBtn");
 
-categoryFilter.addEventListener("change", aggiornaFiltri);
-genreFilter.addEventListener("change", aggiornaFiltri);
+  let visibleCards = 3;
 
-function aggiornaFiltri(){
+  /* =========================
+     UPDATE FILTRI
+  ========================= */
 
-  const category =
-    categoryFilter.value;
+  function aggiornaFiltri(){
 
-  const genre =
-    genreFilter.value;
+    const category =
+      categoryFilter
+        ? categoryFilter.value
+        : "all";
 
-  cards.forEach(card => {
+    const genre =
+      genreFilter
+        ? genreFilter.value
+        : "all";
 
-    const categories =
-      card.dataset.category.split(" ");
+    let visibleCount = 0;
 
-    const matchCategory =
-      category === "all" ||
-      categories.includes(category);
+    cards.forEach(card => {
 
-    const matchGenre =
-      genre === "all" ||
-      categories.includes(genre);
+      const categories =
+        card.dataset.category.split(" ");
 
-    if(matchCategory && matchGenre){
+      const matchCategory =
+        category === "all" ||
+        categories.includes(category);
 
-      card.style.display = "block";
+      const matchGenre =
+        genre === "all" ||
+        categories.includes(genre);
 
-    } else {
+      const visible =
+        matchCategory && matchGenre;
 
-      card.style.display = "none";
-    }
+      if(visible){
 
-  });
+        visibleCount++;
 
-}
-    /* =========================
-       RUBRICHE
-    ========================= */
+        if(visibleCount <= visibleCards){
 
-    if(
-      filter === "all" ||
-      filter === "cinema-che-resta" ||
-      filter === "sguardi-contemporanei" ||
-      filter === "cinema-prescritto"
-    ){
+          card.style.display = "block";
 
-      activeCategory = filter;
+        } else {
 
-      document
-        .querySelectorAll(
-          '[data-filter="all"], [data-filter="cinema-che-resta"], [data-filter="sguardi-contemporanei"], [data-filter="cinema-prescritto"]'
-        )
-        .forEach(btn => btn.classList.remove("active"));
+          card.style.display = "none";
 
-      button.classList.add("active");
-    }
-
-    /* =========================
-       GENERI
-    ========================= */
-
-    else {
-
-      if(activeGenres.includes(filter)){
-
-        activeGenres =
-          activeGenres.filter(g => g !== filter);
-
-        button.classList.remove("active");
-
-      } else {
-
-        activeGenres.push(filter);
-
-        button.classList.add("active");
-      }
-    }
-
-    aggiornaFiltri();
-  });
-
-});
-
-/* =========================
-   UPDATE
-========================= */
-function aggiornaFiltri(){
-
-  let visibleCount = 0;
-
-  cards.forEach((card, index) => {
-
-    const categories =
-      card.dataset.category.split(" ");
-
-    /* rubrica */
-
-    const matchCategory =
-      activeCategory === "all" ||
-      categories.includes(activeCategory);
-
-    /* generi */
-
-    const matchGenres =
-      activeGenres.length === 0 ||
-      activeGenres.every(g =>
-        categories.includes(g)
-      );
-
-    const visible =
-      matchCategory && matchGenres;
-
-    if(visible){
-
-      visibleCount++;
-
-      if(visibleCount <= visibleCards){
-
-        card.style.display = "block";
+        }
 
       } else {
 
@@ -150,68 +75,100 @@ function aggiornaFiltri(){
 
       }
 
-    } else {
+    });
 
-      card.style.display = "none";
+    /* EMPTY STATE */
+
+    if(emptyState){
+
+      if(visibleCount === 0){
+
+        emptyState.classList.add("show");
+
+      } else {
+
+        emptyState.classList.remove("show");
+
+      }
 
     }
 
-  });
+    /* LOAD MORE */
 
-  /* EMPTY STATE */
+    if(loadMoreBtn){
 
-  if(emptyState){
+      if(visibleCount <= visibleCards){
 
-    if(visibleCount === 0){
+        loadMoreBtn.style.display = "none";
 
-      emptyState.classList.add("show");
+      } else {
 
-    } else {
+        loadMoreBtn.style.display = "flex";
 
-      emptyState.classList.remove("show");
+      }
 
     }
 
   }
 
-}
+  /* =========================
+     EVENT FILTRI
+  ========================= */
 
-/* =========================
-   RESET
-========================= */
+  if(categoryFilter){
 
-const resetBtn =
-  document.getElementById("resetFilters");
+    categoryFilter.addEventListener(
+      "change",
+      () => {
 
-if(resetBtn){
+        visibleCards = 3;
+        aggiornaFiltri();
 
-  resetBtn.addEventListener("click", () => {
-
-    activeCategory = "all";
-
-    activeGenres = [];
-
-    filterButtons.forEach(btn =>
-      btn.classList.remove("active")
+      }
     );
 
-    document
-      .querySelector('[data-filter="all"]')
-      .classList.add("active");
+  }
 
-    aggiornaFiltri();
+  if(genreFilter){
 
-  });
+    genreFilter.addEventListener(
+      "change",
+      () => {
 
-}
+        visibleCards = 3;
+        aggiornaFiltri();
+
+      }
+    );
+
+  }
+
+  /* =========================
+     LOAD MORE
+  ========================= */
+
+  if(loadMoreBtn){
+
+    loadMoreBtn.addEventListener("click", () => {
+
+      visibleCards += 3;
+
+      aggiornaFiltri();
+
+    });
+
+  }
+
+  aggiornaFiltri();
 
   // ===============================
   // ===== SPLASH
   // ===============================
 
-  const splash = document.getElementById("splash");
+  const splash =
+    document.getElementById("splash");
 
-  if (splash) {
+  if(splash){
 
     setTimeout(() => {
 
@@ -219,7 +176,9 @@ if(resetBtn){
       splash.style.transition = "0.4s";
 
       setTimeout(() => {
+
         splash.remove();
+
       }, 400);
 
     }, 400);
@@ -230,18 +189,23 @@ if(resetBtn){
   // ===== SLIDER
   // ===============================
 
-  const slider = document.getElementById("slider");
-  const next = document.getElementById("next");
-  const prev = document.getElementById("prev");
+  const slider =
+    document.getElementById("slider");
 
-  if (slider && next && prev) {
+  const next =
+    document.getElementById("next");
 
-    function updateArrows() {
+  const prev =
+    document.getElementById("prev");
+
+  if(slider && next && prev){
+
+    function updateArrows(){
 
       const maxScroll =
         slider.scrollWidth - slider.clientWidth;
 
-      if (slider.scrollLeft >= maxScroll - 10) {
+      if(slider.scrollLeft >= maxScroll - 10){
 
         prev.style.opacity = "1";
         prev.style.pointerEvents = "auto";
@@ -250,7 +214,9 @@ if(resetBtn){
 
         prev.style.opacity = "0";
         prev.style.pointerEvents = "none";
+
       }
+
     }
 
     next.addEventListener("click", () => {
@@ -271,126 +237,87 @@ if(resetBtn){
 
     });
 
-    slider.addEventListener("scroll", updateArrows);
+    slider.addEventListener(
+      "scroll",
+      updateArrows
+    );
 
     updateArrows();
+
   }
 
   // ===============================
   // ===== CREDITS
   // ===============================
 
-  /* =========================
-   CREDITS SCROLL
-========================= */
+  const credits =
+    document.querySelector(".credits");
 
-const credits =
-  document.querySelector(".credits");
+  if(credits){
 
-if(credits){
+    const observer =
+      new IntersectionObserver(entries => {
 
-  const observer =
-    new IntersectionObserver(entries => {
+        entries.forEach(entry => {
 
-      entries.forEach(entry => {
+          if(entry.isIntersecting){
 
-        if(entry.isIntersecting){
+            credits.classList.add("show");
 
-          credits.classList.add("show");
+          }
 
-        }
+        });
 
+      }, {
+        threshold: 0.2
       });
 
-    },{
-      threshold:.2
-    });
+    observer.observe(credits);
 
-  observer.observe(credits);
+  }
 
-}
-
-  /* =========================
-   LOAD MORE
-========================= */
-
-const loadMoreBtn =
-  document.getElementById("loadMoreBtn");
-
-aggiornaFiltri();
-
-/* nasconde tutte dopo la terza */
-loadMoreBtn.addEventListener("click", () => {
-
-  visibleCards += 3;
-
-  aggiornaFiltri();
-
-});
-
-
-/* click */
-
-if(loadMoreBtn){
-
-  loadMoreBtn.addEventListener("click", () => {
-
-    visibleCards += 3;
-
-    cards.forEach((card, index) => {
-
-      if(index < visibleCards){
-        card.style.display = "block";
-      }
-
-    });
-
-    /* nasconde bottone se finite */
-
-  const visibleFiltered =
-  [...cards].filter(card =>
-    card.style.display !== "none"
-  );
-
-if(visibleCards >= visibleFiltered.length){
-
-  loadMoreBtn.style.display = "none";
-
-}
-    });
-
-}
   // ===============================
   // ===== FADE-UP
   // ===============================
 
-  const elements = document.querySelectorAll(".fade-up");
+  const elements =
+    document.querySelectorAll(".fade-up");
 
-  if (elements.length) {
+  if(elements.length){
 
     setTimeout(() => {
 
       elements.forEach(el => {
+
         el.classList.add("show");
+
       });
 
     }, 200);
 
-    const observerFade = new IntersectionObserver(entries => {
+    const observerFade =
+      new IntersectionObserver(entries => {
 
-      entries.forEach(entry => {
+        entries.forEach(entry => {
 
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
+          if(entry.isIntersecting){
 
+            entry.target.classList.add("show");
+
+          }
+
+        });
+
+      }, {
+        threshold: 0.2
       });
 
-    }, {
-      threshold: 0.2
+    elements.forEach(el => {
+
+      observerFade.observe(el);
+
     });
 
-    elements.forEach(el => observerFade.observe(el));
   }
 
 });
