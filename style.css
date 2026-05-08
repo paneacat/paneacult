@@ -1423,8 +1423,11 @@ opacity:0.18;
 
 .btn-yellow {
   background: #fdc103;
-
-  color: #0d2e40;
+  color:#111;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  border: none;
+  transition: .25s ease;
 }
 
 .btn-yellow:hover {
@@ -1433,13 +1436,15 @@ opacity:0.18;
 
 .btn-outline {
   border: 1px solid rgba(255,255,255,0.2);
-
-  color: white;
+background: #fdc103;
+  color:#111;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  transition: .25s ease;
 }
 
 .btn-outline:hover {
   border-color: #fdc103;
-
   color: #fdc103;
 }
 
