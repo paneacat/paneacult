@@ -1645,45 +1645,62 @@ min-height:100vh;
   max-width:520px;
   object-fit:cover;
 }
+
 /* =========================
-   REVIEW CONTAINER
+   REVIEW LAYOUT
 ========================= */
 
-.review-container{
+.review-layout{
 
-  width:min(92%, 760px);
+  width:min(92%, 1300px);
 
   margin:0 auto;
 
-  padding:120px 0 140px;
+  display:grid;
+
+  grid-template-columns:260px 1fr;
+
+  gap:90px;
+
+  padding:120px 0;
 
 }
 
 /* =========================
-   HEADER RECENSIONE
+   SIDEBAR
 ========================= */
 
-.review-container h1{
+.review-sidebar{
 
-  font-family:'Playfair Display', serif;
-
-  font-size:clamp(3rem, 7vw, 5rem);
-
-  line-height:.92;
-
-  letter-spacing:-0.04em;
-
-  margin-bottom:18px;
-
-  color:#f4efe8;
+  position:relative;
 
 }
 
-/* REGISTA */
+/* BOX STICKY */
 
-.author{
+.sidebar-box{
 
-  font-size:.9rem;
+  position:sticky;
+
+  top:130px;
+
+  padding:2rem;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:28px;
+
+  background:rgba(255,255,255,.03);
+
+  backdrop-filter:blur(14px);
+
+}
+
+/* LABEL */
+
+.sidebar-label{
+
+  font-size:.72rem;
 
   text-transform:uppercase;
 
@@ -1691,119 +1708,53 @@ min-height:100vh;
 
   color:#f4b400;
 
-  margin-bottom:18px;
+  margin-bottom:8px;
 
 }
 
-/* SOTTOTITOLO */
+/* VALUE */
 
-.subtitle{
+.sidebar-value{
 
-  font-size:1.3rem;
+  margin-bottom:28px;
+
+  color:#f4efe8;
 
   line-height:1.6;
 
-  color:rgba(255,255,255,.82);
-
-  margin-bottom:24px;
-
-  max-width:620px;
-
 }
 
-/* RUBRICA */
+/* WATCH */
 
-.series{
+.sidebar-watch{
 
   display:inline-flex;
 
-  align-items:center;
-
-  padding:.5rem 1rem;
-
-  border:1px solid rgba(244,180,0,.3);
-
-  border-radius:999px;
-
-  color:#f4b400;
-
-  font-size:.72rem;
-
-  letter-spacing:.14em;
-
-  text-transform:uppercase;
-
-  margin-bottom:14px;
-
-}
-
-/* GENERI */
-
-.genre-bar{
-
-  color:rgba(255,255,255,.5);
-
-  text-transform:uppercase;
-
-  letter-spacing:.08em;
-
-  font-size:.78rem;
-
-  margin-bottom:50px;
-
-}
-
-/* =========================
-   WATCH
-========================= */
-
-.watch{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:1rem;
-
-  flex-wrap:wrap;
-
-  margin-bottom:70px;
-
-}
-
-.watch span{
-
-  font-size:.72rem;
-
-  text-transform:uppercase;
-
-  letter-spacing:.14em;
-
-  color:rgba(255,255,255,.45);
-
-}
-
-.watch-btn-inline{
-
-  background:#f4b400;
-
-  color:#111;
+  margin-bottom:30px;
 
   text-decoration:none;
 
-  padding:.8rem 1.1rem;
+  color:#111;
+
+  background:#f4b400;
+
+  padding:.8rem 1rem;
 
   border-radius:999px;
 
-  font-size:.82rem;
-
-  transition:.25s ease;
+  font-size:.85rem;
 
 }
 
-.watch-btn-inline:hover{
+/* STELLE */
 
-  transform:translateY(-2px);
+.sidebar-rating{
+
+  font-size:1.4rem;
+
+  color:#f4b400;
+
+  letter-spacing:.12em;
 
 }
 
@@ -1811,108 +1762,24 @@ min-height:100vh;
    TESTO
 ========================= */
 
-.review-text{
+.review-content{
 
-  max-width:680px;
+  max-width:760px;
 
-  margin:auto;
+}
+
+.review-content p{
 
   font-size:1.08rem;
 
   line-height:2;
 
-}
-
-/* PARAGRAFI */
-
-.review-text p{
-
   margin-bottom:2rem;
 
-}
-
-/* PRIMO PARAGRAFO */
-
-.review-text p:first-child{
-
-  font-size:1.2rem;
-
-  color:#f4efe8;
+  color:rgba(255,255,255,.88);
 
 }
 
-/* STRONG */
-
-.review-text strong{
-
-  color:#f4b400;
-
-  font-weight:500;
-
-}
-
-/* CORSIVO */
-
-.review-text em{
-
-  color:#f4efe8;
-
-  font-style:italic;
-
-}
-
-/* =========================
-   FINALE
-========================= */
-
-.review-end{
-
-  margin-top:90px;
-
-  text-align:center;
-
-}
-
-/* STELLE */
-
-.rating{
-
-  font-size:2rem;
-
-  color:#f4b400;
-
-  letter-spacing:.18em;
-
-  margin-bottom:24px;
-
-}
-
-/* FIRMA */
-
-.firma-recensione{
-
-  color:rgba(255,255,255,.55);
-
-  line-height:1.8;
-
-  font-size:.95rem;
-
-}
-.review-text p:first-child::first-letter{
-
-  font-size:4rem;
-
-  float:left;
-
-  line-height:.9;
-
-  padding-right:10px;
-
-  font-family:'Playfair Display', serif;
-
-  color:#f4b400;
-
-}
 
 
 
@@ -2041,38 +1908,23 @@ min-height:100vh;
 
   }
 
-  .review-container{
+  .review-layout{
 
-    padding:90px 0 110px;
+    grid-template-columns:1fr;
 
-  }
+    gap:50px;
 
-  .review-container h1{
-
-    font-size:3rem;
+    padding:80px 0;
 
   }
 
-  .subtitle{
+  .sidebar-box{
 
-    font-size:1.08rem;
+    position:relative;
 
-  }
-
-  .review-text{
-
-    font-size:1rem;
-
-    line-height:1.9;
+    top:auto;
 
   }
-
-  .watch{
-
-    margin-bottom:50px;
-
-  }
-
 }
 
 
