@@ -1404,12 +1404,14 @@ opacity:0.18;
 }
 
 .section-label h2{
-  font-family:'Playfair Display', serif;
+  font-family: Inter, sans-serif;
   font-size:clamp(1.5rem, 2vw, 2.2rem);
   font-weight:600;
   color: var(--gold);
   letter-spacing:-0.03em;
 }
+
+
 
 
 
