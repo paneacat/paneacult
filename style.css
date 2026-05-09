@@ -1798,7 +1798,6 @@ login-text{
   align-items:center;
   justify-content:center;
   gap:80px;
-
   padding:120px 8%;
 }
 
@@ -2444,7 +2443,14 @@ padding:120px 0;
     180px 0 70px;
 
 }
+.about-page{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:90px;
 
+  padding:140px 8% 100px;
+}
 
 
 
@@ -2733,7 +2739,6 @@ padding:120px 0;
   .hero,
   .home-login,
   .newsletter,
-  .about-page,
   .contact-hero,
   .sections{
 
@@ -2975,18 +2980,18 @@ padding:120px 0;
 .login-hero {
   padding-top:320px;
 }
- .about-page{
-    flex-direction:column;
-    gap:40px;
-
-    padding:90px 24px;
-  }
 
   .about-image{
     width:100%;
     max-width:320px;
     height:380px;
   }
+ .about-page{
+    flex-direction:column;
+    text-align:center;
+  gap:40px;
+    padding:90px 24px;
+ }
 }
 
 
