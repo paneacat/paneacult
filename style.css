@@ -2400,23 +2400,27 @@ padding:120px 0;
 ========================= */
 
 .about-cards {
-
+  min-height: 320px;
+  padding: 38px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s ease;
   max-width: 1200px;
-
   margin: 100px auto;
-
-  padding: 0 40px;
 
 }
 
 .about-cards .container {
-
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 28px;
-
+  align-items: stretch;
 }
 
 /* =========================
@@ -2426,8 +2430,11 @@ padding:120px 0;
 .about-card {
 
   min-height: 320px;
+ max-width: 1200px;
 
-  padding: 38px;
+  margin: 100px auto;
+
+  padding: 0 40px;
 
   border-radius: 30px;
 
