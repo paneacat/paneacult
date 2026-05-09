@@ -712,16 +712,15 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 ========================= */
 .sections{
 
-  display:grid;
+  display: flex;
+  flex-direction: column;
 
-  grid-template-columns:
-  repeat(3, 320px);
+  gap: 12px;
 
-  justify-content:center;
+  width: 100%;
+  max-width: 900px;
 
-  gap:8px;
-
-  margin-top:120px;
+  margin: 0 auto;
 }
 
 /* =========================
@@ -730,13 +729,13 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 .card{
   
-  width:320px;
+  width: 100%;
+
+  padding: 32px;
+
+  border-radius: 30px;
 
   min-height:220px;
-
-  padding:32px;
-
-  border-radius:28px;
 
   border:1px solid
   rgba(255,255,255,.08);
@@ -1177,7 +1176,7 @@ font-weight:500;
 
   display: flex;
   flex-direction: column;
-
+  justify-content: left;
   gap: 28px;
 
   max-width: 900px;
