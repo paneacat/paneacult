@@ -106,7 +106,7 @@ button:hover,
 body {
   font-family: 'Inter', sans-serif;
   padding-top: 13px;
-  background: var(--bg);
+  background: var(--panea-blue);
   color: var(--panea-text);
 }
 
@@ -138,7 +138,7 @@ a {
 }
 
 a:hover {
-  color: var(--gold);
+  color: var(--panea-yellow);
 }
 
 /* =========================
@@ -313,7 +313,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 .cta-text {
   font-size: 22px;
   line-height: 1.7;
-  color: rgba(255,255,255,.68);
+  color: var(--panea-white);;
 }
 
 /* =========================
@@ -356,7 +356,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 }
 
 .load-more-btn:hover {
-  background: var(--gold);
+  background: var(--panea-yellow);
   color: #0b1f26;
 }
 
@@ -465,7 +465,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 }
 
 .film-stars{
-  color:#f3bf18;
+  color:var(--panea-yellow);
   letter-spacing:2px;
   font-size:1rem;
 }
@@ -566,9 +566,9 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 }
 
 .slider-arrow:hover{
-  background:#f3bf18;
+  background:var(--panea-yellow);
   color:#0b1f26;
-  border-color:#f3bf18;
+  border-color:var(--panea-yellow);
 }
 
 /* =========================
