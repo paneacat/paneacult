@@ -717,7 +717,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 }
 
-.sections .container {
+.sections > .container {
 
   display: flex;
 
