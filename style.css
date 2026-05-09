@@ -1195,7 +1195,7 @@ font-weight:500;
 .film-card {
 
   width: 100%;
-
+  border-radius: 18px;
   max-width: 760px;
 
   margin: 0;
