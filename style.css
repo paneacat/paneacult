@@ -722,15 +722,11 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
   gap: 24px;
 
-  align-items: stretch;
-
 }
 
 .card {
 
   flex: 1;
-
-  min-height: 260px;
 
   padding: 36px;
 
