@@ -3,9 +3,32 @@
 
 <head>
 
+  <!-- =========================
+       BASE
+  ========================= -->
+
   <meta charset="UTF-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <title>paneacult</title>
+
+  <meta
+    name="description"
+    content="Recensioni cinematografiche tra ossessioni visive, classici e cinema contemporaneo."
+  >
+
+  <!-- =========================
+       PWA / MOBILE
+  ========================= -->
+
+  <meta
+    name="theme-color"
+    content="#0b2f44"
+  >
 
   <meta
     name="mobile-web-app-capable"
@@ -13,29 +36,94 @@
   >
 
   <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    name="apple-mobile-web-app-capable"
+    content="yes"
   >
 
-  <!-- ICONS -->
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+  >
+
+  <meta
+    name="apple-mobile-web-app-title"
+    content="paneacult"
+  >
+
+  <!-- =========================
+       ICONS
+  ========================= -->
+  
+<!-- APPLE -->
+
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="img/apple-icon-180.png"
+>
+
+<!-- ANDROID -->
+
+<link
+  rel="icon"
+  type="image/png"
+  sizes="192x192"
+  href="img/icon-192.png"
+>
+
+<link
+  rel="icon"
+  type="image/png"
+  sizes="512x512"
+  href="img/icon-512.png"
+>
+
+  <!-- =========================
+       MANIFEST
+  ========================= -->
 
   <link
-    rel="apple-touch-icon"
-    href="img/icon-192.svg"
+    rel="manifest"
+    href="manifest.json"
   >
 
-  <link
-    rel="icon"
-    type="image/png"
-    href="img/icon-512.svg"
+  <!-- =========================
+       SEO / SOCIAL
+  ========================= -->
+
+  <meta
+    property="og:title"
+    content="paneacult"
   >
 
-  <link
-    rel="icon"
-    href="img/icon-192.svg"
+  <meta
+    property="og:description"
+    content="Il cinema non è intrattenimento. È ciò che resta."
   >
 
-  <!-- FONTS -->
+ <meta
+  property="og:image"
+  content="https://paneacat.github.io/paneacult.github.io/img/logo.png"
+>
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://paneacat.github.io/paneacult.github.io/"
+  >
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <!-- =========================
+       FONTS
+  ========================= -->
 
   <link
     rel="preconnect"
@@ -49,25 +137,27 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700;800&display=swap"
     rel="stylesheet"
   >
 
-  <!-- CSS -->
+  <!-- =========================
+       ICONS
+  ========================= -->
 
   <link
     rel="stylesheet"
-    href="style.css?v=999"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   >
 
-  <!-- SUPABASE -->
+  <!-- =========================
+       CSS
+  ========================= -->
 
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-
-  <script
-    src="scriptapp.js"
-    defer
-  ></script>
+  <link
+    rel="stylesheet"
+    href="style.css?v=10"
+  >
 
 </head>
 
