@@ -1159,88 +1159,135 @@ font-weight:500;
 .credits.show .fade:nth-child(6) {
   animation-delay: 1.2s;
 }
+
 /* =========================
-   OSSESSIONI
+   FILM GRID
 ========================= */
 
-.ossessioni-home{
+.film-section {
 
-  padding:100px 0;
+  max-width: 1100px;
+
+  margin: 120px auto;
+
+  padding: 0;
+
+}
+.film-section h2 {
+
+  text-align: left;
+
+  margin-bottom: 40px;
+
 }
 
-/* GRID */
+.film-grid {
 
-.ossessioni-grid{
+  display: flex;
+  flex-direction: column;
 
-  display:grid;
+  gap: 32px;
 
-  grid-template-columns:1fr;
+  align-items: flex-start;
 
-  gap:22px;
-
-  margin-top:40px;
 }
 
-/* CARD */
+.film-card {
 
-.ossessione-card{
+  width: 100%;
 
-  overflow:hidden;
+  max-width: 760px;
 
-  border-radius:24px;
+  margin: 0;
 
-  background:
-    rgba(255,255,255,.03);
+}
+/* HOVER */
 
-  border:
-    1px solid rgba(255,255,255,.06);
+.film-card:hover {
+
+  transform: translateY(-4px);
+
+  border-color: rgba(253,193,3,0.25);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.18);
 }
 
-/* IMAGE */
+/* =========================
+   IMMAGINE
+========================= */
 
-.ossessione-card img{
+.film-card img {
 
-  width:100%;
+  width: 100%;
 
-  aspect-ratio:16/10;
+  height: 430px;
 
-  object-fit:cover;
+  object-fit: cover;
 
-  display:block;
+  display: block;
+
+  border-radius: 18px;
 }
 
-/* INFO */
+/* =========================
+   CONTENUTO
+========================= */
 
-.ossessione-info{
+.film-content {
 
-  padding:22px;
+  padding: 22px 10px 8px;
 }
 
-/* TITLE */
+/* =========================
+   TITOLO
+========================= */
 
-.ossessione-info h3{
+.film-card h2 {
 
-  font-family:'Playfair Display',serif;
+  font-family: 'Playfair Display', serif;
 
-  font-size:28px;
+  font-size: 2.2rem;
 
-  color:var(--panea-white);
+  line-height: 1;
 
-  margin-bottom:10px;
+  color: white;
+
 }
 
-/* TEXT */
+/* =========================
+   TESTO
+========================= */
 
-.ossessione-info p{
+.film-card p {
 
-  font-size:15px;
+  font-family: 'Inter', sans-serif;
 
-  line-height:1.7;
+  font-size: 0.95rem;
 
-  color:
-    rgba(255,255,255,.78);
+  line-height: 1.8;
+
+  color: rgba(255,255,255,0.82);
+
+  max-width: 90%;
 }
 
+.film-year {
+
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  font-size: 0.78rem;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: #fdc103;
+
+  font-weight: 600;
+}
 /* =========================
    RUBRICHE HOME
 ========================= */
