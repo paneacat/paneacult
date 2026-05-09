@@ -2533,9 +2533,6 @@ padding:120px 0;
     grid-template-columns: 1fr;
   }
 
-  .ossessioni-grid {
-    grid-template-columns: 1fr;
-  }
      .home-cinema{
     padding:20px 0 70px;
   }
@@ -2596,11 +2593,6 @@ padding:120px 0;
     width:160px;
 }
 
-  .sections{
-
-    grid-template-columns:1fr;
-
-  }
 
   .review-layout{
 
@@ -2985,6 +2977,7 @@ padding:120px 0;
   box-shadow:
     0 0 0 2px rgba(255,210,74,.35);
 }
+ 
 .login-form{
 
   display:flex;
@@ -2998,16 +2991,18 @@ padding:120px 0;
   backdrop-filter:blur(18px);
  border:1px solid rgba(255,255,255,.08);
 }
+ 
 .login-text{
-
   padding:0 30px;
 }
+ 
  .login-text h1{
 
   font-size:4rem;
   line-height:.92;
 
  }
+ 
 .login-hero::before{
 
   content:"";
@@ -3025,6 +3020,7 @@ padding:120px 0;
   z-index:1;
 
 }
+ 
 .login-overlay{
   padding-top:140px; 
   position:relative;
@@ -3049,9 +3045,7 @@ padding:120px 0;
 
 
   .about-sections .sections {
-
     grid-template-columns: 1fr;
-
   }
 }
 
@@ -3075,19 +3069,6 @@ padding:120px 0;
   .rubriche-grid {
     grid-template-columns: repeat(3,1fr);
     gap: 24px;
-  }
-
-  .ossessioni-grid {
-    grid-template-columns: repeat(4,1fr);
-    gap: 24px;
-  }
-
-   .ossessioni-grid{
-
-    grid-template-columns:
-      repeat(4,1fr);
-
-    gap:24px;
   }
 
   .rubriche-grid{
