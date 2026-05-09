@@ -1755,10 +1755,6 @@ login-text{
    ABOUT HERO
 ========================= */
 
-.about-hero{
-  padding:80px 0 90px;
-}
-
 .about-layout{
   display:grid;
   grid-template-columns:1fr 520px;
@@ -1833,9 +1829,6 @@ login-text{
   opacity:.92;
 }
 
-.about-hero{
-  max-width:620px;
-}
 /* =========================
    REVIEW LAYOUT
 ========================= */
@@ -2303,9 +2296,9 @@ display:flex;
 ========================= */
 
 .about-hero{
-
+max-width:620px;
   margin:0 auto;
-
+padding:120px 0;
   text-align:left;
 
 }
