@@ -727,6 +727,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
    CARD
 ========================= */
 
+.about-card,
 .card{
   
   padding:32px;
@@ -747,6 +748,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 }
 
+.about-card:hover
 .card:hover{
 
   transform:translateY(-4px);
@@ -758,7 +760,8 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 /* LABEL */
 
-.card h3{
+.about-card h3
+.card {
 
   font-size:.7rem;
 
@@ -776,7 +779,8 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 /* TITLE */
 
-.card h2{
+.about-card h2
+ .card h2 {
 
   font-size:2rem;
 
@@ -789,7 +793,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 }
 
 /* TEXT */
-
+.about-card p
 .card p{
 
   font-size:.96rem;
@@ -2464,7 +2468,8 @@ padding:120px 0;
   padding:140px 8% 100px;
   min-height:80vh;
 }
-
+.about-card {
+ 
 .about-image {
   width: 430px;
   height: 560px;
