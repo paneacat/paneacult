@@ -20,7 +20,11 @@
     name="description"
     content="Recensioni cinematografiche tra ossessioni visive, classici e cinema contemporaneo."
   >
-
+<link
+  rel="preload"
+  as="image"
+  href="img/patrizia.png"
+>
   <!-- =========================
        PWA / MOBILE
   ========================= -->
@@ -220,7 +224,12 @@
 <section class="about-page">
 
   <div class="about-image">
-    <img src="img/patrizia.png" alt="Patrizia">
+    <img
+  src="img/patrizia.png"
+  alt="Patrizia"
+  loading="eager"
+  fetchpriority="high"
+>
   </div>
 
   <div class="about-text">
