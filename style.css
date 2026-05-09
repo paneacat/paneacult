@@ -710,7 +710,6 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 /* =========================
    SECTIONS GRID
 ========================= */
-
 .sections{
 
   display:grid;
@@ -718,9 +717,9 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   grid-template-columns:
   repeat(3, 1fr);
 
-  gap:1.4rem;
+  gap:24px;
 
-  margin-top:5rem;
+  margin-top:80px;
 
 }
 
@@ -729,10 +728,12 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 ========================= */
 
 .card{
+  
+  padding:32px;
 
-  padding:2rem;
+  min-height:220px;
 
-  border-radius:28px;
+  border-radius:24px;
 
   border:1px solid
   rgba(255,255,255,.08);
