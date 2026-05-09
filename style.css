@@ -719,7 +719,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
   justify-content:center;
 
-  gap:28px;
+  gap:8px;
 
   margin-top:120px;
 }
