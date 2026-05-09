@@ -2434,12 +2434,9 @@ padding:120px 0;
 ========================= */
 
 .about-cards {
-
   max-width: 1200px;
-
-  margin: 100px auto;
-
   padding: 0 40px;
+  margin: 20px auto 100px;
 
 }
 
