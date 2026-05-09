@@ -730,7 +730,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 }
 
-.sections .card {
+.about-card {
 
   padding: 36px;
 
@@ -746,7 +746,39 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 }
 
-.card:hover {
+.about-card h3 {
+
+  font-size: 0.72rem;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: #fdc103;
+
+  margin-bottom: 18px;
+
+}
+
+.about-card h2 {
+
+  font-size: 2rem;
+
+  line-height: 0.95;
+
+  margin-bottom: 18px;
+
+}
+
+.about-card p {
+
+  line-height: 1.6;
+
+  color: rgba(255,255,255,0.75);
+
+}
+
+.about-card:hover {
 
   transform: translateY(-4px);
 
@@ -754,7 +786,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 }
 
-login-cta {
+.login-cta {
 
   margin-top: auto;
 
