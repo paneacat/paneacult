@@ -3044,8 +3044,17 @@ padding:120px 0;
     padding:90px 24px;
 
 
-  .about-sections .sections {
+  .about-sections .sections,
+  .contact-section .sections {
+
     grid-template-columns: 1fr;
+
+  }
+
+  .film-card img {
+
+    height: 300px;
+
   }
 }
 
