@@ -707,32 +707,6 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   }
 
 }
-/* =========================
-/* =========================
-   ABOUT CARDS
-========================= */
-
-.sections {
-
-  max-width: 1200px;
-
-  margin: 80px auto;
-
-  padding: 0 24px;
-
-}
-
-.sections .container {
-
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 24px;
-
-  align-items: stretch;
-
-}
 
 /* =========================
    ABOUT CARDS
@@ -748,80 +722,33 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 }
 
-.sections .container {
+/* =========================
+   GLOBAL CARD
+========================= */
 
-  display: grid;
+.card {
 
-  grid-template-columns: repeat(3, 1fr);
+  border-radius: 28px;
 
-  gap: 24px;
+  background: rgba(255,255,255,0.03);
 
-}
+  border: 1px solid rgba(255,255,255,0.08);
 
-/* VARIANTE ABOUT */
+  backdrop-filter: blur(14px);
 
-.about-card {
+  -webkit-backdrop-filter: blur(14px);
 
-  min-height: 260px;
-
-  padding: 36px;
-
-}
-
-/* TITOLINO */
-
-.about-card h3 {
-
-  font-size: 0.72rem;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
-
-  color: #fdc103;
-
-  margin-bottom: 18px;
+  transition: 0.3s ease;
 
 }
 
-/* TITOLO */
+.card:hover {
 
-.about-card h2 {
+  transform: translateY(-4px);
 
-  font-size: 2rem;
-
-  line-height: 0.95;
-
-  margin-bottom: 18px;
+  border-color: rgba(255,255,255,0.14);
 
 }
-
-/* TESTO */
-
-.about-card p {
-
-  line-height: 1.6;
-
-}
-
-/* CTA */
-
-.about-card .login-cta {
-
-  margin-top: auto;
-
-}
-
-.about-card .login-cta a {
-
-  color: #fdc103;
-
-  text-decoration: none;
-
-  font-weight: 600;
-
-}
-
 /* =========================
    10. ARCHIVIO
 ========================= */
@@ -2495,6 +2422,92 @@ padding:120px 0;
   object-fit: cover;
 }
 
+/* =========================
+   ABOUT SECTIONS
+========================= */
+
+.about-sections {
+
+  margin: 80px 0;
+
+}
+
+.about-sections .sections {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+
+}
+
+/* =========================
+   ABOUT CARD
+========================= */
+
+.about-card {
+
+  min-height: 260px;
+
+  padding: 36px;
+
+}
+
+/* TITOLINO */
+
+.about-card h3 {
+
+  font-size: 0.72rem;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: #fdc103;
+
+  margin-bottom: 18px;
+
+}
+
+/* TITOLO */
+
+.about-card h2 {
+
+  font-size: 2rem;
+
+  line-height: 0.95;
+
+  margin-bottom: 18px;
+
+}
+
+/* TESTO */
+
+.about-card p {
+
+  line-height: 1.6;
+
+}
+
+/* CTA */
+
+.about-card .login-cta {
+
+  margin-top: auto;
+
+}
+
+.about-card .login-cta a {
+
+  color: #fdc103;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+}
+
 
 
 
@@ -3035,16 +3048,22 @@ padding:120px 0;
     padding:90px 24px;
 
 
-  .sections .container {
+  .about-sections .sections {
 
     grid-template-columns: 1fr;
+
+  }
 }
-}
 
 
 
 
 
+
+
+
+
+ 
 @media (min-width: 1024px) {
 
   .sections {
