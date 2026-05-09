@@ -1841,43 +1841,6 @@ login-text{
   
 }
 
-.about-page{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:80px;
-  padding:120px 8%;
-}
-
-.about-image{
-
-  width:280px;
-  height:360px;
-
-  overflow:hidden;
-
-  border:1px solid rgba(255,255,255,.12);
-
-  background:#111;
-
-  flex-shrink:0;
-
-}
-
-.about-image img{
-
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  display:block;
-
-  filter:none;
-
-  padding:0;
-
-}
 
 /* =========================
    REVIEW LAYOUT
