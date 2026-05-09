@@ -1804,16 +1804,17 @@ login-text{
 
 .about-image{
 
-  width:260px;
-  height:340px;
-
-  background:#102d3d;
-
-  border:1px solid rgba(255,255,255,.08);
+  width:280px;
+  height:360px;
 
   overflow:hidden;
 
+  border:1px solid rgba(255,255,255,.12);
+
+  background:#111;
+
   flex-shrink:0;
+
 }
 
 .about-image img{
@@ -1821,16 +1822,13 @@ login-text{
   width:100%;
   height:100%;
 
-  object-fit:contain;
+  object-fit:cover;
 
   display:block;
 
-  padding:12px;
+  filter:none;
 
-  filter:
-    grayscale(100%)
-    contrast(115%)
-    brightness(.95);
+  padding:0;
 
 }
 
