@@ -1459,54 +1459,41 @@ login-text{
    LOGIN BOX
 ========================= */
 
-.login-box{
+.login-box input {
 
-  width:100%;
-  max-width:340px;
+  width: 100%;
 
-  padding:28px;
+  padding: 18px 20px;
 
-  border-radius:28px;
+  border-radius: 18px;
 
+  border: 1px solid rgba(255,255,255,0.08);
 
-  backdrop-filter:blur(14px);
+  background: rgba(255,255,255,0.08);
 
-  border:1px solid rgba(255,255,255,.14);
+  color: white;
 
-}
+  font-size: 15px;
 
-/* INPUT */
+  font-family: 'Inter', sans-serif;
 
-.login-box input{
+  font-weight: 400;
 
-  width:100%;
-
-  padding:16px 18px;
-
-  margin-bottom:14px;
-
-  border-radius:16px;
-
-  border:1px solid rgba(255,255,255,.14);
-
-
-  color:#fff;
-
-  font-family:'Inter', sans-serif;
-
-  font-size:.95rem;
-
-  outline:none;
-
-  transition:.25s ease;
+  outline: none;
 
 }
 
-/* PLACEHOLDER */
+/* Placeholder */
 
-.login-box input::placeholder{
+.login-box input::placeholder {
 
-  color:rgba(255,255,255,.58);
+  color: rgba(255,255,255,0.55);
+
+  font-size: 14px;
+
+  font-weight: 300;
+
+  letter-spacing: 0.3px;
 
 }
 
