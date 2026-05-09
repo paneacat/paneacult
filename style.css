@@ -141,14 +141,6 @@ a:hover {
   color: var(--panea-yellow);
 }
 
-/* =========================
-   4. LAYOUT / CONTAINER
-========================= */
-
-.container {
-  width: min(90%, 1100px);
-  margin: 0 auto;
-}
 
 /* =========================
    5. HEADER
