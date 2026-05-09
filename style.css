@@ -2351,17 +2351,15 @@ padding:120px 0;
 
 }
 
+
+  
+ /* CONTACT GRID */
+
 .contact-cards .container {
-
-  display: grid;
-
+ display: grid;
   gap: 28px;
-
   align-items: stretch;
-
     grid-template-columns: 1fr;
-
- 
 }
 
 
