@@ -959,6 +959,7 @@ font-weight:500;
 
 .archivio-card{
   width:100%;
+ justify-content: left;
 }
 
 /* IMG */
