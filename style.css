@@ -727,59 +727,35 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
    CARD
 ========================= */
 
-.about-card,
 .card{
   
   padding:32px;
-
   min-height:220px;
-
   border-radius:24px;
-
   border:1px solid
   rgba(255,255,255,.08);
-
   background:
   rgba(255,255,255,.03);
-
   backdrop-filter:blur(10px);
-
   transition:.3s ease;
-
+ font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:#f4b400;
+  margin-bottom:1rem;
+  font-family:'Inter', sans-serif;
 }
 
-.about-card:hover
 .card:hover{
-
   transform:translateY(-4px);
-
   border-color:
   rgba(255,255,255,.14);
 
 }
 
-/* LABEL */
-
-.about-card h3
-.card {
-
-  font-size:.7rem;
-
-  text-transform:uppercase;
-
-  letter-spacing:.14em;
-
-  color:#f4b400;
-
-  margin-bottom:1rem;
-
-  font-family:'Inter', sans-serif;
-
-}
 
 /* TITLE */
 
-.about-card h2
  .card h2 {
 
   font-size:2rem;
@@ -793,7 +769,7 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 }
 
 /* TEXT */
-.about-card p
+
 .card p{
 
   font-size:.96rem;
