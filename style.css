@@ -2316,11 +2316,55 @@ padding:120px 0;
 
 }
 
-.contact-card{
+.contact-card {
 
-  min-height:220px;
+  min-height: 320px;
+
+  padding: 38px;
+
+  border-radius: 30px;
+
+  background: rgba(255,255,255,0.03);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
 
 }
+
+
+.contact-cards {
+
+  max-width: 1200px;
+
+  margin: 100px auto;
+
+  padding: 0 40px;
+
+}
+
+.contact-cards .container {
+
+  display: grid;
+
+  gap: 28px;
+
+  align-items: stretch;
+
+    grid-template-columns: 1fr;
+
+ 
+}
+
+
 .contact-links{
 
   margin-top:18px;
@@ -2334,6 +2378,7 @@ padding:120px 0;
   text-decoration:none;
 
 }
+
 
 .card-small{
 
