@@ -2436,7 +2436,7 @@ padding:120px 0;
 .about-cards {
   max-width: 1200px;
   padding: 0 40px;
-  margin: 20px auto 100px;
+  margin: 8px auto 100px;
 
 }
 
@@ -2554,7 +2554,6 @@ padding:120px 0;
 ========================= */
 
 .sections {
-
   max-width: 1200px;
   margin: 80px auto;
   padding: 0 40px;
@@ -2698,7 +2697,6 @@ padding:120px 0;
 
   display: grid;
  margin-top: 0 !important;
-
   padding-top: 0 !important;
 
 
