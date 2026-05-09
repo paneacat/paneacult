@@ -3092,44 +3092,6 @@ padding:120px 0;
 
 @media (min-width: 1024px) {
 
-  .sections {
-    grid-template-columns: repeat(3,1fr);
-    gap: 28px;
-    margin-top: 90px;
-  }
-
-  .rubriche-grid {
-    grid-template-columns: repeat(3,1fr);
-    gap: 24px;
-  }
-
-  .ossessioni-grid {
-    grid-template-columns: repeat(4,1fr);
-    gap: 24px;
-  }
-
-   .ossessioni-grid{
-
-    grid-template-columns:
-      repeat(4,1fr);
-
-    gap:24px;
-  }
-
-  .rubriche-grid{
-
-    grid-template-columns:
-      repeat(3,1fr);
-
-    gap:24px;
-  }
-
-  .rubrica-card{
-
-    min-height:240px;
-
-    padding:34px;
-  }
    .hero img {
       height: 82vh;
 }
