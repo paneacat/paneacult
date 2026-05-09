@@ -2402,11 +2402,14 @@ padding:120px 0;
 ========================= */
 
 .contact-hero{
-
   padding:
     180px 0 70px;
-
 }
+
+.contact-title {
+ font-size: 80px;
+}
+
 .about-page {
   display:flex;
   align-items:center;
