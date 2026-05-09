@@ -1173,12 +1173,9 @@ font-weight:500;
 /* GRID */
 
 .ossessioni-grid{
-
   display: flex;
   flex-direction: column;
-  justify-content: left;
   gap: 28px;
-
   max-width: 900px;
   margin: 0 auto;
 }
@@ -1186,28 +1183,28 @@ font-weight:500;
 /* CARD */
 
 .ossessione-card{
-
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  width: 100%;
+  max-width: 520px; 
   display: flex;
   gap: 24px;
-
   padding: 20px;
-
   border-radius: 30px;
-
-  background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-
   backdrop-filter: blur(12px);
 }
 
 /* IMAGE */
 
 .ossessione-card img{
+  width: 100%;
 
-  width: 320px;
-  height: 190px;
+  height: 320px;
 
   object-fit: cover;
+
+  display: block;
 
   border-radius: 18px;
 
@@ -1220,27 +1217,25 @@ font-weight:500;
 display: flex;
   flex-direction: column;
   justify-content: center;
-  padding:22px;
+  padding: 22px;
 }
 
 /* TITLE */
 
 .ossessione-info h3{
-
+ font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 12px;
   font-family:'Playfair Display',serif;
-
   font-size:28px;
-
   color:var(--panea-white);
-
-  margin-bottom:10px;
 }
 
 /* TEXT */
 
 .ossessione-info p{
 
-  font-size:22px;
+  font-size:18px;
 
   line-height:1.7;
 
