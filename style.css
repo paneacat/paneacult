@@ -217,6 +217,30 @@ a:hover {
   width: 100%;
 }
 
+
+.welcome-page-body{
+
+  min-height:100vh;
+
+  background:
+    linear-gradient(
+      rgba(6,18,28,.72),
+      rgba(6,18,28,.82)
+    ),
+    url("img/posters-bg.jpg");
+
+  background-size:cover;
+
+  background-position:center;
+
+  background-repeat:no-repeat;
+
+  color:white;
+
+  overflow-x:hidden;
+
+}
+
 /* =========================
    6. HERO
 ========================= */
