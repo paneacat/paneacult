@@ -1281,7 +1281,23 @@ font-weight:500;
 
   max-width: 90%;
 }
- 
+
+.film-year {
+
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  font-size: 0.78rem;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: #fdc103;
+
+  font-weight: 600;
+}
 /* =========================
    RUBRICHE HOME
 ========================= */
