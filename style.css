@@ -20,6 +20,9 @@ html {
 
   --panea-border:rgba(255,255,255,.10);
 
+  --container-width: 1100px;
+
+  --transition: 0.3s ease;
 }
 
 
@@ -93,18 +96,8 @@ button:hover,
   background:#var(--panea-yellow);
   color:#0b1f26;
 }
-/* =========================
-   2. VARIABLES
-========================= */
 
-:root {
-  --gold: #var(--panea-yellow);
-  --bg: #var(--panea-blue);
-  --text: #var(--panea-text);
-  --muted: rgba(255, 255, 255, 0.65);
-  --container-width: 1100px;
-  --transition: 0.3s ease;
-}
+
 
 /* =========================
    3. TYPOGRAPHY
@@ -192,7 +185,7 @@ a:hover {
   margin-top: 8px;
   font-size: 18px;
   letter-spacing: 3px;
-  color: rgba(255,255,255,.72);
+  color: #var(--panea-white);
 }
 
 .menu {
