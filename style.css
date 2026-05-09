@@ -1810,6 +1810,7 @@ login-text{
   color:var(--panea-yellow);
   letter-spacing:-0.02em;
   }
+
 .line-break{
   display:block;
 }
@@ -1840,6 +1841,7 @@ login-text{
 
   letter-spacing:-0.01em;
 }
+
 .about-quote span{
   color:#f4b400;
 }
@@ -2509,26 +2511,23 @@ padding:120px 0;
   padding:140px 8% 100px;
   min-height:80vh;
 }
-.about-card {
  
 .about-image {
-  width: 430px;
-  height: 560px;
-
   overflow: hidden;
-
   border-radius: 0;
-
   background: transparent;
+ width: 420px
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .about-image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
   display: block;
+ width: 420px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 
