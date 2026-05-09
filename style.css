@@ -1164,21 +1164,34 @@ font-weight:500;
    FILM GRID
 ========================= */
 
+.film-section {
+
+  max-width: 1100px;
+
+  margin: 120px auto;
+
+  padding: 0;
+
+}
+.film-section h2 {
+
+  text-align: left;
+
+  margin-bottom: 40px;
+
+}
+
 .film-grid {
-
-  width: 100%;
-  max-width: 780px;
-
-  margin-top: 24px;
-  margin-bottom: 80px;
-
-  margin-left: 120px;
-  margin-right: auto;
-
   display: flex;
   flex-direction: column;
-
-  gap: 28px;
+  gap: 30px;
+  align-items: flex-start; 
+  width: 100%;
+  max-width: 780px;
+  margin-top: 24px;
+  margin-bottom: 80px;
+  margin-left: 120px;
+  margin-right: auto;
 }
 /* =========================
    FILM CARD
@@ -1253,7 +1266,6 @@ font-weight:500;
 
   color: white;
 
-  margin-bottom: 14px;
 }
 
 /* =========================
