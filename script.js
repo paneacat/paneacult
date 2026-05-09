@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
 
       splash.style.opacity = "0";
-      splash.style.transition = "0.4s";
+      splash.style.transition = "2.4s";
 
       setTimeout(() => {
 
