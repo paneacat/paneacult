@@ -1796,6 +1796,13 @@ login-text{
 
 .about-image img{
 width:100%;
+
+  display:block;
+
+  object-fit:cover;
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,.25);
   height:100%;
   object-fit:cover;
 
@@ -2427,20 +2434,10 @@ padding:120px 0;
 }
 
 .about-image{
-  width:420px;
-  height:520px;
 
-  overflow:hidden;
-
-  border:1px solid rgba(255,255,255,.12);
-
-  background:#111;
-
-  box-shadow:
-  0 20px 60px rgba(0,0,0,.25);
+  width:380px;
 
   flex-shrink:0;
-
  }
 
 
