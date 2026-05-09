@@ -1,135 +1,217 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- =========================
+       BASE
+  ========================= -->
 
-<title>paneacult — conferma</title>
+  <meta charset="UTF-8">
 
-<style>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-body{
-  margin:0;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#0d2e40;
-  font-family:Inter,sans-serif;
-  color:#f5f1e8;
-}
-h1,
-h2,
-.logo,
-.hero-title{
-  font-family:'Playfair Display',serif;
-}
+  <title>paneacult</title>
 
-  button,
-a,
-input,
-p,
-span{
-  font-family:'Inter',sans-serif;
-}
+  <meta
+    name="description"
+    content="Recensioni cinematografiche tra ossessioni visive, classici e cinema contemporaneo."
+  >
+
+  <!-- =========================
+       PWA / MOBILE
+  ========================= -->
+
+  <meta
+    name="theme-color"
+    content="#0b2f44"
+  >
+
+  <meta
+    name="mobile-web-app-capable"
+    content="yes"
+  >
+
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+  >
+
+  <meta
+    name="apple-mobile-web-app-title"
+    content="paneacult"
+  >
+
+  <!-- =========================
+       ICONS
+  ========================= -->
   
-.box{
-  width:90%;
-  max-width:520px;
-  padding:60px 40px;
-  border-radius:28px;
-  text-align:center;
+<!-- APPLE -->
 
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.08);
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="img/apple-icon-180.png"
+>
 
-  backdrop-filter:blur(10px);
-}
+<!-- ANDROID -->
 
-.logo{
-  color:#fdc103;
-  font-size:54px;
-  margin-bottom:8px;
-  font-weight:bold;
-}
+<link
+  rel="icon"
+  type="image/png"
+  sizes="192x192"
+  href="img/icon-192.png"
+>
 
-.tag{
-  letter-spacing:4px;
-  font-size:11px;
-  text-transform:uppercase;
-  opacity:0.7;
-  margin-bottom:50px;
-}
+<link
+  rel="icon"
+  type="image/png"
+  sizes="512x512"
+  href="img/icon-512.png"
+>
 
-h1{
-  font-size:38px;
-  margin-bottom:18px;
-}
+  <!-- =========================
+       MANIFEST
+  ========================= -->
 
-p{
-  font-size:18px;
-  line-height:1.7;
-  opacity:0.9;
-}
+  <link
+    rel="manifest"
+    href="manifest.json"
+  >
 
-.quote{
-  margin-top:36px;
-  color:#fdc103;
-  font-weight:600;
-}
+  <!-- =========================
+       SEO / SOCIAL
+  ========================= -->
 
-a{
-  display:inline-block;
-  margin-top:42px;
-  padding:18px 34px;
+  <meta
+    property="og:title"
+    content="paneacult"
+  >
 
-  background:#fdc103;
-  color:#0d2e40;
+  <meta
+    property="og:description"
+    content="Il cinema non è intrattenimento. È ciò che resta."
+  >
 
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:700;
+ <meta
+  property="og:image"
+  content="https://paneacat.github.io/paneacult.github.io/img/logo.png"
+>
 
-  transition:0.3s;
-}
+  <meta
+    property="og:type"
+    content="website"
+  >
 
-a:hover{
-  transform:translateY(-2px);
-}
+  <meta
+    property="og:url"
+    content="https://paneacat.github.io/paneacult.github.io/"
+  >
 
-</style>
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <!-- =========================
+       FONTS
+  ========================= -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- =========================
+       ICONS
+  ========================= -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
+  <!-- =========================
+       CSS
+  ========================= -->
+
+  <link
+    rel="stylesheet"
+    href="style.css?v=10"
+  >
+
 </head>
 
-<body>
+<body class="welcome-page-body">
 
-<div class="box">
 
-<div class="logo">paneacult</div>
+<!-- =========================
+     WELCOME PAGE
+========================= -->
 
-<div class="tag">
-MY THERAPIST SAYS CINEMA
-</div>
+<section class="welcome-page">
 
-<h1>Email confermata!</h1>
+  <div class="welcome-overlay"></div>
 
-<p>
-Il tuo account è attivo  🎬
-<br>
-Adesso puoi entrare nel tuo spazio cinema personale.
-</p>
+  <div class="container">
 
-<p class="quote">
-Ogni grande storia inizia dopo i titoli di testa.
-</p>
+    <div class="welcome-content">
 
-<a href="./index.html">
-Entra su paneacult
-</a>
+      <p class="welcome-kicker">
+        PANEACULT
+      </p>
 
-</div>
+      <h1 class="welcome-title">
+        Alcuni film non finiscono davvero.
+      </h1>
 
-</body>
-</html>
+      <p class="welcome-subtitle">
+
+        Restano nelle immagini,
+        nelle sensazioni,
+        nelle parole che lasciamo dietro di noi.
+
+      </p>
+
+      <div class="welcome-buttons">
+
+        <a
+          href="profilo.html"
+          class="welcome-btn primary"
+        >
+          Entra nel tuo spazio cinema
+        </a>
+
+        <a
+          href="archivio.html"
+          class="welcome-btn secondary"
+        >
+          Esplora paneacult
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
