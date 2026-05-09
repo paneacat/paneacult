@@ -2454,7 +2454,10 @@ padding:120px 0;
   padding:140px 8% 100px;
 }
 
-
+.about-image{
+  box-shadow:
+  0 20px 60px rgba(0,0,0,.25);
+}
 
 
 
