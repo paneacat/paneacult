@@ -2295,11 +2295,10 @@ display:flex;
 ========================= */
 
 .about-hero{
-max-width:620px;
+max-width:600px;
   margin:0 auto;
 padding:120px 0;
   text-align:left;
-
 }
 
 .about-number{
