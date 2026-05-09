@@ -2416,13 +2416,6 @@ padding:120px 0;
 
 }
 
-.about-cards .container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  align-items: stretch;
-}
-
 /* =========================
    ABOUT CARD
 ========================= */
@@ -2668,6 +2661,22 @@ padding:120px 0;
   opacity: 0.8;
 
 }
+
+.about-cards .container {
+
+  background: transparent !important;
+
+  border: none !important;
+
+  box-shadow: none !important;
+
+  backdrop-filter: none !important;
+
+  -webkit-backdrop-filter: none !important;
+
+}
+
+
 
 
 
