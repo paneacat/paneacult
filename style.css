@@ -2697,6 +2697,10 @@ padding:120px 0;
   -webkit-backdrop-filter: none !important;
 
   display: grid;
+ margin-top: 0 !important;
+
+  padding-top: 0 !important;
+
 
   grid-template-columns: repeat(3, 1fr);
 
