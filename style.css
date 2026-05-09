@@ -705,19 +705,6 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 }
 
-/* =========================
-   ABOUT CARDS
-========================= */
-
-.sections {
-
-  max-width: 1200px;
-
-  margin: 80px auto;
-
-  padding: 0 24px;
-
-}
 
 /* =========================
    10. ARCHIVIO
@@ -2397,21 +2384,15 @@ padding:120px 0;
 ========================= */
 
 .about-cards {
-  min-height: 320px;
-  padding: 38px;
-  border-radius: 30px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: 0.3s ease;
+
   max-width: 1200px;
+
   margin: 100px auto;
 
+  padding: 0 40px;
+
 }
+
 
 /* =========================
    ABOUT CARD
@@ -2528,11 +2509,8 @@ padding:120px 0;
 .sections {
 
   max-width: 1200px;
-
   margin: 80px auto;
-
   padding: 0 40px;
-
 }
 
 .sections .container {
@@ -2671,7 +2649,15 @@ padding:120px 0;
 
   -webkit-backdrop-filter: none !important;
 
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+
 }
+
+
 
 
 
