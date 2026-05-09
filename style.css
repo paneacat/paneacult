@@ -706,7 +706,6 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
     left:100%;
   }
 
-}
 /* =========================
    SECTIONS GRID
 ========================= */
@@ -716,11 +715,17 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
   margin: 80px auto;
 
+}
+
+.sections .container {
+
   display: flex;
 
   flex-direction: row;
 
   gap: 24px;
+
+  align-items: stretch;
 
 }
 
