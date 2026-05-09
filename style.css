@@ -8,6 +8,21 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root{
+
+  --panea-blue:#0d2e40;
+
+  --panea-yellow:#fdc103;
+
+  --panea-white:#f5f1ea;
+
+  --panea-text:#d7dbe0;
+
+  --panea-border:rgba(255,255,255,.10);
+
+}
+
+
 *,
 *::before,
 *::after {
