@@ -707,31 +707,30 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   }
 
 /* =========================
-   SECTIONS GRID
+   ABOUT CARDS
 ========================= */
+
 .sections {
 
   max-width: 1200px;
 
   margin: 80px auto;
 
+  padding: 0 24px;
+
 }
 
-.sections > .container {
+.sections .container {
 
-  display: flex;
+  display: grid;
 
-  flex-direction: row;
+  grid-template-columns: repeat(3, 1fr);
 
   gap: 24px;
 
-  align-items: stretch;
-
 }
 
-.card {
-
-  flex: 1;
+.sections .card {
 
   padding: 36px;
 
@@ -744,8 +743,6 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   backdrop-filter: blur(14px);
 
   -webkit-backdrop-filter: blur(14px);
-
-  transition: 0.3s ease;
 
 }
 
