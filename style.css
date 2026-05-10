@@ -1456,29 +1456,26 @@ body.login-page{
 
 /* CENTRO */
 
-.login-hero .container{
 
-  position: relative;
-
-  z-index: 2;
-
-  width: 100%;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-}
-
-.login-page .logo-block{
+.login-page .header{
 
   position: absolute;
 
-  left: 40px;
+  top: 0;
 
-  top: 28px;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 50;
+
+}
+
+.login-page .header-inner{
+
+  justify-content: flex-start;
+
+  padding-left: 42px;
 
 }
 
