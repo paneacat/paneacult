@@ -1705,14 +1705,13 @@ body.login-page{
 
   top: 42px;
 
-  right: 60px;
-  z-index: 100;
+  right: 40px;
 
-  font-size: 12px;
+  z-index: 30;
 
-  letter-spacing: .18em;
+  color: #f8f3eb;
 
-  text-transform: uppercase;
+  text-decoration: none;
 
 }
 
