@@ -1941,7 +1941,7 @@ overflow-wrap: break-word;
 
 .sidebar-series{
 
-  color:#f4b400;
+  color: var(--panea-white);
 
   font-weight:500;
 
