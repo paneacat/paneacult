@@ -624,7 +624,6 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   overflow:hidden;
 
   position:relative;
-
   margin-bottom:24px;
 }
 
@@ -652,6 +651,11 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 }
 
+.loader-bar::after {
+
+  background: #000000;
+
+}
 .load-more-wrapper{
   display:flex;
   justify-content:center;
