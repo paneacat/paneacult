@@ -102,8 +102,6 @@ button:hover,
   color:#0b1f26;
 }
 
-
-
 /* =========================
    3. TYPOGRAPHY
 ========================= */
@@ -2134,6 +2132,42 @@ overflow-wrap: break-word;
   font-weight:500;
 
   letter-spacing:.08em;
+
+}
+
+.save-movie-btn{
+
+  width: 100%;
+
+  margin-top: 14px;
+
+  padding: 13px 16px;
+
+  border: 1px solid rgba(255,255,255,.1);
+
+  background: rgba(13,46,64,.35);
+
+  color: #f3c433;
+
+  border-radius: 14px;
+
+  font-size: 11px;
+
+  letter-spacing: .14em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: .3s ease;
+
+}
+
+.save-movie-btn:hover{
+
+  background: #f3c433;
+
+  color: #000;
 
 }
 
