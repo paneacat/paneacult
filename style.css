@@ -1466,7 +1466,38 @@ font-weight:500;
 
 }
 
+.login-divider{
 
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  font-size: 12px;
+
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,.45);
+
+
+ .login-divider::before,
+.login-divider::after{
+
+  content: "";
+
+  flex: 1;
+
+  height: 1px;
+
+  background: rgba(255,255,255,.08);
+
+}
+ 
 /* SFONDO OVERLAY */
 
 .login-overlay {
