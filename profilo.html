@@ -1,1 +1,182 @@
+<!DOCTYPE html>
+<html lang="it">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Profilo — paneacult</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css?v=10"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<body class="profile-page">
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="profile-header">
+
+  <a
+    href="index.html"
+    class="profile-logo"
+  >
+    paneacult
+  </a>
+
+  <nav class="profile-nav">
+
+    <a href="archivio.html">
+      Archivio
+    </a>
+
+    <a href="featured.html">
+      Recensioni
+    </a>
+
+    <button class="logout-btn">
+      Logout
+    </button>
+
+  </nav>
+
+</header>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="profile-hero">
+
+  <p class="profile-kicker">
+    IL TUO SPAZIO CINEMA
+  </p>
+
+  <h1 class="profile-title">
+    Il cinema continua qui.
+  </h1>
+
+  <p class="profile-subtitle">
+
+    Il tuo archivio personale
+    di film e recensioni.
+
+  </p>
+
+</section>
+
+<!-- =========================
+     USER INFO
+========================= -->
+
+<section class="profile-user">
+
+  <div class="profile-user-box">
+
+    <p class="profile-user-label">
+      Account
+    </p>
+
+    <p
+      class="profile-email"
+      id="profileEmail"
+    >
+      caricamento...
+    </p>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     FILM SALVATI
+========================= -->
+
+<section class="saved-movies">
+
+  <div class="section-top">
+
+    <h2>
+      Film salvati
+    </h2>
+
+  </div>
+
+  <div class="saved-grid">
+
+    <div class="saved-card">
+      <img
+        src="img/lalaland.jpg"
+        alt="La La Land"
+      >
+    </div>
+
+    <div class="saved-card">
+      <img
+        src="img/her.jpg"
+        alt="Her"
+      >
+    </div>
+
+    <div class="saved-card">
+      <img
+        src="img/blackswan.jpg"
+        alt="Black Swan"
+      >
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     QUOTE
+========================= -->
+
+<section class="profile-quote">
+
+  <p>
+
+    “Alcuni film continuano
+    a vivere molto dopo
+    i titoli di coda.”
+
+  </p>
+
+</section>
+
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+<script
+  src="scriptapp.js"
+  defer
+></script>
+
+</body>
+</html>
