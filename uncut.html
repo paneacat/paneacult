@@ -269,19 +269,49 @@
       <p class="sidebar-value sidebar-series">
         #SGUARDICONTEMPORANEI
       </p>
-<button
-  class="save-movie-btn"
+<div class="movie-actions">
 
-  data-movie="Diamanti grezzi"
+  <button
+    class="save-movie-btn"
+    data-type="saved"
+    data-icon="save"
+    data-movie="Diamanti grezzi"
+    data-poster="img/uncut.webp"
+    data-link="uncut.html"
+  >
 
-  data-poster="img/uncut.webp"
+    ☆ Salva il film
 
-  data-link="uncut.html"
->
+  </button>
 
-  ☆ Salva film
+  <button
+    class="save-movie-btn"
+    data-type="watched"
+    data-icon="watched"
+    data-movie="Diamanti grezzi"
+    data-poster="img/uncut.webp"
+    data-link="uncut.html"
+  >
 
-</button>
+    ✓ L'ho visto
+
+  </button>
+
+  <button
+    class="save-movie-btn"
+    data-type="favorite"
+    data-icon="favorite"
+    data-movie="Diamanti grezzi"
+    data-poster="img/uncut.webp"
+    data-link="uncut.html"
+  >
+
+    ♡ Lo adoro!
+
+  </button>
+
+</div>
+      
       
     </div>
 
@@ -406,7 +436,10 @@
   </div>
 
 </footer>
-
+<script
+  src="scriptapp.js"
+  defer
+></script>
 <script src="script.js"></script>
 </body>
 </html>
