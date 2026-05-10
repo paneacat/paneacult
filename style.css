@@ -2764,225 +2764,88 @@ padding:120px 0;
 
 
 
-
-
-
-
-
-/* =========================
-   14. MEDIA QUERIES
-========================= */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 768px) {
 
-  .header-inner {
-    flex-direction: column;
-  gap: 18px;
-    padding: 24px;
+  /* =========================
+     GLOBAL
+  ========================= */
+
+  body{
+    overflow-x:hidden;
   }
 
-  .rubriche-grid {
-    grid-template-columns: 1fr;
-  }
-
-     .home-cinema{
-    padding:20px 0 70px;
-  }
-
-  .section-header{
-    margin-bottom:22px;
-  }
-
-  .section-label{
-    font-size:2rem;
-    line-height:1.1;
-  }
-
-  .slider{
-    gap:18px;
-  }
-
-  .slide-item{
-    min-width:78%;
-    flex:0 0 78%;
-  }
-
-  .slide-card img{
-    height:300px;
-  }
-
-  .slide-info h3{
-    font-size:1.15rem;
-  }
-
-  .slider-arrows{
-    display:none;
-  }
-
-  .archivio-grid{
-    grid-template-columns: repeat(2,1fr);
-   gap:18px;
-  }
-
-  .archivio-img{
-    height:250px;
-  }
-
-  .film-title{
-    font-size:1rem;
-  }
-
+  .container,
+  .review-layout,
+  .hero-layout,
+  .manifesto-wrapper,
   .about-layout{
-    grid-template-columns:1fr;
-    gap:3rem;
-  }
-
-  .about-quote{
-    font-size:1.5rem;
-  }
-
-  .poster-signature{
-    width:160px;
-}
-
-
-  .review-layout{
-
-    grid-template-columns:1fr;
-
-    gap:50px;
-
-    padding:80px 0;
-
-  }
-
-  .sidebar-box{
-
-    position:relative;
-
-    top:auto;
-
-  }
-   .review-hero{
-
-    height:72vh;
-
-   }
-
-  .manifesto-wrapper{
-
-    flex-direction:column;
-    align-items:flex-start;
-
-    gap:45px;
-  }
-
-  .manifesto-divider{
-
     width:100%;
-    height:1px;
+    padding-left:22px;
+    padding-right:22px;
   }
 
-  .manifesto-left h2{
-
-    font-size:3rem;
+  section{
+    margin-bottom:70px;
   }
 
-  .manifesto-right h3{
-
-    font-size:2.2rem;
-  }
-   .archivio-hero{
-
-    margin-top:80px;
-    margin-bottom:50px;
+  h1{
+    font-size:42px;
+    line-height:.95;
   }
 
-  .archivio-title{
-
-    font-size:2.8rem;
-  }
-   .contact-grid{
-
-    grid-template-columns:1fr;
-
-   }
-
-  .login-layout{
-
-    grid-template-columns:1fr;
-
-    gap:50px;
-
+  h2{
+    font-size:32px;
+    line-height:1;
   }
 
-  .login-title{
-
-    font-size:4rem;
+  p{
+    font-size:16px;
+    line-height:1.8;
   }
 
   /* =========================
      HEADER
   ========================= */
 
+  .header{
+    padding-top:20px;
+    padding-bottom:10px;
+  }
+
   .header-inner{
-
     flex-direction:column;
-
     align-items:center;
-
-    justify-content:center;
-
-    gap:28px;
-
-    padding-top:40px;
-
+    gap:18px;
   }
 
   .logo-block{
-
     text-align:center;
-
+    align-items:center;
   }
 
   .logo{
-
-    font-size:4.8rem;
-
-    line-height:.9;
-
+    font-size:3.8rem;
   }
 
   .logo-subtitle{
-
-    font-size:1rem;
-
+    font-size:.68rem;
     letter-spacing:.22em;
-
-    line-height:1.6;
-
   }
 
-  /* =========================
-     MENU
-  ========================= */
-
   .menu{
-
-    justify-content:center;
-
     flex-wrap:wrap;
-
-    gap:22px;
-
+    justify-content:center;
+    gap:14px;
+    margin-top:0;
   }
 
   .menu a{
-
-    font-size:1rem;
-
-    letter-spacing:.08em;
-
+    font-size:.78rem;
+    letter-spacing:.12em;
   }
 
   /* =========================
@@ -2990,364 +2853,280 @@ padding:120px 0;
   ========================= */
 
   .hero{
-
-    padding-top:90px;
-
-    text-align:center;
-
+    padding-top:40px;
+    padding-bottom:30px;
   }
 
-  .hero-content{
-
-    width:100%;
-
-    max-width:100%;
-
-    margin:0 auto;
-
-    align-items:center;
-
-  }
-
-  .hero h1{
-
-    font-size:4.7rem;
-
-    line-height:.92;
-
-    text-align:center;
-
-  }
-
-  .hero p{
-
-    font-size:1.15rem;
-
-    line-height:1.8;
-
-    max-width:90%;
-
-    margin:30px auto 0;
-
-    text-align:center;
-}
-
-   /* margini globali */
-
-  .hero,
-  .home-login,
-  .newsletter,
-  .contact-hero,
-  .sections{
-
-    padding-left:24px;
-    padding-right:24px;
-
-    box-sizing:border-box;
-
-  }
-
-  /* testo hero */
-
-  .hero-content{
-
-    max-width:100%;
-
-    margin:0 auto;
-
-  }
-
-  .hero h1{
-
-    font-size:22px;
-
-    line-height:.95;
-
-  }
-
-  .hero p{
-
-    max-width:100%;
-
-    font-size:1.15rem;
-
-    line-height:1.8;
-
-  }
-
-  /* login section */
-
-  .home-login-content{
-
-    max-width:100%;
-
-  }
-
-  .home-login h2{
-
-    font-size:3.5rem;
-
-    line-height:1;
-
-  }
- .hero-text h1,
-.hero h1,
-.manifesto-left h2{
-
-  font-size:3.2rem;
-  line-height:.95;
-  letter-spacing:-1px;
-
-}
-
- section{
-  margin-bottom:90px;
- }
-.menu{
-  gap:14px;
-}
-
-.menu a{
-  font-size: 13px;
-  letter-spacing:.12em;
-}
- 
- .logo{
-  font-size:4rem;
-}
-
-.logo-subtitle{
-  font-size:.7rem;
-}
-
- .container{
-  width:min(88%, 1100px);
- }
-
- .card{
-  padding:1.6rem;
-  border-radius:24px;
- }
- .card h2{
-  font-size:1.8rem;
- }
- .section-divider{
-
-  width:100%;
-  height:1px;
-
-  background:
-  rgba(255,255,255,.08);
-
-  margin:70px 0;
-
- }
- .hero-text,
-.manifesto-left,
-.home-login-content{
-
-  width:100%;
-  padding-left:26px;
-  padding-right:26px;
-
-  box-sizing:border-box;
-
-}
- .hero-text h1,
-.manifesto-left h2{
-
-  max-width:95%;
-
-}
- .hero-text,
-.manifesto-left{
-
-  margin:0 auto;
-
-}
-.hero-text{
-
-  width:100%;
-  padding:0 24px;
-  box-sizing:border-box;
-
-}
-
-.hero-text h1{
-
-  font-size:4.2rem;
-  line-height:.92;
-  letter-spacing:-2px;
-
-  max-width:100%;
-  word-break:keep-all;
-
-}
- .login-form input{
-
-  width:100%;
-  height:64px;
-
-  padding:0 24px;
-
-  border:none;
-  outline:none;
-
-  border-radius:22px;
-
-  background:rgba(255,255,255,.92);
-
-  color:#0b1f26;
-
-  font-size:1rem;
-  font-family:'Inter', sans-serif;
-
-  box-sizing:border-box;
-
-  transition:.25s;
-
-}
-
-/* placeholder */
-
-.login-form input::placeholder{
-
-  color:rgba(11,31,38,.45);
-
-  letter-spacing:.5px;
-
-}
-
-/* focus */
-
-.login-form input:focus{
-
-  background:var(--panea-white);
-
-  transform:scale(1.01);
-
-  box-shadow:
-    0 0 0 2px rgba(255,210,74,.35);
-}
- 
-.login-form{
-
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-
-}
-
-.login-box{
-  margin-top:42px;
-  backdrop-filter:blur(18px);
- border:1px solid rgba(255,255,255,.08);
-}
- 
-.login-text{
-  padding:0 30px;
-}
- 
- .login-text h1{
-
-  font-size:4rem;
-  line-height:.92;
-
- }
- 
-.login-hero::before{
-
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(6,18,27,.82),
-      rgba(6,18,27,.72)
-    );
-
-  z-index:1;
-
-}
- 
-.login-overlay{
-  padding-top:140px; 
-  position:relative;
- z-index:2;
-}
-
-.login-hero {
-  padding-top:320px;
-}
-
-  .about-image{
-    width:100%;
-    max-width:320px;
-    height:380px;
-  }
- 
- .about-page{
+  .hero-layout{
     flex-direction:column;
-    text-align:center;
-  gap:40px;
-    padding:90px 24px;
-
-
-  .about-sections .sections,
-  .contact-section .sections {
-
-    grid-template-columns: 1fr;
-
+    align-items:flex-start;
+    gap:40px;
   }
 
-    .about-cards {
-
-    padding: 0 20px;
-
+  .hero-text{
+    padding:0;
+    max-width:100%;
   }
 
-  .about-card {
-
-    padding: 28px;
-
-    border-radius: 24px;
-
+  .hero-text h1{
+    font-size:3.4rem;
+    line-height:.92;
+    max-width:100%;
   }
 
-  .about-card h2 {
-
-    font-size: 1.8rem;
-
-  }
-  .sections {
-
-    padding: 0 20px;
-
+  .hero-sub{
+    font-size:1rem;
+    line-height:1.8;
+    max-width:100%;
   }
 
-  .card {
-
-    padding: 28px;
-
-    border-radius: 24px;
-
+  .hero-cta{
+    min-width:100%;
+    padding-bottom:0;
   }
 
-  .card h2 {
-
-    font-size: 1.8rem;
-
+  .cta-link{
+    width:100%;
+    height:54px;
+    font-size:.95rem;
   }
-   .contact-cards .container {
 
-    grid-template-columns: 1fr !important;
+  /* =========================
+     HOME CARD
+  ========================= */
 
-   }
+  .film-section{
+    margin:80px auto;
+  }
 
- }
+  .film-card{
+    max-width:100%;
+    padding:18px;
+    border-radius:26px;
+    margin-bottom:26px;
+  }
+
+  .film-card img{
+    height:260px;
+    border-radius:18px;
+  }
+
+  .film-content{
+    padding:18px 4px 4px;
+  }
+
+  .film-card h2{
+    font-size:2rem;
+    line-height:1;
+  }
+
+  .film-card p{
+    max-width:100%;
+    font-size:.95rem;
+    line-height:1.7;
+  }
+
+  /* =========================
+     SLIDER
+  ========================= */
+
+  .slide-item{
+    min-width:84%;
+    flex:0 0 84%;
+  }
+
+  .slide-card img{
+    height:280px;
+  }
+
+  .slider-arrows{
+    display:none;
+  }
+
+  /* =========================
+     ARCHIVIO
+  ========================= */
+
+  .archivio-hero{
+    margin-top:70px;
+    margin-bottom:40px;
+    padding:0 20px;
+  }
+
+  .archivio-title{
+    font-size:2.7rem;
+    line-height:.95;
+  }
+
+  .archivio-subtitle{
+    font-size:.95rem;
+    line-height:1.8;
+  }
+
+  .archivio-grid{
+    grid-template-columns:1fr;
+    gap:26px;
+  }
+
+  .archivio-img{
+    height:280px;
+  }
+
+  /* =========================
+     REVIEW PAGE
+  ========================= */
+
+  .review-hero{
+    height:58vh;
+  }
+
+  .hero-overlay{
+    padding:0 20px;
+  }
+
+  .hero-overlay h1{
+    font-size:3rem;
+    line-height:.95;
+  }
+
+  .hero-subtitle{
+    font-size:1rem;
+    line-height:1.6;
+  }
+
+  .review-layout{
+    grid-template-columns:1fr;
+    gap:36px;
+    padding-top:50px;
+    padding-bottom:60px;
+  }
+
+  .sidebar-box{
+    position:relative;
+    top:auto;
+    min-width:100%;
+    padding:1.6rem;
+    border-radius:24px;
+  }
+
+  .review-content{
+    max-width:100%;
+    padding-top:0;
+  }
+
+  .review-content p{
+    font-size:1rem;
+    line-height:2;
+  }
+
+  .review-end{
+    margin-top:50px;
+  }
+
+  /* =========================
+     LOGIN
+  ========================= */
+
+  .login-content{
+    padding:120px 24px 80px;
+  }
+
+  .login-title{
+    font-size:3rem;
+    line-height:.92;
+  }
+
+  .login-subtitle{
+    font-size:1rem;
+    line-height:1.6;
+    white-space:normal;
+  }
+
+  .login-box input{
+    height:58px;
+    font-size:1rem;
+    border-radius:18px;
+  }
+
+  .login-buttons{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .login-btn,
+  .register-btn{
+    width:100%;
+    height:54px;
+  }
+
+  /* =========================
+     ABOUT
+  ========================= */
+
+  .about-page,
+  .about-layout,
+  .manifesto-wrapper{
+    flex-direction:column;
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .about-title{
+    font-size:3.4rem;
+  }
+
+  .about-highlight{
+    font-size:2rem;
+  }
+
+  .about-image img{
+    width:100%;
+  }
+
+  /* =========================
+     CARDS GRID
+  ========================= */
+
+  .sections .container,
+  .contact-cards .container,
+  .about-cards .container{
+    grid-template-columns:1fr !important;
+  }
+
+  .card,
+  .contact-card,
+  .about-card{
+    min-height:auto;
+    padding:26px;
+    border-radius:24px;
+  }
+
+  /* =========================
+     NEWSLETTER
+  ========================= */
+
+  .newsletter{
+    padding:40px 20px;
+  }
+
+  .newsletter h2{
+    font-size:2rem;
+  }
+
+  .newsletter-btn{
+    max-width:100%;
+  }
+
+  /* =========================
+     FOOTER
+  ========================= */
+
+  .credits{
+    margin-top:70px;
+    padding-bottom:50px;
+  }
+
+}
 
 
 
