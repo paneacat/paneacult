@@ -1453,7 +1453,7 @@ font-weight:500;
 
 .login-title {
 
-  font-size: 25px;
+  font-size: 35px;
 
   line-height: 0.95;
 
@@ -1553,12 +1553,9 @@ font-weight:500;
 .register-btn {
 
   flex: 1;
-
-  height: 62px;
-
-  border-radius: 20px;
-
-  font-size: 18px;
+ height: 48px;
+font-size: 15px;
+border-radius: 14px;
 
   font-family: 'Inter', sans-serif;
 
