@@ -1547,7 +1547,7 @@ login-text{
 
   width: 100%;
 
-  max-width: 760px;
+  max-width: 460px;
 
   margin: 0 auto;
 
@@ -1605,9 +1605,9 @@ login-text{
 
   display: flex;
 
-  gap: 22px;
+  gap: 14px;
 
-  margin-top: 10px;
+  margin-top: 6px;
 
 }
 
@@ -1618,11 +1618,11 @@ login-text{
 
   flex: 1;
 
-  height: 82px;
+  height: 62px;
 
-  border-radius: 28px;
+  border-radius: 20px;
 
-  font-size: 24px;
+  font-size: 18px;
 
   font-family: 'Inter', sans-serif;
 
