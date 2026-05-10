@@ -2019,8 +2019,7 @@ font-size:1.06rem;
 }
 
 .hero-overlay h1{
-
-  font-size:clamp(3rem, 7vw, 6rem);
+font-size: 3.5rem;
 
   line-height:.95;
 
@@ -2880,7 +2879,12 @@ padding:120px 0;
     max-width:100%;
   }
 
-  .hero-cta{
+  .hero-overlay h1{
+    font-size: 2.8rem;
+    line-height: .95;
+  }
+ 
+ .hero-cta{
     min-width:100%;
     padding-bottom:0;
   }
