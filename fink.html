@@ -3,9 +3,7 @@
 
 <head>
 
-  <!-- =========================
-       BASE
-  ========================= -->
+  <!-- BASE -->
 
   <meta charset="UTF-8">
 
@@ -21,9 +19,7 @@
     content="Recensioni cinematografiche tra ossessioni visive, classici e cinema contemporaneo."
   >
 
-  <!-- =========================
-       PWA / MOBILE
-  ========================= -->
+  <!-- PWA -->
 
   <meta
     name="theme-color"
@@ -50,46 +46,36 @@
     content="paneacult"
   >
 
-  <!-- =========================
-       ICONS
-  ========================= -->
-  
-<!-- APPLE -->
+  <!-- ICONS -->
 
-<link
-  rel="apple-touch-icon"
-  sizes="180x180"
-  href="img/apple-icon-180.png"
->
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="img/apple-icon-180.png"
+  >
 
-<!-- ANDROID -->
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="192x192"
+    href="img/icon-192.png"
+  >
 
-<link
-  rel="icon"
-  type="image/png"
-  sizes="192x192"
-  href="img/icon-192.png"
->
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="512x512"
+    href="img/icon-512.png"
+  >
 
-<link
-  rel="icon"
-  type="image/png"
-  sizes="512x512"
-  href="img/icon-512.png"
->
-
-  <!-- =========================
-       MANIFEST
-  ========================= -->
+  <!-- MANIFEST -->
 
   <link
     rel="manifest"
     href="manifest.json"
   >
 
-  <!-- =========================
-       SEO / SOCIAL
-  ========================= -->
+  <!-- SEO -->
 
   <meta
     property="og:title"
@@ -101,10 +87,10 @@
     content="Il cinema non è intrattenimento. È ciò che resta."
   >
 
- <meta
-  property="og:image"
-  content="https://paneacat.github.io/paneacult.github.io/img/logo.png"
->
+  <meta
+    property="og:image"
+    content="https://paneacat.github.io/paneacult.github.io/img/logo.png"
+  >
 
   <meta
     property="og:type"
@@ -121,9 +107,7 @@
     content="summary_large_image"
   >
 
-  <!-- =========================
-       FONTS
-  ========================= -->
+  <!-- FONTS -->
 
   <link
     rel="preconnect"
@@ -141,18 +125,14 @@
     rel="stylesheet"
   >
 
-  <!-- =========================
-       ICONS
-  ========================= -->
+  <!-- ICONS -->
 
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   >
 
-  <!-- =========================
-       CSS
-  ========================= -->
+  <!-- CSS -->
 
   <link
     rel="stylesheet"
@@ -162,27 +142,47 @@
 </head>
 
 <body class="home">
+
 <div class="cursor"></div>
 
 <!-- HEADER -->
+
 <header class="header">
+
   <div class="container header-inner">
+
     <div class="logo-block">
-      <h1 class="logo">paneacult</h1>
-      <p class="logo-subtitle">MY THERAPIST SAYS CINEMA</p>
+
+      <h1 class="logo">
+        paneacult
+      </h1>
+
+      <p class="logo-subtitle">
+        MY THERAPIST SAYS CINEMA
+      </p>
+
     </div>
 
     <nav class="menu">
+
       <a href="index.html">HOME</a>
+
       <a href="archivio.html">RECENSIONI</a>
+
       <a href="featured.html">CHI SONO</a>
+
       <a href="contatti.html">CONTATTI</a>
+
       <a href="login.html">LOGIN</a>
+
     </nav>
+
   </div>
+
 </header>
 
 <!-- HERO -->
+
 <section class="review-hero">
 
   <img
@@ -197,7 +197,7 @@
       href="archivio.html"
       class="back-link"
     >
-    Torna alle recensioni
+      ← Torna alle recensioni
     </a>
 
     <h1>
@@ -205,12 +205,16 @@
     </h1>
 
     <p class="hero-subtitle">
-      quando la follia si impossessa dell’anima
+      Quando la follia si impossessa dell’anima.
     </p>
 
   </div>
 
 </section>
+
+<!-- LAYOUT -->
+
+<section class="review-layout">
 
   <!-- SIDEBAR -->
 
@@ -246,76 +250,101 @@
         Dove guardarlo
       </p>
 
-      <a
-        href="#"
-        class="sidebar-watch"
-      >
+      <p class="sidebar-watch unavailable">
         Non disponibile
-      </a>
+      </p>
 
       <p class="sidebar-label">
-  Rubrica
-</p>
+        Rubrica
+      </p>
 
-<p class="sidebar-value sidebar-series">
-  #CINEMAPRESCRITTO
-</p>
+      <p class="sidebar-value sidebar-series">
+        #CINEMAPRESCRITTO
+      </p>
 
     </div>
 
   </aside>
-    
-<section class="review-content">
 
-  <p>
-    <strong>Barton Fink</strong> <em>(John Turturro)</em> è un commediografo
-    ossessionato dalla ricerca della “vera letteratura”: una scrittura capace
-    di raccontare l’uomo comune e i suoi conflitti. Dopo il successo ottenuto
-    a <strong>Broadway</strong>, viene chiamato a <strong>Hollywood</strong>
-    per lavorare a una sceneggiatura sul <em>wrestling</em>.
-  </p>
+  <!-- CONTENUTO -->
 
-  <p>
-    Quello che dovrebbe rappresentare il coronamento della sua carriera si
-    trasforma però rapidamente in una paralizzante crisi creativa.
-  </p>
+  <div class="review-content">
 
-  <p>
-    Nel claustrofobico <em>Hotel Earle</em>, dove soggiorna durante la stesura
-    del film, Barton incontra <strong>Charlie Meadows</strong>
-    <em>(John Goodman)</em>, vicino di stanza tanto cordiale quanto inquietante.
-  </p>
-
-  <p>
-    La presenza di Charlie finirà per trascinare il protagonista in un vortice
-    sempre più ambiguo fatto di paranoia, caos e follia.
-  </p>
-
-  <p>
-    I <strong>fratelli Coen</strong> costruiscono un’opera visionaria e
-    disturbante, sospesa tra satira hollywoodiana, thriller psicologico e
-    incubo surreale. Barton Fink è un film ricco di
-    <strong>simbolismi</strong>, capace di confondere continuamente realtà e
-    immaginazione, mantenendo fino alla fine un’atmosfera opprimente e magnetica.
-  </p>
-
-  <p>
-    Grottesco, onirico e profondamente metacinematografico, resta uno dei
-    lavori più particolari e affascinanti della filmografia dei Coen.
-  </p>
-
-  <div class="review-end">
-    <div class="rating">★★★★☆</div>
-    <p class="firma-recensione">
-  Patrizia Catania<br>
-  — paneacult
+    <p>
+      <strong>Barton Fink</strong>
+      <em>(John Turturro)</em>
+      è un commediografo ossessionato dalla ricerca della “vera letteratura”:
+      una scrittura capace di raccontare l’uomo comune e i suoi conflitti.
     </p>
-    
+
+    <p>
+      Dopo il successo ottenuto a
+      <strong>Broadway</strong>,
+      viene chiamato a
+      <strong>Hollywood</strong>
+      per lavorare a una sceneggiatura sul wrestling.
+    </p>
+
+    <p>
+      Quello che dovrebbe rappresentare il coronamento della sua carriera si
+      trasforma rapidamente in una paralizzante crisi creativa.
+    </p>
+
+    <p>
+      Nel claustrofobico
+      <em>Hotel Earle</em>,
+      Barton incontra
+      <strong>Charlie Meadows</strong>
+      <em>(John Goodman)</em>,
+      vicino di stanza tanto cordiale quanto inquietante.
+    </p>
+
+    <p>
+      La presenza di Charlie trascinerà il protagonista in un vortice sempre
+      più ambiguo fatto di paranoia, caos e follia.
+    </p>
+
+    <p>
+      I
+      <strong>fratelli Coen</strong>
+      costruiscono un’opera visionaria e disturbante, sospesa tra satira
+      hollywoodiana, thriller psicologico e incubo surreale.
+    </p>
+
+    <p>
+      <strong>Barton Fink</strong>
+      è un film ricco di simbolismi, capace di confondere continuamente realtà
+      e immaginazione, mantenendo fino alla fine un’atmosfera opprimente e magnetica.
+    </p>
+
+    <p>
+      Grottesco, onirico e profondamente metacinematografico, resta uno dei
+      lavori più particolari e affascinanti della filmografia dei Coen.
+    </p>
+
+    <!-- FINALE -->
+
+    <div class="review-end">
+
+      <div class="rating">
+        ★★★★☆
+      </div>
+
+      <p class="firma-recensione">
+        Patrizia Catania<br>
+        — paneacult
+      </p>
+
+    </div>
+
   </div>
-</div>
+
 </section>
+
 <!-- NEWSLETTER -->
+
 <section class="newsletter">
+
   <div class="newsletter-inner">
 
     <p class="newsletter-kicker">
@@ -334,28 +363,45 @@
       Iscriviti alla newsletter
     </a>
 
- </div>
+  </div>
+
 </section>
-  
+
 <!-- FOOTER -->
+
 <footer class="credits">
 
   <div class="credits-inner">
 
-    <p class="credits-label fade">A cura di</p>
-    <p class="credits-name fade">paneacult</p>
+    <p class="credits-label fade">
+      A cura di
+    </p>
 
-    <p class="credits-label fade">Ideazione &amp; Scrittura</p>
-    <p class="credits-name fade">Patrizia Catania</p>
+    <p class="credits-name fade">
+      paneacult
+    </p>
 
-    <p class="credits-label fade">Anno</p>
-    <p class="credits-name fade">2026</p>
+    <p class="credits-label fade">
+      Ideazione &amp; Scrittura
+    </p>
+
+    <p class="credits-name fade">
+      Patrizia Catania
+    </p>
+
+    <p class="credits-label fade">
+      Anno
+    </p>
+
+    <p class="credits-name fade">
+      2026
+    </p>
 
   </div>
 
 </footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>
-
