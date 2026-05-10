@@ -298,3 +298,71 @@ saveBtn?.addEventListener(
 
   }
 );
+
+/* =========================
+   LOAD SAVED MOVIES
+========================= */
+
+async function loadSavedMovies(){
+
+  const savedGrid =
+    document.getElementById(
+      "savedGrid"
+    );
+
+  if(!savedGrid){
+
+    return;
+
+  }
+
+  const {
+    data: { user }
+  } =
+  await supabaseClient.auth.getUser();
+
+  if(!user){
+
+    return;
+
+  }
+
+  const { data, error } =
+    await supabaseClient
+    .from("saved_movies")
+    .select("*")
+    .eq("user_id", user.id)
+    .order("created_at", {
+      ascending: false
+    });
+
+  if(error){
+
+    console.log(error);
+
+    return;
+
+  }
+
+  savedGrid.innerHTML = "";
+
+  data.forEach(movie => {
+
+    savedGrid.innerHTML += `
+
+      <div class="saved-card">
+
+        <img
+          src="${movie.poster}"
+          alt="${movie.movie}"
+        >
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+loadSavedMovies();
