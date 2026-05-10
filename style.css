@@ -3481,7 +3481,21 @@ padding:120px 0;
 
 }
 
+/* =========================
+   SAVED STATE
+========================= */
 
+.saved-state{
+
+  opacity:.7;
+
+  cursor:default;
+
+  background:#f3c94d;
+
+  color:#000;
+
+}
 
 
 
