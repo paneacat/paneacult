@@ -3100,203 +3100,268 @@ padding:120px 0;
 }
 
 /* =========================
-   WELCOME PAGE
+   PROFILE PAGE
 ========================= */
 
-.welcome-page-body{
+.profile-page{
+
+  min-height:100vh;
 
   background:
     linear-gradient(
-      rgba(7,18,28,.82),
-      rgba(7,18,28,.9)
+      rgba(7,15,25,.88),
+      rgba(7,15,25,.94)
     ),
     url("img/wall.webp");
 
-  background-size: cover;
+  background-size:cover;
 
-  background-position: center;
+  background-position:center;
 
-  min-height: 100vh;
+  color:#f5f1ea;
 
-  overflow: hidden;
+  font-family:"Inter", sans-serif;
+
+}
+
+/* HEADER */
+
+.profile-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:28px 60px;
+
+}
+
+.profile-logo{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:2rem;
+
+  font-weight:700;
+
+  color:#f3c94d;
+
+  text-decoration:none;
+
+}
+
+.profile-nav{
+
+  display:flex;
+
+  gap:24px;
+
+  align-items:center;
+
+}
+
+.profile-nav a,
+.logout-btn{
+
+  color:#f5f1ea;
+
+  text-decoration:none;
+
+  background:none;
+
+  border:none;
+
+  font-size:.95rem;
+
+  cursor:pointer;
+
+  opacity:.8;
+
+  transition:.3s;
+
+}
+
+.profile-nav a:hover,
+.logout-btn:hover{
+
+  opacity:1;
 
 }
 
 /* HERO */
 
-.welcome-page{
+.profile-hero{
 
-  position: relative;
+  text-align:center;
 
-  min-height: 100vh;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 40px;
+  padding:90px 20px 60px;
 
 }
 
-/* OVERLAY */
+.profile-kicker{
 
-.welcome-overlay{
+  font-size:.72rem;
 
-  position: absolute;
+  letter-spacing:2px;
 
-  inset: 0;
+  color:#f3c94d;
 
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(52,120,190,.14),
-      transparent 70%
-    );
-
-  z-index: 1;
+  margin-bottom:18px;
 
 }
 
-/* CONTENT */
+.profile-title{
 
-.welcome-content{
+  font-family:"Playfair Display", serif;
 
-  position: relative;
+  font-size:clamp(3rem,8vw,5.5rem);
 
-  z-index: 2;
+  line-height:.95;
 
-  max-width: 760px;
-
-  text-align: center;
+  margin-bottom:22px;
 
 }
 
-/* KICKER */
+.profile-subtitle{
 
-.welcome-kicker{
+  font-size:1.05rem;
 
-  font-size: 12px;
-
-  letter-spacing: .22em;
-
-  text-transform: uppercase;
-
-  color: #f3c433;
-
-  margin-bottom: 18px;
-
-  font-weight: 600;
+  opacity:.78;
 
 }
 
-/* TITLE */
+/* USER */
 
-.welcome-title{
+.profile-user{
 
-  font-family:
-    "Playfair Display",
-    serif;
+  display:flex;
 
-  font-size:
-    clamp(3rem, 8vw, 6rem);
+  justify-content:center;
 
-  line-height: .92;
-
-  color: #f8f3eb;
-
-  margin-bottom: 26px;
-
-  text-shadow:
-    0 4px 18px rgba(0,0,0,.45);
+  margin-bottom:70px;
 
 }
 
-/* SUBTITLE */
+.profile-user-box{
 
-.welcome-subtitle{
+  padding:22px 28px;
 
-  font-size: 1.05rem;
+  border:1px solid rgba(255,255,255,.08);
 
-  line-height: 1.8;
+  background:rgba(20,35,55,.45);
 
-  color: rgba(255,255,255,.82);
+  backdrop-filter:blur(18px);
 
-  max-width: 680px;
-
-  margin:
-    0 auto 38px;
+  border-radius:24px;
 
 }
 
-/* BUTTONS */
+.profile-user-label{
 
-.welcome-buttons{
+  font-size:.7rem;
 
-  display: flex;
+  letter-spacing:2px;
 
-  gap: 18px;
+  opacity:.5;
 
-  justify-content: center;
-
-  flex-wrap: wrap;
+  margin-bottom:10px;
 
 }
 
-/* BTN */
+.profile-email{
 
-.welcome-btn{
-
-  padding: 16px 26px;
-
-  border-radius: 999px;
-
-  text-decoration: none;
-
-  font-size: 12px;
-
-  letter-spacing: .14em;
-
-  text-transform: uppercase;
-
-  transition: .3s ease;
+  font-size:1rem;
 
 }
 
-/* PRIMARY */
+/* SAVED */
 
-.welcome-btn.primary{
+.saved-movies{
 
-  background: #f3c433;
+  width:min(1200px,90%);
 
-  color: #000;
-
-  font-weight: 700;
+  margin:auto;
 
 }
 
-/* SECONDARY */
+.section-top{
 
-.welcome-btn.secondary{
-
-  border:
-    1px solid rgba(255,255,255,.18);
-
-  background:
-    rgba(255,255,255,.05);
-
-  color: #f8f3eb;
+  margin-bottom:30px;
 
 }
 
-/* HOVER */
+.section-top h2{
 
-.welcome-btn:hover{
+  font-family:"Playfair Display", serif;
 
-  transform: translateY(-2px);
+  font-size:2rem;
 
 }
+
+.saved-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+  gap:24px;
+
+}
+
+.saved-card{
+
+  overflow:hidden;
+
+  border-radius:24px;
+
+  background:#111;
+
+}
+
+.saved-card img{
+
+  width:100%;
+
+  display:block;
+
+}
+
+/* QUOTE */
+
+.profile-quote{
+
+  text-align:center;
+
+  padding:120px 20px;
+
+}
+
+.profile-quote p{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:clamp(1.8rem,4vw,3rem);
+
+  line-height:1.3;
+
+  opacity:.82;
+
+  max-width:800px;
+
+  margin:auto;
+
+}
+
+
+
+
+
+
+
+
 
 
 
