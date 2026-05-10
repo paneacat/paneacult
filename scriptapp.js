@@ -1,82 +1,127 @@
-const supabaseUrl = "https://czvtirkuyhcilmzbwysf.supabase.co/rest/v1/";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6dnRpcmt1eWhjaWxtemJ3eXNmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczOTM1NjIsImV4cCI6MjA5Mjk2OTU2Mn0.v--ZBxJyMAIpb1bWbN6J3DUDi5FfcoOrhKccwRyuEvw";
+const supabaseUrl =
+  "https://czvtirkuyhcilmzbwysf.supabase.co";
 
-const supabaseClient = supabase.createClient(
-  supabaseUrl,
-  supabaseKey
-);
-const loginBtn = document.querySelector(".btn-yellow");
+const supabaseKey =
+  "TUA_KEY";
 
-loginBtn?.addEventListener("click", async () => {
+const supabaseClient =
+  supabase.createClient(
+    supabaseUrl,
+    supabaseKey
+  );
 
-  const email =
-    document.querySelector('input[type="email"]').value;
+/* =========================
+   BOTTONI
+========================= */
 
-  const password =
-    document.querySelector('input[type="password"]').value;
-
-  const { error } =
-    await supabaseClient.auth.signInWithPassword({
-
-      email,
-      password
-
-    });
-
-  if(error){
-
-    alert(error.message);
-
-  } else {
-
-    window.location.href = "index.html";
-
-  }
-
-});
+const loginBtn =
+  document.querySelector(".login-btn");
 
 const registerBtn =
-  document.querySelector(".btn-outline");
+  document.querySelector(".register-btn");
 
-registerBtn?.addEventListener("click", async () => {
+/* =========================
+   LOGIN
+========================= */
 
-  const email =
-    document.querySelector('input[type="email"]').value;
+loginBtn?.addEventListener(
+  "click",
+  async (e) => {
 
-  const password =
-    document.querySelector('input[type="password"]').value;
+    e.preventDefault();
 
-  const { error } =
-    await supabaseClient.auth.signUp({
+    const email =
+      document.querySelector(
+        'input[type="email"]'
+      ).value;
 
-      email,
-      password
+    const password =
+      document.querySelector(
+        'input[type="password"]'
+      ).value;
 
-    });
+    const { error } =
+      await supabaseClient
+      .auth
+      .signInWithPassword({
 
-  if(error){
+        email,
+        password
 
-    alert(error.message);
+      });
 
-  } else {
+    if(error){
 
-    alert("Controlla la tua email ✨");
+      alert(error.message);
+
+    } else {
+
+      window.location.href =
+        "index.html";
+
+    }
 
   }
+);
 
-});
+/* =========================
+   REGISTER
+========================= */
 
+registerBtn?.addEventListener(
+  "click",
+  async () => {
 
-supabaseClient.auth.getSession()
+    const email =
+      document.querySelector(
+        'input[type="email"]'
+      ).value;
+
+    const password =
+      document.querySelector(
+        'input[type="password"]'
+      ).value;
+
+    const { error } =
+      await supabaseClient
+      .auth
+      .signUp({
+
+        email,
+        password
+
+      });
+
+    if(error){
+
+      alert(error.message);
+
+    } else {
+
+      alert(
+        "Controlla la tua email ✨"
+      );
+
+    }
+
+  }
+);
+
+/* =========================
+   SESSIONE
+========================= */
+
+supabaseClient.auth
+.getSession()
+
 .then(({ data }) => {
 
   if(data.session){
 
-    console.log("utente loggato");
+    console.log(
+      "utente loggato"
+    );
 
   }
 
 });
-
-
-
