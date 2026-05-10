@@ -3034,22 +3034,34 @@ padding:120px 0;
 }
 
 .back-link::selection {
-  background: transparent;
-  color: #f5c542;
+  color: #f5c542 !important;
+  background: transparent !important;
 }
 
 .manifesto-btn::selection {
-  background: transparent;
-  color: black;
+  color: #000 !important;
+  background: transparent !important;
 }
 
 .register-btn::selection {
-  background: transparent;
-  color: #f5c542;
+  color: #f5c542 !important;
+  background: transparent !important;
 }
 
+.back-link *::selection,
+.back-link::selection {
+  color: #f5c542 !important;
+}
 
+.manifesto-btn *::selection,
+.manifesto-btn::selection {
+  color: #000 !important;
+}
 
+.register-btn *::selection,
+.register-btn::selection {
+  color: #f5c542 !important;
+}
 
 
 
