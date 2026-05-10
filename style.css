@@ -1456,7 +1456,37 @@ body.login-page{
 
 /* CENTRO */
 
+.login-brand{
 
+  position: absolute;
+
+  top: 32px;
+
+  left: 38px;
+
+  z-index: 20;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  color: #f3c433;
+
+  text-decoration: none;
+
+  letter-spacing: -.03em;
+
+  transition: opacity .3s ease;
+
+}
+
+.login-brand:hover{
+
+  opacity: .7;
+
+}
 .login-page .header{
 
   position: absolute;
