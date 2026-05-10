@@ -1470,7 +1470,15 @@ body.login-page{
   z-index: 50;
 
 }
+.login-page .container{
 
+  width: 100%;
+
+  max-width: none;
+
+  margin: 0;
+
+}
 .login-page .header-inner{
 
   justify-content: flex-start;
