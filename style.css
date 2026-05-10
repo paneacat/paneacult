@@ -1514,8 +1514,13 @@ login-text{
 
 /* LOGIN BOX */
 
-
 .login-box {
+
+  width: 100%;
+
+  max-width: 520px;
+
+  margin: 0 auto;
 
   display: flex;
 
@@ -1531,19 +1536,19 @@ login-text{
 
   width: 100%;
 
-  height: 64px;
+  height: 58px;
 
-  padding: 0 26px;
+  padding: 0 22px;
 
-  border-radius: 22px;
+  border-radius: 18px;
 
   border: 1px solid rgba(255,255,255,0.10);
 
-  background: rgba(25, 60, 78, 0.88);
+  background: rgba(25, 60, 78, 0.90);
 
   color: white;
 
-  font-size: 16px;
+  font-size: 15px;
 
   font-family: 'Inter', sans-serif;
 
@@ -1556,7 +1561,7 @@ login-text{
   -webkit-backdrop-filter: blur(14px);
 
   box-shadow:
-    0 10px 30px rgba(0,0,0,0.18);
+    0 8px 24px rgba(0,0,0,0.16);
 
   transition: 0.3s ease;
 
@@ -1578,79 +1583,63 @@ login-text{
 
   border-color: rgba(255,255,255,0.22);
 
-  background: rgba(25, 60, 78, 0.96);
-
-  box-shadow:
-    0 0 0 4px rgba(25,60,78,0.25);
+  background: rgba(25, 60, 78, 0.98);
 
 }
 
-
-/* BOTTONI */
+/* BUTTONS */
 
 .login-buttons {
 
   display: flex;
 
-  gap: 24px;
+  gap: 14px;
 
-  margin-top: 12px;
+  margin-top: 4px;
 
 }
 
-/* BOTTONI BASE */
-
-.login-buttons button {
+.login-btn,
+.register-btn {
 
   flex: 1;
 
-  height: 86px;
+  height: 56px;
 
-  border-radius: 999px;
+  border-radius: 18px;
 
-  font-size: 22px;
+  font-size: 15px;
 
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
 
-  cursor: pointer;
-
-  transition: 0.3s ease;
+  font-weight: 600;
 
 }
 
-/* ACCEDI */
+/* LOGIN */
 
 .login-btn {
+
   border: none;
-  color: white;
- background: var(--panea-blue);
+
+  background: #f3c623;
+
+  color: #193c4e;
+
 }
 
-/* REGISTRATI */
+/* REGISTER */
 
 .register-btn {
 
-  background: rgba(8,24,48,0.5);
+  border: 1px solid rgba(255,255,255,0.10);
 
-  border: 2px solid rgba(38,126,255,0.7);
+  background: rgba(25, 60, 78, 0.88);
 
-  color: #3d8bfd;
-
-}
-
-/* HOVER */
-
-.login-btn:hover {
-
-  transform: translateY(-3px);
+  color: white;
 
 }
 
-.register-btn:hover {
-
-  background: rgba(20,40,70,0.75);
-
-}
 
 /* TESTO SOTTO */
 
