@@ -1576,17 +1576,16 @@ letter-spacing: -2px;
 
   gap: 22px;
 
-  background: rgba(11,47,68,.68);
+  backdrop-filter: blur(14px);
 
-  border: 1px solid rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.12);
 
-  border-radius: 30px;
-
-  backdrop-filter: blur(24px);
+  background: rgba(15,40,65,.38);
 
   box-shadow:
-    0 20px 70px rgba(0,0,0,.35);
+    0 10px 40px rgba(0,0,0,.25);
 
+  border-radius: 30px;
   }
 
 /* INPUT */
@@ -1686,10 +1685,9 @@ letter-spacing: -2px;
 
   position: absolute;
 
-  top: 34px;
+  top: 42px;
 
-  right: 28px;
-
+  right: 60px;
   z-index: 100;
 
   font-size: 12px;
