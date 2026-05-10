@@ -368,35 +368,36 @@ async function loadSavedMovies(){
 
     savedGrid.innerHTML += `
 
-      <a
-  href="${movie.link}"
-  class="saved-card"
->
+  <a
+    href="${movie.link}"
+    class="saved-card"
+  >
 
-        <img
-          src="${movie.poster}"
-          alt="${movie.movie}"
-        >
+    <img
+      src="${movie.poster}"
+      alt="${movie.movie}"
+    >
 
-        <div class="saved-overlay">
+    <div class="saved-overlay">
 
-          <h3>
-            ${movie.movie}
-          </h3>
+      <h3>
+        ${movie.movie}
+      </h3>
 
-          <button
-            class="remove-btn"
-            data-id="${movie.id}"
-          >
+      <button
+        class="remove-btn"
+        data-id="${movie.id}"
+      >
 
-            Rimuovi
-           
-          </button>
+        Rimuovi
 
-        </div>
+      </button>
 
-      </div>
-    `;
+    </div>
+
+  </a>
+
+`;
 
   });
 
@@ -411,15 +412,18 @@ loadSavedMovies();
 document.addEventListener(
   "click",
   async (e) => {
+if(
+  e.target.classList.contains(
+    "remove-btn"
+  )
+){
 
-    if(
-      e.target.classList.contains(
-        "remove-btn"
-      )
-    ){
+  e.preventDefault();
 
-      const id =
-        e.target.dataset.id;
+  e.stopPropagation();
+
+  const id =
+    e.target.dataset.id;
 
       await supabaseClient
         .from("saved_movies")
