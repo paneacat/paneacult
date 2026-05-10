@@ -1471,29 +1471,31 @@ login-text{
 }
 .login-box input {
 
-  width: 100%;
-
-  padding: 18px 20px;
-
-  border-radius: 18px;
-
-  border: 4px solid rgba(255,255,255,0.12);
-
   background: var(--panea-blue);
+width: 100%;
 
-  backdrop-filter: blur(14px);
+  padding: 22px 26px;
 
-  -webkit-backdrop-filter: blur(14px);
+  border-radius: 28px;
+
+  border: 1px solid rgba(255,255,255,0.10);
 
   color: white;
 
-  font-size: 15px;
+  font-size: 17px;
 
   font-family: 'Inter', sans-serif;
 
   font-weight: 400;
 
   outline: none;
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+
+  transition: 0.3s ease;
+ 
 
 }
 
@@ -1505,16 +1507,24 @@ login-text{
   font-weight: 300;
 }
 
+.login-box input:focus {
 
+  border: 1px solid rgba(255,255,255,0.18);
+
+  background: rgba(25, 60, 78, 1);
+
+  box-shadow: 0 0 24px rgba(25,60,78,0.35);
+
+}
 /* BUTTONS */
 
-.login-buttons{
+.login-buttons {
 
-  display:flex;
+  display: flex;
 
-  gap:12px;
+  gap: 18px;
 
-  margin-top:6px;
+  margin-top: 8px;
 
 }
 
@@ -1534,7 +1544,69 @@ login-text{
 
 }
 
+.login-buttons button {
 
+  flex: 1;
+
+  padding: 20px;
+
+  border-radius: 999px;
+
+  border: none;
+
+  font-size: 18px;
+
+  font-family: 'Inter', sans-serif;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+}
+
+/* ACCEDI */
+
+.login-btn {
+
+  background: #193c4e;
+
+  color: white;
+
+  box-shadow: 0 10px 30px rgba(25,60,78,0.35);
+
+}
+
+/* REGISTRATI */
+
+.register-btn {
+
+  background: transparent;
+
+  color: white;
+
+  border: 1px solid rgba(255,255,255,0.14);
+
+  backdrop-filter: blur(10px);
+
+}
+
+/* HOVER */
+
+.login-btn:hover {
+
+  transform: translateY(-2px);
+
+  background: #224d63;
+
+}
+
+.register-btn:hover {
+
+  background: rgba(255,255,255,0.06);
+
+}
 .btn-yellow,
 .btn-outline{
 
