@@ -657,10 +657,17 @@ registerBtn?.addEventListener(
         .auth
         .signUp({
 
-          email,
-          password
+  email,
+  password,
 
-        });
+  options: {
+
+    emailRedirectTo:
+      "https://paneacat.github.io/paneacult/profilo.html"
+
+  }
+
+});
 
     if(error){
 
