@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const loadMoreBtn =
     document.getElementById("loadMoreBtn");
 
+  const resetBtn =
+    document.getElementById("resetFilters");
+
   let visibleCards = 3;
 
   /* =========================
@@ -61,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if(visibleCount <= visibleCards){
 
-          card.style.display = "block";
+          card.style.display = "";
 
         } else {
 
@@ -122,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
       () => {
 
         visibleCards = 3;
+
         aggiornaFiltri();
 
       }
@@ -136,10 +140,39 @@ document.addEventListener("DOMContentLoaded", () => {
       () => {
 
         visibleCards = 3;
+
         aggiornaFiltri();
 
       }
     );
+
+  }
+
+  /* =========================
+     RESET FILTRI
+  ========================= */
+
+  if(resetBtn){
+
+    resetBtn.addEventListener("click", () => {
+
+      if(categoryFilter){
+
+        categoryFilter.value = "all";
+
+      }
+
+      if(genreFilter){
+
+        genreFilter.value = "all";
+
+      }
+
+      visibleCards = 3;
+
+      aggiornaFiltri();
+
+    });
 
   }
 
@@ -173,6 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
 
       splash.style.opacity = "0";
+
       splash.style.transition = "3.5s";
 
       setTimeout(() => {
@@ -208,11 +242,13 @@ document.addEventListener("DOMContentLoaded", () => {
       if(slider.scrollLeft >= maxScroll - 10){
 
         prev.style.opacity = "1";
+
         prev.style.pointerEvents = "auto";
 
       } else {
 
         prev.style.opacity = "0";
+
         prev.style.pointerEvents = "none";
 
       }
