@@ -1391,6 +1391,12 @@ font-weight:500;
 /* =========================
    LOGIN HERO
 ========================= */
+.login-header{
+
+  position: absolute;
+
+}
+
 body.login-page{
 
   overflow: hidden;
