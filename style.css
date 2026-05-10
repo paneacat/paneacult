@@ -1453,6 +1453,11 @@ body.login-page{
   overflow:hidden;
 }
 
+.login-page .logo-block{
+
+  transform: translateX(20px);
+
+}
 
 /* CENTRO */
 
@@ -1567,18 +1572,14 @@ body.login-page{
 
   margin-top: 6px;
 
-  font-size: 10px;
+  font-size: 15px;
 letter-spacing: 3.2px;
 opacity: .75;
 
   color: var(--panea-white);
 }
 
-.login-page .logo-block{
 
-  margin-left: 20px;
-
-}
 
 /* LOGIN BOX */
 
