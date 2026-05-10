@@ -237,20 +237,19 @@ saveBtns.forEach(btn => {
     "click",
     async () => {
 
-      const {
-        data: { user }
-      } =
-      await supabaseClient.auth.getUser();
+    const {
+  data: { user }
+} =
+await supabaseClient.auth.getUser();
 
-      if(!user){
+if(!user){
 
-        alert(
-          "Devi effettuare il login"
-        );
+  window.location.href =
+    "login.html";
 
-        return;
+  return;
 
-      }
+}
 
       const movie =
         btn.dataset.movie;
