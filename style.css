@@ -1813,7 +1813,8 @@ font-weight:500;
   position:sticky;
 
   top:130px;
-
+  min-width: 320px;
+overflow-wrap: break-word;
   padding:2rem;
 
   border:1px solid rgba(255,255,255,.08);
@@ -1831,8 +1832,7 @@ font-weight:500;
 .sidebar-label{
 
   font-size:.72rem;
- min-width: 320px;
-overflow-wrap: break-word;
+ 
   text-transform:uppercase;
 
   letter-spacing:.16em;
