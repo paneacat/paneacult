@@ -3033,35 +3033,52 @@ padding:120px 0;
 
 }
 
-.back-link::selection {
-  color: #f5c542 !important;
-  background: transparent !important;
+.back-link,
+.back-link:active,
+.back-link:focus,
+.back-link:visited {
+  color: white !important;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.manifesto-btn::selection {
-  color: #000 !important;
-  background: transparent !important;
-}
-
-.register-btn::selection {
-  color: #f5c542 !important;
-  background: transparent !important;
-}
-
-.back-link *::selection,
-.back-link::selection {
+.back-link:active {
   color: #f5c542 !important;
 }
 
-.manifesto-btn *::selection,
-.manifesto-btn::selection {
-  color: #000 !important;
+
+.manifesto-btn,
+.manifesto-btn:active,
+.manifesto-btn:focus,
+.manifesto-btn:visited {
+  color: black !important;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.register-btn *::selection,
-.register-btn::selection {
+
+.register-btn,
+.register-btn:active,
+.register-btn:focus,
+.register-btn:visited {
+  color: white !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.register-btn:active {
   color: #f5c542 !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
