@@ -257,8 +257,10 @@ saveBtn?.addEventListener(
 
         movie,
 
-        poster
+        poster,
 
+        link:
+  saveBtn.dataset.link
       }]);
 
     if(error){
@@ -366,9 +368,10 @@ async function loadSavedMovies(){
 
     savedGrid.innerHTML += `
 
-      <div
-        class="saved-card"
-      >
+      <a
+  href="${movie.link}"
+  class="saved-card"
+>
 
         <img
           src="${movie.poster}"
@@ -387,13 +390,12 @@ async function loadSavedMovies(){
           >
 
             Rimuovi
-
+           
           </button>
 
         </div>
 
       </div>
-
     `;
 
   });
