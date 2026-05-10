@@ -2,7 +2,7 @@ const supabaseUrl =
   "https://czvtirkuyhcilmzbwysf.supabase.co";
 
 const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6dnRpcmt1eWhjaWxtemJ3eXNmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczOTM1NjIsImV4cCI6MjA5Mjk2OTU2Mn0.v--ZBxJyMAIpb1bWbN6J3DUDi5FfcoOrhKccwRyuEvw";
+  "LA_TUA_KEY";
 
 const supabaseClient =
   supabase.createClient(
@@ -24,9 +24,19 @@ const logoutBtn =
     ".logout-btn"
   );
 
-const saveBtn =
-  document.querySelector(
+const saveBtns =
+  document.querySelectorAll(
     ".save-movie-btn"
+  );
+
+const loginBtn =
+  document.querySelector(
+    ".login-btn"
+  );
+
+const registerBtn =
+  document.querySelector(
+    ".register-btn"
   );
 
 /* =========================
@@ -199,90 +209,127 @@ document.addEventListener(
 );
 
 /* =========================
-   SAVE MOVIE
+   SAVE MOVIES
 ========================= */
 
-saveBtn?.addEventListener(
-  "click",
-  async () => {
+saveBtns.forEach(btn => {
 
-    const {
-      data: { user }
-    } =
-    await supabaseClient.auth.getUser();
+  btn.addEventListener(
+    "click",
+    async () => {
 
-    if(!user){
+      const {
+        data: { user }
+      } =
+      await supabaseClient.auth.getUser();
 
-      alert(
-        "Devi effettuare il login"
-      );
+      if(!user){
 
-      return;
+        alert(
+          "Devi effettuare il login"
+        );
+
+        return;
+
+      }
+
+      const movie =
+        btn.dataset.movie;
+
+      const poster =
+        btn.dataset.poster;
+
+      const link =
+        btn.dataset.link;
+
+      const type =
+        btn.dataset.type;
+
+      const icon =
+        btn.dataset.icon;
+
+      /* CHECK DUPLICATI */
+
+      const { data: existing } =
+        await supabaseClient
+          .from("saved_movies")
+          .select("*")
+          .eq("user_id", user.id)
+          .eq("movie", movie)
+          .eq("type", type);
+
+      if(existing.length > 0){
+
+        return;
+
+      }
+
+      /* INSERT */
+
+      const { error } =
+        await supabaseClient
+          .from("saved_movies")
+          .insert([{
+
+            user_id: user.id,
+
+            movie,
+
+            poster,
+
+            link,
+
+            type
+
+          }]);
+
+      if(error){
+
+        console.log(error);
+
+      }
+
+      else {
+
+        /* SAVE */
+
+        if(icon === "save"){
+
+          btn.innerText =
+            "★ Salva il film";
+
+        }
+
+        /* FAVORITE */
+
+        if(icon === "favorite"){
+
+          btn.innerText =
+            "♥ Lo adoro!";
+
+        }
+
+        /* WATCHED */
+
+        if(icon === "watched"){
+
+          btn.innerText =
+            "✓ L'ho visto";
+
+        }
+
+        btn.disabled = true;
+
+        btn.classList.add(
+          "saved-state"
+        );
+
+      }
 
     }
+  );
 
-    const movie =
-      saveBtn.dataset.movie;
-
-    const poster =
-      saveBtn.dataset.poster;
-
-    /* CHECK DUPLICATI */
-
-    const { data: existing } =
-      await supabaseClient
-      .from("saved_movies")
-      .select("*")
-      .eq("user_id", user.id)
-      .eq("movie", movie);
-
-    if(existing.length > 0){
-
-      alert(
-        "Film già salvato ✨"
-      );
-
-      return;
-
-    }
-
-    /* INSERT */
-
-    const { error } =
-      await supabaseClient
-      .from("saved_movies")
-      .insert([{
-
-        user_id: user.id,
-
-        movie,
-
-        poster,
-
-        link:
-  saveBtn.dataset.link
-      }]);
-
-    if(error){
-
-      console.log(error);
-
-      alert(
-        "Errore salvataggio"
-      );
-
-    }
-
-    else {
-
-      alert(
-        "Film salvato ✨"
-      );
-
-    }
-
-  }
-);
+});
 
 /* =========================
    LOAD SAVED MOVIES
@@ -368,36 +415,36 @@ async function loadSavedMovies(){
 
     savedGrid.innerHTML += `
 
-  <a
-    href="${movie.link}"
-    class="saved-card"
-  >
-
-    <img
-      src="${movie.poster}"
-      alt="${movie.movie}"
-    >
-
-    <div class="saved-overlay">
-
-      <h3>
-        ${movie.movie}
-      </h3>
-
-      <button
-        class="remove-btn"
-        data-id="${movie.id}"
+      <a
+        href="${movie.link}"
+        class="saved-card"
       >
 
-        Rimuovi
+        <img
+          src="${movie.poster}"
+          alt="${movie.movie}"
+        >
 
-      </button>
+        <div class="saved-overlay">
 
-    </div>
+          <h3>
+            ${movie.movie}
+          </h3>
 
-  </a>
+          <button
+            class="remove-btn"
+            data-id="${movie.id}"
+          >
 
-`;
+            Rimuovi
+
+          </button>
+
+        </div>
+
+      </a>
+
+    `;
 
   });
 
@@ -411,7 +458,7 @@ loadSavedMovies();
 
 async function checkIfSaved(){
 
-  if(!saveBtn){
+  if(!saveBtns.length){
 
     return;
 
@@ -428,28 +475,63 @@ async function checkIfSaved(){
 
   }
 
-  const movie =
-    saveBtn.dataset.movie;
+  saveBtns.forEach(async btn => {
 
-  const { data } =
-    await supabaseClient
-      .from("saved_movies")
-      .select("*")
-      .eq("user_id", user.id)
-      .eq("movie", movie);
+    const movie =
+      btn.dataset.movie;
 
-  if(data.length > 0){
+    const type =
+      btn.dataset.type;
 
-    saveBtn.innerText =
-      "Salvato ✨";
+    const icon =
+      btn.dataset.icon;
 
-    saveBtn.disabled = true;
+    const { data } =
+      await supabaseClient
+        .from("saved_movies")
+        .select("*")
+        .eq("user_id", user.id)
+        .eq("movie", movie)
+        .eq("type", type);
 
-    saveBtn.classList.add(
-      "saved-state"
-    );
+    if(data.length > 0){
 
-  }
+      /* SAVE */
+
+      if(icon === "save"){
+
+        btn.innerText =
+          "★ Salva il film";
+
+      }
+
+      /* FAVORITE */
+
+      if(icon === "favorite"){
+
+        btn.innerText =
+          "♥ Lo adoro!";
+
+      }
+
+      /* WATCHED */
+
+      if(icon === "watched"){
+
+        btn.innerText =
+          "✓ L'ho visto";
+
+      }
+
+      btn.disabled = true;
+
+      btn.classList.add(
+        "saved-state"
+      );
+
+    }
+
+  });
 
 }
 
@@ -462,18 +544,19 @@ checkIfSaved();
 document.addEventListener(
   "click",
   async (e) => {
-if(
-  e.target.classList.contains(
-    "remove-btn"
-  )
-){
 
-  e.preventDefault();
+    if(
+      e.target.classList.contains(
+        "remove-btn"
+      )
+    ){
 
-  e.stopPropagation();
+      e.preventDefault();
 
-  const id =
-    e.target.dataset.id;
+      e.stopPropagation();
+
+      const id =
+        e.target.dataset.id;
 
       await supabaseClient
         .from("saved_movies")
@@ -488,20 +571,8 @@ if(
 );
 
 /* =========================
-   LOGIN / REGISTER
+   LOGIN
 ========================= */
-
-const loginBtn =
-  document.querySelector(
-    ".login-btn"
-  );
-
-const registerBtn =
-  document.querySelector(
-    ".register-btn"
-  );
-
-/* LOGIN */
 
 loginBtn?.addEventListener(
   "click",
@@ -521,13 +592,13 @@ loginBtn?.addEventListener(
 
     const { error } =
       await supabaseClient
-      .auth
-      .signInWithPassword({
+        .auth
+        .signInWithPassword({
 
-        email,
-        password
+          email,
+          password
 
-      });
+        });
 
     if(error){
 
@@ -545,7 +616,9 @@ loginBtn?.addEventListener(
   }
 );
 
-/* REGISTER */
+/* =========================
+   REGISTER
+========================= */
 
 registerBtn?.addEventListener(
   "click",
@@ -563,13 +636,13 @@ registerBtn?.addEventListener(
 
     const { error } =
       await supabaseClient
-      .auth
-      .signUp({
+        .auth
+        .signUp({
 
-        email,
-        password
+          email,
+          password
 
-      });
+        });
 
     if(error){
 
