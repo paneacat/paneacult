@@ -1500,13 +1500,9 @@ login-text{
 /* placeholder */
 
 .login-box input::placeholder {
-
-  color: var(--panea-blue);
-
+  color: rgba(255,255,255,0.65);
   font-size: 14px;
-
   font-weight: 300;
-
 }
 
 
