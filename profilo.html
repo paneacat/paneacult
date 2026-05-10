@@ -3,6 +3,10 @@
 
 <head>
 
+  <!-- =========================
+       BASE
+  ========================= -->
+
   <meta charset="UTF-8">
 
   <meta
@@ -10,12 +14,22 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Profilo — paneacult</title>
+  <title>
+    Profilo — paneacult
+  </title>
+
+  <!-- =========================
+       CSS
+  ========================= -->
 
   <link
     rel="stylesheet"
     href="style.css?v=10"
   >
+
+  <!-- =========================
+       FONTS
+  ========================= -->
 
   <link
     rel="preconnect"
@@ -36,6 +50,8 @@
 </head>
 
 <body class="profile-page">
+
+<div class="cursor"></div>
 
 <!-- =========================
      HEADER
@@ -128,22 +144,21 @@
 
   </div>
 
-  <div class="saved-grid">
+  <!-- GRID DINAMICA -->
 
-    <div
-  class="saved-grid"
-  id="savedGrid"
-></div>
+  <div
+    class="saved-grid"
+    id="savedGrid"
+  ></div>
 
-    <div
-  class="saved-grid"
-  id="savedGrid"
-></div>
+  <!-- EMPTY STATE -->
 
-    <div
-  class="saved-grid"
-  id="savedGrid"
-></div>
+  <div
+    class="saved-empty"
+    id="savedEmpty"
+  >
+
+    Nessun film salvato.
 
   </div>
 
@@ -157,15 +172,21 @@
 
   <p>
 
-    “Alcuni film continuano
-    a vivere molto dopo
-    i titoli di coda.”
+    my therapist says cinema 
 
   </p>
 
 </section>
 
+<!-- =========================
+     SUPABASE
+========================= -->
+
 <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+<!-- =========================
+     JS
+========================= -->
 
 <script
   src="scriptapp.js"
