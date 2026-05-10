@@ -3054,20 +3054,14 @@ padding:120px 0;
   -webkit-tap-highlight-color: transparent;
 }
 
-
 .register-btn,
+.register-btn *,
 .register-btn:active,
 .register-btn:focus,
-.register-btn:visited {
-  color: white !important;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.register-btn:active {
+.register-btn:active *,
+.register-btn:focus * {
   color: #f5c542 !important;
 }
-
-
 
 
 
