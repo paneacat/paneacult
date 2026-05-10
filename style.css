@@ -1433,10 +1433,6 @@ font-weight:500;
 
 .login-content {
 
-  width: 100%;
-
-  max-width: 400px;
-
   margin: 0 auto;
 
   text-align: center;
@@ -1446,6 +1442,9 @@ font-weight:500;
   position: relative;
 
   z-index: 2;
+ width: 90%;
+
+  max-width: 900px;
 
 }
 
@@ -1472,6 +1471,7 @@ font-weight:500;
   font-size: 22px;
 
   line-height: 1.5;
+ white-space: nowrap;
 
   color: rgba(255,255,255,0.92);
 
