@@ -3099,6 +3099,206 @@ padding:120px 0;
   color: var(--panea-yellow) !important;
 }
 
+/* =========================
+   WELCOME PAGE
+========================= */
+
+.welcome-page-body{
+
+  background:
+    linear-gradient(
+      rgba(7,18,28,.82),
+      rgba(7,18,28,.9)
+    ),
+    url("img/wall.webp");
+
+  background-size: cover;
+
+  background-position: center;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+}
+
+/* HERO */
+
+.welcome-page{
+
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 40px;
+
+}
+
+/* OVERLAY */
+
+.welcome-overlay{
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(52,120,190,.14),
+      transparent 70%
+    );
+
+  z-index: 1;
+
+}
+
+/* CONTENT */
+
+.welcome-content{
+
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 760px;
+
+  text-align: center;
+
+}
+
+/* KICKER */
+
+.welcome-kicker{
+
+  font-size: 12px;
+
+  letter-spacing: .22em;
+
+  text-transform: uppercase;
+
+  color: #f3c433;
+
+  margin-bottom: 18px;
+
+  font-weight: 600;
+
+}
+
+/* TITLE */
+
+.welcome-title{
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(3rem, 8vw, 6rem);
+
+  line-height: .92;
+
+  color: #f8f3eb;
+
+  margin-bottom: 26px;
+
+  text-shadow:
+    0 4px 18px rgba(0,0,0,.45);
+
+}
+
+/* SUBTITLE */
+
+.welcome-subtitle{
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+
+  color: rgba(255,255,255,.82);
+
+  max-width: 680px;
+
+  margin:
+    0 auto 38px;
+
+}
+
+/* BUTTONS */
+
+.welcome-buttons{
+
+  display: flex;
+
+  gap: 18px;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+}
+
+/* BTN */
+
+.welcome-btn{
+
+  padding: 16px 26px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  letter-spacing: .14em;
+
+  text-transform: uppercase;
+
+  transition: .3s ease;
+
+}
+
+/* PRIMARY */
+
+.welcome-btn.primary{
+
+  background: #f3c433;
+
+  color: #000;
+
+  font-weight: 700;
+
+}
+
+/* SECONDARY */
+
+.welcome-btn.secondary{
+
+  border:
+    1px solid rgba(255,255,255,.18);
+
+  background:
+    rgba(255,255,255,.05);
+
+  color: #f8f3eb;
+
+}
+
+/* HOVER */
+
+.welcome-btn:hover{
+
+  transform: translateY(-2px);
+
+}
+
+
 
 
 
