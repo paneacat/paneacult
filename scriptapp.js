@@ -11,50 +11,153 @@ const supabaseClient =
   );
 
 /* =========================
-   BOTTONI
+   ELEMENTI
 ========================= */
 
-const loginBtn =
-  document.querySelector(".login-btn");
+const enterBtn =
+  document.querySelector(
+    ".welcome-btn.primary"
+  );
 
-const registerBtn =
-  document.querySelector(".register-btn");
+const exploreBtn =
+  document.querySelector(
+    ".welcome-btn.secondary"
+  );
 
 /* =========================
-   LOGIN
+   CHECK SESSIONE
 ========================= */
 
-loginBtn?.addEventListener(
-  "click",
-  async (e) => {
+async function checkSession(){
 
-    e.preventDefault();
+  const {
+    data: { session }
+  } =
+  await supabaseClient.auth.getSession();
 
-    const email =
-      document.querySelector(
-        'input[type="email"]'
-      ).value;
+  /* UTENTE LOGGATO */
 
-    const password =
-      document.querySelector(
-        'input[type="password"]'
-      ).value;
+  if(session){
 
-    const { error } =
-      await supabaseClient
-      .auth
-      .signInWithPassword({
+    document.body.classList.add(
+      "logged-user"
+    );
 
-        email,
-        password
+    if(enterBtn){
 
-      });
+      enterBtn.innerText =
+        "Vai al tuo archivio";
 
-    if(error){
+      enterBtn.href =
+        "profilo.html";
 
-      alert(error.message);
+    }
 
-    } else {
+  }
+
+  /* UTENTE NON LOGGATO */
+
+  else {
+
+    document.body.classList.add(
+      "guest-user"
+    );
+
+    if(enterBtn){
+
+      enterBtn.innerText =
+        "Accedi a paneacult";
+
+      enterBtn.href =
+        "login.html";
+
+    }
+
+  }
+
+}
+
+checkSession();
+
+/* =========================
+   CURSORE CUSTOM
+========================= */
+
+const cursor =
+  document.querySelector(".cursor");
+
+if(cursor){
+
+  document.addEventListener(
+    "mousemove",
+    (e) => {
+
+      cursor.style.left =
+        e.clientX + "px";
+
+      cursor.style.top =
+        e.clientY + "px";
+
+    }
+  );
+
+}
+
+/* =========================
+   PARALLAX LEGGERO
+========================= */
+
+const welcomePage =
+  document.querySelector(
+    ".welcome-page"
+  );
+
+if(welcomePage){
+
+  document.addEventListener(
+    "mousemove",
+    (e) => {
+
+      const x =
+        (window.innerWidth / 2 - e.clientX)
+        / 90;
+
+      const y =
+        (window.innerHeight / 2 - e.clientY)
+        / 90;
+
+      welcomePage.style.backgroundPosition =
+        `${50 + x}% ${50 + y}%`;
+
+    }
+  );
+
+}
+
+/* =========================
+   FADE IN
+========================= */
+
+window.addEventListener(
+  "load",
+  () => {
+
+    document.body.classList.add(
+      "loaded"
+    );
+
+  }
+);
+
+/* =========================
+   ESCAPE LOGIN
+========================= */
+
+document.addEventListener(
+  "keydown",
+  (e) => {
+
+    if(e.key === "Escape"){
 
       window.location.href =
         "index.html";
@@ -63,65 +166,3 @@ loginBtn?.addEventListener(
 
   }
 );
-
-/* =========================
-   REGISTER
-========================= */
-
-registerBtn?.addEventListener(
-  "click",
-  async () => {
-
-    const email =
-      document.querySelector(
-        'input[type="email"]'
-      ).value;
-
-    const password =
-      document.querySelector(
-        'input[type="password"]'
-      ).value;
-
-    const { error } =
-      await supabaseClient
-      .auth
-      .signUp({
-
-        email,
-        password
-
-      });
-
-    if(error){
-
-      alert(error.message);
-
-    } else {
-
-      alert(
-        "Controlla la tua email ✨"
-      );
-
-    }
-
-  }
-);
-
-/* =========================
-   SESSIONE
-========================= */
-
-supabaseClient.auth
-.getSession()
-
-.then(({ data }) => {
-
-  if(data.session){
-
-    console.log(
-      "utente loggato"
-    );
-
-  }
-
-});
