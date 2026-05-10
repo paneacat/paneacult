@@ -1534,36 +1534,40 @@ letter-spacing: -2px;
 
 .login-box{
 
-  background: rgba(25,60,78,.82);
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+  width: 100%;
+
+  max-width: 420px;
+
+  padding: 28px;
+
+  border-radius: 30px;
+
+  background: rgba(25,60,78,.58);
 
   border: 1px solid rgba(255,255,255,.08);
-
-  border-radius: 34px;
 
   backdrop-filter: blur(18px);
 
   box-shadow:
-    0 20px 80px rgba(0,0,0,.35);
-  
-display: flex;
-
-  flex-direction: column;
-
-  gap: 20px;
-
-  padding: 34px;
+    0 18px 60px rgba(0,0,0,.28);
 
 }
-
 /* INPUT */
 
 .login-box input {
 
   width: 100%;
-
   height: 64px;
 
-  padding: 0 24px;
+  padding: 0 22px;
+
+  font-size: 17px;
 
   border-radius: 22px;
 
@@ -1572,8 +1576,6 @@ display: flex;
   border: 1px solid rgba(255,255,255,.08);
 
   color: white;
-
-  font-size: 18px;
 
   font-family: 'Inter', sans-serif;
 
@@ -1685,6 +1687,16 @@ display: flex;
   color: #f3c623;
 
   transform: translateX(-3px);
+
+}
+
+.login-buttons button{
+
+  height: 54px;
+
+  border-radius: 18px;
+
+  font-size: 15px;
 
 }
 
