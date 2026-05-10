@@ -1518,14 +1518,15 @@ font-weight:500;
 
 .login-subtitle {
 
-  max-width: 300px;
+  max-width: 500px;
 
   margin: 0 auto 35px;
 
   font-size: 22px;
-text-align: center;
+
+  text-align: center;
+
   line-height: 1.5;
- white-space: nowrap;
 
   color: rgba(255,255,255,0.92);
 
