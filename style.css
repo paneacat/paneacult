@@ -1267,7 +1267,7 @@ font-weight:500;
 
 .section-title{
 
-  font-family:'Playfair Display',serif;
+  font-family: 'Inter', sans-serif;
 
   font-size:clamp(30px,5vw,54px);
 
@@ -1275,7 +1275,7 @@ font-weight:500;
 
   color:var(--panea-white);
 
-  max-width:720px;
+  font-weight: 400;
 
   margin-bottom:42px;
 }
