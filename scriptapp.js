@@ -211,3 +211,90 @@ document.addEventListener(
 
   }
 );
+
+/* =========================
+   SAVE MOVIE
+========================= */
+
+const saveBtn =
+  document.querySelector(
+    ".save-movie-btn"
+  );
+
+saveBtn?.addEventListener(
+  "click",
+  async () => {
+
+    const {
+      data: { user }
+    } =
+    await supabaseClient.auth.getUser();
+
+    if(!user){
+
+      alert(
+        "Devi effettuare il login"
+      );
+
+      return;
+
+    }
+
+    const movie =
+      saveBtn.dataset.movie;
+
+    const poster =
+      saveBtn.dataset.poster;
+
+    /* CHECK DUPLICATI */
+
+    const { data: existing } =
+      await supabaseClient
+      .from("saved_movies")
+      .select("*")
+      .eq("user_id", user.id)
+      .eq("movie", movie);
+
+    if(existing.length > 0){
+
+      alert(
+        "Film già salvato ✨"
+      );
+
+      return;
+
+    }
+
+    /* INSERT */
+
+    const { error } =
+      await supabaseClient
+      .from("saved_movies")
+      .insert([{
+
+        user_id: user.id,
+
+        movie,
+
+        poster
+
+      }]);
+
+    if(error){
+
+      console.log(error);
+
+      alert(
+        "Errore salvataggio"
+      );
+
+    } else {
+
+      alert(
+        "Film salvato ✨"
+      );
+
+    }
+
+  }
+);
