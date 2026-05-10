@@ -50,6 +50,8 @@ async function checkSession(){
   } =
   await supabaseClient.auth.getSession();
 
+  /* LOGGATO */
+
   if(session){
 
     document.body.classList.add(
@@ -68,11 +70,15 @@ async function checkSession(){
 
   }
 
+  /* NON LOGGATO */
+
   else {
 
     document.body.classList.add(
       "guest-user"
     );
+
+    /* BOTTONE WELCOME */
 
     if(enterBtn){
 
@@ -83,6 +89,22 @@ async function checkSession(){
         "login.html";
 
     }
+
+    /* BOTTONI FILM */
+
+    saveBtns.forEach(btn => {
+
+      btn.addEventListener(
+        "click",
+        () => {
+
+          window.location.href =
+            "login.html";
+
+        }
+      );
+
+    });
 
   }
 
@@ -125,9 +147,6 @@ async function loadProfile(){
     user.email;
 
 }
-
-loadProfile();
-
 /* =========================
    LOGOUT
 ========================= */
