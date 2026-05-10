@@ -3487,17 +3487,63 @@ padding:120px 0;
 
 .saved-state{
 
-  opacity:.7;
+  background:#f3c94d;
+
+  color:#000;
+
+  opacity:.9;
 
   cursor:default;
+
+}
+
+.movie-actions{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:12px;
+
+  margin-top:20px;
+
+}
+
+.save-movie-btn{
+
+  width:100%;
+
+  padding:14px 18px;
+
+  border-radius:999px;
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  background:
+    rgba(15,30,45,.45);
+
+  color:#f5f1ea;
+
+  font-size:.78rem;
+
+  letter-spacing:.08em;
+
+  cursor:pointer;
+
+  transition:.3s ease;
+
+}
+
+.save-movie-btn:hover{
 
   background:#f3c94d;
 
   color:#000;
 
+  transform:translateY(-2px);
+
 }
-
-
 
 
 
