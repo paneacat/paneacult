@@ -3055,16 +3055,15 @@ padding:120px 0;
 }
 
 .register-btn,
-.register-btn * {
+.register-btn:visited {
   color: white !important;
 }
 
 .register-btn:active,
-.register-btn:active * {
+.register-btn:focus,
+.register-btn:hover {
   color: #f5c542 !important;
 }
-
-
 
 
 
