@@ -647,7 +647,11 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
 .loader-fill {
 
-  background: #000000;
+  background: linear-gradient(
+    90deg,
+    #000000,
+    #193c4e
+  );
 
 }
 
