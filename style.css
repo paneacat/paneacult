@@ -1764,7 +1764,7 @@ font-weight:500;
 
 /* REVIEW TITLE */
 
-.review-title {
+.review-hero h1{
 
   font-family: 'Playfair Display', serif;
 
@@ -1787,7 +1787,7 @@ font-weight:500;
 
 /* REVIEW SUBTITLE */
 
-.review-subtitle {
+.hero subtitle {
 
   font-family: 'Inter', sans-serif;
 
