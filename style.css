@@ -627,6 +627,31 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 
   margin-bottom:24px;
 }
+
+/* TESTO LOADER */
+
+.loader-text {
+
+  color: #000000;
+
+}
+
+/* BARRA ESTERNA */
+
+.loader-bar {
+
+  background: rgba(0,0,0,0.12);
+
+}
+
+/* RIEMPIMENTO */
+
+.loader-fill {
+
+  background: #000000;
+
+}
+
 .load-more-wrapper{
   display:flex;
   justify-content:center;
