@@ -2049,12 +2049,17 @@ font-size:1.06rem;
 
   padding:0 25px;
 
+  width: 100%;
+
+  margin: 0 auto;
+
 }
 
 .hero-overlay h1{
   margin-bottom:20px;
  font-size: clamp(3rem, 8vw, 6rem);
   line-height: .92;
+ 
   color: #f8f3eb;
   text-shadow:
     0 4px 18px rgba(0,0,0,.45),
