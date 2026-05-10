@@ -1831,7 +1831,8 @@ font-weight:500;
 .sidebar-label{
 
   font-size:.72rem;
-
+ min-width: 320px;
+overflow-wrap: break-word;
   text-transform:uppercase;
 
   letter-spacing:.16em;
