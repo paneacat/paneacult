@@ -1646,6 +1646,38 @@ background: rgba(255,255,255,.06);
 
 }
 
+.login-back{
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 42px;
+
+  font-size: 14px;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,.72);
+
+  text-decoration: none;
+
+  transition: .25s ease;
+
+}
+
+.login-back:hover{
+
+  color: #f3c623;
+
+  transform: translateX(-3px);
+
+}
+
 /* FOOTER */
 
 .login-footer {
