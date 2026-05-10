@@ -242,25 +242,37 @@
 
     <div class="login-box">
 
-      <input
-        type="email"
-        placeholder="Email"
-      >
+      <form class="login-box">
 
-      <input
-        type="password"
-        placeholder="Password"
-      >
+  <input
+    type="email"
+    placeholder="Email"
+  >
 
-      <div class="login-buttons">
+  <input
+    type="password"
+    placeholder="Password"
+  >
 
-        <button class="login-btn">
-          Accedi
-        </button>
+  <div class="login-buttons">
 
-        <button class="register-btn">
-          Registrati
-        </button>
+    <button
+      type="submit"
+      class="login-btn"
+    >
+      Accedi
+    </button>
+
+    <button
+      type="button"
+      class="register-btn"
+    >
+      Registrati
+    </button>
+
+  </div>
+
+      </form>
 
       </div>
 
@@ -276,6 +288,6 @@
 
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 <script src="scriptapp.js"></script>
+    
 </body>
-
 </html>
