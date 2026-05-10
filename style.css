@@ -3545,7 +3545,28 @@ padding:120px 0;
 
 }
 
+.menu-toggle{
 
+  display:none;
+
+}
+
+/* HAMBURGER */
+
+.menu-toggle span{
+
+  display:block;
+
+  width:28px;
+  height:2px;
+
+  background:#f4efe8;
+
+  margin:6px 0;
+
+  border-radius:20px;
+
+}
 
 
 
@@ -3635,17 +3656,6 @@ padding:120px 0;
     letter-spacing:.22em;
   }
 
-  .menu{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:14px;
-    margin-top:0;
-  }
-
-  .menu a{
-    font-size:.78rem;
-    letter-spacing:.12em;
-  }
 
   /* =========================
      HERO
@@ -3934,7 +3944,53 @@ padding:120px 0;
     margin-top:70px;
     padding-bottom:50px;
   }
+.menu-toggle{
 
+    display:block;
+
+    background:none;
+    border:none;
+
+    cursor:pointer;
+
+    z-index:1001;
+
+  }
+
+  .menu{
+
+    position:fixed;
+
+    top:0;
+    right:-100%;
+
+    width:100%;
+    height:100vh;
+
+    background:#08293b;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:34px;
+
+    transition:.45s ease;
+
+    z-index:1000;
+
+  }
+
+  .menu.active{
+
+    right:0;
+
+  }
+ 
 }
 
 
