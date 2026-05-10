@@ -345,8 +345,7 @@ if(!user){
       }
 
     }
-  );
-
+  ); 
 });
 
 /* =========================
@@ -360,12 +359,21 @@ async function loadSavedMovies(){
       "savedGrid"
     );
 
-  const savedEmpty =
+  const watchedGrid =
     document.getElementById(
-      "savedEmpty"
+      "watchedGrid"
     );
 
-  if(!savedGrid){
+  const favoriteGrid =
+    document.getElementById(
+      "favoriteGrid"
+    );
+
+  if(
+    !savedGrid ||
+    !watchedGrid ||
+    !favoriteGrid
+  ){
 
     return;
 
@@ -399,31 +407,37 @@ async function loadSavedMovies(){
 
   }
 
+  /* RESET */
+
   savedGrid.innerHTML = "";
 
-  /* EMPTY STATE */
+  watchedGrid.innerHTML = "";
+
+  favoriteGrid.innerHTML = "";
+
+  /* EMPTY */
 
   if(data.length === 0){
 
-    if(savedEmpty){
+    savedGrid.innerHTML = `
+      <p class="empty-grid">
+        Nessun film salvato.
+      </p>
+    `;
 
-      savedEmpty.style.display =
-        "block";
+    watchedGrid.innerHTML = `
+      <p class="empty-grid">
+        Nessun film visto.
+      </p>
+    `;
 
-    }
+    favoriteGrid.innerHTML = `
+      <p class="empty-grid">
+        Nessun preferito.
+      </p>
+    `;
 
     return;
-
-  }
-
-  else {
-
-    if(savedEmpty){
-
-      savedEmpty.style.display =
-        "none";
-
-    }
 
   }
 
@@ -431,7 +445,7 @@ async function loadSavedMovies(){
 
   data.forEach(movie => {
 
-    savedGrid.innerHTML += `
+    const card = `
 
       <a
         href="${movie.link}"
@@ -464,12 +478,36 @@ async function loadSavedMovies(){
 
     `;
 
+    /* SAVED */
+
+    if(movie.type === "saved"){
+
+      savedGrid.innerHTML += card;
+
+    }
+
+    /* WATCHED */
+
+    if(movie.type === "watched"){
+
+      watchedGrid.innerHTML += card;
+
+    }
+
+    /* FAVORITE */
+
+    if(movie.type === "favorite"){
+
+      favoriteGrid.innerHTML += card;
+
+    }
+
   });
 
 }
 
 loadSavedMovies();
-
+  
 /* =========================
    CHECK SAVED
 ========================= */
