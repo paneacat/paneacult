@@ -1477,9 +1477,9 @@ login-text{
 
   border-radius: 18px;
 
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 4px solid rgba(255,255,255,0.12);
 
-  background: rgba(15, 25, 35, 0.72);
+  background: var(--panea-blue);
 
   backdrop-filter: blur(14px);
 
@@ -1501,7 +1501,7 @@ login-text{
 
 .login-box input::placeholder {
 
-  color: rgba(255,255,255,0.55);
+  color: var(--panea-blue);
 
   font-size: 14px;
 
