@@ -1635,8 +1635,6 @@ letter-spacing: -2px;
 .login-btn,
 .register-btn{
 
-  width: 100%;
-
   max-width: 260px;
 
   margin: 0 auto;
@@ -1646,6 +1644,22 @@ letter-spacing: -2px;
   align-items: center;
 
   justify-content: center;
+
+ width: 220px;
+
+  height: 56px;
+
+  border-radius: 18px;
+
+  font-size: 17px;
+
+  font-family: 'Inter', sans-serif;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
 
 }
 
