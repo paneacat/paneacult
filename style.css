@@ -1493,11 +1493,9 @@ font-weight:500;
 
   padding: 120px 40px;
 
-  position: relative;
-
   z-index: 2;
  width: 90%;
-
+ position: relative;
   max-width: 900px;
  transform: translateY(-20px);
 
@@ -1536,18 +1534,24 @@ letter-spacing: -2px;
 
 .login-box{
 
-  background: rgba(7,18,30,.42);
+  background: rgba(25,60,78,.82);
 
-  border:1px solid rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.08);
 
-  backdrop-filter: blur(20px);
+  border-radius: 34px;
 
-  padding:32px;
-
-  border-radius:32px;
+  backdrop-filter: blur(18px);
 
   box-shadow:
     0 20px 80px rgba(0,0,0,.35);
+  
+display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+
+  padding: 34px;
 
 }
 
@@ -1563,9 +1567,9 @@ letter-spacing: -2px;
 
   border-radius: 22px;
 
-  border:1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.06);
 
-background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
 
   color: white;
 
@@ -1648,25 +1652,31 @@ background: rgba(255,255,255,.06);
 
 .login-back{
 
+  position: absolute;
+
+  top: 40px;
+
+  right: 40px;
+
   display: inline-flex;
 
   align-items: center;
 
   gap: 8px;
 
-  margin-bottom: 42px;
-
-  font-size: 14px;
+  font-size: 13px;
 
   letter-spacing: .08em;
 
   text-transform: uppercase;
 
-  color: rgba(255,255,255,.72);
-
   text-decoration: none;
 
+  color: rgba(255,255,255,.72);
+
   transition: .25s ease;
+
+  z-index: 30;
 
 }
 
