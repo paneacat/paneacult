@@ -3104,9 +3104,14 @@ padding:120px 0;
     line-height:.95;
   }
 
-  .hero-subtitle{
-    font-size:1rem;
-    line-height:1.6;
+  .hero-subtitle {
+
+  text-align: center;
+
+  width: 100%;
+
+  margin: 0 auto;
+
   }
 
   .review-layout{
