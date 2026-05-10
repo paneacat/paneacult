@@ -24,6 +24,11 @@ const exploreBtn =
     ".welcome-btn.secondary"
   );
 
+const logoutBtn =
+  document.querySelector(
+    ".logout-btn"
+  );
+
 /* =========================
    CHECK SESSIONE
 ========================= */
@@ -35,7 +40,9 @@ async function checkSession(){
   } =
   await supabaseClient.auth.getSession();
 
-  /* UTENTE LOGGATO */
+  /* =========================
+     UTENTE LOGGATO
+  ========================= */
 
   if(session){
 
@@ -55,7 +62,9 @@ async function checkSession(){
 
   }
 
-  /* UTENTE NON LOGGATO */
+  /* =========================
+     UTENTE NON LOGGATO
+  ========================= */
 
   else {
 
@@ -80,11 +89,73 @@ async function checkSession(){
 checkSession();
 
 /* =========================
+   PROFILO UTENTE
+========================= */
+
+async function loadProfile(){
+
+  const {
+    data: { user }
+  } =
+  await supabaseClient.auth.getUser();
+
+  const profileEmail =
+    document.getElementById(
+      "profileEmail"
+    );
+
+  /* SE NON È NEL PROFILO */
+
+  if(!profileEmail){
+
+    return;
+
+  }
+
+  /* NON LOGGATO */
+
+  if(!user){
+
+    window.location.href =
+      "login.html";
+
+    return;
+
+  }
+
+  /* EMAIL */
+
+  profileEmail.textContent =
+    user.email;
+
+}
+
+loadProfile();
+
+/* =========================
+   LOGOUT
+========================= */
+
+logoutBtn?.addEventListener(
+  "click",
+  async () => {
+
+    await supabaseClient.auth.signOut();
+
+    window.location.href =
+      "login.html";
+
+  }
+);
+
+/* =========================
    CURSORE CUSTOM
 ========================= */
 
 const cursor =
-  document.querySelector(".cursor");
+  document.querySelector(
+    ".cursor"
+  );
 
 if(cursor){
 
@@ -97,37 +168,6 @@ if(cursor){
 
       cursor.style.top =
         e.clientY + "px";
-
-    }
-  );
-
-}
-
-/* =========================
-   PARALLAX LEGGERO
-========================= */
-
-const welcomePage =
-  document.querySelector(
-    ".welcome-page"
-  );
-
-if(welcomePage){
-
-  document.addEventListener(
-    "mousemove",
-    (e) => {
-
-      const x =
-        (window.innerWidth / 2 - e.clientX)
-        / 90;
-
-      const y =
-        (window.innerHeight / 2 - e.clientY)
-        / 90;
-
-      welcomePage.style.backgroundPosition =
-        `${50 + x}% ${50 + y}%`;
 
     }
   );
@@ -150,14 +190,19 @@ window.addEventListener(
 );
 
 /* =========================
-   ESCAPE LOGIN
+   ESCAPE
 ========================= */
 
 document.addEventListener(
   "keydown",
   (e) => {
 
-    if(e.key === "Escape"){
+    if(
+      e.key === "Escape" &&
+      document.body.classList.contains(
+        "login-page"
+      )
+    ){
 
       window.location.href =
         "index.html";
