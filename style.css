@@ -3033,8 +3033,20 @@ padding:120px 0;
 
 }
 
+.back-link::selection {
+  background: transparent;
+  color: #f5c542;
+}
 
+.manifesto-btn::selection {
+  background: transparent;
+  color: black;
+}
 
+.register-btn::selection {
+  background: transparent;
+  color: #f5c542;
+}
 
 
 
