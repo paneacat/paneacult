@@ -3055,16 +3055,14 @@ padding:120px 0;
 }
 
 .register-btn,
-.register-btn *,
-.register-btn:active,
-.register-btn:focus,
-.register-btn:active *,
-.register-btn:focus * {
-  color: #f5c542 !important;
+.register-btn * {
+  color: white !important;
 }
 
-
-
+.register-btn:active,
+.register-btn:active * {
+  color: #f5c542 !important;
+}
 
 
 
