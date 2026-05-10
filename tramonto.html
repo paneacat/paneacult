@@ -260,19 +260,48 @@
 <p class="sidebar-value sidebar-series">
   #CINEMACHERESTA
 </p>
-<button
-  class="save-movie-btn"
+<div class="movie-actions">
 
-  data-movie="Viale del tramonto"
+  <button
+    class="save-movie-btn"
+    data-type="saved"
+    data-icon="save"
+    data-movie="Viale del tramonto"
+    data-poster="img/viale-del-tramonto.webp"
+    data-link="tramonto.html"
+  >
 
-  data-poster="img/viale-del-tramonto.webp"
+    ☆ Salva il film
 
-  data-link="tramonto.html"
->
+  </button>
 
-  ☆ Salva film
+  <button
+    class="save-movie-btn"
+    data-type="watched"
+    data-icon="watched"
+    data-movie="Viale del tramonto"
+    data-poster="img/viale-del-tramonto.webp"
+    data-link="tramonto.html"
+  >
 
-</button>
+    ✓ L'ho visto
+
+  </button>
+
+  <button
+    class="save-movie-btn"
+    data-type="favorite"
+    data-icon="favorite"
+    data-movie="Viale del tramonto"
+    data-poster="img/viale-del-tramonto.webp"
+    data-link="tramonto.html"
+  >
+
+    ♡ Lo adoro!
+
+  </button>
+
+</div>
     </div>
 
   </aside>
@@ -360,7 +389,10 @@
   </div>
 
 </footer>
-
+<script
+  src="scriptapp.js"
+  defer
+></script>
 <script src="script.js"></script>
 </body>
 </html>
