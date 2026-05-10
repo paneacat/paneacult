@@ -406,6 +406,56 @@ async function loadSavedMovies(){
 loadSavedMovies();
 
 /* =========================
+   CHECK SAVED
+========================= */
+
+async function checkIfSaved(){
+
+  if(!saveBtn){
+
+    return;
+
+  }
+
+  const {
+    data: { user }
+  } =
+  await supabaseClient.auth.getUser();
+
+  if(!user){
+
+    return;
+
+  }
+
+  const movie =
+    saveBtn.dataset.movie;
+
+  const { data } =
+    await supabaseClient
+      .from("saved_movies")
+      .select("*")
+      .eq("user_id", user.id)
+      .eq("movie", movie);
+
+  if(data.length > 0){
+
+    saveBtn.innerText =
+      "Salvato ✨";
+
+    saveBtn.disabled = true;
+
+    saveBtn.classList.add(
+      "saved-state"
+    );
+
+  }
+
+}
+
+checkIfSaved();
+
+/* =========================
    REMOVE MOVIE
 ========================= */
 
