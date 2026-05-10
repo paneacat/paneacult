@@ -2,7 +2,7 @@ const supabaseUrl =
   "https://czvtirkuyhcilmzbwysf.supabase.co";
 
 const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6dnRpcmt1eWhjaWxtemJ3eXNmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczOTM1NjIsImV4cCI6MjA5Mjk2OTU2Mn0.v--ZBxJyMAIpb1bWbN6J3DUDi5FfcoOrhKccwRyuEvw";
+  "TUA_SUPABASE_KEY";
 
 const supabaseClient =
   supabase.createClient(
@@ -19,14 +19,14 @@ const enterBtn =
     ".welcome-btn.primary"
   );
 
-const exploreBtn =
-  document.querySelector(
-    ".welcome-btn.secondary"
-  );
-
 const logoutBtn =
   document.querySelector(
     ".logout-btn"
+  );
+
+const saveBtn =
+  document.querySelector(
+    ".save-movie-btn"
   );
 
 /* =========================
@@ -39,10 +39,6 @@ async function checkSession(){
     data: { session }
   } =
   await supabaseClient.auth.getSession();
-
-  /* =========================
-     UTENTE LOGGATO
-  ========================= */
 
   if(session){
 
@@ -61,10 +57,6 @@ async function checkSession(){
     }
 
   }
-
-  /* =========================
-     UTENTE NON LOGGATO
-  ========================= */
 
   else {
 
@@ -89,7 +81,7 @@ async function checkSession(){
 checkSession();
 
 /* =========================
-   PROFILO UTENTE
+   LOAD PROFILE
 ========================= */
 
 async function loadProfile(){
@@ -104,15 +96,11 @@ async function loadProfile(){
       "profileEmail"
     );
 
-  /* SE NON È NEL PROFILO */
-
   if(!profileEmail){
 
     return;
 
   }
-
-  /* NON LOGGATO */
 
   if(!user){
 
@@ -122,8 +110,6 @@ async function loadProfile(){
     return;
 
   }
-
-  /* EMAIL */
 
   profileEmail.textContent =
     user.email;
@@ -190,7 +176,7 @@ window.addEventListener(
 );
 
 /* =========================
-   ESCAPE
+   ESCAPE LOGIN
 ========================= */
 
 document.addEventListener(
@@ -215,11 +201,6 @@ document.addEventListener(
 /* =========================
    SAVE MOVIE
 ========================= */
-
-const saveBtn =
-  document.querySelector(
-    ".save-movie-btn"
-  );
 
 saveBtn?.addEventListener(
   "click",
@@ -288,7 +269,9 @@ saveBtn?.addEventListener(
         "Errore salvataggio"
       );
 
-    } else {
+    }
+
+    else {
 
       alert(
         "Film salvato ✨"
@@ -310,6 +293,11 @@ async function loadSavedMovies(){
       "savedGrid"
     );
 
+  const savedEmpty =
+    document.getElementById(
+      "savedEmpty"
+    );
+
   if(!savedGrid){
 
     return;
@@ -329,12 +317,12 @@ async function loadSavedMovies(){
 
   const { data, error } =
     await supabaseClient
-    .from("saved_movies")
-    .select("*")
-    .eq("user_id", user.id)
-    .order("created_at", {
-      ascending: false
-    });
+      .from("saved_movies")
+      .select("*")
+      .eq("user_id", user.id)
+      .order("created_at", {
+        ascending: false
+      });
 
   if(error){
 
@@ -346,16 +334,63 @@ async function loadSavedMovies(){
 
   savedGrid.innerHTML = "";
 
+  /* EMPTY STATE */
+
+  if(data.length === 0){
+
+    if(savedEmpty){
+
+      savedEmpty.style.display =
+        "block";
+
+    }
+
+    return;
+
+  }
+
+  else {
+
+    if(savedEmpty){
+
+      savedEmpty.style.display =
+        "none";
+
+    }
+
+  }
+
+  /* CARD FILM */
+
   data.forEach(movie => {
 
     savedGrid.innerHTML += `
 
-      <div class="saved-card">
+      <div
+        class="saved-card"
+      >
 
         <img
           src="${movie.poster}"
           alt="${movie.movie}"
         >
+
+        <div class="saved-overlay">
+
+          <h3>
+            ${movie.movie}
+          </h3>
+
+          <button
+            class="remove-btn"
+            data-id="${movie.id}"
+          >
+
+            Rimuovi
+
+          </button>
+
+        </div>
 
       </div>
 
@@ -366,3 +401,32 @@ async function loadSavedMovies(){
 }
 
 loadSavedMovies();
+
+/* =========================
+   REMOVE MOVIE
+========================= */
+
+document.addEventListener(
+  "click",
+  async (e) => {
+
+    if(
+      e.target.classList.contains(
+        "remove-btn"
+      )
+    ){
+
+      const id =
+        e.target.dataset.id;
+
+      await supabaseClient
+        .from("saved_movies")
+        .delete()
+        .eq("id", id);
+
+      loadSavedMovies();
+
+    }
+
+  }
+);
