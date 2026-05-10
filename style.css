@@ -1656,29 +1656,27 @@ letter-spacing: -2px;
 
   position: absolute;
 
-  top: 40px;
+  top: 38px;
 
-  right: 40px;
+  right: 42px;
 
-  display: inline-flex;
+  font-family: 'Inter', sans-serif;
 
-  align-items: center;
+  font-size: 11px;
 
-  gap: 8px;
+  font-weight: 500;
 
-  font-size: 13px;
-
-  letter-spacing: .08em;
+  letter-spacing: .22em;
 
   text-transform: uppercase;
 
   text-decoration: none;
 
-  color: rgba(255,255,255,.72);
+  color: rgba(255,255,255,.52);
 
   transition: .25s ease;
 
-  z-index: 30;
+  z-index: 20;
 
 }
 
@@ -1686,9 +1684,10 @@ letter-spacing: -2px;
 
   color: #f3c623;
 
-  transform: translateX(-3px);
+  letter-spacing: .26em;
 
 }
+
 
 .login-buttons button{
 
