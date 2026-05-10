@@ -1432,12 +1432,12 @@ login-text{
 }
 
 .login-text h1{
-  font-size: 3.5rem;
+  font-size: 22px;
   margin-bottom:.7rem;
 }
 
 .login-text p{
-  font-size:1.5rem;
+  font-size: 22px;
   line-height:1.7;
   opacity:.92;
   margin-bottom:2rem;
@@ -1451,10 +1451,6 @@ login-text{
   position: absolute;
 
   inset: 0;
-
-  background: rgba(4, 12, 24, 0.72);
-
-  backdrop-filter: blur(3px);
 
 }
 
@@ -1491,7 +1487,6 @@ login-text{
 
 }
 
-/* LOGIN BOX */
 
 /* LOGIN CONTENT */
 
@@ -1499,7 +1494,7 @@ login-text{
 
   width: 100%;
 
-  max-width: 900px;
+  max-width: 400px;
 
   margin: 0 auto;
 
