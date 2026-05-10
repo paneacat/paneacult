@@ -1421,6 +1421,7 @@ body.login-page{
   overflow: hidden;
 
 }
+
 .login-page{
 
   position:relative;
@@ -1453,12 +1454,16 @@ body.login-page{
   overflow:hidden;
 }
 
+.login-page .header-inner{
+
+  justify-content: flex-start;
+
+}
+
 .login-page .logo-block{
 
   position: relative;
-
-  left: 20px;
-
+margin-left: 20px;
 }
 
 /* CENTRO */
