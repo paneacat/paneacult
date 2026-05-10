@@ -1454,29 +1454,33 @@ body.login-page{
   overflow:hidden;
 }
 
-.login-page .header-inner{
+/* CENTRO */
 
-  justify-content: flex-start;
+.login-hero .container{
+
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
 
 }
 
 .login-page .logo-block{
 
-  position: relative;
-margin-left: 20px;
+  position: absolute;
+
+  left: 40px;
+
+  top: 28px;
+
 }
-
-/* CENTRO */
-
-.login-hero .container{
-  position:relative;
-  z-index:2;
-  width:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
 
 .login-kicker{
 
