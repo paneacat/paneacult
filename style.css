@@ -3931,9 +3931,6 @@ padding:120px 0;
     font-size:2rem;
   }
 
-  .about-image img{
-    width:100%;
-  }
 
  .about-section{
 
@@ -3945,11 +3942,27 @@ padding:120px 0;
 
   .about-image{
 
-    order:2;
+  width:140px;
+  height:140px;
 
-    margin-top:50px;
+  border-radius:28px;
 
-  }
+  overflow:hidden;
+
+  margin-left:auto;
+
+  margin-top:10px;
+
+}
+
+.about-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+}
 
   .about-content{
 
