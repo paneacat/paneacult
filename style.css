@@ -3940,31 +3940,6 @@ padding:120px 0;
 
   }
 
-  .about-image{
-
-  width:140px;
-  height:140px;
-
-  border-radius:28px;
- order:1;
-
-    margin:
-      40px 0 30px;
-  overflow:hidden;
-
-  margin-left:auto;
-   margin-top:50px;
-
-}
-
-.about-image img{
-
-  width:100%;
-  height:100%;
-  order: 2;
-  object-fit:cover;
-
-}
 
   .about-content{
     
@@ -3994,12 +3969,51 @@ padding:120px 0;
 
     flex-direction:column;
 
-   }
+  }
 
- .about-text{
+  /* INTRO */
+
+  .about-intro{
 
     order:1;
- }
+
+  }
+
+  /* FOTO */
+
+  .about-image{
+
+    order:2;
+
+    margin:
+
+      45px 0 55px;
+
+  }
+
+  .about-image img{
+
+    width:100%;
+
+    border-radius:28px;
+
+  }
+
+  /* FRASE CINEMA */
+
+  .about-cinema{
+
+    order:3;
+
+  }
+
+  /* RESTO TESTO */
+
+  .about-text{
+
+    order:4;
+
+  }
   /* =========================
      CARDS GRID
   ========================= */
