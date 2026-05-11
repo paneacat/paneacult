@@ -3935,6 +3935,45 @@ padding:120px 0;
     width:100%;
   }
 
+ .about-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+  }
+
+  .about-image{
+
+    order:2;
+
+    margin-top:50px;
+
+  }
+
+  .about-content{
+
+    order:1;
+
+  }
+
+   .about-content h1{
+
+    font-size:4.2rem;
+
+    line-height:.9;
+
+  }
+
+  .about-content p{
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+  }
+
+ 
   /* =========================
      CARDS GRID
   ========================= */
