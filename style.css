@@ -3992,131 +3992,86 @@ padding:120px 0;
   }
  
 }
-/* =========================
-   MOBILE LAYOUT
+
+  /* =========================
+   MOBILE MANIFESTO
 ========================= */
 
 @media(max-width:768px){
 
-  /* HEADER */
+  .manifesto-section{
 
-  .header{
+    flex-direction:column;
 
-    padding:22px 20px;
+    padding:140px 22px 80px;
 
-  }
-
-  .header-inner{
-
-    align-items:flex-start;
+    gap:50px;
 
   }
 
-  .logo{
-
-    font-size:3rem;
-
-  }
-
-  .logo-subtitle{
-
-    font-size:.62rem;
-
-    letter-spacing:.28em;
-
-  }
-
-  /* HERO */
-
-  .hero{
-
-    padding:
-      150px 20px 90px;
-
-  }
-
-  .hero-container{
+  .manifesto-left{
 
     width:100%;
 
   }
 
-  .hero-title{
+  .manifesto-left h1{
 
-    font-size:4.6rem;
+    font-size:4.2rem;
 
     line-height:.9;
 
     letter-spacing:-0.05em;
 
-    max-width:100%;
+    word-break:break-word;
 
   }
 
-  .hero-title .gold{
-
-    display:inline-block;
-
-  }
-
-  .hero-subtitle{
+  .manifesto-left p{
 
     margin-top:28px;
 
-    font-size:1.1rem;
+    font-size:1.08rem;
 
     line-height:1.8;
 
     max-width:100%;
 
-    color:
-      rgba(255,255,255,.72);
-
   }
 
-  /* DIVIDER */
+  /* LINEA */
 
-  .hero-divider{
+  .manifesto-divider{
 
     width:100%;
 
     height:1px;
 
-    margin:50px 0;
+    min-height:1px;
 
   }
 
-  /* SECOND BLOCK */
+  /* BLOCCO SOTTO */
 
-  .hero-second{
+  .manifesto-right{
 
-    margin-top:0;
-
-  }
-
-  .hero-kicker{
-
-    font-size:.82rem;
-
-    letter-spacing:.34em;
+    width:100%;
 
   }
 
-  .hero-second-title{
+  .manifesto-right h2{
 
-    margin-top:18px;
-
-    font-size:3.6rem;
+    font-size:3.4rem;
 
     line-height:.95;
 
   }
 
-  .hero-second-subtitle{
+  .manifesto-right p{
 
     margin-top:20px;
 
-    font-size:1.08rem;
+    font-size:1.05rem;
 
     line-height:1.8;
 
@@ -4124,11 +4079,9 @@ padding:120px 0;
 
   /* BUTTON */
 
-  .hero-btn{
+  .manifesto-btn{
 
     width:100%;
-
-    margin-top:36px;
 
     justify-content:center;
 
@@ -4136,13 +4089,12 @@ padding:120px 0;
 
     border-radius:18px;
 
-    font-size:.95rem;
-
-    letter-spacing:.22em;
-
   }
 
 }
+
+
+
 
 
 
