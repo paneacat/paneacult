@@ -3991,13 +3991,6 @@ padding:120px 0;
 
   }
  
-}
-
-  /* =========================
-   MOBILE MANIFESTO
-========================= */
-
-@media(max-width:768px){
 
   .manifesto-section{
 
@@ -4012,6 +4005,7 @@ padding:120px 0;
   .manifesto-left{
 
     width:100%;
+   font-size: 28px;
 
   }
 
