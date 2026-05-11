@@ -3946,12 +3946,14 @@ padding:120px 0;
   height:140px;
 
   border-radius:28px;
+ order:1;
 
+    margin:
+      40px 0 30px;
   overflow:hidden;
 
   margin-left:auto;
-
-  margin-top:10px;
+   margin-top:50px;
 
 }
 
@@ -3959,13 +3961,13 @@ padding:120px 0;
 
   width:100%;
   height:100%;
-
+  order: 2;
   object-fit:cover;
 
 }
 
   .about-content{
-
+    
     order:1;
 
   }
@@ -3986,7 +3988,18 @@ padding:120px 0;
 
   }
 
- 
+   .about-wrapper{
+
+    display:flex;
+
+    flex-direction:column;
+
+   }
+
+ .about-text{
+
+    order:1;
+ }
   /* =========================
      CARDS GRID
   ========================= */
