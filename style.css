@@ -3778,14 +3778,47 @@ padding:120px 0;
   }
 
   .archivio-grid{
-    grid-template-columns:1fr;
-    gap:26px;
+
+    display:grid;
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap:22px;
+
   }
 
   .archivio-img{
     height:280px;
   }
 
+ .archivio-card img{
+
+    aspect-ratio: 2 / 3;
+
+    object-fit:cover;
+
+    border-radius:22px;
+
+  }
+
+  .archivio-card h3{
+
+    font-size:1.55rem;
+
+    line-height:1.05;
+
+    margin-top:16px;
+
+  }
+
+  .archivio-card p{
+
+    font-size:.95rem;
+
+    line-height:1.5;
+
+  }
   /* =========================
      REVIEW PAGE
   ========================= */
