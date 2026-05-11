@@ -3792,9 +3792,9 @@ padding:120px 0;
     height:280px;
   }
 
- .archivio-card img{
+  .archivio-card img{
 
-    aspect-ratio: 2 / 3;
+    aspect-ratio:1/1.15;
 
     object-fit:cover;
 
