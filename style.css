@@ -3966,54 +3966,44 @@ padding:120px 0;
    .about-wrapper{
 
     display:flex;
-
     flex-direction:column;
 
   }
 
-  /* INTRO */
-
   .about-intro{
-
     order:1;
-
   }
-
-  /* FOTO */
 
   .about-image{
 
     order:2;
 
     margin:
+      35px 0 40px;
 
-      45px 0 55px;
+    display:flex;
+    justify-content:center;
 
   }
 
   .about-image img{
 
-    width:100%;
+    width:82%;
+    max-width:320px;
 
     border-radius:28px;
 
   }
 
-  /* FRASE CINEMA */
-
   .about-cinema{
-
     order:3;
-
   }
-
-  /* RESTO TESTO */
 
   .about-text{
-
     order:4;
-
   }
+ 
+  
   /* =========================
      CARDS GRID
   ========================= */
