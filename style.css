@@ -3963,15 +3963,11 @@ padding:120px 0;
 
   }
 
-   .about-wrapper{
+   .about-page{
 
     display:flex;
     flex-direction:column;
 
-  }
-
-  .about-intro{
-    order:1;
   }
 
   .about-image{
@@ -3979,7 +3975,7 @@ padding:120px 0;
     order:2;
 
     margin:
-      35px 0 40px;
+      35px 0 45px;
 
     display:flex;
     justify-content:center;
@@ -3995,12 +3991,10 @@ padding:120px 0;
 
   }
 
-  .about-cinema{
-    order:3;
-  }
-
   .about-text{
-    order:4;
+
+    order:1;
+
   }
  
   
