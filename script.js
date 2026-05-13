@@ -47,94 +47,110 @@ document.addEventListener("DOMContentLoaded", () => {
     : 6;
 
   /* =========================
-     UPDATE FILTRI
-  ========================= */
+   UPDATE FILTRI
+========================= */
 
-  function aggiornaFiltri(){
+function aggiornaFiltri(){
 
-    const category =
-      categoryFilter
-        ? categoryFilter.value
-        : "all";
+  const category =
+    categoryFilter
+      ? categoryFilter.value
+      : "all";
 
-    const genre =
-      genreFilter
-        ? genreFilter.value
-        : "all";
+  const genre =
+    genreFilter
+      ? genreFilter.value
+      : "all";
 
-    let visibleCount = 0;
+  let totalVisible = 0;
 
-    cards.forEach(card => {
+  cards.forEach(card => {
 
-      const categories =
-        card.dataset.category.split(" ");
+    const categories =
+      card.dataset.category
+        ? card.dataset.category.split(" ")
+        : [];
 
-      const matchCategory =
-        category === "all" ||
-        categories.includes(category);
+    const matchCategory =
+      category === "all" ||
+      categories.includes(category);
 
-      const matchGenre =
-        genre === "all" ||
-        categories.includes(genre);
+    const matchGenre =
+      genre === "all" ||
+      categories.includes(genre);
 
-      const visible =
-        matchCategory && matchGenre;
+    const visible =
+      matchCategory && matchGenre;
 
-      if(visible){
+    if(visible){
 
-        visibleCount++;
+      totalVisible++;
 
-        if(visibleCount <= visibleCards){
+      if(totalVisible <= visibleCards){
 
-          card.style.display = "";
+        card.style.display = "";
 
-        } else {
+      }
 
-          card.style.display = "none";
-
-        }
-
-      } else {
+      else {
 
         card.style.display = "none";
 
       }
 
-    });
+    }
 
-    /* EMPTY STATE */
+    else {
 
-    if(emptyState){
-
-      if(visibleCount === 0){
-
-        emptyState.classList.add("show");
-
-      } else {
-
-        emptyState.classList.remove("show");
-
-      }
+      card.style.display = "none";
 
     }
 
-    /* LOAD MORE */
+  });
 
-    if(loadMoreBtn){
+  /* EMPTY STATE */
 
-      if(visibleCount <= visibleCards){
+  if(emptyState){
 
-        loadMoreBtn.style.display = "none";
+    if(totalVisible === 0){
 
-      } else {
+      emptyState.classList.add(
+        "show"
+      );
 
-        loadMoreBtn.style.display = "flex";
+    }
 
-      }
+    else {
+
+      emptyState.classList.remove(
+        "show"
+      );
 
     }
 
   }
+
+  /* LOAD MORE */
+
+  if(loadMoreBtn){
+
+    if(totalVisible <= visibleCards){
+
+      loadMoreBtn.style.display =
+        "none";
+
+    }
+
+    else {
+
+      loadMoreBtn.style.display =
+        "flex";
+
+    }
+
+  }
+
+}
 
   /* =========================
      EVENT FILTRI
