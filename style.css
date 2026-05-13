@@ -3877,14 +3877,31 @@ display:flex;
 
   }
 
+
   .about-image{
 
-    position:static;
+    right:-30px;
 
-    width:120px;
+    top:140px;
 
-    margin-top:20px;
+    width:130px;
 
+    opacity:.9;
+
+  }
+
+  .about-title{
+
+    line-height:.9;
+
+    margin-bottom:28px;
+
+  }
+
+  .about-highlight{
+
+    margin-top:70px;
+    font-size: 30px;
   }
 
   .about-image img{
