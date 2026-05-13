@@ -3888,59 +3888,44 @@ display:flex;
 
   }
 
+  .about-highlight{
+    margin-top:70px;
+    font-size: 22px;
+  }
+.about-hero{
+    position: relative;
+    overflow: hidden;
+    padding: 140px 24px 80px;
+  }
+
+  .about-content{
+    position: relative;
+    z-index: 2;
+    max-width: 260px;
+  }
 
   .about-title{
-
-    line-height:.9;
-
-    margin-bottom:28px;
-
+    font-size: 5.5rem;
+    line-height: 0.9;
+    margin-bottom: 24px;
   }
 
-  .about-highlight{
-
-    margin-top:70px;
-    font-size: 30px;
+  .about-text{
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 240px;
   }
 
-.about-image{
-
-  position:absolute;
-
-    top:180px;
-
-    width:180px;
-right:-30px;
-    opacity:0.95;
-
-    z-index:1;
-
-}
-
-.about-image img{
-  max-width:none;
-  width:100%;
-    display:block;
-  transform:translateX(18px);
-
-}
-
-  .about-intro{
-
-    font-size:1.1rem;
-
-    line-height:1.8;
-
+  .about-image{
+    position: absolute;
+    right: -40px;
+    top: 300px;
+    width: 280px;
+    z-index: 1;
+    opacity: 0.95;
   }
+ 
 
- .about-text{
-
-    position:relative;
-    z-index:2;
-
-    max-width:70%;
-
- }
   /* =========================
      CARDS GRID
   ========================= */
