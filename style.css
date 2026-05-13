@@ -1583,11 +1583,10 @@ body.login-page{
 /* TITLE */
 
 .login-title {
-  margin-bottom: 26px;
  font-size: clamp(3rem, 7vw, 5.8rem);
 
   line-height: .95;
-
+  margon-top: 20px;
   margin-bottom: 10px;
 
 }
