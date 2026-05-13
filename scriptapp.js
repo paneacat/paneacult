@@ -596,8 +596,6 @@ async function checkIfSaved(){
 
       }
 
-      btn.disabled = true;
-
       btn.classList.add(
         "saved-state"
       );
