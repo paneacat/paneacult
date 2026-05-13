@@ -936,8 +936,6 @@ font-weight:500;
   margin-top: 80px;
   padding: 60px 20px;
   text-align: center;
- border-top:
-    1px solid rgba(241,197,75,.12);
 }
 
 .newsletter-inner {
@@ -975,7 +973,8 @@ font-weight:500;
   padding:
     40px 20px
     80px;
-
+border-top:
+    1px solid rgba(241,197,75,.12);
   text-align:center;
 }
 
@@ -986,25 +985,6 @@ font-weight:500;
   max-width:320px;
 
   margin:0 auto;
-}
-
-/* LINEA */
-
-.credits::before{
-
-  content:"";
-
-  display:block;
-
-  width:42px;
-
-  height:1px;
-
-  background:rgba(253,193,3,.35);
-
-  margin:
-    0 auto
-    34px;
 }
 
 /* LABEL */
