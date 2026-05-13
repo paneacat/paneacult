@@ -4007,15 +4007,19 @@ display:flex;
   }
  
 
-  .manifesto-section{
+  .manifesto-wrapper{
 
-    flex-direction:column;
+  flex-direction:column;
 
-    padding:140px 22px 80px;
+  gap:50px;
 
-    gap:50px;
+}
 
-  }
+.manifesto-home{
+
+  padding:140px 22px 80px;
+
+}
 
   .manifesto-left{
 
@@ -4024,7 +4028,7 @@ display:flex;
 
   }
 
-  .manifesto-left h1{
+ .manifesto-left h2{
 
   font-size:3.35rem;
 
