@@ -85,6 +85,12 @@ input:-webkit-autofill:focus{
     background-color 9999s ease-in-out 0s;
 
 }
+
+.no-break{
+  white-space: nowrap;
+}
+
+
 /* =========================
    GLOBAL BUTTON STYLE
 ========================= */
