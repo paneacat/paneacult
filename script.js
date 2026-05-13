@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let visibleCards =
   window.innerWidth <= 768
-    ? 4
-    : 6;
+    ? 3
+    : 4;
 
   /* =========================
    UPDATE FILTRI
@@ -164,8 +164,8 @@ function aggiornaFiltri(){
 
         visibleCards =
   window.innerWidth <= 768
-    ? 4
-    : 6;
+    ? 3
+    : 4;
 
         aggiornaFiltri();
 
@@ -182,8 +182,8 @@ function aggiornaFiltri(){
 
         visibleCards =
   window.innerWidth <= 768
-    ? 4
-    : 6;
+    ? 3
+    : 4;
         aggiornaFiltri();
 
       }
@@ -213,8 +213,8 @@ function aggiornaFiltri(){
 
       visibleCards =
   window.innerWidth <= 768
-    ? 4
-    : 6;
+    ? 3
+    : 4;
 
       aggiornaFiltri();
 
@@ -232,8 +232,8 @@ function aggiornaFiltri(){
 
       visibleCards +=
   window.innerWidth <= 768
-    ? 4
-    : 6;
+    ? 3
+    : 4;
 
       aggiornaFiltri();
 
