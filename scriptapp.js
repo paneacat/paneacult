@@ -239,19 +239,19 @@ saveBtns.forEach(btn => {
     "click",
     async () => {
 
-    const {
-  data: { user }
-} =
-await supabaseClient.auth.getUser();
+      const {
+        data: { user }
+      } =
+      await supabaseClient.auth.getUser();
 
-if(!user){
+      if(!user){
 
-  window.location.href =
-    "login.html";
+        window.location.href =
+          "login.html";
 
-  return;
+        return;
 
-}
+      }
 
       const movie =
         btn.dataset.movie;
@@ -268,7 +268,7 @@ if(!user){
       const icon =
         btn.dataset.icon;
 
-      /* CHECK DUPLICATI */
+      /* CHECK */
 
       const { data: existing } =
         await supabaseClient
@@ -278,7 +278,35 @@ if(!user){
           .eq("movie", movie)
           .eq("type", type);
 
+      /* REMOVE */
+
       if(existing.length > 0){
+
+        await supabaseClient
+          .from("saved_movies")
+          .delete()
+          .eq("id", existing[0].id);
+
+        btn.classList.remove(
+          "saved-state"
+        );
+
+        /* RESET TESTO */
+
+        if(icon === "save"){
+          btn.innerText =
+            "☆ Salva il film";
+        }
+
+        if(icon === "favorite"){
+          btn.innerText =
+            "♡ Lo adoro!";
+        }
+
+        if(icon === "watched"){
+          btn.innerText =
+            "✓ L'ho visto";
+        }
 
         return;
 
@@ -307,47 +335,34 @@ if(!user){
 
         console.log(error);
 
+        return;
+
       }
 
-      else {
+      /* ATTIVO */
 
-        /* SAVE */
+      btn.classList.add(
+        "saved-state"
+      );
 
-        if(icon === "save"){
+      if(icon === "save"){
+        btn.innerText =
+          "★ Salva il film";
+      }
 
-          btn.innerText =
-            "★ Salva il film";
+      if(icon === "favorite"){
+        btn.innerText =
+          "♥ Lo adoro!";
+      }
 
-        }
-
-        /* FAVORITE */
-
-        if(icon === "favorite"){
-
-          btn.innerText =
-            "♥ Lo adoro!";
-
-        }
-
-        /* WATCHED */
-
-        if(icon === "watched"){
-
-          btn.innerText =
-            "✓ L'ho visto";
-
-        }
-
-        btn.disabled = true;
-
-        btn.classList.add(
-          "saved-state"
-        );
-
+      if(icon === "watched"){
+        btn.innerText =
+          "✓ Visto";
       }
 
     }
-  ); 
+  );
+
 });
 
 /* =========================
