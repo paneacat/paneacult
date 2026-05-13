@@ -3858,11 +3858,8 @@ display:flex;
   ========================= */
 
    .about-page{
-
-    display:flex;
-    flex-direction:column;
-
-  }
+  padding-top:120px;
+   }
 
   .about-top{
 
@@ -3878,18 +3875,6 @@ display:flex;
   }
 
 
-  .about-image{
-
-    right:-30px;
-
-    top:140px;
-
-    width:130px;
-
-    opacity:.9;
-
-  }
-
   .about-title{
 
     line-height:.9;
@@ -3904,13 +3889,25 @@ display:flex;
     font-size: 30px;
   }
 
-  .about-image img{
+  .about-image{
 
-    width:100%;
+  display:flex;
 
-    border-radius:50%;
+  justify-content:flex-end;
 
-  }
+  align-items:flex-start;
+
+  width:100%;
+
+}
+
+.about-image img{
+
+  width:130px;
+
+  max-width:none;
+
+}
 
   .about-intro{
 
