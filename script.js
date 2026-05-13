@@ -214,7 +214,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loadMoreBtn.addEventListener("click", () => {
 
-      visibleCards += 3;
+      visibleCards +=
+  window.innerWidth <= 768
+    ? 4
+    : 6;
 
       aggiornaFiltri();
 
@@ -411,28 +414,3 @@ menuToggle?.addEventListener(
 
   }
 );
-
-
-
-const cards = document.querySelectorAll('.archivio-card');
-const loadBtn = document.querySelector('.load-more-btn');
-
-let visibleCards = 4;
-
-loadBtn.addEventListener('click', () => {
-
-  visibleCards += 4;
-
-  cards.forEach((card, index) => {
-
-    if(index < visibleCards){
-      card.style.display = 'block';
-    }
-
-  });
-
-  if(visibleCards >= cards.length){
-    loadBtn.style.display = 'none';
-  }
-
-});
