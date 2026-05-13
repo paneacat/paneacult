@@ -1905,10 +1905,9 @@ box-shadow:
 /* TEXT */
 
 .about-text{
-  margin-right:-40px;
   z-index:2;
   max-width:760px;
-
+margin-left:60px;
 }
 
 .about-number{
