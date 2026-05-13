@@ -1865,6 +1865,7 @@ box-shadow:
 
   width: min(90%, 1100px);
   margin: 0 auto;
+ margin-bottom:120px;
 
 }
 
@@ -1963,11 +1964,11 @@ box-shadow:
 
 .about-highlight{
 
-  font-size:5rem;
+  font-size:3rem;
 
   line-height:.92;
 
-  max-width:900px;
+  max-width:600px;
 
   margin-bottom:30px;
 
