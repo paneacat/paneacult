@@ -203,7 +203,10 @@ a:hover {
   line-height: .9;
   color: var(--panea-yellow);
   margin: 0;
-}
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+ }
 
 .logo-subtitle {
   margin-top: 8px;
