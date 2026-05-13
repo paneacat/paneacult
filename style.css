@@ -665,22 +665,22 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 }
 
 .load-more-btn{
-  background:#f4b400;
-  color:#111;
-   font-weight:500;
-  letter-spacing:-0.01em;
-  border:none;
-  padding:1rem 2rem;
-  border-radius:999px;
-  font-size:.9rem;
-  cursor:pointer;
-  transition:.3s;
+
+  background:transparent;
+
+  border:1px solid #f1c54b;
+
+  color:#f1c54b;
+  transition:.3s ease;
 }
 
 .load-more-btn:hover{
-  transform:translateY(-2px);
-}
 
+  background:#f1c54b;
+
+  color:#082f45;
+
+}
 /* INNER BAR */
 
 .loader::before{
