@@ -1864,8 +1864,10 @@ box-shadow:
 .about-page{
 
   width: min(90%, 1100px);
-  margin: 0 auto;
- margin-bottom:120px;
+
+  padding:170px 7% 120px;
+
+  margin-bottom:160px;
 
 }
 
@@ -1969,7 +1971,7 @@ box-shadow:
   line-height:.92;
 
   max-width:600px;
-
+  align items: center; 
   margin-bottom:30px;
 
 }
