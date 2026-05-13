@@ -3743,6 +3743,14 @@ display:flex;
     line-height:1.5;
 
   }
+
+ .archivio-grid .archivio-card{
+  display:none;
+}
+
+.archivio-grid .archivio-card:nth-child(-n+4){
+  display:block;
+}
   /* =========================
      REVIEW PAGE
   ========================= */
