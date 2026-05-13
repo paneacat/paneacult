@@ -4374,17 +4374,25 @@ display:flex;
 
   }
 
+  .contact-cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
   .contact-card{
+    width: 100%;
+    max-width: 340px;
 
-    width:100%;
+    margin: 0;
+    padding: 38px 28px;
 
-  padding-inline:20px;
-
-
-    max-width:520px;
-
-    margin:0 auto;
-
+    border-radius: 32px;
   }
 }
 
