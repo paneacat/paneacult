@@ -147,6 +147,8 @@ async function loadProfile(){
     user.email;
 
 }
+
+loadProfile();
 /* =========================
    LOGOUT
 ========================= */
