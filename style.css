@@ -1860,14 +1860,19 @@ box-shadow:
 /* =========================
    ABOUT DESKTOP
 ========================= */
-
 .about-page{
 
-  width: min(90%, 1100px);
+  width:100%;
 
-  padding:170px 7% 120px;
+  max-width:1400px;
 
-  margin-bottom:160px;
+  margin:
+    0 auto 160px;
+
+  padding:
+    170px 7% 120px;
+
+  background:#082f45;
 
 }
 
