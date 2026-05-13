@@ -1742,9 +1742,25 @@ box-shadow:
 
 .login-btn{
   font-weight:700;
+ margin-top:10px;
   box-shadow:0 8px 30px rgba(243,198,35,.22);
 }
 
+.login-form{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:18px;
+
+}
+
+.login-heading{
+
+  margin-bottom:45px;
+
+}
 /* REGISTER BUTTON */
 
 .register-btn{
