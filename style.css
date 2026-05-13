@@ -3711,46 +3711,41 @@ display:flex;
   }
 
   .archivio-grid{
-
-    display:grid;
-
-    grid-template-columns:
-      repeat(2, 1fr);
-
-    gap:18px;
-   
-
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
   }
 
-  .archivio-img{
-    height:280px;
+  .archivio-card{
+    width: 100%;
   }
 
   .archivio-card img{
-
-    aspect-ratio:1/1;
-
-    object-fit:cover;
-
-    border-radius:22px;
-
+    width: 100%;
+    height: 68vw;
+    object-fit: cover;
+    border-radius: 2rem;
   }
 
-  .archivio-card h3 {
+  .archivio-info{
+    padding-top: 1.4rem;
+  }
 
-    line-height:1.05;
-
-    margin-top:16px;
-   font-size: 1.25em;
-
+  .archivio-card h3{
+    font-size: 2.6rem;
+    line-height: 0.95;
+    margin-bottom: 1rem;
   }
 
   .archivio-card p{
+    font-size: 1.05rem;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+  }
 
-    font-size:.95rem;
-
-    line-height:1.5;
-
+  .stars{
+    font-size: 1.1rem;
+    letter-spacing: 0.15rem;
   }
 
  .archivio-grid .archivio-card{
