@@ -1863,9 +1863,8 @@ box-shadow:
 
 .about-page{
 
-  padding:120px 7% 90px;
-
-  background:#082f45;
+  width: min(90%, 1100px);
+  margin: 0 auto;
 
 }
 
