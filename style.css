@@ -1259,9 +1259,9 @@ border-top:
 ========================= */
 
 .rubriche-home{
-
+margin-top: 8px;
   padding:
-    90px 0;
+    20px 0;
 }
 
 /* KICKER */
