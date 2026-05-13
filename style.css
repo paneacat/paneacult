@@ -3857,54 +3857,6 @@ display:flex;
      ABOUT
   ========================= */
 
-  .about-page,
-  .about-layout,
-  .manifesto-wrapper{
-    flex-direction:column;
-    grid-template-columns:1fr;
-    gap:40px;
-  }
-
-  .about-title{
-    font-size:3.4rem;
-  }
-
-  .about-highlight{
-    font-size:2rem;
-  }
-
-
- .about-section{
-
-    display:flex;
-
-    flex-direction:column;
-
-  }
-
-
-  .about-content{
-    
-    order:1;
-
-  }
-
-   .about-content h1{
-
-    font-size:4.2rem;
-
-    line-height:.9;
-
-  }
-
-  .about-content p{
-
-    font-size:1.05rem;
-
-    line-height:1.8;
-
-  }
-
    .about-page{
 
     display:flex;
@@ -3912,33 +3864,44 @@ display:flex;
 
   }
 
+  .about-top{
+
+    display:grid;
+
+    grid-template-columns:
+      1fr 120px;
+
+    gap:24px;
+
+    align-items:start;
+
+  }
+
   .about-image{
 
-    order:2;
+    position:static;
 
-    margin:
-      35px 0 45px;
+    width:120px;
 
-    display:flex;
-    justify-content:center;
+    margin-top:20px;
 
   }
 
   .about-image img{
 
-    width:82%;
-    max-width:320px;
+    width:100%;
 
-    border-radius:28px;
-
-  }
-
-  .about-text{
-
-    order:1;
+    border-radius:50%;
 
   }
- 
+
+  .about-intro{
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+  }
   
   /* =========================
      CARDS GRID
