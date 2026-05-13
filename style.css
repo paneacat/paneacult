@@ -1860,6 +1860,7 @@ box-shadow:
 /* =========================
    ABOUT DESKTOP
 ========================= */
+
 .about-page{
 
   width:100%;
@@ -1871,8 +1872,7 @@ box-shadow:
 
   padding:
     170px 7% 120px;
-
-  background:#082f45;
+ 
 
 }
 
@@ -1893,6 +1893,16 @@ box-shadow:
 
 }
 
+.about-top,
+.about-bottom{
+
+  width:100%;
+
+  max-width:1200px;
+
+  margin:0 auto;
+
+}
 /* TEXT */
 
 .about-text{
@@ -1976,7 +1986,8 @@ box-shadow:
   line-height:.92;
 
   max-width:600px;
-  align items: center; 
+  margin:
+    0 auto 35px;
   margin-bottom:30px;
 
 }
@@ -1994,7 +2005,11 @@ box-shadow:
 .about-body{
 
   font-size:1.15rem;
+max-width:700px;
 
+  margin:
+    0 auto 22px;
+ 
   margin-bottom:22px;
 
 }
