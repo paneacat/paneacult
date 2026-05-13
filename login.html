@@ -27,6 +27,7 @@
   href="img/wall.webp"
 >
 
+
   <!-- =========================
        PWA / MOBILE
   ========================= -->
@@ -197,8 +198,10 @@
       Per chi continua a pensare ai film anche dopo i titoli di coda.
     </p>
 
-    <form class="login-box">
-
+    <form class="login-box"
+      autocomplete="on"
+      >
+      
   <input
     type="email"
     placeholder="Email"
@@ -209,6 +212,21 @@
     placeholder="Password"
   >
 
+      <input
+  type="email"
+  autocomplete="email"
+>
+
+<input
+  type="password"
+  autocomplete="current-password"
+>
+
+  <input
+  type="password"
+  autocomplete="new-password"
+>
+      
     <button
   type="submit"
   class="login-btn"
