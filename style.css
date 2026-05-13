@@ -1816,6 +1816,44 @@ box-shadow:
 
 }
 
+.login-form input{
+
+  width:100%;
+
+  padding:16px 18px;
+
+  border-radius:18px;
+
+  border:1px solid rgba(255,255,255,.15);
+
+  background:
+    rgba(255,255,255,.08);
+
+  color:#f5efe6;
+
+  font-size:1rem;
+
+  backdrop-filter:blur(10px);
+
+}
+
+.login-form input:-webkit-autofill,
+.login-form input:-webkit-autofill:hover,
+.login-form input:-webkit-autofill:focus{
+
+  -webkit-text-fill-color:
+    #f5efe6;
+
+  -webkit-box-shadow:
+    0 0 0px 1000px
+    rgba(255,255,255,.08)
+    inset;
+
+  border:
+    1px solid rgba(255,255,255,.15);
+
+}
+
 /* =========================
    EMPTY STATE
 ========================= */
