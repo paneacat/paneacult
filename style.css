@@ -3869,7 +3869,8 @@ display:flex;
   ========================= */
 
    .about-page{
-  padding-top:120px;
+  padding-top:80px;
+    overflow:hidden;
    }
 
   .about-top{
@@ -3902,22 +3903,23 @@ display:flex;
 
 .about-image{
 
-  display:flex;
+  position:absolute;
 
-  justify-content:flex-end;
+    right:-40px;
+    top:180px;
 
-  align-items:flex-start;
+    width:180px;
 
-  width:100%;
+    opacity:0.95;
+
+    z-index:1;
 
 }
 
 .about-image img{
-
-  width:120px;
-
   max-width:none;
-
+  width:100%;
+    display:block;
   transform:translateX(18px);
 
 }
@@ -3929,7 +3931,15 @@ display:flex;
     line-height:1.8;
 
   }
-  
+
+ .about-text{
+
+    position:relative;
+    z-index:2;
+
+    max-width:70%;
+
+ }
   /* =========================
      CARDS GRID
   ========================= */
