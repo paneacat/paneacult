@@ -718,7 +718,7 @@ movieResults.innerHTML = "";
     }
   );
 
-}
+
 
 /* =========================
    AUTOSAVE REVIEW
