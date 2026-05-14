@@ -442,9 +442,112 @@ const reviewForm =
   );
 
 let selectedMovieData = null;
+async function mostraFilmPopolari(){
 
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
+  );
+
+  const data =
+    await response.json();
+
+  movieResults.innerHTML = "";
+
+  data.results
+    .slice(0, 5)
+    .forEach(movie => {
+
+      const div =
+        document.createElement("div");
+
+      div.classList.add(
+        "movie-result"
+      );
+
+      div.innerHTML = `
+      
+        <img
+          src="https://image.tmdb.org/t/p/w200${movie.poster_path}"
+          alt="${movie.title}"
+        >
+
+        <div>
+
+          <h3>
+            ${movie.title}
+          </h3>
+
+          <p>
+            ${movie.release_date?.slice(0,4) || ""}
+          </p>
+
+        </div>
+
+      `;
+
+      div.addEventListener(
+        "click",
+        () => {
+
+          reviewForm.style.display =
+            "block";
+
+          selectedMovieData = movie;
+
+          selectedMovie.innerHTML = `
+          
+            <div class="selected-movie-card">
+
+              <img
+                src="https://image.tmdb.org/t/p/w300${movie.poster_path}"
+                alt="${movie.title}"
+              >
+
+              <div>
+
+                <h2>
+                  ${movie.title}
+                </h2>
+
+                <p>
+                  ${movie.release_date?.slice(0,4) || ""}
+                </p>
+
+              </div>
+
+            </div>
+
+          `;
+
+          movieResults.innerHTML = "";
+
+          movieSearchInput.value =
+            movie.title;
+
+        }
+      );
+
+      movieResults.appendChild(div);
+
+    });
+
+}
 if(movieSearchInput){
+movieSearchInput.addEventListener(
+  "focus",
+  () => {
 
+    if(
+      movieSearchInput.value.trim()
+      === ""
+    ){
+
+      mostraFilmPopolari();
+
+    }
+
+  }
+);
   movieSearchInput.addEventListener(
     "input",
     async () => {
