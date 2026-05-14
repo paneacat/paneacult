@@ -677,7 +677,10 @@ const reviewRating =
   document.getElementById(
     "reviewRating"
   );
-
+const autosaveStatus =
+  document.getElementById(
+    "autosaveStatus"
+  );
 /* LOAD SAVED */
 
 if(reviewText){
@@ -723,19 +726,32 @@ reviewText?.addEventListener(
       reviewText.value
     );
 
+    if(autosaveStatus){
+
+      autosaveStatus.textContent =
+        "Bozza salvata";
+
+      autosaveStatus.style.opacity =
+        ".9";
+
+      clearTimeout(
+        window.autosaveTimeout
+      );
+
+      window.autosaveTimeout =
+        setTimeout(() => {
+
+          autosaveStatus.textContent =
+            "Bozza salvata automaticamente";
+
+          autosaveStatus.style.opacity =
+            ".55";
+
+        }, 1500);
+
+    }
+
   }
 );
 
-/* SAVE RATING */
-
-reviewRating?.addEventListener(
-  "change",
-  () => {
-
-    localStorage.setItem(
-      "paneacult_review_rating",
-      reviewRating.value
-    );
-
-  }
-);
+  
