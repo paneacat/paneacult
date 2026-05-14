@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+  <!-- =========================
+       BASE
+  ========================= -->
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Scrivi una recensione • paneacult
+  </title>
+
+  <meta
+    name="description"
+    content="Cerca un film, scrivi recensioni e condividi il tuo cinema su paneacult."
+  >
+
+  <!-- =========================
+       SEO / SOCIAL
+  ========================= -->
+
+  <meta
+    property="og:title"
+    content="Scrivi una recensione • paneacult"
+  >
+
+  <meta
+    property="og:description"
+    content="Condividi il tuo cinema."
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://www.paneacult.com/add-review.html"
+  >
+
+  <meta
+    property="og:image"
+    content="https://www.paneacult.com/img/logo.png"
+  >
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <!-- =========================
+       PWA
+  ========================= -->
+
+  <meta
+    name="theme-color"
+    content="#0b2f44"
+  >
+
+  <link
+    rel="manifest"
+    href="manifest.json"
+  >
+
+  <!-- =========================
+       FONTS
+  ========================= -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- =========================
+       CSS
+  ========================= -->
+
+  <link
+    rel="stylesheet"
+    href="style.css?v=11"
+  >
+
+</head>
+
+<body class="add-review-body">
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header class="header">
+
+    <div class="container header-inner">
+
+      <a
+        href="index.html"
+        class="logo"
+      >
+        paneacult
+      </a>
+
+      <nav class="menu">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="archivio.html">
+          Recensioni
+        </a>
+
+        <a
+          href="add-review.html"
+          class="active"
+        >
+          Scrivi
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+  <!-- =========================
+       MAIN
+  ========================= -->
+
+  <main class="add-review-page">
+
+    <section class="container">
+
+      <p class="page-kicker">
+        COMMUNITY
+      </p>
+
+      <h1 class="page-title">
+        Scrivi una recensione
+      </h1>
+
+      <p class="page-subtitle">
+        Cerca un film e condividi il tuo punto di vista.
+      </p>
+
+      <!-- SEARCH -->
+
+      <div class="movie-search">
+
+        <input
+          type="text"
+          id="movieSearchInput"
+          placeholder="Cerca un film..."
+          autocomplete="off"
+        >
+
+        <div id="movieResults"></div>
+
+      </div>
+
+      <!-- FILM SELEZIONATO -->
+
+      <div
+        id="selectedMovie"
+        class="selected-movie"
+      ></div>
+
+      <!-- REVIEW -->
+
+      <div class="review-form">
+
+        <textarea
+          id="reviewText"
+          placeholder="Scrivi la tua recensione..."
+        ></textarea>
+
+        <!-- RATING -->
+
+        <select id="reviewRating">
+
+          <option value="">
+            Valutazione
+          </option>
+
+          <option value="1">
+            ★☆☆☆☆
+          </option>
+
+          <option value="2">
+            ★★☆☆☆
+          </option>
+
+          <option value="3">
+            ★★★☆☆
+          </option>
+
+          <option value="4">
+            ★★★★☆
+          </option>
+
+          <option value="5">
+            ★★★★★
+          </option>
+
+        </select>
+
+        <!-- BUTTON -->
+
+        <button id="publishReviewBtn">
+
+          Pubblica recensione
+
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =========================
+       SCRIPT
+  ========================= -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
