@@ -3773,14 +3773,16 @@ display:flex;
 
 .movie-action-btn{
 
-  border:1px solid #f5c518;
-  background:transparent;
-  color:#f5c518;
-  padding:12px 18px;
+  padding:6px 12px;
+  font-size:.72rem;
   border-radius:999px;
-  cursor:pointer;
-  font-size:.95rem;
-  transition:.25s ease;
+
+  width:auto;
+  min-width:unset;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 
 }
 
@@ -3807,7 +3809,11 @@ display:flex;
 
 }
 
+.review-top-actions button{
 
+  flex:none;
+
+}
 
 
 
