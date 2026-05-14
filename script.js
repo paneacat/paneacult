@@ -436,6 +436,11 @@ const selectedMovie =
     "selectedMovie"
   );
 
+const reviewForm =
+  document.getElementById(
+    "reviewForm"
+  );
+
 let selectedMovieData = null;
 
 if(movieSearchInput){
@@ -496,12 +501,15 @@ if(movieSearchInput){
           `;
 
           div.addEventListener(
-            "click",
-            () => {
+  "click",
+  () => {
 
-              selectedMovieData = movie;
+    reviewForm.style.display =
+      "block";
 
-              selectedMovie.innerHTML = `
+    selectedMovieData = movie;
+
+    selectedMovie.innerHTML = `
               
                 <div class="selected-movie-card">
 
