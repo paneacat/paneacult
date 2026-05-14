@@ -645,9 +645,8 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
 /* =========================
    LOADING BAR
 ========================= */
-body,
 .loader-screen {
-  background: #f2c200;
+  background: #fdc103;
 }
 
 .loader{
