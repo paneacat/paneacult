@@ -562,7 +562,6 @@ movieSearchInput.addEventListener(
 
   }
 );
-  if(movieSearchInput){
   movieSearchInput.addEventListener(
     "input",
     async () => {
@@ -720,6 +719,8 @@ movieResults.innerHTML = "";
     }
   );
 
+}
+}
 
 
 /* =========================
