@@ -430,3 +430,17 @@ menuToggle?.addEventListener(
 
   }
 );
+
+const API_KEY = "3688d1b3985d41091da268200e1841ef";
+
+async function cercaFilm(query) {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`
+  );
+
+  const data = await response.json();
+
+  console.log(data.results);
+}
+
+cercaFilm("Interstellar");
