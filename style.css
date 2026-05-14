@@ -3501,6 +3501,7 @@ display:flex;
 
 }
 
+/* SCRIVI RECENSIONE */
 .movie-search{
   position: relative;
   margin-top: 40px;
@@ -3681,7 +3682,31 @@ display:flex;
   opacity: .85;
   max-width: 700px;
 }
+.selected-movie-card img{
 
+  width: 220px;
+
+  border-radius: 24px;
+
+  object-fit: cover;
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.35);
+
+  flex-shrink: 0;
+
+}
+.selected-movie-card{
+
+  display: flex;
+
+  gap: 40px;
+
+  align-items: flex-start;
+
+  margin-top: 50px;
+
+}
 
 
 
@@ -4582,6 +4607,21 @@ display:flex;
 
     border-radius: 32px;
   }
+ .selected-movie-card{
+
+    flex-direction: column;
+
+    gap: 24px;
+
+  }
+
+  .selected-movie-card img{
+
+    width: 100%;
+
+    max-width: 320px;
+
+ 
 }
 
 
