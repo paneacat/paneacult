@@ -3662,7 +3662,9 @@ display:flex;
 
 }
 
-
+.hidden-review-form{
+  display: none;
+}
 
 
 
