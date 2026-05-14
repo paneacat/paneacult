@@ -3771,21 +3771,6 @@ display:flex;
 
 }
 
-.movie-action-btn{
-
-  padding:6px 12px;
-  font-size:.72rem;
-  border-radius:999px;
-
-  width:auto;
-  min-width:unset;
-
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-}
-
 .movie-action-btn:hover{
 
   background:#f5c518;
@@ -3797,8 +3782,35 @@ display:flex;
 
   display:flex;
   justify-content:flex-end;
-  gap:12px;
-  margin-bottom:18px;
+  gap:10px;
+  margin-bottom:16px;
+
+}
+
+.movie-action-btn{
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  width:auto !important;
+  min-width:unset;
+
+  padding:6px 12px;
+
+  font-size:.72rem;
+
+  border-radius:999px;
+
+  background:transparent;
+
+  border:1px solid rgba(255,255,255,.5);
+
+  color:white;
+
+  cursor:pointer;
+
+  flex:none !important;
 
 }
 
