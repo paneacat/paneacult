@@ -3708,7 +3708,19 @@ display:flex;
 
 }
 
+.review-actions{
 
+  margin-top: 30px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+}
 
 
 
@@ -4620,8 +4632,27 @@ display:flex;
     width: 100%;
 
     max-width: 320px;
-
+  }
  
+ .review-actions{
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+  }
+
+  #reviewRating{
+
+    width: 100%;
+
+  }
+
+  #publishReviewBtn{
+
+    width: 100%;
+
+  }
 }
 
 
