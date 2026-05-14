@@ -915,6 +915,5 @@ publishReviewBtn?.addEventListener(
 
   }
 );
-    }
-}
+
 
