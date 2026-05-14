@@ -453,6 +453,10 @@ const reviewForm =
   );
 
 let selectedMovieData = null;
+let currentMovieStatus = null;
+
+
+
 async function mostraFilmPopolari(){
 
   const response = await fetch(
@@ -973,12 +977,65 @@ document.addEventListener(
 
 
 
-
-
 const publishReviewBtn =
   document.getElementById(
     "publishReviewBtn"
   );
+/* =========================
+   BUTTON STATES
+========================= */
+
+function updateMovieButtons(status){
+
+  const watchedBtn =
+    document.getElementById(
+      "markWatchedBtn"
+    );
+
+  const watchlistBtn =
+    document.getElementById(
+      "markWatchlistBtn"
+    );
+
+  watchedBtn?.classList.remove(
+    "active"
+  );
+
+  watchlistBtn?.classList.remove(
+    "active"
+  );
+
+  if(status === "watched"){
+
+    watchedBtn?.classList.add(
+      "active"
+    );
+
+  }
+
+  if(status === "watchlist"){
+
+    watchlistBtn?.classList.add(
+      "active"
+    );
+
+  }
+
+}
+
+function saveMovieStatus(status){
+
+  currentMovieStatus = status;
+
+  localStorage.setItem(
+    `paneacult_movie_status_${selectedMovieData.id}`,
+    status
+  );
+
+  updateMovieButtons(status);
+
+}
+
 const markWatchedBtn =
   document.getElementById(
     "markWatchedBtn"
