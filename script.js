@@ -497,48 +497,32 @@ async function mostraFilmPopolari(){
       `;
 
       div.addEventListener(
-        "click",
-        () => {
+  "click",
+  async () => {
 
           reviewForm.style.display =
             "block";
+const detailsResponse =
+  await fetch(
+    `https://api.themoviedb.org/3/movie/${movie.id}?api_key=${API_KEY}&language=it-IT&append_to_response=credits`
+  );
 
+const movieDetails =
+  await detailsResponse.json();
+
+const director =
+  movieDetails.credits.crew.find(
+    person =>
+      person.job === "Director"
+  );
+
+const cast =
+  movieDetails.credits.cast
+    .slice(0, 4)
+    .map(actor => actor.name)
+    .join(", ");
           selectedMovieData = movie;
 
-          selectedMovie.innerHTML = `
-          
-  <div class="selected-movie-card">
-
-    <img
-      src="https://image.tmdb.org/t/p/w300${movie.poster_path}"
-      alt="${movie.title}"
-    >
-
-    <div class="selected-movie-content">
-
-      <h2>
-        ${movie.title}
-      </h2>
-
-      <p class="selected-movie-year">
-        ${movie.release_date?.slice(0,4) || ""}
-      </p>
-
-      <p class="selected-movie-overview">
-
-        ${
-          movie.overview
-            ? movie.overview
-            : "Nessuna sinossi disponibile."
-        }
-
-      </p>
-
-    </div>
-
-  </div>
-
-`;
 
           movieResults.innerHTML = "";
 
