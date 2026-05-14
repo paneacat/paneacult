@@ -3666,6 +3666,33 @@ display:flex;
   display: none;
 }
 
+.selected-movie-content{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.selected-movie-year{
+  opacity: .6;
+}
+
+.selected-movie-overview{
+  line-height: 1.7;
+  opacity: .85;
+  max-width: 700px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
