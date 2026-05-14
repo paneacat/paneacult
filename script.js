@@ -830,3 +830,85 @@ const publishReviewBtn =
   document.getElementById(
     "publishReviewBtn"
   );
+
+
+publishReviewBtn?.addEventListener(
+  "click",
+  async () => {
+
+    if(!selectedMovieData){
+
+      alert(
+        "Seleziona un film"
+      );
+
+      return;
+
+    }
+
+    const review =
+      reviewText.value.trim();
+
+    const rating =
+      reviewRating.value;
+
+    if(review === ""){
+
+      alert(
+        "Scrivi una recensione"
+      );
+
+      return;
+
+    }
+
+    const { error } =
+      await supabaseClient
+        .from("reviews")
+        .insert([
+          {
+
+            movie_id:
+              selectedMovieData.id,
+
+            movie_title:
+              selectedMovieData.title,
+
+            movie_poster:
+              selectedMovieData.poster_path,
+
+            review_text:
+              review,
+
+            rating:
+              rating
+
+          }
+        ]);
+
+    if(error){
+
+      console.error(error);
+
+      alert(
+        "Errore nel salvataggio"
+      );
+
+      return;
+
+    }
+
+    alert(
+      "Recensione pubblicata 🎬"
+    );
+
+    localStorage.removeItem(
+      "paneacult_review_text"
+    );
+
+    localStorage.removeItem(
+      "paneacult_review_rating"
+    );
+
+  }
+);
