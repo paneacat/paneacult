@@ -553,6 +553,7 @@ async function mostraFilmPopolari(){
     });
 
 }
+if(movieSearchInput){
 movieSearchInput.addEventListener(
   "focus",
   () => {
@@ -561,6 +562,7 @@ movieSearchInput.addEventListener(
 
   }
 );
+  if(movieSearchInput){
   movieSearchInput.addEventListener(
     "input",
     async () => {
