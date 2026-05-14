@@ -643,7 +643,10 @@ const cast =
     .map(actor => actor.name)
     .join(", ");
               selectedMovieData = movie;
-
+localStorage.setItem(
+  "paneacult_selected_movie",
+  JSON.stringify(movie)
+);
               selectedMovie.innerHTML = `
           
   <div class="selected-movie-card">
@@ -703,7 +706,10 @@ const cast =
   </div>
 
 `;
-
+localStorage.setItem(
+  "paneacult_selected_movie_html",
+  selectedMovie.innerHTML
+);
 movieResults.innerHTML = "";
 
               movieSearchInput.value =
@@ -827,6 +833,43 @@ reviewRating?.addEventListener(
 
   }
 );
+
+/* =========================
+   RESTORE SELECTED MOVIE
+========================= */
+
+const savedMovie =
+  localStorage.getItem(
+    "paneacult_selected_movie"
+  );
+
+const savedMovieHTML =
+  localStorage.getItem(
+    "paneacult_selected_movie_html"
+  );
+
+if(
+  savedMovie &&
+  savedMovieHTML &&
+  selectedMovie
+){
+
+  selectedMovieData =
+    JSON.parse(savedMovie);
+
+  selectedMovie.innerHTML =
+    savedMovieHTML;
+
+  reviewForm.style.display =
+    "block";
+
+  movieSearchInput.value =
+    selectedMovieData.title;
+
+}
+
+
+
 
 const publishReviewBtn =
   document.getElementById(
