@@ -606,55 +606,91 @@ movieSearchInput.addEventListener(
           `;
 
           div.addEventListener(
-            "click",
-            () => {
+  "click",
+  async () => {
 
               reviewForm.style.display =
                 "block";
+              const detailsResponse =
+  await fetch(
+    `https://api.themoviedb.org/3/movie/${movie.id}?api_key=${API_KEY}&language=it-IT&append_to_response=credits`
+  );
 
+const movieDetails =
+  await detailsResponse.json();
+
+const director =
+  movieDetails.credits.crew.find(
+    person =>
+      person.job === "Director"
+  );
+
+const cast =
+  movieDetails.credits.cast
+    .slice(0, 4)
+    .map(actor => actor.name)
+    .join(", ");
               selectedMovieData = movie;
 
               selectedMovie.innerHTML = `
-              
-                <div class="selected-movie-card">
+          
+  <div class="selected-movie-card">
 
-                  <img
-                    src="https://image.tmdb.org/t/p/w300${movie.poster_path}"
-                    alt="${movie.title}"
-                  >
+    <img
+      src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
+      alt="${movie.title}"
+    >
 
-                  <div>
+    <div class="selected-movie-content">
 
-                    <h2>
-                      ${movie.title}
-                    </h2>
+      <p class="selected-movie-kicker">
+        ${movieDetails.genres
+          .map(g => g.name)
+          .join(" • ")}
+      </p>
 
-                    <p>
-                      ${movie.release_date?.slice(0,4) || ""}
-                    </p>
+      <h2>
+        ${movie.title}
+      </h2>
 
-                  </div>
+      <p class="selected-movie-year">
+        ${movie.release_date?.slice(0,4) || ""}
+      </p>
 
-                </div>
+      <p class="selected-movie-overview">
 
-              `;
+        ${
+          movie.overview
+            ? movie.overview
+            : "Nessuna sinossi disponibile."
+        }
 
-              movieResults.innerHTML = "";
+      </p>
 
-              movieSearchInput.value =
-                movie.title;
+      <div class="selected-movie-meta">
 
-            }
-          );
+        <p>
+          <strong>Regia:</strong>
+          ${director?.name || "-"}
+        </p>
 
-          movieResults.appendChild(div);
+        <p>
+          <strong>Cast:</strong>
+          ${cast}
+        </p>
 
-        });
+        <p>
+          <strong>Durata:</strong>
+          ${movieDetails.runtime || "-"} min
+        </p>
 
-    }
-  );
+      </div>
 
-}
+    </div>
+
+  </div>
+
+`;
 
 /* =========================
    AUTOSAVE REVIEW
