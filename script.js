@@ -217,15 +217,14 @@ function aggiornaFiltri(){
 
   if(loadMoreBtn){
 
-    loadMoreBtn.addEventListener("click", () => {
+  loadMoreBtn.addEventListener("click", () => {
 
-  visibleCards += 3;
-  aggiornaFiltri();
+    visibleCards += 3;
+    aggiornaFiltri();
+
+  });
 
   }
-
-  aggiornaFiltri();
-
   // ===============================
   // ===== SPLASH
   // ===============================
