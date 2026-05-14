@@ -445,7 +445,7 @@ let selectedMovieData = null;
 async function mostraFilmPopolari(){
 
   const response = await fetch(
-    `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
+    `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=it-IT`
   );
 
   const data =
@@ -573,7 +573,7 @@ movieSearchInput.addEventListener(
       }
 
       const response = await fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=it-IT&query=${query}`
       );
 
       const data =
