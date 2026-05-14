@@ -501,15 +501,15 @@ if(movieSearchInput){
           `;
 
           div.addEventListener(
-  "click",
-  () => {
+            "click",
+            () => {
 
-    reviewForm.style.display =
-      "block";
+              reviewForm.style.display =
+                "block";
 
-    selectedMovieData = movie;
+              selectedMovieData = movie;
 
-    selectedMovie.innerHTML = `
+              selectedMovie.innerHTML = `
               
                 <div class="selected-movie-card">
 
