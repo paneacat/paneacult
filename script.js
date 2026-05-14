@@ -522,7 +522,75 @@ const cast =
     .map(actor => actor.name)
     .join(", ");
           selectedMovieData = movie;
+selectedMovie.innerHTML = `
+          
+<div class="selected-movie-card">
 
+  <img
+    src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
+    alt="${movie.title}"
+  >
+
+  <div class="selected-movie-content">
+
+    <p class="selected-movie-kicker">
+      ${movieDetails.genres
+        .map(g => g.name)
+        .join(" • ")}
+    </p>
+
+    <h2>
+      ${movie.title}
+    </h2>
+
+    <p class="selected-movie-year">
+      ${movie.release_date?.slice(0,4) || ""}
+    </p>
+
+    <p class="selected-movie-overview">
+
+      ${
+        movie.overview
+          ? movie.overview
+          : "Nessuna sinossi disponibile."
+      }
+
+    </p>
+
+    <div class="selected-movie-meta">
+
+      <p>
+        <strong>Regia:</strong>
+        ${director?.name || "-"}
+      </p>
+
+      <p>
+        <strong>Cast:</strong>
+        ${cast}
+      </p>
+
+      <p>
+        <strong>Durata:</strong>
+        ${movieDetails.runtime || "-"} min
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+`;
+
+localStorage.setItem(
+  "paneacult_selected_movie",
+  JSON.stringify(movie)
+);
+
+localStorage.setItem(
+  "paneacult_selected_movie_html",
+  selectedMovie.innerHTML
+);
 
           movieResults.innerHTML = "";
 
