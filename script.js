@@ -692,6 +692,23 @@ const cast =
 
 `;
 
+movieResults.innerHTML = "";
+
+              movieSearchInput.value =
+                movie.title;
+
+            }
+          );
+
+          movieResults.appendChild(div);
+
+        });
+
+    }
+  );
+
+}
+
 /* =========================
    AUTOSAVE REVIEW
 ========================= */
@@ -705,10 +722,12 @@ const reviewRating =
   document.getElementById(
     "reviewRating"
   );
+
 const autosaveStatus =
   document.getElementById(
     "autosaveStatus"
   );
+
 /* LOAD SAVED */
 
 if(reviewText){
@@ -782,4 +801,16 @@ reviewText?.addEventListener(
   }
 );
 
-  
+/* SAVE RATING */
+
+reviewRating?.addEventListener(
+  "change",
+  () => {
+
+    localStorage.setItem(
+      "paneacult_review_rating",
+      reviewRating.value
+    );
+
+  }
+);
