@@ -663,3 +663,79 @@ movieSearchInput.addEventListener(
   );
 
 }
+
+/* =========================
+   AUTOSAVE REVIEW
+========================= */
+
+const reviewText =
+  document.getElementById(
+    "reviewText"
+  );
+
+const reviewRating =
+  document.getElementById(
+    "reviewRating"
+  );
+
+/* LOAD SAVED */
+
+if(reviewText){
+
+  const savedReview =
+    localStorage.getItem(
+      "paneacult_review_text"
+    );
+
+  if(savedReview){
+
+    reviewText.value =
+      savedReview;
+
+  }
+
+}
+
+if(reviewRating){
+
+  const savedRating =
+    localStorage.getItem(
+      "paneacult_review_rating"
+    );
+
+  if(savedRating){
+
+    reviewRating.value =
+      savedRating;
+
+  }
+
+}
+
+/* SAVE TEXT */
+
+reviewText?.addEventListener(
+  "input",
+  () => {
+
+    localStorage.setItem(
+      "paneacult_review_text",
+      reviewText.value
+    );
+
+  }
+);
+
+/* SAVE RATING */
+
+reviewRating?.addEventListener(
+  "change",
+  () => {
+
+    localStorage.setItem(
+      "paneacult_review_rating",
+      reviewRating.value
+    );
+
+  }
+);
