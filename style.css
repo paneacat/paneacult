@@ -3735,6 +3735,33 @@ display:flex;
   opacity: .55;
 
 }
+.selected-movie-meta{
+
+  margin-top: 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  opacity: .8;
+
+  line-height: 1.6;
+
+}
+
+.selected-movie-kicker{
+
+  color: #f3c94d;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+
+  font-size: 12px;
+
+}
 
 
 
