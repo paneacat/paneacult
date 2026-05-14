@@ -3762,7 +3762,34 @@ display:flex;
   font-size: 12px;
 
 }
+.movie-actions{
 
+  display:flex;
+  gap:12px;
+  margin-top:24px;
+  flex-wrap:wrap;
+
+}
+
+.movie-action-btn{
+
+  border:1px solid #f5c518;
+  background:transparent;
+  color:#f5c518;
+  padding:12px 18px;
+  border-radius:999px;
+  cursor:pointer;
+  font-size:.95rem;
+  transition:.25s ease;
+
+}
+
+.movie-action-btn:hover{
+
+  background:#f5c518;
+  color:#111;
+
+}
 
 
 
