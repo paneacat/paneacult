@@ -3722,7 +3722,19 @@ display:flex;
 
 }
 
+.autosave-status{
 
+  margin-top: 30px;
+
+  margin-bottom: 14px;
+
+  font-size: 13px;
+
+  letter-spacing: .04em;
+
+  opacity: .55;
+
+}
 
 
 
