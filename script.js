@@ -219,10 +219,8 @@ function aggiornaFiltri(){
 
     loadMoreBtn.addEventListener("click", () => {
 
-    visibleCards = 3;
-      aggiornaFiltri();
-
-    });
+  visibleCards += 3;
+  aggiornaFiltri();
 
   }
 
