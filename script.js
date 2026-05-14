@@ -85,7 +85,7 @@ function aggiornaFiltri(){
 
       if(totalVisible <= visibleCards){
 
-        card.style.display = "flex";
+        card.style.display = "block";
 
       }
 
