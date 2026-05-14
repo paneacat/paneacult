@@ -414,16 +414,131 @@ menuToggle?.addEventListener(
   }
 );
 
-const API_KEY = "3688d1b3985d41091da268200e1841ef";
+/* =========================
+   TMDB SEARCH
+========================= */
 
-async function cercaFilm(query) {
-  const response = await fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`
+const API_KEY =
+  "3688d1b3985d41091da268200e1841ef";
+
+const movieSearchInput =
+  document.getElementById(
+    "movieSearchInput"
   );
 
-  const data = await response.json();
+const movieResults =
+  document.getElementById(
+    "movieResults"
+  );
 
-  console.log(data.results);
+const selectedMovie =
+  document.getElementById(
+    "selectedMovie"
+  );
+
+let selectedMovieData = null;
+
+if(movieSearchInput){
+
+  movieSearchInput.addEventListener(
+    "input",
+    async () => {
+
+      const query =
+        movieSearchInput.value.trim();
+
+      if(query.length < 2){
+
+        movieResults.innerHTML = "";
+        return;
+
+      }
+
+      const response = await fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`
+      );
+
+      const data =
+        await response.json();
+
+      movieResults.innerHTML = "";
+
+      data.results
+        .slice(0, 5)
+        .forEach(movie => {
+
+          const div =
+            document.createElement("div");
+
+          div.classList.add(
+            "movie-result"
+          );
+
+          div.innerHTML = `
+          
+            <img
+              src="https://image.tmdb.org/t/p/w200${movie.poster_path}"
+              alt="${movie.title}"
+            >
+
+            <div>
+
+              <h3>
+                ${movie.title}
+              </h3>
+
+              <p>
+                ${movie.release_date?.slice(0,4) || ""}
+              </p>
+
+            </div>
+
+          `;
+
+          div.addEventListener(
+            "click",
+            () => {
+
+              selectedMovieData = movie;
+
+              selectedMovie.innerHTML = `
+              
+                <div class="selected-movie-card">
+
+                  <img
+                    src="https://image.tmdb.org/t/p/w300${movie.poster_path}"
+                    alt="${movie.title}"
+                  >
+
+                  <div>
+
+                    <h2>
+                      ${movie.title}
+                    </h2>
+
+                    <p>
+                      ${movie.release_date?.slice(0,4) || ""}
+                    </p>
+
+                  </div>
+
+                </div>
+
+              `;
+
+              movieResults.innerHTML = "";
+
+              movieSearchInput.value =
+                movie.title;
+
+            }
+          );
+
+          movieResults.appendChild(div);
+
+        });
+
+    }
+  );
+
 }
-
-cercaFilm("Interstellar");
