@@ -41,10 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetBtn =
     document.getElementById("resetFilters");
 
-  let visibleCards =
-  window.innerWidth <= 768
-    ? 3
-    : 4;
+  let visibleCards = 3;
 
   /* =========================
    UPDATE FILTRI
@@ -162,10 +159,7 @@ function aggiornaFiltri(){
       "change",
       () => {
 
-        visibleCards =
-  window.innerWidth <= 768
-    ? 3
-    : 4;
+        visibleCards = 3;
 
         aggiornaFiltri();
 
@@ -180,10 +174,7 @@ function aggiornaFiltri(){
       "change",
       () => {
 
-        visibleCards =
-  window.innerWidth <= 768
-    ? 3
-    : 4;
+        visibleCards = 3;
         aggiornaFiltri();
 
       }
@@ -211,10 +202,8 @@ function aggiornaFiltri(){
 
       }
 
-      visibleCards =
-  window.innerWidth <= 768
-    ? 3
-    : 4;
+      
+    visibleCards = 3;
 
       aggiornaFiltri();
 
@@ -230,11 +219,7 @@ function aggiornaFiltri(){
 
     loadMoreBtn.addEventListener("click", () => {
 
-      visibleCards +=
-  window.innerWidth <= 768
-    ? 3
-    : 4;
-
+    visibleCards = 3;
       aggiornaFiltri();
 
     });
