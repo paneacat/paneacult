@@ -914,3 +914,6 @@ publishReviewBtn?.addEventListener(
 
   }
 );
+    }
+}
+
