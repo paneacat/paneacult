@@ -496,28 +496,38 @@ async function mostraFilmPopolari(){
 
           selectedMovie.innerHTML = `
           
-            <div class="selected-movie-card">
+  <div class="selected-movie-card">
 
-              <img
-                src="https://image.tmdb.org/t/p/w300${movie.poster_path}"
-                alt="${movie.title}"
-              >
+    <img
+      src="https://image.tmdb.org/t/p/w300${movie.poster_path}"
+      alt="${movie.title}"
+    >
 
-              <div>
+    <div class="selected-movie-content">
 
-                <h2>
-                  ${movie.title}
-                </h2>
+      <h2>
+        ${movie.title}
+      </h2>
 
-                <p>
-                  ${movie.release_date?.slice(0,4) || ""}
-                </p>
+      <p class="selected-movie-year">
+        ${movie.release_date?.slice(0,4) || ""}
+      </p>
 
-              </div>
+      <p class="selected-movie-overview">
 
-            </div>
+        ${
+          movie.overview
+            ? movie.overview
+            : "Nessuna sinossi disponibile."
+        }
 
-          `;
+      </p>
+
+    </div>
+
+  </div>
+
+`;
 
           movieResults.innerHTML = "";
 
