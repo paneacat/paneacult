@@ -949,6 +949,29 @@ if(
 
 }
 
+/* =========================
+   CLOSE SEARCH RESULTS
+========================= */
+
+document.addEventListener(
+  "click",
+  (e) => {
+
+    const clickedInsideSearch =
+      movieSearchInput?.contains(e.target) ||
+      movieResults?.contains(e.target);
+
+    if(!clickedInsideSearch){
+
+      movieResults.innerHTML = "";
+
+    }
+
+  }
+);
+
+
+
 
 
 
