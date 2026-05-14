@@ -3555,6 +3555,114 @@ display:flex;
   border-radius: 16px;
 }
 
+.add-review-page{
+  padding-top: 180px;
+  padding-bottom: 120px;
+}
+
+#reviewText{
+  width: 100%;
+  min-height: 420px;
+
+  padding: 28px;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  background: rgba(255,255,255,.03);
+
+  color: white;
+
+  font-size: 17px;
+  line-height: 1.9;
+
+  resize: vertical;
+
+  outline: none;
+
+  margin-top: 30px;
+
+  font-family: 'Inter', sans-serif;
+
+  transition: .3s;
+}
+
+#reviewText:focus{
+
+  border-color: #f3c94d;
+
+  box-shadow:
+    0 0 0 1px #f3c94d;
+
+}
+
+#publishReviewBtn{
+
+  margin-top: 30px;
+
+  padding: 16px 30px;
+
+  border-radius: 999px;
+
+  border: 1px solid #f3c94d;
+
+  background: transparent;
+
+  color: #f3c94d;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: .25s;
+
+}
+
+#publishReviewBtn:hover{
+
+  background: #f3c94d;
+
+  color: #111;
+
+}
+
+#reviewRating{
+
+  margin-top: 24px;
+
+  width: 220px;
+
+  padding: 14px 18px;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  background: #111;
+
+  color: white;
+
+  outline: none;
+
+}
+
+.movie-result{
+  border: 1px solid transparent;
+}
+
+.movie-result:hover{
+
+  border-color:
+    rgba(243,201,77,.4);
+
+}
+
+
 
 
 
