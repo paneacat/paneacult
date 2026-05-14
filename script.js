@@ -542,19 +542,11 @@ async function mostraFilmPopolari(){
     });
 
 }
-if(movieSearchInput){
 movieSearchInput.addEventListener(
   "focus",
   () => {
 
-    if(
-      movieSearchInput.value.trim()
-      === ""
-    ){
-
-      mostraFilmPopolari();
-
-    }
+    mostraFilmPopolari();
 
   }
 );
