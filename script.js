@@ -575,7 +575,21 @@ selectedMovie.innerHTML = `
       </p>
 
     </div>
+<div class="movie-actions">
 
+  <button
+    class="movie-action-btn watched-btn"
+    id="markWatchedBtn"
+  >
+    👁️ Visto
+  </button>
+
+  <button
+    class="movie-action-btn watchlist-btn"
+    id="markWatchlistBtn"
+  >
+    📌 Da vedere
+  </button>
   </div>
 
 </div>
@@ -752,6 +766,21 @@ localStorage.setItem(
         </p>
 
       </div>
+<div class="movie-actions">
+
+  <button
+    class="movie-action-btn watched-btn"
+    id="markWatchedBtn"
+  >
+    👁️ Visto
+  </button>
+
+  <button
+    class="movie-action-btn watchlist-btn"
+    id="markWatchlistBtn"
+  >
+    📌 Da vedere
+  </button>
 
     </div>
 
@@ -927,7 +956,15 @@ const publishReviewBtn =
   document.getElementById(
     "publishReviewBtn"
   );
+const markWatchedBtn =
+  document.getElementById(
+    "markWatchedBtn"
+  );
 
+const markWatchlistBtn =
+  document.getElementById(
+    "markWatchlistBtn"
+  );
 
 publishReviewBtn?.addEventListener(
   "click",
