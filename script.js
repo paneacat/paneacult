@@ -417,6 +417,17 @@ menuToggle?.addEventListener(
 /* =========================
    TMDB SEARCH
 ========================= */
+const SUPABASE_URL =
+  "LA_TUA_URL";
+
+const SUPABASE_KEY =
+  "LA_TUA_ANON_KEY";
+
+const supabaseClient =
+  supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
 
 const API_KEY =
   "3688d1b3985d41091da268200e1841ef";
@@ -814,3 +825,8 @@ reviewRating?.addEventListener(
 
   }
 );
+
+const publishReviewBtn =
+  document.getElementById(
+    "publishReviewBtn"
+  );
