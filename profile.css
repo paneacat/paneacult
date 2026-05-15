@@ -250,7 +250,12 @@ max-width: 700px;
   content: "";
 
   position: absolute;
-
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.82),
+      transparent 60%
+    );
   inset: 0;
 }
 
@@ -317,7 +322,7 @@ max-width: 700px;
 
   background-position:center;
 
-  color:var(--panea-yellow);
+  color: var(--panea-white);
 
   font-family:"Inter", sans-serif;
 }
@@ -363,7 +368,7 @@ max-width: 700px;
 .profile-nav a,
 .logout-btn{
 
-  color:var(--panea-yellow);
+  color: rgba(255,255,255,.82);
 
   text-decoration:none;
 
@@ -383,7 +388,7 @@ max-width: 700px;
 
 .profile-nav a:hover,
 .logout-btn:hover{
-
+  color: var(--panea-yellow);
   opacity:1;
 
 }
@@ -420,6 +425,7 @@ max-width: 700px;
   font-size:1.05rem;
 
   opacity:.78;
+  color: rgba(255,255,255,.78);
 
 }
 
@@ -478,8 +484,7 @@ max-width: 700px;
   font-size:.7rem;
 
   letter-spacing:2px;
-
-  opacity:.5;
+  opacity:.72;
 
   margin-bottom:10px;
 
@@ -586,7 +591,7 @@ max-width: 700px;
 
   border-radius:24px;
 
-  background: var(--panea-yellow);
+  background:rgba(13,46,64,.5);
 
   aspect-ratio:2/3;
 
@@ -706,8 +711,8 @@ max-width: 700px;
 
   display:flex;
 
-  flex-direction:column;
-
+  flex-direction:row;
+flex-wrap:wrap;
   gap:12px;
 
   margin-top:20px;
@@ -742,9 +747,9 @@ max-width: 700px;
 
 .save-movie-btn:hover{
 
-  background:#f3c94d;
+  background: var(--panea-yellow);
 
-  color:var(--panea-yellow);
+  color:#0d2e40;
 
   transform:translateY(-2px);
 
