@@ -189,7 +189,6 @@
 
   .archivio-grid{
     display: flex;
-    flex-direction: column;
     grid-template-columns: 1fr;
     gap: 4rem;
   }
@@ -230,9 +229,7 @@
   display:none;
 }
 
-.archivio-grid .archivio-card:nth-child(-n+4){
-  display:block;
-}
+
   /* =========================
      REVIEW PAGE
   ========================= */
@@ -383,9 +380,9 @@
   }
 
   .about-title{
-    font-size: 5.5rem;
     line-height: 0.9;
     margin-bottom: 24px;
+    font-size: clamp(3.4rem, 18vw, 5.5rem);
   }
 
   .about-text{
@@ -528,10 +525,8 @@
   }
 
   .profile-title{
-
-    font-size: 4rem;
+    font-size: clamp(2.8rem, 14vw, 4rem);
     line-height: 0.95;
-
     margin-bottom: 22px;
 
   }
@@ -758,10 +753,7 @@
 }
 
   .manifesto-left{
-
     width:100%;
-   overflow:hidden;
-
   }
 
  .manifesto-left h2{
@@ -865,7 +857,7 @@
 
   .contact-card{
     width: 100%;
-    max-width: 340px;
+    max-width:100%;
 
     margin: 0;
     padding: 38px 28px;
@@ -973,14 +965,6 @@
     gap: 24px;
   }
 
-  .rubriche-grid{
-
-    grid-template-columns:
-      repeat(3,1fr);
-
-    gap:24px;
-  }
-
   .rubrica-card{
 
     min-height:240px;
@@ -988,6 +972,6 @@
     padding:34px;
   }
    .hero img {
-      height: 82vh;
+      height:auto;
 }
 }
