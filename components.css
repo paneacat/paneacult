@@ -29,18 +29,20 @@
   padding: 0 26px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
   color: var(--panea-white);
   font-size: 13px;
   letter-spacing: .4px;
-  transition: .25s ease;
   align-items: center;
+   background:transparent;
+  border:1px solid #f1c54b;
+  transition:.3s ease;
 }
 
 .load-more-btn:hover {
   background: var(--panea-yellow);
   color: #0b1f26;
 }
+
 
 /* =========================
    SLIDER WRAPPER
@@ -265,23 +267,6 @@
   margin-top:4rem;
 }
 
-.load-more-btn{
-
-  background:transparent;
-
-  border:1px solid #f1c54b;
-
-  color:#f1c54b;
-  transition:.3s ease;
-}
-
-.load-more-btn:hover{
-
-  background:#f1c54b;
-
-  color:#082f45;
-
-}
 /* INNER BAR */
 
 .loader::before{
@@ -454,7 +439,6 @@
   color: var(--panea-yellow);
   margin: 0;
   text-decoration:none;
-  color:inherit;
   cursor:pointer;
  }
 
@@ -526,90 +510,9 @@
 
 }
 
-/* BUTTONS */
-
-.newsletter-btn:hover,
-.load-more-btn:hover,
-.login-btn:hover,
-.register-btn:hover,
-.reset-btn:hover,
-.sidebar-watch:hover,
-.back-link:hover,
-.cta-link:hover {
-
-  color: #000000 !important;
-
-}
-
-.back-link,
-.back-link:active,
-.back-link:focus,
-.back-link:visited {
-  color: white !important;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.back-link:active {
-  color: #f5c542 !important;
-}
-
-
-.manifesto-btn,
-.manifesto-btn:active,
-.manifesto-btn:focus,
-.manifesto-btn:visited {
-  color: black !important;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.register-btn,
-.register-btn:visited {
-  color: white !important;
-}
-
-.register-btn:active,
-.register-btn:focus,
-.register-btn:hover {
-  color: var(--panea-yellow) !important;
-}
-
 /* =========================
    GLOBAL BUTTON STYLE
 ========================= */
-
-button,
-.filter-btn,
-.filter-reset,
-.load-more-btn,
-.newsletter-btn,
-.cta-link,
-.btn-yellow,
-.btn-outline{
-
-  background: var(--panea-yellow);
-  color:#111;
-  font-weight:500;
-  letter-spacing:-0.01em;
-  border: none;
-  transition: .25s ease;
-}
-
-/* HOVER */
-
-button:hover,
-.filter-btn:hover,
-.filter-reset:hover,
-.load-more-btn:hover,
-.newsletter-btn:hover,
-.cta-link:hover,
-.btn-yellow:hover,
-.btn-outline:hover {
-
-  opacity: .92;
-  transform: translateY(-2px);
-
-  color: var(--panea-text);
-}
 
 /* BOTTONI FILTRI ATTIVI */
 
