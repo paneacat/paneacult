@@ -1034,19 +1034,18 @@
   display:grid;
 
   grid-template-columns:
-    420px 1fr;
+    380px 1fr;
 
   align-items:center;
 
   gap:70px;
 
 }
-
 /* IMAGE */
 
 .about-image{
 
-  width:100%;
+  width:380px;
 
   overflow:hidden;
 
@@ -1061,9 +1060,6 @@
   height:auto;
 
   display:block;
-
-  object-fit:cover;
-
 }
 
 /* TEXT */
