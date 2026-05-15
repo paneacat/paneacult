@@ -534,6 +534,21 @@ display:flex;
   object-fit:cover;
 
   display:block;
+}
+
+/* BULLET TRAIN */
+
+img[alt="Bullet Train"]{
+
+  object-position:center 75%;
+
+}
+
+/* JOJO RABBIT */
+
+img[alt="Jojo Rabbit"]{
+
+  object-position:center 78%;
 
 }
 
