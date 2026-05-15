@@ -803,16 +803,29 @@
 
 .about-highlight{
 
-  font-size:1.15rem;
+  max-width:900px;
 
-  line-height:1.9;
+  margin:40px auto 0;
 
-  color:var(--panea-yellow);
+  text-align:center;
 
-  max-width:480px;
+  font-family:"Playfair Display", serif;
+
+  font-size:clamp(1.8rem, 4vw, 3rem);
+
+  line-height:1.35;
+
+  font-style:italic;
+
+  color:rgba(255,255,255,.92);
 
 }
 
+.about-highlight span{
+
+  color:var(--panea-yellow);
+
+}
 /* =========================
    IMAGE
 ========================= */
