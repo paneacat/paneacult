@@ -771,9 +771,11 @@
 
   font-family:"Playfair Display", serif;
 
-  font-size:clamp(4rem, 8vw, 7rem);
+  font-size:clamp(5rem, 8vw, 7rem);
 
   line-height:.9;
+
+  margin:10px 0 20px;
 
   letter-spacing:-.04em;
 
@@ -799,8 +801,9 @@
   line-height:1.95;
 
   color:rgba(255,255,255,.74);
+   max-width:520px;
 
-  margin-bottom:28px;
+  padding-bottom:30px;
 
 }
 
@@ -837,15 +840,13 @@
 
 .about-image{
 
-  width:420px;
+  width:100%;
 
-  height:520px;
+  height:680px;
 
   overflow:hidden;
 
   line-height:0;
-
-  flex-shrink:0;
 
 }
 
@@ -967,25 +968,21 @@
 
 .about-top{
 
-  width:min(1180px, 90%);
+  width:min(1280px, 88%);
 
-  margin:0 auto;
+  margin:120px auto 0;
 
-  display:flex;
+  display:grid;
 
-  justify-content:space-between;
+  grid-template-columns:
+    520px 1fr;
 
-  align-items:center;
+  align-items:end;
 
-  gap:36px;
-
-}
-
-.about-text{
-
-  max-width:540px;
+  gap:70px;
 
 }
+
 
 .about-number{
 
@@ -1021,22 +1018,6 @@
 
 }
 
-.about-image img{
-
-  width:420px;
-
-  max-width:100%;
-
-  border-radius:34px;
-
-  display:block;
-
-  object-fit:cover;
-
-  box-shadow:
-    0 30px 80px rgba(0,0,0,.45);
-
-}
 
 .about-bottom{
 
