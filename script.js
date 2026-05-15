@@ -381,6 +381,15 @@ const rubrica =
     let visibleCount = 0;
     archivioCards.forEach(card => {
 
+      if(emptyState){
+
+  emptyState.style.display =
+    visibleCount === 0
+      ? "flex"
+      : "none";
+
+      }
+      
       const text =
         card.textContent.toLowerCase();
 
