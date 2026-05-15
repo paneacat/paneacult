@@ -476,9 +476,9 @@ display:flex;
 
   grid-template-columns:1fr;
 
-  gap:32px;
+  gap:42px;
 
-  max-width:900px;
+  max-width:1000px;
 
   margin:0 auto;
 
@@ -501,15 +501,8 @@ display:flex;
     1px solid rgba(255,255,255,.06);
 
   transition:.35s ease;
-   display:grid;
-
-  grid-template-columns:
-    320px 1fr;
-
-  align-items:left;
 
 }
-
 /* HOVER */
 
 .film-card:hover{
@@ -527,7 +520,7 @@ display:flex;
 
   width:100%;
 
-  height:420px;
+  aspect-ratio:16/8;
 
   object-fit:cover;
 
