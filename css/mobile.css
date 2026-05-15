@@ -943,35 +943,18 @@
   .manifesto-divider{
   display:none;
   }
+  .film-grid{
+
+  grid-template-columns:1fr;
+
 }
 
+.film-card img{
 
+  height:320px;
 
-
-
-
-
-
-
-
-
-
-
- 
-@media (min-width: 1024px) {
-
-  .rubriche-grid {
-    grid-template-columns: repeat(3,1fr);
-    gap: 24px;
-  }
-
-  .rubrica-card{
-
-    min-height:240px;
-
-    padding:34px;
-  }
-   .hero img {
-      height:auto;
 }
 }
+
+
+
