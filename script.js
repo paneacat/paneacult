@@ -356,6 +356,14 @@ const emptyState =
   document.getElementById(
     "emptyState"
   );
+
+  const loadMoreBtn =
+  document.getElementById(
+    "loadMoreBtn"
+  );
+
+let visibleCards = 3;
+  
   let timeout;
 
   function filterCards(){
@@ -423,7 +431,7 @@ const cardRubrica =
         !rating ||
         cardRating === rating;
 
-if(
+      if(
   matchesSearch &&
   matchesGenre &&
   matchesRating &&
@@ -432,12 +440,24 @@ if(
 
   visibleCount++;
 
-  card.style.display =
-    "block";
+  if(visibleCount <= visibleCards){
 
-  card.style.opacity = "1";
+    card.style.display =
+      "block";
 
-}
+    card.style.opacity =
+      "1";
+
+  }
+
+  else {
+
+    card.style.display =
+      "none";
+
+  }
+
+      }
 
       else {
 
