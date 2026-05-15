@@ -1,13 +1,13 @@
-const SUPABASE_URL =
+const supabaseUrl =
   "https://czvtirkuyhcilmzbwysf.supabase.co";
 
-const SUPABASE_KEY =
+const supabaseKey =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6dnRpcmt1eWhjaWxtemJ3eXNmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczOTM1NjIsImV4cCI6MjA5Mjk2OTU2Mn0.v--ZBxJyMAIpb1bWbN6J3DUDi5FfcoOrhKccwRyuEvw";
 
 const supabaseClient =
   supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
+    supabaseUrl,
+    supabaseKey
   );
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -319,7 +319,15 @@ localStorage.setItem(
   JSON.stringify(movie)
 );
               selectedMovie.innerHTML = `
-          
+          const markWatchedBtn =
+  document.getElementById(
+    "markWatchedBtn"
+  );
+
+const markWatchlistBtn =
+  document.getElementById(
+    "markWatchlistBtn"
+  );
   <div class="selected-movie-card">
 
     <img
@@ -706,18 +714,6 @@ publishReviewBtn?.addEventListener(
   }
 );
 
-const supabaseUrl =
-  "https://czvtirkuyhcilmzbwysf.supabase.co";
-
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6dnRpcmt1eWhjaWxtemJ3eXNmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczOTM1NjIsImV4cCI6MjA5Mjk2OTU2Mn0.v--ZBxJyMAIpb1bWbN6J3DUDi5FfcoOrhKccwRyuEvw";
-
-const supabaseClient =
-  supabase.createClient(
-    supabaseUrl,
-    supabaseKey
-  );
-
 /* =========================
    ELEMENTI
 ========================= */
@@ -873,69 +869,6 @@ logoutBtn?.addEventListener(
   }
 );
 
-/* =========================
-   CURSORE CUSTOM
-========================= */
-
-const cursor =
-  document.querySelector(
-    ".cursor"
-  );
-
-if(cursor){
-
-  document.addEventListener(
-    "mousemove",
-    (e) => {
-
-      cursor.style.left =
-        e.clientX + "px";
-
-      cursor.style.top =
-        e.clientY + "px";
-
-    }
-  );
-
-}
-
-/* =========================
-   FADE IN
-========================= */
-
-window.addEventListener(
-  "load",
-  () => {
-
-    document.body.classList.add(
-      "loaded"
-    );
-
-  }
-);
-
-/* =========================
-   ESCAPE LOGIN
-========================= */
-
-document.addEventListener(
-  "keydown",
-  (e) => {
-
-    if(
-      e.key === "Escape" &&
-      document.body.classList.contains(
-        "login-page"
-      )
-    ){
-
-      window.location.href =
-        "index.html";
-
-    }
-
-  }
-);
 
 /* =========================
    SAVE MOVIES
