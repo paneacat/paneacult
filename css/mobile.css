@@ -18,9 +18,9 @@
     padding-right:22px;
   }
 
-  section{
-    margin-bottom:70px;
-  }
+section{
+  margin-bottom:42px;
+}
 
   h1{
     font-size:42px;
@@ -754,19 +754,20 @@
 
   .manifesto-left{
     width:100%;
+    overflow:hidden;
   }
 
  .manifesto-left h2{
 
-  font-size:3.35rem;
+  font-size:2.9rem;
 
-  line-height:.92;
+  line-height:1;
 
-  letter-spacing:-0.04em;
+  letter-spacing:-0.02em;
 
-    word-break:break-word;
+  word-break:normal;
 
-  }
+ }
 
   .manifesto-left p{
 
