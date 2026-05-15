@@ -951,7 +951,7 @@
 
 .film-card img{
 
-  height:320px;
+  aspect-ratio:16/10;
 
 }
 }
