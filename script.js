@@ -768,28 +768,6 @@ localStorage.setItem(
           <strong>Durata:</strong>
           ${movieDetails.runtime || "-"} min
         </p>
-
-      </div>
-<div class="movie-actions">
-
-  <button
-    class="movie-action-btn watched-btn"
-    id="markWatchedBtn"
-  >
-    👁️ Visto
-  </button>
-
-  <button
-    class="movie-action-btn watchlist-btn"
-    id="markWatchlistBtn"
-  >
-    📌 Da vedere
-  </button>
-
-    </div>
-
-  </div>
-
 `;
 localStorage.setItem(
   "paneacult_selected_movie_html",
