@@ -204,11 +204,12 @@ font-weight:500;
   display:grid;
 
   grid-template-columns:
-    repeat(3,1fr);
+    repeat(3, 1fr);
 
-  gap:26px;
+  gap:32px;
 
-  margin-top:50px;
+  align-items:start;
+
 }
 
 /* CARD */
