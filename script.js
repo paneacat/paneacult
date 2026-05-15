@@ -501,12 +501,14 @@ if(searchInput){
     );
 
   const genreFilter =
-    const rubricaFilter =
+  document.getElementById(
+    "genreFilter"
+  );
+
+const rubricaFilter =
   document.getElementById(
     "rubricaFilter"
   );
-    document.getElementById(
-      "genreFilter"
       
 
   const ratingFilter =
