@@ -352,7 +352,10 @@ const rubricaFilter =
     "resetFilters"
   );
   
-
+const emptyState =
+  document.getElementById(
+    "emptyState"
+  );
   let timeout;
 
   function filterCards(){
@@ -374,7 +377,8 @@ const rubrica =
       ratingFilter
         ? ratingFilter.value
         : "";
-
+    
+    let visibleCount = 0;
     archivioCards.forEach(card => {
 
       const text =
@@ -410,19 +414,21 @@ const cardRubrica =
         !rating ||
         cardRating === rating;
 
-      if(
-        matchesSearch &&
-matchesGenre &&
-matchesRating &&
-matchesRubrica
-      ){
+if(
+  matchesSearch &&
+  matchesGenre &&
+  matchesRating &&
+  matchesRubrica
+){
 
-        card.style.display =
-          "block";
+  visibleCount++;
 
-        card.style.opacity = "1";
+  card.style.display =
+    "block";
 
-      }
+  card.style.opacity = "1";
+
+}
 
       else {
 
