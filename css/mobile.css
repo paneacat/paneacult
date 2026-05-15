@@ -359,66 +359,167 @@ section{
 
   }
 
-  /* =========================
-     ABOUT
-  ========================= */
+ .about-page{
 
-   .about-page{
-  padding-top:80px;
+    padding:130px 22px 90px;
+
     overflow:hidden;
-    position:relative;
-   }
+
+  }
 
   .about-top{
 
-    display:grid;
+    width:100%;
 
-    grid-template-columns:
-      1fr 120px;
+    display:flex;
 
-    gap:24px;
+    flex-direction:column;
 
-    align-items:start;
+    align-items:flex-start;
+
+    gap:42px;
+
+  }
+
+  .about-text{
+
+    max-width:100%;
+
+  }
+
+  .about-number{
+
+    font-size:.72rem;
+
+    letter-spacing:.24em;
+
+    margin-bottom:18px;
+
+  }
+
+  .about-title{
+
+    font-size:4.6rem;
+
+    line-height:.9;
+
+    letter-spacing:-.05em;
+
+    margin-bottom:22px;
+
+  }
+
+  .about-intro{
+
+    font-size:1rem;
+
+    line-height:1.85;
+
+    max-width:100%;
+
+  }
+
+  .about-image{
+
+    width:100%;
+
+  }
+
+  .about-image img{
+
+    width:100%;
+
+    border-radius:28px;
+
+    display:block;
+
+  }
+
+  .about-bottom{
+
+    width:100%;
+
+    margin-top:60px;
 
   }
 
   .about-highlight{
-    margin-top:70px;
-    font-size: 22px;
-  }
-.about-hero{
-    position: relative;
-    overflow: hidden;
-    padding: 140px 24px 80px;
+
+    font-size:1.45rem;
+
+    line-height:1.55;
+
   }
 
-  .about-content{
-    position: relative;
-    z-index: 2;
-    max-width: 260px;
+  .about-body{
+
+    margin-top:28px;
+
+    font-size:1rem;
+
+    line-height:1.9;
+
   }
 
-  .about-title{
-    line-height: 0.9;
-    margin-bottom: 24px;
-    font-size: clamp(3.4rem, 18vw, 5.5rem);
+  .about-tag{
+
+    margin-top:34px;
+
+    font-size:.72rem;
+
+    letter-spacing:.2em;
+
+    line-height:1.8;
+
   }
 
-  .about-text{
-    font-size: 1.1rem;
-    line-height: 1.7;
-    max-width: 240px;
+  /* =========================
+     ABOUT CARDS
+  ========================= */
+
+  .about-cards{
+
+    padding:20px 22px 100px;
+
   }
 
-  .about-image{
-    position: absolute;
-    right: -40px;
-    top: 300px;
-    width: 280px;
-    z-index: 1;
-    opacity: 0.95;
+  .about-cards .container{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:22px;
+
+    padding:0;
+
   }
- 
+
+  .about-card{
+
+    padding:30px 26px;
+
+    border-radius:28px;
+
+  }
+
+  .about-card h2{
+
+    font-size:2rem;
+
+    line-height:1;
+
+  }
+
+  .about-card p{
+
+    font-size:1rem;
+
+    line-height:1.8;
+
+  }
 
   /* =========================
      CARDS GRID
