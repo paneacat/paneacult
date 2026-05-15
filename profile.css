@@ -19,7 +19,7 @@
 
   background: #fdc103;
 
-  color: #0d2e40;
+  color: var(--panea-blue);
 
   display: flex;
 
@@ -62,7 +62,7 @@
 
   font-weight: 800;
 
-  color: #fdc103;
+  color:var(--panea-yellow);
 }
 
 .profile-stat p{
@@ -89,12 +89,6 @@ max-width: 700px;
 
 }
 
-.profile-content{
-
-  width: min(1100px, 92%);
-  margin: 0 auto;
-
-}
 .profile-hero::after{
 
   content: "";
@@ -102,9 +96,6 @@ max-width: 700px;
   position: absolute;
 
   inset: 0;
-
-  background-image:
-    url("noise.png");
 
   opacity: .04;
 
@@ -175,7 +166,7 @@ max-width: 700px;
 
 .signature-kicker{
 
-  color: #fdc103;
+  color: var(--panea-yellow);
 
   letter-spacing: .25em;
 
@@ -326,7 +317,7 @@ max-width: 700px;
 
   background-position:center;
 
-  color:#f5f1ea;
+  color:var(--panea-yellow);
 
   font-family:"Inter", sans-serif;
 }
@@ -353,7 +344,7 @@ max-width: 700px;
 
   font-weight:700;
 
-  color:#f3c94d;
+  color:var(--panea-yellow);
 
   text-decoration:none;
 
@@ -372,7 +363,7 @@ max-width: 700px;
 .profile-nav a,
 .logout-btn{
 
-  color:#f5f1ea;
+  color:var(--panea-yellow);
 
   text-decoration:none;
 
@@ -399,13 +390,6 @@ max-width: 700px;
 
 /* HERO */
 
-.profile-hero{
-
-  text-align:center;
-padding:
-    8rem 2rem 5rem;
-
-}
 
 .profile-kicker{
 
@@ -413,7 +397,7 @@ padding:
 
   letter-spacing:2px;
 
-  color:#f3c94d;
+  color:var(--panea-yellow);
 
   margin-bottom:18px;
 
@@ -542,16 +526,6 @@ padding:
 
 }
 
-.saved-card{
-
-  overflow:hidden;
-
-  border-radius:24px;
-
-  background:#111;
-
-}
-
 .saved-card img{
 
   width:100%;
@@ -612,7 +586,7 @@ padding:
 
   border-radius:24px;
 
-  background:#111;
+  background: var(--panea-yellow);
 
   aspect-ratio:2/3;
 
@@ -678,7 +652,7 @@ padding:
 
   border:none;
 
-  background:#f3c94d;
+  background:#fdc103;
 
   color:#000;
 
@@ -718,7 +692,7 @@ padding:
 
 .saved-state{
 
-  background:#f3c94d;
+  background: var(--panea-yellow);
 
   color:#000;
 
@@ -754,7 +728,7 @@ padding:
   background:
     rgba(15,30,45,.45);
 
-  color:#f5f1ea;
+  color: var(--panea-yellow);
 
   font-size:.78rem;
 
@@ -770,14 +744,12 @@ padding:
 
   background:#f3c94d;
 
-  color:#000;
+  color:var(--panea-yellow);
 
   transform:translateY(-2px);
 
 }
 
-
-}
 .section-head{
 
   display: flex;
@@ -812,7 +784,7 @@ padding:
 
   font-family: "Playfair Display", serif;
 
-  color: #fff;
+  color: var(--panea-yellow);
 
 }
 
