@@ -471,6 +471,102 @@ box-shadow:
     1px solid rgba(255,255,255,.15);
 
 }
+/* =========================
+   LOGIN LINK
+========================= */
+
+.login-cta {
+
+  margin-top: 24px;
+
+}
+
+.login-cta a {
+
+  color: #f0b94b;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+}
+
+.login-cta a:hover {
+
+  opacity: 0.8;
+
+}
+
+.about-cards .container {
+
+  background: transparent !important;
+
+  border: none !important;
+
+  box-shadow: none !important;
+
+  backdrop-filter: none !important;
+
+  -webkit-backdrop-filter: none !important;
+
+  display: grid;
+ margin-top: 0 !important;
+  padding-top: 0 !important;
+
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+
+}
+
+.back-link{
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 18px;
+
+  margin-bottom: 34px;
+
+  border-radius: 999px;
+
+  background: rgba(7, 19, 35, 0.72);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(10px);
+
+  color: #ffffff;
+
+  font-size: 0.95rem;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+
+}
+
+.back-link:hover{
+
+  background: rgba(25, 60, 78, 0.95);
+
+  transform: translateY(-2px);
+
+}
+
+.back-link::before{
+
+  content: "←";
+
+  color: #f3c623;
+
+}
 
 
 
@@ -478,15 +574,3 @@ box-shadow:
 
 
 
-
-
-
-
-
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 768px) {
