@@ -542,8 +542,12 @@ if(searchInput){
         text.includes(search);
 
       const matchesGenre =
-        !genre ||
-        cardGenre.includes(genre);
+
+  !genre ||
+
+  cardGenre
+    .split(" ")
+    .includes(genre);
 
       const matchesRating =
         !rating ||
