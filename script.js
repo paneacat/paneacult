@@ -28,177 +28,8 @@ document.addEventListener(
 
     }
 
-    /* =========================
-       FILTRI ARCHIVIO
-    ========================= */
 
-    const cards =
-      document.querySelectorAll(
-        ".archivio-card"
-      );
-
-    const categoryFilter =
-      document.getElementById(
-        "categoryFilter"
-      );
-
-    const genreFilter =
-      document.getElementById(
-        "genreFilter"
-      );
-
-    const emptyState =
-      document.getElementById(
-        "emptyState"
-      );
-
-    const loadMoreBtn =
-      document.getElementById(
-        "loadMoreBtn"
-      );
-
-    const resetBtn =
-      document.getElementById(
-        "resetFilters"
-      );
-
-    let visibleCards = 3;
-
-    function aggiornaFiltri(){
-
-      const category =
-        categoryFilter
-          ? categoryFilter.value
-          : "all";
-
-      const genre =
-        genreFilter
-          ? genreFilter.value
-          : "all";
-
-      let totalVisible = 0;
-
-      cards.forEach(card => {
-
-        const categories =
-          card.dataset.category
-            ? card.dataset.category.split(" ")
-            : [];
-
-        const matchCategory =
-          category === "all" ||
-          categories.includes(category);
-
-        const matchGenre =
-          genre === "all" ||
-          categories.includes(genre);
-
-        const visible =
-          matchCategory &&
-          matchGenre;
-
-        if(visible){
-
-          totalVisible++;
-
-          if(totalVisible <= visibleCards){
-
-            card.style.display =
-              "block";
-
-          }
-
-          else {
-
-            card.style.display =
-              "none";
-
-          }
-
-        }
-
-        else {
-
-          card.style.display =
-            "none";
-
-        }
-
-      });
-
-      if(emptyState){
-
-        emptyState.classList.toggle(
-          "show",
-          totalVisible === 0
-        );
-
-      }
-
-      if(loadMoreBtn){
-
-        loadMoreBtn.style.display =
-          totalVisible <= visibleCards
-            ? "none"
-            : "flex";
-
-      }
-
-    }
-
-    categoryFilter?.addEventListener(
-      "change",
-      () => {
-
-        visibleCards = 3;
-
-        aggiornaFiltri();
-
-      }
-    );
-
-    genreFilter?.addEventListener(
-      "change",
-      () => {
-
-        visibleCards = 3;
-
-        aggiornaFiltri();
-
-      }
-    );
-
-    resetBtn?.addEventListener(
-      "click",
-      () => {
-
-        if(categoryFilter){
-          categoryFilter.value = "all";
-        }
-
-        if(genreFilter){
-          genreFilter.value = "all";
-        }
-
-        visibleCards = 3;
-
-        aggiornaFiltri();
-
-      }
-    );
-
-    loadMoreBtn?.addEventListener(
-      "click",
-      () => {
-
-        visibleCards += 3;
-
-        aggiornaFiltri();
-
-      }
-    );
-
-    aggiornaFiltri();
+    
 
     /* =========================
        SPLASH
@@ -515,6 +346,12 @@ const rubricaFilter =
     document.getElementById(
       "ratingFilter"
     );
+  
+  const resetBtn =
+  document.getElementById(
+    "resetFilters"
+  );
+  
 
   let timeout;
 
@@ -625,6 +462,30 @@ rubricaFilter?.addEventListener(
   ratingFilter?.addEventListener(
     "change",
     filterCards
+
+
+    resetBtn?.addEventListener(
+  "click",
+  () => {
+
+    searchInput.value = "";
+
+    if(genreFilter){
+      genreFilter.value = "";
+    }
+
+    if(ratingFilter){
+      ratingFilter.value = "";
+    }
+
+    if(rubricaFilter){
+      rubricaFilter.value = "";
+    }
+
+    filterCards();
+
+  }
+);
   );
 
 }
