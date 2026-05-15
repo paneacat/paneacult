@@ -44,13 +44,12 @@ ol {
   list-style: none;
 }
 
-button {
-  background: none;
-  border: none;
-  font: inherit;
-  cursor: pointer;
+button{
+border:none;
+cursor:pointer;
+font:inherit;
+transition:.25s ease;
 }
-
 
 .container {
   width: min(90%, 1100px);
@@ -92,109 +91,11 @@ input:-webkit-autofill:focus{
 
 
 /* =========================
-   GLOBAL BUTTON STYLE
-========================= */
-
-button,
-.filter-btn,
-.filter-reset,
-.load-more-btn,
-.newsletter-btn,
-.cta-link,
-.btn-yellow,
-.btn-outline{
-
-  background: var(--panea-yellow);
-  color:#111;
-  font-weight:500;
-  letter-spacing:-0.01em;
-  border: none;
-  transition: .25s ease;
-}
-
-/* HOVER */
-
-button:hover,
-.filter-btn:hover,
-.filter-reset:hover,
-.load-more-btn:hover,
-.newsletter-btn:hover,
-.cta-link:hover,
-.btn-yellow:hover,
-.btn-outline:hover {
-
-  opacity: .92;
-  transform: translateY(-2px);
-
-  color: var(--panea-text);
-}
-
-/* BOTTONI FILTRI ATTIVI */
-
-.filter-btn.active{
-
-  background:var(--panea-yellow);
-  color:#0b1f26;
-}
-
-
-
-
-/* BUTTONS */
-
-.newsletter-btn:hover,
-.load-more-btn:hover,
-.login-btn:hover,
-.register-btn:hover,
-.reset-btn:hover,
-.sidebar-watch:hover,
-.back-link:hover,
-.cta-link:hover {
-
-  color: #000000 !important;
-
-}
-
-.back-link,
-.back-link:active,
-.back-link:focus,
-.back-link:visited {
-  color: white !important;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.back-link:active {
-  color: #f5c542 !important;
-}
-
-
-.manifesto-btn,
-.manifesto-btn:active,
-.manifesto-btn:focus,
-.manifesto-btn:visited {
-  color: black !important;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.register-btn,
-.register-btn:visited {
-  color: white !important;
-}
-
-.register-btn:active,
-.register-btn:focus,
-.register-btn:hover {
-  color: var(--panea-yellow) !important;
-}
-
-
-/* =========================
    3. TYPOGRAPHY
 ========================= */
 
 body {
   font-family: 'Inter', sans-serif;
-  padding-top: 13px;
   background: var(--panea-blue);
   color: var(--panea-text);
 }
@@ -208,7 +109,7 @@ h4 {
 }
 
 h1 {
-  font-size: 56px;
+line-height:1.05;
   letter-spacing: 1px;
 }
 
@@ -223,11 +124,11 @@ p {
 
 a {
   text-decoration: none;
-  color: var(--text);
+  color: var(--panea-text);
 }
 
-a:hover {
-  color: var(--panea-yellow);
+a{
+transition:.2s ease;
 }
 
 
