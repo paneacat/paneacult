@@ -947,6 +947,10 @@
     font-size: 2rem;
 
   }
+
+  .manifesto-divider{
+  display:none;
+  }
 }
 
 
