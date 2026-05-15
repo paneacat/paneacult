@@ -699,16 +699,7 @@
 
   min-height:100vh;
 
-  background:
-    linear-gradient(
-      rgba(7,15,25,.92),
-      rgba(7,15,25,.96)
-    ),
-    url("img/wall.webp");
-
-  background-size:cover;
-
-  background-position:center;
+  background:transparent;
 
   color:var(--panea-white);
 
@@ -1068,94 +1059,4 @@
   color:rgba(255,255,255,.45);
 
 }
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width:768px){
-
-  .about-page{
-
-    padding:130px 22px 90px;
-
-  }
-
-  .about-top{
-
-    width:100%;
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    gap:50px;
-
-  }
-
-  .about-title{
-
-    font-size:4.5rem;
-
-    line-height:.9;
-
-  }
-
-  .about-intro{
-
-    font-size:1rem;
-
-    line-height:1.8;
-
-  }
-
-  .about-image{
-
-    width:100%;
-
-  }
-
-  .about-image img{
-
-    width:100%;
-
-    border-radius:28px;
-
-  }
-
-  .about-bottom{
-
-    width:100%;
-
-    margin-top:60px;
-
-  }
-
-  .about-highlight{
-
-    font-size:1.15rem;
-
-    line-height:1.8;
-
-  }
-
-  .about-body{
-
-    font-size:1rem;
-
-    line-height:1.85;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
