@@ -780,6 +780,9 @@
   margin-bottom:28px;
 
   color:var(--panea-white);
+   max-width:420px;
+
+  margin-top:40px;
 
 }
 
