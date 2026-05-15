@@ -474,10 +474,13 @@ display:flex;
 
   display:grid;
 
-  grid-template-columns:
-    repeat(2,1fr);
+  grid-template-columns:1fr;
 
-  gap:28px;
+  gap:32px;
+
+  max-width:900px;
+
+  margin:0 auto;
 
 }
 
@@ -498,6 +501,12 @@ display:flex;
     1px solid rgba(255,255,255,.06);
 
   transition:.35s ease;
+   display:grid;
+
+  grid-template-columns:
+    320px 1fr;
+
+  align-items:stretch;
 
 }
 
