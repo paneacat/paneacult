@@ -307,7 +307,205 @@ max-width: 700px;
 
 }
 
+/* =========================
+   PROFILE PAGE
+========================= */
 
+.profile-page{
+
+  min-height:100vh;
+
+  background:
+    linear-gradient(
+      rgba(7,15,25,.88),
+      rgba(7,15,25,.94)
+    ),
+    url("img/wall.webp");
+
+  background-size:cover;
+
+  background-position:center;
+
+  color:#f5f1ea;
+
+  font-family:"Inter", sans-serif;
+}
+
+/* HEADER */
+
+.profile-header{
+
+  backdrop-filter: blur(18px);
+
+  background:
+    rgba(13,46,64,.6);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.06);
+
+}
+
+.profile-logo{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:2rem;
+
+  font-weight:700;
+
+  color:#f3c94d;
+
+  text-decoration:none;
+
+}
+
+.profile-nav{
+
+  display:flex;
+
+  gap:24px;
+
+  align-items:center;
+
+}
+
+.profile-nav a,
+.logout-btn{
+
+  color:#f5f1ea;
+
+  text-decoration:none;
+
+  background:none;
+
+  border:none;
+
+  font-size:.95rem;
+
+  cursor:pointer;
+
+  opacity:.8;
+
+  transition:.3s;
+
+}
+
+.profile-nav a:hover,
+.logout-btn:hover{
+
+  opacity:1;
+
+}
+
+/* HERO */
+
+.profile-hero{
+
+  text-align:center;
+padding:
+    8rem 2rem 5rem;
+
+}
+
+.profile-kicker{
+
+  font-size:.72rem;
+
+  letter-spacing:2px;
+
+  color:#f3c94d;
+
+  margin-bottom:18px;
+
+}
+
+.profile-title{
+
+  font-size: clamp(3rem, 8vw, 6rem);
+
+  line-height: .95;
+
+  max-width: 900px;
+
+  margin: 1rem auto;
+
+}
+
+.profile-subtitle{
+
+  font-size:1.05rem;
+
+  opacity:.78;
+
+}
+
+.profile-content{
+
+  width: min(1200px, 92%);
+
+  margin: 0 auto;
+
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2.5rem;
+
+}
+.profile-hero-content{
+
+  width: min(900px, 92%);
+
+  margin: 0 auto;
+
+}
+/* USER */
+
+.profile-user{
+
+  display:flex;
+
+  justify-content:center;
+
+  margin-bottom:70px;
+
+}
+
+.profile-user-box{
+
+  padding:22px 28px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:rgba(20,35,55,.45);
+
+  backdrop-filter:blur(18px);
+
+  border-radius:24px;
+
+}
+
+.profile-user-label{
+
+  font-size:.7rem;
+
+  letter-spacing:2px;
+
+  opacity:.5;
+
+  margin-bottom:10px;
+
+}
+
+.profile-email{
+
+  font-size:1rem;
+
+}
 
 
 
@@ -370,28 +568,5 @@ max-width: 700px;
 
   }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-@media (min-width: 1024px) {
-
-
-
-
-  
-
-
-
 
 
