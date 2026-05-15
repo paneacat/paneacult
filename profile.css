@@ -777,6 +777,55 @@ padding:
 }
 
 
+}
+.section-head{
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+
+  margin-bottom: 1.5rem;
+
+}
+.saved-section{
+
+  background:
+    rgba(255,255,255,.03);
+
+  border:
+    1px solid rgba(255,255,255,.05);
+
+  border-radius: 28px;
+
+  padding: 2rem;
+
+  margin: 2rem auto;
+
+  backdrop-filter: blur(10px);
+
+}
+.saved-title{
+
+  font-size: 2rem;
+
+  font-family: "Playfair Display", serif;
+
+  color: #fff;
+
+}
+
+.section-subtitle{
+
+  font-size: .9rem;
+
+  color: rgba(255,255,255,.55);
+
+  letter-spacing: .04em;
+
+}
+
 
 
 
