@@ -200,12 +200,11 @@ font-weight:500;
 
 .archivio-grid{
 
-  display:grid;
+display:grid;
 
-  grid-template-columns:
-    repeat(3,1fr);
+  grid-template-columns:1fr;
 
-  gap:26px;
+  gap:3rem;
 
   margin-top:50px;
 }
@@ -259,7 +258,13 @@ font-weight:500;
   margin-bottom:10px;
 }
 
+.archivio-section .container{
 
+  width:min(90%, 1100px);
+
+  margin:0 auto;
+
+}
 /* =========================
    SEARCH AREA
 ========================= */
