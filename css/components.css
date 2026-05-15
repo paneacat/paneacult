@@ -855,34 +855,22 @@
 
 }
 
-/* =========================
-   ABOUT TOP
-========================= */
-
 .about-top{
 
   width:min(1180px, 88%);
 
-  margin:120px auto 0;
+  margin:40px auto 0;
 
   display:flex;
 
   align-items:center;
 
-  gap:70px;
-
   justify-content:center;
 
-  margin-left:auto;
+  gap:60px;
 
-  margin-right:auto;
-      
-  flex-direction:column;
-
-  text-align:center;
 }
 
-   
 /* IMAGE */
 
 .about-image{
@@ -897,16 +885,15 @@
 
   width:100%;
 
-  height:auto;
-
   display:block;
+
 }
 
 /* TEXT */
 
 .about-text{
 
-  max-width:560px;
+  max-width:460px;
 
 }
 
