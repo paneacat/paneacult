@@ -137,6 +137,57 @@ button:hover,
   color:#0b1f26;
 }
 
+
+
+
+/* BUTTONS */
+
+.newsletter-btn:hover,
+.load-more-btn:hover,
+.login-btn:hover,
+.register-btn:hover,
+.reset-btn:hover,
+.sidebar-watch:hover,
+.back-link:hover,
+.cta-link:hover {
+
+  color: #000000 !important;
+
+}
+
+.back-link,
+.back-link:active,
+.back-link:focus,
+.back-link:visited {
+  color: white !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.back-link:active {
+  color: #f5c542 !important;
+}
+
+
+.manifesto-btn,
+.manifesto-btn:active,
+.manifesto-btn:focus,
+.manifesto-btn:visited {
+  color: black !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.register-btn,
+.register-btn:visited {
+  color: white !important;
+}
+
+.register-btn:active,
+.register-btn:focus,
+.register-btn:hover {
+  color: var(--panea-yellow) !important;
+}
+
+
 /* =========================
    3. TYPOGRAPHY
 ========================= */
