@@ -46,7 +46,7 @@
 
   justify-content: center;
 
-  gap: 4rem;
+  gap: 2.5rem;
 
   padding-bottom: 5rem;
 
@@ -82,26 +82,16 @@
 .activity-feed{
 
   display: grid;
+max-width: 700px;
 
+  margin: 0 auto;
   gap: 1.5rem;
 
 }
-.activity-card{
 
-  background:
-    rgba(255,255,255,.03);
 
-  border:
-    1px solid rgba(255,255,255,.05);
 
-  padding: 2rem;
-
-  border-radius: 24px;
-
-  backdrop-filter: blur(12px);
-
-}
-.profile-hero::before{
+.profile-hero::after{
 
   content: "";
 
@@ -109,14 +99,14 @@
 
   inset: 0;
 
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(13,46,64,.55),
-      rgba(13,46,64,.92)
-    );
+  background-image:
+    url("noise.png");
 
-  z-index: 1;
+  opacity: .04;
+
+  mix-blend-mode: soft-light;
+
+  pointer-events: none;
 
 }
 
@@ -127,19 +117,19 @@
   z-index: 2;
 
 }
-.activity-feed{
 
-  max-width: 700px;
 
-  margin: 0 auto;
-
-}
 .activity-card{
+  
+  border:
+    1px solid rgba(255,255,255,.05);
 
-  padding: 1.5rem;
+  padding: 2rem;
 
-  border-radius: 22px;
+  border-radius: 24px;
 
+  backdrop-filter: blur(12px);
+  
   margin-bottom: 1rem;
 
 }
@@ -162,13 +152,6 @@
   position: absolute;
 
   inset: 0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(13,46,64,.2),
-      rgba(13,46,64,.95)
-    );
 
   pointer-events: none;
 
@@ -206,7 +189,7 @@
 
   line-height: .95;
 
-  color: white;
+  color: rgba(255,255,255,.92);
 
   max-width: 700px;
 
@@ -274,14 +257,6 @@
   position: absolute;
 
   inset: 0;
-
-  background:
-    linear-gradient(
-      to top,
-      rgba(0,0,0,.85),
-      transparent 60%
-    );
-
 }
 
 .signature-film-overlay{
@@ -302,7 +277,7 @@
 
   font-size: 2rem;
 
-  color: white;
+  color: rgba(255,255,255,.92);
 
   margin-bottom: .5rem;
 
