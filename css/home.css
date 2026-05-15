@@ -479,8 +479,7 @@ display:flex;
   gap:42px;
 
   max-width:1000px;
-
-  margin:0 auto;
+margin:0;
 
 }
 
@@ -489,7 +488,7 @@ display:flex;
 .film-card{
 
   position:relative;
-
+  
   overflow:hidden;
 
   border-radius:32px;
