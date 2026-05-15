@@ -691,3 +691,359 @@
 
 }
 
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-page{
+
+  min-height:100vh;
+
+  background:
+    linear-gradient(
+      rgba(7,15,25,.92),
+      rgba(7,15,25,.96)
+    ),
+    url("img/wall.webp");
+
+  background-size:cover;
+
+  background-position:center;
+
+  color:var(--panea-white);
+
+  overflow:hidden;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+.about-hero{
+
+  position:relative;
+
+  padding:180px 0 120px;
+
+  overflow:hidden;
+
+}
+
+.about-layout{
+
+  width:min(1180px, 90%);
+
+  margin:0 auto;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:80px;
+
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.about-content{
+
+  max-width:540px;
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+.about-kicker{
+
+  font-size:.72rem;
+
+  letter-spacing:.28em;
+
+  text-transform:uppercase;
+
+  color:var(--panea-yellow);
+
+  margin-bottom:24px;
+
+  font-weight:700;
+
+}
+
+.about-title{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:clamp(4rem, 8vw, 7rem);
+
+  line-height:.9;
+
+  letter-spacing:-.04em;
+
+  margin-bottom:28px;
+
+  color:var(--panea-white);
+
+}
+
+.about-title span{
+
+  color:var(--panea-yellow);
+
+}
+
+.about-text{
+
+  font-size:1.08rem;
+
+  line-height:1.95;
+
+  color:rgba(255,255,255,.74);
+
+  margin-bottom:28px;
+
+}
+
+.about-highlight{
+
+  font-size:1.15rem;
+
+  line-height:1.9;
+
+  color:var(--panea-yellow);
+
+  max-width:480px;
+
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.about-image{
+
+  position:relative;
+
+  flex-shrink:0;
+
+}
+
+.about-image img{
+
+  width:420px;
+
+  max-width:100%;
+
+  display:block;
+
+  object-fit:cover;
+
+  border-radius:34px;
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.45);
+
+}
+
+.about-image::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-20px;
+
+  border:1px solid rgba(253,193,3,.12);
+
+  border-radius:40px;
+
+  pointer-events:none;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.about-cards{
+
+  padding:40px 0 120px;
+
+}
+
+.about-cards .container{
+
+  width:min(1180px, 90%);
+
+  margin:0 auto;
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:28px;
+
+}
+
+.about-card{
+
+  padding:38px 34px;
+
+  border-radius:30px;
+
+  background:rgba(255,255,255,.03);
+
+  border:1px solid rgba(255,255,255,.06);
+
+  backdrop-filter:blur(10px);
+
+  transition:.3s ease;
+
+}
+
+.about-card:hover{
+
+  transform:translateY(-6px);
+
+  border-color:rgba(253,193,3,.18);
+
+}
+
+.about-card-label{
+
+  font-size:.7rem;
+
+  letter-spacing:.24em;
+
+  text-transform:uppercase;
+
+  color:var(--panea-yellow);
+
+  margin-bottom:18px;
+
+}
+
+.about-card h3{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:2rem;
+
+  line-height:1;
+
+  margin-bottom:18px;
+
+  color:var(--panea-white);
+
+}
+
+.about-card p{
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,.72);
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+  .about-hero{
+
+    padding:140px 22px 80px;
+
+  }
+
+  .about-layout{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:50px;
+
+    width:100%;
+
+  }
+
+  .about-content{
+
+    max-width:100%;
+
+  }
+
+  .about-title{
+
+    font-size:4.8rem;
+
+    line-height:.9;
+
+  }
+
+  .about-text,
+  .about-highlight{
+
+    max-width:100%;
+
+    font-size:1rem;
+
+    line-height:1.8;
+
+  }
+
+  .about-image{
+
+    width:100%;
+
+  }
+
+  .about-image img{
+
+    width:100%;
+
+    border-radius:28px;
+
+  }
+
+  .about-cards{
+
+    padding:20px 22px 100px;
+
+  }
+
+  .about-cards .container{
+
+    width:100%;
+
+    grid-template-columns:1fr;
+
+    gap:22px;
+
+    padding:0;
+
+  }
+
+  .about-card{
+
+    padding:30px 26px;
+
+    border-radius:26px;
+
+  }
+
+  .about-card h3{
+
+    font-size:1.8rem;
+
+  }
+
+}
