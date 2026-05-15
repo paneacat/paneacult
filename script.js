@@ -501,9 +501,13 @@ if(searchInput){
     );
 
   const genreFilter =
+    const rubricaFilter =
+  document.getElementById(
+    "rubricaFilter"
+  );
     document.getElementById(
       "genreFilter"
-    );
+      
 
   const ratingFilter =
     document.getElementById(
@@ -513,7 +517,12 @@ if(searchInput){
   let timeout;
 
   function filterCards(){
-
+const rubrica =
+  rubricaFilter
+    ? rubricaFilter.value
+        .toLowerCase()
+    : "";
+    
     const search =
       searchInput.value.toLowerCase();
 
@@ -537,10 +546,19 @@ if(searchInput){
 
       const cardRating =
         card.dataset.rating || "";
-
+      
+const cardRubrica =
+  card.dataset.rubrica || "";
+      
       const matchesSearch =
         text.includes(search);
 
+      const matchesRubrica =
+
+  !rubrica ||
+
+  cardRubrica === rubrica;
+      
       const matchesGenre =
 
   !genre ||
@@ -555,8 +573,9 @@ if(searchInput){
 
       if(
         matchesSearch &&
-        matchesGenre &&
-        matchesRating
+matchesGenre &&
+matchesRating &&
+matchesRubrica
       ){
 
         card.style.display =
@@ -591,7 +610,11 @@ if(searchInput){
 
     }
   );
-
+rubricaFilter?.addEventListener(
+  "change",
+  filterCards
+);
+  
   genreFilter?.addEventListener(
     "change",
     filterCards
