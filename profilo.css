@@ -338,6 +338,33 @@ max-width: 700px;
     min-height: 520px;
 
   }
+  .profile-hero{
+
+    padding:
+      7rem 1.2rem 4rem;
+
+  }
+
+  .profile-avatar{
+
+    width: 80px;
+    height: 80px;
+
+    font-size: 2rem;
+
+  }
+
+  .profile-stats{
+
+    gap: 1.5rem;
+
+  }
+
+  .profile-stat span{
+
+    font-size: 2rem;
+
+  }
   }
 
 
