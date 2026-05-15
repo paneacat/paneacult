@@ -10,7 +10,7 @@
 
 body.login-page{
 
-  overflow: hidden;
+  overflow-x:hidden;
 
 }
 
@@ -224,7 +224,7 @@ body.login-page{
 
 /* SUBTITLE */
 
-.logo-subtitle {
+.login-subtitle {
 
   margin-top: 10px;
 
@@ -265,36 +265,6 @@ box-shadow:
 
   border-radius: 30px;
   }
-
-/* INPUT */
-
-.login-box input{
-
-  width: 100%;
-
-  height: 56px;
-
-  padding: 0 20px;
-
-  border-radius: 16px;
-
-  background: rgba(255,255,255,.10);
-
-  border: 1px solid rgba(255,255,255,.12);
-  color: white;
-
-  font-size: 15px;
-
-}
-
-.login-box input:focus{
-
-  border-color: rgba(243,198,35,.55);
-
-  box-shadow:
-    0 0 0 4px rgba(243,198,35,.08);
-
-}
 
 /* BUTTONS CONTAINER */
 
@@ -337,6 +307,8 @@ box-shadow:
   cursor: pointer;
 
   transition: 0.3s ease;
+   background:var(--panea-yellow);
+color:#0d2e40;
 
 }
 
@@ -375,15 +347,18 @@ box-shadow:
 
 }
 
+.register-btn:hover{
+
+  border-color:var(--panea-yellow);
+  color:var(--panea-yellow);
+
+}
+
 .login-back{
 
   position: absolute;
 
   top: 42px;
-
-  left: 50%;
-
-  transform: translateX(320px);
 
   z-index: 30;
 
@@ -396,6 +371,9 @@ box-shadow:
   letter-spacing: .12em;
 
   text-transform: uppercase;
+   right:40px;
+left:auto;
+transform:none;
 
 }
 
@@ -424,13 +402,13 @@ box-shadow:
 
   margin-top: 34px;
 
-  font-size: 20px;
-
   line-height: 1.5;
 
   font-style: italic;
 
   color: rgba(255,255,255,.88);
+   font-size:1rem;
+opacity:.72;
 
 }
 
@@ -497,28 +475,6 @@ box-shadow:
 
 }
 
-.about-cards .container {
-
-  background: transparent !important;
-
-  border: none !important;
-
-  box-shadow: none !important;
-
-  backdrop-filter: none !important;
-
-  -webkit-backdrop-filter: none !important;
-
-  display: grid;
- margin-top: 0 !important;
-  padding-top: 0 !important;
-
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 28px;
-
-}
 
 .back-link{
 
