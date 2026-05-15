@@ -70,12 +70,12 @@ async function fetchMovieDetails(movieId){
 function renderSelectedMovie(movie, movieDetails){
 
   const director =
-    movieDetails.credits.crew.find(
-      person => person.job === "Director"
-    );
+  movieDetails?.credits?.crew?.find(
+    person => person.job === "Director"
+  );
 
   const cast =
-    movieDetails.credits.cast
+  movieDetails?.credits?.cast
       .slice(0, 4)
       .map(actor => actor.name)
       .join(", ");
@@ -564,7 +564,41 @@ function updateMovieButtons(status){
 }
 
 function saveMovieStatus(status){
+function setupMovieButtons(){
 
+  const markWatchedBtn =
+    document.getElementById(
+      "markWatchedBtn"
+    );
+
+  const markWatchlistBtn =
+    document.getElementById(
+      "markWatchlistBtn"
+    );
+
+  markWatchedBtn?.addEventListener(
+    "click",
+    () => {
+
+      saveMovieStatus(
+        "watched"
+      );
+
+    }
+  );
+
+  markWatchlistBtn?.addEventListener(
+    "click",
+    () => {
+
+      saveMovieStatus(
+        "watchlist"
+      );
+
+    }
+  );
+
+}
   currentMovieStatus = status;
 
   localStorage.setItem(
@@ -575,16 +609,6 @@ function saveMovieStatus(status){
   updateMovieButtons(status);
 
 }
-
-const markWatchedBtn =
-  document.getElementById(
-    "markWatchedBtn"
-  );
-
-const markWatchlistBtn =
-  document.getElementById(
-    "markWatchlistBtn"
-  );
 
 publishReviewBtn?.addEventListener(
   "click",
@@ -1331,8 +1355,5 @@ registerBtn?.addEventListener(
     }
 
   }
-);
-  
-  
-
+});
   
