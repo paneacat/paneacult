@@ -266,7 +266,7 @@ function aggiornaFiltri(){
 
       splash.style.opacity = "0";
 
-      splash.style.transition = "3.5s";
+      splash.style.transition = ".6s";
 
       setTimeout(() => {
 
