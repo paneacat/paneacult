@@ -315,6 +315,7 @@ document.addEventListener(
   }
 );
 
+
 /* =========================
    SEARCH + FILTRI
 ========================= */
@@ -332,47 +333,41 @@ if(searchInput){
     );
 
   const genreFilter =
-  document.getElementById(
-    "genreFilter"
-  );
+    document.getElementById(
+      "genreFilter"
+    );
 
-const rubricaFilter =
-  document.getElementById(
-    "rubricaFilter"
-  );
-      
+  const rubricaFilter =
+    document.getElementById(
+      "rubricaFilter"
+    );
 
   const ratingFilter =
     document.getElementById(
       "ratingFilter"
     );
-  
+
   const resetBtn =
-  document.getElementById(
-    "resetFilters"
-  );
-  
-const emptyState =
-  document.getElementById(
-    "emptyState"
-  );
+    document.getElementById(
+      "resetFilters"
+    );
+
+  const emptyState =
+    document.getElementById(
+      "emptyState"
+    );
 
   const loadMoreBtn =
-  document.getElementById(
-    "loadMoreBtn"
-  );
+    document.getElementById(
+      "loadMoreBtn"
+    );
 
-let visibleCards = 3;
-  
+  let visibleCards = 3;
+
   let timeout;
 
   function filterCards(){
-const rubrica =
-  rubricaFilter
-    ? rubricaFilter.value
-        .toLowerCase()
-    : "";
-    
+
     const search =
       searchInput.value.toLowerCase();
 
@@ -381,43 +376,20 @@ const rubrica =
         ? genreFilter.value.toLowerCase()
         : "";
 
+    const rubrica =
+      rubricaFilter
+        ? rubricaFilter.value.toLowerCase()
+        : "";
+
     const rating =
       ratingFilter
         ? ratingFilter.value
         : "";
-    
+
     let visibleCount = 0;
+
     archivioCards.forEach(card => {
 
-      if(emptyState){
-
-  emptyState.style.display =
-    visibleCount === 0
-      ? "flex"
-      : "none";
-
-      }
-
-      if(loadMoreBtn){
-
-  loadMoreBtn.style.display =
-
-    visibleCount > visibleCards
-      ? "flex"
-      : "none";
-
-        loadMoreBtn?.addEventListener(
-  "click",
-  () => {
-
-    visibleCards += 3;
-
-    filterCards();
-
-  }
-);
-      }
-      
       const text =
         card.textContent.toLowerCase();
 
@@ -426,56 +398,58 @@ const rubrica =
 
       const cardRating =
         card.dataset.rating || "";
-      
-const cardRubrica =
-  card.dataset.rubrica || "";
-      
+
+      const cardRubrica =
+        card.dataset.rubrica || "";
+
       const matchesSearch =
         text.includes(search);
 
-      const matchesRubrica =
-
-  !rubrica ||
-
-  cardRubrica === rubrica;
-      
       const matchesGenre =
 
-  !genre ||
+        !genre ||
 
-  cardGenre
-    .split(" ")
-    .includes(genre);
+        cardGenre
+          .split(" ")
+          .includes(genre);
+
+      const matchesRubrica =
+
+        !rubrica ||
+
+        cardRubrica === rubrica;
 
       const matchesRating =
+
         !rating ||
+
         cardRating === rating;
 
       if(
-  matchesSearch &&
-  matchesGenre &&
-  matchesRating &&
-  matchesRubrica
-){
+        matchesSearch &&
+        matchesGenre &&
+        matchesRubrica &&
+        matchesRating
+      ){
 
-  visibleCount++;
+        visibleCount++;
 
-  if(visibleCount <= visibleCards){
+        if(visibleCount <= visibleCards){
 
-    card.style.display =
-      "block";
+          card.style.display =
+            "block";
 
-    card.style.opacity =
-      "1";
+          card.style.opacity =
+            "1";
 
-  }
+        }
 
-  else {
+        else {
 
-    card.style.display =
-      "none";
+          card.style.display =
+            "none";
 
-  }
+        }
 
       }
 
@@ -488,58 +462,114 @@ const cardRubrica =
 
     });
 
+    if(emptyState){
+
+      emptyState.style.display =
+
+        visibleCount === 0
+          ? "flex"
+          : "none";
+
+    }
+
+    if(loadMoreBtn){
+
+      loadMoreBtn.style.display =
+
+        visibleCount > visibleCards
+          ? "flex"
+          : "none";
+
+    }
+
   }
 
   searchInput.addEventListener(
     "input",
     () => {
-    
+
       clearTimeout(timeout);
 
       timeout = setTimeout(() => {
-       visibleCards = 3;
+
+        visibleCards = 3;
+
         filterCards();
 
       }, 220);
 
     }
   );
-rubricaFilter?.addEventListener(
-  "change",
-  filterCards
-);
-  
+
   genreFilter?.addEventListener(
     "change",
-    filterCards
+    () => {
+
+      visibleCards = 3;
+
+      filterCards();
+
+    }
+  );
+
+  rubricaFilter?.addEventListener(
+    "change",
+    () => {
+
+      visibleCards = 3;
+
+      filterCards();
+
+    }
   );
 
   ratingFilter?.addEventListener(
     "change",
-    filterCards
+    () => {
 
+      visibleCards = 3;
 
-    resetBtn?.addEventListener(
-  "click",
-  () => {
+      filterCards();
 
-    searchInput.value = "";
-
-    if(genreFilter){
-      genreFilter.value = "";
     }
-
-    if(ratingFilter){
-      ratingFilter.value = "";
-    }
-
-    if(rubricaFilter){
-      rubricaFilter.value = "";
-    }
-
-    filterCards();
-
-  }
-);
   );
+
+  resetBtn?.addEventListener(
+    "click",
+    () => {
+
+      searchInput.value = "";
+
+      if(genreFilter){
+        genreFilter.value = "";
+      }
+
+      if(ratingFilter){
+        ratingFilter.value = "";
+      }
+
+      if(rubricaFilter){
+        rubricaFilter.value = "";
+      }
+
+      visibleCards = 3;
+
+      filterCards();
+
+    }
+  );
+
+  loadMoreBtn?.addEventListener(
+    "click",
+    () => {
+
+      visibleCards += 3;
+
+      filterCards();
+
+    }
+  );
+
+  filterCards();
+
 }
