@@ -9,8 +9,10 @@ document.addEventListener(
     const cursor =
       document.querySelector(".cursor");
 
-    if(cursor){
-
+    if(
+  cursor &&
+  window.innerWidth > 768
+){
       document.addEventListener(
         "mousemove",
         (e) => {
