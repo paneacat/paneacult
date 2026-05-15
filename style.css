@@ -3167,6 +3167,17 @@ padding:
 
 }
 
+.profile-content{
+
+  width: min(1200px, 92%);
+
+  margin: 0 auto;
+
+  position: relative;
+
+  z-index: 3;
+
+}
 /* USER */
 
 .profile-user{
