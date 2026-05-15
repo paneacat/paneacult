@@ -1031,10 +1031,7 @@
 
   margin:120px auto 0;
 
-  display:grid;
-
-  grid-template-columns:
-    380px 1fr;
+  display:flex;
 
   align-items:center;
 
@@ -1046,6 +1043,8 @@
 .about-image{
 
   width:380px;
+
+  flex-shrink:0;
 
 }
 
