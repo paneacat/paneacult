@@ -227,7 +227,7 @@ margin-top: 8px;
 
   display:block;
 
-  padding:28px;
+  padding:36px;
 
   border-radius:24px;
 
@@ -260,28 +260,32 @@ transition:var(--transition);
 
   display:block;
 
-  margin-bottom:16px;
+  margin-bottom:18px;
 
-  font-size:11px;
+  font-size:.82rem;
 
-  letter-spacing:2px;
+  letter-spacing:.18em;
 
   text-transform:uppercase;
 
   color:var(--panea-yellow);
+
+  font-weight:600;
+
 }
 
 /* TEXT */
 
 .rubrica-card p{
 
-  font-size:17px;
+  font-size:1.18rem;
 
-  line-height:1.7;
+  line-height:1.8;
 
   color:var(--panea-white);
 
-  opacity:.9;
+  opacity:.92;
+
 }
 
 
