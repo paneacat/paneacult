@@ -825,6 +825,8 @@
 
   margin-left:-20px;
 
+  overflow:hidden;
+
 }
 
 .about-image img{
@@ -837,26 +839,9 @@
 
   object-fit:cover;
 
-  border-radius:34px;
+  aspect-ratio:4/5;
 
-  box-shadow:
-    0 30px 80px rgba(0,0,0,.45);
-
-}
-
-.about-image::after{
-
-  content:"";
-
-  position:absolute;
-
-  inset:-20px;
-
-  border:1px solid rgba(253,193,3,.12);
-
-  border-radius:40px;
-
-  pointer-events:none;
+  border-radius:0;
 
 }
 
