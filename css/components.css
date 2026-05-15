@@ -532,28 +532,6 @@
   background:var(--panea-yellow);
   color:#0b1f26;
 }
-.about-cards .container {
-
-  background: transparent !important;
-
-  border: none !important;
-
-  box-shadow: none !important;
-
-  backdrop-filter: none !important;
-
-  -webkit-backdrop-filter: none !important;
-
-  display: grid;
- margin-top: 0 !important;
-  padding-top: 0 !important;
-
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 28px;
-
-}
 
 /* =========================
    NEWSLETTER
@@ -691,21 +669,7 @@
 
 }
 
-/* =========================
-   ABOUT PAGE
-========================= */
 
-.about-page{
-
-  min-height:100vh;
-
-  background:transparent;
-
-  color:var(--panea-white);
-
-  overflow:hidden;
-
-}
 
 .about-kicker{
 
@@ -722,37 +686,6 @@
   font-weight:700;
 
 }
-
-
-.about-highlight{
-
-  max-width:900px;
-
-  margin:40px auto 0;
-
-  text-align:center;
-
-  font-family:"Playfair Display", serif;
-
-  font-size:clamp(1.8rem, 4vw, 3rem);
-
-  line-height:1.35;
-
-  font-style:italic;
-
-  color:rgba(255,255,255,.92);
-
-}
-
-.about-highlight span{
-
-  color:var(--panea-yellow);
-
-}
-
-/* =========================
-   CARDS
-========================= */
 
 .about-cards{
 
@@ -840,41 +773,6 @@
 .about-page{
 
   padding:170px 0 120px;
-
-}
-
-
-.about-number{
-
-  font-size:.72rem;
-
-  letter-spacing:.24em;
-
-  text-transform:uppercase;
-
-  color:var(--panea-yellow);
-
-  margin-bottom:22px;
-
-  font-weight:700;
-
-}
-
-.about-intro{
-
-  font-size:1.2rem;
-
-  line-height:1.8;
-
-  color:rgba(255,255,255,.74);
-
-  margin-top:30px;
-
-}
-
-.about-intro span{
-
-  color:var(--panea-yellow);
 
 }
 
