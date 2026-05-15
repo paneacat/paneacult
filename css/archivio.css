@@ -198,13 +198,15 @@ font-weight:500;
    GRID ARCHIVIO
 ========================= */
 
+
 .archivio-grid{
 
-display:grid;
+  display:grid;
 
-  grid-template-columns:1fr;
+  grid-template-columns:
+    repeat(3,1fr);
 
-  gap:3rem;
+  gap:26px;
 
   margin-top:50px;
 }
