@@ -544,5 +544,139 @@
 
 }
 
+/* =========================
+   NEWSLETTER
+========================= */
 
+.newsletter{
+
+  padding:120px 20px;
+
+  text-align:center;
+
+}
+
+.newsletter-inner{
+
+  max-width:700px;
+
+  margin:0 auto;
+
+}
+
+.newsletter-kicker{
+
+  font-size:.75rem;
+
+  letter-spacing:.25em;
+
+  text-transform:uppercase;
+
+  color:var(--panea-yellow);
+
+  margin-bottom:20px;
+
+}
+
+.newsletter h2{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:clamp(2.5rem,6vw,4rem);
+
+  line-height:1;
+
+  color:var(--panea-white);
+
+  margin-bottom:24px;
+
+}
+
+.newsletter-sub{
+
+  font-size:1.05rem;
+
+  line-height:1.8;
+
+  color:rgba(255,255,255,.72);
+
+  margin-bottom:40px;
+
+}
+
+.newsletter-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:18px 36px;
+
+  border-radius:999px;
+
+  background:var(--panea-yellow);
+
+  color:#0d2e40;
+
+  font-weight:700;
+
+  text-decoration:none;
+
+  transition:.25s ease;
+
+}
+
+.newsletter-btn:hover{
+
+  transform:translateY(-2px);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.credits{
+
+  padding:100px 20px 60px;
+
+  text-align:center;
+
+}
+
+.credits-inner{
+
+  max-width:700px;
+
+  margin:0 auto;
+
+}
+
+.credits-label{
+
+  font-size:.7rem;
+
+  letter-spacing:.25em;
+
+  text-transform:uppercase;
+
+  color:rgba(255,255,255,.45);
+
+  margin-top:28px;
+
+  margin-bottom:10px;
+
+}
+
+.credits-name{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:1.4rem;
+
+  color:var(--panea-white);
+
+}
 
