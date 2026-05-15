@@ -175,17 +175,22 @@ margin-top: 8px;
 
 .section-kicker{
 
-  font-size:11px;
+  font-family:'Inter', sans-serif;
 
-  letter-spacing:3px;
+  font-size:.82rem;
+
+  letter-spacing:.24em;
 
   text-transform:uppercase;
 
   color:var(--panea-yellow);
 
-  opacity:.7;
+  opacity:.9;
 
-  margin-bottom:14px;
+  margin-bottom:18px;
+
+  font-weight:600;
+
 }
 
 /* TITLE */
@@ -556,7 +561,7 @@ display:flex;
 
   font-family:"Playfair Display", serif;
 
-  font-size:2rem;
+  font-size:2.2rem;
 
   line-height:.95;
 
@@ -568,11 +573,13 @@ display:flex;
 
 .film-card p{
 
-  color:rgba(255,255,255,.72);
+  color:rgba(255,255,255,.78);
 
-  line-height:1.8;
+  line-height:1.9;
 
-}
+  font-size:1.08rem;
+
+} 
 
 .section-label{
 
