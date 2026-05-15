@@ -783,11 +783,16 @@
 
   margin:90px auto 0;
 
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  text-align:center;
 }
 
 .about-body{
-
-
   font-size:1.08rem;
 
   line-height:1.9;
@@ -864,7 +869,18 @@
 
   gap:70px;
 
+  justify-content:center;
+
+  margin-left:auto;
+
+  margin-right:auto;
+      
+  flex-direction:column;
+
+  text-align:center;
 }
+
+   
 /* IMAGE */
 
 .about-image{
