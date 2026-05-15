@@ -1,0 +1,454 @@
+/* =========================
+   6. HERO
+========================= */
+
+.hero {
+  padding-top: 60px;
+  padding-bottom: 90px;
+}
+
+.hero-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+}
+
+.hero-text{
+max-width:650px;
+  width:100%;
+  padding-left: 18px;
+}
+
+.hero-kicker {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--panea-yellow);
+  opacity: .7;
+  margin-bottom: 18px;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+font-size: clamp(2.4rem, 4vw, 3.8rem);
+  line-height: .95;
+  letter-spacing: -2px;
+  max-width: 420px;
+  color: var(--panea-white);
+  margin-bottom: 22px;
+}
+
+.highlight {
+  color: var(--panea-yellow);
+}
+
+.hero-sub {
+  max-width: 520px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.75);
+}
+
+.hero-cta {
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 30px;
+}
+
+.cta-text {
+  font-size: 22px;
+  line-height: 1.7;
+  color: var(--panea-white);;
+}
+
+
+
+/* =========================
+   HOME CINEMA
+========================= */
+
+.home-cinema{
+  padding: 40px 0 100px;
+}
+
+.home-cta{
+position:relative;
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f2c94c 0%,
+      #e5b92f 100%
+    );
+
+  padding:140px 20px;
+  text-align:center;
+}
+
+
+.home-cta::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("img/wall.jpg") center/cover;
+  opacity:.06;
+  filter:blur(4px);
+  transform:scale(1.1);
+}
+
+.cta-kicker{
+  font-size:.8rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#8a6510;
+  margin-bottom:20px;
+  opacity:.9;
+}
+
+.home-cta h2{
+  font-family:"Playfair Display", serif;
+  font-size:4rem;
+  line-height:1.05;
+  color:#0b1f26;
+  margin-bottom:24px;
+}
+
+.cta-sub{
+  font-size:1.05rem;
+  line-height:1.8;
+  max-width:520px;
+  margin:0 auto 40px;
+   color:rgba(11,31,38,.75);
+}
+
+.cta-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px 42px;
+  border-radius:999px;
+  background:#f2c94c;
+  color:#0b1f26;
+  font-weight:700;
+  text-decoration:none;
+  transition:.25s;
+}
+
+.cta-button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(242,201,76,.25);
+}
+.home-cta > *{
+  position:relative;
+  z-index:2;
+}
+
+/* =========================
+   RUBRICHE HOME
+========================= */
+
+.rubriche-home{
+margin-top: 8px;
+ marhin-bottom: 8px;
+  padding:
+    20px 0;
+}
+
+/* KICKER */
+
+.section-kicker{
+
+  font-size:11px;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+
+  color:var(--panea-yellow);
+
+  opacity:.7;
+
+  margin-bottom:14px;
+}
+
+/* TITLE */
+
+.section-title{
+
+  font-family: 'Playfair Display', serif;
+
+  font-size:clamp(30px,5vw,54px);
+
+  line-height:1.05;
+
+  color:var(--panea-white);
+
+  font-weight: 720;
+
+  margin-bottom:42px;
+}
+
+/* GRID */
+
+.rubriche-grid{
+
+  display:grid;
+
+  grid-template-columns:1fr;
+
+  gap:18px;
+}
+
+/* CARD */
+
+.rubrica-card{
+
+  display:block;
+
+  padding:28px;
+
+  border-radius:24px;
+
+  background:
+    rgba(255,255,255,.03);
+
+  border:
+    1px solid rgba(255,255,255,.06);
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    background .25s ease;
+}
+
+/* HOVER */
+
+.rubrica-card:hover{
+
+  transform:translateY(-4px);
+
+  border-color:
+    rgba(253,193,3,.25);
+
+  background:
+    rgba(255,255,255,.045);
+}
+
+/* LABEL */
+
+.rubrica-label{
+
+  display:block;
+
+  margin-bottom:16px;
+
+  font-size:11px;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  color:var(--panea-yellow);
+}
+
+/* TEXT */
+
+.rubrica-card p{
+
+  font-size:17px;
+
+  line-height:1.7;
+
+  color:var(--panea-white);
+
+  opacity:.9;
+}
+
+
+/* AUTORE (PIÙ IMPORTANTE) */
+.author {
+  color: var(--panea-text);
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* HASHTAG */
+.series {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 14px;
+}
+
+/* GENERE */
+.genre-bar {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+.meta,
+.genre-bar,
+.series {
+  font-size: 13px;
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+/* =========================
+   MANIFESTO HOME
+========================= */
+
+.manifesto-home{
+
+  min-height:58vh;
+
+  display:flex;
+  align-items:center;
+
+  padding:120px 0 90px;
+
+  position:relative;
+  overflow:hidden;
+}
+
+/* WRAPPER */
+
+.manifesto-wrapper{
+display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:90px;
+
+  width:100%;
+  max-width:1200px;
+
+  margin:0 auto;
+}
+
+/* LEFT */
+
+.manifesto-left{
+
+  max-width:520px;
+}
+
+.manifesto-right{
+
+  max-width:320px;
+}
+
+.manifesto-left h2{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:4.2rem;
+  line-height:.95;
+
+  color:var(--panea-white);
+
+  margin-bottom:24px;
+}
+
+.manifesto-left span{
+
+  color:#f4c542;
+}
+
+.manifesto-left p{
+
+  max-width:480px;
+
+  color:rgba(255,255,255,.75);
+
+  font-size:1.05rem;
+  line-height:1.8;
+}
+
+/* DIVIDER */
+
+.manifesto-divider{
+
+  width:1px;
+  height:180px;
+
+  background:
+  linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255,255,255,.15),
+    transparent
+  );
+}
+
+/* RIGHT */
+
+.manifesto-kicker{
+
+  font-size:.7rem;
+  letter-spacing:.25em;
+
+  color:#f4c542;
+
+  margin-bottom:16px;
+
+  font-weight:700;
+}
+
+.manifesto-right h3{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:2.8rem;
+  line-height:1;
+
+  color:var(--panea-white);
+
+  margin-bottom:20px;
+}
+
+.manifesto-sub{
+
+  color:rgba(255,255,255,.72);
+
+  line-height:1.8;
+
+  margin-bottom:30px;
+}
+
+/* BUTTON */
+
+.manifesto-btn{
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:15px 34px;
+
+  border-radius:999px;
+
+  background:#f4c542;
+  color:#0b1f26;
+
+  font-weight:600;
+
+  text-decoration:none;
+
+  transition:.25s;
+}
+
+.manifesto-btn:hover{
+
+  transform:translateY(-2px);
+
+  background:#ffd95e;
+}
+
