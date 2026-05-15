@@ -208,7 +208,7 @@ font-weight:500;
 
   gap:32px;
 
-  align-items:start;
+  margin-top:40px;
 
 }
 
@@ -216,6 +216,7 @@ font-weight:500;
 
 .archivio-card{
   width:100%;
+  min-width:0;
 }
 
 /* IMG */
@@ -263,7 +264,7 @@ font-weight:500;
 
 .archivio-section .container{
 
-  width:min(90%, 1100px);
+  width:min(90%, 1180px);
 
   margin:0 auto;
 
