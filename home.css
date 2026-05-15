@@ -43,19 +43,30 @@ font-size: clamp(2.4rem, 4vw, 3.8rem);
   color: var(--panea-yellow);
 }
 
-.hero-sub {
-  max-width: 520px;
-  font-size: 18px;
-  line-height: 1.8;
-  color: rgba(255,255,255,.75);
+.hero-sub{
+
+  max-width:520px;
+
+  font-size:clamp(
+    1rem,
+    2vw,
+    1.1rem
+  );
+
+  line-height:1.8;
+
+  color:
+    rgba(255,255,255,.75);
+
 }
 
 .hero-cta {
-  min-width: 340px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  width:100%;
+   gap: 8px;
+  max-width:340px;
   padding-bottom: 30px;
 }
 
@@ -112,10 +123,10 @@ position:relative;
 
 .home-cta h2{
   font-family:"Playfair Display", serif;
-  font-size:4rem;
   line-height:1.05;
   color:#0b1f26;
   margin-bottom:24px;
+   font-size:clamp(2.5rem, 8vw, 4rem);
 }
 
 .cta-sub{
@@ -154,7 +165,7 @@ position:relative;
 
 .rubriche-home{
 margin-top: 8px;
- marhin-bottom: 8px;
+ margin-bottom: 8px;
   padding:
     20px 0;
 }
@@ -215,11 +226,12 @@ margin-top: 8px;
   border-radius:24px;
 
   background:
-    rgba(255,255,255,.03);
+    var(--panea-blue);
 
   border:
     1px solid rgba(255,255,255,.06);
-
+overflow:hidden;
+position:relative;
   transition:
     transform .25s ease,
     border-color .25s ease,
@@ -236,7 +248,7 @@ margin-top: 8px;
     rgba(253,193,3,.25);
 
   background:
-    rgba(255,255,255,.045);
+    var(--panea-blue);
 }
 
 /* LABEL */
@@ -280,7 +292,7 @@ margin-top: 8px;
 
 /* HASHTAG */
 .series {
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--panea-yellow);
   font-size: 12px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -289,7 +301,7 @@ margin-top: 8px;
 
 /* GENERE */
 .genre-bar {
-  color: var(--muted);
+  color: var(--panea-muted);
   font-size: 13px;
   margin-top: 4px;
 }
@@ -325,7 +337,7 @@ display:flex;
   align-items:center;
   justify-content:center;
 
-  gap:90px;
+  gap:clamp(40px, 6vw, 90px);
 
   width:100%;
   max-width:1200px;
@@ -348,8 +360,7 @@ display:flex;
 .manifesto-left h2{
 
   font-family:"Playfair Display", serif;
-
-  font-size:4.2rem;
+  font-size:clamp(2.7rem, 8vw, 4.2rem);
   line-height:.95;
 
   color:var(--panea-white);
@@ -359,14 +370,14 @@ display:flex;
 
 .manifesto-left span{
 
-  color:#f4c542;
+  color:var(--panea-yellow);
 }
 
 .manifesto-left p{
 
   max-width:480px;
 
-  color:rgba(255,255,255,.75);
+  color: var(--panea-yellow);
 
   font-size:1.05rem;
   line-height:1.8;
@@ -395,7 +406,7 @@ display:flex;
   font-size:.7rem;
   letter-spacing:.25em;
 
-  color:#f4c542;
+  color:var(--panea-yellow);
 
   margin-bottom:16px;
 
@@ -416,7 +427,7 @@ display:flex;
 
 .manifesto-sub{
 
-  color:rgba(255,255,255,.72);
+  color: var(--panea-yellow);
 
   line-height:1.8;
 
@@ -435,8 +446,8 @@ display:flex;
 
   border-radius:999px;
 
-  background:#f4c542;
-  color:#0b1f26;
+  background: var(--panea-yellow);
+  color:#0d2e40;
 
   font-weight:600;
 
@@ -449,6 +460,6 @@ display:flex;
 
   transform:translateY(-2px);
 
-  background:#ffd95e;
+  background: var(--panea-yellow);
 }
 
