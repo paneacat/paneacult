@@ -149,22 +149,33 @@
 }
 
 .slider-arrow{
+
   width:48px;
+
   height:48px;
+
   border-radius:50%;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.04);
-  color:#f4efe8;
+
+  border:none;
+
+  background:var(--panea-yellow);
+
+  color:#0d2e40;
+
   font-size:1rem;
+
   cursor:pointer;
+
   transition:.25s ease;
-  backdrop-filter:blur(12px);
+
 }
 
 .slider-arrow:hover{
-  background:var(--panea-yellow);
-  color:#0b1f26;
-  border-color:var(--panea-yellow);
+
+  transform:translateY(-2px);
+
+  opacity:.92;
+
 }
 
 /* =========================
