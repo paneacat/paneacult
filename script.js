@@ -484,33 +484,118 @@ document.addEventListener(
   }
 );
 
+/* =========================
+   SEARCH + FILTRI
+========================= */
 
 const searchInput =
-  document.getElementById("searchInput");
+  document.getElementById(
+    "searchInput"
+  );
 
-const cards =
-  document.querySelectorAll(".archivio-card");
+if(searchInput){
 
-searchInput.addEventListener("input", () => {
+  const archivioCards =
+    document.querySelectorAll(
+      ".archivio-card"
+    );
 
-  const value =
-    searchInput.value.toLowerCase();
+  const genreFilter =
+    document.getElementById(
+      "genreFilter"
+    );
 
-  cards.forEach(card => {
+  const ratingFilter =
+    document.getElementById(
+      "ratingFilter"
+    );
 
-    const text =
-      card.textContent.toLowerCase();
+  let timeout;
 
-    if(text.includes(value)){
+  function filterCards(){
 
-      card.style.display = "block";
+    const search =
+      searchInput.value.toLowerCase();
 
-    } else {
+    const genre =
+      genreFilter
+        ? genreFilter.value.toLowerCase()
+        : "";
 
-      card.style.display = "none";
+    const rating =
+      ratingFilter
+        ? ratingFilter.value
+        : "";
+
+    archivioCards.forEach(card => {
+
+      const text =
+        card.textContent.toLowerCase();
+
+      const cardGenre =
+        card.dataset.genre || "";
+
+      const cardRating =
+        card.dataset.rating || "";
+
+      const matchesSearch =
+        text.includes(search);
+
+      const matchesGenre =
+        !genre ||
+        cardGenre.includes(genre);
+
+      const matchesRating =
+        !rating ||
+        cardRating === rating;
+
+      if(
+        matchesSearch &&
+        matchesGenre &&
+        matchesRating
+      ){
+
+        card.style.display =
+          "block";
+
+        card.style.opacity = "1";
+
+      }
+
+      else {
+
+        card.style.display =
+          "none";
+
+      }
+
+    });
+
+  }
+
+  searchInput.addEventListener(
+    "input",
+    () => {
+
+      clearTimeout(timeout);
+
+      timeout = setTimeout(() => {
+
+        filterCards();
+
+      }, 220);
 
     }
+  );
 
-  });
+  genreFilter?.addEventListener(
+    "change",
+    filterCards
+  );
 
-});
+  ratingFilter?.addEventListener(
+    "change",
+    filterCards
+  );
+
+}
