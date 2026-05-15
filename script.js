@@ -1,21 +1,19 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+const {
+  data: { session }
+} = await supabaseClient.auth.getSession();
 
-  document.addEventListener(
-  "DOMContentLoaded",
-  async () => {
+if(
+  session &&
+  window.location.pathname.includes("login")
+){
 
-    const {
-      data: { session }
-    } = await supabaseClient.auth.getSession();
+  window.location.href =
+    "/home.html";
 
-    if(session){
+  return;
+}
 
-      window.location.href =
-        "/home.html";
-
-    }
-
-});
   
   // ===============================
   // ===== CUSTOM CURSOR
