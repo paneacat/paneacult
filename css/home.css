@@ -574,4 +574,18 @@ display:flex;
 
 }
 
+.section-label{
 
+  font-family:'Inter', sans-serif;
+
+  font-size:.78rem;
+
+  letter-spacing:.22em;
+
+  text-transform:uppercase;
+
+  color:var(--panea-yellow);
+
+  margin-bottom:18px;
+
+}
