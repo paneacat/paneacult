@@ -827,6 +827,8 @@
 
   overflow:hidden;
 
+  line-height:0;
+
 }
 
 .about-image img{
@@ -835,11 +837,13 @@
 
   max-width:100%;
 
-  display:block;
+  height:520px;
 
   object-fit:cover;
 
-  aspect-ratio:4/5;
+  object-position:center top;
+
+  display:block;
 
   border-radius:0;
 
