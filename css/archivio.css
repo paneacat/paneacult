@@ -198,25 +198,26 @@ font-weight:500;
    GRID ARCHIVIO
 ========================= */
 
-
 .archivio-grid{
 
   display:grid;
 
   grid-template-columns:
-    repeat(3, 1fr);
+    repeat(3, minmax(0, 340px));
+
+  justify-content:center;
 
   gap:32px;
 
   margin-top:40px;
 
 }
-
 /* CARD */
 
 .archivio-card{
   width:100%;
   min-width:0;
+  max-width:340px;
 }
 
 /* IMG */
@@ -264,7 +265,7 @@ font-weight:500;
 
 .archivio-section .container{
 
-  width:min(90%, 1180px);
+  width:min(82%, 1180px);
 
   margin:0 auto;
 
