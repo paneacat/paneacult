@@ -950,6 +950,124 @@
   color:rgba(255,255,255,.72);
 
 }
+/* =========================
+   CURRENT ABOUT LAYOUT
+========================= */
+
+.about-page{
+
+  padding:170px 0 120px;
+
+}
+
+.about-top{
+
+  width:min(1180px, 90%);
+
+  margin:0 auto;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:90px;
+
+}
+
+.about-text{
+
+  max-width:540px;
+
+}
+
+.about-number{
+
+  font-size:.72rem;
+
+  letter-spacing:.24em;
+
+  text-transform:uppercase;
+
+  color:var(--panea-yellow);
+
+  margin-bottom:22px;
+
+  font-weight:700;
+
+}
+
+.about-intro{
+
+  font-size:1.2rem;
+
+  line-height:1.8;
+
+  color:rgba(255,255,255,.74);
+
+  margin-top:30px;
+
+}
+
+.about-intro span{
+
+  color:var(--panea-yellow);
+
+}
+
+.about-image img{
+
+  width:420px;
+
+  max-width:100%;
+
+  border-radius:34px;
+
+  display:block;
+
+  object-fit:cover;
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.45);
+
+}
+
+.about-bottom{
+
+  width:min(1180px, 90%);
+
+  margin:90px auto 0;
+
+}
+
+.about-body{
+
+  max-width:700px;
+
+  font-size:1.08rem;
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,.76);
+
+  margin-top:30px;
+
+}
+
+.about-tag{
+
+  margin-top:38px;
+
+  font-size:.78rem;
+
+  letter-spacing:.22em;
+
+  text-transform:uppercase;
+
+  color:rgba(255,255,255,.45);
+
+}
 
 /* =========================
    MOBILE
@@ -957,13 +1075,15 @@
 
 @media (max-width:768px){
 
-  .about-hero{
+  .about-page{
 
-    padding:140px 22px 80px;
+    padding:130px 22px 90px;
 
   }
 
-  .about-layout{
+  .about-top{
+
+    width:100%;
 
     flex-direction:column;
 
@@ -971,28 +1091,17 @@
 
     gap:50px;
 
-    width:100%;
-
-  }
-
-  .about-content{
-
-    max-width:100%;
-
   }
 
   .about-title{
 
-    font-size:4.8rem;
+    font-size:4.5rem;
 
     line-height:.9;
 
   }
 
-  .about-text,
-  .about-highlight{
-
-    max-width:100%;
+  .about-intro{
 
     font-size:1rem;
 
@@ -1014,36 +1123,39 @@
 
   }
 
-  .about-cards{
-
-    padding:20px 22px 100px;
-
-  }
-
-  .about-cards .container{
+  .about-bottom{
 
     width:100%;
 
-    grid-template-columns:1fr;
-
-    gap:22px;
-
-    padding:0;
+    margin-top:60px;
 
   }
 
-  .about-card{
+  .about-highlight{
 
-    padding:30px 26px;
+    font-size:1.15rem;
 
-    border-radius:26px;
-
-  }
-
-  .about-card h3{
-
-    font-size:1.8rem;
+    line-height:1.8;
 
   }
+
+  .about-body{
+
+    font-size:1rem;
+
+    line-height:1.85;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
