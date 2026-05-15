@@ -239,7 +239,15 @@ section{
  .archivio-grid .archivio-card{
   display:none;
 }
+.archivio-section .container{
 
+    width:100%;
+
+    padding-left:22px;
+
+    padding-right:22px;
+
+}
 
   /* =========================
      REVIEW PAGE
