@@ -707,50 +707,6 @@
 
 }
 
-/* =========================
-   HERO
-========================= */
-
-.about-hero{
-
-  position:relative;
-
-  padding:180px 0 120px;
-
-  overflow:hidden;
-
-}
-
-.about-layout{
-
-  width:min(1180px, 90%);
-
-  margin:0 auto;
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  gap:80px;
-
-}
-
-/* =========================
-   CONTENT
-========================= */
-
-.about-content{
-
-  max-width:540px;
-
-  position:relative;
-
-  z-index:2;
-
-}
-
 .about-kicker{
 
   font-size:.72rem;
@@ -764,33 +720,6 @@
   margin-bottom:24px;
 
   font-weight:700;
-
-}
-
-.about-title{
-
-  font-family:"Playfair Display", serif;
-
-  font-size:clamp(5rem, 8vw, 7rem);
-
-  line-height:.9;
-
-  margin:10px 0 20px;
-
-  letter-spacing:-.04em;
-
-  margin-bottom:28px;
-
-  color:var(--panea-white);
-   max-width:420px;
-
-  margin-top:40px;
-
-}
-
-.about-title span{
-
-  color:var(--panea-yellow);
 
 }
 
@@ -1096,6 +1025,12 @@
   color:var(--panea-white);
 
   margin-bottom:26px;
+}
+
+
+.about-title span{
+
+  color:var(--panea-yellow);
 
 }
 
