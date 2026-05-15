@@ -397,6 +397,26 @@ const rubrica =
       : "none";
 
       }
+
+      if(loadMoreBtn){
+
+  loadMoreBtn.style.display =
+
+    visibleCount > visibleCards
+      ? "flex"
+      : "none";
+
+        loadMoreBtn?.addEventListener(
+  "click",
+  () => {
+
+    visibleCards += 3;
+
+    filterCards();
+
+  }
+);
+      }
       
       const text =
         card.textContent.toLowerCase();
@@ -473,11 +493,11 @@ const cardRubrica =
   searchInput.addEventListener(
     "input",
     () => {
-
+    
       clearTimeout(timeout);
 
       timeout = setTimeout(() => {
-
+       visibleCards = 3;
         filterCards();
 
       }, 220);
@@ -522,5 +542,4 @@ rubricaFilter?.addEventListener(
   }
 );
   );
-
 }
