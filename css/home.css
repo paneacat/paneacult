@@ -476,10 +476,11 @@ display:flex;
 
   grid-template-columns:1fr;
 
-  gap:42px;
+  gap:28px;
 
-  max-width:1000px;
-margin:0;
+  width:100%;
+
+  max-width:780px;
 
 }
 
@@ -519,7 +520,7 @@ margin:0;
 
   width:100%;
 
-  aspect-ratio:16/8;
+  aspect-ratio:16/7;
 
   object-fit:cover;
 
@@ -531,7 +532,7 @@ margin:0;
 
 .film-content{
 
-  padding:28px;
+  padding:22px;
 
 }
 
