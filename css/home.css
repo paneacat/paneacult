@@ -460,4 +460,116 @@ display:flex;
 
   filter:brightness(1.05);
 }
+/* =========================
+   OSSESSIONI HOME
+========================= */
+
+.ossessioni-home{
+
+  padding: 40px 0 120px;
+
+}
+
+.film-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:28px;
+
+}
+
+/* CARD */
+
+.film-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:32px;
+
+  background:
+    rgba(255,255,255,.04);
+
+  border:
+    1px solid rgba(255,255,255,.06);
+
+  transition:.35s ease;
+
+}
+
+/* HOVER */
+
+.film-card:hover{
+
+  transform:translateY(-6px);
+
+  border-color:
+    rgba(253,193,3,.22);
+
+}
+
+/* IMG */
+
+.film-card img{
+
+  width:100%;
+
+  height:420px;
+
+  object-fit:cover;
+
+  display:block;
+
+}
+
+/* CONTENT */
+
+.film-content{
+
+  padding:28px;
+
+}
+
+.film-year{
+
+  display:inline-block;
+
+  margin-bottom:16px;
+
+  font-size:.72rem;
+
+  letter-spacing:.18em;
+
+  text-transform:uppercase;
+
+  color:var(--panea-yellow);
+
+}
+
+.film-card h2{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:2rem;
+
+  line-height:.95;
+
+  color:var(--panea-white);
+
+  margin-bottom:18px;
+
+}
+
+.film-card p{
+
+  color:rgba(255,255,255,.72);
+
+  line-height:1.8;
+
+}
+
 
