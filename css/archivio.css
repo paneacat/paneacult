@@ -143,6 +143,28 @@
   flex-wrap:wrap;
 }
 
+.filter-row select{
+
+  appearance:none;
+
+  -webkit-appearance:none;
+
+  -moz-appearance:none;
+
+  background-color:#0d2e40;
+
+  color:var(--panea-white);
+
+}
+
+.filter-row select option{
+
+  background:#0d2e40;
+
+  color:var(--panea-white);
+
+}
+
 .filter-select{
   width:260px;
   height:56px;
