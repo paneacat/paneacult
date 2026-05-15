@@ -869,7 +869,7 @@
 
 .about-image{
 
-  width:380px;
+  width:340px;
 
   flex-shrink:0;
 
@@ -916,7 +916,7 @@
 
   font-family:"Playfair Display", serif;
 
-  font-size:clamp(4.8rem, 7vw, 7rem);
+  font-size:clamp(4rem, 6vw, 6rem);
 
   line-height:.9;
 
