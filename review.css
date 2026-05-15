@@ -42,18 +42,6 @@
   border-radius: 10px;
 }
 
-.selected-movie-card{
-  display: flex;
-  gap: 20px;
-  margin-top: 30px;
-  align-items: center;
-}
-
-.selected-movie-card img{
-  width: 110px;
-  border-radius: 16px;
-}
-
 .add-review-page{
   padding-top: 180px;
   padding-bottom: 120px;
@@ -330,7 +318,7 @@
 .review-top-actions button{
 
   flex:none;
-
+}
 
 /* =========================
    REVIEW LAYOUT
@@ -358,7 +346,7 @@
 
   width:100%;
 
-  height:82vh;
+  height:clamp(500px,82vh,900px);
  
   overflow:hidden;
 
@@ -392,7 +380,7 @@
 
 /* REVIEW SUBTITLE */
 
-.hero subtitle {
+.hero-subtitle {
 
   font-family: 'Inter', sans-serif;
 
@@ -460,9 +448,9 @@
 .sidebar-box{
 
   position:sticky;
-
+  width:100%;
+min-width:unset;
   top:130px;
-  min-width: 320px;
 overflow-wrap: break-word;
   padding:2rem;
 
@@ -579,8 +567,8 @@ overflow-wrap: break-word;
 .review-content{
 font-size:1.06rem;
   letter-spacing:.01em;
-  max-width:640px;
    padding-top:20px;
+  max-width:720px;
 }
 
 .review-content p{
