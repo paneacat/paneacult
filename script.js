@@ -483,3 +483,34 @@ document.addEventListener(
 
   }
 );
+
+
+const searchInput =
+  document.getElementById("searchInput");
+
+const cards =
+  document.querySelectorAll(".archivio-card");
+
+searchInput.addEventListener("input", () => {
+
+  const value =
+    searchInput.value.toLowerCase();
+
+  cards.forEach(card => {
+
+    const text =
+      card.textContent.toLowerCase();
+
+    if(text.includes(value)){
+
+      card.style.display = "block";
+
+    } else {
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+});
