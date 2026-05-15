@@ -958,3 +958,28 @@
 
 
 
+
+
+
+
+
+
+
+@media (min-width: 1024px) {
+
+  .rubriche-grid {
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+  }
+
+  .rubrica-card{
+
+  min-height:280px;
+
+  padding:40px;
+  }
+
+  .hero img {
+      height: 82vh;
+  }
+}
