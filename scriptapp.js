@@ -57,7 +57,124 @@ let selectedMovieData = null;
 let currentMovieStatus = null;
 
 
+async function fetchMovieDetails(movieId){
 
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=it-IT&append_to_response=credits`
+  );
+
+  return await response.json();
+
+}
+
+function renderSelectedMovie(movie, movieDetails){
+
+  const director =
+    movieDetails.credits.crew.find(
+      person => person.job === "Director"
+    );
+
+  const cast =
+    movieDetails.credits.cast
+      .slice(0, 4)
+      .map(actor => actor.name)
+      .join(", ");
+
+  selectedMovieData = movie;
+
+  selectedMovie.innerHTML = `
+
+    <div class="selected-movie-card">
+
+      <img
+        src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
+        alt="${movie.title}"
+      >
+
+      <div class="selected-movie-content">
+
+        <p class="selected-movie-kicker">
+
+          ${movieDetails.genres
+            .map(g => g.name)
+            .join(" • ")}
+
+        </p>
+
+        <h2>
+          ${movie.title}
+        </h2>
+
+        <p class="selected-movie-year">
+          ${movie.release_date?.slice(0,4) || ""}
+        </p>
+
+        <p class="selected-movie-overview">
+
+          ${
+            movie.overview
+              ? movie.overview
+              : "Nessuna sinossi disponibile."
+          }
+
+        </p>
+
+        <div class="selected-movie-meta">
+
+          <p>
+            <strong>Regia:</strong>
+            ${director?.name || "-"}
+          </p>
+
+          <p>
+            <strong>Cast:</strong>
+            ${cast}
+          </p>
+
+          <p>
+            <strong>Durata:</strong>
+            ${movieDetails.runtime || "-"} min
+          </p>
+
+        </div>
+
+        <div class="movie-actions">
+
+          <button
+            class="movie-action-btn watched-btn"
+            id="markWatchedBtn"
+          >
+            👁️ Visto
+          </button>
+
+          <button
+            class="movie-action-btn watchlist-btn"
+            id="markWatchlistBtn"
+          >
+            📌 Da vedere
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+  localStorage.setItem(
+    "paneacult_selected_movie",
+    JSON.stringify(movie)
+  );
+
+  localStorage.setItem(
+    "paneacult_selected_movie_html",
+    selectedMovie.innerHTML
+  );
+
+}
+
+  
 async function mostraFilmPopolari(){
 
   const response = await fetch(
@@ -101,123 +218,33 @@ async function mostraFilmPopolari(){
 
       `;
 
-      div.addEventListener(
+      
+  div.addEventListener(
   "click",
   async () => {
 
-          reviewForm.style.display =
-            "block";
-const detailsResponse =
-  await fetch(
-    `https://api.themoviedb.org/3/movie/${movie.id}?api_key=${API_KEY}&language=it-IT&append_to_response=credits`
-  );
+    reviewForm.style.display =
+      "block";
 
-const movieDetails =
-  await detailsResponse.json();
-
-const director =
-  movieDetails.credits.crew.find(
-    person =>
-      person.job === "Director"
-  );
-
-const cast =
-  movieDetails.credits.cast
-    .slice(0, 4)
-    .map(actor => actor.name)
-    .join(", ");
-          selectedMovieData = movie;
-selectedMovie.innerHTML = `
-          
-<div class="selected-movie-card">
-
-  <img
-    src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
-    alt="${movie.title}"
-  >
-
-  <div class="selected-movie-content">
-
-    <p class="selected-movie-kicker">
-      ${movieDetails.genres
-        .map(g => g.name)
-        .join(" • ")}
-    </p>
-
-    <h2>
-      ${movie.title}
-    </h2>
-
-    <p class="selected-movie-year">
-      ${movie.release_date?.slice(0,4) || ""}
-    </p>
-
-    <p class="selected-movie-overview">
-
-      ${
-        movie.overview
-          ? movie.overview
-          : "Nessuna sinossi disponibile."
-      }
-
-    </p>
-
-    <div class="selected-movie-meta">
-
-      <p>
-        <strong>Regia:</strong>
-        ${director?.name || "-"}
-      </p>
-
-      <p>
-        <strong>Cast:</strong>
-        ${cast}
-      </p>
-
-      <p>
-        <strong>Durata:</strong>
-        ${movieDetails.runtime || "-"} min
-      </p>
-
-    </div>
-<div class="movie-actions">
-
-  <button
-    class="movie-action-btn watched-btn"
-    id="markWatchedBtn"
-  >
-    👁️ Visto
-  </button>
-
-  <button
-    class="movie-action-btn watchlist-btn"
-    id="markWatchlistBtn"
-  >
-    📌 Da vedere
-  </button>
-  </div>
-
-</div>
-
-`;
-
-localStorage.setItem(
-  "paneacult_selected_movie",
-  JSON.stringify(movie)
-);
-
-localStorage.setItem(
-  "paneacult_selected_movie_html",
-  selectedMovie.innerHTML
-);
-
-          movieResults.innerHTML = "";
-
-          movieSearchInput.value =
-            movie.title;
-
-        }
+    const movieDetails =
+      await fetchMovieDetails(
+        movie.id
       );
+
+    renderSelectedMovie(
+      movie,
+      movieDetails
+    );
+
+    setupMovieButtons();
+
+    movieResults.innerHTML = "";
+
+    movieSearchInput.value =
+      movie.title;
+
+  }
+);
 
       movieResults.appendChild(div);
 
@@ -288,107 +315,33 @@ movieSearchInput.addEventListener(
 
           `;
 
-          div.addEventListener(
+          
+div.addEventListener(
   "click",
   async () => {
 
-              reviewForm.style.display =
-                "block";
-              const detailsResponse =
-  await fetch(
-    `https://api.themoviedb.org/3/movie/${movie.id}?api_key=${API_KEY}&language=it-IT&append_to_response=credits`
-  );
+    reviewForm.style.display =
+      "block";
 
-const movieDetails =
-  await detailsResponse.json();
+    const movieDetails =
+      await fetchMovieDetails(
+        movie.id
+      );
 
-const director =
-  movieDetails.credits.crew.find(
-    person =>
-      person.job === "Director"
-  );
+    renderSelectedMovie(
+      movie,
+      movieDetails
+    );
 
-const cast =
-  movieDetails.credits.cast
-    .slice(0, 4)
-    .map(actor => actor.name)
-    .join(", ");
-              selectedMovieData = movie;
-localStorage.setItem(
-  "paneacult_selected_movie",
-  JSON.stringify(movie)
+    setupMovieButtons();
+
+    movieResults.innerHTML = "";
+
+    movieSearchInput.value =
+      movie.title;
+
+  }
 );
-              selectedMovie.innerHTML = `
-          const markWatchedBtn =
-  document.getElementById(
-    "markWatchedBtn"
-  );
-
-const markWatchlistBtn =
-  document.getElementById(
-    "markWatchlistBtn"
-  );
-  <div class="selected-movie-card">
-
-    <img
-      src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
-      alt="${movie.title}"
-    >
-
-    <div class="selected-movie-content">
-
-      <p class="selected-movie-kicker">
-        ${movieDetails.genres
-          .map(g => g.name)
-          .join(" • ")}
-      </p>
-
-      <h2>
-        ${movie.title}
-      </h2>
-
-      <p class="selected-movie-year">
-        ${movie.release_date?.slice(0,4) || ""}
-      </p>
-
-      <p class="selected-movie-overview">
-
-        ${
-          movie.overview
-            ? movie.overview
-            : "Nessuna sinossi disponibile."
-        }
-
-      </p>
-
-      <div class="selected-movie-meta">
-
-        <p>
-          <strong>Regia:</strong>
-          ${director?.name || "-"}
-        </p>
-
-        <p>
-          <strong>Cast:</strong>
-          ${cast}
-        </p>
-
-        <p>
-          <strong>Durata:</strong>
-          ${movieDetails.runtime || "-"} min
-        </p>
-`;
-localStorage.setItem(
-  "paneacult_selected_movie_html",
-  selectedMovie.innerHTML
-);
-movieResults.innerHTML = "";
-
-              movieSearchInput.value =
-                movie.title;
-
-            }
-          );
 
           movieResults.appendChild(div);
 
