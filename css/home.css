@@ -466,7 +466,7 @@ display:flex;
 
 .ossessioni-home{
 
-  padding: 40px 0 120px;
+  padding: 90px 0 120px;
 
 }
 
@@ -506,7 +506,7 @@ display:flex;
   grid-template-columns:
     320px 1fr;
 
-  align-items:stretch;
+  align-items:left;
 
 }
 
