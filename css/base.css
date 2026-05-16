@@ -10,15 +10,24 @@ html {
 
 :root{
 
-  --panea-blue:#0d2e40;
+  --panea-bg:#071019;
+  --panea-bg-soft:#0b1d2b;
 
   --panea-yellow:#fdc103;
 
-  --panea-white:#f5f1ea;
+  --panea-white:#f5f7fa;
 
-  --panea-text:#d7dbe0;
+  --panea-text:
+    rgba(255,255,255,.82);
 
-  --panea-border:rgba(255,255,255,.10);
+  --panea-text-soft:
+    rgba(255,255,255,.58);
+
+  --panea-border:
+    rgba(255,255,255,.06);
+
+  --panea-card:
+    rgba(255,255,255,.04);
 
   --container-width: 1100px;
 
