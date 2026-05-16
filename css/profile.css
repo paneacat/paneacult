@@ -1072,7 +1072,33 @@ flex-wrap:wrap;
 
 }
 
+.profile-username{
 
+  font-size:.78rem;
+
+  letter-spacing:.22em;
+
+  text-transform:uppercase;
+
+  color:var(--panea-yellow);
+
+  margin-bottom:22px;
+
+}
+
+.profile-bio{
+
+  font-size:1.08rem;
+
+  line-height:1.8;
+
+  color:rgba(255,255,255,.72);
+
+  max-width:520px;
+
+  margin:24px auto 0;
+
+}
 
 
 
