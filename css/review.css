@@ -338,8 +338,16 @@
 
 }
 
-.rating {
+.rating-stars{
+
   color:var(--panea-yellow);
+
+}
+
+.rating-text{
+
+  color:rgba(255,255,255,.82);
+
 }
 
 .review-page{
