@@ -577,30 +577,37 @@ if(searchInput){
 
 const TMDB_IMAGE = "https://image.tmdb.org/t/p/w500";
 
-function createMovieCard(movie){
+async function loadTrending(){
 
-  return `
+  const res = await fetch(`
+    https://api.themoviedb.org/3/trending/movie/week?api_key=LA_TUA_API_KEY
+  `);
 
-    <div class="saved-card">
+  const data = await res.json();
 
-      <img
-        src="${TMDB_IMAGE + movie.poster_path}"
-        alt="${movie.title}"
-      >
+  renderMovies(data.results);
 
-      <div class="saved-overlay">
+}
+function renderMovies(movies){
 
-        <h3>${movie.title}</h3>
+  favoriteGrid.innerHTML =
+    movies.map(movie => `
+
+      <div class="saved-card">
+
+        <img
+          src="${TMDB_IMAGE + movie.poster_path}"
+          alt="${movie.title}"
+        >
+
+        <div class="saved-overlay">
+
+          <h3>${movie.title}</h3>
+
+        </div>
 
       </div>
 
-    </div>
-
-  `;
+    `).join("");
 
 }
-
-savedGrid.innerHTML = movies
-  .map(createMovieCard)
-  .join("");
-
