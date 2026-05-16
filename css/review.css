@@ -320,105 +320,93 @@
   flex:none;
 }
 
+
+  
+
+
+
+
 /* =========================
-   REVIEW LAYOUT
+   REVIEW PAGE
 ========================= */
 
-.review-layout{
+.review-page{
 
-  width:min(88%, 1180px);
+  min-height:100vh;
 
-  margin:0 auto;
+  background:
+    linear-gradient(
+      rgba(7,15,25,.92),
+      rgba(7,15,25,.98)
+    ),
+    url("img/wall.webp");
 
-  display:grid;
+  background-size:cover;
 
-  grid-template-columns:260px 1fr;
+  background-position:center;
 
-  gap:120px;
+  color:var(--panea-white);
 
-  padding:120px 0;
+  font-family:"Inter", sans-serif;
+
+  overflow-x:hidden;
 
 }
+
+.review-page::before{
+
+  content:"";
+
+  position:fixed;
+
+  width:900px;
+
+  height:900px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(253,193,3,.10),
+      transparent 72%
+    );
+
+  top:-320px;
+
+  left:50%;
+
+  transform:translateX(-50%);
+
+  filter:blur(80px);
+
+  pointer-events:none;
+
+  z-index:0;
+
+}
+
+/* =========================
+   REVIEW HERO
+========================= */
 
 .review-hero{
 
   position:relative;
 
-  width:100%;
-
-  height:clamp(500px,82vh,900px);
- 
-  overflow:hidden;
+  min-height:92vh;
 
   display:flex;
 
-  align-items:center;
+  align-items:flex-end;
 
-  justify-content:center;
+  padding:7rem 0 5rem;
 
-}
-
-/* REVIEW TITLE */
-
-.review-hero h1{
-
-  font-family: 'Playfair Display', serif;
-
-  font-size: 30px;
-
-  line-height: 0.95;
-
-  letter-spacing: -2px;
-
-
-  margin-bottom: 24px;
-
-  text-shadow:
-    0 6px 30px rgba(0,0,0,0.45);
+  overflow:hidden;
 
 }
 
-/* REVIEW SUBTITLE */
-
-.hero-subtitle {
-
-  font-family: 'Inter', sans-serif;
-
-  font-size: 22px;
-
-  font-weight: 400;
-
-  line-height: 1.5;
-
-  color: rgba(255,255,255,0.88);
-
-  max-width: 620px;
-
-  text-shadow:
-    0 4px 18px rgba(0,0,0,0.35);
-
-}
-
-.review-hero::after{
-
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(4, 10, 18, 0.25),
-      rgba(4, 10, 18, 0.68)
-    );
-
-  z-index: 1;
-
-}
-
-.hero-img{
+.review-backdrop{
 
   position:absolute;
 
@@ -428,229 +416,575 @@
 
   height:100%;
 
+}
+
+.review-backdrop img{
+
+  width:100%;
+
+  height:100%;
+
   object-fit:cover;
 
-  object-position:center center;
+  filter:scale(1.05) blur(2px);
+
+  opacity:.24;
 
 }
+
+.review-backdrop::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(7,15,25,1) 8%,
+      rgba(7,15,25,.82) 40%,
+      rgba(7,15,25,.55) 100%
+    );
+
+}
+
+.review-hero-content{
+
+  position:relative;
+
+  z-index:3;
+
+  width:min(1280px, 92%);
+
+  margin:0 auto;
+
+  display:grid;
+
+  grid-template-columns:340px 1fr;
+
+  gap:60px;
+
+  align-items:end;
+
+}
+
+/* =========================
+   POSTER
+========================= */
+
+.review-poster{
+
+  position:relative;
+
+}
+
+.review-poster img{
+
+  width:100%;
+
+  border-radius:34px;
+
+  display:block;
+
+  box-shadow:
+    0 40px 120px rgba(0,0,0,.45);
+
+}
+
+.review-poster::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:34px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  pointer-events:none;
+
+}
+
+/* =========================
+   REVIEW INFO
+========================= */
+
+.review-info{
+
+  padding-bottom:20px;
+
+}
+
+.review-kicker{
+
+  font-size:.75rem;
+
+  letter-spacing:.28em;
+
+  text-transform:uppercase;
+
+  color:var(--panea-yellow);
+
+  margin-bottom:22px;
+
+}
+
+.review-title{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:clamp(4rem, 8vw, 7rem);
+
+  line-height:.88;
+
+  letter-spacing:-.05em;
+
+  color:var(--panea-white);
+
+  margin-bottom:24px;
+
+}
+
+.review-meta{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:18px;
+
+  margin-bottom:28px;
+
+}
+
+.review-meta span{
+
+  height:42px;
+
+  padding:0 20px;
+
+  border-radius:999px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:
+    rgba(255,255,255,.05);
+
+  border:
+    1px solid rgba(255,255,255,.06);
+
+  color:rgba(255,255,255,.74);
+
+  font-size:.82rem;
+
+  letter-spacing:.08em;
+
+  text-transform:uppercase;
+
+}
+
+.review-description{
+
+  max-width:760px;
+
+  font-size:1.08rem;
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,.72);
+
+  margin-bottom:34px;
+
+}
+
+/* =========================
+   REVIEW ACTIONS
+========================= */
+
+.movie-actions{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:14px;
+
+}
+
+.watch-btn,
+.watchlist-btn,
+.love-btn{
+
+  height:56px;
+
+  padding:0 28px;
+
+  border-radius:999px;
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  background:
+    rgba(255,255,255,.04);
+
+  backdrop-filter:blur(12px);
+
+  color:rgba(255,255,255,.84);
+
+  font-size:.82rem;
+
+  letter-spacing:.12em;
+
+  text-transform:uppercase;
+
+  cursor:pointer;
+
+  transition:.3s ease;
+
+}
+
+.watch-btn:hover,
+.watchlist-btn:hover,
+.love-btn:hover{
+
+  background:var(--panea-yellow);
+
+  color:#08131d;
+
+  transform:translateY(-3px);
+
+}
+
+.watch-btn.active,
+.watchlist-btn.active,
+.love-btn.active{
+
+  background:var(--panea-yellow);
+
+  color:#08131d;
+
+  border-color:var(--panea-yellow);
+
+}
+
+/* =========================
+   REVIEW CONTENT
+========================= */
+
+.review-layout{
+
+  width:min(1280px, 92%);
+
+  margin:0 auto;
+
+  padding:5rem 0 8rem;
+
+  display:grid;
+
+  grid-template-columns:280px 1fr;
+
+  gap:70px;
+
+  position:relative;
+
+  z-index:2;
+
+}
+
 /* =========================
    SIDEBAR
 ========================= */
 
 .review-sidebar{
 
+  position:sticky;
+
+  top:120px;
+
+  height:fit-content;
+
+}
+
+.sidebar-box{
+
+  padding:30px;
+
+  border-radius:30px;
+
+  background:
+    rgba(255,255,255,.04);
+
+  border:
+    1px solid rgba(255,255,255,.06);
+
+  backdrop-filter:blur(14px);
+
+  margin-bottom:24px;
+
+}
+
+.sidebar-label{
+
+  font-size:.72rem;
+
+  letter-spacing:.24em;
+
+  text-transform:uppercase;
+
+  color:var(--panea-yellow);
+
+  margin-bottom:16px;
+
+}
+
+.sidebar-box p,
+.sidebar-box li{
+
+  color:rgba(255,255,255,.72);
+
+  line-height:1.8;
+
+  font-size:.96rem;
+
+}
+
+/* =========================
+   REVIEW TEXT
+========================= */
+
+.review-content{
+
   position:relative;
 
 }
 
-/* BOX STICKY */
+.review-content p{
 
-.sidebar-box{
+  font-size:1.12rem;
 
-  position:sticky;
-  width:100%;
-min-width:unset;
-  top:130px;
-overflow-wrap: break-word;
-  padding:2rem;
+  line-height:2.1;
 
-  border:1px solid rgba(255,255,255,.08);
+  color:rgba(255,255,255,.82);
 
-  border-radius:28px;
+  margin-bottom:2rem;
 
-  background:rgba(255,255,255,.03);
+}
+
+.review-content h2{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:clamp(2.6rem, 5vw, 4rem);
+
+  line-height:.95;
+
+  margin:5rem 0 2rem;
+
+  color:var(--panea-white);
+
+}
+
+.review-content blockquote{
+
+  margin:4rem 0;
+
+  padding:34px;
+
+  border-left:3px solid var(--panea-yellow);
+
+  background:
+    rgba(255,255,255,.03);
+
+  border-radius:24px;
+
+  font-family:"Playfair Display", serif;
+
+  font-size:2rem;
+
+  line-height:1.4;
+
+  color:rgba(255,255,255,.92);
+
+}
+
+/* =========================
+   AUTHOR CARD
+========================= */
+
+.review-author{
+
+  margin-top:6rem;
+
+  padding:36px;
+
+  border-radius:34px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:24px;
+
+  background:
+    rgba(255,255,255,.04);
+
+  border:
+    1px solid rgba(255,255,255,.06);
 
   backdrop-filter:blur(14px);
 
 }
 
-/* LABEL */
+.review-author img{
 
-.sidebar-label{
+  width:84px;
 
-  font-size:.72rem;
- 
-  text-transform:uppercase;
+  height:84px;
 
-  letter-spacing:.16em;
+  border-radius:50%;
 
-  color:#f4b400;
-
-  margin-bottom:8px;
+  object-fit:cover;
 
 }
 
-/* VALUE */
+.author-name{
 
-.sidebar-value{
+  font-family:"Playfair Display", serif;
 
-  margin-bottom:28px;
+  font-size:2rem;
 
-  color:#f4efe8;
+  color:var(--panea-white);
 
-  line-height:1.6;
-
-}
-
-/* WATCH */
-
-.sidebar-watch{
-
-  display:inline-flex;
-
-  margin-bottom:30px;
-
-  text-decoration:none;
-
-  color:#111;
-
-  background:#f4b400;
-
-  padding:.8rem 1rem;
-
-  border-radius:999px;
-
-  font-size:.85rem;
+  margin-bottom:10px;
 
 }
 
-.sidebar-series{
+.author-bio{
 
-  color: var(--panea-white);
+  color:rgba(255,255,255,.68);
 
-  font-weight:500;
-
-  letter-spacing:.08em;
-
-}
-
-.save-movie-btn{
-
-  width: 100%;
-
-  margin-top: 14px;
-
-  padding: 13px 16px;
-
-  border: 1px solid rgba(255,255,255,.1);
-
-  background: rgba(13,46,64,.35);
-
-  color: #f3c433;
-
-  border-radius: 14px;
-
-  font-size: 11px;
-
-  letter-spacing: .14em;
-
-  text-transform: uppercase;
-
-  cursor: pointer;
-
-  transition: .3s ease;
-
-}
-
-.save-movie-btn:hover{
-
-  background: #f3c433;
-
-  color: #000;
+  line-height:1.8;
 
 }
 
 /* =========================
-   TESTO
+   RELATED FILMS
 ========================= */
 
-.review-content{
-font-size:1.06rem;
-  letter-spacing:.01em;
-   padding-top:20px;
-  max-width:720px;
-}
+.related-section{
 
-.review-content p{
+  width:min(1280px, 92%);
 
-  font-size:1.08rem;
-
-  line-height:2.15;
-
-  margin-bottom:2rem;
-
-  color:rgba(255,255,255,.88);
-
-}
-.review-end{
-
-  margin-top:80px;
-
-  padding-top:35px;
-
-  border-top:1px solid rgba(255,255,255,.08);
+  margin:0 auto 8rem;
 
 }
 
-.rating{
+.related-title{
 
-  font-size:1.3rem;
+  font-family:"Playfair Display", serif;
 
-  letter-spacing:4px;
+  font-size:clamp(2.8rem, 5vw, 4rem);
 
-  color:#f6c453;
+  line-height:.95;
 
-  margin-bottom:18px;
+  color:var(--panea-white);
 
-}
-.firma-recensione{
-
-  font-size:.95rem;
-
-  line-height:1.8;
-
-  opacity:.8;
-
-  font-weight:500;
+  margin-bottom:3rem;
 
 }
 
-.hero-overlay{
+.related-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap:24px;
+
+}
+
+.related-card{
 
   position:relative;
 
-  z-index:3;
+  overflow:hidden;
 
-  text-align:center;
+  border-radius:28px;
 
-  max-width:800px;
+  aspect-ratio:2/3;
 
-  padding:0 25px;
-
-  margin: 0 auto;
-
-  width: 100%;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  text-align: center;
+  transition:.35s ease;
 
 }
 
-.hero-overlay h1{
-  margin-bottom:20px;
- font-size: clamp(3rem, 8vw, 6rem);
-  line-height: .92;
- 
-  color: #f8f3eb;
-  text-shadow:
-    0 4px 18px rgba(0,0,0,.45),
-    0 1px 2px rgba(0,0,0,.6);
-  max-width: 9ch;
+.related-card img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  transition:.45s ease;
+
+}
+
+.related-card::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.88),
+      transparent 60%
+    );
+
+}
+
+.related-card h3{
+
+  position:absolute;
+
+  left:24px;
+
+  bottom:24px;
+
+  z-index:3;
+
+  font-family:"Playfair Display", serif;
+
+  font-size:1.6rem;
+
+  line-height:1;
+
+  color:var(--panea-white);
+
+}
+
+.related-card:hover{
+
+  transform:
+    translateY(-8px)
+    scale(1.02);
+
+}
+
+.related-card:hover img{
+
+  transform:scale(1.05);
+
 }
