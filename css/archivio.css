@@ -215,7 +215,7 @@ font-weight:500;
    GRID ARCHIVIO
 ========================= */
 
-.archivio-grid{
+.reviews-grid {
 
   display:grid;
 
@@ -231,7 +231,7 @@ font-weight:500;
 }
 /* CARD */
 
-.archivio-card{
+.preview-card{
   width:100%;
   min-width:0;
   max-width:340px;
@@ -419,5 +419,4 @@ margin-top:50px;
   cursor:pointer;
 
 }
-
 
