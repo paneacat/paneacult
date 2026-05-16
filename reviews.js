@@ -226,8 +226,23 @@ function updateEmptyState(){
 
 
 /* =========================
-   SEARCH REVIEWS
+   LIVE SEARCH
 ========================= */
+
+const searchInput =
+  document.getElementById(
+    "searchInput"
+  );
+
+const reviewCards =
+  document.querySelectorAll(
+    ".review-card"
+  );
+
+const emptyState =
+  document.getElementById(
+    "emptyState"
+  );
 
 searchInput?.addEventListener(
   "input",
@@ -244,15 +259,15 @@ searchInput?.addEventListener(
 
       const title =
         card.dataset.title
-        .toLowerCase();
+        ?.toLowerCase() || "";
 
       const director =
         card.dataset.director
-        .toLowerCase();
+        ?.toLowerCase() || "";
 
       const year =
         card.dataset.year
-        .toLowerCase();
+        ?.toLowerCase() || "";
 
       const matches =
 
@@ -265,7 +280,7 @@ searchInput?.addEventListener(
       if(matches){
 
         card.style.display =
-          "block";
+          "";
 
         visibleCount++;
 
@@ -298,4 +313,3 @@ searchInput?.addEventListener(
 
   }
 );
-
