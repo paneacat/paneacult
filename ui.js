@@ -63,6 +63,19 @@ function updateMovieButtons(status){
 }
 
 function saveMovieStatus(status){
+
+  currentMovieStatus = status;
+
+  localStorage.setItem(
+    `paneacult_movie_status_${selectedMovieData.id}`,
+    status
+  );
+
+  updateMovieButtons(status);
+
+}
+
+
 function setupMovieButtons(){
 
   const markWatchedBtn =
@@ -397,9 +410,6 @@ const registerBtn =
 
       }
     );
-
-  }
-);
 
 /* =========================
    FADE IN BODY
