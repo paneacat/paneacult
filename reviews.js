@@ -145,3 +145,54 @@ const publishReviewBtn =
     "publishReviewBtn"
   );
 
+
+/* =========================
+   LOAD MORE REVIEWS
+========================= */
+
+const loadMoreBtn =
+  document.getElementById(
+    "loadMoreBtn"
+  );
+
+const hiddenReviews =
+  document.querySelectorAll(
+    ".hidden-review"
+  );
+
+let visibleReviews = 0;
+
+loadMoreBtn?.addEventListener(
+  "click",
+  () => {
+
+    for(
+      let i = visibleReviews;
+      i < visibleReviews + 3;
+      i++
+    ){
+
+      if(hiddenReviews[i]){
+
+        hiddenReviews[i].classList.remove(
+          "hidden-review"
+        );
+
+      }
+
+    }
+
+    visibleReviews += 3;
+
+    if(
+      visibleReviews >=
+      hiddenReviews.length
+    ){
+
+      loadMoreBtn.style.display =
+        "none";
+
+    }
+
+  }
+);
