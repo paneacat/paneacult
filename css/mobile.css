@@ -251,61 +251,6 @@ section{
 
 }
 
-  /* =========================
-     REVIEW PAGE
-  ========================= */
-
-  .review-hero{
-    height:58vh;
-  }
-
-  .hero-overlay{
-    padding:0 20px;
-  }
-
-  .hero-overlay h1{
-    font-size:3rem;
-    line-height:.95;
-  }
-
-  .hero-subtitle {
-
-  text-align: center;
-
-  width: 100%;
-
-  margin: 0 auto;
-
-  }
-
-  .review-layout{
-    grid-template-columns:1fr;
-    gap:36px;
-    padding-top:50px;
-    padding-bottom:60px;
-  }
-
-  .sidebar-box{
-    position:relative;
-    top:auto;
-    min-width:100%;
-    padding:1.6rem;
-    border-radius:24px;
-  }
-
-  .review-content{
-    max-width:100%;
-    padding-top:0;
-  }
-
-  .review-content p{
-    font-size:1rem;
-    line-height:2;
-  }
-
-  .review-end{
-    margin-top:50px;
-  }
 
   /* =========================
      LOGIN
@@ -1048,6 +993,105 @@ section{
   .profile-header{
   display:none;
   }
+  .review-hero{
+
+    min-height:auto;
+
+    padding:6rem 0 4rem;
+
+  }
+
+  .review-hero-content{
+
+    gap:30px;
+
+  }
+
+  .review-poster{
+
+    max-width:260px;
+
+    margin:0 auto;
+
+  }
+
+  .review-title{
+
+    font-size:3.5rem;
+
+  }
+
+  .review-meta{
+
+    gap:12px;
+
+  }
+
+  .review-description{
+
+    font-size:1rem;
+
+    line-height:1.9;
+
+  }
+
+  .movie-actions{
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+  }
+
+  .watch-btn,
+  .watchlist-btn,
+  .love-btn{
+
+    width:100%;
+
+  }
+
+  .review-layout{
+
+    padding:4rem 0 6rem;
+
+  }
+
+  .sidebar-box{
+
+    padding:24px;
+
+  }
+
+  .review-content p{
+
+    font-size:1rem;
+
+    line-height:2;
+
+  }
+
+  .review-content blockquote{
+
+    font-size:1.5rem;
+
+    padding:26px;
+
+  }
+
+  .review-author{
+
+    flex-direction:column;
+
+    text-align:center;
+
+  }
+
+  .related-grid{
+
+    grid-template-columns:1fr;
+
+  } 
 }
 
 
@@ -1075,5 +1119,40 @@ section{
 
   .hero img {
       height: 82vh;
+  }
+  .review-hero-content{
+
+    grid-template-columns:1fr;
+
+    gap:40px;
+
+  }
+
+  .review-poster{
+
+    max-width:340px;
+
+  }
+
+  .review-layout{
+
+    grid-template-columns:1fr;
+
+    gap:50px;
+
+  }
+
+  .review-sidebar{
+
+    position:relative;
+
+    top:auto;
+
+  }
+
+  .related-grid{
+
+    grid-template-columns:1fr 1fr;
+
   }
 }
