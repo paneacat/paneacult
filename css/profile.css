@@ -1363,6 +1363,29 @@ flex-wrap:wrap;
 
 }
 
+  
+
+.saved-state{
+
+  background: var(--panea-yellow);
+
+  color:#000;
+
+  opacity:.9;
+
+  cursor:default;
+
+}
+
+
+.saved-section + .saved-section{
+
+  margin-top:42px;
+
+}
+
+
+
 /* IMAGE */
 
 .saved-card img{
