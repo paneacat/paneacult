@@ -916,34 +916,80 @@
 
 }
 
+
 /* =========================
-   AUTHOR CARD
+   REVIEW AUTHOR
 ========================= */
+
 .review-author{
+
+  width:fit-content;
 
   max-width:340px;
 
-  padding:18px 20px;
+  margin:5rem auto 0;
 
-  border-radius:22px;
+  display:flex;
 
-  margin:4rem auto 0;
+  align-items:center;
+
+  gap:16px;
+
+  padding:18px 22px;
+
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.045),
+      rgba(255,255,255,.02)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.06);
+
+  backdrop-filter:blur(16px);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.18);
 
 }
+
+/* AVATAR */
 
 .review-author img{
 
-  width:54px;
+  width:58px;
 
-  height:54px;
+  height:58px;
+
+  border-radius:50%;
+
+  object-fit:cover;
+
+  border:
+    2px solid rgba(253,193,3,.35);
+
+  flex-shrink:0;
 
 }
+
+/* NAME */
 
 .author-name{
 
   font-size:.95rem;
 
+  font-weight:600;
+
+  color:var(--panea-white);
+
+  margin-bottom:4px;
+
 }
+
+/* BIO */
 
 .author-bio{
 
@@ -951,8 +997,9 @@
 
   line-height:1.5;
 
-}
+  color:rgba(255,255,255,.58);
 
+}
 
 /* =========================
    RELATED FILMS
@@ -970,7 +1017,7 @@
 
   font-family:"Playfair Display", serif;
 
-  font-size:clamp(2.8rem, 5vw, 4rem);
+  font-size:22px;
 
   line-height:.95;
 
