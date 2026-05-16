@@ -201,51 +201,30 @@ loadMoreBtn?.addEventListener(
    EMPTY STATE
 ========================= */
 
-const reviewsGrid =
-  document.querySelector(
-    ".reviews-grid"
+const emptyState =
+  document.getElementById(
+    "emptyState"
   );
 
-const reviewCards =
-  document.querySelectorAll(
-    ".review-card"
-  );
+function updateEmptyState(){
 
-if(
-  reviewsGrid &&
-  reviewCards.length === 0
-){
+  const visibleCards =
+    document.querySelectorAll(
+      ".review-card:not(.hidden)"
+    );
 
-  reviewsGrid.innerHTML = `
+  if(visibleCards.length === 0){
 
-    <div class="empty-state">
+    emptyState.style.display =
+      "block";
 
-      <span class="empty-icon">
-        ✦
-      </span>
+  }else{
 
-      <h3>
-        Nessuna recensione trovata
-      </h3>
+    emptyState.style.display =
+      "none";
 
-      <div class="suggest-review">
-
-        <p>
-          Manca un film che ami?
-        </p>
-
-        <a
-          href="mailto:paneacult@gmail.com?subject=Consiglio recensione paneacult"
-        >
-
-          Suggeriscimi una recensione →
-
-        </a>
-
-      </div>
-
-    </div>
-
-  `;
+  }
 
 }
+
+  
