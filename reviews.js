@@ -225,25 +225,9 @@ function updateEmptyState(){
 }
 
 
-
 /* =========================
    SEARCH REVIEWS
 ========================= */
-
-const searchInput =
-  document.getElementById(
-    "searchInput"
-  );
-
-const reviewCards =
-  document.querySelectorAll(
-    ".review-card"
-  );
-
-const emptyState =
-  document.getElementById(
-    "emptyState"
-  );
 
 searchInput?.addEventListener(
   "input",
@@ -262,7 +246,23 @@ searchInput?.addEventListener(
         card.dataset.title
         .toLowerCase();
 
-      if(title.includes(value)){
+      const director =
+        card.dataset.director
+        .toLowerCase();
+
+      const year =
+        card.dataset.year
+        .toLowerCase();
+
+      const matches =
+
+        title.includes(value) ||
+
+        director.includes(value) ||
+
+        year.includes(value);
+
+      if(matches){
 
         card.style.display =
           "block";
