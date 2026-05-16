@@ -1,7 +1,5 @@
-  
-    
 /* =========================
-   SEARCH + FILTRI
+   ELEMENTS
 ========================= */
 
 const searchInput =
@@ -9,251 +7,191 @@ const searchInput =
     "searchInput"
   );
 
-if(searchInput){
+const genreFilter =
+  document.getElementById(
+    "genreFilter"
+  );
 
-  const archivioCards =
-    document.querySelectorAll(
-      ".archivio-card"
-    );
+const ratingFilter =
+  document.getElementById(
+    "ratingFilter"
+  );
 
-  const genreFilter =
-    document.getElementById(
-      "genreFilter"
-    );
+const rubricaFilter =
+  document.getElementById(
+    "rubricaFilter"
+  );
 
-  const rubricaFilter =
-    document.getElementById(
-      "rubricaFilter"
-    );
+const resetFilters =
+  document.getElementById(
+    "resetFilters"
+  );
 
-  const ratingFilter =
-    document.getElementById(
-      "ratingFilter"
-    );
+const reviewCards =
+  document.querySelectorAll(
+    ".review-card"
+  );
 
-  const resetBtn =
-    document.getElementById(
-      "resetFilters"
-    );
+const emptyState =
+  document.getElementById(
+    "emptyState"
+  );
 
-  const emptyState =
-    document.getElementById(
-      "emptyState"
-    );
 
-  const loadMoreBtn =
-    document.getElementById(
-      "loadMoreBtn"
-    );
+/* =========================
+   FILTER FUNCTION
+========================= */
 
-  let visibleCards = 3;
+function filterReviews(){
 
-  let timeout;
+  const searchValue =
+    searchInput.value
+      .toLowerCase()
+      .trim();
 
-  function filterCards(){
+  const genreValue =
+    genreFilter.value
+      .toLowerCase();
 
-    const search =
-      searchInput.value.toLowerCase();
+  const ratingValue =
+    ratingFilter.value;
+
+  const rubricaValue =
+    rubricaFilter.value;
+
+  let visibleCount = 0;
+
+  reviewCards.forEach(card => {
+
+    const title =
+      card.dataset.title
+        ?.toLowerCase() || "";
+
+    const director =
+      card.dataset.director
+        ?.toLowerCase() || "";
+
+    const year =
+      card.dataset.year
+        ?.toLowerCase() || "";
 
     const genre =
-      genreFilter
-        ? genreFilter.value.toLowerCase()
-        : "";
-
-    const rubrica =
-      rubricaFilter
-        ? rubricaFilter.value.toLowerCase()
-        : "";
+      card.dataset.genre
+        ?.toLowerCase() || "";
 
     const rating =
-      ratingFilter
-        ? ratingFilter.value
-        : "";
+      card.dataset.rating || "";
 
-    let visibleCount = 0;
+    const rubrica =
+      card.dataset.rubrica || "";
 
-    archivioCards.forEach(card => {
+    const matchesSearch =
 
-      const text =
-        card.textContent.toLowerCase();
+      title.includes(searchValue) ||
 
-      const cardGenre =
-        card.dataset.genre || "";
+      director.includes(searchValue) ||
 
-      const cardRating =
-        card.dataset.rating || "";
+      year.includes(searchValue);
 
-      const cardRubrica =
-        card.dataset.rubrica || "";
+    const matchesGenre =
 
-      const matchesSearch =
-        text.includes(search);
+      !genreValue ||
 
-      const matchesGenre =
+      genre.includes(genreValue);
 
-        !genre ||
+    const matchesRating =
 
-        cardGenre
-          .split(" ")
-          .includes(genre);
+      !ratingValue ||
 
-      const matchesRubrica =
+      rating === ratingValue;
 
-        !rubrica ||
+    const matchesRubrica =
 
-        cardRubrica === rubrica;
+      !rubricaValue ||
 
-      const matchesRating =
+      rubrica === rubricaValue;
 
-        !rating ||
+    if(
+      matchesSearch &&
+      matchesGenre &&
+      matchesRating &&
+      matchesRubrica
+    ){
 
-        cardRating === rating;
+      card.style.display = "";
+      visibleCount++;
 
-      if(
-        matchesSearch &&
-        matchesGenre &&
-        matchesRubrica &&
-        matchesRating
-      ){
+    }else{
 
-        visibleCount++;
-
-        if(visibleCount <= visibleCards){
-
-          card.style.display =
-            "block";
-
-          card.style.opacity =
-            "1";
-
-        }
-
-        else {
-
-          card.style.display =
-            "none";
-
-        }
-
-      }
-
-      else {
-
-        card.style.display =
-          "none";
-
-      }
-
-    });
-
-    if(emptyState){
-
-      emptyState.style.display =
-
-        visibleCount === 0
-          ? "flex"
-          : "none";
+      card.style.display = "none";
 
     }
 
-    if(loadMoreBtn){
+  });
 
-      loadMoreBtn.style.display =
+  /* EMPTY STATE */
 
-        visibleCount > visibleCards
-          ? "flex"
-          : "none";
+  if(emptyState){
+
+    if(visibleCount === 0){
+
+      emptyState.style.display =
+        "block";
+
+    }else{
+
+      emptyState.style.display =
+        "none";
 
     }
 
   }
 
-  searchInput.addEventListener(
-    "input",
-    () => {
-
-      clearTimeout(timeout);
-
-      timeout = setTimeout(() => {
-
-        visibleCards = 3;
-
-        filterCards();
-
-      }, 220);
-
-    }
-  );
-
-  genreFilter?.addEventListener(
-    "change",
-    () => {
-
-      visibleCards = 3;
-
-      filterCards();
-
-    }
-  );
-
-  rubricaFilter?.addEventListener(
-    "change",
-    () => {
-
-      visibleCards = 3;
-
-      filterCards();
-
-    }
-  );
-
-  ratingFilter?.addEventListener(
-    "change",
-    () => {
-
-      visibleCards = 3;
-
-      filterCards();
-
-    }
-  );
-
-  resetBtn?.addEventListener(
-    "click",
-    () => {
-
-      searchInput.value = "";
-
-      if(genreFilter){
-        genreFilter.value = "";
-      }
-
-      if(ratingFilter){
-        ratingFilter.value = "";
-      }
-
-      if(rubricaFilter){
-        rubricaFilter.value = "";
-      }
-
-      visibleCards = 3;
-
-      filterCards();
-
-    }
-  );
-
-  loadMoreBtn?.addEventListener(
-    "click",
-    () => {
-
-      visibleCards += 3;
-
-      filterCards();
-
-    }
-  );
-
-  filterCards();
-
 }
+
+
+/* =========================
+   EVENTS
+========================= */
+
+searchInput?.addEventListener(
+  "input",
+  filterReviews
+);
+
+genreFilter?.addEventListener(
+  "change",
+  filterReviews
+);
+
+ratingFilter?.addEventListener(
+  "change",
+  filterReviews
+);
+
+rubricaFilter?.addEventListener(
+  "change",
+  filterReviews
+);
+
+
+/* =========================
+   RESET FILTERS
+========================= */
+
+resetFilters?.addEventListener(
+  "click",
+  () => {
+
+    searchInput.value = "";
+
+    genreFilter.value = "";
+
+    ratingFilter.value = "";
+
+    rubricaFilter.value = "";
+
+    filterReviews();
+
+  }
+);
