@@ -76,6 +76,10 @@ function saveMovieStatus(status){
 }
 
 
+/* =========================
+   SETUP BUTTONS
+========================= */
+
 function setupMovieButtons(){
 
   const markWatchedBtn =
@@ -111,6 +115,8 @@ function setupMovieButtons(){
   );
 
 }
+
+  
   currentMovieStatus = status;
 
   localStorage.setItem(
