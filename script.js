@@ -575,22 +575,28 @@ if(searchInput){
 }
 
 
-const TMDB_IMAGE = "https://image.tmdb.org/t/p/w500";
+const TMDB_IMAGE =
+  "https://image.tmdb.org/t/p/w500";
+
+const favoriteGrid =
+  document.getElementById("favoriteGrid");
 
 async function loadTrending(){
 
-  const res = await fetch(`
-    https://api.themoviedb.org/3/trending/movie/week?api_key=LA_TUA_API_KEY
-  `);
+  const res = await fetch(
+    `https://api.themoviedb.org/3/trending/movie/week?api_key=LA_TUA_API_KEY`
+  );
 
   const data = await res.json();
 
   renderMovies(data.results);
 
 }
+
 function renderMovies(movies){
 
   favoriteGrid.innerHTML =
+
     movies.map(movie => `
 
       <div class="saved-card">
@@ -611,3 +617,5 @@ function renderMovies(movies){
     `).join("");
 
 }
+
+loadTrending();
