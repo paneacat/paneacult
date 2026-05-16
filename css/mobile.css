@@ -6,6 +6,8 @@
 
   body{
     overflow-x:hidden;
+
+  padding-bottom:110px;
   }
 
   .container,
@@ -1038,6 +1040,14 @@ section{
   max-width:240px;
 
 }
+   .mobile-tabbar{
+
+    display:none;
+
+   }
+  .profile-header{
+  display:none;
+  }
 }
 
 
