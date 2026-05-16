@@ -230,4 +230,18 @@ async function loadProfile(){
 loadProfile();
 
 
+document.addEventListener("DOMContentLoaded", async () => {
+const {
+  data: { session }
+} = await supabaseClient.auth.getSession();
 
+if(
+  session &&
+  window.location.pathname.includes("login")
+){
+
+  window.location.href =
+    "/home.html";
+
+  return;
+}
