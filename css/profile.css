@@ -16,26 +16,20 @@
 
   position:absolute;
 
-  width:700px;
-  height:700px;
-
-  border-radius:50%;
+  inset:0;
 
   background:
-    radial-gradient(
-      circle,
-      rgba(253,193,3,.18),
-      transparent 70%
-    );
+    linear-gradient(
+      rgba(7,15,25,.78),
+      rgba(7,15,25,.95)
+    ),
+    url("img/profile-bg.webp");
 
-  top:-240px;
-  left:50%;
+  background-size:cover;
 
-  transform:translateX(-50%);
+  background-position:center;
 
-  filter:blur(40px);
-
-  z-index:1;
+  filter:saturate(1.1);
 
 }
 
@@ -57,26 +51,26 @@
 
 }
 
-.profile-stat{
+.profile-stats{
 
-  min-width:140px;
+  display:flex;
 
-  padding:24px 10px;
+  justify-content:center;
+
+  gap:80px;
+
+  margin-top:40px;
+
+  padding-top:30px;
 
   border-top:
     1px solid rgba(255,255,255,.08);
-
-  text-align: center;
 
 }
 
 .profile-stat span{
 
-  font-family:"Playfair Display", serif;
-
-  display:block;
-
-  margin-bottom:10px;
+  font-size:2rem;
 
 }
 
@@ -254,6 +248,24 @@ max-width: 700px;
   position: relative;
 
   z-index: 2;
+
+}
+
+.profile-hero-content{
+
+  position:relative;
+
+}
+
+.profile-user-meta{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:18px;
+
+  margin-bottom:40px;
 
 }
 
@@ -542,13 +554,21 @@ max-width: 700px;
 
 .profile-header{
 
-  backdrop-filter: blur(18px);
+  position:sticky;
+
+  top:0;
+
+  z-index:1000;
+
+  padding:20px 0;
+
+  backdrop-filter:blur(20px);
 
   background:
-    rgba(13,46,64,.6);
+    rgba(8,22,35,.72);
 
   border-bottom:
-    1px solid rgba(255,255,255,.06);
+    1px solid rgba(255,255,255,.05);
 
 }
 
@@ -621,11 +641,11 @@ max-width: 700px;
 
 .profile-title{
 
-  font-size:clamp(4.5rem, 10vw, 8rem);
+  font-size:clamp(3.6rem, 6vw, 5.5rem);
 
-  line-height:.88;
+  line-height:.9;
 
-  letter-spacing:-.05em;
+  max-width:700px;
 
 }
 
@@ -1060,15 +1080,14 @@ flex-wrap:wrap;
 
 .activity-card{
 
-  padding:28px;
+  padding:22px 0;
 
-  border-radius:28px;
+  border-bottom:
+    1px solid rgba(255,255,255,.06);
 
-  background:
-    rgba(255,255,255,.03);
+  background:none;
 
-  border-left:
-    3px solid var(--panea-yellow);
+  border-radius:0;
 
 }
 
