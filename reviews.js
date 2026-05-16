@@ -155,8 +155,6 @@ const loadMoreBtn =
     "loadMoreBtn"
   );
 
-let visibleReviews = 3;
-
 loadMoreBtn?.addEventListener(
   "click",
   () => {
@@ -182,12 +180,11 @@ loadMoreBtn?.addEventListener(
 
     }
 
-    const remaining =
+    if(
       document.querySelectorAll(
         ".hidden-review"
-      );
-
-    if(!remaining.length){
+      ).length === 0
+    ){
 
       loadMoreBtn.style.display =
         "none";
