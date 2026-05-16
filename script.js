@@ -573,3 +573,34 @@ if(searchInput){
   filterCards();
 
 }
+
+
+const TMDB_IMAGE = "https://image.tmdb.org/t/p/w500";
+
+function createMovieCard(movie){
+
+  return `
+
+    <div class="saved-card">
+
+      <img
+        src="${TMDB_IMAGE + movie.poster_path}"
+        alt="${movie.title}"
+      >
+
+      <div class="saved-overlay">
+
+        <h3>${movie.title}</h3>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+savedGrid.innerHTML = movies
+  .map(createMovieCard)
+  .join("");
+
