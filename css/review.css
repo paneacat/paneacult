@@ -338,6 +338,9 @@
 
 }
 
+.rating {
+  color:var(--panea-yellow);
+
 .review-page{
 
   min-height:100vh;
