@@ -1105,3 +1105,47 @@
 }
 
 
+/* =========================
+   SUGGEST REVIEW
+========================= */
+
+.suggest-review{
+
+  margin-top:34px;
+
+  text-align:center;
+
+}
+
+.suggest-review p{
+
+  font-size:.92rem;
+
+  color:
+    rgba(255,255,255,.55);
+
+  margin-bottom:12px;
+
+}
+
+.suggest-review a{
+
+  color:#fdc103;
+
+  text-decoration:none;
+
+  font-size:.82rem;
+
+  letter-spacing:.14em;
+
+  text-transform:uppercase;
+
+  transition:.25s ease;
+
+}
+
+.suggest-review a:hover{
+
+  opacity:.75;
+
+}
