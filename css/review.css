@@ -329,6 +329,15 @@
 /* =========================
    REVIEW PAGE
 ========================= */
+
+.review-content strong{
+
+  color:var(--panea-yellow);
+
+  font-weight:700;
+
+}
+
 .review-page{
 
   min-height:100vh;
@@ -1068,3 +1077,5 @@
   transform:scale(1.05);
 
 }
+
+
