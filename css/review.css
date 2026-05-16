@@ -919,62 +919,40 @@
 /* =========================
    AUTHOR CARD
 ========================= */
-
 .review-author{
 
-  margin-top:6rem;
+  max-width:340px;
 
-  padding:36px;
+  padding:18px 20px;
 
-  border-radius:34px;
+  border-radius:22px;
 
-  display:flex;
-
-  align-items:center;
-
-  gap:24px;
-
-  background:
-    rgba(255,255,255,.04);
-
-  border:
-    1px solid rgba(255,255,255,.06);
-
-  backdrop-filter:blur(14px);
+  margin:4rem auto 0;
 
 }
 
 .review-author img{
 
-  width:84px;
+  width:54px;
 
-  height:84px;
-
-  border-radius:50%;
-
-  object-fit:cover;
+  height:54px;
 
 }
 
 .author-name{
 
-  font-family:"Playfair Display", serif;
-
-  font-size:2rem;
-
-  color:var(--panea-white);
-
-  margin-bottom:10px;
+  font-size:.95rem;
 
 }
 
 .author-bio{
 
-  color:rgba(255,255,255,.68);
+  font-size:.82rem;
 
-  line-height:1.8;
+  line-height:1.5;
 
 }
+
 
 /* =========================
    RELATED FILMS
