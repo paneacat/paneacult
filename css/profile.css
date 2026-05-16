@@ -1395,7 +1395,12 @@ flex-wrap:wrap;
 
 }
 
+.tab-item:hover::after,
+.tab-item.active::after{
 
+  width:24px;
+
+}
 /* PLUS */
 
 
