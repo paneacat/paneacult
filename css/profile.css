@@ -1384,26 +1384,6 @@ flex-wrap:wrap;
 
 /* PLUS */
 
-.add-tab{
-
-  width:54px;
-
-  height:54px;
-
-  border-radius:50%;
-
-  background:var(--panea-yellow);
-
-  color:#08293b !important;
-
-  transform:translateY(-18px);
-
-  font-size:1.2rem;
-
-  box-shadow:
-    0 10px 30px rgba(253,193,3,.28);
-
-}
 
 .logout-tab{
 
