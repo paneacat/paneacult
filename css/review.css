@@ -329,27 +329,22 @@
 /* =========================
    REVIEW PAGE
 ========================= */
-
 .review-page{
 
   min-height:100vh;
 
   background:
     linear-gradient(
-      rgba(7,15,25,.92),
+      rgba(7,15,25,.94),
       rgba(7,15,25,.98)
     ),
-    url("img/wall.webp");
-
-  background-size:cover;
-
-  background-position:center;
+    #071019;
 
   color:var(--panea-white);
 
-  font-family:"Inter", sans-serif;
-
   overflow-x:hidden;
+
+  position:relative;
 
 }
 
@@ -360,8 +355,12 @@
   position:fixed;
 
   width:900px;
-
   height:900px;
+
+  top:-300px;
+  left:50%;
+
+  transform:translateX(-50%);
 
   border-radius:50%;
 
@@ -369,16 +368,10 @@
     radial-gradient(
       circle,
       rgba(253,193,3,.10),
-      transparent 72%
+      transparent 70%
     );
 
-  top:-320px;
-
-  left:50%;
-
-  transform:translateX(-50%);
-
-  filter:blur(80px);
+  filter:blur(70px);
 
   pointer-events:none;
 
