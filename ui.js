@@ -117,16 +117,7 @@ function setupMovieButtons(){
 }
 
   
-  currentMovieStatus = status;
 
-  localStorage.setItem(
-    `paneacult_movie_status_${selectedMovieData.id}`,
-    status
-  );
-
-  updateMovieButtons(status);
-
-}
 
 publishReviewBtn?.addEventListener(
   "click",
