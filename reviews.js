@@ -155,20 +155,20 @@ const loadMoreBtn =
     "loadMoreBtn"
   );
 
-const hiddenReviews =
-  document.querySelectorAll(
-    ".hidden-review"
-  );
-
-let visibleReviews = 0;
+let visibleReviews = 3;
 
 loadMoreBtn?.addEventListener(
   "click",
   () => {
 
+    const hiddenReviews =
+      document.querySelectorAll(
+        ".hidden-review"
+      );
+
     for(
-      let i = visibleReviews;
-      i < visibleReviews + 3;
+      let i = 0;
+      i < 3;
       i++
     ){
 
@@ -182,12 +182,12 @@ loadMoreBtn?.addEventListener(
 
     }
 
-    visibleReviews += 3;
+    const remaining =
+      document.querySelectorAll(
+        ".hidden-review"
+      );
 
-    if(
-      visibleReviews >=
-      hiddenReviews.length
-    ){
+    if(!remaining.length){
 
       loadMoreBtn.style.display =
         "none";
