@@ -224,4 +224,77 @@ function updateEmptyState(){
 
 }
 
-  
+
+
+/* =========================
+   SEARCH REVIEWS
+========================= */
+
+const searchInput =
+  document.getElementById(
+    "searchInput"
+  );
+
+const reviewCards =
+  document.querySelectorAll(
+    ".review-card"
+  );
+
+const emptyState =
+  document.getElementById(
+    "emptyState"
+  );
+
+searchInput?.addEventListener(
+  "input",
+  () => {
+
+    const value =
+      searchInput.value
+      .toLowerCase()
+      .trim();
+
+    let visibleCount = 0;
+
+    reviewCards.forEach(card => {
+
+      const title =
+        card.dataset.title
+        .toLowerCase();
+
+      if(title.includes(value)){
+
+        card.style.display =
+          "block";
+
+        visibleCount++;
+
+      }else{
+
+        card.style.display =
+          "none";
+
+      }
+
+    });
+
+    /* EMPTY STATE */
+
+    if(emptyState){
+
+      if(visibleCount === 0){
+
+        emptyState.style.display =
+          "block";
+
+      }else{
+
+        emptyState.style.display =
+          "none";
+
+      }
+
+    }
+
+  }
+);
