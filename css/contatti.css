@@ -6,67 +6,15 @@
 
   padding:120px 0;
 
-  min-height:100vh;
-
-  background:
-    linear-gradient(
-      rgba(7,15,25,.94),
-      rgba(7,15,25,.98)
-    ),
-    #071019;
-
-  color:#f5f7fa;
-
-  position:relative;
-
-  overflow:hidden;
-
-}
-
-/* GLOW */
-
-.contact-page::before{
-
-  content:"";
-
-  position:fixed;
-
-  width:900px;
-  height:900px;
-
-  top:-320px;
-  left:50%;
-
-  transform:translateX(-50%);
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(253,193,3,.10),
-      transparent 70%
-    );
-
-  filter:blur(70px);
-
-  pointer-events:none;
-
-  z-index:0;
-
 }
 
 /* HERO */
 
 .contact-hero{
 
-  position:relative;
-
-  z-index:2;
-
   text-align:center;
 
-  margin-bottom:90px;
+  margin-bottom:80px;
 
 }
 
@@ -78,7 +26,7 @@
 
   text-transform:uppercase;
 
-  color:#fdc103;
+  color:var(--panea-yellow);
 
   margin-bottom:18px;
 
@@ -94,9 +42,9 @@
 
   line-height:.92;
 
-  color:#f5f7fa;
+  color:var(--panea-white);
 
-  margin-bottom:28px;
+  margin-bottom:24px;
 
 }
 
@@ -106,19 +54,15 @@
 
   margin:0 auto;
 
-  line-height:2;
+  line-height:1.9;
 
-  color:rgba(255,255,255,.68);
+  color:rgba(255,255,255,.72);
 
 }
 
 /* GRID */
 
 .contact-cards{
-
-  position:relative;
-
-  z-index:2;
 
   width:min(1180px, 90%);
 
@@ -140,119 +84,67 @@
 
 .contact-card{
 
-  position:relative;
+  padding:40px 34px;
 
-  padding:42px 34px;
+  border-radius:30px;
 
-  border-radius:32px;
+  background:rgba(255,255,255,.03);
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.045),
-      rgba(255,255,255,.018)
-    );
+  border:1px solid rgba(255,255,255,.06);
 
-  border:
-    1px solid rgba(255,255,255,.06);
+  backdrop-filter:blur(10px);
 
-  backdrop-filter:blur(16px);
-
-  overflow:hidden;
-
-  transition:.35s ease;
+  transition:.3s ease;
 
   text-align:center;
 
 }
 
-/* GLOW */
-
-.contact-card::before{
-
-  content:"";
-
-  position:absolute;
-
-  width:240px;
-
-  height:240px;
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(253,193,3,.08),
-      transparent 72%
-    );
-
-  top:-120px;
-
-  right:-80px;
-
-  pointer-events:none;
-
-}
-
-/* HOVER */
-
 .contact-card:hover{
 
-  transform:
-    translateY(-8px)
-    scale(1.01);
+  transform:translateY(-6px);
 
-  border-color:
-    rgba(253,193,3,.18);
+  border-color:rgba(253,193,3,.18);
 
 }
-
-/* ICON */
 
 .contact-card i{
 
-  font-size:1.7rem;
+  font-size:1.6rem;
 
-  color:#fdc103;
-
-  margin-bottom:26px;
-
-}
-
-/* TITLE */
-
-.contact-card h3{
-
-  font-family:"Playfair Display", serif;
-
-  font-size:1.1rem;
-
-  line-height:1.1;
-
-  color:#f5f7fa;
-
-  margin-bottom:18px;
-
-}
-
-/* TEXT */
-
-.contact-card p{
-
-  line-height:1.9;
-
-  color:rgba(255,255,255,.68);
+  color:var(--panea-yellow);
 
   margin-bottom:24px;
 
 }
 
-/* LINK */
+.contact-card h3{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:.85rem;
+
+  line-height: 1;
+   
+  color:var(--panea-yellow);
+
+  margin-bottom:18px;
+
+}
+
+.contact-card p{
+
+  line-height:1.8;
+
+  color:rgba(255,255,255,.72);
+
+  margin-bottom:24px;
+
+}
 
 .contact-card a{
 
-  color:#fdc103;
+  color:var(--panea-yellow);
 
   text-decoration:none;
 
