@@ -92,33 +92,6 @@
    PROFILE HEADER
 ========================= */
 
-.profile-header{
-
-  position:sticky;
-
-  top:0;
-
-  z-index:999;
-
-  width:100%;
-
-  padding:22px 0;
-
-  backdrop-filter:blur(22px);
-
-  -webkit-backdrop-filter:blur(22px);
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(6,14,24,.82),
-      rgba(6,14,24,.45)
-    );
-
-  border-bottom:
-    1px solid rgba(255,255,255,.05);
-
-}
 
 /* INNER */
 
@@ -1422,9 +1395,6 @@ flex-wrap:wrap;
 
 }
 
-/* HOVER + ACTIVE LINE */
-
-.tab-item:hover::after,
 
 /* PLUS */
 
@@ -1500,7 +1470,6 @@ flex-wrap:wrap;
   color:var(--panea-yellow);
 
 }
-
 
 
 
