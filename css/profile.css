@@ -509,6 +509,35 @@ max-width: 700px;
   font-family:"Inter", sans-serif;
 }
 
+.profile-page::before{
+
+  content:"";
+
+  position:fixed;
+
+  width:900px;
+  height:900px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(253,193,3,.12),
+      transparent 70%
+    );
+
+  top:-300px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  pointer-events:none;
+
+  filter:blur(60px);
+
+}
+
 /* HEADER */
 
 .profile-header{
@@ -676,6 +705,35 @@ max-width: 700px;
 
 }
 
+.profile-highlights{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:24px;
+
+  width:min(1000px, 92%);
+
+  margin:70px auto;
+
+}
+
+.highlight-card{
+
+  padding:38px;
+
+  border-radius:32px;
+
+  background:
+    rgba(255,255,255,.04);
+
+  border:
+    1px solid rgba(255,255,255,.06);
+
+  backdrop-filter:blur(12px);
+
+}
 /* SAVED */
 
 .saved-movies{
@@ -992,6 +1050,27 @@ flex-wrap:wrap;
 
 }
 
+.activity-feed{
+
+  width:min(900px, 92%);
+
+  margin:0 auto;
+
+}
+
+.activity-card{
+
+  padding:28px;
+
+  border-radius:28px;
+
+  background:
+    rgba(255,255,255,.03);
+
+  border-left:
+    3px solid var(--panea-yellow);
+
+}
 
 
 
