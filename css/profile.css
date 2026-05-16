@@ -793,6 +793,8 @@ max-width: 700px;
 
   margin:auto;
 
+}
+
 /* =========================
    SAVED STATE
 ========================= */
@@ -1363,19 +1365,6 @@ flex-wrap:wrap;
 
 }
 
-  
-
-.saved-state{
-
-  background: var(--panea-yellow);
-
-  color:#000;
-
-  opacity:.9;
-
-  cursor:default;
-
-}
 
 
 .saved-section + .saved-section{
