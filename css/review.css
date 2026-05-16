@@ -1014,15 +1014,19 @@
 
 .related-card{
 
-  width:140px;
+  width:220px;
 
-  border-radius:20px;
+  aspect-ratio:16/9;
 
   overflow:hidden;
 
+  border-radius:22px;
+
   position:relative;
 
-  transition:.3s ease;
+  transition:.35s ease;
+
+  background:#111;
 
 }
 
@@ -1030,27 +1034,17 @@
 
   width:100%;
 
-  aspect-ratio:2/3;
+  height:100%;
 
   object-fit:cover;
 
   display:block;
 
-}
-
-.related-card h3{
-
-  font-size:.95rem;
-
-  line-height:1.2;
-
-  margin-top:12px;
-
-  color:var(--panea-white);
+  transition:.45s ease;
 
 }
 
-
+/* OVERLAY */
 
 .related-card::after{
 
@@ -1063,17 +1057,18 @@
   background:
     linear-gradient(
       to top,
-      rgba(0,0,0,.88),
-      transparent 60%
+      rgba(7,15,25,.35),
+      rgba(7,15,25,.08)
     );
 
 }
 
+/* HOVER */
 
 .related-card:hover{
 
   transform:
-    translateY(-8px)
+    translateY(-6px)
     scale(1.02);
 
 }
