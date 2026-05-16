@@ -196,3 +196,56 @@ loadMoreBtn?.addEventListener(
 
   }
 );
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+const reviewsGrid =
+  document.querySelector(
+    ".reviews-grid"
+  );
+
+const reviewCards =
+  document.querySelectorAll(
+    ".review-card"
+  );
+
+if(
+  reviewsGrid &&
+  reviewCards.length === 0
+){
+
+  reviewsGrid.innerHTML = `
+
+    <div class="empty-state">
+
+      <span class="empty-icon">
+        ✦
+      </span>
+
+      <h3>
+        Nessuna recensione trovata
+      </h3>
+
+      <div class="suggest-review">
+
+        <p>
+          Manca un film che ami?
+        </p>
+
+        <a
+          href="mailto:paneacult@gmail.com?subject=Consiglio recensione paneacult"
+        >
+
+          Suggeriscimi una recensione →
+
+        </a>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
