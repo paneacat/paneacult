@@ -1019,6 +1019,25 @@ section{
   padding-left:58px;
 
 }
+  .current-favorite{
+
+  flex-direction:column;
+
+  text-align:center;
+
+  padding:24px;
+
+  gap:24px;
+
+}
+
+.current-favorite img{
+
+  width:100%;
+
+  max-width:240px;
+
+}
 }
 
 
