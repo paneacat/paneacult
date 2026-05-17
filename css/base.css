@@ -140,7 +140,46 @@ transition:.2s ease;
 }
 
 
+/* =========================
+   FOOTER SEPARATOR
+========================= */
 
+.credits{
+
+  position: relative;
+
+  margin-top: 120px;
+
+  padding-top: 80px;
+
+}
+
+.credits::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:min(900px, 82%);
+
+  height:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(243,201,77,.18) 15%,
+      rgba(255,255,255,.22) 50%,
+      rgba(243,201,77,.18) 85%,
+      transparent 100%
+    );
+
+}
 
 
 
