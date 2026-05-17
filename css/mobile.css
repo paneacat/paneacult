@@ -1108,6 +1108,13 @@ section{
   line-height:.95;
 
 }
+
+  .contact-mail{
+
+    font-size:1.2rem;
+
+    padding:6px 0;
+  }
   /* =========================
     RUBRICHE
   ========================= */
