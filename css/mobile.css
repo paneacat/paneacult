@@ -22,7 +22,6 @@
 
 section{
     padding-top:30px !important;
-
     padding-bottom:30px !important;
 }
 
@@ -64,6 +63,9 @@ section{
     line-height:.95;
   }
 
+  .hidden-review{
+  display:none;
+  }
   /* =========================
      HEADER
   ========================= */
