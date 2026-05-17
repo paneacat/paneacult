@@ -42,7 +42,8 @@ body.login-page{
     rgba(7,15,25,.72),
     rgba(7,15,25,.82)
   ),
-  url("/img/wall.webp");
+  url("../img/wall.webp")
+}
 
 background-size:cover;
 background-position:center;
