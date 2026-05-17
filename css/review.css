@@ -1305,8 +1305,6 @@
 
 .review-extra li::marker{
 
-  color:var(--panea-yellow);
-
   font-size:.9rem;
 
 }
