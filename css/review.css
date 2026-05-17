@@ -333,11 +333,13 @@
 
   min-height:100vh;
 
-  background:#071019;
+  background:var(--panea-blue);
 
   color:var(--panea-white);
 
   overflow-x:hidden;
+
+  position:relative;
 
 }
 
