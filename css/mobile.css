@@ -223,7 +223,7 @@ section{
     gap:3rem;
 
   }
-  
+
 
   .archivio-card{
     width: 100%;
@@ -257,9 +257,7 @@ section{
     letter-spacing: 0.15rem;
   }
 
- .archivio-grid .archivio-card{
-  display:none;
-}
+
 .archivio-section .container{
 
     width:100%;
@@ -1225,7 +1223,7 @@ section{
     padding:0 14px;
     overflow-wrap:break-word;
 
-  
+  }
 
   .featured-hero{
 
@@ -1288,7 +1286,7 @@ section{
 
 
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
 
   .rubriche-grid {
     grid-template-columns: repeat(3,1fr);
