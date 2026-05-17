@@ -966,6 +966,26 @@ section{
   }
   
 
+  /* =========================
+    RUBRICHE
+  ========================= */
+  
+  .rubriche-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr !important;
+
+    gap:20px;
+
+  }
+
+  .rubrica-card{
+
+    width:100%;
+
+  }
+
 
   /* =========================
      LOGIN
@@ -1302,10 +1322,6 @@ section{
 
 @media (max-width: 1024px) {
 
-  .rubriche-grid {
-    grid-template-columns: repeat(2,1fr);
-    gap: 24px;
-  }
 
   .rubrica-card{
 
