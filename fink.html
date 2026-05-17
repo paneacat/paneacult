@@ -3,7 +3,9 @@
 
 <head>
 
-  <!-- BASE -->
+  <!-- =========================
+       BASE
+  ========================= -->
 
   <meta charset="UTF-8">
 
@@ -19,7 +21,9 @@
     content="Recensioni cinematografiche tra ossessioni visive, classici e cinema contemporaneo."
   >
 
-  <!-- PWA -->
+  <!-- =========================
+       PWA / MOBILE
+  ========================= -->
 
   <meta
     name="theme-color"
@@ -46,33 +50,43 @@
     content="paneacult"
   >
 
-  <!-- ICONS -->
+  <!-- =========================
+       ICONS
+  ========================= -->
+  
+<!-- APPLE -->
 
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="img/apple-icon-180.png"
-  >
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="img/apple-icon-180.png"
+>
 
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="192x192"
-    href="img/icon-192.png"
-  >
+<!-- ANDROID -->
 
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="512x512"
-    href="img/icon-512.png"
-  >
+<link
+  rel="icon"
+  type="image/png"
+  sizes="192x192"
+  href="img/icon-192.png"
+>
 
-  <!-- MANIFEST -->
+<link
+  rel="icon"
+  type="image/png"
+  sizes="512x512"
+  href="img/icon-512.png"
+>
+
+  <!-- =========================
+       MANIFEST
+  ========================= -->
 
   <link rel="manifest" href="/manifest.json?v=5">
 
-  <!-- SEO -->
+  <!-- =========================
+       SEO / SOCIAL
+  ========================= -->
 
   <meta
     property="og:title"
@@ -84,10 +98,10 @@
     content="Il cinema non è intrattenimento. È ciò che resta."
   >
 
-  <meta
-    property="og:image"
-    content="https://paneacat.github.io/paneacult.github.io/img/logo.png"
-  >
+ <meta
+  property="og:image"
+  content="https://paneacat.github.io/paneacult.github.io/img/logo.png"
+>
 
   <meta
     property="og:type"
@@ -104,7 +118,9 @@
     content="summary_large_image"
   >
 
-  <!-- FONTS -->
+  <!-- =========================
+       FONTS
+  ========================= -->
 
   <link
     rel="preconnect"
@@ -122,14 +138,18 @@
     rel="stylesheet"
   >
 
-  <!-- ICONS -->
+  <!-- =========================
+       ICONS
+  ========================= -->
 
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   >
 
-  <!-- CSS -->
+  <!-- =========================
+       CSS
+  ========================= -->
 
   <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/components.css">
@@ -140,20 +160,15 @@
 
 <body
   class="review-page"
-  data-movie-id="290"
-  data-movie-title="Barton Fink"
+  data-movie-id="599"
+  data-movie-title="Viale del tramonto"
 >
-
 <div class="cursor"></div>
 
 <!-- HEADER -->
-
 <header class="header">
-
   <div class="container header-inner">
-
     <div class="logo-block">
-
       <h1>
   <a
     href="index.html"
@@ -162,11 +177,7 @@
     paneacult
   </a>
       </h1>
-
-      <p class="logo-subtitle">
-        MY THERAPIST SAYS CINEMA
-      </p>
-
+      <p class="logo-subtitle">MY THERAPIST SAYS CINEMA</p>
     </div>
 <button class="menu-toggle">
 
@@ -176,55 +187,65 @@
 
 </button>
     <nav class="menu">
-
       <a href="index.html">HOME</a>
-
       <a href="archivio.html">RECENSIONI</a>
-
       <a href="featured.html">CHI SONO</a>
-
       <a href="contatti.html">CONTATTI</a>
-
       <a href="login.html">LOGIN</a>
-
     </nav>
-
   </div>
-
 </header>
-
 <!-- HERO -->
 
 <section class="review-hero">
 
-  <img
-    src="img/fink.webp"
-    alt="Barton Fink"
-    class="hero-img"
-  >
+  <div class="review-hero-content">
 
-  <div class="hero-overlay">
+    <!-- SCENA -->
 
-    <a
-      href="archivio.html"
-      class="back-link"
-    >
-    Torna alle recensioni
-    </a>
+    <div class="review-scene">
 
-    <h1>
-      Barton Fink
-    </h1>
+      <img
+        src="img/fink.webp"
+        alt="Barton Fink"
+      >
 
-    <p class="hero-subtitle">
-      Quando la follia si impossessa dell’anima.
-    </p>
+    </div>
+
+    <!-- INFO -->
+
+    <div class="review-info">
+
+      <p class="review-kicker">
+        RECENSIONE
+      </p>
+
+      <h1 class="review-title">
+        Barton Fink
+      </h1>
+
+      <div class="review-meta">
+
+        <span>1991</span>
+
+        <span>Joel & Ethan Coen</span>
+
+        <span>★★★★★</span>
+
+      </div>
+
+      <p class="review-description">
+        quando il blocco creativo diventa un incubo
+      </p>
+
+    </div>
 
   </div>
 
 </section>
 
-<!-- LAYOUT -->
+
+<!-- CONTENUTO -->
 
 <section class="review-layout">
 
@@ -234,152 +255,353 @@
 
     <div class="sidebar-box">
 
+      <!-- TOP -->
+
       <p class="sidebar-label">
         Regia
       </p>
 
       <p class="sidebar-value">
-        Joel Coen, Ethan Coen
+        Joel Coen · Ethan Coen
       </p>
 
       <p class="sidebar-label">
-        Anno
+        Sceneggiatura
       </p>
 
       <p class="sidebar-value">
-        1991
+        Joel Coen · Ethan Coen
       </p>
 
-      <p class="sidebar-label">
-        Genere
-      </p>
+      <!-- GRID -->
 
-      <p class="sidebar-value">
-        dramma, thriller
-      </p>
+      <div class="sidebar-grid">
 
-      <p class="sidebar-label">
+        <div>
+
+          <p class="sidebar-label">
+            Anno
+          </p>
+
+          <p class="sidebar-value">
+            1991
+          </p>
+
+        </div>
+
+        <div>
+
+          <p class="sidebar-label">
+            Genere
+          </p>
+
+          <p class="sidebar-value">
+            thriller · dramma · grottesco
+          </p>
+
+        </div>
+
+        <div>
+
+          <p class="sidebar-label">
+            Durata
+          </p>
+
+          <p class="sidebar-value">
+            116 min
+          </p>
+
+        </div>
+
+        <div>
+
+          <p class="sidebar-label">
+            Paese
+          </p>
+
+          <p class="sidebar-value">
+            USA
+          </p>
+
+        </div>
+
+        <div>
+
+          <p class="sidebar-label">
+            Voto
+          </p>
+
+          <p class="sidebar-value sidebar-rating">
+            ★★★★★
+          </p>
+
+        </div>
+
+        <div>
+
+          <p class="sidebar-label">
+            Rubrica
+          </p>
+
+          <p class="sidebar-value sidebar-series">
+            #CINEMACHERESTA
+          </p>
+
+        </div>
+
+        <div class="sidebar-grid-full">
+
+          <p class="sidebar-label">
+            Mood
+          </p>
+
+          <p class="sidebar-value">
+            claustrofobico · delirante · ipnotico
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ACTIONS -->
+
+    <div class="movie-actions">
+
+      <button class="watchlist-btn">
+        ☆ Da vedere
+      </button>
+
+      <button class="watch-btn">
+        ✓ L'ho visto
+      </button>
+
+      <button class="love-btn">
+        ♡ Lo adoro!
+      </button>
+
+    </div>
+
+    <!-- DOVE GUARDARLO -->
+
+    <div class="where-watch">
+
+      <span class="where-watch-label">
         Dove guardarlo
-      </p>
+      </span>
 
-      <p class="sidebar-watch unavailable">
-        Non disponibile
-      </p>
+      <div class="streaming-list">
 
-      <p class="sidebar-label">
-        Rubrica
-      </p>
+        <a
+          href="https://www.primevideo.com/"
+          class="streaming-pill"
+          target="_blank"
+        >
+          Prime Video
+        </a>
 
-      <p class="sidebar-value sidebar-series">
-        #CINEMAPRESCRITTO
-      </p>
+      </div>
 
-     <div class="movie-actions">
-
-  <button class="watchlist-btn">
-
-    ☆ Da vedere
-
-  </button>
-
-  <button class="watch-btn">
-
-    ✓ L'ho visto
-
-  </button>
-
-  <button class="love-btn">
-
-    ♡ Lo adoro!
-
-  </button>
-
-</div>
-      
     </div>
 
   </aside>
-  
 
-  <!-- CONTENUTO -->
 
-  <div class="review-content">
+  <!-- REVIEW -->
+
+  <section class="review-content">
 
     <p>
       <strong>Barton Fink</strong>
-      <em>(John Turturro)</em>
-      è un commediografo ossessionato dalla ricerca della “vera letteratura”:
-      una scrittura capace di raccontare l’uomo comune e i suoi conflitti.
+      (<em>John Turturro</em>)
+      è un giovane drammaturgo newyorkese,
+      celebrato per il suo teatro “vicino alla gente comune”.
+      Dopo il successo a Broadway,
+      viene chiamato a Hollywood
+      per scrivere la sceneggiatura
+      di un film di wrestling.
     </p>
 
     <p>
-      Dopo il successo ottenuto a
-      <strong>Broadway</strong>,
-      viene chiamato a
-      <strong>Hollywood</strong>
-      per lavorare a una sceneggiatura sul wrestling.
+      Barton si trasferisce così
+      nell’inquietante
+      <strong>Hotel Earle</strong>,
+      un luogo decadente,
+      soffocante,
+      apparentemente sospeso fuori dal tempo.
     </p>
 
     <p>
-      Quello che dovrebbe rappresentare il coronamento della sua carriera si
-      trasforma rapidamente in una paralizzante crisi creativa.
+      Quello che dovrebbe essere
+      l’inizio della sua consacrazione artistica
+      si trasforma lentamente
+      in una spirale di paranoia,
+      isolamento
+      e completo blocco creativo.
     </p>
 
     <p>
-      Nel claustrofobico
-      <em>Hotel Earle</em>,
-      Barton incontra
+      A sconvolgere ulteriormente
+      la sua fragile stabilità mentale
+      ci pensa
       <strong>Charlie Meadows</strong>
-      <em>(John Goodman)</em>,
-      vicino di stanza tanto cordiale quanto inquietante.
+      (<em>John Goodman</em>),
+      il vicino di stanza:
+      inizialmente gentile,
+      quasi rassicurante,
+      ma sempre più ambiguo
+      e disturbante.
     </p>
 
     <p>
-      La presenza di Charlie trascinerà il protagonista in un vortice sempre
-      più ambiguo fatto di paranoia, caos e follia.
+      I fratelli
+      <strong>Coen</strong>
+      costruiscono un’opera
+      stratificata e ossessiva,
+      capace di fondere
+      satira hollywoodiana,
+      noir,
+      horror psicologico
+      e assurdo esistenziale.
     </p>
 
     <p>
-      I
-      <strong>fratelli Coen</strong>
-      costruiscono un’opera visionaria e disturbante, sospesa tra satira
-      hollywoodiana, thriller psicologico e incubo surreale.
+      Tutto nel film contribuisce
+      a creare disagio:
+      i corridoi infiniti,
+      il caldo opprimente,
+      la carta da parati che si scolla,
+      i silenzi,
+      i rumori,
+      i dialoghi surreali.
     </p>
 
     <p>
-      <strong>Barton Fink</strong>
-      è un film ricco di simbolismi, capace di confondere continuamente realtà
-      e immaginazione, mantenendo fino alla fine un’atmosfera opprimente e magnetica.
+      <strong>John Turturro</strong>
+      offre una performance incredibile,
+      trattenuta e nevrotica,
+      mentre
+      <strong>John Goodman</strong>
+      regala uno dei personaggi
+      più inquietanti
+      del cinema dei Coen.
     </p>
 
     <p>
-      Grottesco, onirico e profondamente metacinematografico, resta uno dei
-      lavori più particolari e affascinanti della filmografia dei Coen.
+      Un film enigmatico,
+      simbolico,
+      disturbante,
+      che parla di arte,
+      ego,
+      fallimento
+      e identità.
     </p>
 
-    <!-- FINALE -->
+    <p>
+      <strong>
+        Geniale, allucinato, indimenticabile.
+      </strong>
+    </p>
 
-    <div class="review-end">
+    <!-- RATING -->
 
-      <div class="rating">
-        ★★★★☆
-      </div>
+    <div class="rating">
 
-      <p class="firma-recensione">
-        Patrizia Catania<br>
-        — paneacult
-      </p>
+      <span class="rating-stars">
+        ★★★★★
+      </span>
+
+      <span class="rating-text">
+        — 5/5
+      </span>
 
     </div>
 
-  </div>
+    <!-- CURIOSITÀ -->
+
+    <div class="review-extra">
+
+      <h3>
+        CURIOSITÀ
+      </h3>
+
+      <ul>
+
+        <li>
+          Il film vinse la
+          <strong>Palma d’Oro</strong>
+          al Festival di Cannes del 1991.
+        </li>
+
+        <li>
+          <strong>John Turturro</strong>
+          vinse il premio
+          come miglior attore
+          sempre a Cannes.
+        </li>
+
+        <li>
+          I fratelli Coen
+          scrissero il film
+          durante una pausa
+          dalla lavorazione di
+          <strong>Miller’s Crossing</strong>.
+        </li>
+
+        <li>
+          L’Hotel Earle
+          è diventato uno dei luoghi
+          più iconici e inquietanti
+          del cinema anni ’90.
+        </li>
+
+        <li>
+          La famosa frase
+          <em>
+            “I’ll show you the life of the mind!”
+          </em>
+          è considerata
+          una delle scene più memorabili
+          della filmografia dei Coen.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- CITAZIONE -->
+
+    <blockquote>
+      “Ti mostrerò la vita della mente.”
+    </blockquote>
+
+    <!-- AUTHOR -->
+
+    <div class="review-author">
+
+      <img
+        src="img/patrizia.webp"
+        alt="Patrizia Catania"
+      >
+
+      <div>
+
+        <p class="author-name">
+          Patrizia Catania
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
 
 </section>
 
+  
 <!-- NEWSLETTER -->
-
 <section class="newsletter">
-
   <div class="newsletter-inner">
 
     <p class="newsletter-kicker">
@@ -389,53 +611,42 @@
     <h2>
       Il cinema continua qui.
     </h2>
-
+  
     <p class="newsletter-sub">
       Ricevi le nuove recensioni direttamente via mail.
     </p>
 
-    <a href="#" class="newsletter-btn">
+    
+    <a
+      href="https://paneacult.substack.com/subscribe"
+      class="newsletter-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       Iscriviti alla newsletter
     </a>
 
-  </div>
-
+ </div>
 </section>
-
+  
 <!-- FOOTER -->
-
 <footer class="credits">
 
   <div class="credits-inner">
 
-    <p class="credits-label fade">
-      A cura di
-    </p>
+    <p class="credits-label fade">A cura di</p>
+    <p class="credits-name fade">paneacult</p>
 
-    <p class="credits-name fade">
-      paneacult
-    </p>
+    <p class="credits-label fade">Ideazione &amp; Scrittura</p>
+    <p class="credits-name fade">Patrizia Catania</p>
 
-    <p class="credits-label fade">
-      Ideazione &amp; Scrittura
-    </p>
-
-    <p class="credits-name fade">
-      Patrizia Catania
-    </p>
-
-    <p class="credits-label fade">
-      Anno
-    </p>
-
-    <p class="credits-name fade">
-      2026
-    </p>
+    <p class="credits-label fade">Anno</p>
+    <p class="credits-name fade">2026</p>
 
   </div>
 
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
 <script src="js/supabase.js"></script>
 
@@ -444,6 +655,7 @@
 <script src="js/auth.js"></script>
 
 <script src="js/reviews.js"></script>
-
 </body>
 </html>
+
+
