@@ -641,7 +641,7 @@ section{
 
     min-height:auto;
 
-    padding:6rem 0 4rem;
+    padding:3rem 0 2rem;
 
   }
 
@@ -966,13 +966,12 @@ section{
   .contact-hero{
 
     margin-bottom:20px !important;
-
     padding-bottom:8px !important;
 
   }
 
   .contact-cards{
-    margin-top:8px; !important;
+    margin-top:8px !important;
     padding-top:10px !important;
     display: flex;
     flex-direction: column;
@@ -1405,8 +1404,7 @@ section{
 
   max-width:240px;
 
-}
-   
+}  
 
   .watch-btn,
   .watchlist-btn,
