@@ -25,7 +25,7 @@ loadMoreBtn?.addEventListener(
 
         ? 4
 
-        : 6;
+        : 3;
 
     for(
       let i = 0;
