@@ -329,6 +329,17 @@
 /* =========================
    REVIEW PAGE
 ========================= */
+.review-page{
+
+  min-height:100vh;
+
+  background:#071019;
+
+  color:var(--panea-white);
+
+  overflow-x:hidden;
+
+}
 
 .review-content strong{
 
@@ -347,56 +358,6 @@
 .rating-text{
 
   color:rgba(255,255,255,.82);
-
-}
-
-.review-page{
-
-  min-height:100vh;
-
-  background:
-    linear-gradient(
-      rgba(7,15,25,.94),
-      rgba(7,15,25,.98)
-    ),
-    #071019;
-
-  color:var(--panea-white);
-
-  overflow-x:hidden;
-
-  position:relative;
-
-}
-
-.review-page::before{
-
-  content:"";
-
-  position:fixed;
-
-  width:900px;
-  height:900px;
-
-  top:-300px;
-  left:50%;
-
-  transform:translateX(-50%);
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(253,193,3,.10),
-      transparent 70%
-    );
-
-  filter:blur(70px);
-
-  pointer-events:none;
-
-  z-index:0;
 
 }
 
