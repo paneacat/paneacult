@@ -497,6 +497,8 @@ section{
     margin-top:16px;
     margin-bottom:16px;
     padding-top:0;
+    padding-bottom:0;
+    padding:0 24px;
   }
 
   .archivio-title{
