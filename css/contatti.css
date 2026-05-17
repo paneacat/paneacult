@@ -172,3 +172,27 @@ text-align:center;
   opacity:.8;
 
 }
+
+.contact-mail{
+
+  display:inline-block;
+
+  margin-top:10px;
+
+  font-size:1.1rem;
+
+  font-weight:600;
+
+  color:#f5f1ea;
+
+  text-decoration:none;
+
+  transition:.25s ease;
+
+}
+
+.contact-mail:hover{
+
+  color:#f3c433;
+
+}
