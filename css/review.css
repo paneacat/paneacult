@@ -1248,6 +1248,11 @@
    REVIEW EXTRA LIST
 ========================= */
 
+.review-extra{
+
+  margin-bottom: 4rem;
+
+}
 .review-extra ul{
 
   padding-left: 1.4rem;
