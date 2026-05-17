@@ -215,9 +215,18 @@ section{
 
   .hero-text h1{
     font-size:3.4rem;
-    line-height:.92;
+    line-height:1.02;
     max-width:100%;
+    padding-bottom: 8px;
   }
+
+  .hero,
+.hero-layout,
+.hero-text{
+
+  overflow:visible;
+
+}
 
   .hero-sub{
     font-size:1rem;
