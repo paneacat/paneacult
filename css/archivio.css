@@ -74,11 +74,12 @@
 
 
 .archivio-img {
-  width: 100%;
   aspect-ratio: 16/10;
   object-fit: cover;
-  display: block;
   border-radius: 18px;
+   width:100%;
+  height:auto;
+  display:block;
 }
 
 /* =========================
