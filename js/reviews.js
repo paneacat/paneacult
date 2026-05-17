@@ -23,7 +23,7 @@ loadMoreBtn?.addEventListener(
 
       window.innerWidth <= 768
 
-        ? 2
+        ? 4
 
         : 6;
 
