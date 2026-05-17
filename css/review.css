@@ -1308,3 +1308,23 @@
   font-size:.9rem;
 
 }
+
+
+
+body[data-movie-title="Barton Fink"] .review-scene img{
+
+  object-position:center top;
+
+}
+
+body[data-movie-title="Una giusta causa"] .review-scene img{
+
+  object-position:center 15%;
+
+}
+
+body[data-movie-title="Diamanti grezzi"] .review-scene img{
+
+  object-position:center 35%;
+
+}
