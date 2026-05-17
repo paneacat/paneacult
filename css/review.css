@@ -473,16 +473,25 @@
 
 }
 
-.review-poster img{
+/* =========================
+   POSTER + SCENE
+========================= */
 
-  width:100%;
+.review-poster img,
+.review-scene img{
 
-  border-radius:34px;
+  width: 100%;
 
-  display:block;
+  height: 360px;
+
+  object-fit: cover;
+
+  border-radius: 28px;
+
+  display: block;
 
   box-shadow:
-    0 40px 120px rgba(0,0,0,.45);
+    0 25px 70px rgba(0,0,0,.35);
 
 }
 
@@ -1120,24 +1129,24 @@
 
 .review-hero-content{
 
-  position:relative;
+  position: relative;
 
-  z-index:3;
+  z-index: 3;
 
-  width:min(1280px, 92%);
+  width: min(1280px, 92%);
 
-  margin:0 auto;
+  margin: 0 auto;
 
-  display:grid;
+  display: grid;
 
   grid-template-columns:
-    260px
-    320px
+    240px
+    240px
     1fr;
 
-  gap:40px;
+  gap: 32px;
 
-  align-items:end;
+  align-items: center;
 
 }
 
@@ -1151,22 +1160,6 @@
 
 }
 
-.review-scene img{
-
-  width:100%;
-
-  height:420px;
-
-  object-fit:cover;
-
-  border-radius:34px;
-
-  display:block;
-
-  box-shadow:
-    0 40px 120px rgba(0,0,0,.35);
-
-}
 
 .review-scene::after{
 
