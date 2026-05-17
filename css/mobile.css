@@ -1121,6 +1121,13 @@ section{
      ABOUT CARDS
   ========================= */
 
+ .about-page{
+
+    padding-top:24px;
+    padding-bottom:30px;
+
+ }
+  
   .about-top{
 
     display:flex;
@@ -1128,12 +1135,19 @@ section{
 
     align-items:center;
 
-    gap:34px;
+    gap:26px;
 
     padding-top:40px;
+  }
+
+
+  .about-bottom{
+
+    margin-top:34px;
 
   }
 
+  
   .about-image{
 
     width:100%;
@@ -1160,7 +1174,7 @@ section{
 
     text-align:center;
 
-    padding:0 22px;
+    padding:0 8px;
 
   }
 
@@ -1170,7 +1184,7 @@ section{
 
     line-height:.9;
 
-    margin-bottom:18px;
+    margin-bottom:14px;
 
   }
 
@@ -1180,6 +1194,7 @@ section{
 
     line-height:1.8;
 
+    margin-bottom:0;
   }
   
   
