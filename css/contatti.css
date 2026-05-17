@@ -3,8 +3,21 @@
 ========================= */
 
 .contact-page{
-
+  padding-top:0 !important;
+  margin-top:0 !important;
   padding:120px 0;
+}
+
+.contact-title{
+
+  margin-bottom:14px;
+
+}
+
+.contact-intro{
+   margin-bottom:0;
+
+  line-height:1.7;
 
 }
 
@@ -12,9 +25,11 @@
 
 .contact-hero{
 
-  text-align:center;
+padding-top:40px !important;
 
-  margin-bottom:80px;
+  padding-bottom:20px !important;
+   
+text-align:center;
 
 }
 
@@ -44,7 +59,7 @@
 
   color:var(--panea-white);
 
-  margin-bottom:24px;
+  margin-bottom:14px;
 
 }
 
