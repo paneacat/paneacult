@@ -1175,6 +1175,9 @@ section{
  .login-page{
     padding-top:40px;
     background-position:60% top;
+   background-size:180% auto;
+  background-position:center top;
+   
   }
   
 
