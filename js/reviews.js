@@ -19,21 +19,29 @@ loadMoreBtn?.addEventListener(
         ".hidden-review"
       );
 
+    const cardsToShow =
+
+      window.innerWidth <= 768
+
+        ? 4
+
+        : 6;
+
     for(
       let i = 0;
-      i < 3;
+      i < cardsToShow;
       i++
     ){
 
       if(hiddenReviews[i]){
 
         hiddenReviews[i].classList.remove(
-  "hidden-review"
-);
+          "hidden-review"
+        );
 
-hiddenReviews[i].classList.remove(
-  "hidden"
-);
+        hiddenReviews[i].classList.remove(
+          "hidden"
+        );
 
       }
 
