@@ -941,6 +941,14 @@ section{
      CONTACT
   ========================= */
  
+
+  .contact-hero{
+
+    padding-top:16px;
+    padding-bottom:14px;
+
+  }
+  
   .contact-title{
 
   margin-bottom:12px;
@@ -950,6 +958,18 @@ section{
   .contact-subtitle{
 
   margin-bottom:20px;
+
+  }
+
+  .contact-intro{
+
+    font-size:1rem;
+
+    line-height:1.9;
+
+    max-width:320px;
+
+    margin:0 auto;
 
   }
   
@@ -1123,8 +1143,8 @@ section{
 
  .about-page{
 
-    padding-top:24px;
-    padding-bottom:30px;
+    padding-top:14px;
+    padding-bottom:16px;
 
  }
   
@@ -1137,13 +1157,14 @@ section{
 
     gap:26px;
 
-    padding-top:40px;
+    padding-top:16px;
   }
 
 
   .about-bottom{
 
-    margin-top:34px;
+    margin-top:16px;
+    padding:0 24px;
 
   }
 
@@ -1172,9 +1193,9 @@ section{
 
     width:100%;
 
-    text-align:center;
+    padding:0 24px;
 
-    padding:0 8px;
+    text-align:center;
 
   }
 
@@ -1192,7 +1213,7 @@ section{
 
     font-size:1rem;
 
-    line-height:1.8;
+    line-height:1.9;
 
     margin-bottom:0;
   }
