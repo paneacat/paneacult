@@ -138,8 +138,6 @@ if(
 
 }
 
-
-
 const publishReviewBtn =
   document.getElementById(
     "publishReviewBtn"
@@ -173,8 +171,12 @@ loadMoreBtn?.addEventListener(
       if(hiddenReviews[i]){
 
         hiddenReviews[i].classList.remove(
-          "hidden-review"
-        );
+  "hidden-review"
+);
+
+hiddenReviews[i].classList.remove(
+  "hidden"
+);
 
       }
 
@@ -193,37 +195,6 @@ loadMoreBtn?.addEventListener(
 
   }
 );
-
-/* =========================
-   EMPTY STATE
-========================= */
-
-const emptyState =
-  document.getElementById(
-    "emptyState"
-  );
-
-function updateEmptyState(){
-
-  const visibleCards =
-    document.querySelectorAll(
-      ".review-card:not(.hidden)"
-    );
-
-  if(visibleCards.length === 0){
-
-    emptyState.style.display =
-      "block";
-
-  }else{
-
-    emptyState.style.display =
-      "none";
-
-  }
-
-}
-
 
 /* =========================
    LIVE SEARCH
@@ -279,15 +250,17 @@ searchInput?.addEventListener(
 
       if(matches){
 
-        card.style.display =
-          "";
+        card.classList.remove(
+  "hidden"
+);
 
-        visibleCount++;
-
+visibleCount++;
+         
       }else{
 
-        card.style.display =
-          "none";
+        card.classList.add(
+  "hidden"
+);
 
       }
 
