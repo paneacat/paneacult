@@ -417,6 +417,7 @@ section{
 
     padding:50px 20px 36px;
     margin-top: 0;
+    margin-bottom: 0;
   }
 
   .credits-inner{
@@ -826,6 +827,17 @@ section{
 
   }
 
+  .contact-title{
+
+  margin-bottom:12px;
+
+  }
+
+  .contact-subtitle{
+
+  margin-bottom:20px;
+
+  }
   .contact-cards .container{
 
     display:flex;
@@ -836,12 +848,19 @@ section{
 
   }
 
+  .contact-section{
+
+    padding-top:60px;
+
+  }
+
+
   .contact-cards{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 28px;
-
+    margin-top:28px;
+    gap:16px;
     width: 100%;
     padding: 0 20px;
     box-sizing: border-box;
@@ -856,6 +875,7 @@ section{
 
     border-radius: 32px;
   }
+  
  .selected-movie-card{
 
     flex-direction: column;
