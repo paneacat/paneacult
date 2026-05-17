@@ -245,3 +245,26 @@ if(
 
   return;
 }
+
+                          const googleLoginBtn =
+  document.getElementById(
+    "googleLoginBtn"
+  );
+
+googleLoginBtn?.addEventListener(
+  "click",
+  async () => {
+
+    await supabase.auth.signInWithOAuth({
+
+      provider: "google",
+
+      options: {
+        redirectTo:
+          window.location.origin
+      }
+
+    });
+
+  }
+);
