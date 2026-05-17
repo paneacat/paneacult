@@ -1183,3 +1183,72 @@
   pointer-events:none;
 
 }
+
+/* =========================
+   WHERE TO WATCH
+========================= */
+
+.where-watch{
+
+  margin-top: 2rem;
+
+}
+
+.where-watch-label{
+
+  display: block;
+
+  margin-bottom: .8rem;
+
+  font-size: .72rem;
+
+  letter-spacing: .18em;
+
+  text-transform: uppercase;
+
+  opacity: .6;
+
+}
+
+.streaming-list{
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: .7rem;
+
+}
+
+.streaming-pill{
+
+  padding: .7rem 1rem;
+
+  border: 1px solid rgba(255,255,255,.12);
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  color: #f5f1e8;
+
+  font-size: .9rem;
+
+  transition:
+    background .25s ease,
+    border .25s ease,
+    transform .25s ease;
+
+}
+
+.streaming-pill:hover{
+
+  background: #f5c518;
+
+  color: #111;
+
+  border-color: #f5c518;
+
+  transform: translateY(-2px);
+
+}
