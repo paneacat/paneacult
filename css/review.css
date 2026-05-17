@@ -661,6 +661,31 @@
 
 }
 
+.sidebar-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap:22px 30px;
+
+  margin-top:34px;
+
+}
+
+.sidebar-grid .sidebar-value{
+
+  margin-bottom:0;
+
+}
+
+.sidebar-grid-full{
+
+  grid-column:1 / -1;
+
+}
+
 .sidebar-box{
 
   padding:32px;
