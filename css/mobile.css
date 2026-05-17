@@ -932,6 +932,7 @@ section{
   margin-bottom:20px;
 
   }
+  
   .contact-cards .container{
 
     display:flex;
@@ -941,19 +942,18 @@ section{
     align-items:center;
 
   }
-
-
+  
   .contact-header,
   .contact-hero{
 
     margin-bottom:20px !important;
 
-    padding-bottom:0 !important;
+    padding-bottom:8px !important;
 
   }
 
   .contact-cards{
-    margin-top:0 !important;
+    margin-top:8px; !important;
     padding-top:10px !important;
     display: flex;
     flex-direction: column;
@@ -973,6 +973,7 @@ section{
 
     border-radius: 32px;
   }
+
   .contact-hero{
 
     padding-top:0 !important;
@@ -1283,8 +1284,6 @@ section{
   padding-left:58px;
 
 }
-
-
   
   #resetFilters{
 
@@ -1328,8 +1327,6 @@ section{
   ========================= */
 
   .credits{
-
-    padding:50px 20px 36px;
     margin-top: 0;
     margin-bottom: 0;
   }
