@@ -382,15 +382,23 @@ resetFilters?.addEventListener(
   }
 );
 
-
-
 /* =========================
-   ELEMENTS
+   ARCHIVIO FILTERS
 ========================= */
 
 const searchInput =
   document.getElementById(
     "searchInput"
+  );
+
+const reviewCards =
+  document.querySelectorAll(
+    ".review-card"
+  );
+
+const emptyState =
+  document.getElementById(
+    "emptyState"
   );
 
 const genreFilter =
@@ -413,31 +421,16 @@ const resetFilters =
     "resetFilters"
   );
 
-const reviewCards =
-  document.querySelectorAll(
-    ".review-card"
-  );
-
-const emptyState =
-  document.getElementById(
-    "emptyState"
-  );
-
-
-/* =========================
-   FILTER FUNCTION
-========================= */
-
 function filterReviews(){
 
-  const searchValue =
+  const value =
     searchInput.value
-      .toLowerCase()
-      .trim();
+    .toLowerCase()
+    .trim();
 
   const genreValue =
     genreFilter.value
-      .toLowerCase();
+    .toLowerCase();
 
   const ratingValue =
     ratingFilter.value;
@@ -451,19 +444,19 @@ function filterReviews(){
 
     const title =
       card.dataset.title
-        ?.toLowerCase() || "";
+      ?.toLowerCase() || "";
 
     const director =
       card.dataset.director
-        ?.toLowerCase() || "";
+      ?.toLowerCase() || "";
 
     const year =
       card.dataset.year
-        ?.toLowerCase() || "";
+      ?.toLowerCase() || "";
 
     const genre =
       card.dataset.genre
-        ?.toLowerCase() || "";
+      ?.toLowerCase() || "";
 
     const rating =
       card.dataset.rating || "";
@@ -473,17 +466,19 @@ function filterReviews(){
 
     const matchesSearch =
 
-      title.includes(searchValue) ||
+      title.includes(value) ||
 
-      director.includes(searchValue) ||
+      director.includes(value) ||
 
-      year.includes(searchValue);
+      year.includes(value);
 
     const matchesGenre =
 
       !genreValue ||
 
-      genre.includes(genreValue);
+      genre.includes(
+        genreValue
+      );
 
     const matchesRating =
 
@@ -504,12 +499,17 @@ function filterReviews(){
       matchesRubrica
     ){
 
-      card.style.display = "";
+      card.classList.remove(
+        "hidden"
+      );
+
       visibleCount++;
 
     }else{
 
-      card.style.display = "none";
+      card.classList.add(
+        "hidden"
+      );
 
     }
 
