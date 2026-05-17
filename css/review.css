@@ -319,73 +319,7 @@
 
   flex:none;
 }
-/* =========================
-   HERO CONTENT
-========================= */
 
-.review-hero-content{
-
-  display: grid;
-
-  grid-template-columns:
-    260px
-    420px
-    1fr;
-
-  gap: 2rem;
-
-  align-items: center;
-
-  position:relative;
-
-  z-index:3;
-
-  width:min(1280px, 92%);
-
-}
-
-/* =========================
-   IMAGES
-========================= */
-
-.review-poster img,
-.review-scene img{
-
-  width: 100%;
-
-  aspect-ratio: 1 / 1;
-
-  object-fit: cover;
-
-  border-radius: 1.4rem;
-
-  display: block;
-
-  box-shadow:
-    0 40px 120px rgba(0,0,0,.45);
-
-}
-
-
-/* =========================
-   SCENE
-========================= */
-
-.review-scene{
-
-  width: 100%;
-
-}
-
-/* =========================
-   INFO
-========================= */
-
-.review-info{
-
-  max-width: 520px;
-
-}
 
   
 
@@ -467,32 +401,37 @@
 }
 
 /* =========================
-   HERO
+   REVIEW HERO
 ========================= */
 
 .review-hero{
 
-  position: relative;
+  position:relative;
 
-  overflow: hidden;
+  min-height:92vh;
 
-  padding: 8rem 0 4rem;
+  display:flex;
+
+  align-items:flex-end;
+
+  padding:7rem 0 5rem;
+
+  overflow:hidden;
 
 }
 
 .review-backdrop{
 
-  position: absolute;
+  position:absolute;
 
-  inset: 0;
+  inset:0;
 
-  height: 100%;
+  width:100%;
 
-  overflow: hidden;
-
-  z-index: -1;
+  height:100%;
 
 }
+
 .review-backdrop img{
 
   width:100%;
@@ -511,28 +450,23 @@
 
 .review-backdrop::after{
 
-  content: "";
+  content:"";
 
-  position: absolute;
+  position:absolute;
 
-  inset: 0;
+  inset:0;
 
   background:
     linear-gradient(
-      to bottom,
-      rgba(5,7,11,.2),
-      rgba(5,7,11,.85) 70%,
-      #05070b 100%
+      90deg,
+      rgba(7,15,25,.92) 15%,
+      rgba(7,15,25,.55) 55%,
+      rgba(7,15,25,.92) 100%
     );
 
 }
 
-
-/* =========================
-   POSTER
-========================= */
-
-.review-poster {
+.review-poster{
 
   width:240px;
 
@@ -545,6 +479,48 @@
 
 }
 
+.review-hero-content{
+
+  position:relative;
+
+  z-index:3;
+
+  width:min(1280px, 92%);
+
+  margin:0 auto;
+
+  display:grid;
+
+  grid-template-columns:340px 1fr;
+
+  gap:60px;
+
+  align-items:end;
+
+}
+
+/* =========================
+   POSTER
+========================= */
+
+.review-poster{
+
+  position:relative;
+
+}
+
+.review-poster img{
+
+  width:100%;
+
+  border-radius:34px;
+
+  display:block;
+
+  box-shadow:
+    0 40px 120px rgba(0,0,0,.45);
+
+}
 
 .review-poster::after{
 
@@ -734,11 +710,21 @@
 
 .review-layout{
 
-  position: relative;
+  width:min(1280px, 92%);
 
-  z-index: 2;
+  margin:0 auto;
 
-  background: #05070b;
+  padding:5rem 0 8rem;
+
+  display:grid;
+
+  grid-template-columns:280px 1fr;
+
+  gap:70px;
+
+  position:relative;
+
+  z-index:2;
 
 }
 
@@ -1161,147 +1147,5 @@
 .suggest-review a:hover{
 
   opacity:.75;
-
-}
-
-
-/* =========================
-   WHERE TO WATCH
-========================= */
-
-.where-watch{
-
-  margin-top: 2rem;
-
-}
-
-.where-watch-label{
-
-  display: block;
-
-  margin-bottom: .8rem;
-
-  font-size: .72rem;
-
-  letter-spacing: .18em;
-
-  text-transform: uppercase;
-
-  opacity: .6;
-
-}
-
-.streaming-list{
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: .7rem;
-
-}
-
-.streaming-pill{
-
-  padding: .7rem 1rem;
-
-  border: 1px solid rgba(255,255,255,.12);
-
-  border-radius: 999px;
-
-  text-decoration: none;
-
-  color: #f5f1e8;
-
-  font-size: .9rem;
-
-  transition:
-    background .25s ease,
-    border .25s ease,
-    transform .25s ease;
-
-}
-
-.streaming-pill:hover{
-
-  background: #f5c518;
-
-  color: #111;
-
-  border-color: #f5c518;
-
-  transform: translateY(-2px);
-
-}
-
-/* =========================
-   REVIEW EXTRA
-========================= */
-
-.review-extra{
-
-  margin-top: 4rem;
-
-  padding: 2rem;
-
-  border: 1px solid rgba(255,255,255,.08);
-
-  background: rgba(255,255,255,.02);
-
-  border-radius: 1.5rem;
-
-  backdrop-filter: blur(10px);
-
-}
-
-.review-extra h3{
-
-  margin-bottom: 1.8rem;
-
-  font-size: .78rem;
-
-  letter-spacing: .22em;
-
-  text-transform: uppercase;
-
-  color: #f5c518;
-
-}
-
-.review-extra ul{
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 1.4rem;
-
-  padding-left: 1.2rem;
-
-}
-
-.review-extra li{
-
-  color: rgba(255,255,255,.82);
-
-  line-height: 1.9;
-
-  font-size: 1rem;
-
-}
-
-.review-extra strong{
-
-  color: #f5f1e8;
-
-  font-weight: 600;
-
-}
-
-.review-extra em{
-
-  color: #f5c518;
-
-  font-style: italic;
 
 }
