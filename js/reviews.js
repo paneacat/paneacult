@@ -210,11 +210,6 @@ const reviewCards =
     ".review-card"
   );
 
-const emptyState =
-  document.getElementById(
-    "emptyState"
-  );
-
 searchInput?.addEventListener(
   "input",
   () => {
