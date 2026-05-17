@@ -37,19 +37,16 @@ body.login-page{
 
   position:relative;
   min-height:100vh;
-  background-image:
-    linear-gradient(
-      rgba(5,15,24,.84),
-      rgba(5,15,24,.88)
-    ),
-    url("img/wall.webp");
+  background:
+  linear-gradient(
+    rgba(7,15,25,.72),
+    rgba(7,15,25,.82)
+  ),
+  url("/img/wall.webp");
 
-  background-size:cover;
-
-  background-position:center;
-
-  background-repeat:no-repeat;
-
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
 }
 
 /* =========================
