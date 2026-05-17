@@ -80,17 +80,35 @@ section{
   }
 
   .logo-block{
-    text-align:center;
-    align-items:center;
-  }
 
-  .logo{
-    font-size:3.8rem;
+    width:100%;
+
+    overflow:visible;
+
+    padding:0 12px;
+
   }
 
   .logo-subtitle{
-    font-size:.68rem;
-    letter-spacing:.22em;
+
+    width:100%;
+
+    font-size:.72rem;
+
+    letter-spacing:.16em;
+
+    line-height:1.7;
+
+    text-align:center;
+
+    white-space:normal;
+
+    overflow:visible;
+
+  }
+  
+  .logo{
+    font-size:3.8rem;
   }
 
   .profile-header{
