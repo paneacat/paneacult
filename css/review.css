@@ -1328,3 +1328,9 @@ body[data-movie-title="Diamanti grezzi"] .review-scene img{
   object-position:center 80%;
 
 }
+
+.sidebar-box > .sidebar-value{
+
+  margin-bottom:34px;
+
+}
