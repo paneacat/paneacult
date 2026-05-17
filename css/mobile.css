@@ -414,11 +414,28 @@ section{
   ========================= */
 
   .credits{
-    margin-top:70px;
-    padding-bottom:50px;
+
+    padding:50px 20px 36px;
+    margin-top: 0;
   }
 
+  .credits-inner{
 
+    gap:10px;
+
+  }
+
+  .credits-label{
+
+    margin-bottom:2px;
+
+  }
+
+  .credits-name{
+
+    margin-bottom:18px;
+
+  }
 
   /* =========================
      BASE
