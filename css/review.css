@@ -319,7 +319,73 @@
 
   flex:none;
 }
+/* =========================
+   HERO CONTENT
+========================= */
 
+.review-hero-content{
+
+  display: grid;
+
+  grid-template-columns:
+    260px
+    420px
+    1fr;
+
+  gap: 2rem;
+
+  align-items: center;
+
+  position:relative;
+
+  z-index:3;
+
+  width:min(1280px, 92%);
+
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+.review-poster img,
+.review-scene img{
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  border-radius: 1.4rem;
+
+  display: block;
+
+  box-shadow:
+    0 40px 120px rgba(0,0,0,.45);
+
+}
+
+
+/* =========================
+   SCENE
+========================= */
+
+.review-scene{
+
+  width: 100%;
+
+}
+
+/* =========================
+   INFO
+========================= */
+
+.review-info{
+
+  max-width: 520px;
+
+}
 
   
 
@@ -461,7 +527,12 @@
 
 }
 
-.review-poster{
+
+/* =========================
+   POSTER
+========================= */
+
+.review-poster {
 
   width:240px;
 
@@ -474,48 +545,6 @@
 
 }
 
-.review-hero-content{
-
-  position:relative;
-
-  z-index:3;
-
-  width:min(1280px, 92%);
-
-  margin:0 auto;
-
-  display:grid;
-
-  grid-template-columns:340px 1fr;
-
-  gap:60px;
-
-  align-items:end;
-
-}
-
-/* =========================
-   POSTER
-========================= */
-
-.review-poster{
-
-  position:relative;
-
-}
-
-.review-poster img{
-
-  width:100%;
-
-  border-radius:34px;
-
-  display:block;
-
-  box-shadow:
-    0 40px 120px rgba(0,0,0,.45);
-
-}
 
 .review-poster::after{
 
