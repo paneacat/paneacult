@@ -533,19 +533,18 @@ section{
      FEATURED
   ========================= */
 
-  .featured-hero{
+.featured-hero{
 
-    display:flex;
+    display:flex !important;
 
-    flex-direction:column;
+    flex-direction:column !important;
 
     align-items:center;
 
-    text-align:center;
-
     gap:40px;
 
-    padding-top:140px;
+    text-align:center;
+
   }
 
   .featured-image{
@@ -558,21 +557,18 @@ section{
 
   }
 
-  .featured-image img{
+  .featured-content{
 
     width:100%;
 
-    object-fit:cover;
-    
-  }
-
-  .featured-content{
-
-    width:min(92%, 520px);
-
-    margin:0 auto;
-
     text-align:left;
+
+  }
+  .featured-image img{
+
+  max-height:420px;
+
+  object-fit:cover;
 
   }
     
