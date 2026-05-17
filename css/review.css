@@ -1252,3 +1252,23 @@
   transform: translateY(-2px);
 
 }
+
+/* =========================
+   REVIEW EXTRA LIST
+========================= */
+
+.review-extra ul{
+
+  padding-left: 1.4rem;
+
+  list-style: disc;
+
+}
+
+.review-extra li{
+
+  margin-bottom: 1.2rem;
+
+  line-height: 1.9;
+
+}
