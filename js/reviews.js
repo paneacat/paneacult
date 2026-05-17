@@ -215,56 +215,169 @@ const emptyState =
     "emptyState"
   );
 
+const genreFilter =
+  document.getElementById(
+    "genreFilter"
+  );
+
+const ratingFilter =
+  document.getElementById(
+    "ratingFilter"
+  );
+
+const rubricaFilter =
+  document.getElementById(
+    "rubricaFilter"
+  );
+
+const resetFilters =
+  document.getElementById(
+    "resetFilters"
+  );
+
+function filterReviews(){
+
+  const value =
+    searchInput.value
+    .toLowerCase()
+    .trim();
+
+  const genreValue =
+    genreFilter.value;
+
+  const ratingValue =
+    ratingFilter.value;
+
+  const rubricaValue =
+    rubricaFilter.value;
+
+  let visibleCount = 0;
+
+  reviewCards.forEach(card => {
+
+    const title =
+      card.dataset.title
+      ?.toLowerCase() || "";
+
+    const director =
+      card.dataset.director
+      ?.toLowerCase() || "";
+
+    const year =
+      card.dataset.year
+      ?.toLowerCase() || "";
+
+    const genre =
+      card.dataset.genre || "";
+
+    const rating =
+      card.dataset.rating || "";
+
+    const rubrica =
+      card.dataset.rubrica || "";
+
+    const matchesSearch =
+
+      title.includes(value) ||
+
+      director.includes(value) ||
+
+      year.includes(value);
+
+    const matchesGenre =
+
+      !genreValue ||
+
+      genre.includes(genreValue);
+
+    const matchesRating =
+
+      !ratingValue ||
+
+      rating === ratingValue;
+
+    const matchesRubrica =
+
+      !rubricaValue ||
+
+      rubrica === rubricaValue;
+
+    if(
+      matchesSearch &&
+      matchesGenre &&
+      matchesRating &&
+      matchesRubrica
+    ){
+
+      card.classList.remove(
+        "hidden"
+      );
+
+      visibleCount++;
+
+    }else{
+
+      card.classList.add(
+        "hidden"
+      );
+
+    }
+
+  });
+
+  /* EMPTY STATE */
+
+  if(emptyState){
+
+    if(visibleCount === 0){
+
+      emptyState.style.display =
+        "block";
+
+    }else{
+
+      emptyState.style.display =
+        "none";
+
+    }
+
+  }
+
+}
+
 searchInput?.addEventListener(
   "input",
+  filterReviews
+);
+
+genreFilter?.addEventListener(
+  "change",
+  filterReviews
+);
+
+ratingFilter?.addEventListener(
+  "change",
+  filterReviews
+);
+
+rubricaFilter?.addEventListener(
+  "change",
+  filterReviews
+);
+
+resetFilters?.addEventListener(
+  "click",
   () => {
 
-    const value =
-      searchInput.value
-      .toLowerCase()
-      .trim();
+    searchInput.value = "";
 
-    let visibleCount = 0;
+    genreFilter.value = "";
 
-    reviewCards.forEach(card => {
+    ratingFilter.value = "";
 
-      const title =
-        card.dataset.title
-        ?.toLowerCase() || "";
+    rubricaFilter.value = "";
 
-      const director =
-        card.dataset.director
-        ?.toLowerCase() || "";
-
-      const year =
-        card.dataset.year
-        ?.toLowerCase() || "";
-
-      const matches =
-
-        title.includes(value) ||
-
-        director.includes(value) ||
-
-        year.includes(value);
-
-      if(matches){
-
-        card.classList.remove(
-  "hidden"
-);
-
-visibleCount++;
-         
-      }else{
-
-        card.classList.add(
-  "hidden"
-);
-
-      }
-
-    });
+    filterReviews();
 
   }
 );
