@@ -420,18 +420,6 @@ margin-top:50px;
 
 }
 
-.hidden-review{
-
-  display:none;
-
-}
-
-.empty-state{
-
-  display:none;
-
-}
-
 .suggest-review a{
 
   color:var(--panea-yellow);
@@ -455,5 +443,17 @@ margin-top:50px;
 .hidden{
 
   display:none !important;
+
+}
+
+.hidden-review{
+
+  display:none;
+
+}
+
+.empty-state{
+
+  display:none;
 
 }
