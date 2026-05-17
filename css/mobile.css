@@ -1144,16 +1144,40 @@ section{
     padding:120px 24px 80px;
   }
 
-  .login-title{
-    font-size:3rem;
-    line-height:.92;
-  }
 
-  .login-subtitle{
-    font-size:1rem;
+  .login-heading{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  text-align:center;
+
+}
+
+.login-title{
+
+  text-align:center;
+  font-size:3rem;
+    line-height:.92;
+  margin-bottom:14px;
+
+}
+
+.login-subtitle{
+
+  text-align:center;
+
+  max-width:320px;
+  font-size:1rem;
     line-height:1.6;
     white-space:normal;
-  }
+  margin:0 auto;
+
+}
+
 
   .login-box input{
     height:58px;
