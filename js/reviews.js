@@ -266,23 +266,5 @@ visibleCount++;
 
     });
 
-    /* EMPTY STATE */
-
-    if(emptyState){
-
-      if(visibleCount === 0){
-
-        emptyState.style.display =
-          "block";
-
-      }else{
-
-        emptyState.style.display =
-          "none";
-
-      }
-
-    }
-
   }
 );
