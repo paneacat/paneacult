@@ -847,7 +847,7 @@
 
   align-items:center;
 
-  gap:14px;
+  gap:16px;
 
   padding:0;
 
@@ -865,30 +865,25 @@
 
 .review-author img{
 
-  width:52px;
+  width:64px;
 
-  height:52px;
+  height:64px;
 
   border-radius:50%;
 
-  border:1px solid rgba(255,255,255,.12);
+  object-fit:cover;
 
 }
 
 /* NAME */
 
-.author-name{
+.review-author div{
 
-  font-size:.95rem;
+  display:flex;
 
-  font-weight:600;
-
-  letter-spacing:.04em;
-
-  color:rgba(255,255,255,.82);
+  align-items:center;
 
 }
-
 /* BIO */
 
 .author-bio{
