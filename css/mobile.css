@@ -200,22 +200,28 @@ section{
   .hero{
     padding-top:40px;
     padding-bottom:30px;
+    overflow:hidden;
   }
 
   .hero-layout{
     flex-direction:column;
     align-items:flex-start;
     gap:40px;
+    width:100%;
+    overflow:visible;
+
   }
 
   .hero-text{
-    padding:0;
+    width:100%;
+   padding:0;
     max-width:100%;
   }
 
   .hero-text h1{
-    font-size:3.4rem;
-    line-height:1.02;
+    font-size:clamp(2.8rem, 12vw, 3.4rem);
+    line-height:1.05;
+    padding-right:6px;
     max-width:100%;
     padding-bottom: 8px;
   }
