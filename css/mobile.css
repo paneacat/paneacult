@@ -474,11 +474,12 @@ section{
 
   .archivio-grid{
 
-    display:grid;
+  display:grid;
 
-    grid-template-columns:1fr;
+  grid-template-columns:
+    repeat(2, 1fr);
 
-    gap:3rem;
+  gap:18px;
 
   }
 
@@ -706,16 +707,13 @@ section{
 
   }
 
- 
 
   #publishReviewBtn{
 
     width: 100%;
   }
 
-
-   }
-
+  
   .review-layout{
 
     padding:4rem 0 6rem;
@@ -1277,13 +1275,6 @@ section{
 
 }
    
-  .movie-actions{
-
-    flex-direction:column;
-
-    align-items:stretch;
-
-  }
 
   .watch-btn,
   .watchlist-btn,
@@ -1306,7 +1297,7 @@ section{
 @media (max-width: 1024px) {
 
   .rubriche-grid {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(2,1fr);
     gap: 24px;
   }
 
@@ -1320,6 +1311,8 @@ section{
   .hero img {
       height: 82vh;
   }
+
+  
   .review-hero-content{
 
     grid-template-columns:1fr;
