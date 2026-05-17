@@ -37,8 +37,8 @@ body.login-page{
 
   background:
     linear-gradient(
-      rgba(4,12,20,.58),
-      rgba(4,12,20,.72)
+      rgba(4,12,20,.72),
+      rgba(4,12,20,.84)
     ),
     url("../img/wall.webp");
 
