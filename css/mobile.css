@@ -71,14 +71,15 @@ section{
   ========================= */
 
   .header{
-    padding-top:20px;
-    padding-bottom:10px;
+    padding-top:14px;
+    padding-bottom:0;
+    
   }
 
   .header-inner{
     flex-direction:column;
     align-items:center;
-    gap:18px;
+    gap:10px;
   }
 
   .logo-block{
@@ -102,14 +103,14 @@ section{
     text-align:center;
 
     white-space:normal;
-
+    margin-top:-6px;
     overflow:visible;
     letter-spacing:.12em;
 
   }
   
   .logo{
-    font-size:3.8rem;
+    font-size:3.2rem;
   }
 
   .profile-header{
@@ -168,7 +169,8 @@ section{
     cursor:pointer;
 
     z-index:1001;
-
+    margin-top:4px;
+  
   }
 
   .menu{
@@ -491,19 +493,21 @@ section{
   ========================= */
 
   .archivio-hero{
-    margin-top:70px;
-    margin-bottom:40px;
-    padding:0 20px;
+    margin-top:30px;
+    margin-bottom:26px;
+    padding-top:0;
   }
 
   .archivio-title{
     font-size:2.7rem;
     line-height:.95;
+    margin-bottom:14px;
   }
 
   .archivio-subtitle{
     font-size:.95rem;
-    line-height:1.8;
+    margin-top:0;
+    line-height:1.6;
   }
 
 .archivio-grid{
