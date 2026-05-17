@@ -1108,6 +1108,17 @@ section{
     line-height: 1.8;
 
   }
+  .review-hero-content{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .review-scene img{
+
+    height:260px;
+
+  }
 }
 
 
