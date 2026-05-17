@@ -1042,9 +1042,72 @@ section{
     margin-bottom:0 !important;
 
   }
+  
+ /* HERO CONTATTI */
 
+.contact-hero{
 
+  padding-top:24px !important;
 
+  padding-bottom:46px !important;
+
+}
+
+.contact-page{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  text-align:center;
+
+}
+
+.contact-title{
+
+  font-size:4rem;
+
+  margin-bottom:18px;
+
+}
+
+.contact-intro{
+
+  max-width:300px;
+
+  line-height:1.8;
+
+}
+
+  .contact-cards{
+
+  gap:28px;
+
+  margin-top:8px;
+
+  padding:0 22px 60px;
+
+}
+
+.contact-card{
+
+  padding:46px 30px;
+
+  border-radius:34px;
+
+}
+  
+.contact-card h2{
+
+  margin-top:18px;
+
+  margin-bottom:26px;
+
+  line-height:.95;
+
+}
   /* =========================
     RUBRICHE
   ========================= */
