@@ -403,52 +403,15 @@
 /* =========================
    REVIEW HERO
 ========================= */
-
 .review-hero{
 
   position:relative;
 
-  min-height:92vh;
-
-  display:flex;
-
-  align-items:flex-end;
-
-  padding:7rem 0 5rem;
-
-  overflow:hidden;
+  padding:8rem 0 5rem;
 
 }
 
-.review-backdrop{
-
-  position:absolute;
-
-  inset:0;
-
-  width:100%;
-
-  height:100%;
-
-}
-
-.review-backdrop img{
-
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  filter:
-    blur(6px)
-    brightness(.35)
-    saturate(.8);
-
-  transform:scale(1.08);
-
-}
-
-.review-backdrop::after{
+.review-hero::before{
 
   content:"";
 
@@ -457,12 +420,13 @@
   inset:0;
 
   background:
-    linear-gradient(
-      90deg,
-      rgba(7,15,25,.92) 15%,
-      rgba(7,15,25,.55) 55%,
-      rgba(7,15,25,.92) 100%
+    radial-gradient(
+      circle at top left,
+      rgba(253,193,3,.06),
+      transparent 45%
     );
+
+  pointer-events:none;
 
 }
 
