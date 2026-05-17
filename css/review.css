@@ -876,25 +876,18 @@
 }
 
 /* NAME */
+.author-name{
 
-.review-author div{
+  margin:0;
 
   display:flex;
 
   align-items:center;
 
-}
-/* BIO */
-
-.author-bio{
-
-  font-size:.82rem;
-
-  line-height:1.5;
-
-  color:rgba(255,255,255,.58);
+  height:64px;
 
 }
+
 
 /* =========================
    RELATED FILMS
