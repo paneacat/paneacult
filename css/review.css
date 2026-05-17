@@ -401,37 +401,32 @@
 }
 
 /* =========================
-   REVIEW HERO
+   HERO
 ========================= */
 
 .review-hero{
 
-  position:relative;
+  position: relative;
 
-  min-height:92vh;
+  overflow: hidden;
 
-  display:flex;
-
-  align-items:flex-end;
-
-  padding:7rem 0 5rem;
-
-  overflow:hidden;
+  padding: 8rem 0 4rem;
 
 }
 
 .review-backdrop{
 
-  position:absolute;
+  position: absolute;
 
-  inset:0;
+  inset: 0;
 
-  width:100%;
+  height: 100%;
 
-  height:100%;
+  overflow: hidden;
+
+  z-index: -1;
 
 }
-
 .review-backdrop img{
 
   width:100%;
@@ -450,18 +445,18 @@
 
 .review-backdrop::after{
 
-  content:"";
+  content: "";
 
-  position:absolute;
+  position: absolute;
 
-  inset:0;
+  inset: 0;
 
   background:
     linear-gradient(
-      90deg,
-      rgba(7,15,25,.92) 15%,
-      rgba(7,15,25,.55) 55%,
-      rgba(7,15,25,.92) 100%
+      to bottom,
+      rgba(5,7,11,.2),
+      rgba(5,7,11,.85) 70%,
+      #05070b 100%
     );
 
 }
@@ -710,21 +705,11 @@
 
 .review-layout{
 
-  width:min(1280px, 92%);
+  position: relative;
 
-  margin:0 auto;
+  z-index: 2;
 
-  padding:5rem 0 8rem;
-
-  display:grid;
-
-  grid-template-columns:280px 1fr;
-
-  gap:70px;
-
-  position:relative;
-
-  z-index:2;
+  background: #05070b;
 
 }
 
@@ -1220,3 +1205,74 @@
 
 }
 
+/* =========================
+   REVIEW EXTRA
+========================= */
+
+.review-extra{
+
+  margin-top: 4rem;
+
+  padding: 2rem;
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  background: rgba(255,255,255,.02);
+
+  border-radius: 1.5rem;
+
+  backdrop-filter: blur(10px);
+
+}
+
+.review-extra h3{
+
+  margin-bottom: 1.8rem;
+
+  font-size: .78rem;
+
+  letter-spacing: .22em;
+
+  text-transform: uppercase;
+
+  color: #f5c518;
+
+}
+
+.review-extra ul{
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.4rem;
+
+  padding-left: 1.2rem;
+
+}
+
+.review-extra li{
+
+  color: rgba(255,255,255,.82);
+
+  line-height: 1.9;
+
+  font-size: 1rem;
+
+}
+
+.review-extra strong{
+
+  color: #f5f1e8;
+
+  font-weight: 600;
+
+}
+
+.review-extra em{
+
+  color: #f5c518;
+
+  font-style: italic;
+
+}
