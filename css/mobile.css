@@ -506,16 +506,13 @@ section{
     line-height:1.8;
   }
 
-  .archivio-grid{
-
+.archivio-grid{
   display:grid;
-
   grid-template-columns:
     repeat(2, 1fr);
-
   gap:18px;
 
-  }
+}
 
   .archivio-card{
     width: 100%;
