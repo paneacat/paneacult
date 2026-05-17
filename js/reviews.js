@@ -243,13 +243,15 @@ function filterReviews(){
     .trim();
 
   const genreValue =
-    genreFilter.value;
+  genreFilter.value
+  .toLowerCase();
 
   const ratingValue =
     ratingFilter.value;
 
   const rubricaValue =
-    rubricaFilter.value;
+  rubricaFilter.value
+  .toLowerCase();
 
   let visibleCount = 0;
 
