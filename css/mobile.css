@@ -1400,7 +1400,9 @@ section{
     border-radius:24px;
   }
 
-
+.section-title {
+  margin-bottom: 12px;
+}
 
   /* =========================
    ARCHIVIO FILTRI MOBILE
