@@ -1156,6 +1156,20 @@ section{
   min-width:0;
 
   }
+  .hero-subtitle{
+
+    font-size:.78rem;
+
+    letter-spacing:.18em;
+
+    line-height:1.5;
+
+    text-align:center;
+
+    padding:0 14px;
+    overflow-wrap:break-word;
+
+  }
 }
 
 
