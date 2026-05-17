@@ -431,3 +431,23 @@ margin-top:50px;
   display:none;
 
 }
+
+.suggest-review a{
+
+  color:var(--panea-yellow);
+
+  text-decoration:underline;
+
+  text-underline-offset:4px;
+
+  font-weight:600;
+
+  transition:.25s ease;
+
+}
+
+.suggest-review a:hover{
+
+  opacity:.75;
+
+}
