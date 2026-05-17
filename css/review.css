@@ -372,25 +372,6 @@
 
 }
 
-.review-hero::before{
-
-  content:"";
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(253,193,3,.06),
-      transparent 45%
-    );
-
-  pointer-events:none;
-
-}
-
 .review-poster{
 
   width:240px;
