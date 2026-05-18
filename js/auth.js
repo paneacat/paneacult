@@ -95,6 +95,8 @@ loginForm?.addEventListener(
 
     e.preventDefault();
 
+    alert("LOGIN PARTITO");
+
     const email =
       document.querySelector(
         'input[type="email"]'
@@ -114,6 +116,8 @@ loginForm?.addEventListener(
 
         });
 
+console.log(error);
+     
     if(error){
 
       alert(error.message);
