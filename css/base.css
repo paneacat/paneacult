@@ -202,44 +202,50 @@ transition:.2s ease;
 
 .logo-block{
 
+  width:100%;
+
+  overflow:visible;
+
   display:flex;
 
   flex-direction:column;
 
   align-items:center;
 
-  text-align:center;
+  justify-content:center;
 
-  overflow:visible;
+  text-align:center;
 
 }
 
 .logo{
 
- display:block !important;
+  font-size:3.8rem;
 
-  text-align:center !important;
+  text-align:center;
 
-  line-height:.9 !important;
+  margin-bottom:6px;
 
-  margin-bottom:6px !important;
+  color:#f3c433;
 
 }
 
 .logo-subtitle{
 
-  font-size:.62rem;
+  width:100%;
 
-  letter-spacing:.12em;
+  font-size:.72rem;
 
-  margin-top:-6px;
-
-  margin-left:6px;
-
-  line-height:1.5;
+  line-height:1.7;
 
   text-align:center;
 
   white-space:normal;
+
+  margin-top:-6px;
+
+  overflow:visible;
+
+  letter-spacing:.12em;
 
 }
