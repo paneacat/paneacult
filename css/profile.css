@@ -164,15 +164,15 @@ letter-spacing:.04em;
 
   position:relative;
 
-  min-height:70vh;
+  min-height:auto;
+
+  padding:40px 24px 30px;
 
   display:flex;
 
   align-items:center;
 
   justify-content:center;
-
-  padding:40px 24px 20px;
 
   text-align:center;
 
@@ -181,7 +181,6 @@ letter-spacing:.04em;
 }
 
 .profile-title{
-
   max-width:9ch;
 
   margin:0 auto 24px;
@@ -253,7 +252,7 @@ letter-spacing:.04em;
 
   justify-content:center;
 
-  gap:42px;
+  gap:18px;
 
   margin-top:40px;
 
@@ -300,9 +299,11 @@ letter-spacing:.04em;
 
 .profile-bio{
 
-  font-size:1.05rem;
+  font-size:1.1rem;
 
-  line-height:1.8;
+  line-height:1.7;
+
+  max-width:520px;
 
   color:rgba(255,255,255,.72);
 
