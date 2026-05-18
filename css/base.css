@@ -198,18 +198,13 @@ transition:.2s ease;
 
 }
 
-
-@media (min-width:769px){
-
   .header-inner{
 
-    display:flex !important;
+  display:flex;
 
-    flex-direction:row !important;
+  justify-content:space-between;
 
-    align-items:center !important;
-
-    justify-content:space-between !important;
+  align-items:center;
 
   }
 
@@ -232,7 +227,4 @@ transition:.2s ease;
     margin-top:-5px !important;
 
     margin-left:6px !important;
-
-  }
-
 }
