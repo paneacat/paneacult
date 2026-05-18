@@ -359,8 +359,8 @@ const favoriteGrid =
 async function loadTrending(){
 
   const res = await fetch(
-    `https://api.themoviedb.org/3/trending/movie/week?api_key=LA_TUA_API_KEY`
-  );
+  `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
+);
 
   const data = await res.json();
 
@@ -377,10 +377,10 @@ function renderMovies(movies){
       <div class="saved-card">
 
         <img
-          src="${TMDB_IMAGE + movie.poster_path}"
+          src="${TMDB_POSTER + movie.poster_path}"
           alt="${movie.title}"
         >
-
+        
         <div class="saved-overlay">
 
           <h3>${movie.title}</h3>
