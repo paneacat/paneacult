@@ -148,7 +148,7 @@ registerBtn?.addEventListener(
   options: {
 
     emailRedirectTo:
-      "https://paneacat.github.io/paneacult/profilo.html"
+  "https://paneacult.com/profilo.html"
 
   }
 
@@ -246,7 +246,8 @@ if(
   return;
 }
 
-                          const googleLoginBtn =
+
+const googleLoginBtn =
   document.getElementById(
     "googleLoginBtn"
   );
@@ -255,16 +256,20 @@ googleLoginBtn?.addEventListener(
   "click",
   async () => {
 
-    await supabase.auth.signInWithOAuth({
+    await supabaseClient
+      .auth
+      .signInWithOAuth({
 
-      provider: "google",
+        provider: "google",
 
-      options: {
-        redirectTo:
-          window.location.origin
-      }
+        options: {
 
-    });
+          redirectTo:
+            "https://paneacult.com/profilo.html"
+
+        }
+
+      });
 
   }
 );
