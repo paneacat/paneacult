@@ -1794,7 +1794,59 @@ section{
     padding:20px !important;
 
   }
-  
+  .profile-header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:9999;
+
+  }
+
+  .profile-header-inner{
+
+    padding:14px 18px;
+
+  }
+
+  .profile-nav{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+  }
+
+  .profile-nav a,
+  .logout-btn{
+
+    font-size:.8rem;
+
+  }
+
+  .profile-nav span{
+
+    display:none;
+
+  }
+
+  .profile-nav i{
+
+    font-size:1rem;
+
+  }
+
+  .profile-hero{
+
+    padding-top:140px;
+
+  }
  }
 
 
