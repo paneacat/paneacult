@@ -1,17 +1,3 @@
-const loginBtn =
-  document.getElementById(
-    "loginBtn"
-  );
-
-const registerBtn =
-  document.getElementById(
-    "registerBtn"
-  );
-
-const logoutBtn =
-  document.getElementById(
-    "logoutBtn"
-  );
 
 /* =========================
    CHECK SESSIONE
@@ -231,7 +217,7 @@ async function loadProfile(){
   if(!user){
 
     window.location.href =
-      "login.html";
+      "profilo.html";
 
     return;
 
@@ -256,7 +242,7 @@ if(
 ){
 
   window.location.href =
-    "/home.html";
+    "/profilo.html";
 
   return;
 }
