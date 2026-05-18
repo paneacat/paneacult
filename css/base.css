@@ -199,6 +199,8 @@ transition:.2s ease;
 }
 
 
+@media (min-width:769px){
+
   .header-inner{
 
     display:flex !important;
@@ -232,3 +234,5 @@ transition:.2s ease;
     margin-left:6px !important;
 
   }
+
+}
