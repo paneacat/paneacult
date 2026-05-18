@@ -1334,3 +1334,248 @@ body[data-movie-title="Diamanti grezzi"] .review-scene img{
   margin-bottom:34px;
 
 }
+
+
+
+.profile-header{
+
+  top:0;
+
+  z-index:9999;
+
+  padding:20px 0;
+   position:sticky;
+
+  backdrop-filter:blur(18px);
+
+  background:
+    rgba(8,22,35,.72);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.05);
+
+}
+
+
+.profile-header-inner{
+
+  width:min(1320px, 92%);
+
+  margin:0 auto;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+}
+
+
+
+.profile-nav{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:24px;
+}
+
+.profile-nav a,
+.logout-btn{
+
+  color: rgba(255,255,255,.82);
+
+  text-decoration:none;
+
+  background:none;
+
+  border:none;
+  font-weight:600;
+letter-spacing:.04em;
+  font-size:1rem;
+  cursor:pointer;
+
+  opacity:.8;
+
+  transition:.3s;
+}
+
+.profile-nav a:hover,
+.logout-btn:hover{
+
+  color: var(--panea-yellow);
+
+  opacity:1;
+}
+
+.profile-nav a.active{
+
+  color: var(--panea-yellow);
+
+  opacity:1;
+
+}
+
+.profile-nav a.active::after{
+
+  width:100%;
+
+}
+
+.profile-logo{
+
+  font-family:"Playfair Display", serif;
+
+  font-size:2rem;
+
+  font-weight:700;
+
+  line-height:.9;
+
+  color:var(--panea-yellow);
+
+  text-decoration:none;
+
+  letter-spacing:-.04em;
+}
+
+/* =========================
+   MOBILE TAB BAR
+========================= */
+
+.mobile-tabbar{
+
+  position:fixed;
+
+  bottom:0;
+  left:0;
+
+  width:100%;
+
+  height:78px;
+
+  background:
+    rgba(8,22,35,.92);
+
+  backdrop-filter:blur(20px);
+
+  border-top:
+    1px solid rgba(255,255,255,.06);
+
+  display:flex;
+
+  justify-content:space-around;
+
+  align-items:center;
+
+  z-index:9999;
+
+}
+
+/* ITEM */
+/* =========================
+   MOBILE TABBAR LINKS
+========================= */
+
+.tab-item{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:8px;
+
+  text-decoration:none;
+
+  color:rgba(255,255,255,.62);
+
+  font-size:.82rem;
+
+  font-weight:600;
+
+  letter-spacing:.04em;
+
+  transition:.25s ease;
+
+  position:relative;
+
+}
+
+/* ICON */
+
+.tab-item i{
+
+  font-size:1.35rem;
+
+}
+
+/* HOVER */
+
+.tab-item:hover{
+
+  color:var(--panea-yellow);
+
+}
+
+/* ACTIVE */
+
+.tab-item.active{
+
+  color:var(--panea-yellow);
+
+}
+
+/* UNDERLINE */
+
+.tab-item::after{
+
+  content:"";
+
+  position:absolute;
+
+  bottom:-8px;
+
+  width:0;
+
+  height:2px;
+
+  border-radius:999px;
+
+  background:var(--panea-yellow);
+
+  transition:.25s ease;
+
+}
+
+.tab-item:hover::after,
+.tab-item.active::after{
+
+  width:24px;
+
+}
+/* PLUS */
+
+
+.logout-tab{
+
+  background:none;
+
+  border:none;
+
+  cursor:pointer;
+
+  font-family:inherit;
+
+}
+
+
+.mobile-tabbar{
+
+  justify-content:space-evenly;
+
+}
