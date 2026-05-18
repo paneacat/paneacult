@@ -1,46 +1,183 @@
-const API_KEY = "3688d1b3985d41091da268200e1841ef";
+/* =========================
+   PROFILE MOVIES
+========================= */
 
-const TMDB_IMAGE =
-  "https://image.tmdb.org/t/p/w500";
+const watchedGrid =
+  document.getElementById(
+    "watchedGrid"
+  );
 
 const watchlistGrid =
-  document.getElementById("watchlistGrid");
+  document.getElementById(
+    "watchlistGrid"
+  );
+
+const favoriteGrid =
+  document.getElementById(
+    "favoriteGrid"
+  );
+
+const currentFavorite =
+  document.getElementById(
+    "currentFavorite"
+  );
+
+const signatureGrid =
+  document.getElementById(
+    "signatureGrid"
+  );
 
 /* =========================
    LOAD MOVIES
 ========================= */
 
-async function loadMovies(){
+function getMovies(key){
 
-  const response = await fetch(
-    `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=it-IT&page=1`
-  );
-
-  const data = await response.json();
-
-  renderMovies(data.results);
+  return JSON.parse(
+    localStorage.getItem(key)
+  ) || [];
 
 }
 
+const watched =
+  getMovies(
+    "paneacult_watched"
+  );
+
+const watchlist =
+  getMovies(
+    "paneacult_watchlist"
+  );
+
+const favorites =
+  getMovies(
+    "paneacult_favorites"
+  );
+
 /* =========================
-   RENDER
+   RENDER GRID
 ========================= */
 
-function renderMovies(movies){
+function renderGrid(
+  grid,
+  movies
+){
 
-  watchlistGrid.innerHTML =
+  if(!grid) return;
+
+  if(movies.length === 0){
+
+    grid.innerHTML = `
+    
+      <p class="empty-text">
+        Nessun film ancora.
+      </p>
+    
+    `;
+
+    return;
+
+  }
+
+  grid.innerHTML =
+
     movies.map(movie => `
 
       <div class="saved-card">
 
         <img
-          src="${TMDB_IMAGE + movie.poster_path}"
+          src="
+          https://image.tmdb.org/t/p/w500${movie.poster_path}
+          "
           alt="${movie.title}"
         >
 
         <div class="saved-overlay">
 
-          <h3>${movie.title}</h3>
+          <h3>
+            ${movie.title}
+          </h3>
+
+        </div>
+
+      </div>
+
+    `).join("");
+
+}
+
+/* =========================
+   CURRENT FAVORITE
+========================= */
+
+function renderCurrentFavorite(){
+
+  if(
+    !favorites.length ||
+    !currentFavorite
+  ) return;
+
+  const movie =
+    favorites[0];
+
+  currentFavorite.innerHTML = `
+
+    <img
+      src="
+      https://image.tmdb.org/t/p/original${movie.backdrop_path}
+      "
+      alt="${movie.title}"
+    >
+
+    <div class="current-favorite-content">
+
+      <p class="current-label">
+        CURRENT OBSESSION
+      </p>
+
+      <h3>
+        ${movie.title}
+      </h3>
+
+      <span>
+        uno dei tuoi film preferiti.
+      </span>
+
+    </div>
+
+  `;
+
+}
+
+/* =========================
+   SIGNATURE FILMS
+========================= */
+
+function renderSignature(){
+
+  if(!signatureGrid) return;
+
+  const movies =
+    favorites.slice(0,3);
+
+  signatureGrid.innerHTML =
+
+    movies.map(movie => `
+
+      <div class="signature-film">
+
+        <img
+          src="
+          https://image.tmdb.org/t/p/original${movie.backdrop_path}
+          "
+          alt="${movie.title}"
+        >
+
+        <div class="signature-film-overlay">
+
+          <h3>
+            ${movie.title}
+          </h3>
 
         </div>
 
@@ -54,22 +191,21 @@ function renderMovies(movies){
    INIT
 ========================= */
 
-loadMovies();
-
-
-const logoutBtn =
-  document.querySelector(
-    ".logout-btn"
-  );
-
-logoutBtn?.addEventListener(
-  "click",
-  async () => {
-
-    await supabaseClient.auth.signOut();
-
-    window.location.href =
-      "login.html";
-
-  }
+renderGrid(
+  watchedGrid,
+  watched
 );
+
+renderGrid(
+  watchlistGrid,
+  watchlist
+);
+
+renderGrid(
+  favoriteGrid,
+  favorites
+);
+
+renderCurrentFavorite();
+
+renderSignature();
