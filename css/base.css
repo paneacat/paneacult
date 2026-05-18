@@ -139,15 +139,6 @@ a{
 transition:.2s ease;
 }
 
-.header-inner{
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-}
 /* =========================
    FOOTER SEPARATOR
 ========================= */
@@ -195,16 +186,6 @@ transition:.2s ease;
 
 }
 
-.logo-block{
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-}
-
 .logo{
 
   display:block !important;
@@ -217,14 +198,37 @@ transition:.2s ease;
 
 }
 
-.logo-subtitle{
 
-  font-size:.62rem;
+  .header-inner{
 
-  letter-spacing:.16em;
+    display:flex !important;
 
-  margin-top:-5px;
+    flex-direction:row !important;
 
-  margin-left:6px;
+    align-items:center !important;
 
-}
+    justify-content:space-between !important;
+
+  }
+
+  .logo-block{
+
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    align-items:center !important;
+
+  }
+
+  .logo-subtitle{
+
+    font-size:.62rem !important;
+
+    letter-spacing:.16em !important;
+
+    margin-top:-5px !important;
+
+    margin-left:6px !important;
+
+  }
