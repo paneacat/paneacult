@@ -1,101 +1,20 @@
-
-/* =========================
-   CHECK SESSIONE
-========================= */
-
-async function checkSession(){
-
-  const {
-    data: { session }
-  } =
-  await supabaseClient.auth.getSession();
-
-  /* LOGGATO */
-
-  if(session){
-
-    document.body.classList.add(
-      "logged-user"
-    );
-
-    if(enterBtn){
-
-      enterBtn.innerText =
-        "Vai al tuo archivio";
-
-      enterBtn.href =
-        "profilo.html";
-
-    }
-
-  }
-
-
-
-
-  /* NON LOGGATO */
-
-  else {
-
-    document.body.classList.add(
-      "guest-user"
-    );
-
-
-    /* BOTTONE WELCOME */
-
-    if(enterBtn){
-
-      enterBtn.innerText =
-        "Accedi a paneacult";
-
-      enterBtn.href =
-        "login.html";
-
-    }
-
-
-  
-
-    /* BOTTONI FILM */
-
-    saveBtns.forEach(btn => {
-
-      btn.addEventListener(
-        "click",
-        () => {
-
-          window.location.href =
-            "login.html";
-
-        }
-      );
-
-    });
-
-  }
-
-}
-
-checkSession();
-
-
-
-
-/* =========================
-   LOGIN
-========================= */
-
 const loginForm =
   document.querySelector(".login-form");
+
+const registerBtn =
+  document.querySelector(".register-btn");
+
+const logoutBtn =
+  document.querySelector(".logout-btn");
+
+
+/* LOGIN */
 
 loginForm?.addEventListener(
   "submit",
   async (e) => {
 
     e.preventDefault();
-
-    alert("LOGIN PARTITO");
 
     const email =
       document.querySelector(
@@ -116,13 +35,15 @@ loginForm?.addEventListener(
 
         });
 
-console.log(error);
-     
     if(error){
+
+      console.log(error);
 
       alert(error.message);
 
-    } else {
+    }
+
+    else {
 
       window.location.href =
         "profilo.html";
@@ -133,12 +54,7 @@ console.log(error);
 );
 
 
-
-
-
-/* =========================
-   REGISTER
-========================= */
+/* REGISTER */
 
 registerBtn?.addEventListener(
   "click",
@@ -155,30 +71,29 @@ registerBtn?.addEventListener(
       ).value;
 
     const { error } =
-  await supabaseClient
-    .auth
-    .signUp({
+      await supabaseClient.auth
+        .signUp({
 
-      email,
-      password,
+          email,
+          password,
 
-      options: {
+          options: {
 
-        emailRedirectTo:
-          "https://paneacult.com/profilo.html"
+            emailRedirectTo:
+              "https://paneacult.com/profilo.html"
 
-      }
+          }
 
-    });   
+        });
 
     if(error){
 
-  console.log(error);
+      console.log(error);
 
-  alert(error.message);
+      alert(error.message);
 
     }
-    
+
     else {
 
       alert(
@@ -188,15 +103,10 @@ registerBtn?.addEventListener(
     }
 
   }
-});
+);
 
 
-
-
-
-/* =========================
-   LOGOUT
-========================= */
+/* LOGOUT */
 
 logoutBtn?.addEventListener(
   "click",
@@ -206,98 +116,6 @@ logoutBtn?.addEventListener(
 
     window.location.href =
       "login.html";
-
-  }
-);
-
-
-
-
-
-/* =========================
-   LOAD PROFILE
-========================= */
-
-async function loadProfile(){
-
-  const {
-    data: { user }
-  } =
-  await supabaseClient.auth.getUser();
-
-  const profileEmail =
-    document.getElementById(
-      "profileEmail"
-    );
-
-  if(!profileEmail){
-
-    return;
-
-  }
-
-  if(!user){
-
-    window.location.href =
-      "login.html";
-
-    return;
-
-  }
-
-  profileEmail.textContent =
-    user.email;
-
-}
-
-loadProfile();
-
-document.addEventListener(
-  "DOMContentLoaded",
-  async () => {
-
-    const {
-      data: { session }
-    } = await supabaseClient.auth.getSession();
-
-    if(
-      session &&
-      window.location.pathname.includes("login")
-    ){
-
-      window.location.href =
-        "profilo.html";
-
-      return;
-
-    }
-
-    const googleLoginBtn =
-      document.getElementById(
-        "googleLoginBtn"
-      );
-
-    googleLoginBtn?.addEventListener(
-      "click",
-      async () => {
-
-        await supabaseClient
-          .auth
-          .signInWithOAuth({
-
-            provider: "google",
-
-            options: {
-
-              redirectTo:
-                "https://paneacult.com/profilo.html"
-
-            }
-
-          });
-
-      }
-    );
 
   }
 );
