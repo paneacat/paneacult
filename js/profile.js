@@ -1,3 +1,30 @@
+
+/* =========================
+   INIT
+========================= */
+
+loadMovies();
+
+
+const logoutBtn =
+  document.querySelector(
+    ".logout-btn"
+  );
+
+logoutBtn?.addEventListener(
+  "click",
+  async () => {
+
+    await supabaseClient.auth.signOut();
+
+    window.location.href =
+      "login.html";
+
+  }
+);
+
+
+
 /* =========================
    PROFILE MOVIES
 ========================= */
