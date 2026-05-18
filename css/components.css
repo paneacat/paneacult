@@ -430,36 +430,6 @@
   padding-bottom: 28px;
 }
 
-.header-inner {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.logo-block {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 68px;
-  line-height: .9;
-  color: var(--panea-yellow);
-  margin: 0;
-  text-decoration:none;
-  cursor:pointer;
- }
-
-.logo-subtitle {
-  margin-top: 8px;
-  font-size: 18px;
-  letter-spacing: 3px;
-  color: var(--panea-white);
-}
-
 .menu {
   display: flex;
   align-items: center;
