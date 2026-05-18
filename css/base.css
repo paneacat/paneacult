@@ -138,15 +138,14 @@ a {
 a{
 transition:.2s ease;
 }
+
 .header-inner{
 
   display:flex;
 
-  flex-direction:column;
-
   align-items:center;
 
-  justify-content:center;
+  justify-content:space-between;
 
 }
 /* =========================
@@ -198,13 +197,11 @@ transition:.2s ease;
 
 .logo-block{
 
-  display:flex !important;
-  flex-direction:column !important;
+  display:flex;
 
-  align-items:center !important;
-  justify-content:center !important;
+  flex-direction:column;
 
-  text-align:center !important;
+  align-items:center;
 
 }
 
@@ -222,12 +219,12 @@ transition:.2s ease;
 
 .logo-subtitle{
 
-  width:100% !important;
+  font-size:.62rem;
 
-  text-align:center !important;
+  letter-spacing:.16em;
 
-  margin-top:-6px !important;
+  margin-top:-5px;
 
-  letter-spacing:.12em !important;
+  margin-left:6px;
 
 }
