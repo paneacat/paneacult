@@ -210,11 +210,19 @@ transition:.2s ease;
 
   text-align:center;
 
+  overflow:visible;
+
 }
 
 .logo{
 
-  margin-bottom:6px;
+ display:block !important;
+
+  text-align:center !important;
+
+  line-height:.9 !important;
+
+  margin-bottom:6px !important;
 
 }
 
@@ -227,5 +235,11 @@ transition:.2s ease;
   margin-top:-6px;
 
   margin-left:6px;
+
+  line-height:1.5;
+
+  text-align:center;
+
+  white-space:normal;
 
 }
