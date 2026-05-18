@@ -171,6 +171,22 @@ margin-top: 8px;
     20px 0;
 }
 
+.rubrica-title{
+
+  font-family: 'Playfair Display', serif;
+
+  font-size:clamp(30px,5vw,54px);
+
+  line-height:1.05;
+
+  color:var(--panea-white);
+
+  font-weight: 720;
+
+  margin-bottom:42px;
+}
+
+
 /* KICKER */
 
 .section-kicker{
