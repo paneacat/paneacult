@@ -340,41 +340,43 @@ section{
 
   .profile-stats{
 
-    display:flex;
+    display:flex !important;
 
-    align-items:center;
+    flex-direction:row !important;
 
     justify-content:center;
 
+    align-items:center;
+
     gap:0;
 
-    margin-top:18px;
-
     width:100%;
+
+    margin-top:22px;
 
   }
 
   .profile-stat{
 
-    background:none;
+    min-width:auto !important;
 
-    border:none;
+    width:auto !important;
 
-    backdrop-filter:none;
+    padding:0 22px !important;
 
-    box-shadow:none;
+    background:transparent !important;
 
-    border-radius:0;
+    border:none !important;
 
-    min-width:auto;
+    box-shadow:none !important;
 
-    padding:0 22px;
+    backdrop-filter:none !important;
+
+    border-radius:0 !important;
 
     position:relative;
 
   }
-
-  /* DIVIDER */
 
   .profile-stat:not(:last-child)::after{
 
@@ -382,9 +384,9 @@ section{
 
     position:absolute;
 
-    top:50%;
-
     right:0;
+
+    top:50%;
 
     transform:translateY(-50%);
 
@@ -396,6 +398,7 @@ section{
       rgba(255,255,255,.12);
 
   }
+
 
   .profile-stat span{
 
