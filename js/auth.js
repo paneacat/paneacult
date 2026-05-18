@@ -139,9 +139,6 @@ registerBtn?.addEventListener(
       ).value;
 
     const { error } =
-      await supabaseClient
-        .auth
-     const { error } =
   await supabaseClient
     .auth
     .signUp({
