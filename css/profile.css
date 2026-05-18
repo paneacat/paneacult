@@ -323,8 +323,6 @@
 
   overflow:hidden;
 
-  border:3px solid rgba(253,193,3,.5);
-
   box-shadow:
     0 30px 80px rgba(253,193,3,.22);
 }
@@ -1023,12 +1021,12 @@
 
 .saved-section{
 
-  padding:54px;
-
   border-radius:42px;
 
   box-shadow:
     0 30px 80px rgba(0,0,0,.22);
+
+   padding:54px 42px;
 
 }
 
@@ -1275,9 +1273,14 @@ max-width: 700px;
 
 .saved-movies{
 
-  width:min(1200px,90%);
+  width:min(1280px, 92%);
 
-  margin:auto;
+  margin:0 auto;
+
+  padding-inline:24px;
+
+  box-sizing:border-box;
+
 }
 
 /* =========================
@@ -1300,30 +1303,6 @@ max-width: 700px;
    SAVED SECTIONS
 ========================= */
 
-.saved-section{
-
-  position:relative;
-
-  margin:4rem auto;
-
-  padding:42px;
-
-  border-radius:36px;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.04),
-      rgba(255,255,255,.015)
-    );
-
-  border:
-    1px solid rgba(255,255,255,.06);
-
-  backdrop-filter:blur(16px);
-
-  overflow:hidden;
-}
 
 .saved-section::before{
 
