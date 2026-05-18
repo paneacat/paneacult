@@ -1,3 +1,18 @@
+const loginBtn =
+  document.getElementById(
+    "loginBtn"
+  );
+
+const registerBtn =
+  document.getElementById(
+    "registerBtn"
+  );
+
+const logoutBtn =
+  document.getElementById(
+    "logoutBtn"
+  );
+
 /* =========================
    CHECK SESSIONE
 ========================= */
