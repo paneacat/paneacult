@@ -1051,13 +1051,6 @@
 
 }
 
-
-.saved-section + .saved-section{
-
-  margin-top:42px;
-
-}
-
 /* HOVER */
 
 .saved-card:hover{
@@ -1357,12 +1350,6 @@ max-width: 700px;
 
   pointer-events:none;
 }
-
-.saved-section + .saved-section{
-
-  margin-top:42px;
-}
-
 /* =========================
    SECTION HEAD
 ========================= */
