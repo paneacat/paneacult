@@ -157,8 +157,11 @@ registerBtn?.addEventListener(
 
     if(error){
 
-      alert(error.message);
+  console.log(error);
 
+  alert(error.message);
+
+    }
     }
 
     else {
