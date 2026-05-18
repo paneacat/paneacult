@@ -1,4 +1,4 @@
-const API_KEY = "LA_TUA_API_KEY";
+const API_KEY = "3688d1b3985d41091da268200e1841ef";
 
 const TMDB_IMAGE =
   "https://image.tmdb.org/t/p/w500";
@@ -55,3 +55,21 @@ function renderMovies(movies){
 ========================= */
 
 loadMovies();
+
+
+const logoutBtn =
+  document.querySelector(
+    ".logout-btn"
+  );
+
+logoutBtn?.addEventListener(
+  "click",
+  async () => {
+
+    await supabaseClient.auth.signOut();
+
+    window.location.href =
+      "login.html";
+
+  }
+);
