@@ -217,7 +217,7 @@ async function loadProfile(){
   if(!user){
 
     window.location.href =
-      "profilo.html";
+      "login.html";
 
     return;
 
@@ -242,7 +242,7 @@ if(
 ){
 
   window.location.href =
-    "/profilo.html";
+    "profilo.html";
 
   return;
 }
