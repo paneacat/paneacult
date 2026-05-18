@@ -47,6 +47,11 @@
     rel="stylesheet"
   >
 
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+  
   <meta
   property="og:image"
   content="https://paneacult.com/img/logo.png"
@@ -113,9 +118,10 @@
   </a>
 
   <button
-  class="logout-btn"
+  class="tab-item logout-tab"
 >
-  Logout
+  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+  <span>Logout</span>
   </button>
 
     </nav>
@@ -167,24 +173,32 @@
   </div>
   
 </div>
-</div>
 </section>
-<section class="current-favorite">
+
+  <section class="current-favorite">
 
   <img
-  src="https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
-  alt="Perfect Blue"
->
+    src="https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
+    alt="Perfect Blue"
+  >
 
-  <div>
+  <div class="current-favorite-content">
 
-    <p>CURRENT OBSESSION</p>
+    <p class="current-label">
+      CURRENT OBSESSION
+    </p>
 
-    <h3>Perfect Blue</h3>
+    <h3>
+      Perfect Blue
+    </h3>
 
-    <span>Hai visto questo film 4 volte</span>
+    <span>
+      Hai visto questo film 4 volte
+    </span>
 
-</section>
+  </div>
+
+  </section>
   
   <!-- =========================
      FILM CHE TI HANNO CAMBIATO
@@ -366,17 +380,24 @@
     <div>
 
       <p class="section-kicker">
-        Attività recente 
+        ATTIVITÀ RECENTE
       </p>
+
+      <h2 class="saved-title">
+        Ultimi movimenti
+      </h2>
+
+    </div>
 
   </div>
 
   <div
-    class="saved-grid"
+    class="activity-feed"
     id="activityFeed"
   ></div>
 
 </section>
+  
 <script src="js/ui.js"></script>
 <script src="js/tmdb.js"></script>
   <script src="js/write-review.js"></script>
