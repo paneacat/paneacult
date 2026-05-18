@@ -92,8 +92,11 @@ checkSession();
    LOGIN
 ========================= */
 
-loginBtn?.addEventListener(
-  "click",
+const loginForm =
+  document.querySelector(".login-form");
+
+loginForm?.addEventListener(
+  "submit",
   async (e) => {
 
     e.preventDefault();
@@ -109,8 +112,7 @@ loginBtn?.addEventListener(
       ).value;
 
     const { error } =
-      await supabaseClient
-        .auth
+      await supabaseClient.auth
         .signInWithPassword({
 
           email,
@@ -122,9 +124,7 @@ loginBtn?.addEventListener(
 
       alert(error.message);
 
-    }
-
-    else {
+    } else {
 
       window.location.href =
         "profilo.html";
