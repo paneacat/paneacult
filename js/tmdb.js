@@ -53,7 +53,29 @@ function renderSelectedMovie(movie, movieDetails){
       .join(", ");
 
   selectedMovieData = movie;
+const hero =
+  document.querySelector(
+    ".profile-hero"
+  );
 
+if(hero && movie.backdrop_path){
+
+  hero.style.backgroundImage =
+    `
+    linear-gradient(
+      rgba(7,15,25,.78),
+      rgba(7,15,25,.95)
+    ),
+    url(https://image.tmdb.org/t/p/original${movie.backdrop_path})
+    `;
+
+  hero.style.backgroundSize =
+    "cover";
+
+  hero.style.backgroundPosition =
+    "center";
+
+}
   selectedMovie.innerHTML = `
 
     <div class="selected-movie-card">
