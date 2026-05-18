@@ -288,15 +288,16 @@
 }
 
 .profile-bio{
+
+  font-size:1.05rem;
+
+  line-height:1.8;
+
   color:rgba(255,255,255,.72);
 
+  max-width:520px;
+
   margin:0 auto;
-
-   font-size:clamp(3.6rem, 6vw, 5.5rem);
-
-  line-height:.9;
-
-  max-width:700px;
 
 }
 
@@ -343,6 +344,19 @@
 /* =========================
    STATS
 ========================= */
+.profile-stats{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:28px;
+
+  margin-top:42px;
+
+  flex-wrap:wrap;
+
+}
 
 .profile-stat{
 
@@ -1024,24 +1038,6 @@
 
 }
 
-
-.saved-grid{
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(220px, 1fr));
-
-}
-
-.saved-section{
-
-  padding:54px;
-
-  border-radius:42px;
-
-  box-shadow:
-    0 30px 80px rgba(0,0,0,.22);
-
-}
 
 .saved-state{
 
