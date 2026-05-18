@@ -162,8 +162,7 @@ registerBtn?.addEventListener(
   alert(error.message);
 
     }
-    }
-
+    
     else {
 
       alert(
@@ -233,49 +232,52 @@ async function loadProfile(){
 
 loadProfile();
 
-
-document.addEventListener("DOMContentLoaded", async () => {
-const {
-  data: { session }
-} = await supabaseClient.auth.getSession();
-
-if(
-  session &&
-  window.location.pathname.includes("login")
-){
-
-  window.location.href =
-    "profilo.html";
-
-  return;
-}
-
-
-const googleLoginBtn =
-  document.getElementById(
-    "googleLoginBtn"
-  );
-
-googleLoginBtn?.addEventListener(
-  "click",
+document.addEventListener(
+  "DOMContentLoaded",
   async () => {
 
-    await supabaseClient
-      .auth
-      .signInWithOAuth({
+    const {
+      data: { session }
+    } = await supabaseClient.auth.getSession();
 
-        provider: "google",
+    if(
+      session &&
+      window.location.pathname.includes("login")
+    ){
 
-        options: {
+      window.location.href =
+        "profilo.html";
 
-          redirectTo:
-            "https://paneacult.com/profilo.html"
+      return;
 
-        }
+    }
 
-      });
+    const googleLoginBtn =
+      document.getElementById(
+        "googleLoginBtn"
+      );
+
+    googleLoginBtn?.addEventListener(
+      "click",
+      async () => {
+
+        await supabaseClient
+          .auth
+          .signInWithOAuth({
+
+            provider: "google",
+
+            options: {
+
+              redirectTo:
+                "https://paneacult.com/profilo.html"
+
+            }
+
+          });
+
+      }
+    );
 
   }
 );
-
-});
