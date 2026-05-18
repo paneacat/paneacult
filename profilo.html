@@ -112,12 +112,10 @@
   <span>Profilo</span>
   </a>
 
-  <button class="tab-item logout-tab">
-
-    <i class="fa-solid fa-right-from-bracket"></i>
-
-    <span>Logout</span>
-
+  <button
+  class="logout-btn"
+>
+  Logout
   </button>
 
     </nav>
@@ -382,6 +380,40 @@
 <script src="js/ui.js"></script>
 <script src="js/tmdb.js"></script>
   <script src="js/write-review.js"></script>
-  
+  <script>
+
+async function checkUser(){
+
+  const {
+    data: { session }
+  } =
+  await supabaseClient.auth.getSession();
+
+  if(!session){
+
+    window.location.href =
+      "login.html";
+
+    return;
+
+  }
+
+  const emailBox =
+    document.getElementById(
+      "profileEmail"
+    );
+
+  if(emailBox){
+
+    emailBox.textContent =
+      session.user.email;
+
+  }
+
+}
+
+checkUser();
+
+  </script>
 </body>
 </html>
