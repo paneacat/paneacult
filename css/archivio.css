@@ -20,10 +20,13 @@
 
   text-align:center;
 
-  margin-top:110px;
+  margin-top:70px;
   margin-bottom:70px;
 }
 
+.archivio-section{
+ margin-bottom: 13px;
+}
 /* KICKER */
 
 .archivio-kicker{
