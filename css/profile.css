@@ -347,14 +347,23 @@
 
   justify-content:center;
 
-  gap:80px;
+  flex-wrap:wrap;
 
-  margin-top:40px;
+  gap:18px;
 
-  padding-top:30px;
+  margin-top:34px;
 
-  border-top:
-    1px solid rgba(255,255,255,.08);
+  padding-top:0;
+
+  border-top:none;
+}
+
+
+.profile-stat{
+
+  min-width:160px;
+
+  padding:22px 26px;
 }
 
 .profile-stat span{
@@ -1012,6 +1021,9 @@
 }
 
 
+
+
+
 .saved-grid{
 
   grid-template-columns:
@@ -1071,6 +1083,10 @@
 
 }
 
+
+
+
+
 .activity-feed{
 
   width:min(900px, 92%);
@@ -1094,6 +1110,13 @@ max-width: 700px;
   border-radius:0;
 
 }
+
+
+
+
+
+
+
 
 /* =========================
    PROFILE CONTENT
@@ -1216,6 +1239,10 @@ max-width: 700px;
   margin:auto;
 }
 
+
+
+
+
 /* =========================
    MOVIE ACTIONS
 ========================= */
@@ -1266,6 +1293,9 @@ max-width: 700px;
 
   transform:translateY(-2px);
 }
+
+
+
 
 /* =========================
    SAVED MOVIES
@@ -1390,20 +1420,6 @@ max-width: 700px;
 .section-link:hover{
 
   color:var(--panea-yellow);
-}
-
-/* =========================
-   SAVED GRID
-========================= */
-
-.saved-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap:24px;
 }
 
 /* =========================
