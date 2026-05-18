@@ -186,45 +186,46 @@ transition:.2s ease;
 
 }
 
-.logo{
+/* =========================
+   HEADER DESKTOP
+========================= */
 
-  display:block !important;
-
-  text-align:center !important;
-
-  line-height:.9 !important;
-
-  margin-bottom:6px !important;
-
-}
-
-  .header-inner{
+.header-inner{
 
   display:flex;
 
+  align-items:center;
+
   justify-content:space-between;
+
+}
+
+.logo-block{
+
+  display:flex;
+
+  flex-direction:column;
 
   align-items:center;
 
-  }
+  text-align:center;
 
-  .logo-block{
+}
 
-    display:flex !important;
+.logo{
 
-    flex-direction:column !important;
+  margin-bottom:6px;
 
-    align-items:center !important;
+}
 
-  }
+.logo-subtitle{
 
-  .logo-subtitle{
+  font-size:.62rem;
 
-    font-size:.62rem !important;
+  letter-spacing:.12em;
 
-    letter-spacing:.16em !important;
+  margin-top:-6px;
 
-    margin-top:-5px !important;
+  margin-left:6px;
 
-    margin-left:6px !important;
 }
