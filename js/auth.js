@@ -141,19 +141,22 @@ registerBtn?.addEventListener(
     const { error } =
       await supabaseClient
         .auth
-        .signUp({
+     const { error } =
+  await supabaseClient
+    .auth
+    .signUp({
 
-  email,
-  password,
+      email,
+      password,
 
-  options: {
+      options: {
 
-    emailRedirectTo:
-  "https://paneacult.com/profilo.html"
+        emailRedirectTo:
+          "https://paneacult.com/profilo.html"
 
-  }
+      }
 
-});
+    });   
 
     if(error){
 
