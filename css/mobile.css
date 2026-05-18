@@ -1566,6 +1566,7 @@ section{
     max-width:340px;
 
     margin:14px auto 0;
+    margin-bottom:16px !important;
 
     padding-top:0 !important;
 
@@ -1626,6 +1627,7 @@ section{
     justify-content:flex-start !important;
 
     gap:18px !important;
+    margin-top:0 !important;
 
     padding:12px !important;
 
