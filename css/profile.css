@@ -143,6 +143,19 @@ letter-spacing:.04em;
   opacity:1;
 }
 
+.profile-nav a.active{
+
+  color: var(--panea-yellow);
+
+  opacity:1;
+
+}
+
+.profile-nav a.active::after{
+
+  width:100%;
+
+}
 /* =========================
    PROFILE HERO
 ========================= */
