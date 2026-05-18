@@ -200,43 +200,42 @@ transition:.2s ease;
 
 }
 
+/* DESKTOP */
+
 .logo-block{
 
-    display:flex;
+  display:flex;
 
-    flex-direction:column;
+  flex-direction:column;
 
-    align-items:center;
+  align-items:center;
 
-    justify-content:center;
+  justify-content:center;
 
-    text-align:center;
-
-    width:auto;
+  text-align:center;
 
 }
 
 .logo{
 
-  font-size:5.2rem;
+  font-size:6rem;
 
-  text-align:center;
+  color:#f3c433;
 
   line-height:.9;
 
-    margin-bottom:4px;
-
-  color: var(--panea-yellow);
+  margin-bottom:6px;
 
 }
 
 .logo-subtitle{
 
-  font-size:.78rem;
+  font-size:.95rem;
 
-    letter-spacing:.16em;
+  letter-spacing:.18em;
 
-    margin-top:-8px;
+  margin-top:-10px;
 
-    text-align:center;
+  text-align:center;
+
 }
