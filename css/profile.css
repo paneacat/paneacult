@@ -164,7 +164,7 @@
 
   position:relative;
 
-  min-height:92vh;
+  min-height:70vh;
 
   display:flex;
 
@@ -172,7 +172,7 @@
 
   justify-content:center;
 
-  padding:140px 24px 90px;
+  padding:80px 24px 40px;
 
   text-align:center;
 
@@ -249,17 +249,28 @@
 
   display:flex;
 
-  flex-direction:column;
-
   align-items:center;
 
   justify-content:center;
 
-  gap:20px;
+  gap:42px;
 
-  margin-bottom:36px;
+  margin-top:120px;
 
-  text-align:center;
+  flex-wrap:wrap;
+
+}
+
+.profile-user-info{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:flex-start;
+
+  text-align:left;
+
 }
 
 .profile-kicker{
@@ -348,33 +359,35 @@
 
   display:flex;
 
-  justify-content:center;
-
-  gap:28px;
-
-  margin-top:42px;
+  gap:18px;
 
   flex-wrap:wrap;
 
+  margin-top:26px;
+
 }
+
 
 .profile-stat{
 
-  min-width:180px;
+  min-width:160px;
 
-  padding:24px;
+  padding:26px 30px;
 
-  border-radius:24px;
+  border-radius:28px;
 
   background:
-    rgba(255,255,255,.03);
+    rgba(255,255,255,.04);
 
   border:
-    1px solid rgba(255,255,255,.05);
+    1px solid rgba(255,255,255,.08);
 
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(18px);
+
+  transition:.3s ease;
 
 }
+
 
 .profile-stat span{
 
@@ -401,7 +414,14 @@
   font-size: .75rem;
 }
 
+.profile-stat:hover{
 
+  transform:translateY(-4px);
+
+  border-color:
+    rgba(253,193,3,.22);
+
+}
 /* =========================
    ACTIVITY SECTION
 ========================= */
