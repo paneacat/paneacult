@@ -1675,6 +1675,7 @@ section{
     line-height:1.5;
 
   }
+
   .signature-grid{
 
     display:flex !important;
@@ -1688,13 +1689,13 @@ section{
   .signature-film,
   .featured-film{
 
-    min-height:auto !important;
+    position:relative !important;
+
+    width:100% !important;
 
     height:180px !important;
 
-    display:flex !important;
-
-    align-items:flex-end !important;
+    min-height:180px !important;
 
     border-radius:24px !important;
 
@@ -1703,10 +1704,6 @@ section{
   }
 
   .signature-film img{
-
-    position:absolute !important;
-
-    inset:0 !important;
 
     width:100% !important;
 
@@ -1718,29 +1715,32 @@ section{
 
   .signature-film-overlay{
 
-    position:relative !important;
+    position:absolute !important;
 
-    left:auto !important;
+    left:0 !important;
 
-    bottom:auto !important;
-
-    padding:22px !important;
+    bottom:0 !important;
 
     width:100% !important;
+
+    padding:20px !important;
 
   }
 
   .signature-film-overlay h3{
 
-    font-size:1.6rem !important;
+    font-size:1.5rem !important;
+
+    margin-bottom:6px !important;
 
   }
 
   .signature-film-overlay p{
 
-    font-size:.92rem !important;
+    font-size:.9rem !important;
 
   }
+  
  }
 
 
