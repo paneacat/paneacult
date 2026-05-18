@@ -54,6 +54,7 @@
   z-index:9999;
 
   padding:20px 0;
+   position:sticky;
 
   backdrop-filter:blur(18px);
 
