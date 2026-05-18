@@ -1617,39 +1617,46 @@ section{
       rgba(255,255,255,.12);
 
   }
-  .current-favorite{
-
-    display:flex;
+.current-favorite{
 
     flex-direction:row !important;
 
-    align-items:center;
+    align-items:center !important;
 
-    gap:18px;
+    justify-content:flex-start !important;
 
-    padding:22px;
+    gap:18px !important;
 
-    border-radius:28px;
+    padding:22px !important;
 
   }
 
   .current-favorite img{
 
-    width:110px;
+    width:110px !important;
 
-    min-width:110px;
+    min-width:110px !important;
 
-    border-radius:18px;
+    height:auto !important;
+
+    border-radius:18px !important;
 
   }
 
   .current-favorite-content{
 
-    flex:1;
+    display:flex !important;
 
-    text-align:left;
+    flex-direction:column !important;
+
+    justify-content:center !important;
+
+    text-align:left !important;
+
+    flex:1 !important;
 
   }
+  
 
   .current-favorite h3{
 
