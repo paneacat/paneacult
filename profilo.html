@@ -184,28 +184,10 @@
   </div>
 </section>
 
-  <section class="current-favorite">
-
-  <img
-    src="https://image.tmdb.org/t/p/original/tn1l17aLTro7kN3KVJwy8n0T143.jpg"
-    alt="Il Grande Lebowski"
-  >
-
-  <div class="current-favorite-content">
-
-    <p class="current-label">
-      CURRENT OBSESSION
-    </p>
-
-    <h3>Il Grande Lebowski</h3>
-
-    <span>
-      Hai visto questo film 4 volte
-    </span>
-
-  </div>
-
-  </section>
+  <section
+  class="current-favorite"
+  id="currentFavorite"
+></section>
   <!-- =========================
      FILM CHE TI HANNO CAMBIATO
 ========================= -->
@@ -225,62 +207,10 @@
       restano addosso.
     </h2>
 
-    <div class="signature-grid">
-
-      <div class="signature-film">
-
-        <img
-          src="https://image.tmdb.org/t/p/original/iMnrnN4zenTNsqmbzEybRWxHTuO.jpg"
-          alt="Ed Wood"
-        >
-
-        <div class="signature-film-overlay">
-
-          <h3>
-           Ed Wood (1994) 
-          </h3>
-        </div>
-
-      </div>
-
-      <div class="signature-film featured-film">
-
-        <img
-          src="https://image.tmdb.org/t/p/original/uPKzHYVn8rHnS49hzjzGVhRjFmk.jpg"
-          alt="Gli Aristogatti"
-        >
-
-        <div class="signature-film-overlay">
-
-          <h3>
-            Gli Aristogatti (1970)
-          </h3>
-        </div>
-
-      </div>
-
-      <div class="signature-film">
-
-        <img
-          src="https://image.tmdb.org/t/p/original/sPPsR9f4K0movWVQ99u4uMqFzEL.jpg"
-          alt="Her"
-        >
-
-        <div class="signature-film-overlay">
-
-          <h3>
-            Her (2013)
-          </h3>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
+    <div
+  class="signature-grid"
+  id="signatureGrid"
+></div>
 <!-- =========================
      LISTE
 ========================= -->
@@ -371,7 +301,8 @@
   
 <script src="js/ui.js"></script>
 <script src="js/tmdb.js"></script>
-  <script src="js/write-review.js"></script>
+<script src="js/write-review.js"></script>
+<script src="js/profile.js"></script>
   <script>
 
 async function checkUser(){
