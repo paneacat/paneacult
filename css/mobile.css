@@ -1543,26 +1543,6 @@ section{
 
 }
 
-  .current-favorite{
-
-  flex-direction:column;
-
-  text-align:center;
-
-  padding:24px;
-
-  gap:24px;
-
-}
-
-.current-favorite img{
-
-  width:100%;
-
-  max-width:240px;
-
-}  
-
   .watch-btn,
   .watchlist-btn,
   .love-btn{
@@ -1635,6 +1615,55 @@ section{
 
     background:
       rgba(255,255,255,.12);
+
+  }
+  .current-favorite{
+
+    display:flex;
+
+    flex-direction:row !important;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:22px;
+
+    border-radius:28px;
+
+  }
+
+  .current-favorite img{
+
+    width:110px;
+
+    min-width:110px;
+
+    border-radius:18px;
+
+  }
+
+  .current-favorite-content{
+
+    flex:1;
+
+    text-align:left;
+
+  }
+
+  .current-favorite h3{
+
+    font-size:2rem;
+
+    margin-bottom:10px;
+
+  }
+
+  .current-favorite span{
+
+    font-size:.95rem;
+
+    line-height:1.5;
 
   }
  }
