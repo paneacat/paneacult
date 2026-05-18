@@ -1,4 +1,4 @@
-const CACHE = "paneacult-v3";
+const CACHE = "paneacult-v99";
 
 
 /* =========================
