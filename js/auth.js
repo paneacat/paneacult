@@ -245,7 +245,7 @@ if(
 
   return;
 }
-});
+
 
 const googleLoginBtn =
   document.getElementById(
@@ -273,3 +273,4 @@ googleLoginBtn?.addEventListener(
 
   }
 );
+});
