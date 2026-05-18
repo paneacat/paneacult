@@ -298,76 +298,118 @@ section{
 
   }
 
-  /* =========================
-     PROFILE
-  ========================= */
+/* =========================
+   PROFILE MOBILE
+========================= */
 
-.profile-hero{
+  .profile-hero{
 
-    padding:
-      7rem 1.2rem 4rem;
+    min-height:auto;
+
+    padding:120px 24px 60px;
 
   }
 
   .profile-avatar{
 
-    width: 80px;
-    height: 80px;
+    width:110px;
 
-    font-size: 2rem;
+    height:110px;
 
   }
 
+  .profile-username{
+
+    font-size:.95rem;
+
+    letter-spacing:.24em;
+
+  }
+
+  .profile-bio{
+
+    font-size:1.05rem;
+
+    line-height:1.5;
+
+    max-width:320px;
+
+  }
+
+  /* STATS */
+
   .profile-stats{
 
-    gap: 1.5rem;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:0;
+
+    margin-top:18px;
+
+    width:100%;
+
+  }
+
+  .profile-stat{
+
+    background:none;
+
+    border:none;
+
+    backdrop-filter:none;
+
+    box-shadow:none;
+
+    border-radius:0;
+
+    min-width:auto;
+
+    padding:0 22px;
+
+    position:relative;
+
+  }
+
+  /* DIVIDER */
+
+  .profile-stat:not(:last-child)::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    right:0;
+
+    transform:translateY(-50%);
+
+    width:1px;
+
+    height:42px;
+
+    background:
+      rgba(255,255,255,.12);
 
   }
 
   .profile-stat span{
 
-    font-size: 2rem;
+    font-size:2.3rem;
+
+    margin-bottom:6px;
 
   }
 
- .profile-page{
+  .profile-stat p{
 
-    padding: 0 22px;
-    overflow-x: hidden;
+    font-size:.72rem;
 
-  }
-
-  .profile-hero{
-
-    text-align: center;
-
-    margin-bottom: 55px;
-
-  }
-
-  .profile-kicker{
-
-    font-size: 0.8rem;
-    letter-spacing: 4px;
-
-    margin-bottom: 18px;
-
-  }
-
-  .profile-title{
-    font-size: clamp(2.8rem, 14vw, 4rem);
-    line-height: 0.95;
-    margin-bottom: 22px;
-
-  }
-
-  .profile-subtitle{
-
-    font-size: 1.1rem;
-    line-height: 1.7;
-
-    max-width: 320px;
-    margin: 0 auto;
+    letter-spacing:.18em;
 
   }
 
