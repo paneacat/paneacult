@@ -64,13 +64,6 @@
 
   padding:20px 0;
 
-  backdrop-filter:blur(20px);
-
-  background:
-    rgba(8,22,35,.72);
-
-  border-bottom:
-    1px solid rgba(255,255,255,.05);
 }
 
 .profile-header-inner{
