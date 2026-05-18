@@ -245,7 +245,7 @@ if(
 
   return;
 }
-
+});
 
 const googleLoginBtn =
   document.getElementById(
