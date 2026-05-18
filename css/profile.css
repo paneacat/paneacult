@@ -6,12 +6,6 @@
 
   min-height:100vh;
 
-  background:
-    linear-gradient(
-      rgba(7,15,25,.88),
-      rgba(7,15,25,.94)
-    ),
-    url("img/wall.webp");
 
   background-size:cover;
 
@@ -191,19 +185,6 @@ letter-spacing:.04em;
   position:absolute;
 
   inset:0;
-
-  background:
-    linear-gradient(
-      rgba(7,15,25,.78),
-      rgba(7,15,25,.95)
-    ),
-    url("img/profile-bg.webp");
-
-  background-size:cover;
-
-  background-position:center;
-
-  filter:saturate(1.1);
 }
 
 .profile-hero::after{
@@ -329,8 +310,6 @@ letter-spacing:.04em;
 
   overflow:hidden;
 
-  border:3px solid rgba(253,193,3,.5);
-
   box-shadow:
     0 30px 80px rgba(253,193,3,.22);
 }
@@ -374,7 +353,7 @@ letter-spacing:.04em;
 
   padding:26px 30px;
 
-  border-radius:28px;
+  border-radius:18px;
 
   background:
     rgba(255,255,255,.04);
