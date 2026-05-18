@@ -1499,31 +1499,32 @@ section{
   }
 
   /* =========================
-     FOOTER
-  ========================= */
+   FOOTER MOBILE
+========================= */
 
-  .credits{
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+.credits{
 
-  .credits-inner{
+  padding:34px 20px 24px;
 
-    gap:10px;
+}
 
-  }
+.credits-inner{
 
-  .credits-label{
+  gap:4px;
 
-    margin-bottom:2px;
+}
 
-  }
+.credits-label{
 
-  .credits-name{
+  margin-bottom:0;
 
-    margin-bottom:18px;
+}
 
-  }
+.credits-name{
+
+  margin-bottom:12px;
+
+}
 
 .signature-grid{
 
