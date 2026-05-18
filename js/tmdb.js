@@ -59,8 +59,7 @@ function renderSelectedMovie(movie, movieDetails){
     <div class="selected-movie-card">
 
       <img
-        src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
-        alt="${movie.title}"
+        src="https://image.tmdb.org/t/p/original${movie.backdrop_path}"
       >
 
       <div class="selected-movie-content">
@@ -326,8 +325,11 @@ div.addEventListener(
 
 
 
-const TMDB_IMAGE =
+const TMDB_POSTER =
   "https://image.tmdb.org/t/p/w500";
+
+const TMDB_BACKDROP =
+  "https://image.tmdb.org/t/p/original";
 
 const favoriteGrid =
   document.getElementById("favoriteGrid");
