@@ -1,15 +1,14 @@
 {
-  "name": "PaneaCult",
-  "short_name": "PaneaCult",
+  "name": "paneacult",
+  "short_name": "paneacult",
+
+  "start_url": "/",
+
+  "scope": "/",
+
   "display": "standalone",
-  "background_color": "#fdc103",
-  "theme_color": "#fdc103",
-  "icons": [
-    {
-      "src": "/icons/icon-512-v2.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+
+  "background_color": "#081b29",
+
+  "theme_color": "#0b2f44"
 }
-    
