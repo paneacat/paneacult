@@ -121,20 +121,29 @@ const savedMovieHTML =
 if(
   savedMovie &&
   savedMovieHTML &&
-  selectedMovie
+  selectedMovie &&
+  reviewForm &&
+  movieSearchInput
 ){
-
   selectedMovieData =
     JSON.parse(savedMovie);
 
   selectedMovie.innerHTML =
     savedMovieHTML;
 
+  if(reviewForm){
+
   reviewForm.style.display =
     "block";
 
+     }
+
+  if(movieSearchInput){
+
   movieSearchInput.value =
     selectedMovieData.title;
+
+  }
 
 }
 
