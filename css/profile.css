@@ -162,13 +162,34 @@
 
 .profile-hero{
 
-  position: relative;
+  position:relative;
 
-  padding:7rem 2rem 5rem;
+  min-height:92vh;
 
-  text-align: center;
+  display:flex;
 
-  overflow: hidden;
+  align-items:center;
+
+  justify-content:center;
+
+  padding:140px 24px 90px;
+
+  text-align:center;
+
+  overflow:hidden;
+
+}
+
+.profile-title{
+
+  max-width:9ch;
+
+  margin:0 auto 24px;
+
+  text-wrap:balance;
+
+  letter-spacing:-.04em;
+
 }
 
 .profile-hero::before{
@@ -252,14 +273,6 @@
   margin-bottom:18px;
 }
 
-.profile-title{
-
-  font-size:clamp(3.6rem, 6vw, 5.5rem);
-
-  line-height:.9;
-
-  max-width:700px;
-}
 
 .profile-username{
 
@@ -275,16 +288,16 @@
 }
 
 .profile-bio{
-
-  font-size:1.15rem;
-
-  line-height:1.8;
-
   color:rgba(255,255,255,.72);
 
-  max-width:520px;
-
   margin:0 auto;
+
+   font-size:clamp(3.6rem, 6vw, 5.5rem);
+
+  line-height:.9;
+
+  max-width:700px;
+
 }
 
 .profile-subtitle{
@@ -331,25 +344,34 @@
    STATS
 ========================= */
 
-.profile-stats{
+.profile-stat{
 
-  display:flex;
+  min-width:180px;
 
-  justify-content:center;
+  padding:24px;
 
-  gap:80px;
+  border-radius:24px;
 
-  margin-top:40px;
+  background:
+    rgba(255,255,255,.03);
 
-  padding-top:30px;
+  border:
+    1px solid rgba(255,255,255,.05);
 
-  border-top:
-    1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+
 }
 
 .profile-stat span{
 
-  font-size:2rem;
+  display:block;
+
+  margin-bottom:8px;
+
+  font-size:2.4rem;
+
+  font-family:"Playfair Display", serif;
+
 }
 
 .profile-stat p{
@@ -1002,6 +1024,25 @@
 
 }
 
+
+.saved-grid{
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+}
+
+.saved-section{
+
+  padding:54px;
+
+  border-radius:42px;
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.22);
+
+}
+
 .saved-state{
 
   background: var(--panea-yellow);
@@ -1439,31 +1480,37 @@ max-width: 700px;
 
   align-items:flex-end;
 
-  padding:24px;
+  padding:28px;
 
   background:
     linear-gradient(
       to top,
-      rgba(0,0,0,.88),
-      rgba(0,0,0,.1)
+      rgba(0,0,0,.96) 0%,
+      rgba(0,0,0,.72) 35%,
+      transparent 100%
     );
 
   opacity:0;
 
-  transition:.35s ease;
+  transition:.45s ease;
+
 }
 
 .saved-overlay h3{
 
-  font-family:"Playfair Display", serif;
+  transform:
+    translateY(12px);
 
-  font-size:1.5rem;
+  transition:.35s ease;
 
-  line-height:1;
-
-  color:var(--panea-white);
 }
 
+.saved-card:hover .saved-overlay h3{
+
+  transform:
+    translateY(0);
+
+}
 .saved-card:hover{
 
   transform:
@@ -1477,8 +1524,8 @@ max-width: 700px;
 }
 
 .saved-card:hover .saved-overlay{
-
-  opacity:1;
+opacity:1;
+  
 }
 
 
