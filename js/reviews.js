@@ -670,7 +670,6 @@ ${
   </section>
 
 </section>
-
 `;
 
 }
