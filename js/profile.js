@@ -409,3 +409,35 @@ saveProfileBtn?.addEventListener(
   }
 );
 
+
+const editBtn =
+  document.getElementById(
+    "editProfileBtn"
+  );
+
+const profileEdit =
+  document.querySelector(
+    ".profile-edit"
+  );
+
+editBtn?.addEventListener(
+  "click",
+  () => {
+
+    if(
+      profileEdit.style.display ===
+      "flex"
+    ){
+
+      profileEdit.style.display =
+        "none";
+
+    }else{
+
+      profileEdit.style.display =
+        "flex";
+
+    }
+
+  }
+);
