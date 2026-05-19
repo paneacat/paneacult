@@ -485,10 +485,12 @@ ${
   `
   : ""
 }
+
     </div>
 
-</section>
+  </div>
 
+</section>
 
 
 <section class="review-layout">
