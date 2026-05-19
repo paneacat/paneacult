@@ -1882,6 +1882,12 @@ section{
   width:100%;
 
 }
+  .sidebar-box{
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+}
  }
 
 
