@@ -682,26 +682,22 @@
 
 .sidebar-box{
 
-  background:
-    rgba(11,47,68,.72);
+  background:rgba(11,47,68,.72);
 
   backdrop-filter:blur(16px);
 
-  border:
-    1px solid rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08);
 
   border-radius:28px;
 
-  padding:22px 26px;
+  padding:28px 32px;
 
   display:grid;
 
   grid-template-columns:
-    repeat(3,minmax(0,1fr));
+    repeat(auto-fit,minmax(180px,1fr));
 
-  gap:18px 30px;
-
-  align-items:start;
+  gap:22px;
 
 }
 
@@ -729,11 +725,7 @@
 
   flex-direction:column;
 
-  align-self:start;
-
-  gap:2px;
-
-  min-width:0;
+  gap:4px;
 
 }
 /* VALUE */
