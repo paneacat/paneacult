@@ -478,7 +478,7 @@ ${
       target="_blank"
       class="hero-watch-btn"
     >
-      Guarda ora
+      ${data.watch_label || "Guarda ora"}
     </a>
 
   </div>
