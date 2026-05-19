@@ -389,21 +389,19 @@
 
 .review-hero-content{
 
-  position:relative;
-
-  z-index:3;
-
-  width:min(1280px, 92%);
+  max-width:1200px;
 
   margin:0 auto;
 
-  display:grid;
+  display:flex;
 
-  grid-template-columns:340px 1fr;
+  flex-direction:column;
 
-  gap:60px;
+  align-items:flex-start;
 
-  align-items:end;
+  gap:28px;
+
+  padding:120px 40px 60px;
 
 }
 
@@ -421,9 +419,7 @@
    POSTER + SCENE
 ========================= */
 
-.review-poster img,
-.review-scene img{
-
+.review-poster img{
   width: 100%;
 
   height: 360px;
@@ -434,6 +430,26 @@
 
   box-shadow:
     0 25px 70px rgba(0,0,0,.35);
+
+}
+
+.review-scene img{
+
+  width:100%;
+
+  max-width:760px;
+
+  aspect-ratio:16/9;
+
+  object-fit:cover;
+
+  border-radius:24px;
+
+  display:block;
+
+  box-shadow:
+    0 30px 70px
+    rgba(0,0,0,.35);
 
 }
 
@@ -459,7 +475,7 @@
 
 .review-info{
 
-  padding-bottom:20px;
+  max-width:760px;
 
 }
 
@@ -479,17 +495,14 @@
 
 .review-title{
 
-  font-family:"Playfair Display", serif;
+  font-size:
+    clamp(3rem,8vw,6rem);
 
-  font-size:clamp(4rem, 8vw, 7rem);
+  line-height:
+    .92;
 
-  line-height:.88;
-
-  letter-spacing:-.05em;
-
-  color:var(--panea-white);
-
-  margin-bottom:24px;
+  margin:
+    12px 0 18px;
 
 }
 
@@ -499,9 +512,9 @@
 
   flex-wrap:wrap;
 
-  gap:18px;
+  gap:12px;
 
-  margin-bottom:28px;
+  margin-bottom:20px;
 
 }
 
