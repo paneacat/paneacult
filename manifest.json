@@ -1,12 +1,4 @@
 {
-  "name": "paneacult",
-  "short_name": "paneacult",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#08131d",
-  "theme_color": "#08131d",
-  "orientation": "portrait",
-
   "icons": [
     {
       "src": "/img/icon-192.png",
