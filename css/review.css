@@ -694,24 +694,21 @@
   background:
     rgba(11,47,68,.72);
 
-  backdrop-filter:
-    blur(16px);
+  backdrop-filter:blur(16px);
 
   border:
     1px solid rgba(255,255,255,.08);
 
   border-radius:28px;
 
-  padding:24px 28px;
+  padding:28px 32px;
 
   display:grid;
 
   grid-template-columns:
-    repeat(4,minmax(0,1fr));
+    repeat(3,1fr);
 
-  gap:22px 34px;
-
-  align-items:start;
+  gap:26px 42px;
 
 }
 
@@ -1339,14 +1336,13 @@ body[data-movie-title="Diamanti grezzi"] .review-scene img{
   object-position:center 80%;
 
 }
-
 .sidebar-item{
 
   display:flex;
 
   flex-direction:column;
 
-  gap:4px;
+  gap:6px;
 
 }
 
