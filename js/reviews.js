@@ -494,6 +494,20 @@ ${
 }
 
 ${
+  data.screenplay
+  ? `
+  <p class="sidebar-label">
+    Sceneggiatura
+  </p>
+
+  <p class="sidebar-value">
+    ${data.screenplay}
+  </p>
+  `
+  : ""
+}
+
+${
   data.genre
   ? `
   <p class="sidebar-label">
