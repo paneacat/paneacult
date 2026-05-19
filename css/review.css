@@ -698,7 +698,7 @@
     28px;
 
   padding:
-    32px;
+    22px;
 
   display:grid;
 
@@ -706,7 +706,7 @@
     repeat(4, minmax(140px,1fr));
 
   gap:
-    28px;
+    18px;
 
   align-items:
     start;
@@ -716,34 +716,39 @@
 /* LABEL */
 
 .sidebar-label{
+
   display:block;
-  margin-bottom:8px;
-  
-  font-size:.7rem;
 
-  letter-spacing:.22em;
+  font-size:
+    .72rem;
 
-  text-transform:uppercase;
+  letter-spacing:
+    .18em;
 
-  color:var(--panea-yellow);
-  opacity:.9;
+  text-transform:
+    uppercase;
+
+  opacity:
+    .6;
+
+  margin-bottom:
+    8px;
 
 }
 
 /* VALUE */
 
 .sidebar-value{
+
   display:block;
-  font-size:1rem;
 
-  color:rgba(255,255,255,.78);
+  font-size:
+    1rem;
 
-  margin-bottom:0;
-
-  line-height:1.5;
+  line-height:
+    1;
 
 }
-
 .sidebar-mood{
 
   margin-top:30px;
