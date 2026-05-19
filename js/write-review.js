@@ -164,3 +164,116 @@ const publishReviewBtn =
   document.getElementById(
     "publishReviewBtn"
   );
+
+/* =========================
+   PUBLISH REVIEW
+========================= */
+
+publishReviewBtn?.addEventListener(
+  "click",
+  async () => {
+
+    if(!selectedMovieData){
+
+      alert(
+        "Seleziona un film."
+      );
+
+      return;
+
+    }
+
+    const {
+      data: { user }
+    } =
+    await supabaseClient.auth.getUser();
+
+    if(!user){
+
+      window.location.href =
+        "login.html";
+
+      return;
+
+    }
+
+    const reviewTextValue =
+      reviewText.value.trim();
+
+    const ratingValue =
+      parseInt(
+        reviewRating.value
+      );
+
+    if(!reviewTextValue){
+
+      alert(
+        "Scrivi la recensione."
+      );
+
+      return;
+
+    }
+
+    const slug =
+      selectedMovieData.title
+        .toLowerCase()
+        .replaceAll(" ", "-")
+        .replace(/[^\w-]+/g, "");
+
+    const { error } =
+      await supabaseClient
+        .from("reviews")
+        .insert([{
+
+          movie_id:
+            selectedMovieData.id,
+
+          movie_title:
+            selectedMovieData.title,
+
+          movie_poster:
+            `https://image.tmdb.org/t/p/w500${selectedMovieData.poster_path}`,
+
+          movie_backdrop:
+            `https://image.tmdb.org/t/p/original${selectedMovieData.backdrop_path}`,
+
+          review_text:
+            reviewTextValue,
+
+          rating:
+            ratingValue,
+
+          slug,
+
+          user_id:
+            user.id
+
+        }]);
+
+    if(error){
+
+      console.log(error);
+
+      alert(
+        "Errore pubblicazione"
+      );
+
+      return;
+
+    }
+
+    localStorage.removeItem(
+      "paneacult_review_text"
+    );
+
+    localStorage.removeItem(
+      "paneacult_review_rating"
+    );
+
+    alert(
+      "Recensione pubblicata ✨"
+    );
+
+  }
+);
