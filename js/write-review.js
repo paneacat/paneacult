@@ -1,14 +1,3 @@
-if(
-  !reviewText &&
-  !reviewRating &&
-  !selectedMovie
-){
-
-  console.log(
-    "Review elements not found"
-  );
-
-}
 
 
 /* =========================
