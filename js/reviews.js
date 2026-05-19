@@ -399,14 +399,11 @@ async function loadSingleReview(){
 
 reviewContainer.innerHTML = `
 
+
 <section
   class="review-hero"
   style="
     background-image:
-      linear-gradient(
-        rgba(7,15,25,.82),
-        rgba(7,15,25,.96)
-      ),
       url('${data.movie_backdrop}');
     background-size:cover;
     background-position:center;
