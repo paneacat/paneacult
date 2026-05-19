@@ -1360,26 +1360,23 @@ body[data-movie-title="Diamanti grezzi"] .review-scene img{
   object-position:center 80%;
 
 }
-.sidebar-item{
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:6px;
-
-}
 
 .profile-header{
 
+  position:sticky;
   top:0;
 
   z-index:9999;
 
   padding:20px 0;
-   position:sticky;
 
-  backdrop-filter:blur(18px);
+  background:transparent;
+
+  backdrop-filter:none;
+
+  border:none;
+
+  box-shadow:none;
 
 }
 
