@@ -436,11 +436,37 @@ reviewContainer.innerHTML = `
 
       <div class="review-meta">
 
-        <span>
-          paneacult
-        </span>
+  ${
+    data.year
+    ? `
+    <span class="meta-pill">
+      ${data.year}
+    </span>
+    `
+    : ""
+  }
 
-      </div>
+  ${
+    data.director
+    ? `
+    <span class="meta-pill">
+      ${data.director}
+    </span>
+    `
+    : ""
+  }
+
+</div>
+
+${
+  data.subtitle
+  ? `
+  <p class="review-subtitle">
+    ${data.subtitle}
+  </p>
+  `
+  : ""
+}
 
     </div>
 
@@ -453,7 +479,61 @@ reviewContainer.innerHTML = `
   <aside class="review-sidebar">
 
     <div class="sidebar-box">
+${
+  data.director
+  ? `
+  <p class="sidebar-label">
+    Regia
+  </p>
 
+  <p class="sidebar-value">
+    ${data.director}
+  </p>
+  `
+  : ""
+}
+
+${
+  data.genre
+  ? `
+  <p class="sidebar-label">
+    Genere
+  </p>
+
+  <p class="sidebar-value">
+    ${data.genre}
+  </p>
+  `
+  : ""
+}
+
+${
+  data.runtime
+  ? `
+  <p class="sidebar-label">
+    Durata
+  </p>
+
+  <p class="sidebar-value">
+    ${data.runtime}
+  </p>
+  `
+  : ""
+}
+
+${
+  data.country
+  ? `
+  <p class="sidebar-label">
+    Paese
+  </p>
+
+  <p class="sidebar-value">
+    ${data.country}
+  </p>
+  `
+  : ""
+}
       <p class="sidebar-label">
         Voto
       </p>
@@ -473,14 +553,46 @@ reviewContainer.innerHTML = `
         <p class="sidebar-label">
           Rubrica
         </p>
+${
+  data.mood
+  ? `
+  <p class="sidebar-label">
+    Mood
+  </p>
 
-        <p class="sidebar-value sidebar-series">
+  <p class="sidebar-value" sidebar-series">
           ${data.rubrica}
         </p>
         `
         : ""
       }
+${
+  data.rubrica
+  ? `
+  <p class="sidebar-label">
+    Rubrica
+  </p>
 
+  <p class="sidebar-value sidebar-series">
+    ${data.rubrica}
+  </p>
+  `
+  : ""
+}
+
+${
+  data.mood
+  ? `
+  <p class="sidebar-label">
+    Mood
+  </p>
+
+  <p class="sidebar-value">
+    ${data.mood}
+  </p>
+  `
+  : ""
+}
     </div>
 
   </aside>
