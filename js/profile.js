@@ -277,6 +277,10 @@ const profileBio =
     "profileBio"
   );
 
+const profileEdit =
+  document.querySelector(
+    ".profile-edit"
+  );
 /* LOAD */
 
 const savedAvatar =
@@ -405,7 +409,9 @@ saveProfileBtn?.addEventListener(
       );
 
     }
-
+profileEdit.classList.remove(
+  "open"
+);
   }
 );
 
@@ -438,6 +444,27 @@ editBtn?.addEventListener(
         "flex";
 
     }
+
+  }
+);
+
+const editBtn =
+  document.getElementById(
+    "editProfileBtn"
+  );
+
+const profileEdit =
+  document.querySelector(
+    ".profile-edit"
+  );
+
+editBtn?.addEventListener(
+  "click",
+  () => {
+
+    profileEdit.classList.toggle(
+      "open"
+    );
 
   }
 );
