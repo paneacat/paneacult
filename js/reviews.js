@@ -479,7 +479,7 @@ ${
     <a
       href="${data.watch_link}"
       target="_blank"
-      class="sidebar-watch"
+      class="hero-watch-btn"
     >
       Guarda ora
     </a>
