@@ -133,21 +133,21 @@ if(hero && movie.backdrop_path){
 
         <div class="movie-actions">
 
-          <button
-            class="movie-action-btn watched-btn"
-            id="markWatchedBtn"
-          >
-            👁️ Visto
-          </button>
+  <button
+    class="movie-action-btn love-btn"
+    id="markLovedBtn"
+  >
+    ❤️ Adorato
+  </button>
 
-          <button
-            class="movie-action-btn watchlist-btn"
-            id="markWatchlistBtn"
-          >
-            📌 Da vedere
-          </button>
+  <button
+    class="movie-action-btn desert-btn"
+    id="markDesertBtn"
+  >
+    🏝 Desert Island
+  </button>
 
-        </div>
+</div>
 
       </div>
 
