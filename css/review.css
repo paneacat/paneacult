@@ -1119,26 +1119,69 @@
 /* =========================
    WHERE TO WATCH
 ========================= */
-
 .where-watch{
 
-  margin-top: 2rem;
+  margin-top:22px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:flex-start;
+
+  gap:10px;
 
 }
 
 .where-watch-label{
 
-  display: block;
+  font-size:.72rem;
 
-  margin-bottom: .8rem;
+  letter-spacing:.18em;
 
-  font-size: .72rem;
+  text-transform:uppercase;
 
-  letter-spacing: .18em;
+  color:rgba(255,255,255,.55);
 
-  text-transform: uppercase;
+}
 
-  opacity: .6;
+.hero-watch-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  height:46px;
+
+  padding:0 22px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  color:var(--panea-white);
+
+  text-decoration:none;
+
+  font-size:.82rem;
+
+  letter-spacing:.08em;
+
+  transition:.25s ease;
+
+}
+
+.hero-watch-btn:hover{
+
+  background:var(--panea-yellow);
+
+  color:#08131d;
+
+  border-color:var(--panea-yellow);
 
 }
 
