@@ -248,3 +248,95 @@ resetFilters?.addEventListener(
 
   }
 );
+
+
+/* =========================
+   LOAD REVIEWS FROM SUPABASE
+========================= */
+
+async function loadReviews(){
+
+  const reviewsGrid =
+    document.getElementById(
+      "reviewsGrid"
+    );
+
+  if(!reviewsGrid){
+
+    return;
+
+  }
+
+  const { data, error } =
+    await supabaseClient
+      .from("reviews")
+      .select("*")
+      .order(
+        "created_at",
+        {
+          ascending: false
+        }
+      );
+
+  if(error){
+
+    console.log(error);
+
+    return;
+
+  }
+
+  reviewsGrid.innerHTML = "";
+
+  data.forEach(review => {
+
+    reviewsGrid.innerHTML += `
+
+      <article
+        class="review-card"
+        data-title="${review.movie_title}"
+        data-rating="${review.rating}"
+      >
+
+        <a
+          href="review.html?slug=${review.slug}"
+        >
+
+          <img
+            src="${review.movie_poster}"
+            alt="${review.movie_title}"
+            class="archivio-img"
+          >
+
+        </a>
+
+        <div class="card-info">
+
+          <h3 class="film-title">
+
+            ${review.movie_title}
+
+          </h3>
+
+          <div class="film-stars">
+
+            ${
+              "★".repeat(review.rating) +
+              "☆".repeat(
+                5 - review.rating
+              )
+            }
+
+          </div>
+
+        </div>
+
+      </article>
+
+    `;
+
+  });
+
+}
+
+loadReviews();
