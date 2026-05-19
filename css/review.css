@@ -389,19 +389,13 @@
 
 .review-hero-content{
 
-  max-width:1400px;
+  max-width:1200px;
 
   margin:0 auto;
 
-  display:flex;
+  display:block;
 
-  flex-direction:column;
-
-  align-items:center;
-
-  gap:24px;
-
-  padding:120px 50px 50px;
+  padding:110px 40px 50px;
 
 }
 /* =========================
@@ -441,20 +435,18 @@
 
   width:100%;
 
-  max-width:1200px;
-
   height:520px;
 
   object-fit:cover;
 
-  border-radius:28px;
+  border-radius:18px;
 
   display:block;
 
-  margin:0 auto;
+  margin-bottom:34px;
 
   box-shadow:
-    0 30px 80px
+    0 30px 70px
     rgba(0,0,0,.35);
 
 }
@@ -481,15 +473,9 @@
 
 .review-info{
 
-  width:100%;
+  display:block;
 
-  max-width:1200px;
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:flex-start;
+  max-width:900px;
 
 }
 
