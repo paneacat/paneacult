@@ -588,7 +588,11 @@ ${
   : ""
 }
 
-  <section class="review-content">
+  </aside>
+
+</section>
+
+<section class="review-content">
 
     <div class="review-body">
   ${data.review_text}
