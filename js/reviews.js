@@ -398,71 +398,146 @@ async function loadSingleReview(){
 
   reviewContainer.innerHTML = `
 
-    <section class="review-hero">
+<section class="review-hero">
 
-      <div class="review-hero-content">
+  <div class="review-hero-content">
 
-        <div class="review-scene">
+    <div class="review-scene">
 
-          <img
-            src="${data.movie_poster}"
-            alt="${data.movie_title}"
-          >
+      <img
+        src="${data.movie_poster}"
+        alt="${data.movie_title}"
+      >
 
-        </div>
+    </div>
 
-        <div class="review-info">
+    <div class="review-info">
 
-          <p class="review-kicker">
-            RECENSIONE
-          </p>
+      <p class="review-kicker">
+        RECENSIONE
+      </p>
 
-          <h1 class="review-title">
-            ${data.movie_title}
-          </h1>
+      <h1 class="review-title">
+        ${data.movie_title}
+      </h1>
 
-          <div class="review-meta">
+      <div class="review-meta">
 
-            <span>
-              ${data.rating}/5
-            </span>
-
-          </div>
-
-        </div>
+        <span>
+          ${data.rating}/5
+        </span>
 
       </div>
 
-    </section>
+    </div>
 
-    <section class="review-layout">
+  </div>
 
-      <div class="review-content">
+</section>
+
+<section class="review-layout">
+
+  <aside class="review-sidebar">
+
+    <div class="sidebar-box">
+
+      <p class="sidebar-label">
+        Voto
+      </p>
+
+      <p class="sidebar-value sidebar-rating">
+
+        ${
+          "★".repeat(data.rating) +
+          "☆".repeat(5-data.rating)
+        }
+
+      </p>
+
+      <p class="sidebar-label">
+        Rubrica
+      </p>
+
+      <p class="sidebar-value sidebar-series">
+        ${data.rubrica || "-"}
+      </p>
+
+    </div>
+
+  </aside>
+
+  <section class="review-content">
+
+    <p>
+      ${data.review_text}
+    </p>
+
+    <div class="rating">
+
+      <span class="rating-stars">
+
+        ${
+          "★".repeat(data.rating) +
+          "☆".repeat(5-data.rating)
+        }
+
+      </span>
+
+      <span class="rating-text">
+        — ${data.rating}/5
+      </span>
+
+    </div>
+
+    ${
+      data.quote
+      ? `
+      <blockquote>
+        ${data.quote}
+      </blockquote>
+      `
+      : ""
+    }
+
+    ${
+      data.curiosita
+      ? `
+      <div class="review-extra">
+
+        <h3>
+          CURIOSITÀ
+        </h3>
 
         <p>
-          ${data.review_text}
+          ${data.curiosita}
         </p>
 
-        <div class="rating">
+      </div>
+      `
+      : ""
+    }
 
-          <span class="rating-stars">
+    <div class="review-author">
 
-            ${
-              "★".repeat(data.rating) +
-              "☆".repeat(
-                5 - data.rating
-              )
-            }
+      <img
+        src="img/patrizia.webp"
+        alt="Patrizia"
+      >
 
-          </span>
+      <div>
 
-        </div>
+        <p class="author-name">
+          Patrizia Catania
+        </p>
 
       </div>
 
-    </section>
+    </div>
 
-  `;
+  </section>
+
+</section>
+`;
 
 }
 
