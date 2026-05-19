@@ -212,7 +212,7 @@ publishReviewBtn?.addEventListener(
 
     const { error } =
       await supabaseClient
-        .from("reviews")
+        .from("user_reviews")
         .insert([{
 
           movie_id:
