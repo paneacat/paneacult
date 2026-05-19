@@ -560,3 +560,5 @@ reviewContainer.innerHTML = `
 </section>
 
 `;
+
+   loadSingleReview();
