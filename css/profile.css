@@ -321,12 +321,24 @@ letter-spacing:.04em;
 .profile-avatar{
 
   width:190px;
-
   height:190px;
 
   border-radius:50%;
 
   overflow:hidden;
+
+  padding:4px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b2f44,
+      #1d5d86
+    );
+
+  box-shadow:
+    0 12px 35px rgba(11,47,68,.35);
+
 }
 
 .profile-avatar img{
