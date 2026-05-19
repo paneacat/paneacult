@@ -698,15 +698,21 @@
     28px;
 
   padding:
-    22px;
+    28px 34px;
 
   display:grid;
 
   grid-template-columns:
-    repeat(4, minmax(140px,1fr));
+    repeat(3, max-content);
 
-  gap:
-    18px;
+  justify-content:
+    space-between;
+
+  column-gap:
+    56px;
+
+  row-gap:
+    26px;
 
   align-items:
     start;
