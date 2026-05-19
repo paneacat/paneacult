@@ -35,7 +35,26 @@ async function fetchMovieDetails(movieId){
     `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=it-IT&append_to_response=credits`
   );
 
-  return await response.json();
+  const movieData =
+    await response.json();
+
+  /* IMDb */
+
+  const omdbResponse =
+    await fetch(
+      `https://www.omdbapi.com/?apikey=86e58e8e&i=${movieData.imdb_id}`
+    );
+
+  const omdbData =
+    await omdbResponse.json();
+
+  movieData.imdb_rating =
+    omdbData.imdbRating || "";
+
+  movieData.imdb_votes =
+    omdbData.imdbVotes || "";
+
+  return movieData;
 
 }
 
