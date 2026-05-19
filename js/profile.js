@@ -236,3 +236,176 @@ renderGrid(
 renderCurrentFavorite();
 
 renderSignature();
+
+
+/* =========================
+   CUSTOM PROFILE
+========================= */
+
+const avatarInput =
+  document.getElementById(
+    "avatarInput"
+  );
+
+const usernameInput =
+  document.getElementById(
+    "usernameInput"
+  );
+
+const bioInput =
+  document.getElementById(
+    "bioInput"
+  );
+
+const saveProfileBtn =
+  document.getElementById(
+    "saveProfileBtn"
+  );
+
+const profileAvatarImg =
+  document.getElementById(
+    "profileAvatarImg"
+  );
+
+const profileUsername =
+  document.getElementById(
+    "profileUsername"
+  );
+
+const profileBio =
+  document.getElementById(
+    "profileBio"
+  );
+
+/* LOAD */
+
+const savedAvatar =
+  localStorage.getItem(
+    "paneacult_avatar"
+  );
+
+const savedUsername =
+  localStorage.getItem(
+    "paneacult_username"
+  );
+
+const savedBio =
+  localStorage.getItem(
+    "paneacult_bio"
+  );
+
+if(
+  savedAvatar &&
+  profileAvatarImg
+){
+
+  profileAvatarImg.src =
+    savedAvatar;
+
+}
+
+if(
+  savedUsername &&
+  profileUsername
+){
+
+  profileUsername.textContent =
+    savedUsername;
+
+  if(usernameInput){
+
+    usernameInput.value =
+      savedUsername;
+
+  }
+
+}
+
+if(
+  savedBio &&
+  profileBio
+){
+
+  profileBio.textContent =
+    savedBio;
+
+  if(bioInput){
+
+    bioInput.value =
+      savedBio;
+
+  }
+
+}
+
+/* SAVE */
+
+saveProfileBtn?.addEventListener(
+  "click",
+  () => {
+
+    const newUsername =
+      usernameInput?.value.trim();
+
+    const newBio =
+      bioInput?.value.trim();
+
+    if(
+      newUsername &&
+      profileUsername
+    ){
+
+      profileUsername.textContent =
+        newUsername;
+
+      localStorage.setItem(
+        "paneacult_username",
+        newUsername
+      );
+
+    }
+
+    if(
+      newBio &&
+      profileBio
+    ){
+
+      profileBio.textContent =
+        newBio;
+
+      localStorage.setItem(
+        "paneacult_bio",
+        newBio
+      );
+
+    }
+
+    if(
+      avatarInput?.files?.[0]
+    ){
+
+      const reader =
+        new FileReader();
+
+      reader.onload =
+        e => {
+
+          profileAvatarImg.src =
+            e.target.result;
+
+          localStorage.setItem(
+            "paneacult_avatar",
+            e.target.result
+          );
+
+        };
+
+      reader.readAsDataURL(
+        avatarInput.files[0]
+      );
+
+    }
+
+  }
+);
+
