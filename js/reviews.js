@@ -591,19 +591,15 @@ ${
 
   <div class="sidebar-item">
 
-    <p class="sidebar-label">
-      Voto
-    </p>
+  <p class="sidebar-label">
+    IMDb
+  </p>
 
-    <p class="sidebar-value sidebar-rating">
+  <p class="sidebar-value sidebar-rating">
+    ${data.imdb_rating || "-"} /10
+  </p>
 
-      ${
-        "★".repeat(data.rating) +
-        "☆".repeat(5-data.rating)
-      }
-
-    </p>
-
+</div>
   </div>
 
 ${
