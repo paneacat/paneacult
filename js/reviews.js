@@ -561,4 +561,6 @@ reviewContainer.innerHTML = `
 
 `;
 
-   loadSingleReview();
+}
+
+loadSingleReview();
