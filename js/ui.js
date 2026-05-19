@@ -128,12 +128,8 @@ function setupMovieButtons(){
 const enterBtn =
   document.querySelector(
     ".welcome-btn.primary"
-  );
+  ); 
 
-const logoutBtn =
-  document.querySelector(
-    ".logout-btn"
-  );
 
 const saveBtns =
   document.querySelectorAll(
