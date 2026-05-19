@@ -340,3 +340,126 @@ async function loadReviews(){
 }
 
 loadReviews();
+
+
+/* =========================
+   SINGLE REVIEW
+========================= */
+
+async function loadSingleReview(){
+
+  if(
+    !document.body.classList.contains(
+      "review-page"
+    )
+  ){
+
+    return;
+
+  }
+
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+  const slug =
+    params.get("slug");
+
+  if(!slug){
+
+    return;
+
+  }
+
+  const { data, error } =
+    await supabaseClient
+      .from("reviews")
+      .select("*")
+      .eq("slug", slug)
+      .single();
+
+  if(error || !data){
+
+    console.log(error);
+
+    return;
+  }
+
+  /* TITLE */
+
+  document.title =
+    `${data.movie_title} • paneacult`;
+
+  /* HERO TITLE */
+
+  const titleEl =
+    document.querySelector(
+      ".review-title"
+    );
+
+  if(titleEl){
+
+    titleEl.textContent =
+      data.movie_title;
+
+  }
+
+  /* REVIEW TEXT */
+
+  const content =
+    document.querySelector(
+      ".review-content"
+    );
+
+  if(content){
+
+    const firstP =
+      content.querySelector("p");
+
+    if(firstP){
+
+      firstP.textContent =
+        data.review_text;
+
+    }
+
+  }
+
+  /* POSTER */
+
+  const poster =
+    document.querySelector(
+      ".review-scene img"
+    );
+
+  if(poster){
+
+    poster.src =
+      data.movie_poster;
+
+    poster.alt =
+      data.movie_title;
+
+  }
+
+  /* STARS */
+
+  const stars =
+    document.querySelector(
+      ".rating-stars"
+    );
+
+  if(stars){
+
+    stars.textContent =
+      "★".repeat(data.rating) +
+      "☆".repeat(
+        5 - data.rating
+      );
+
+  }
+
+}
+
+loadSingleReview();
