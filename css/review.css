@@ -708,7 +708,7 @@
   grid-template-columns:
     repeat(3,1fr);
 
-  gap:26px 42px;
+  gap:8px 18px;
 
 }
 
@@ -726,10 +726,19 @@
 
   opacity:.55;
 
-  margin-bottom:6px;
+  margin-bottom:2px;
 
 }
 
+.sidebar-item{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:2px;
+
+}
 /* VALUE */
 
 .sidebar-value{
