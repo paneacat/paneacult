@@ -1531,6 +1531,86 @@ max-width: 700px;
 opacity:1;
   
 }
+/* =========================
+   PROFILE EDIT
+========================= */
+
+.profile-edit{
+
+  margin-top:40px;
+
+  width:min(520px,100%);
+
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+
+}
+
+.profile-edit input,
+.profile-edit textarea{
+
+  width:100%;
+
+  padding:16px 18px;
+
+  border-radius:18px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:
+    rgba(255,255,255,.04);
+
+  color:white;
+
+  font-family:'Inter',sans-serif;
+
+  outline:none;
+
+}
+
+.profile-edit textarea{
+
+  min-height:110px;
+
+  resize:none;
+
+}
+
+.profile-edit input:focus,
+.profile-edit textarea:focus{
+
+  border-color:#f3c94d;
+
+}
+
+#saveProfileBtn{
+
+  width:fit-content;
+
+  padding:14px 22px;
+
+  border:none;
+
+  border-radius:999px;
+
+  background:#f3c94d;
+
+  color:#08131d;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.25s;
+
+}
+
+#saveProfileBtn:hover{
+
+  transform:translateY(-2px);
+
+}
 
 
 
