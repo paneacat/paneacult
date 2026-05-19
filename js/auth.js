@@ -1,7 +1,7 @@
 const loginForm =
   document.querySelector(".login-form");
 
-const registerBtn =
+const authRegisterBtn =
   document.querySelector(".register-btn");
 
 const logoutBtn =
@@ -56,7 +56,7 @@ loginForm?.addEventListener(
 
 /* REGISTER */
 
-registerBtn?.addEventListener(
+authRegisterBtn?.addEventListener(
   "click",
   async () => {
 
