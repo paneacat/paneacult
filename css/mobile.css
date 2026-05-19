@@ -1847,6 +1847,28 @@ section{
     padding-top:140px;
 
   }
+  .reviews-grid{
+
+    display:grid !important;
+
+    grid-template-columns:1fr !important;
+
+    gap:24px;
+
+  }
+
+  .review-card.hidden-review,
+  .review-card.hidden{
+
+    display:none !important;
+
+  }
+
+  .review-card:not(.hidden-review):not(.hidden){
+
+    display:block !important;
+
+  } 
  }
 
 
