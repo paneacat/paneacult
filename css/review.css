@@ -703,9 +703,11 @@
   display:grid;
 
   grid-template-columns:
-    repeat(4,minmax(120px,1fr));
+    repeat(3,minmax(0,1fr));
 
-  gap:12px 22px;
+  gap:18px 30px;
+
+  align-items:start;
 
 }
 
@@ -733,7 +735,11 @@
 
   flex-direction:column;
 
+  align-self:start;
+
   gap:2px;
+
+  min-width:0;
 
 }
 /* VALUE */
