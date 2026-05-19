@@ -1645,3 +1645,7 @@ opacity:1;
 .profile-edit{
   display:none;
 }
+
+.profile-edit.open{
+  display:flex;
+}
