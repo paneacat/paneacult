@@ -490,25 +490,30 @@ ${
 }
     </div>
 
-  </div>
-
 </section>
+
+
 
 <section class="review-layout">
 
   <aside class="review-sidebar">
 
     <div class="sidebar-box">
+
 ${
   data.director
   ? `
-  <p class="sidebar-label">
-    Regia
-  </p>
+  <div class="sidebar-item">
 
-  <p class="sidebar-value">
-    ${data.director}
-  </p>
+    <p class="sidebar-label">
+      Regia
+    </p>
+
+    <p class="sidebar-value">
+      ${data.director}
+    </p>
+
+  </div>
   `
   : ""
 }
@@ -516,13 +521,17 @@ ${
 ${
   data.screenplay
   ? `
-  <p class="sidebar-label">
-    Sceneggiatura
-  </p>
+  <div class="sidebar-item">
 
-  <p class="sidebar-value">
-    ${data.screenplay}
-  </p>
+    <p class="sidebar-label">
+      Sceneggiatura
+    </p>
+
+    <p class="sidebar-value">
+      ${data.screenplay}
+    </p>
+
+  </div>
   `
   : ""
 }
@@ -530,13 +539,17 @@ ${
 ${
   data.genre
   ? `
-  <p class="sidebar-label">
-    Genere
-  </p>
+  <div class="sidebar-item">
 
-  <p class="sidebar-value">
-    ${data.genre}
-  </p>
+    <p class="sidebar-label">
+      Genere
+    </p>
+
+    <p class="sidebar-value">
+      ${data.genre}
+    </p>
+
+  </div>
   `
   : ""
 }
@@ -544,13 +557,17 @@ ${
 ${
   data.runtime
   ? `
-  <p class="sidebar-label">
-    Durata
-  </p>
+  <div class="sidebar-item">
 
-  <p class="sidebar-value">
-    ${data.runtime}
-  </p>
+    <p class="sidebar-label">
+      Durata
+    </p>
+
+    <p class="sidebar-value">
+      ${data.runtime}
+    </p>
+
+  </div>
   `
   : ""
 }
@@ -558,38 +575,52 @@ ${
 ${
   data.country
   ? `
-  <p class="sidebar-label">
-    Paese
-  </p>
+  <div class="sidebar-item">
 
-  <p class="sidebar-value">
-    ${data.country}
-  </p>
+    <p class="sidebar-label">
+      Paese
+    </p>
+
+    <p class="sidebar-value">
+      ${data.country}
+    </p>
+
+  </div>
   `
   : ""
 }
-      <p class="sidebar-label">
-        Voto
-      </p>
 
-      <p class="sidebar-value sidebar-rating">
+  <div class="sidebar-item">
 
-        ${
-          "★".repeat(data.rating) +
-          "☆".repeat(5-data.rating)
-        }
+    <p class="sidebar-label">
+      Voto
+    </p>
 
-      </p>
+    <p class="sidebar-value sidebar-rating">
+
+      ${
+        "★".repeat(data.rating) +
+        "☆".repeat(5-data.rating)
+      }
+
+    </p>
+
+  </div>
+
 ${
   data.rubrica
   ? `
-  <p class="sidebar-label">
-    Rubrica
-  </p>
+  <div class="sidebar-item">
 
-  <p class="sidebar-value sidebar-series">
-    ${data.rubrica}
-  </p>
+    <p class="sidebar-label">
+      Rubrica
+    </p>
+
+    <p class="sidebar-value sidebar-series">
+      ${data.rubrica}
+    </p>
+
+  </div>
   `
   : ""
 }
@@ -597,16 +628,22 @@ ${
 ${
   data.mood
   ? `
-  <p class="sidebar-label">
-    Mood
-  </p>
+  <div class="sidebar-item">
 
-  <p class="sidebar-value">
-    ${data.mood}
-  </p>
+    <p class="sidebar-label">
+      Mood
+    </p>
+
+    <p class="sidebar-value">
+      ${data.mood}
+    </p>
+
+  </div>
   `
   : ""
 }
+
+    </div>
 
   </aside>
 
