@@ -1585,13 +1585,7 @@ opacity:1;
 
   border-radius:18px;
 
-  border:
-    1px solid rgba(255,255,255,.08);
-
-  background:
-    rgba(255,255,255,.04);
-
-  color:white;
+  color:var(--paneacult-white);
 
   font-family:'Inter',sans-serif;
 
