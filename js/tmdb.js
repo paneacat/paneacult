@@ -178,7 +178,8 @@ async function mostraFilmPopolari(){
     await response.json();
 
   movieResults.innerHTML = "";
-
+movieResults.style.display =
+  "block";
   data.results
     .slice(0, 5)
     .forEach(movie => {
@@ -233,6 +234,9 @@ async function mostraFilmPopolari(){
 
     movieResults.innerHTML = "";
 
+movieResults.style.display =
+  "none";
+
     movieSearchInput.value =
       movie.title;
 
@@ -263,12 +267,15 @@ movieResults.style.display =
 
       if(query.length < 2){
 
-        movieResults.innerHTML = "";
-        return;
-         movieResults.style.display =
-  "block";
+  movieResults.innerHTML = "";
+
+  movieResults.style.display =
+    "none";
+
+  return;
 
       }
+      
 
       const response = await fetch(
         `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=it-IT&query=${query}`
@@ -332,9 +339,10 @@ div.addEventListener(
 
     setupMovieButtons();
 
-    movieResults.innerHTML = "";
+movieResults.innerHTML = "";
+
 movieResults.style.display =
-  "none";
+  "block";
     movieSearchInput.value =
       movie.title;
 
