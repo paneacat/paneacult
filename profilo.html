@@ -134,23 +134,50 @@
 <section class="profile-hero">
 
   <div class="profile-user-meta">
+<div class="profile-edit">
 
-  <div class="profile-avatar">
+  <input
+    type="file"
+    id="avatarInput"
+    accept="image/*"
+  >
 
-    <img src="img/patrizia.webp">
+  <input
+    type="text"
+    id="usernameInput"
+    placeholder="Username"
+  >
 
-  </div>
+  <textarea
+    id="bioInput"
+    placeholder="La tua frase"
+  ></textarea>
+
+  <button id="saveProfileBtn">
+    Salva profilo
+  </button>
+
+</div>
+  <img
+  id="profileAvatarImg"
+  src="img/patrizia.webp"
+>
 
   <div>
 
-    <p class="profile-username">
-      @paneacat
+    <p
+  class="profile-username"
+  id="profileUsername"
+>
+  @paneacat
     </p>
 
-    <p class="profile-bio">
-      guardo film per sentire qualcosa
+    <p
+  class="profile-bio"
+  id="profileBio"
+>
+  guardo film per sentire qualcosa
     </p>
-
   </div>
 
   <div class="profile-stats">
