@@ -646,8 +646,6 @@ ${
 
   </aside>
 
-</section>
-
 <section class="review-content">
 
     <div class="review-body">
