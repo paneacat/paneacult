@@ -259,7 +259,38 @@ publishReviewBtn?.addEventListener(
     localStorage.removeItem(
       "paneacult_review_rating"
     );
+/* RESET DRAFT */
 
+localStorage.removeItem(
+  "paneacult_review_text"
+);
+
+localStorage.removeItem(
+  "paneacult_review_rating"
+);
+
+localStorage.removeItem(
+  "paneacult_selected_movie"
+);
+
+localStorage.removeItem(
+  "paneacult_selected_movie_html"
+);
+
+/* RESET UI */
+
+reviewText.value = "";
+
+reviewRating.value = "";
+
+selectedMovie.innerHTML = "";
+
+movieSearchInput.value = "";
+
+reviewForm.style.display =
+  "none";
+
+selectedMovieData = null;
     alert(
       "Recensione pubblicata ✨"
     );
