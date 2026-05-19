@@ -1869,6 +1869,19 @@ section{
     display:block !important;
 
   } 
+  .profile-edit{
+
+  width:100%;
+
+  margin-top:26px;
+
+}
+
+#saveProfileBtn{
+
+  width:100%;
+
+}
  }
 
 
