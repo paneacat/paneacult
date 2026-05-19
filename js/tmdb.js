@@ -248,7 +248,8 @@ if(movieSearchInput){
 movieSearchInput.addEventListener(
   "focus",
   () => {
-
+movieResults.style.display =
+  "block";
     mostraFilmPopolari();
 
   }
@@ -264,6 +265,8 @@ movieSearchInput.addEventListener(
 
         movieResults.innerHTML = "";
         return;
+         movieResults.style.display =
+  "block";
 
       }
 
@@ -275,7 +278,8 @@ movieSearchInput.addEventListener(
         await response.json();
 
       movieResults.innerHTML = "";
-
+movieResults.style.display =
+  "none";
       data.results
         .slice(0, 5)
         .forEach(movie => {
@@ -329,7 +333,8 @@ div.addEventListener(
     setupMovieButtons();
 
     movieResults.innerHTML = "";
-
+movieResults.style.display =
+  "none";
     movieSearchInput.value =
       movie.title;
 
