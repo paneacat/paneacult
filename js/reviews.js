@@ -546,26 +546,6 @@ ${
         }
 
       </p>
-
-      ${
-        data.rubrica
-        ? `
-        <p class="sidebar-label">
-          Rubrica
-        </p>
-${
-  data.mood
-  ? `
-  <p class="sidebar-label">
-    Mood
-  </p>
-
-  <p class="sidebar-value" sidebar-series">
-          ${data.rubrica}
-        </p>
-        `
-        : ""
-      }
 ${
   data.rubrica
   ? `
@@ -593,9 +573,6 @@ ${
   `
   : ""
 }
-    </div>
-
-  </aside>
 
   <section class="review-content">
 
