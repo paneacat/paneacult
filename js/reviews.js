@@ -341,5 +341,130 @@ async function loadReviews(){
 
 loadReviews();
 
+/* =========================
+   DYNAMIC REVIEW PAGE
+========================= */
 
+async function loadSingleReview(){
+
+  const reviewContainer =
+    document.getElementById(
+      "reviewContainer"
+    );
+
+  if(!reviewContainer){
+
+    return;
+
+  }
+
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+  const slug =
+    params.get("slug");
+
+  if(!slug){
+
+    reviewContainer.innerHTML =
+      "<p>Recensione non trovata.</p>";
+
+    return;
+
+  }
+
+  const { data, error } =
+    await supabaseClient
+      .from("reviews")
+      .select("*")
+      .eq("slug", slug)
+      .single();
+
+  if(error || !data){
+
+    console.log(error);
+
+    reviewContainer.innerHTML =
+      "<p>Recensione non trovata.</p>";
+
+    return;
+
+  }
+
+  document.title =
+    `${data.movie_title} • paneacult`;
+
+  reviewContainer.innerHTML = `
+
+    <section class="review-hero">
+
+      <div class="review-hero-content">
+
+        <div class="review-scene">
+
+          <img
+            src="${data.movie_poster}"
+            alt="${data.movie_title}"
+          >
+
+        </div>
+
+        <div class="review-info">
+
+          <p class="review-kicker">
+            RECENSIONE
+          </p>
+
+          <h1 class="review-title">
+            ${data.movie_title}
+          </h1>
+
+          <div class="review-meta">
+
+            <span>
+              ${data.rating}/5
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="review-layout">
+
+      <div class="review-content">
+
+        <p>
+          ${data.review_text}
+        </p>
+
+        <div class="rating">
+
+          <span class="rating-stars">
+
+            ${
+              "★".repeat(data.rating) +
+              "☆".repeat(
+                5 - data.rating
+              )
+            }
+
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  `;
+
+}
+
+loadSingleReview();
 
