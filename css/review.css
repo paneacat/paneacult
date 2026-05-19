@@ -682,32 +682,23 @@
   grid-column:1 / -1;
 
 }
-
 .sidebar-box{
-  width:100%;
 
-  max-width:none;
+  display:grid;
+  grid-template-columns:
+    repeat(4, 1fr);
 
-  padding:34px 42px;
+  gap:28px;
 
-  min-width:540px;
-  
-  border-radius:30px;
-
-  background:
-    rgba(255,255,255,.04);
-
-  border:
-    1px solid rgba(255,255,255,.06);
-
-  backdrop-filter:blur(14px);
+  align-items:start;
 
 }
 
 /* LABEL */
 
 .sidebar-label{
-  margin-bottom:6px;
+  display:block;
+  margin-bottom:8px;
   
   font-size:.7rem;
 
@@ -723,7 +714,7 @@
 /* VALUE */
 
 .sidebar-value{
-
+  display:block;
   font-size:1rem;
 
   color:rgba(255,255,255,.78);
