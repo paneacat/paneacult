@@ -324,10 +324,9 @@ letter-spacing:.04em;
   height:190px;
 
   border-radius:50%;
-
   overflow:hidden;
 
-  padding:4px;
+  padding:2px;
 
   background:
     linear-gradient(
@@ -337,7 +336,7 @@ letter-spacing:.04em;
     );
 
   box-shadow:
-    0 12px 35px rgba(11,47,68,.35);
+    0 12px 35px rgba(11,47,68,.25);
 
 }
 
@@ -1543,32 +1542,51 @@ max-width: 700px;
 opacity:1;
   
 }
+
+
 /* =========================
    PROFILE EDIT
 ========================= */
 
 .profile-edit{
 
-  margin-top:40px;
+  margin:50px auto 0;
 
-  width:min(520px,100%);
+  width:min(620px, 92%);
 
   display:flex;
   flex-direction:column;
-  gap:14px;
+  gap:16px;
+
+  align-items:center;
+
+  padding:34px;
+
+  border-radius:32px;
+
+  background:
+    rgba(255,255,255,.03);
+
+  border:
+    1px solid rgba(255,255,255,.06);
+
+  backdrop-filter:blur(18px);
 
 }
+
+/* INPUT */
 
 .profile-edit input,
 .profile-edit textarea{
 
   width:100%;
 
-  padding:16px 18px;
+  padding:18px 20px;
 
   border-radius:18px;
 
-  border:1px solid rgba(255,255,255,.08);
+  border:
+    1px solid rgba(255,255,255,.08);
 
   background:
     rgba(255,255,255,.04);
@@ -1581,13 +1599,17 @@ opacity:1;
 
 }
 
+/* TEXTAREA */
+
 .profile-edit textarea{
 
-  min-height:110px;
+  min-height:120px;
 
   resize:none;
 
 }
+
+/* FOCUS */
 
 .profile-edit input:focus,
 .profile-edit textarea:focus{
@@ -1596,11 +1618,13 @@ opacity:1;
 
 }
 
+/* BUTTON */
+
 #saveProfileBtn{
 
-  width:fit-content;
+  margin-top:6px;
 
-  padding:14px 22px;
+  padding:14px 24px;
 
   border:none;
 
@@ -1623,7 +1647,3 @@ opacity:1;
   transform:translateY(-2px);
 
 }
-
-
-
-
