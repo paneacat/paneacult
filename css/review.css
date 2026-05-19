@@ -1116,27 +1116,25 @@
 
 .review-hero-content{
 
-  position: relative;
+  position:relative;
 
-  z-index: 3;
+  z-index:3;
 
-  width: min(1280px, 92%);
+  width:min(1200px, 92%);
 
-  margin: 0 auto;
+  margin:0 auto;
 
-  display: grid;
+  display:flex;
 
-  grid-template-columns:
-    240px
-    240px
-    1fr;
+  flex-direction:column;
 
-  gap: 32px;
+  align-items:flex-start;
 
-  align-items: center;
+  gap:28px;
+
+  padding:110px 0 40px;
 
 }
-
 /* =========================
    SCENE IMAGE
 ========================= */
