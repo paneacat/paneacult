@@ -396,9 +396,22 @@ async function loadSingleReview(){
   document.title =
     `${data.movie_title} • paneacult`;
 
-  reviewContainer.innerHTML = `
 
-<section class="review-hero">
+reviewContainer.innerHTML = `
+
+<section
+  class="review-hero"
+  style="
+    background-image:
+      linear-gradient(
+        rgba(7,15,25,.82),
+        rgba(7,15,25,.96)
+      ),
+      url('${data.movie_backdrop}');
+    background-size:cover;
+    background-position:center;
+  "
+>
 
   <div class="review-hero-content">
 
@@ -424,7 +437,7 @@ async function loadSingleReview(){
       <div class="review-meta">
 
         <span>
-          ${data.rating}/5
+          paneacult
         </span>
 
       </div>
@@ -454,13 +467,19 @@ async function loadSingleReview(){
 
       </p>
 
-      <p class="sidebar-label">
-        Rubrica
-      </p>
+      ${
+        data.rubrica
+        ? `
+        <p class="sidebar-label">
+          Rubrica
+        </p>
 
-      <p class="sidebar-value sidebar-series">
-        ${data.rubrica || "-"}
-      </p>
+        <p class="sidebar-value sidebar-series">
+          ${data.rubrica}
+        </p>
+        `
+        : ""
+      }
 
     </div>
 
@@ -484,7 +503,9 @@ async function loadSingleReview(){
       </span>
 
       <span class="rating-text">
+
         — ${data.rating}/5
+
       </span>
 
     </div>
@@ -537,9 +558,5 @@ async function loadSingleReview(){
   </section>
 
 </section>
+
 `;
-
-}
-
-loadSingleReview();
-
