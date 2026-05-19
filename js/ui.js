@@ -178,34 +178,6 @@ const registerBtn =
     }
 
 
-    /* =========================
-       SPLASH
-    ========================= */
-
-    const splash =
-      document.getElementById(
-        "splash"
-      );
-
-    if(splash){
-
-      setTimeout(() => {
-
-        splash.style.opacity = "0";
-
-        splash.style.transition =
-          ".6s";
-
-        setTimeout(() => {
-
-          splash.remove();
-
-        }, 400);
-
-      }, 400);
-
-    }
-
  /* =========================
        CREDITS
     ========================= */
