@@ -684,13 +684,32 @@
 }
 .sidebar-box{
 
+  background:
+    rgba(11,47,68,.72);
+
+  backdrop-filter:
+    blur(16px);
+
+  border:
+    1px solid
+    rgba(255,255,255,.08);
+
+  border-radius:
+    28px;
+
+  padding:
+    32px;
+
   display:grid;
+
   grid-template-columns:
-    repeat(4, 1fr);
+    repeat(4, minmax(140px,1fr));
 
-  gap:28px;
+  gap:
+    28px;
 
-  align-items:start;
+  align-items:
+    start;
 
 }
 
