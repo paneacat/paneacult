@@ -487,9 +487,9 @@ reviewContainer.innerHTML = `
 
   <section class="review-content">
 
-    <p>
-      ${data.review_text}
-    </p>
+    <div class="review-body">
+  ${data.review_text}
+</div>
 
     <div class="rating">
 
