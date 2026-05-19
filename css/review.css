@@ -1345,13 +1345,15 @@ body[data-movie-title="Diamanti grezzi"] .review-scene img{
 
 }
 
-.sidebar-box > .sidebar-value{
+.sidebar-item{
 
-  margin-bottom:34px;
+  display:flex;
+
+  flex-direction:column;
+
+  gap:4px;
 
 }
-
-
 
 .profile-header{
 
