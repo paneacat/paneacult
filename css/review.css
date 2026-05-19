@@ -381,10 +381,6 @@
   position:relative;
 
   z-index:5;
-
-  box-shadow:
-    0 30px 100px rgba(0,0,0,.45);
-
 }
 
 .review-hero-content{
