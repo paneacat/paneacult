@@ -396,28 +396,19 @@ async function loadSingleReview(){
   document.title =
     `${data.movie_title} • paneacult`;
 
-
 reviewContainer.innerHTML = `
-
 
 <section
   class="review-hero"
-<section class="review-hero">
-    background-size:cover;
-    background-position:center;
+  style="
+    background-image:
+      url('${data.movie_backdrop}');
+    background-size: cover;
+    background-position: center;
   "
 >
 
   <div class="review-hero-content">
-
-    <div class="review-scene">
-
-      <img
-src="${data.movie_backdrop}"
-        alt="${data.movie_title}"
-      >
-
-    </div>
 
     <div class="review-info">
 
