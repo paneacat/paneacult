@@ -723,19 +723,72 @@
    REVIEW ACTIONS
 ========================= */
 
+./* =========================
+   MOVIE ACTIONS
+========================= */
+
 .movie-actions{
 
   display:flex;
-
   flex-wrap:wrap;
+  gap:12px;
 
-  gap:14px;
+  margin-bottom:18px;
 
 }
 
+.movie-action-btn{
+
+  padding:12px 18px;
+
+  border-radius:999px;
+
+  border:
+    1px solid rgba(255,255,255,.12);
+
+  background:
+    rgba(15,30,45,.55);
+
+  color:var(--panea-white);
+
+  font-size:.82rem;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.25s ease;
+
+  backdrop-filter:blur(12px);
+
+}
+
+.movie-action-btn:hover{
+
+  transform:translateY(-2px);
+
+  border-color:
+    rgba(253,193,3,.35);
+
+  color:var(--panea-yellow);
+
+}
+
+.movie-action-btn.active{
+
+  background:
+    var(--panea-yellow);
+
+  color:#08131d;
+
+  border-color:
+    var(--panea-yellow);
+
+}
 .watch-btn,
 .watchlist-btn,
-.love-btn{
+.love-btn,
+.desert-btn{
 
   height:56px;
 
@@ -767,7 +820,8 @@
 
 .watch-btn:hover,
 .watchlist-btn:hover,
-.love-btn:hover{
+.love-btn:hover,
+.desert-btn:hover{
 
   background:var(--panea-yellow);
 
@@ -779,7 +833,8 @@
 
 .watch-btn.active,
 .watchlist-btn.active,
-.love-btn.active{
+.love-btn.active,
+.desert-btn.active{
 
   background:var(--panea-yellow);
 
