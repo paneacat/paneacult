@@ -757,29 +757,29 @@ if(
             review => `
 
             <article
-              class="community-card"
-            >
+  class="community-card"
+>
 
-              <div
-                class="community-stars"
-              >
-                ${
-                  "★".repeat(
-                    review.rating
-                  ) +
-                  "☆".repeat(
-                    5-review.rating
-                  )
-                }
-              </div>
+  <div
+    class="community-stars"
+  >
+    ${
+      "★".repeat(
+        review.rating
+      ) +
+      "☆".repeat(
+        5-review.rating
+      )
+    }
+  </div>
 
-              <p
-                class="community-text"
-              >
-                ${review.review_text}
-              </p>
+  <p
+    class="community-text"
+  >
+    ${review.review_text}
+  </p>
 
-            </article>
+</article>
 
           `
           ).join("")
