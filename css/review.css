@@ -1878,20 +1878,36 @@ letter-spacing:.04em;
 
 }
 
+.sidebar-box{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr)) !important;
+
+  gap:30px !important;
+
+}
+
 .sidebar-item{
+
+  justify-content:flex-start !important;
+
   align-items:flex-start !important;
-}
 
-.sidebar-label{
-  margin:0 !important;
-  margin-bottom:8px !important;
-  padding:0 !important;
   text-align:left !important;
-  display:block !important;
-  width:auto !important;
+
 }
 
+.sidebar-label,
 .sidebar-value{
+
   margin:0 !important;
+
+  padding:0 !important;
+
   text-align:left !important;
+
+  width:auto !important;
+
 }
