@@ -1060,11 +1060,6 @@ loveBtn?.addEventListener(
   }
 );
 
-    updateButtons();
-
-  }
-);
-
 desertBtn?.addEventListener(
   "click",
   () => {
