@@ -906,37 +906,21 @@
 }
 
 .review-mood{
-
-  margin:0;
-
-  padding:28px 32px;
-
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
 }
 
 .review-mood-label{
-
-  color:var(--panea-yellow);
-
-  font-size:.72rem;
-
-  letter-spacing:.18em;
-
-  text-transform:uppercase;
-
-  margin-bottom:8px;
-
+  color: #f6b53f;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin: 0;
 }
 
-.review-mood-value{
-
-  margin:0;
-
-  color:rgba(255,255,255,.88);
-
-  line-height:1.8;
-
-  font-size:1rem;
-
+.review-mood-text{
+  margin: 0;
 }
 /* LABEL */
 
