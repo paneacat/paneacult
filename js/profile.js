@@ -139,15 +139,46 @@ function renderGrid(
 
 function renderCurrentFavorite(){
 
+  const desertMovie =
+    JSON.parse(
+      localStorage.getItem(
+        "paneacult_desert_island"
+      )
+    );
+
   if(
-    !favorites.length ||
+    !desertMovie ||
     !currentFavorite
   ) return;
 
-  const movie =
-    favorites[0];
-
   currentFavorite.innerHTML = `
+
+    <img
+      src="
+      https://image.tmdb.org/t/p/original${desertMovie.backdrop_path}
+      "
+      alt="${desertMovie.title}"
+    >
+
+    <div class="current-favorite-content">
+
+      <p class="current-label">
+        DESERT ISLAND FILM
+      </p>
+
+      <h3>
+        ${desertMovie.title}
+      </h3>
+
+      <span>
+        non il migliore.
+        quello che porteresti con te.
+      </span>
+
+    </div>
+
+  `;
+}
 
     <img
       src="
