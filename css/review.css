@@ -937,11 +937,15 @@
 
   color:var(--panea-yellow);
 
-  margin:0 0 8px 0;
+  margin:0 0 6px 0;
+
+  padding:0;
 
   text-align:left;
 
-  width:100%;
+  display:block;
+
+  width:auto;
 
 }
 
@@ -951,11 +955,9 @@
 
   flex-direction:column;
 
-  gap:8px;
+  gap:6px;
 
   min-width:0;
-
-  align-items:flex-start;
 
 }
 
