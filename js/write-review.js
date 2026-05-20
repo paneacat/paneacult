@@ -187,7 +187,16 @@ publishReviewBtn?.addEventListener(
     } =
     await supabaseClient.auth.getUser();
 
-    if(!user){
+    const username =
+
+  user.email
+    ?.split("@")[0]
+
+  ||
+
+  "cinefilo";
+     
+     if(!user){
 
       window.location.href =
         "login.html";
@@ -257,7 +266,10 @@ curiosita:
 
 slug,
           user_id:
-            user.id
+  user.id,
+
+username:
+  username
 
         }]);
 
