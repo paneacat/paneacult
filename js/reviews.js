@@ -572,7 +572,7 @@ ${
 ${
   data.genre
   ? `
-  <div class="sidebar-item">
+  <div class="sidebar-item sidebar-genre">
 
     <p class="sidebar-label">
       Genere
@@ -621,6 +621,22 @@ ${
   </p>
 
 </div>
+  `
+  : ""
+}${
+  data.runtime
+  ? `
+  <div class="sidebar-item sidebar-runtime">
+
+    <p class="sidebar-label">
+      Durata
+    </p>
+
+    <p class="sidebar-value">
+      ${data.runtime}
+    </p>
+
+  </div>
   `
   : ""
 }
