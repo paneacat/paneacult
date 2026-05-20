@@ -164,6 +164,38 @@ const publishReviewBtn =
     "publishReviewBtn"
   );
 
+const publishEditorialBtn =
+  document.getElementById(
+    "publishEditorialBtn"
+  );
+
+/* =========================
+   ADMIN CHECK
+========================= */
+
+async function checkEditorialAccess(){
+
+  const {
+    data:{ user }
+  } =
+  await supabaseClient.auth
+    .getUser();
+
+  if(
+    user &&
+    user.email ===
+    "patrizia.catania22@yahoo.it"
+  ){
+
+    publishEditorialBtn.style
+      .display = "inline-flex";
+
+  }
+
+}
+
+checkEditorialAccess();
+
 /* =========================
    PUBLISH REVIEW
 ========================= */
