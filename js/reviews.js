@@ -472,23 +472,33 @@ reviewContainer.innerHTML = `
 
      <div class="movie-actions">
 
-  ${isWatched
-    ? `<span class="movie-action-btn active">👁️ Visto</span>`
-    : ""}
+<button
+  class="movie-action-btn watch-btn"
+  data-id="${movieId}"
+>
+  👁️ Visto
+</button>
 
-  ${isWatchlist
-    ? `<span class="movie-action-btn active">📌 Da vedere</span>`
-    : ""}
+<button
+  class="movie-action-btn watchlist-btn"
+  data-id="${movieId}"
+>
+  📌 Da vedere
+</button>
 
-  ${favorites.some(
-      f => f.id == movieId
-    )
-    ? `<span class="movie-action-btn active">❤️ Adorato</span>`
-    : ""}
+<button
+  class="movie-action-btn love-btn"
+  data-id="${movieId}"
+>
+  ❤️ Adorato
+</button>
 
-  ${isDesert
-    ? `<span class="movie-action-btn active">🏝️ Desert Island</span>`
-    : ""}
+<button
+  class="movie-action-btn desert-btn"
+  data-id="${movieId}"
+>
+  🏝️ Desert Island
+</button>
 
 </div>
 
@@ -760,7 +770,10 @@ ${
 <div id="userReviewsSection"></div>
 </section>
 `;
-
+initMovieButtons(
+  movieId,
+  data
+);
    const userReviewsSection =
   document.getElementById(
     "userReviewsSection"
