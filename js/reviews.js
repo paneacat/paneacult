@@ -711,9 +711,7 @@ ${
       </div>
 
     </div>
-
-  </section>
-
+<div id="userReviewsSection"></div>
 </section>
 `;
 
