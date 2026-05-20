@@ -470,38 +470,7 @@ reviewContainer.innerHTML = `
 
       <div class="review-meta">
 
-     <div class="movie-actions">
-
-<button
-  class="movie-action-btn watch-btn"
-  data-id="${movieId}"
->
-  👁️ Visto
-</button>
-
-<button
-  class="movie-action-btn watchlist-btn"
-  data-id="${movieId}"
->
-  📌 Da vedere
-</button>
-
-<button
-  class="movie-action-btn love-btn"
-  data-id="${movieId}"
->
-  ❤️ Adorato
-</button>
-
-<button
-  class="movie-action-btn desert-btn"
-  data-id="${movieId}"
->
-  🏝️ Desert Island
-</button>
-
-</div>
-
+     
   ${
     data.year
     ? `
@@ -750,6 +719,37 @@ ${
       `
       : ""
     }
+<div class="movie-actions">
+
+<button
+  class="movie-action-btn watch-btn"
+  data-id="${movieId}"
+>
+  👁️ Visto
+</button>
+
+<button
+  class="movie-action-btn watchlist-btn"
+  data-id="${movieId}"
+>
+  📌 Da vedere
+</button>
+
+<button
+  class="movie-action-btn love-btn"
+  data-id="${movieId}"
+>
+  ❤️ Adorato
+</button>
+
+<button
+  class="movie-action-btn desert-btn"
+  data-id="${movieId}"
+>
+  🏝️ Desert Island
+</button>
+
+</div>
 
     <div class="review-author">
 
