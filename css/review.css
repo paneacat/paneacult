@@ -929,16 +929,18 @@
 .sidebar-label{
 
   font-size:.68rem;
-  text-align:left;
 
-  width:100%;
   letter-spacing:.18em;
 
   text-transform:uppercase;
 
-  color:var(--panea-yellow) !important;
-  
-  margin:14px;
+  color:var(--panea-yellow);
+
+  margin:0 0 8px 0;
+
+  text-align:left;
+
+  width:100%;
 
 }
 
