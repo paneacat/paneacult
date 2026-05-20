@@ -1991,6 +1991,48 @@ section{
 
 
 @media screen and (min-width:769px){
+    .rubrica-card{
+
+  min-height:280px;
+
+  padding:40px;
+  }
+  
+  .review-hero-content{
+
+    grid-template-columns:1fr;
+
+    gap:40px;
+
+  }
+
+  .review-poster{
+
+    max-width:340px;
+
+  }
+
+  .review-layout{
+
+    grid-template-columns:1fr;
+
+    gap:50px;
+
+  }
+
+  .review-sidebar{
+
+    position:relative;
+
+    top:auto;
+
+  }
+
+  .related-grid{
+
+    grid-template-columns:1fr 1fr;
+
+  }
 
   .mobile-tabbar{
 
