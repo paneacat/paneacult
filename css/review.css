@@ -556,7 +556,7 @@
 
   position:relative;
 
-  min-height:90vh;
+  min-height:100vh;
 
   width:100%;
 
@@ -582,76 +582,28 @@
   background:
     linear-gradient(
       to bottom,
-      rgba(5,10,20,.15),
-      rgba(5,10,20,.55),
-      rgba(5,10,20,.9)
+      rgba(3,8,15,.15) 0%,
+      rgba(3,8,15,.55) 40%,
+      rgba(3,8,15,.92) 100%
     );
 
   z-index:1;
 
 }
 
-
-.review-poster{
-
-  width:340px;
-
-  position:relative;
-
-  z-index:5;
-}
-
 .review-hero-content{
 
   max-width:1200px;
-position:relative;
-z-index:2;
-  margin:0 auto;
-  display:block;
-padding:160px 40px 90px;
-width:100%;
-
-}
-/* =========================
-   POSTER
-========================= */
-
-.review-poster{
 
   position:relative;
 
-}
-/* =========================
-   POSTER + SCENE
-========================= */
+  z-index:2;
 
-.review-poster img{
-  width: 100%;
+  margin:0 auto;
 
-  height: 360px;
+  width:100%;
 
-  object-fit: cover;
-
-  display: block;
-
-  box-shadow:
-    0 25px 70px rgba(0,0,0,.35);
-
-}
-
-.review-poster::after{
-
-  content:"";
-
-  position:absolute;
-
-  inset:0;
-
-  border-radius:34px;
-
-  border:1px solid rgba(255,255,255,.08);
-
-  pointer-events:none;
+  padding:220px 40px 90px;
 
 }
 
@@ -1505,24 +1457,6 @@ width:100%;
 }
 
 
-
-body[data-movie-title="Barton Fink"] .review-scene img{
-
-  object-position:center 20%;
-
-}
-
-body[data-movie-title="Una giusta causa"] .review-scene img{
-
-  object-position:center 15%;
-
-}
-
-body[data-movie-title="Diamanti grezzi"] .review-scene img{
-
-  object-position:center 80%;
-
-}
 
 .profile-header{
 
