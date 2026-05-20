@@ -1025,7 +1025,7 @@ function initMovieButtons(
     }
   );
 
-  loveBtn?.addEventListener(
+loveBtn?.addEventListener(
   "click",
   () => {
 
@@ -1054,6 +1054,11 @@ function initMovieButtons(
       "paneacult_favorites",
       JSON.stringify(favorites)
     );
+
+    updateButtons();
+
+  }
+);
 
     updateButtons();
 
