@@ -720,17 +720,23 @@ ${
 
     </div>
 
-   <div class="review-mood">
+   ${
+  data.mood
+  ? `
+  <div class="review-mood">
 
-  <span class="review-mood-label">
-    MOOD
-  </span>
+    <span class="review-mood-label">
+      MOOD
+    </span>
 
-  <span class="review-mood-value">
-    ${data.mood}
-  </span>
+    <span class="review-mood-value">
+      ${data.mood}
+    </span>
 
-</div>
+  </div>
+  `
+  : ""
+   }
 
     ${
       data.quote
