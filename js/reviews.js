@@ -868,4 +868,186 @@ if(
 
 }
 
+/* =========================
+   MOVIE BUTTONS
+========================= */
+
+function initMovieButtons(
+  movieId,
+  movieData
+){
+
+  const watchBtn =
+    document.querySelector(
+      ".watch-btn"
+    );
+
+  const watchlistBtn =
+    document.querySelector(
+      ".watchlist-btn"
+    );
+
+  const loveBtn =
+    document.querySelector(
+      ".love-btn"
+    );
+
+  const desertBtn =
+    document.querySelector(
+      ".desert-btn"
+    );
+
+  let watched =
+    JSON.parse(
+      localStorage.getItem(
+        "paneacult_watched"
+      )
+    ) || [];
+
+  let watchlist =
+    JSON.parse(
+      localStorage.getItem(
+        "paneacult_watchlist"
+      )
+    ) || [];
+
+  let favorites =
+    JSON.parse(
+      localStorage.getItem(
+        "paneacult_favorites"
+      )
+    ) || [];
+
+  let desert =
+    JSON.parse(
+      localStorage.getItem(
+        "paneacult_desert_island"
+      )
+    );
+
+  function updateButtons(){
+
+    watchBtn?.classList.toggle(
+      "active",
+      watched.some(
+        m => m.id == movieId
+      )
+    );
+
+    watchlistBtn?.classList.toggle(
+      "active",
+      watchlist.some(
+        m => m.id == movieId
+      )
+    );
+
+    loveBtn?.classList.toggle(
+      "active",
+      favorites.some(
+        m => m.id == movieId
+      )
+    );
+
+    desertBtn?.classList.toggle(
+      "active",
+      desert?.id == movieId
+    );
+
+  }
+
+  watchBtn?.addEventListener(
+    "click",
+    () => {
+
+      if(
+        watched.some(
+          m => m.id == movieId
+        )
+      ){
+
+        watched =
+          watched.filter(
+            m => m.id != movieId
+          );
+
+      }else{
+
+        watched.push({
+          id: movieId,
+          title: movieData.movie_title,
+          poster: movieData.movie_poster
+        });
+
+      }
+
+      localStorage.setItem(
+        "paneacult_watched",
+        JSON.stringify(watched)
+      );
+
+      updateButtons();
+
+    }
+  );
+
+  watchlistBtn?.addEventListener(
+    "click",
+    () => {
+
+      if(
+        watchlist.some(
+          m => m.id == movieId
+        )
+      ){
+
+        watchlist =
+          watchlist.filter(
+            m => m.id != movieId
+          );
+
+      }else{
+
+        watchlist.push({
+          id: movieId,
+          title: movieData.movie_title,
+          poster: movieData.movie_poster
+        });
+
+      }
+
+      localStorage.setItem(
+        "paneacult_watchlist",
+        JSON.stringify(watchlist)
+      );
+
+      updateButtons();
+
+    }
+  );
+
+  loveBtn?.addEventListener(
+    "click",
+    () => {
+
+      if(
+        favorites.some(
+          m => m.id == movieId
+        )
+      ){
+
+        favorites =
+          favorites.filter(
+            m => m.id != movieId
+          );
+
+      }else{
+
+        favorites.push({
+          id: movieId,
+          title: movieData.movie_title,
+          poster: movieData.movie_poster
+        });
+
+      }
+       
 loadSingleReview();
