@@ -554,18 +554,21 @@
 ========================= */
 .review-hero{
 
-  min-height:80vh;
+  position:relative;
+
+  min-height:90vh;
+
+  width:100%;
 
   display:flex;
-  position:relative;
-overflow:hidden;
+
   align-items:flex-end;
 
-  padding:120px 0 70px;
+  overflow:hidden;
 
-  background-size:cover;
-
-  background-position:center;
+  background-size:cover !important;
+  background-position:center center !important;
+  background-repeat:no-repeat;
 
 }
 
@@ -574,20 +577,21 @@ overflow:hidden;
   content:"";
 
   position:absolute;
-
   inset:0;
 
   background:
     linear-gradient(
-      to top,
-      rgba(8,12,22,.92) 0%,
-      rgba(8,12,22,.58) 45%,
-      rgba(8,12,22,.18) 100%
+      to bottom,
+      rgba(5,10,20,.15),
+      rgba(5,10,20,.55),
+      rgba(5,10,20,.9)
     );
 
   z-index:1;
 
 }
+
+
 .review-poster{
 
   width:340px;
@@ -603,10 +607,9 @@ overflow:hidden;
 position:relative;
 z-index:2;
   margin:0 auto;
-
   display:block;
-
-  padding:110px 40px 50px;
+padding:160px 40px 90px;
+width:100%;
 
 }
 /* =========================
