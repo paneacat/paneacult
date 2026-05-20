@@ -353,13 +353,17 @@
 
 }
 
-.movie-action-btn{
+.love-btn,
+.desert-btn{
 
   display:inline-flex;
+
   align-items:center;
+
   justify-content:center;
 
   width:auto !important;
+
   min-width:unset;
 
   padding:6px 12px;
@@ -376,17 +380,21 @@
 
   cursor:pointer;
 
-  flex:none !important;
+  transition:.25s ease;
 
 }
 
-.movie-action-btn.active{
+.love-btn:hover,
+.desert-btn:hover{
 
   background:#f5c518;
+
   color:#111;
+
   border-color:#f5c518;
 
 }
+
 
 .review-top-actions .movie-action-btn{
 
