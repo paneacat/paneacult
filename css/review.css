@@ -899,13 +899,53 @@
 
 .sidebar-country,
 .sidebar-runtime,
-.sidebar-rubrica,
-.sidebar-mood{
+.sidebar-rubrica{
 
   grid-row:2;
 
 }
 
+.review-mood{
+
+  margin:50px 0 40px;
+
+  padding:28px 32px;
+
+  border-radius:26px;
+
+  background:
+    rgba(255,255,255,.03);
+
+  border:
+    1px solid rgba(255,255,255,.06);
+
+}
+
+.review-mood-label{
+
+  color:var(--panea-yellow);
+
+  font-size:.72rem;
+
+  letter-spacing:.18em;
+
+  text-transform:uppercase;
+
+  margin-bottom:14px;
+
+}
+
+.review-mood-value{
+
+  margin:0;
+
+  color:rgba(255,255,255,.88);
+
+  line-height:1.8;
+
+  font-size:1rem;
+
+}
 /* LABEL */
 
 .sidebar-label{
