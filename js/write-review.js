@@ -204,6 +204,10 @@ publishReviewBtn?.addEventListener(
   "click",
   async () => {
 
+     saveMovieStatus(
+  "watched"
+);
+     
     if(!selectedMovieData){
 
       alert(
