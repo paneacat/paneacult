@@ -588,7 +588,7 @@ ${
 }
    
    ${
-  data.runtime
+  data.imdb_rating
   ? `
   <div class="sidebar-item sidebar-imdb">
 
@@ -597,14 +597,13 @@ ${
     </p>
 
     <p class="sidebar-value">
-      ${data.imdb_rating || "-"} /10
+      ${data.imdb_rating} /10
     </p>
 
   </div>
   `
   : ""
-}
-
+   }
 ${
   data.country
   ? `
@@ -677,7 +676,6 @@ ${
   : ""
 }
 </div>
-    </div>
 
 <div class="movie-actions">
 
