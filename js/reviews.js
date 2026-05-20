@@ -578,17 +578,16 @@ ${
   : ""
 }
 
-  <div class="sidebar-item">
+ <div class="sidebar-item">
 
-  <p class="sidebar-label">
-    IMDb
-  </p>
+    <p class="sidebar-label">
+      IMDb
+    </p>
 
-  <p class="sidebar-value sidebar-rating">
-    ${data.imdb_rating || "-"} /10
-  </p>
+    <p class="sidebar-value sidebar-rating">
+      ${data.imdb_rating || "-"} /10
+    </p>
 
-</div>
   </div>
 
 ${
@@ -626,7 +625,7 @@ ${
   `
   : ""
 }
-
+</div>
     </div>
 
   </aside>
