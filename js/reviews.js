@@ -558,15 +558,15 @@ ${
   ? `
   <div class="sidebar-item">
 
-    <p class="sidebar-label">
-      Durata
-    </p>
+  <p class="sidebar-label">
+    IMDb
+  </p>
 
-    <p class="sidebar-value">
-      ${data.runtime}
-    </p>
+  <p class="sidebar-value sidebar-rating">
+    ${data.imdb_rating || "-"} /10
+  </p>
 
-  </div>
+</div>
   `
   : ""
 }
