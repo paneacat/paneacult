@@ -431,18 +431,6 @@
 
 }
 
-.desert-btn:hover{
-
-  background:
-    rgba(106,214,170,.08);
-
-  box-shadow:
-    0 0 25px rgba(
-      106,214,170,.12
-    );
-
-}
-
 .desert-btn.active{
 
   background:
