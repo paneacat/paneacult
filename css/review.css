@@ -913,8 +913,7 @@
   margin-top: 20px;
 }
 
-.review-mood-label,
-.review-mood-value{
+.review-mood-label{
   margin:0;
   color:var(--panea-yellow);
   font-weight: 700;
@@ -922,6 +921,12 @@
   margin: 0;
 }
 
+.review-mood-value{
+margin:0;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin: 0;
+}
 .review-mood-text{
   margin: 0;
 }
