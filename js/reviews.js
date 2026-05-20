@@ -507,10 +507,6 @@ ${
   ? `
   <div class="where-watch">
 
-    <span class="where-watch-label">
-      Dove guardarlo
-    </span>
-
     <a
       href="${data.watch_link}"
       target="_blank"
