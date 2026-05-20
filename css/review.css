@@ -931,17 +931,17 @@
 
 }
 
-.review-mood-value{
+.review-mood .review-mood-value,
+.review-mood .review-mood-value *,
+.review-mood-value strong{
 
   color:#fff !important;
-
-  font-size:1rem;
 
   font-weight:500 !important;
 
   letter-spacing:0 !important;
 
-  margin:0;
+  margin:0 !important;
 
 }
 
