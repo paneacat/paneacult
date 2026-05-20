@@ -402,9 +402,7 @@ reviewContainer.innerHTML = `
 
 <section
   class="review-hero"
-  style="
-    background-image:
-      url('${data.movie_backdrop}');
+<section class="review-hero">
     background-size:cover;
     background-position:center;
   "
@@ -415,7 +413,7 @@ reviewContainer.innerHTML = `
     <div class="review-scene">
 
       <img
-        src="${data.movie_poster}"
+src="${data.movie_backdrop}"
         alt="${data.movie_title}"
       >
 
