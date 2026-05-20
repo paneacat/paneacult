@@ -909,12 +909,13 @@
   display:flex;
   align-items:center;
   gap:10px;
+  margin-top:8px;
 }
 
 .review-mood-label,
 .review-mood-value{
   margin:0;
-  color: #f6b53f;
+  color:var(--panea-yellow);
   font-weight: 700;
   letter-spacing: 3px;
   margin: 0;
