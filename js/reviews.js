@@ -608,16 +608,17 @@ ${
 ${
   data.country
   ? `
-  <div class="sidebar-item">
+  <div class="sidebar-item sidebar-country-row">
 
-    <p class="sidebar-label">
-      Paese
-    </p>
+  <p class="sidebar-label">
+    Paese
+  </p>
 
-    <p class="sidebar-value sidebar-country">
-  ${data.country}
-</p>
-  </div>
+  <p class="sidebar-value">
+    ${data.country}
+  </p>
+
+</div>
   `
   : ""
 }
