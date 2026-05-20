@@ -429,4 +429,8 @@ function renderMovies(movies){
 
 }
 
-loadTrending();
+if(favoriteGrid){
+
+  loadTrending();
+
+}
