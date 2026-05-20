@@ -947,6 +947,14 @@
   width:100%;
 
 }
+
+
+.sidebar-country-row{
+
+  grid-column:1 / -1;
+
+}
+
 /* WATCH LINK */
 
 .sidebar-watch{
