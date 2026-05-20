@@ -813,13 +813,14 @@
 
   margin:0 auto;
 
-  padding:4rem 0 8rem;
+  padding:4rem 0 2rem;
 
   display:flex;
 
   flex-direction:column;
 
   gap:60px;
+
   margin-top:10px;
 
 }
