@@ -203,11 +203,10 @@ checkEditorialAccess();
 publishReviewBtn?.addEventListener(
   "click",
   async () => {
-
-     saveMovieStatus(
+saveMovieStatus(
   "watched"
 );
-     
+   
     if(!selectedMovieData){
 
       alert(
