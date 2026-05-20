@@ -752,8 +752,6 @@ ${
       : ""
     }
 
-</div>
-
     <div class="review-author">
 
       <img
