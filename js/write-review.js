@@ -257,13 +257,7 @@ const curiositaValue =
 
           rating:
   ratingValue,
-
-quote:
-  quoteValue,
-
-curiosita:
-  curiositaValue,
-
+           
 slug,
           user_id:
   user.id,
