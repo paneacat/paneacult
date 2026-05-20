@@ -719,8 +719,7 @@ ${
       </span>
 
     </div>
-
-   ${
+${
   data.mood
   ? `
   <div class="review-mood">
@@ -736,7 +735,8 @@ ${
   </div>
   `
   : ""
-   }
+}
+   
 
     ${
       data.quote
