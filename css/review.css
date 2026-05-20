@@ -110,6 +110,51 @@
 
 }
 
+/* =========================
+   EDITORIAL BUTTON
+========================= */
+
+.editorial-btn{
+
+  margin-top:14px;
+
+  padding:16px 30px;
+
+  border-radius:999px;
+
+  border:1px solid
+    var(--panea-yellow);
+
+  background:
+    var(--panea-yellow);
+
+  color:#111;
+
+  font-size:14px;
+
+  font-weight:700;
+
+  letter-spacing:.08em;
+
+  text-transform:uppercase;
+
+  cursor:pointer;
+
+  transition:.25s ease;
+
+}
+
+.editorial-btn:hover{
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 12px 28px
+    rgba(243,201,77,.22);
+
+}
+
 #publishReviewBtn:hover{
 
   background: #f3c94d;
