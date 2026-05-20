@@ -907,7 +907,7 @@
 
 .review-mood{
 
-  margin:50px 0 40px;
+  margin:0;
 
   padding:28px 32px;
 
@@ -923,7 +923,7 @@
 
   text-transform:uppercase;
 
-  margin-bottom:14px;
+  margin-bottom:8px;
 
 }
 
@@ -948,8 +948,7 @@
 
   text-transform:uppercase;
 
-  color:
-    rgba(255,255,255,.42);
+  color:var(--panea-yellow);
 
   margin:0;
 
