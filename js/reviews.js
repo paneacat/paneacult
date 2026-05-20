@@ -618,10 +618,9 @@ ${
       Paese
     </p>
 
-    <p class="sidebar-value">
-      ${data.country}
-    </p>
-
+    <p class="sidebar-value sidebar-country">
+  ${data.country}
+</p>
   </div>
   `
   : ""
