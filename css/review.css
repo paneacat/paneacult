@@ -909,7 +909,6 @@
   display:flex;
   align-items:center;
   gap:10px;
-  margin-top:8px;
 }
 
 .review-mood-label,
@@ -934,9 +933,9 @@
 
   text-transform:uppercase;
 
-  color:var(--panea-yellow);
-
-  margin:0;
+  color:var(--panea-yellow) !important;
+  
+  margin:14px;;
 
 }
 
