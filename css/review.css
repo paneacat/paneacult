@@ -880,11 +880,25 @@
   padding:18px 22px;
   margin-top: 12px;
   display:grid;
-
-  grid-template-columns:
-  repeat(auto-fit,minmax(160px,1fr));
-
+grid-template-columns:
+  repeat(3,1fr);
   gap:22px;
+
+}
+
+.sidebar-regia,
+.sidebar-screenplay,
+.sidebar-imdb{
+
+  grid-row:1;
+
+}
+
+.sidebar-country,
+.sidebar-rubrica,
+.sidebar-mood{
+
+  grid-row:2;
 
 }
 
