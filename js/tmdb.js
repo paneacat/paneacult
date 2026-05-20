@@ -160,10 +160,10 @@ if(hero && movie.backdrop_path){
   </button>
 
 <button
-  class="movie-action-btn love-btn"
+  <i class="fa-solid fa-tree-palm"></i>
   id="markDesertBtn"
 >
-  🏝 Desert Island
+  Desert Island
 </button>
 </div>
 
