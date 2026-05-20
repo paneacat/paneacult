@@ -376,11 +376,12 @@ async function loadSingleReview(){
   }
 
   const { data, error } =
-    await supabaseClient
-      .from("reviews")
-      .select("*")
-      .eq("slug", slug)
-      .single();
+  await supabaseClient
+    .from("reviews")
+    .select("*")
+    .eq("slug", slug)
+    .limit(1)
+    .maybeSingle();
 
   if(error || !data){
 
