@@ -657,24 +657,6 @@ ${
   `
   : ""
 }
-
-${
-  data.mood
-  ? `
-  <div class="sidebar-item sidebar-mood">
-
-    <p class="sidebar-label">
-      Mood
-    </p>
-
-    <p class="sidebar-value">
-      ${data.mood}
-    </p>
-
-  </div>
-  `
-  : ""
-}
 </div>
 
 <div class="movie-actions">
@@ -714,6 +696,25 @@ ${
 <section class="review-content">
 
     <div class="review-body">
+
+    ${
+  data.mood
+  ? `
+  <div class="sidebar-item sidebar-mood">
+
+    <p class="sidebar-label">
+      Mood
+    </p>
+
+    <p class="sidebar-value">
+      ${data.mood}
+    </p>
+
+  </div>
+  `
+  : ""
+    }
+    
   ${data.review_text}
 </div>
 
