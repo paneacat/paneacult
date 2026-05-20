@@ -14,6 +14,16 @@ const reviewRating =
     "reviewRating"
   );
 
+const reviewQuote =
+  document.getElementById(
+    "reviewQuote"
+  );
+
+const reviewCuriosita =
+  document.getElementById(
+    "reviewCuriosita"
+  );
+
 const autosaveStatus =
   document.getElementById(
     "autosaveStatus"
@@ -194,6 +204,12 @@ publishReviewBtn?.addEventListener(
         reviewRating.value
       );
 
+     const quoteValue =
+  reviewQuote?.value.trim();
+
+const curiositaValue =
+  reviewCuriosita?.value.trim();
+     
     if(!reviewTextValue){
 
       alert(
@@ -231,10 +247,15 @@ publishReviewBtn?.addEventListener(
             reviewTextValue,
 
           rating:
-            ratingValue,
+  ratingValue,
 
-          slug,
+quote:
+  quoteValue,
 
+curiosita:
+  curiositaValue,
+
+slug,
           user_id:
             user.id
 
@@ -282,6 +303,10 @@ localStorage.removeItem(
 reviewText.value = "";
 
 reviewRating.value = "";
+
+reviewQuote.value = "";
+     
+reviewCuriosita.value = "";
 
 selectedMovie.innerHTML = "";
 
