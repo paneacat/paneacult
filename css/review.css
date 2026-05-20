@@ -908,36 +908,40 @@
 .review-mood{
 
   display:flex;
-
-  align-items:center;
-
-  gap:10px;
-
-  margin-top:20px;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:6px;
+  margin-top:28px;
 
 }
 
 .review-mood-label{
 
-  margin:0;
+  color:var(--panea-yellow) !important;
 
-  color:var(--panea-yellow);
+  font-size:.78rem;
+
+  letter-spacing:.18em;
+
+  text-transform:uppercase;
 
   font-weight:700;
 
-  letter-spacing:3px;
+  margin:0;
 
 }
 
 .review-mood-value{
 
-  margin:0 !important;
+  color:#fff !important;
 
-  color:rgba(255,255,255,.92) !important;
+  font-size:1rem;
 
   font-weight:500 !important;
 
   letter-spacing:0 !important;
+
+  margin:0;
 
 }
 
