@@ -554,12 +554,40 @@
 ========================= */
 .review-hero{
 
-  position:relative;
+  min-height:80vh;
 
-  padding:3rem 0 1rem;
+  display:flex;
+  position:relative;
+overflow:hidden;
+  align-items:flex-end;
+
+  padding:120px 0 70px;
+
+  background-size:cover;
+
+  background-position:center;
 
 }
 
+.review-hero::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(8,12,22,.92) 0%,
+      rgba(8,12,22,.58) 45%,
+      rgba(8,12,22,.18) 100%
+    );
+
+  z-index:1;
+
+}
 .review-poster{
 
   width:340px;
@@ -572,7 +600,8 @@
 .review-hero-content{
 
   max-width:1200px;
-
+position:relative;
+z-index:2;
   margin:0 auto;
 
   display:block;
