@@ -373,45 +373,6 @@
   font-size: 12px;
 
 }
-.movie-actions{
-
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:14px 0 18px;
-
-}
-
-.movie-action-btn{
-
-  display:inline-flex;
-  align-items:center;
-
-  padding:8px 14px;
-
-  border-radius:999px;
-
-  background:
-    rgba(253,193,3,.12);
-
-  border:
-    1px solid rgba(253,193,3,.28);
-
-  color:var(--panea-yellow);
-
-  font-size:.78rem;
-
-  font-weight:600;
-
-  letter-spacing:.04em;
-}
-
-.movie-action-btn:hover{
-
-  background:#f5c518;
-  color:#111;
-
-}
 
 .review-top-actions{
 
@@ -719,11 +680,8 @@
 
 }
 
-/* =========================
-   REVIEW ACTIONS
-========================= */
 
-./* =========================
+/* =========================
    MOVIE ACTIONS
 ========================= */
 
