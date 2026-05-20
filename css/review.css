@@ -880,14 +880,17 @@
   padding:18px 22px;
   margin-top: 12px;
   display:grid;
-grid-template-columns:
-  repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(4,1fr);
+
   gap:22px;
 
 }
 
 .sidebar-regia,
 .sidebar-screenplay,
+.sidebar-genre,
 .sidebar-imdb{
 
   grid-row:1;
@@ -895,6 +898,7 @@ grid-template-columns:
 }
 
 .sidebar-country,
+.sidebar-runtime,
 .sidebar-rubrica,
 .sidebar-mood{
 
