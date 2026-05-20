@@ -100,8 +100,9 @@ if(hero && movie.backdrop_path){
     <div class="selected-movie-card">
 
       <img
-        src="https://image.tmdb.org/t/p/original${movie.backdrop_path}"
-      >
+  src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
+  alt="${movie.title}"
+>
 
       <div class="selected-movie-content">
 
