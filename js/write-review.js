@@ -281,8 +281,6 @@ const curiositaValue =
           movie_poster:
             `https://image.tmdb.org/t/p/w500${selectedMovieData.poster_path}`,
 
-          movie_backdrop:
-            `https://image.tmdb.org/t/p/original${selectedMovieData.backdrop_path}`,
 
           review_text:
             reviewTextValue,
@@ -401,43 +399,53 @@ publishEditorialBtn?.addEventListener(
         .replace(
           /[^\w-]+/g,
           ""
-        );
+        )
+     
+    const {
+  data:{ user }
+} =
+await supabaseClient.auth
+  .getUser();
 
-    const { error } =
-      await supabaseClient
-        .from("reviews")
-        .insert([{
+const { error } =
+  await supabaseClient
+    .from("reviews")
+    .insert([{
 
-          movie_id:
-            selectedMovieData.id,
+      movie_id:
+        selectedMovieData.id,
 
-          movie_title:
-            selectedMovieData.title,
+      movie_title:
+        selectedMovieData.title,
 
-          movie_poster:
-            `https://image.tmdb.org/t/p/w500${selectedMovieData.poster_path}`,
+      movie_poster:
+        `https://image.tmdb.org/t/p/w500${selectedMovieData.poster_path}`,
 
-          movie_backdrop:
-            `https://image.tmdb.org/t/p/original${selectedMovieData.backdrop_path}`,
+      movie_backdrop:
+        `https://image.tmdb.org/t/p/original${selectedMovieData.backdrop_path}`,
 
-          review_text:
-            reviewTextValue,
+      review_text:
+        reviewTextValue,
 
-          rating:
-            ratingValue,
+      rating:
+        ratingValue,
 
-          quote:
-            reviewQuote?.value
-              .trim(),
+      quote:
+        reviewQuote?.value.trim(),
 
-          curiosita:
-            reviewCuriosita?.value
-              .trim(),
+      curiosita:
+        reviewCuriosita?.value.trim(),
 
-          slug
+      slug,
 
-        }]);
+      author_id:
+        user?.id,
 
+      is_editorial:
+        true
+
+    }]);
+          
     if(error){
 
       console.log(error);
