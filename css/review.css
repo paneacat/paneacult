@@ -905,28 +905,42 @@
   grid-row:2;
 
 }
-
 .review-mood{
+
   display:flex;
+
   align-items:center;
+
   gap:10px;
-  margin-top: 20px;
+
+  margin-top:20px;
+
 }
 
 .review-mood-label{
+
   margin:0;
+
   color:var(--panea-yellow);
-  font-weight: 700;
-  letter-spacing: 3px;
-  margin: 0;
+
+  font-weight:700;
+
+  letter-spacing:3px;
+
 }
 
 .review-mood-value{
-margin:0;
-  font-weight: 700;
-  letter-spacing: 3px;
-  margin: 0;
+
+  margin:0;
+
+  color:rgba(255,255,255,.92);
+
+  font-weight:500;
+
+  letter-spacing:0;
+
 }
+
 .review-mood-text{
   margin: 0;
 }
