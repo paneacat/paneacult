@@ -586,9 +586,7 @@ ${
   `
   : ""
 }
-
-${
-
+   
    ${
   data.runtime
   ? `
@@ -623,7 +621,9 @@ ${
 </div>
   `
   : ""
-}${
+}
+
+${
   data.runtime
   ? `
   <div class="sidebar-item sidebar-runtime">
