@@ -427,33 +427,6 @@ const isDesert =
 
 
 reviewContainer.innerHTML = `
-const movieId =
-  data.movie_id;
-
-const movieStatus =
-  localStorage.getItem(
-    `paneacult_movie_status_${movieId}`
-  );
-
-const favorites =
-  JSON.parse(
-    localStorage.getItem(
-      "paneacult_favorites"
-    )
-  ) || [];
-
-const desertMovie =
-  JSON.parse(
-    localStorage.getItem(
-      "paneacult_desert_island"
-    )
-  );
-
-const isDesert =
-  desertMovie?.id == movieId;
-
-
-reviewContainer.innerHTML = `
 
 <section
   class="review-hero"
