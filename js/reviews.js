@@ -536,7 +536,7 @@ ${
 ${
   data.director
   ? `
-  <div class="sidebar-item">
+<div class="sidebar-item sidebar-regia">
 
     <p class="sidebar-label">
       Regia
@@ -554,7 +554,7 @@ ${
 ${
   data.screenplay
   ? `
-  <div class="sidebar-item">
+  <div class="sidebar-item sidebar-screenplay">
 
     <p class="sidebar-label">
       Sceneggiatura
@@ -588,19 +588,21 @@ ${
 }
 
 ${
+
+   ${
   data.runtime
   ? `
-  <div class="sidebar-item">
+  <div class="sidebar-item sidebar-imdb">
 
-  <p class="sidebar-label">
-    IMDb
-  </p>
+    <p class="sidebar-label">
+      IMDb
+    </p>
 
-  <p class="sidebar-value sidebar-rating">
-    ${data.imdb_rating || "-"} /10
-  </p>
+    <p class="sidebar-value">
+      ${data.imdb_rating || "-"} /10
+    </p>
 
-</div>
+  </div>
   `
   : ""
 }
@@ -608,7 +610,7 @@ ${
 ${
   data.country
   ? `
-  <div class="sidebar-item sidebar-country-row">
+  <div class="sidebar-item sidebar-country">
 
   <p class="sidebar-label">
     Paese
@@ -626,7 +628,7 @@ ${
 ${
   data.rubrica
   ? `
-  <div class="sidebar-item">
+  <div class="sidebar-item sidebar-rubrica">
 
     <p class="sidebar-label">
       Rubrica
@@ -644,7 +646,7 @@ ${
 ${
   data.mood
   ? `
-  <div class="sidebar-item">
+  <div class="sidebar-item sidebar-mood">
 
     <p class="sidebar-label">
       Mood
