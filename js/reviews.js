@@ -720,8 +720,6 @@ ${
 
     </div>
 
-${
-
    <div class="review-mood">
 
   <span class="review-mood-label">
