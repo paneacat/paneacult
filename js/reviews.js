@@ -700,24 +700,6 @@ ${
   ${data.review_text}
 </div>
 
-${
-  data.mood
-  ? `
-  <div class="review-mood">
-
-    <p class="review-mood-label">
-      Mood
-    </p>
-
-    <p class="review-mood-value">
-   
-   ${data.mood}
-    </p>
-
-  </div>
-  `
-  : ""
-}
     <div class="rating">
 
       <span class="rating-stars">
@@ -736,6 +718,26 @@ ${
       </span>
 
     </div>
+
+${
+  data.mood
+  ? `
+  <div class="review-mood">
+
+    <p class="review-mood-label">
+      Mood
+    </p>
+
+    <p class="review-mood-value">
+   
+   ${data.mood}
+    </p>
+
+  </div>
+  `
+  : ""
+}
+
 
     ${
       data.quote
