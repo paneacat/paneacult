@@ -328,9 +328,7 @@ reviewForm.style.display =
   "none";
 
 selectedMovieData = null;
-    alert(
-      "Recensione pubblicata ✨"
-    );
-
+    window.location.href =
+  `user-review.html?slug=${slug}`;
   }
 );
