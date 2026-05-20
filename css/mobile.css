@@ -1990,7 +1990,8 @@ section{
 
 
 
-@media screen and (min-width:769px){
+@media screen and (min-width:900px)
+
     .rubrica-card{
 
   min-height:280px;
@@ -2039,6 +2040,9 @@ section{
     display:none !important;
 
   }
+}
+
+@media screen and (max-width:900px)
     .profile-nav{
 
     display:none;
