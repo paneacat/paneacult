@@ -1877,3 +1877,21 @@ letter-spacing:.04em;
   font-size:1rem;
 
 }
+
+.sidebar-item{
+  align-items:flex-start !important;
+}
+
+.sidebar-label{
+  margin:0 !important;
+  margin-bottom:8px !important;
+  padding:0 !important;
+  text-align:left !important;
+  display:block !important;
+  width:auto !important;
+}
+
+.sidebar-value{
+  margin:0 !important;
+  text-align:left !important;
+}
