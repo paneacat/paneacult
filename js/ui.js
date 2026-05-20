@@ -24,7 +24,6 @@ document.addEventListener(
 ========================= */
 
 function updateMovieButtons(status){
-function updateMovieButtons(status){
 
   const watchedBtn =
     document.getElementById(
@@ -117,6 +116,7 @@ const markDesertBtn =
   document.getElementById(
     "markDesertBtn"
   );
+
   markWatchedBtn?.addEventListener(
     "click",
     () => {
@@ -138,19 +138,24 @@ const markDesertBtn =
 
     }
   );
-markDesertBtn?.addEventListener(
+
+   markDesertBtn?.addEventListener(
   "click",
   () => {
-
-    saveMovieStatus(
-      "desert"
-    );
 
     localStorage.setItem(
       "paneacult_desert_island",
       JSON.stringify(
         selectedMovieData
       )
+    );
+
+    toggleMovieList(
+      "paneacult_favorites"
+    );
+
+    markDesertBtn.classList.add(
+      "active"
     );
 
   }
