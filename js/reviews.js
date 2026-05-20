@@ -697,27 +697,27 @@ ${
 
     <div class="review-body">
 
-    ${
+  ${data.review_text}
+</div>
+
+${
   data.mood
   ? `
-  <div class="sidebar-item sidebar-mood">
+  <div class="review-mood">
 
-    <p class="sidebar-label">
+    <p class="review-mood-label">
       Mood
     </p>
 
-    <p class="sidebar-value">
-      ${data.mood}
+    <p class="review-mood-value">
+   
+   ${data.mood}
     </p>
 
   </div>
   `
   : ""
-    }
-    
-  ${data.review_text}
-</div>
-
+}
     <div class="rating">
 
       <span class="rating-stars">
