@@ -929,7 +929,9 @@
 .sidebar-label{
 
   font-size:.68rem;
+  text-align:left;
 
+  width:100%;
   letter-spacing:.18em;
 
   text-transform:uppercase;
@@ -950,7 +952,10 @@
 
   min-width:0;
 
+  align-items:flex-start;
+
 }
+
 /* VALUE */
 
 .sidebar-value{
@@ -963,6 +968,9 @@
     rgba(255,255,255,.92);
 
   margin:0;
+  text-align:left;
+
+  width:100%;
 
   font-weight:500;
 
