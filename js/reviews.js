@@ -422,6 +422,28 @@ reviewContainer.innerHTML = `
 
       <div class="review-meta">
 
+     <div class="movie-actions">
+
+  ${movieStatus === "watched"
+    ? `<span class="movie-action-btn active">👁️ Visto</span>`
+    : ""}
+
+  ${movieStatus === "watchlist"
+    ? `<span class="movie-action-btn active">📌 Da vedere</span>`
+    : ""}
+
+  ${favorites.some(
+      f => f.id == movieId
+    )
+    ? `<span class="movie-action-btn active">❤️ Adorato</span>`
+    : ""}
+
+  ${isDesert
+    ? `<span class="movie-action-btn active">🏝️ Desert Island</span>`
+    : ""}
+
+</div>
+
   ${
     data.year
     ? `
