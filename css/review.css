@@ -931,13 +931,13 @@
 
 .review-mood-value{
 
-  margin:0;
+  margin:0 !important;
 
-  color:rgba(255,255,255,.92);
+  color:rgba(255,255,255,.92) !important;
 
-  font-weight:500;
+  font-weight:500 !important;
 
-  letter-spacing:0;
+  letter-spacing:0 !important;
 
 }
 
