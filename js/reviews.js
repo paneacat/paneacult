@@ -403,10 +403,19 @@ async function loadSingleReview(){
 const movieId =
   data.movie_id;
 
-const movieStatus =
-  localStorage.getItem(
-    `paneacult_movie_status_${movieId}`
-  );
+const watchedMovies =
+  JSON.parse(
+    localStorage.getItem(
+      "paneacult_watched"
+    )
+  ) || [];
+
+const watchlistMovies =
+  JSON.parse(
+    localStorage.getItem(
+      "paneacult_watchlist"
+    )
+  ) || [];
 
 const favorites =
   JSON.parse(
@@ -422,10 +431,19 @@ const desertMovie =
     )
   );
 
+const isWatched =
+  watchedMovies.some(
+    m => m.id == movieId
+  );
+
+const isWatchlist =
+  watchlistMovies.some(
+    m => m.id == movieId
+  );
+
 const isDesert =
   desertMovie?.id == movieId;
-
-
+   
 reviewContainer.innerHTML = `
 
 <section
@@ -454,11 +472,11 @@ reviewContainer.innerHTML = `
 
      <div class="movie-actions">
 
-  ${movieStatus === "watched"
+  ${isWatched
     ? `<span class="movie-action-btn active">👁️ Visto</span>`
     : ""}
 
-  ${movieStatus === "watchlist"
+  ${isWatchlist
     ? `<span class="movie-action-btn active">📌 Da vedere</span>`
     : ""}
 
