@@ -24,6 +24,7 @@ document.addEventListener(
 ========================= */
 
 function updateMovieButtons(status){
+function updateMovieButtons(status){
 
   const watchedBtn =
     document.getElementById(
@@ -35,11 +36,20 @@ function updateMovieButtons(status){
       "markWatchlistBtn"
     );
 
+  const desertBtn =
+    document.getElementById(
+      "markDesertBtn"
+    );
+
   watchedBtn?.classList.remove(
     "active"
   );
 
   watchlistBtn?.classList.remove(
+    "active"
+  );
+
+  desertBtn?.classList.remove(
     "active"
   );
 
@@ -54,6 +64,14 @@ function updateMovieButtons(status){
   if(status === "watchlist"){
 
     watchlistBtn?.classList.add(
+      "active"
+    );
+
+  }
+
+  if(status === "desert"){
+
+    desertBtn?.classList.add(
       "active"
     );
 
@@ -95,7 +113,10 @@ function setupMovieButtons(){
     document.getElementById(
       "markWatchlistBtn"
     );
-
+const markDesertBtn =
+  document.getElementById(
+    "markDesertBtn"
+  );
   markWatchedBtn?.addEventListener(
     "click",
     () => {
@@ -117,7 +138,23 @@ function setupMovieButtons(){
 
     }
   );
+markDesertBtn?.addEventListener(
+  "click",
+  () => {
 
+    saveMovieStatus(
+      "desert"
+    );
+
+    localStorage.setItem(
+      "paneacult_desert_island",
+      JSON.stringify(
+        selectedMovieData
+      )
+    );
+
+  }
+);
 }
 
 
