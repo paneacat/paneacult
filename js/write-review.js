@@ -358,3 +358,100 @@ selectedMovieData = null;
   `user-review.html?slug=${slug}`;
   }
 );
+/* =========================
+   PUBLISH EDITORIAL
+========================= */
+
+publishEditorialBtn?.addEventListener(
+  "click",
+  async () => {
+
+    if(!selectedMovieData){
+
+      alert(
+        "Seleziona un film."
+      );
+
+      return;
+
+    }
+
+    const reviewTextValue =
+      reviewText.value.trim();
+
+    const ratingValue =
+      parseInt(
+        reviewRating.value
+      );
+
+    if(!reviewTextValue){
+
+      alert(
+        "Scrivi la recensione."
+      );
+
+      return;
+
+    }
+
+    const slug =
+      selectedMovieData.title
+        .toLowerCase()
+        .replaceAll(" ", "-")
+        .replace(
+          /[^\w-]+/g,
+          ""
+        );
+
+    const { error } =
+      await supabaseClient
+        .from("reviews")
+        .insert([{
+
+          movie_id:
+            selectedMovieData.id,
+
+          movie_title:
+            selectedMovieData.title,
+
+          movie_poster:
+            `https://image.tmdb.org/t/p/w500${selectedMovieData.poster_path}`,
+
+          movie_backdrop:
+            `https://image.tmdb.org/t/p/original${selectedMovieData.backdrop_path}`,
+
+          review_text:
+            reviewTextValue,
+
+          rating:
+            ratingValue,
+
+          quote:
+            reviewQuote?.value
+              .trim(),
+
+          curiosita:
+            reviewCuriosita?.value
+              .trim(),
+
+          slug
+
+        }]);
+
+    if(error){
+
+      console.log(error);
+
+      alert(
+        "Errore pubblicazione"
+      );
+
+      return;
+
+    }
+
+    window.location.href =
+      `review.html?slug=${slug}`;
+
+  }
+);
