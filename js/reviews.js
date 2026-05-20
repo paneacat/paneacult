@@ -715,6 +715,84 @@ ${
 </section>
 `;
 
+   const userReviewsSection =
+  document.getElementById(
+    "userReviewsSection"
+  );
+
+const {
+  data: userReviews
+} =
+  await supabaseClient
+    .from("user_reviews")
+    .select("*")
+    .eq(
+      "movie_id",
+      data.movie_id
+    )
+    .order(
+      "created_at",
+      {
+        ascending:false
+      }
+    );
+
+if(
+  userReviews &&
+  userReviews.length
+){
+
+  userReviewsSection.innerHTML = `
+
+    <section class="community-section">
+
+      <h2 class="community-title">
+        Community
+      </h2>
+
+      <div class="community-grid">
+
+        ${
+          userReviews.map(
+            review => `
+
+            <article
+              class="community-card"
+            >
+
+              <div
+                class="community-stars"
+              >
+                ${
+                  "★".repeat(
+                    review.rating
+                  ) +
+                  "☆".repeat(
+                    5-review.rating
+                  )
+                }
+              </div>
+
+              <p
+                class="community-text"
+              >
+                ${review.review_text}
+              </p>
+
+            </article>
+
+          `
+          ).join("")
+        }
+
+      </div>
+
+    </section>
+
+  `;
+
+}
+
 }
 
 loadSingleReview();
