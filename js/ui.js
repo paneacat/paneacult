@@ -1,3 +1,13 @@
+const movieSearchInput =
+  document.getElementById(
+    "movieSearchInput"
+  );
+
+const movieResults =
+  document.getElementById(
+    "movieResults"
+  );
+
 /* =========================
    CLOSE SEARCH RESULTS
 ========================= */
