@@ -867,7 +867,7 @@
 
 }
 
-.sidebar-box{
+..sidebar-box{
 
   background:rgba(11,47,68,.72);
 
@@ -877,14 +877,14 @@
 
   border-radius:28px;
 
-  padding:18px 22px;
-  margin-top: 12px;
+  padding:24px;
+
   display:grid;
 
   grid-template-columns:
     repeat(4,1fr);
 
-  gap:22px;
+  gap:26px 32px;
 
 }
 
@@ -931,7 +931,7 @@
 
   gap:8px;
 
-  min-width:140px;
+  min-width:0;
 
 }
 /* VALUE */
