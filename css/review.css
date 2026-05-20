@@ -941,7 +941,12 @@
     1px solid rgba(255,255,255,.06);
 
 }
+.sidebar-country{
 
+  display:block;
+  width:100%;
+
+}
 /* WATCH LINK */
 
 .sidebar-watch{
