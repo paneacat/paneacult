@@ -880,6 +880,7 @@
   padding:24px;
 
   display:grid;
+  justify-items:start;
 
   grid-template-columns:
     repeat(4,1fr);
