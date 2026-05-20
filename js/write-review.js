@@ -424,6 +424,26 @@ const { error } =
       movie_backdrop:
         `https://image.tmdb.org/t/p/original${selectedMovieData.backdrop_path}`,
 
+       year:
+  selectedMovieData.release_date
+    ?.split("-")[0],
+
+director:
+  selectedMovieData.director,
+
+genre:
+  selectedMovieData.genre_names,
+
+runtime:
+  selectedMovieData.runtime,
+
+country:
+  selectedMovieData.country,
+
+imdb_rating:
+  selectedMovieData.vote_average
+    ?.toFixed(1),
+   
       review_text:
         reviewTextValue,
 
