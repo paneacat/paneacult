@@ -1026,28 +1026,79 @@ function initMovieButtons(
   );
 
   loveBtn?.addEventListener(
-    "click",
-    () => {
+  "click",
+  () => {
 
-      if(
-        favorites.some(
-          m => m.id == movieId
+    if(
+      favorites.some(
+        m => m.id == movieId
+      )
+    ){
+
+      favorites =
+        favorites.filter(
+          m => m.id != movieId
+        );
+
+    }else{
+
+      favorites.push({
+        id: movieId,
+        title: movieData.movie_title,
+        poster: movieData.movie_poster
+      });
+
+    }
+
+    localStorage.setItem(
+      "paneacult_favorites",
+      JSON.stringify(favorites)
+    );
+
+    updateButtons();
+
+  }
+);
+
+desertBtn?.addEventListener(
+  "click",
+  () => {
+
+    const current =
+      JSON.parse(
+        localStorage.getItem(
+          "paneacult_desert_island"
         )
-      ){
+      );
 
-        favorites =
-          favorites.filter(
-            m => m.id != movieId
-          );
+    if(
+      current?.id == movieId
+    ){
 
-      }else{
+      localStorage.removeItem(
+        "paneacult_desert_island"
+      );
 
-        favorites.push({
+    }else{
+
+      localStorage.setItem(
+        "paneacult_desert_island",
+        JSON.stringify({
           id: movieId,
           title: movieData.movie_title,
           poster: movieData.movie_poster
-        });
+        })
+      );
 
-      }
-       
+    }
+
+    updateButtons();
+
+  }
+);
+
+updateButtons();
+
+}
+
 loadSingleReview();
