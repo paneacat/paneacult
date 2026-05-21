@@ -107,12 +107,17 @@ function renderGrid(
 
     movies.map(movie => `
 
-      <div class="saved-card">
+      <div
+  class="saved-card"
+  onclick="goToMovie(${movie.id})"
+>
 
         <img
-  src="
-  https://image.tmdb.org/t/p/w500${movie.poster_path}
-  "
+  src="${
+    movie.poster_path
+      ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+      : movie.poster
+  }"
   alt="${movie.title}"
 >
 
