@@ -94,7 +94,7 @@ function renderGrid(
     grid.innerHTML = `
     
       <p class="empty-text">
-        Nessun film ancora.
+        Nessun film qui!
       </p>
     
     `;
@@ -150,31 +150,33 @@ function renderCurrentFavorite(){
 
   currentFavorite.innerHTML = `
 
-    <img
-      src="
-https://image.tmdb.org/t/p/w500${desertMovie.poster_path}
-"
-      alt="${desertMovie.title}"
-    >
+    currentFavorite.innerHTML = `
 
-    <div class="current-favorite-content">
+  <img
+    src="
+    https://image.tmdb.org/t/p/w500${desertMovie.poster_path}
+    "
+    alt="${desertMovie.title}"
+  >
 
-      <p class="current-label">
-        DESERT ISLAND FILM
-      </p>
+  <div class="current-favorite-content">
 
-      <h3>
-        ${desertMovie.title}
-      </h3>
+    <p class="current-label">
+      DESERT ISLAND FILM
+    </p>
 
-      <span>
-        non il migliore.
-        quello che porteresti con te.
-      </span>
+    <h3>
+      ${desertMovie.title}
+    </h3>
 
-    </div>
+    <span>
+      non il migliore.
+      quello che porteresti con te.
+    </span>
 
-  `;
+  </div>
+
+`;
 }
 
 /* =========================
