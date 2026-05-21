@@ -510,7 +510,9 @@ function setupMovieButtons(){
           "paneacult_watchlist",
           JSON.stringify(list)
         );
-
+watchlistBtn.classList.add(
+  "active"
+);
       }
 
       alert(
@@ -545,7 +547,9 @@ function setupMovieButtons(){
           "paneacult_watched",
           JSON.stringify(list)
         );
-
+watchedBtn.classList.add(
+  "active"
+);
       }
 
       alert(
@@ -565,7 +569,9 @@ function setupMovieButtons(){
             "paneacult_favorites"
           )
         ) || [];
-
+lovedBtn.classList.add(
+  "active"
+);
       if(
         !list.find(
           m => m.id === selectedMovieData.id
@@ -600,7 +606,9 @@ function setupMovieButtons(){
           selectedMovieData
         )
       );
-
+desertBtn.classList.add(
+  "active"
+);
       alert(
         "Desert Island salvato 🌴"
       );
