@@ -2008,9 +2008,43 @@ section{
     margin-top:0 !important;
 
   }
-  body{
-  outline:8px solid red !important;
+    .profile-edit{
+
+    width:92%;
+    margin:16px auto 28px;
+
+    padding:18px;
+
+    display:none;
+    flex-direction:column;
+    gap:14px;
+
+    border-radius:28px;
+
+    background:
+      rgba(12,32,46,.92);
+
+    border:
+      1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(16px);
+
   }
+
+  .profile-edit input,
+  .profile-edit textarea{
+
+    width:100%;
+    box-sizing:border-box;
+
+  }
+
+  #avatarInput{
+
+    font-size:.85rem;
+
+  }
+  
  }
 
 
