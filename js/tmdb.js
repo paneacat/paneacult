@@ -269,9 +269,6 @@ movieResults.style.display =
   "click",
   async () => {
 
-    reviewForm.style.display =
-      "block";
-
     const movieDetails =
       await fetchMovieDetails(
         movie.id
@@ -366,9 +363,6 @@ movieResults.style.display =
         div.addEventListener(
           "click",
           async () => {
-
-            reviewForm.style.display =
-              "block";
 
             const movieDetails =
               await fetchMovieDetails(
@@ -615,21 +609,20 @@ function setupMovieButtons(){
   );
 
   reviewBtn?.addEventListener(
-    "click",
-    () => {
+  "click",
+  () => {
 
-      localStorage.setItem(
-        "paneacult_selected_movie",
-        JSON.stringify(
-          selectedMovieData
-        )
-      );
+    reviewForm?.classList.remove(
+      "hidden-review-form"
+    );
 
-      window.location.href =
-        "write-review.html";
+    reviewForm?.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
 
-    }
-  );
+  }
+);
 
 }
 
