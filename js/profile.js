@@ -171,7 +171,7 @@ function renderCurrentFavorite(){
 
       <span>
         non il migliore.
-        quello che porteresti con te su unisola deserta.
+        quello che porteresti con te su un'isola deserta.
       </span>
 
     </div>
