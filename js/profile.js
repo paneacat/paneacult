@@ -3,7 +3,7 @@
    INIT
 ========================= */
 
-loadMovies();
+alert("PROFILE JS OK");
 
 
 const logoutBtn =
