@@ -152,11 +152,13 @@ alert(JSON.stringify(desertMovie));
   currentFavorite.innerHTML = `
 
     <img
-      src="
-      https://image.tmdb.org/t/p/w500${desertMovie.poster_path}
-      "
-      alt="${desertMovie.title}"
-    >
+  src="${
+    desertMovie.poster_path
+      ? `https://image.tmdb.org/t/p/w500${desertMovie.poster_path}`
+      : desertMovie.poster
+  }"
+  alt="${desertMovie.title}"
+>
 
     <div class="current-favorite-content">
 
