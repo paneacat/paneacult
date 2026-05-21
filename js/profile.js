@@ -427,19 +427,9 @@ editBtn?.addEventListener(
   "click",
   () => {
 
-    if(
-      profileEdit.classList.toggle("open");
-    ){
-
-      profileEdit.style.display =
-        "none";
-
-    }else{
-
-      profileEdit.style.display =
-        "flex";
-
-    }
+    profileEdit.classList.toggle(
+      "open"
+    );
 
   }
 );
