@@ -291,9 +291,8 @@ movieResults.style.display =
       if(query.length < 2){
 
   movieResults.innerHTML = "";
-
-  movieResults.style.display =
-    "none";
+movieResults.style.display =
+  "block";
 
   return;
 
@@ -365,7 +364,7 @@ div.addEventListener(
 movieResults.innerHTML = "";
 
 movieResults.style.display =
-  "block";
+  "none";
     movieSearchInput.value =
       movie.title;
 
