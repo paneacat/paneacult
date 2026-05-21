@@ -634,6 +634,77 @@ desertBtn.classList.add(
 
 }
 
+
+/* LOAD ACTIVE STATE */
+
+const watchlist =
+  JSON.parse(
+    localStorage.getItem(
+      "paneacult_watchlist"
+    )
+  ) || [];
+
+const watched =
+  JSON.parse(
+    localStorage.getItem(
+      "paneacult_watched"
+    )
+  ) || [];
+
+const favorites =
+  JSON.parse(
+    localStorage.getItem(
+      "paneacult_favorites"
+    )
+  ) || [];
+
+const desert =
+  JSON.parse(
+    localStorage.getItem(
+      "paneacult_desert_island"
+    )
+  );
+
+if(
+  watchlist.find(
+    m => m.id === selectedMovieData.id
+  )
+){
+  watchlistBtn?.classList.add(
+    "active"
+  );
+}
+
+if(
+  watched.find(
+    m => m.id === selectedMovieData.id
+  )
+){
+  watchedBtn?.classList.add(
+    "active"
+  );
+}
+
+if(
+  favorites.find(
+    m => m.id === selectedMovieData.id
+  )
+){
+  lovedBtn?.classList.add(
+    "active"
+  );
+}
+
+if(
+  desert?.id ===
+  selectedMovieData.id
+){
+  desertBtn?.classList.add(
+    "active"
+  );
+}
+
+
 async function checkPaneaReview(movieId){
 
   const paneaReviewBtn =
