@@ -152,6 +152,12 @@ if(hero && movie.backdrop_path){
         </div>
 
         <div class="movie-actions">
+<button
+  class="movie-action-btn watchlist-btn"
+  id="markWatchlistBtn"
+>
+  + Watchlist
+</button>
 
   <button
     class="movie-action-btn love-btn"
@@ -433,3 +439,115 @@ function goToMovie(id){
     `movie.html?id=${id}`;
 
 }
+
+
+function setupMovieButtons(){
+
+  const lovedBtn =
+    document.getElementById(
+      "markLovedBtn"
+    );
+
+  const desertBtn =
+    document.getElementById(
+      "markDesertBtn"
+    );
+
+  lovedBtn?.addEventListener(
+    "click",
+    () => {
+
+      const loved =
+        JSON.parse(
+          localStorage.getItem(
+            "paneacult_favorites"
+          )
+        ) || [];
+
+      const exists =
+        loved.find(
+          m => m.id === selectedMovieData.id
+        );
+
+      if(!exists){
+
+        loved.push(
+          selectedMovieData
+        );
+
+        localStorage.setItem(
+          "paneacult_favorites",
+          JSON.stringify(loved)
+        );
+
+      }
+
+      alert(
+        "Film aggiunto ai Loved ❤️"
+      );
+
+    }
+  );
+
+  desertBtn?.addEventListener(
+    "click",
+    () => {
+
+      localStorage.setItem(
+        "paneacult_desert_island",
+        JSON.stringify(
+          selectedMovieData
+        )
+      );
+
+      alert(
+        "Desert Island salvato 🌴"
+      );
+
+    }
+  );
+
+}
+
+const watchlistBtn =
+  document.getElementById(
+    "markWatchlistBtn"
+  );
+
+watchlistBtn?.addEventListener(
+  "click",
+  () => {
+
+    const watchlist =
+      JSON.parse(
+        localStorage.getItem(
+          "paneacult_watchlist"
+        )
+      ) || [];
+
+    const exists =
+      watchlist.find(
+        m => m.id === selectedMovieData.id
+      );
+
+    if(!exists){
+
+      watchlist.push(
+        selectedMovieData
+      );
+
+      localStorage.setItem(
+        "paneacult_watchlist",
+        JSON.stringify(
+          watchlist
+        )
+      );
+
+    }
+
+    alert(
+      "Aggiunto alla watchlist 🎬"
+    );
+
+  }
+);
