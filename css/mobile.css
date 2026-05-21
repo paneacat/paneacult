@@ -2044,6 +2044,9 @@ section{
     font-size:.85rem;
 
   }
+  .profile-edit.open{
+  display:flex;
+  }
   
  }
 
