@@ -1794,18 +1794,7 @@ section{
     padding:20px !important;
 
   }
-  .profile-header{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-
-    z-index:9999;
-
-  }
+  
 
   .profile-header-inner{
 
@@ -2051,19 +2040,8 @@ section{
 
 .profile-edit.open{
   display:flex;
-}
-  .mobile-tabbar{
 
-    display:flex !important;
-
-    position:fixed;
-
-    bottom:0;
-    left:0;
-
-    width:100%;
-
-    z-index:99999;
+  
 
   }
  }
