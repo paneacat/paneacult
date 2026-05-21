@@ -150,35 +150,33 @@ function renderCurrentFavorite(){
 
   currentFavorite.innerHTML = `
 
-    currentFavorite.innerHTML = `
+    <img
+      src="
+      https://image.tmdb.org/t/p/w500${desertMovie.poster_path}
+      "
+      alt="${desertMovie.title}"
+    >
 
-  <img
-    src="
-    https://image.tmdb.org/t/p/w500${desertMovie.poster_path}
-    "
-    alt="${desertMovie.title}"
-  >
+    <div class="current-favorite-content">
 
-  <div class="current-favorite-content">
+      <p class="current-label">
+        DESERT ISLAND FILM
+      </p>
 
-    <p class="current-label">
-      DESERT ISLAND FILM
-    </p>
+      <h3>
+        ${desertMovie.title}
+      </h3>
 
-    <h3>
-      ${desertMovie.title}
-    </h3>
+      <span>
+        non il migliore.
+        quello che porteresti con te.
+      </span>
 
-    <span>
-      non il migliore.
-      quello che porteresti con te.
-    </span>
+    </div>
 
-  </div>
+  `;
 
-`;
 }
-
 /* =========================
    SIGNATURE FILMS
 ========================= */
