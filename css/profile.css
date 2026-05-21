@@ -1702,3 +1702,11 @@ opacity:1;
     margin-top:0 !important;
 
   }
+
+.saved-overlay{
+  pointer-events:none;
+}
+.saved-card{
+  cursor:pointer;
+}
+
