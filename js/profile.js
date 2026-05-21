@@ -180,33 +180,6 @@ function renderCurrentFavorite(){
   `;
 }
 
-    <img
-      src="
-      https://image.tmdb.org/t/p/original${movie.backdrop_path}
-      "
-      alt="${movie.title}"
-    >
-
-    <div class="current-favorite-content">
-
-      <p class="current-label">
-        CURRENT OBSESSION
-      </p>
-
-      <h3>
-        ${movie.title}
-      </h3>
-
-      <span>
-        uno dei tuoi film preferiti.
-      </span>
-
-    </div>
-
-  `;
-
-}
-
 /* =========================
    SIGNATURE FILMS
 ========================= */
@@ -449,11 +422,6 @@ profileEdit.classList.remove(
 const editBtn =
   document.getElementById(
     "editProfileBtn"
-  );
-
-const profileEdit =
-  document.querySelector(
-    ".profile-edit"
   );
 
 editBtn?.addEventListener(
