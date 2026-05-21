@@ -1983,6 +1983,31 @@ section{
 
   color:var(--panea-yellow);
 }
+  .profile-user-meta{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+  }
+
+  .profile-username{
+
+    margin:12px 0 4px !important;
+
+  }
+
+  .profile-bio{
+
+    margin:0 0 10px !important;
+
+  }
+
+  #editProfileBtn{
+
+    margin-top:0 !important;
+
+  }
  }
 
 
