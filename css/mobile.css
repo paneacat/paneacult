@@ -2008,6 +2008,9 @@ section{
     margin-top:0 !important;
 
   }
+  body{
+  outline:8px solid red !important;
+  }
  }
 
 
