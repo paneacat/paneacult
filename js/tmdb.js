@@ -282,101 +282,93 @@ movieResults.style.display =
   }
 );
   movieSearchInput.addEventListener(
-    "input",
-    async () => {
-
-      const query =
-        movieSearchInput.value.trim();
-
-      if(query.length < 2){
-
-  movieResults.innerHTML = "";
-movieResults.style.display =
-  "block";
-
-  return;
-
-      }
-      
-
-      const response = await fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=it-IT&query=${query}`
-      );
-
-      const data =
-        await response.json();
-
-      movieResults.innerHTML = "";
-movieResults.style.display =
-  "none";
-      data.results
-        .slice(0, 5)
-        .forEach(movie => {
-
-          const div =
-            document.createElement("div");
-
-          div.classList.add(
-            "movie-result"
-          );
-
-          div.innerHTML = `
-          
-            <img
-              src="https://image.tmdb.org/t/p/w200${movie.poster_path}"
-              alt="${movie.title}"
-            >
-
-            <div>
-
-              <h3>
-                ${movie.title}
-              </h3>
-
-              <p>
-                ${movie.release_date?.slice(0,4) || ""}
-              </p>
-
-            </div>
-
-          `;
-
-          
-div.addEventListener(
-  "click",
+  "input",
   async () => {
 
-    reviewForm.style.display =
-      "block";
+    const query =
+      movieSearchInput.value.trim();
 
-    const movieDetails =
-      await fetchMovieDetails(
-        movie.id
-      );
+    if(query.length < 2){
 
-    renderSelectedMovie(
-      movie,
-      movieDetails
-    );
+      movieResults.innerHTML = "";
+      movieResults.style.display =
+        "none";
 
-    setupMovieButtons();
-
-movieResults.innerHTML = "";
-
-movieResults.style.display =
-  "none";
-    movieSearchInput.value =
-      movie.title;
-
-  }
-);
-
-          movieResults.appendChild(div);
-
-        });
+      return;
 
     }
-  );
+
+    const response = await fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=it-IT&query=${encodeURIComponent(query)}`
+    );
+
+    const data =
+      await response.json();
+
+    movieResults.innerHTML = "";
+    movieResults.style.display =
+      "block";
+
+    data.results
+      .slice(0,5)
+      .forEach(movie => {
+
+        const div =
+          document.createElement("div");
+
+        div.classList.add(
+          "movie-result"
+        );
+
+        div.innerHTML = `
+          <img
+            src="https://image.tmdb.org/t/p/w200${movie.poster_path}"
+            alt="${movie.title}"
+          >
+
+          <div>
+            <h3>${movie.title}</h3>
+            <p>
+              ${movie.release_date?.slice(0,4) || ""}
+            </p>
+          </div>
+        `;
+
+        div.addEventListener(
+          "click",
+          async () => {
+
+            reviewForm.style.display =
+              "block";
+
+            const movieDetails =
+              await fetchMovieDetails(
+                movie.id
+              );
+
+            renderSelectedMovie(
+              movie,
+              movieDetails
+            );
+
+            setupMovieButtons();
+
+            movieResults.innerHTML = "";
+            movieResults.style.display =
+              "none";
+
+            movieSearchInput.value =
+              movie.title;
+
+          }
+        );
+
+        movieResults.appendChild(div);
+
+      });
+
+  }
+);          
 
 }
 
