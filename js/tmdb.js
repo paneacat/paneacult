@@ -434,3 +434,12 @@ if(favoriteGrid){
   loadTrending();
 
 }
+
+function goToMovie(id){
+
+  if(!id) return;
+
+  window.location.href =
+    `movie.html?id=${id}`;
+
+}
