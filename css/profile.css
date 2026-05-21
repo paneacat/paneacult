@@ -1445,11 +1445,21 @@ max-width: 700px;
 .saved-grid{
 
   display:grid;
-
+  min-height:120px;
   grid-template-columns:
     repeat(auto-fit, minmax(220px, 1fr));
 
   gap:28px;
+
+}
+
+.saved-grid:empty{
+
+  min-height:110px;
+
+  display:flex;
+
+  align-items:center;
 
 }
 
@@ -1548,51 +1558,47 @@ opacity:1;
    PROFILE EDIT
 ========================= */
 
-.profile-edit{
+#editProfileBtn{
 
-  margin:50px auto 0;
+  margin-top:22px;
 
-  width:min(620px, 92%);
+  height:48px;
 
-  display:flex;
-  flex-direction:column;
-  gap:16px;
+  padding:0 22px;
 
-  align-items:center;
-
-  padding:34px;
-
-  border-radius:32px;
-
-  background:
-    rgba(255,255,255,.03);
+  border-radius:999px;
 
   border:
-    1px solid rgba(255,255,255,.06);
+    1px solid rgba(255,255,255,.08);
 
-  backdrop-filter:blur(18px);
+  background:
+    rgba(255,255,255,.04);
 
-}
+  backdrop-filter:blur(12px);
 
-/* INPUT */
+  color:rgba(255,255,255,.92);
 
-.profile-edit input,
-.profile-edit textarea{
+  font-size:.84rem;
 
-  width:100%;
+  letter-spacing:.08em;
 
-  padding:18px 20px;
+  font-weight:600;
 
-  border-radius:18px;
+  cursor:pointer;
 
-  color:var(--paneacult-white);
-
-  font-family:'Inter',sans-serif;
-
-  outline:none;
+  transition:.28s ease;
 
 }
 
+#editProfileBtn:hover{
+
+  background:var(--panea-yellow);
+
+  color:#08131d;
+
+  transform:translateY(-2px);
+
+}
 /* TEXTAREA */
 
 .profile-edit textarea{
