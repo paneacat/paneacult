@@ -1937,3 +1937,64 @@ letter-spacing:.04em;
   width:auto !important;
 
 }
+
+
+
+/* WATCHED + REVIEW */
+
+.watched-btn,
+.review-btn{
+
+  height:56px;
+
+  padding:0 28px;
+
+  border-radius:999px;
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  background:
+    rgba(255,255,255,.04);
+
+  backdrop-filter:blur(12px);
+
+  color:rgba(255,255,255,.84);
+
+  font-size:.82rem;
+
+  letter-spacing:.12em;
+
+  text-transform:uppercase;
+
+  cursor:pointer;
+
+  transition:.3s ease;
+
+}
+
+.watched-btn:hover,
+.review-btn:hover{
+
+  background:
+    var(--panea-yellow);
+
+  color:#08131d;
+
+  transform:
+    translateY(-3px);
+
+}
+
+.watched-btn.active,
+.review-btn.active{
+
+  background:
+    var(--panea-yellow);
+
+  color:#08131d;
+
+  border-color:
+    var(--panea-yellow);
+
+}
