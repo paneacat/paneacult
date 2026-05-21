@@ -1655,3 +1655,9 @@ opacity:1;
 .profile-edit.open{
   display:flex;
 }
+
+.profile-username{
+
+  color:red !important;
+
+}
