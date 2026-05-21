@@ -150,11 +150,6 @@ function renderCurrentFavorite(){
 
   currentFavorite.innerHTML = `
 
-<div
-  class="current-favorite-inner"
-  onclick="goToMovie(${desertMovie.id})"
->
-
   <img
     src="${
       desertMovie.poster_path
@@ -180,7 +175,6 @@ function renderCurrentFavorite(){
       </span>
 
     </div>
-</div>
   `;
 
 }
