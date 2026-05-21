@@ -152,8 +152,8 @@ function renderCurrentFavorite(){
 
     <img
       src="
-      https://image.tmdb.org/t/p/original${desertMovie.backdrop_path}
-      "
+https://image.tmdb.org/t/p/w500${desertMovie.poster_path}
+"
       alt="${desertMovie.title}"
     >
 
