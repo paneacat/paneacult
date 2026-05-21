@@ -446,7 +446,6 @@ profileEdit.classList.remove(
   }
 );
 
-
 const editBtn =
   document.getElementById(
     "editProfileBtn"
@@ -475,27 +474,6 @@ editBtn?.addEventListener(
         "flex";
 
     }
-
-  }
-);
-
-const editBtn =
-  document.getElementById(
-    "editProfileBtn"
-  );
-
-const profileEdit =
-  document.querySelector(
-    ".profile-edit"
-  );
-
-editBtn?.addEventListener(
-  "click",
-  () => {
-
-    profileEdit.classList.toggle(
-      "open"
-    );
 
   }
 );
