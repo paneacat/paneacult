@@ -110,11 +110,11 @@ function renderGrid(
       <div class="saved-card">
 
         <img
-          src="
-          https://image.tmdb.org/t/p/w500${movie.poster_path}
-          "
-          alt="${movie.title}"
-        >
+  src="
+  https://image.tmdb.org/t/p/w500${movie.poster_path}
+  "
+  alt="${movie.title}"
+>
 
         <div class="saved-overlay">
 
@@ -199,11 +199,13 @@ function renderSignature(){
 >
 
         <img
-          src="
-          https://image.tmdb.org/t/p/original${movie.backdrop_path}
-          "
-          alt="${movie.title}"
-        >
+  src="${
+    movie.poster_path
+      ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+      : movie.poster
+  }"
+  alt="${movie.title}"
+>
 
         <div class="signature-film-overlay">
 
