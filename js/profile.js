@@ -428,8 +428,7 @@ editBtn?.addEventListener(
   () => {
 
     if(
-      profileEdit.style.display ===
-      "flex"
+      profileEdit.classList.toggle("open");
     ){
 
       profileEdit.style.display =
