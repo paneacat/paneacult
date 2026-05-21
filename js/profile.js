@@ -3,9 +3,6 @@
    INIT
 ========================= */
 
-alert("PROFILE JS OK");
-
-
 const logoutBtn =
   document.querySelector(
     ".logout-btn"
