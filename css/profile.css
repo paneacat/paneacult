@@ -1656,8 +1656,28 @@ opacity:1;
   display:flex;
 }
 
-.profile-username{
+.profile-user-meta{
 
-  color:red !important;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 
-}
+  }
+
+  .profile-username{
+
+    margin:10px 0 4px !important;
+
+  }
+
+  .profile-bio{
+
+    margin:0 0 10px !important;
+
+  }
+
+  #editProfileBtn{
+
+    margin-top:0 !important;
+
+  }
