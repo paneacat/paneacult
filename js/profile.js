@@ -150,14 +150,19 @@ function renderCurrentFavorite(){
 
   currentFavorite.innerHTML = `
 
-    <img
-  src="${
-    desertMovie.poster_path
-      ? `https://image.tmdb.org/t/p/w500${desertMovie.poster_path}`
-      : desertMovie.poster
-  }"
-  alt="${desertMovie.title}"
+<div
+  class="current-favorite-inner"
+  onclick="goToMovie(${desertMovie.id})"
 >
+
+  <img
+    src="${
+      desertMovie.poster_path
+        ? `https://image.tmdb.org/t/p/w500${desertMovie.poster_path}`
+        : desertMovie.poster
+    }"
+    alt="${desertMovie.title}"
+  >
 
     <div class="current-favorite-content">
 
@@ -175,7 +180,7 @@ function renderCurrentFavorite(){
       </span>
 
     </div>
-
+</div>
   `;
 
 }
@@ -194,7 +199,10 @@ function renderSignature(){
 
     movies.map(movie => `
 
-      <div class="signature-film">
+      <div
+  class="signature-film"
+  onclick="goToMovie(${movie.id})"
+>
 
         <img
           src="
