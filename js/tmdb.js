@@ -152,12 +152,20 @@ if(hero && movie.backdrop_path){
         </div>
 
         <div class="movie-actions">
-<button
-  class="movie-action-btn watchlist-btn"
-  id="markWatchlistBtn"
->
-  + Watchlist
-</button>
+
+  <button
+    class="movie-action-btn watchlist-btn"
+    id="markWatchlistBtn"
+  >
+    🎬 Watchlist
+  </button>
+
+  <button
+    class="movie-action-btn watched-btn"
+    id="markWatchedBtn"
+  >
+    👁 Watched
+  </button>
 
   <button
     class="movie-action-btn love-btn"
@@ -167,18 +175,20 @@ if(hero && movie.backdrop_path){
   </button>
 
   <button
-  class="movie-action-btn desert-btn"
-  id="markDesertBtn"
->
-  <span class="desert-icon">
-    🌴
-  </span>
+    class="movie-action-btn desert-btn"
+    id="markDesertBtn"
+  >
+    🌴 Desert Island
+  </button>
 
-  Desert Island
-</button>
+  <button
+    class="movie-action-btn review-btn"
+    id="writeReviewBtn"
+  >
+    ✍ Scrivi recensione
+  </button>
+
 </div>
-
-      </div>
 
     </div>
 
@@ -443,6 +453,16 @@ function goToMovie(id){
 
 function setupMovieButtons(){
 
+  const watchlistBtn =
+    document.getElementById(
+      "markWatchlistBtn"
+    );
+
+  const watchedBtn =
+    document.getElementById(
+      "markWatchedBtn"
+    );
+
   const lovedBtn =
     document.getElementById(
       "markLovedBtn"
@@ -453,37 +473,111 @@ function setupMovieButtons(){
       "markDesertBtn"
     );
 
+  const reviewBtn =
+    document.getElementById(
+      "writeReviewBtn"
+    );
+
+  watchlistBtn?.addEventListener(
+    "click",
+    () => {
+
+      const list =
+        JSON.parse(
+          localStorage.getItem(
+            "paneacult_watchlist"
+          )
+        ) || [];
+
+      if(
+        !list.find(
+          m => m.id === selectedMovieData.id
+        )
+      ){
+
+        list.push(
+          selectedMovieData
+        );
+
+        localStorage.setItem(
+          "paneacult_watchlist",
+          JSON.stringify(list)
+        );
+
+      }
+
+      alert(
+        "Aggiunto alla watchlist 🎬"
+      );
+
+    }
+  );
+
+  watchedBtn?.addEventListener(
+    "click",
+    () => {
+
+      const list =
+        JSON.parse(
+          localStorage.getItem(
+            "paneacult_watched"
+          )
+        ) || [];
+
+      if(
+        !list.find(
+          m => m.id === selectedMovieData.id
+        )
+      ){
+
+        list.push(
+          selectedMovieData
+        );
+
+        localStorage.setItem(
+          "paneacult_watched",
+          JSON.stringify(list)
+        );
+
+      }
+
+      alert(
+        "Segnato come watched 👁"
+      );
+
+    }
+  );
+
   lovedBtn?.addEventListener(
     "click",
     () => {
 
-      const loved =
+      const list =
         JSON.parse(
           localStorage.getItem(
             "paneacult_favorites"
           )
         ) || [];
 
-      const exists =
-        loved.find(
+      if(
+        !list.find(
           m => m.id === selectedMovieData.id
-        );
+        )
+      ){
 
-      if(!exists){
-
-        loved.push(
+        list.push(
           selectedMovieData
         );
 
         localStorage.setItem(
           "paneacult_favorites",
-          JSON.stringify(loved)
+          JSON.stringify(list)
         );
 
       }
 
       alert(
-        "Film aggiunto ai Loved ❤️"
+        "Aggiunto ai Loved ❤️"
       );
 
     }
@@ -507,47 +601,21 @@ function setupMovieButtons(){
     }
   );
 
-}
-
-const watchlistBtn =
-  document.getElementById(
-    "markWatchlistBtn"
-  );
-
-watchlistBtn?.addEventListener(
-  "click",
-  () => {
-
-    const watchlist =
-      JSON.parse(
-        localStorage.getItem(
-          "paneacult_watchlist"
-        )
-      ) || [];
-
-    const exists =
-      watchlist.find(
-        m => m.id === selectedMovieData.id
-      );
-
-    if(!exists){
-
-      watchlist.push(
-        selectedMovieData
-      );
+  reviewBtn?.addEventListener(
+    "click",
+    () => {
 
       localStorage.setItem(
-        "paneacult_watchlist",
+        "paneacult_selected_movie",
         JSON.stringify(
-          watchlist
+          selectedMovieData
         )
       );
 
+      window.location.href =
+        "write-review.html";
+
     }
+  );
 
-    alert(
-      "Aggiunto alla watchlist 🎬"
-    );
-
-  }
-);
+}
