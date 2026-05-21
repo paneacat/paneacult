@@ -142,8 +142,7 @@ function renderCurrentFavorite(){
         "paneacult_desert_island"
       )
     );
-console.log(desertMovie);
-alert(JSON.stringify(desertMovie));
+
   if(
     !desertMovie ||
     !currentFavorite
