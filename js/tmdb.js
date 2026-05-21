@@ -153,6 +153,15 @@ if(hero && movie.backdrop_path){
 
         <div class="movie-actions">
 
+<a
+  href="#"
+  class="movie-action-btn panea-review-btn"
+  id="paneaReviewBtn"
+  style="display:none"
+>
+  ✦ Leggi recensione paneacult
+</a>
+
   <button
     class="movie-action-btn watchlist-btn"
     id="markWatchlistBtn"
@@ -199,6 +208,10 @@ if(hero && movie.backdrop_path){
     JSON.stringify(movie)
   );
 
+   checkPaneaReview(
+  movie.id
+);
+   
   localStorage.setItem(
     "paneacult_selected_movie_html",
     selectedMovie.innerHTML
@@ -617,5 +630,45 @@ function setupMovieButtons(){
 
     }
   );
+
+}
+
+async function checkPaneaReview(movieId){
+
+  const paneaReviewBtn =
+    document.getElementById(
+      "paneaReviewBtn"
+    );
+
+  if(
+    !paneaReviewBtn ||
+    !movieId
+  ) return;
+
+  const {
+    data
+  } =
+  await supabaseClient
+    .from("reviews")
+    .select("slug")
+    .eq(
+      "movie_id",
+      movieId
+    )
+    .eq(
+      "author",
+      "paneacult"
+    )
+    .single();
+
+  if(data){
+
+    paneaReviewBtn.href =
+      `review.html?slug=${data.slug}`;
+
+    paneaReviewBtn.style.display =
+      "inline-flex";
+
+  }
 
 }
