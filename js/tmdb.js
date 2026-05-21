@@ -388,9 +388,10 @@ const TMDB_POSTER =
 const TMDB_BACKDROP =
   "https://image.tmdb.org/t/p/original";
 
-const favoriteGrid =
-  document.getElementById("favoriteGrid");
-
+const trendingGrid =
+  document.getElementById(
+    "favoriteGrid"
+  );
 async function loadTrending(){
 
   const res = await fetch(
@@ -405,7 +406,7 @@ async function loadTrending(){
 
 function renderMovies(movies){
 
-  favoriteGrid.innerHTML =
+  trendingGrid.innerHTML =
 
     movies.map(movie => `
 
@@ -428,10 +429,8 @@ function renderMovies(movies){
 
 }
 
-if(favoriteGrid){
-
+if(trendingGrid){
   loadTrending();
-
 }
 
 function goToMovie(id){
