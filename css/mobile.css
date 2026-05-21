@@ -2044,10 +2044,14 @@ section{
     font-size:.85rem;
 
   }
-  .profile-edit.open{
+
+  .profile-edit{
+  display:none;
+}
+
+.profile-edit.open{
   display:flex;
-  }
-  
+}
  }
 
 
