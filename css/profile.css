@@ -1445,11 +1445,16 @@ max-width: 700px;
 .saved-grid{
 
   display:grid;
-  min-height:120px;
-  grid-template-columns:
-    repeat(auto-fit, minmax(220px, 1fr));
 
-  gap:28px;
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(120px,1fr)
+    );
+
+  gap:18px;
+
+  margin-top:22px;
 
 }
 
@@ -1473,13 +1478,16 @@ max-width: 700px;
 
   overflow:hidden;
 
-  border-radius:26px;
+  border-radius:22px;
 
   aspect-ratio:2/3;
 
-  background:#101820;
+  cursor:pointer;
 
-  transition:.35s ease;
+  transition:.3s ease;
+
+  background:#111;
+
 }
 
 .saved-card img{
@@ -1492,41 +1500,34 @@ max-width: 700px;
 
   display:block;
 
-  transition:.45s ease;
+  transition:.35s ease;
+
 }
 
 .saved-overlay{
 
   position:absolute;
 
-  inset:0;
+  inset:auto 0 0 0;
 
-  display:flex;
-
-  align-items:flex-end;
-
-  padding:28px;
+  padding:14px;
 
   background:
     linear-gradient(
       to top,
-      rgba(0,0,0,.96) 0%,
-      rgba(0,0,0,.72) 35%,
-      transparent 100%
+      rgba(0,0,0,.82),
+      transparent
     );
-
-  opacity:0;
-
-  transition:.45s ease;
 
 }
 
 .saved-overlay h3{
 
-  transform:
-    translateY(12px);
+  font-size:.82rem;
 
-  transition:.35s ease;
+  margin:0;
+
+  color:white;
 
 }
 
@@ -1536,16 +1537,18 @@ max-width: 700px;
     translateY(0);
 
 }
+
 .saved-card:hover{
 
   transform:
-    translateY(-8px)
-    scale(1.01);
+    translateY(-4px);
+
 }
 
 .saved-card:hover img{
 
-  transform:scale(1.05);
+  transform:scale(1.04);
+
 }
 
 .saved-card:hover .saved-overlay{
