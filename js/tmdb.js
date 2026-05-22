@@ -486,8 +486,7 @@ function setupMovieButtons(){
       "writeReviewBtn"
     );
 
-
-   /* LOAD ACTIVE STATE */
+/* ACTIVE STATE */
 
 const watchlist =
   JSON.parse(
@@ -517,9 +516,25 @@ const desert =
     )
   );
 
+watchlistBtn?.classList.remove(
+  "active"
+);
+
+watchedBtn?.classList.remove(
+  "active"
+);
+
+lovedBtn?.classList.remove(
+  "active"
+);
+
+desertBtn?.classList.remove(
+  "active"
+);
+
 if(
   watchlist.find(
-    m => m.id === selectedMovieData.id
+    m => m.id === selectedMovieData?.id
   )
 ){
   watchlistBtn?.classList.add(
@@ -529,7 +544,7 @@ if(
 
 if(
   watched.find(
-    m => m.id === selectedMovieData.id
+    m => m.id === selectedMovieData?.id
   )
 ){
   watchedBtn?.classList.add(
@@ -539,7 +554,7 @@ if(
 
 if(
   favorites.find(
-    m => m.id === selectedMovieData.id
+    m => m.id === selectedMovieData?.id
   )
 ){
   lovedBtn?.classList.add(
@@ -549,7 +564,7 @@ if(
 
 if(
   desert?.id ===
-  selectedMovieData.id
+  selectedMovieData?.id
 ){
   desertBtn?.classList.add(
     "active"
