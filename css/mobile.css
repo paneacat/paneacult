@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
   /* =========================
      GLOBAL
@@ -2037,7 +2037,7 @@ section{
 
 
 
-@media screen and (min-width:900px){
+@media screen and (min-width:901px){
 
     .rubrica-card{
 
@@ -2086,5 +2086,8 @@ section{
 
     display:none !important;
 
+  }
+  .profile-nav{
+    display: flex;
   }
 }
