@@ -71,7 +71,8 @@ function renderSelectedMovie(movie, movieDetails){
       .map(actor => actor.name)
       .join(", ");
 
-  selectedMovieData = movie;
+  selectedMovieData =
+  movieDetails || movie;
 const hero =
   document.querySelector(
     ".profile-hero"
