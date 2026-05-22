@@ -1884,7 +1884,43 @@ section{
   /* =========================
    MOBILE TABBAR
 ========================= */
+.mobile-tabbar{
 
+  display:flex !important;
+
+  position:fixed !important;
+
+  bottom:0 !important;
+  left:0 !important;
+  right:0 !important;
+
+  width:100% !important;
+  height:78px !important;
+
+  background:
+    rgba(8,22,35,.96) !important;
+
+  backdrop-filter:
+    blur(18px);
+
+  border-top:
+    1px solid rgba(255,255,255,.08);
+
+  justify-content:space-around !important;
+
+  align-items:center !important;
+
+  padding:0 8px !important;
+
+  visibility:visible !important;
+
+  opacity:1 !important;
+
+  transform:translateY(0) !important;
+
+  z-index:999999 !important;
+}
+  
 .tab-item{
 
   flex:1;
