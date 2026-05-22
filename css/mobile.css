@@ -1938,7 +1938,7 @@ section{
 
   font-size:1.1rem;
 
-}}
+}
 
 /* ACTIVE */
 
@@ -2089,11 +2089,14 @@ section{
   }
 }
 
-@media screen and (max-width:900px)
+@media screen and (max-width:900px){
+  
     .profile-nav{
 
     display:none;
 
     }
-
+.mobile-tabbar{
+    display:flex !important;
+}
 }
