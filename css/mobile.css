@@ -2026,6 +2026,14 @@ section{
   .profile-header{
   display:none !important;
   }
+  .activity-feed{
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:18px;
+
+  }
  }
 
 
