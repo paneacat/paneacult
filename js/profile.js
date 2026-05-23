@@ -263,7 +263,8 @@ function renderRecentActivity(){
     recent.map(movie => `
 
       <div
-        class="saved-card"
+        <div
+  class="saved-card recent-card"
         onclick="goToMovie(${movie.id})"
       >
 
