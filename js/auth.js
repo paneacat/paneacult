@@ -4,9 +4,6 @@ const loginForm =
 const authRegisterBtn =
   document.querySelector(".register-btn");
 
-const logoutBtn =
-  document.querySelector(".logout-btn");
-
 
 /* LOGIN */
 
@@ -101,21 +98,6 @@ authRegisterBtn?.addEventListener(
       );
 
     }
-
-  }
-);
-
-
-/* LOGOUT */
-
-logoutBtn?.addEventListener(
-  "click",
-  async () => {
-
-    await supabaseClient.auth.signOut();
-
-    window.location.href =
-      "login.html";
 
   }
 );
