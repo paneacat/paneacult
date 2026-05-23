@@ -1733,9 +1733,12 @@ opacity:1;
   cursor:pointer;
 }
 
+
+
 /* =========================
    RECENT ACTIVITY
 ========================= */
+
 .activity-feed{
 
   display:flex;
@@ -1748,14 +1751,30 @@ opacity:1;
 
   scroll-behavior:smooth;
 
-  padding-bottom:8px;
-
   width:100%;
+
+  padding-bottom:10px;
 
 }
 
 .activity-feed .saved-card{
 
   flex:0 0 140px;
+
+  min-width:140px;
+
+}
+
+.activity-feed .saved-card img{
+
+  width:100%;
+
+  aspect-ratio:.72;
+
+  object-fit:cover;
+
+  border-radius:22px;
+
+  display:block;
 
 }
