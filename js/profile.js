@@ -51,6 +51,11 @@ const signatureGrid =
     "signatureGrid"
   );
 
+const activityFeed =
+  document.getElementById(
+    "activityFeed"
+  );
+
 /* =========================
    LOAD MOVIES
 ========================= */
@@ -223,6 +228,53 @@ function renderSignature(){
     `).join("");
 
 }
+
+
+function renderRecentActivity(){
+
+  if(!activityFeed) return;
+
+  const recent =
+    JSON.parse(
+      localStorage.getItem(
+        "paneacult_recent"
+      )
+    ) || [];
+
+  if(!recent.length){
+
+    activityFeed.innerHTML = `
+      <p class="empty-text">
+        Nessuna attività recente.
+      </p>
+    `;
+
+    return;
+
+  }
+
+  activityFeed.innerHTML =
+
+    recent.map(movie => `
+
+      <div
+        class="saved-card"
+        onclick="goToMovie(${movie.id})"
+      >
+
+        <img
+          src="
+          https://image.tmdb.org/t/p/w500${movie.poster_path}
+          "
+          alt="${movie.title}"
+        >
+
+      </div>
+
+    `).join("");
+
+}
+
 
 /* =========================
    INIT
