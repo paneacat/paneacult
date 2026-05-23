@@ -1710,3 +1710,35 @@ opacity:1;
   cursor:pointer;
 }
 
+/* =========================
+   RECENT ACTIVITY
+========================= */
+
+.activity-feed{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap:18px;
+
+}
+
+.activity-feed .saved-card{
+
+  width:100%;
+
+}
+
+.activity-feed .saved-card img{
+
+  width:100%;
+
+  aspect-ratio:.72;
+
+  object-fit:cover;
+
+  display:block;
+
+}
