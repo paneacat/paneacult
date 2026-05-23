@@ -1735,46 +1735,60 @@ opacity:1;
 
 
 
-/* =========================
-   RECENT ACTIVITY
-========================= */
+/* FORCE RECENT ACTIVITY POSTERS */
 
 .activity-feed{
 
-  display:flex;
+  display:flex !important;
 
-  gap:18px;
+  flex-direction:row !important;
 
-  overflow-x:auto;
+  flex-wrap:nowrap !important;
 
-  overflow-y:hidden;
+  overflow-x:auto !important;
 
-  scroll-behavior:smooth;
+  overflow-y:hidden !important;
 
-  width:100%;
+  gap:18px !important;
 
-  padding-bottom:10px;
+  width:100% !important;
+
+  padding-bottom:10px !important;
 
 }
 
 .activity-feed .saved-card{
 
-  flex:0 0 140px;
+  flex:0 0 140px !important;
 
-  min-width:140px;
+  width:140px !important;
+
+  min-width:140px !important;
+
+  max-width:140px !important;
 
 }
 
 .activity-feed .saved-card img{
 
-  width:100%;
+  width:140px !important;
 
-  aspect-ratio:.72;
+  min-width:140px !important;
 
-  object-fit:cover;
+  max-width:140px !important;
 
-  border-radius:22px;
+  height:205px !important;
 
-  display:block;
+  min-height:205px !important;
+
+  max-height:205px !important;
+
+  aspect-ratio:auto !important;
+
+  object-fit:cover !important;
+
+  border-radius:22px !important;
+
+  display:block !important;
 
 }
