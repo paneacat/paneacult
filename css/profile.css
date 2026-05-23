@@ -437,17 +437,50 @@ letter-spacing:.04em;
 
 }
 
+
 .activity-feed{
 
   display:flex;
 
-  flex-direction:column;
+  gap:18px;
 
-  gap:1.5rem;
+  overflow-x:auto;
 
-  max-width:900px;
+  overflow-y:hidden;
 
-  margin:0 auto;
+  width:100%;
+
+  padding-bottom:10px;
+
+  justify-content:flex-start;
+
+  align-items:flex-start;
+
+  scroll-behavior:smooth;
+
+}
+
+.activity-feed .saved-card{
+
+  flex:0 0 140px;
+
+  width:140px;
+
+  min-width:140px;
+
+}
+
+.activity-feed .saved-card img{
+
+  width:100%;
+
+  aspect-ratio:0.72;
+
+  object-fit:cover;
+
+  border-radius:22px;
+
+  display:block;
 
 }
 
