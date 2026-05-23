@@ -572,3 +572,49 @@ function goToMovie(id){
     `add-review.html?id=${id}`;
 
 }
+
+
+
+/* =========================
+   LETTERBOXD IMPORT
+========================= */
+
+const importBtn =
+  document.getElementById(
+    "importLetterboxdBtn"
+  );
+
+const importInput =
+  document.getElementById(
+    "letterboxdImport"
+  );
+
+importBtn?.addEventListener(
+  "click",
+  () => {
+
+    importInput.click();
+
+  }
+);
+
+importInput?.addEventListener(
+  "change",
+  async e => {
+
+    const file =
+      e.target.files[0];
+
+    if(!file) return;
+
+    const text =
+      await file.text();
+
+    console.log(text);
+
+    alert(
+      "CSV caricato ✓"
+    );
+
+  }
+);
