@@ -191,14 +191,12 @@ function renderCurrentFavorite(){
   `;
 currentFavorite.onclick = () => {
 
-  if(desertMovie?.id){
-
-    window.location.href =
-      `add-review.html?movie=${desertMovie.id}`;
-
-  }
+  goToMovie(
+    desertMovie.id
+  );
 
 };
+   
 }
 /* =========================
    SIGNATURE FILMS
