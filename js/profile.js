@@ -638,7 +638,7 @@ importInput?.addEventListener(
   await searchMovies(title);
 
 console.log(
-  "Titolo:",
+  "LETTERBOXD",
   title,
   result
 );
@@ -646,6 +646,7 @@ console.log(
 const movie =
   result?.[0];
 
+     
   if(!movie) continue;
 
   const alreadyExists =
