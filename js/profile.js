@@ -118,13 +118,16 @@ grid.innerHTML =
     >
 
       <img
-        src="${
-  movie.poster_path
-    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    : movie.movie_poster
-}"
-        alt="${movie.title}"
-      >
+  src="${
+    movie.poster_path
+      ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+      : movie.movie_poster ||
+        movie.poster ||
+        movie.posterUrl ||
+        "img/poster-placeholder.webp"
+  }"
+  alt="${movie.title}"
+>
 
       <div class="saved-overlay">
 
