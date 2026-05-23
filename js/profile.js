@@ -620,32 +620,43 @@ importInput?.addEventListener(
         )
       ) || [];
 
-    rows.forEach(row => {
+      for (const row of rows){
 
-      const cols =
-        row.split(",");
+  const cols =
+    row.split('","');
 
-      const title =
-        cols[0]
-          ?.replaceAll('"',"")
-          ?.trim();
+  const title =
+    cols[0]
+      ?.replaceAll('"',"")
+      ?.trim();
 
-      if(!title) return;
+  if(!title) continue;
 
-      watched.push({
+  try{
 
-        id:
-          Date.now() +
-          Math.random(),
+    const result =
+      await searchMovies(title);
 
-        title,
+    const movie =
+      result?.[0];
 
-        poster_path:null
+    if(!movie) continue;
 
-      });
+    watched.push({
 
-    });
+      id: movie.id,
+      title: movie.title,
+      poster_path:
+        movie.poster_path
+});
+  }catch(err){
 
+    console.log(err);
+
+  }
+
+      }
+       
     localStorage.setItem(
       "paneacult_watched",
       JSON.stringify(watched)
