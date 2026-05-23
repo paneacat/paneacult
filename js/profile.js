@@ -446,6 +446,6 @@ function goToMovie(id){
   if(!id) return;
 
   window.location.href =
-    `movie.html?id=${id}`;
+    `add-review.html?id=${id}`;
 
 }
