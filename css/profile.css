@@ -460,6 +460,30 @@ letter-spacing:.04em;
 
 }
 
+/* SCROLLBAR ACTIVITY */
+
+.activity-feed::-webkit-scrollbar{
+
+  height:6px;
+
+}
+
+.activity-feed::-webkit-scrollbar-track{
+
+  background:transparent;
+
+}
+
+.activity-feed::-webkit-scrollbar-thumb{
+
+  background:
+    rgba(255,255,255,.15);
+
+  border-radius:999px;
+
+}
+
+
 .activity-feed .saved-card{
 
   flex:0 0 140px;
