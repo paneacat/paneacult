@@ -195,8 +195,8 @@ async function checkEditorialAccess(){
     "patrizia.catania22@yahoo.it"
   ){
 
-    publishEditorialBtn.style
-      .display = "inline-flex";
+    publishEditorialBtn?.style.display =
+  "inline-flex";
 
   }
 
