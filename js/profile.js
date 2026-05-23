@@ -709,11 +709,16 @@ const movie =
       JSON.stringify(watched)
     );
 
-    alert(
-      `${rows.length} film importati`
-    );
+    console.log(
+  "WATCHED",
+  watched
+);
 
-    location.reload();
+alert(
+  `${watched.length} film trovati`
+);
+
+// location.reload();
 
   }
 );
