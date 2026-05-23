@@ -189,7 +189,16 @@ function renderCurrentFavorite(){
 
     </div>
   `;
+currentFavorite.onclick = () => {
 
+  if(desertMovie?.id){
+
+    window.location.href =
+      `archivio.html?movie=${movie.id}`;
+
+  }
+
+};
 }
 /* =========================
    SIGNATURE FILMS
