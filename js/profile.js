@@ -634,24 +634,34 @@ importInput?.addEventListener(
 
   try{
 
-    const result =
-      await searchMovies(title);
+  const result =
+    await searchMovies(title);
 
-    const movie =
-      result?.[0];
+  const movie =
+    result?.[0];
 
-    if(!movie) continue;
+  if(!movie) continue;
 
-    watched.push({
+  const alreadyExists =
+    watched.some(
+      m => m.id === movie.id
+    );
 
-      id: movie.id,
-      title: movie.title,
-      poster_path:
-        movie.poster_path
-});
-  }catch(err){
+  if(alreadyExists)
+    continue;
 
-    console.log(err);
+  watched.push({
+
+    id: movie.id,
+    title: movie.title,
+    poster_path:
+      movie.poster_path
+
+  });
+
+}catch(err){
+
+  console.log(err);
 
   }
 
