@@ -285,6 +285,89 @@ function renderRecentActivity(){
 
 }
 
+
+/* =========================
+   PROFILE COUNTERS
+========================= */
+
+async function updateCounters(){
+
+  const filmsCount =
+    document.getElementById(
+      "filmsCount"
+    );
+
+  const reviewsCount =
+    document.getElementById(
+      "reviewsCount"
+    );
+
+  const favoritesCount =
+    document.getElementById(
+      "favoritesCount"
+    );
+
+  const watched =
+    getMovies(
+      "paneacult_watched"
+    );
+
+  const favorites =
+    getMovies(
+      "paneacult_favorites"
+    );
+
+  if(filmsCount){
+
+    filmsCount.textContent =
+      watched.length;
+
+  }
+
+  if(favoritesCount){
+
+    favoritesCount.textContent =
+      favorites.length;
+
+  }
+
+  const {
+    data:{ user }
+  } =
+  await supabaseClient.auth
+    .getUser();
+
+  if(
+    user &&
+    reviewsCount
+  ){
+
+    const {
+      count
+    } =
+    await supabaseClient
+      .from(
+        "user_reviews"
+      )
+      .select(
+        "*",
+        {
+          count:"exact",
+          head:true
+        }
+      )
+      .eq(
+        "user_id",
+        user.id
+      );
+
+    reviewsCount.textContent =
+      count || 0;
+
+  }
+
+}
+
 /* =========================
    INIT
 ========================= */
@@ -309,6 +392,8 @@ renderCurrentFavorite();
 renderSignature();
 
 renderRecentActivity();
+
+updateCounters();
 /* =========================
    CUSTOM PROFILE
 ========================= */
