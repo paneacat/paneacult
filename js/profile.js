@@ -103,35 +103,33 @@ function renderGrid(
 
   }
 
-  grid.innerHTML =
+grid.innerHTML =
 
-    movies.map(movie => `
+  movies.map(movie => `
 
-      <div
-  class="saved-card"
-  onclick="goToMovie(${movie.id})"
->
+    <div
+      class="saved-card"
+      onclick="goToMovie(${movie.id})"
+    >
 
-        <img
-  src="${
-    movie.poster_path
-      ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-      : movie.poster
-  }"
-  alt="${movie.title}"
->
+      <img
+        src="
+        https://image.tmdb.org/t/p/w500${movie.poster_path}
+        "
+        alt="${movie.title}"
+      >
 
-        <div class="saved-overlay">
+      <div class="saved-overlay">
 
-          <h3>
-            ${movie.title}
-          </h3>
-
-        </div>
+        <h3>
+          ${movie.title}
+        </h3>
 
       </div>
 
-    `).join("");
+    </div>
+
+  `).join("");
 
 }
 
@@ -442,3 +440,12 @@ editBtn?.addEventListener(
 
   }
 );
+
+function goToMovie(id){
+
+  if(!id) return;
+
+  window.location.href =
+    `movie.html?id=${id}`;
+
+}
