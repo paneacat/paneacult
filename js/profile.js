@@ -504,28 +504,11 @@ editBtn?.addEventListener(
   }
 );
 
-async function goToMovie(id){
+function goToMovie(id){
 
   if(!id) return;
 
-  const response =
-    await fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=it-IT&append_to_response=credits`
-    );
-
-  const movie =
-    await response.json();
-
-  localStorage.setItem(
-    "paneacult_selected_movie",
-    JSON.stringify(movie)
-  );
-
-  localStorage.removeItem(
-    "paneacult_selected_movie_html"
-  );
-
   window.location.href =
-    "add-review.html";
+    `add-review.html?id=${id}`;
 
 }
