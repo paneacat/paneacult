@@ -194,7 +194,7 @@ currentFavorite.onclick = () => {
   if(desertMovie?.id){
 
     window.location.href =
-      `archivio.html?movie=${desertMovie.id}`;
+      `add-review.html?movie=${desertMovie.id}`;
 
   }
 
@@ -504,11 +504,24 @@ editBtn?.addEventListener(
   }
 );
 
-function goToMovie(id){
+async function goToMovie(id){
 
   if(!id) return;
 
+  const response =
+    await fetch(
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=it-IT`
+    );
+
+  const movie =
+    await response.json();
+
+  localStorage.setItem(
+    "paneacult_selected_movie",
+    JSON.stringify(movie)
+  );
+
   window.location.href =
-    `add-review.html?id=${id}`;
+    "add-review.html";
 
 }
