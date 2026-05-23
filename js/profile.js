@@ -1,26 +1,5 @@
 
 /* =========================
-   INIT
-========================= */
-
-document.querySelector(
-  ".logout-btn"
-)?.addEventListener(
-  "click",
-  async (e) => {
-
-    e.preventDefault();
-
-    await supabaseClient.auth
-      .signOut();
-
-    location.href =
-      "login.html";
-
-  }
-);
-
-/* =========================
    PROFILE MOVIES
 ========================= */
 
