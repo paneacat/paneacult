@@ -117,38 +117,41 @@ reviewRating?.addEventListener(
 );
 
 /* =========================
-   RESTORE SELECTED MOVIE
+   LOAD MOVIE FROM URL
 ========================= */
 
-const savedMovie =
-  localStorage.getItem(
-    "paneacult_selected_movie"
+const params =
+  new URLSearchParams(
+    window.location.search
   );
 
-const savedMovieHTML =
-  localStorage.getItem(
-    "paneacult_selected_movie_html"
-  );
+const movieId =
+  params.get("id");
 
-if(
-  savedMovie &&
-  savedMovieHTML &&
-  selectedMovie &&
-  reviewForm &&
-  movieSearchInput
-){
-  selectedMovieData =
-    JSON.parse(savedMovie);
+if(movieId){
 
-  selectedMovie.innerHTML =
-    savedMovieHTML;
+  fetchMovieDetails(
+    movieId
+  ).then(movieDetails => {
 
-  if(reviewForm){
+    selectedMovieData =
+      movieDetails;
 
-  reviewForm.style.display =
-    "block";
+    renderSelectedMovie(
+      movieDetails,
+      movieDetails
+    );
 
-     }
+    setupMovieButtons();
+
+    reviewForm?.classList.add(
+      "hidden-review-form"
+    );
+
+  });
+
+}
+
 
   if(movieSearchInput){
 
@@ -333,9 +336,6 @@ localStorage.removeItem(
   "paneacult_selected_movie"
 );
 
-localStorage.removeItem(
-  "paneacult_selected_movie_html"
-);
 
 /* RESET UI */
 
