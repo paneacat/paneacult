@@ -380,5 +380,31 @@ document.addEventListener(
 );
 
 
+/* =========================
+   LOGOUT
+========================= */
+
+document
+  .querySelectorAll(
+    ".logout-btn"
+  )
+  .forEach(btn => {
+
+    btn.addEventListener(
+      "click",
+      async (e) => {
+
+        e.preventDefault();
+
+        await supabaseClient.auth
+          .signOut();
+
+        window.location.href =
+          "login.html";
+
+      }
+    );
+
+  });
 
 
