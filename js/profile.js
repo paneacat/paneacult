@@ -589,6 +589,17 @@ const importInput =
     "letterboxdImport"
   );
 
+console.log(
+  "IMPORT BTN",
+  importBtn
+);
+
+console.log(
+  "IMPORT INPUT",
+  importInput
+);
+
+
 importBtn?.addEventListener(
   "click",
   () => {
