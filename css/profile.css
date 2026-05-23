@@ -1737,26 +1737,6 @@ opacity:1;
    RECENT ACTIVITY
 ========================= */
 
-.activity-feed{
-
-  display:flex;
-
-  gap:18px;
-
-  overflow-x:auto;
-
-  overflow-y:hidden;
-
-  scroll-behavior:smooth;
-
-  justify-content:flex-start !important;
-
-  width:100%;
-
-  padding-bottom:8px;
-
-}
-
 .activity-feed::-webkit-scrollbar{
 
   height:6px;
@@ -1772,20 +1752,50 @@ opacity:1;
 
 }
 
+.activity-feed{
+
+  display:flex !important;
+
+  flex-direction:row !important;
+
+  flex-wrap:nowrap !important;
+
+  overflow-x:auto !important;
+
+  overflow-y:hidden !important;
+
+  gap:18px;
+
+  justify-content:flex-start !important;
+
+  align-items:flex-start !important;
+
+  width:100%;
+
+  padding-bottom:8px;
+
+}
+
 .activity-feed .saved-card{
 
-  flex:0 0 140px;
+  flex:0 0 140px !important;
 
-  width:140px;
+  width:140px !important;
+
+  min-width:140px !important;
+
+  margin:0 !important;
 
 }
 
 .activity-feed .saved-card img{
 
-  width:140px;
+  width:140px !important;
 
-  height:205px;
+  height:205px !important;
 
-  object-fit:cover;
+  object-fit:cover !important;
+
+  display:block;
 
 }
