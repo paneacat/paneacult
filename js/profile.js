@@ -613,6 +613,11 @@ importInput?.addEventListener(
   "change",
   async e => {
 
+   console.log(
+  "CSV CHANGE PARTITO"
+);
+
+     
     const file =
       e.target.files[0];
 
