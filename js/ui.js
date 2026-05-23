@@ -12,7 +12,10 @@ document.addEventListener(
       movieSearchInput?.contains(e.target) ||
       movieResults?.contains(e.target);
 
-    if(!clickedInsideSearch){
+    if(
+      !clickedInsideSearch &&
+      movieResults
+    ){
 
       movieResults.innerHTML = "";
 
@@ -20,7 +23,6 @@ document.addEventListener(
 
   }
 );
-
 /* =========================
    BUTTON STATES
 ========================= */
