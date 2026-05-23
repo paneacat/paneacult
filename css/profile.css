@@ -1716,32 +1716,41 @@ opacity:1;
 
 .activity-feed{
 
-  display:grid;
+  display:grid !important;
 
   grid-template-columns:
-    repeat(auto-fill, 140px);
-
-  justify-content:start !important;
+    repeat(auto-fill, 140px) !important;
 
   gap:18px;
 
+  justify-content:start !important;
+
+  justify-items:start !important;
+
+  align-content:start;
+
   width:100%;
+
+  margin:0 !important;
+
+}
+
+.activity-feed .saved-card{
+
+  width:140px !important;
+
+  margin:0 !important;
 
 }
 
 .activity-feed .saved-card img{
 
-  width:100%;
+  width:140px !important;
 
-  aspect-ratio:.68;
+  height:205px !important;
 
   object-fit:cover;
 
   display:block;
-
-}
-.activity-feed .saved-card{
-
-  width:100%;
 
 }
