@@ -299,7 +299,7 @@ renderCurrentFavorite();
 
 renderSignature();
 
-
+renderRecentActivity();
 /* =========================
    CUSTOM PROFILE
 ========================= */
