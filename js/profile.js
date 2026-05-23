@@ -610,11 +610,52 @@ importInput?.addEventListener(
     const text =
       await file.text();
 
-    console.log(text);
+    const rows =
+      text.split("\n").slice(1);
+
+    let watched =
+      JSON.parse(
+        localStorage.getItem(
+          "paneacult_watched"
+        )
+      ) || [];
+
+    rows.forEach(row => {
+
+      const cols =
+        row.split(",");
+
+      const title =
+        cols[0]
+          ?.replaceAll('"',"")
+          ?.trim();
+
+      if(!title) return;
+
+      watched.push({
+
+        id:
+          Date.now() +
+          Math.random(),
+
+        title,
+
+        poster_path:null
+
+      });
+
+    });
+
+    localStorage.setItem(
+      "paneacult_watched",
+      JSON.stringify(watched)
+    );
 
     alert(
-      "CSV caricato ✓"
+      `${rows.length} film importati`
     );
+
+    location.reload();
 
   }
 );
