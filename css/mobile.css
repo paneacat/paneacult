@@ -2023,17 +2023,27 @@ section{
 .profile-edit.open{
   display:flex;
   }
+  
   .profile-header{
   display:none !important;
   }
+
   .activity-feed{
+
+  display:grid !important;
 
   grid-template-columns:
     repeat(2,1fr);
 
-  gap:18px;
+  justify-content:start !important;
 
-  }
+}
+
+.activity-feed .saved-card{
+
+  width:100%;
+
+}
  }
 
 
