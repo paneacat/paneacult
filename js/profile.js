@@ -3,24 +3,22 @@
    INIT
 ========================= */
 
-const logoutBtn =
-  document.querySelector(
-    ".logout-btn"
-  );
-
-logoutBtn?.addEventListener(
+document.querySelector(
+  ".logout-btn"
+)?.addEventListener(
   "click",
-  async () => {
+  async (e) => {
 
-    await supabase.auth.signOut();
-     
-    window.location.href =
+    e.preventDefault();
+
+    await supabaseClient.auth
+      .signOut();
+
+    location.href =
       "login.html";
 
   }
 );
-
-
 
 /* =========================
    PROFILE MOVIES
