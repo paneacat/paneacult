@@ -1713,31 +1713,17 @@ opacity:1;
 /* =========================
    RECENT ACTIVITY
 ========================= */
+
 .activity-feed{
 
-  display:flex;
+  display:grid;
 
-  flex-wrap:wrap;
+  grid-template-columns:
+    repeat(auto-fill, 140px);
 
-  justify-content:flex-start !important;
-
-  align-items:flex-start;
+  justify-content:start !important;
 
   gap:18px;
-
-  width:100%;
-
-}
-
-.activity-feed .saved-card{
-
-  width:180px;
-
-  flex:none;
-
-}
-
-.activity-feed .saved-card{
 
   width:100%;
 
@@ -1747,10 +1733,15 @@ opacity:1;
 
   width:100%;
 
-  aspect-ratio:.72;
+  aspect-ratio:.68;
 
   object-fit:cover;
 
   display:block;
+
+}
+.activity-feed .saved-card{
+
+  width:100%;
 
 }
