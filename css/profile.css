@@ -1778,21 +1778,19 @@ opacity:1;
 
 .activity-feed .saved-card{
 
-  flex:0 0 140px !important;
+  flex:0 0 180px !important;
 
-  width:140px !important;
+  width:180px !important;
 
-  min-width:140px !important;
-
-  margin:0 !important;
+  min-width:180px !important;
 
 }
 
 .activity-feed .saved-card img{
 
-  width:140px !important;
+  width:180px !important;
 
-  height:205px !important;
+  height:265px !important;
 
   object-fit:cover !important;
 
