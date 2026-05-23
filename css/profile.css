@@ -1713,17 +1713,27 @@ opacity:1;
 /* =========================
    RECENT ACTIVITY
 ========================= */
-
 .activity-feed{
 
-  display:grid;
+  display:flex;
 
-  grid-template-columns:
-    repeat(5, 180px);
+  flex-wrap:wrap;
+
+  justify-content:flex-start !important;
+
+  align-items:flex-start;
 
   gap:18px;
 
-  justify-content:start;
+  width:100%;
+
+}
+
+.activity-feed .saved-card{
+
+  width:180px;
+
+  flex:none;
 
 }
 
