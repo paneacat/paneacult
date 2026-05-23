@@ -1784,3 +1784,138 @@ opacity:1;
   cursor:pointer;
 
 }
+
+
+/* =========================
+   LETTERBOXD IMPORT
+========================= */
+
+.import-box{
+
+  width:min(1100px,92%);
+
+  margin:4rem auto;
+
+  padding:42px;
+
+  border-radius:36px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.045),
+      rgba(255,255,255,.015)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(18px);
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+.import-box::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:260px;
+  height:260px;
+
+  border-radius:50%;
+
+  top:-120px;
+  right:-80px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(253,193,3,.12),
+      transparent 70%
+    );
+
+  pointer-events:none;
+
+}
+
+.import-box h3{
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:2.2rem;
+
+  margin-bottom:10px;
+
+  color:var(--panea-white);
+
+}
+
+.import-box p{
+
+  color:
+    rgba(255,255,255,.68);
+
+  line-height:1.7;
+
+  max-width:520px;
+
+  margin-bottom:28px;
+
+}
+
+#importLetterboxdBtn{
+
+  height:56px;
+
+  padding:0 28px;
+
+  border-radius:999px;
+
+  border:
+    1px solid rgba(
+      255,255,255,.08
+    );
+
+  background:
+    rgba(255,255,255,.04);
+
+  backdrop-filter:blur(12px);
+
+  color:var(--panea-yellow);
+
+  font-size:.82rem;
+
+  letter-spacing:.12em;
+
+  text-transform:uppercase;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.3s ease;
+
+}
+
+#importLetterboxdBtn:hover{
+
+  background:
+    var(--panea-yellow);
+
+  color:#08131d;
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 14px 34px
+    rgba(253,193,3,.25);
+
+}
