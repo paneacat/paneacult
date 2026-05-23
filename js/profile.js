@@ -264,7 +264,7 @@ function renderRecentActivity(){
 
       <div
         <div
-  class="saved-card recent-card"
+  class="saved-card"
         onclick="goToMovie(${movie.id})"
       >
 
