@@ -12,8 +12,8 @@ logoutBtn?.addEventListener(
   "click",
   async () => {
 
-    await supabaseClient.auth.signOut();
-
+    await supabase.auth.signOut();
+     
     window.location.href =
       "login.html";
 
