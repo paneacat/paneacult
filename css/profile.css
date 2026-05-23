@@ -1719,9 +1719,11 @@ opacity:1;
   display:grid;
 
   grid-template-columns:
-    repeat(5, 1fr);
+    repeat(5, 180px);
 
   gap:18px;
+
+  justify-content:start;
 
 }
 
