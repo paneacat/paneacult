@@ -144,23 +144,28 @@ if(movieId){
 
     setupMovieButtons();
 
-    reviewForm?.classList.add(
-      "hidden-review-form"
-    );
+    if(movieSearchInput){
+
+      movieSearchInput.value =
+        movieDetails.title;
+
+    }
+
+    if(reviewForm){
+
+      reviewForm.style.display =
+        "block";
+
+      reviewForm.classList.add(
+        "hidden-review-form"
+      );
+
+    }
 
   });
 
 }
 
-
-  if(movieSearchInput){
-
-  movieSearchInput.value =
-    selectedMovieData.title;
-
-  }
-
-}
 
 const publishReviewBtn =
   document.getElementById(
