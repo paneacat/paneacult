@@ -404,50 +404,7 @@ const TMDB_POSTER =
 const TMDB_BACKDROP =
   "https://image.tmdb.org/t/p/original";
 
-const trendingGrid =
-  document.getElementById(
-    "favoriteGrid"
-  );
-async function loadTrending(){
 
-  const res = await fetch(
-  `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
-);
-
-  const data = await res.json();
-
-  renderMovies(data.results);
-
-}
-
-function renderMovies(movies){
-
-  trendingGrid.innerHTML =
-
-    movies.map(movie => `
-
-      <div class="saved-card">
-
-        <img
-          src="${TMDB_POSTER + movie.poster_path}"
-          alt="${movie.title}"
-        >
-        
-        <div class="saved-overlay">
-
-          <h3>${movie.title}</h3>
-
-        </div>
-
-      </div>
-
-    `).join("");
-
-}
-
-if(trendingGrid){
-  loadTrending();
-}
 
 function goToMovie(id){
 
