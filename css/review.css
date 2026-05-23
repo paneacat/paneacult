@@ -1848,8 +1848,8 @@ letter-spacing:.04em;
     "Playfair Display",
     serif;
 
-  font-size:2rem;
-
+  font-size:4rem;
+  line-height:.95;
   margin-bottom:30px;
 
 }
