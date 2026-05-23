@@ -192,11 +192,12 @@ async function checkEditorialAccess(){
   if(
     user &&
     user.email ===
-    "patrizia.catania22@yahoo.it"
+    "patrizia.catania22@yahoo.it" &&
+    publishEditorialBtn
   ){
 
-    publishEditorialBtn?.style.display =
-  "inline-flex";
+    publishEditorialBtn.style.display =
+      "inline-flex";
 
   }
 
