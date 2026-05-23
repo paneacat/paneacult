@@ -1442,17 +1442,40 @@ max-width: 700px;
 
 .saved-grid{
 
-  display:grid;
-
-  grid-template-columns:
-    repeat(
-      auto-fill,
-      minmax(120px,1fr)
-    );
+  display:flex;
 
   gap:18px;
 
-  margin-top:22px;
+  overflow-x:auto;
+
+  overflow-y:hidden;
+
+  scroll-behavior:smooth;
+
+  padding-bottom:8px;
+
+  justify-content:flex-start;
+
+}
+
+.saved-grid::-webkit-scrollbar{
+
+  height:6px;
+
+}
+
+.saved-grid::-webkit-scrollbar-thumb{
+
+  background:
+    rgba(255,255,255,.15);
+
+  border-radius:999px;
+
+}
+
+.saved-grid .saved-card{
+
+  flex:0 0 140px;
 
 }
 
