@@ -621,11 +621,25 @@ importInput?.addEventListener(
     const file =
       e.target.files[0];
 
+
+     console.log(
+  "FILE",
+  file
+);
+
+     
     if(!file) return;
 
     const text =
       await file.text();
 
+
+     console.log(
+  "CSV TEXT",
+  text.slice(0,500)
+);
+
+     
     const rows =
       text.split("\n").slice(1);
 
