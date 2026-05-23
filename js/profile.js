@@ -194,7 +194,7 @@ currentFavorite.onclick = () => {
   if(desertMovie?.id){
 
     window.location.href =
-      `archivio.html?movie=${movie.id}`;
+      `archivio.html?movie=${desertMovie.id}`;
 
   }
 
@@ -271,25 +271,21 @@ function renderRecentActivity(){
 
     recent.map(movie => `
 
-      <div
-        <div
-  class="saved-card"
-        onclick="goToMovie(${movie.id})"
-      >
+  <div
+    class="saved-card"
+    onclick="goToMovie(${movie.id})"
+  >
 
-        <img
-          src="
-          https://image.tmdb.org/t/p/w500${movie.poster_path}
-          "
-          alt="${movie.title}"
-        >
+    <img
+      src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
+      alt="${movie.title}"
+    >
 
-      </div>
+  </div>
 
-    `).join("");
+`).join("");
 
 }
-
 
 /* =========================
    INIT
