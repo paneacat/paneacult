@@ -29,6 +29,20 @@ let selectedMovieData = null;
 let currentMovieStatus = null;
 
 
+async function searchMovies(query){
+
+  const response = await fetch(
+    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=it-IT&query=${encodeURIComponent(query)}`
+  );
+
+  const data =
+    await response.json();
+
+  return data.results || [];
+
+}
+
+
 async function fetchMovieDetails(movieId){
 
   const response = await fetch(
