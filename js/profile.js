@@ -665,8 +665,8 @@ importInput?.addEventListener(
   try{
 
   const result =
-  await searchTMDB(title);
-
+  await searchMovies(title);
+     
 const movie =
   result?.results?.[0];
      
