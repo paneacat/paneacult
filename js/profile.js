@@ -653,13 +653,13 @@ importInput?.addEventListener(
       for (const row of rows){
 
   const cols =
-    row.split('","');
+  row.split(",");
 
-  const title =
-    cols[0]
-      ?.replaceAll('"',"")
-      ?.trim();
-
+const title =
+  cols[1]
+    ?.replaceAll('"',"")
+    ?.trim();
+         
   if(!title) continue;
 
   try{
