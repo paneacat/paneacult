@@ -665,17 +665,10 @@ importInput?.addEventListener(
   try{
 
   const result =
-  await searchMovies(title);
-
-console.log(
-  "LETTERBOXD",
-  title,
-  result
-);
+  await searchTMDB(title);
 
 const movie =
-  result?.[0];
-
+  result?.results?.[0];
      
   if(!movie) continue;
 
