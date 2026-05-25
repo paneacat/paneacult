@@ -666,9 +666,20 @@ importInput?.addEventListener(
 
   const result =
   await searchMovies(title);
-     
+
+console.log(
+  "TROVATO",
+  title,
+  result
+);
+
 const movie =
-  result?.results?.[0];
+  result?.[0];
+
+console.log(
+  "FILM",
+  movie
+);
      
   if(!movie) continue;
 
