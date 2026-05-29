@@ -323,12 +323,6 @@ await supabaseClient
 
   }
 
-  const {
-    data:{ user }
-  } =
-  await supabaseClient.auth
-    .getUser();
-
   if(
     user &&
     reviewsCount
