@@ -576,7 +576,6 @@ if(
     () => {
 
       watchedBtn?.addEventListener(
-  "cliwatchedBtn?.addEventListener(
   "click",
   async () => {
 
