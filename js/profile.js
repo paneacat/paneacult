@@ -281,18 +281,39 @@ async function updateCounters(){
       "favoritesCount"
     );
 
-  let watched = [];
-
   const favorites =
     getMovies(
       "paneacult_favorites"
     );
 
+   const {
+  data:{ user }
+} =
+await supabaseClient.auth
+  .getUser();
+
+if(!user) return;
+
+const {
+  data: watchedCloud
+} =
+await supabaseClient
+  .from("user_movies")
+  .select("*")
+  .eq(
+    "user_id",
+    user.id
+  )
+  .eq(
+    "status",
+    "watched"
+  );
+
+   
   if(filmsCount){
 
     filmsCount.textContent =
-      watched.length;
-
+  watchedCloud?.length || 0;
   }
 
   if(favoritesCount){
@@ -669,15 +690,19 @@ importInput?.addEventListener(
     const rows =
       text.split("\n").slice(1);
 
-    let watched =
-      JSON.parse(
-        localStorage.getItem(
-          "paneacult_watched"
-        )
-      ) || [];
 
-      for (const row of rows){
 
+const {
+  data:{ user }
+} =
+await supabaseClient.auth
+  .getUser();
+
+if(!user) return;
+
+     
+
+   
   const cols =
   row.split(",");
 
@@ -709,22 +734,32 @@ console.log(
      
   if(!movie) continue;
 
-  const alreadyExists =
-    watched.some(
-      m => m.id === movie.id
-    );
+  const {
+  data: existing
+} =
+await supabaseClient
+  .from("user_movies")
+  .select("id")
+  .eq(
+    "user_id",
+    user.id
+  )
+  .eq(
+    "movie_id",
+    movie.id
+  )
+  .eq(
+    "status",
+    "watched"
+  )
+  .maybeSingle();
 
-  if(alreadyExists)
-    continue;
+if(existing)
+  continue;
 
-  watched.push({
 
-    id: movie.id,
-    title: movie.title,
-    poster_path:
-      movie.poster_path
 
-  });
+     
 
 }catch(err){
 
@@ -734,21 +769,16 @@ console.log(
 
       }
        
-    localStorage.setItem(
-      "paneacult_watched",
-      JSON.stringify(watched)
-    );
-
     console.log(
   "WATCHED",
   watched
 );
 
 alert(
-  `${watched.length} film trovati`
+  "Import completato 🎬"
 );
 
-// location.reload();
+location.reload();
 
   }
 );
