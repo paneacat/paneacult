@@ -668,135 +668,103 @@ importInput?.addEventListener(
     const file =
       e.target.files[0];
 
+    importInput?.addEventListener(
+  "change",
+  async e => {
 
-     console.log(
-  "FILE",
-  file
-);
+    console.log(
+      "CSV CHANGE PARTITO"
+    );
 
-     
+    const file =
+      e.target.files[0];
+
     if(!file) return;
 
     const text =
       await file.text();
 
-
-     console.log(
-  "CSV TEXT",
-  text.slice(0,500)
-);
-
-     
     const rows =
       text.split("\n").slice(1);
 
+    const {
+      data:{ user }
+    } =
+    await supabaseClient.auth
+      .getUser();
 
+    if(!user) return;
 
-const {
-  data:{ user }
-} =
-await supabaseClient.auth
-  .getUser();
+    for (const row of rows){
 
-if(!user) return;
-for (const row of rows){
-     
+      const cols =
+        row.split(",");
 
-   
-  const cols =
-  row.split(",");
+      const title =
+        cols[1]
+          ?.replaceAll('"',"")
+          ?.trim();
 
-const title =
-  cols[1]
-    ?.replaceAll('"',"")
-    ?.trim();
-         
-  if(!title) continue;
+      if(!title) continue;
 
-  try{
+      try{
 
-  const result =
-  await searchMovies(title);
+        const result =
+          await searchMovies(title);
 
-console.log(
-  "TROVATO",
-  title,
-  result
-);
+        const movie =
+          result?.[0];
 
-const movie =
-  result?.[0];
+        if(!movie) continue;
 
-console.log(
-  "FILM",
-  movie
-);
-     
-  if(!movie) continue;
+        const {
+          data: existing
+        } =
+        await supabaseClient
+          .from("user_movies")
+          .select("id")
+          .eq("user_id", user.id)
+          .eq("movie_id", movie.id)
+          .eq("status", "watched")
+          .maybeSingle();
 
-  const {
-  data: existing
-} =
-await supabaseClient
-  .from("user_movies")
-  .select("id")
-  .eq(
-    "user_id",
-    user.id
-  )
-  .eq(
-    "movie_id",
-    movie.id
-  )
-  .eq(
-    "status",
-    "watched"
-  )
-  .maybeSingle();
+        if(existing)
+          continue;
 
-if(existing)
-  continue;
+        await supabaseClient
+          .from("user_movies")
+          .insert({
 
-await supabaseClient
-  .from("user_movies")
-  .insert({
+            user_id:
+              user.id,
 
-    user_id:
-      user.id,
+            movie_id:
+              movie.id,
 
-    movie_id:
-      movie.id,
+            title:
+              movie.title,
 
-    title:
-      movie.title,
+            poster_path:
+              movie.poster_path,
 
-    poster_path:
-      movie.poster_path,
+            status:
+              "watched"
 
-    status:
-      "watched"
+          });
 
-  });
+      }catch(err){
 
-     
+        console.log(err);
 
-}catch(err){
+      }
 
-  console.log(err);
+    }
 
-  }
-  }
-   
-    console.log(
-  "WATCHED",
-  watched
-);
+    alert(
+      "Import completato 🎬"
+    );
 
-alert(
-  "Import completato 🎬"
-);
-
-location.reload();
+    location.reload();
 
   }
 );
