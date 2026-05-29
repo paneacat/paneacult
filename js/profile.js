@@ -45,10 +45,7 @@ function getMovies(key){
 
 }
 
-const watched =
-  getMovies(
-    "paneacult_watched"
-  );
+let watched = [];
 
 const watchlist =
   getMovies(
@@ -349,10 +346,42 @@ async function updateCounters(){
    INIT
 ========================= */
 
-renderGrid(
-  watchedGrid,
-  watched
-);
+async function loadWatched(){
+
+  const {
+    data:{ user }
+  } =
+  await supabaseClient.auth
+    .getUser();
+
+  if(!user) return;
+
+  const {
+    data
+  } =
+  await supabaseClient
+    .from("user_movies")
+    .select("*")
+    .eq(
+      "user_id",
+      user.id
+    )
+    .eq(
+      "status",
+      "watched"
+    );
+
+  watched =
+    data || [];
+
+  renderGrid(
+    watchedGrid,
+    watched
+  );
+
+}
+
+loadWatched();
 
 renderGrid(
   watchlistGrid,
