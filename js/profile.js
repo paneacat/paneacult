@@ -281,10 +281,7 @@ async function updateCounters(){
       "favoritesCount"
     );
 
-  const watched =
-    getMovies(
-      "paneacult_watched"
-    );
+  let watched = [];
 
   const favorites =
     getMovies(
