@@ -699,7 +699,7 @@ await supabaseClient.auth
   .getUser();
 
 if(!user) return;
-
+for (const row of rows){
      
 
    
@@ -757,7 +757,26 @@ await supabaseClient
 if(existing)
   continue;
 
+await supabaseClient
+  .from("user_movies")
+  .insert({
 
+    user_id:
+      user.id,
+
+    movie_id:
+      movie.id,
+
+    title:
+      movie.title,
+
+    poster_path:
+      movie.poster_path,
+
+    status:
+      "watched"
+
+  });
 
      
 
@@ -768,7 +787,8 @@ if(existing)
   }
 
       }
-       
+  }
+   
     console.log(
   "WATCHED",
   watched
