@@ -24,10 +24,15 @@ document.addEventListener(
         e.target
       );
 
-    if(!clickedInsideSearch){
+    if(
+  !clickedInsideSearch &&
+  movieResults
+){
 
-      movieResults.innerHTML =
-        "";
+  movieResults.innerHTML =
+    "";
+  movieResults.style.display =
+    "none";
 
     }
 
