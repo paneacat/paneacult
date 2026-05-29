@@ -576,6 +576,7 @@ if(
     () => {
 
       watchedBtn?.addEventListener(
+  "cliwatchedBtn?.addEventListener(
   "click",
   async () => {
 
@@ -587,26 +588,50 @@ if(
 
     if(!user) return;
 
+    const {
+      data: existing
+    } =
     await supabaseClient
       .from("user_movies")
-      .insert({
+      .select("id")
+      .eq(
+        "user_id",
+        user.id
+      )
+      .eq(
+        "movie_id",
+        selectedMovieData.id
+      )
+      .eq(
+        "status",
+        "watched"
+      )
+      .maybeSingle();
 
-        user_id:
-          user.id,
+    if(!existing){
 
-        movie_id:
-          selectedMovieData.id,
+      await supabaseClient
+        .from("user_movies")
+        .insert({
 
-        title:
-          selectedMovieData.title,
+          user_id:
+            user.id,
 
-        poster_path:
-          selectedMovieData.poster_path,
+          movie_id:
+            selectedMovieData.id,
 
-        status:
-          "watched"
+          title:
+            selectedMovieData.title,
 
-      });
+          poster_path:
+            selectedMovieData.poster_path,
+
+          status:
+            "watched"
+
+        });
+
+    }
 
     watchedBtn.classList.add(
       "active"
