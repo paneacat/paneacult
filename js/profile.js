@@ -616,6 +616,7 @@ function goToMovie(id){
 
 
 
+
 /* =========================
    LETTERBOXD IMPORT
 ========================= */
@@ -630,17 +631,6 @@ const importInput =
     "letterboxdImport"
   );
 
-console.log(
-  "IMPORT BTN",
-  importBtn
-);
-
-console.log(
-  "IMPORT INPUT",
-  importInput
-);
-
-
 importBtn?.addEventListener(
   "click",
   () => {
@@ -651,18 +641,6 @@ importBtn?.addEventListener(
 );
 
 importInput?.addEventListener(
-  "change",
-  async e => {
-
-   console.log(
-  "CSV CHANGE PARTITO"
-);
-
-     
-    const file =
-      e.target.files[0];
-
-    importInput?.addEventListener(
   "change",
   async e => {
 
@@ -689,85 +667,87 @@ importInput?.addEventListener(
 
     if(!user) return;
 
+    for(const row of rows){
 
-     
+      const cols =
+        row.split(",");
 
-    for (const row of rows){
+      const title =
+        cols[1]
+          ?.replaceAll('"',"")
+          ?.trim();
 
-  const cols =
-    row.split(",");
+      if(!title) continue;
 
-  const title =
-    cols[1]
-      ?.replaceAll('"',"")
-      ?.trim();
+      try{
 
-  if(!title) continue;
+        const result =
+          await searchMovies(
+            title
+          );
 
-  try{
+        const movie =
+          result?.[0];
 
-    const result =
-      await searchMovies(title);
+        if(!movie) continue;
 
-    const movie =
-      result?.[0];
+        const {
+          data: existing
+        } =
+        await supabaseClient
+          .from("user_movies")
+          .select("id")
+          .eq(
+            "user_id",
+            user.id
+          )
+          .eq(
+            "movie_id",
+            movie.id
+          )
+          .eq(
+            "status",
+            "watched"
+          )
+          .maybeSingle();
 
-    if(!movie) continue;
+        if(existing)
+          continue;
 
-    const {
-      data: existing
-    } =
-    await supabaseClient
-      .from("user_movies")
-      .select("id")
-      .eq("user_id", user.id)
-      .eq("movie_id", movie.id)
-      .eq("status", "watched")
-      .maybeSingle();
+        await supabaseClient
+          .from("user_movies")
+          .insert({
 
-    if(existing)
-      continue;
+            user_id:
+              user.id,
 
-    await supabaseClient
-      .from("user_movies")
-      .insert({
+            movie_id:
+              movie.id,
 
-        user_id:
-          user.id,
+            title:
+              movie.title,
 
-        movie_id:
-          movie.id,
+            poster_path:
+              movie.poster_path,
 
-        title:
-          movie.title,
+            status:
+              "watched"
 
-        poster_path:
-          movie.poster_path,
+          });
 
-        status:
-          "watched"
+      }catch(err){
 
-      });
+        console.log(err);
 
-  
-  }catch(err){
+      }
 
-  console.log(err);
+    }
 
-}
+    alert(
+      "Import completato 🎬"
+    );
 
-}
+    location.reload();
 
-console.log(
-  "WATCHED",
-  watched
-);
-
-alert(
-  "Import completato 🎬"
-);
-
-location.reload();
-
-}
+  }
 );
