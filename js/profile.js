@@ -749,11 +749,12 @@ importInput?.addEventListener(
 
       });
 
+  
   }catch(err){
 
-    console.log(err);
+  console.log(err);
 
-  }
+}
 
 }
 
@@ -768,5 +769,5 @@ alert(
 
 location.reload();
 
-       }
+}
 );
