@@ -785,8 +785,6 @@ await supabaseClient
   console.log(err);
 
   }
-
-      }
   }
    
     console.log(
