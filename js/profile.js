@@ -695,76 +695,84 @@ importInput?.addEventListener(
 
     if(!user) return;
 
+
+     
+
     for (const row of rows){
 
-      const cols =
-        row.split(",");
+  const cols =
+    row.split(",");
 
-      const title =
-        cols[1]
-          ?.replaceAll('"',"")
-          ?.trim();
+  const title =
+    cols[1]
+      ?.replaceAll('"',"")
+      ?.trim();
 
-      if(!title) continue;
+  if(!title) continue;
 
-      try{
+  try{
 
-        const result =
-          await searchMovies(title);
+    const result =
+      await searchMovies(title);
 
-        const movie =
-          result?.[0];
+    const movie =
+      result?.[0];
 
-        if(!movie) continue;
+    if(!movie) continue;
 
-        const {
-          data: existing
-        } =
-        await supabaseClient
-          .from("user_movies")
-          .select("id")
-          .eq("user_id", user.id)
-          .eq("movie_id", movie.id)
-          .eq("status", "watched")
-          .maybeSingle();
+    const {
+      data: existing
+    } =
+    await supabaseClient
+      .from("user_movies")
+      .select("id")
+      .eq("user_id", user.id)
+      .eq("movie_id", movie.id)
+      .eq("status", "watched")
+      .maybeSingle();
 
-        if(existing)
-          continue;
+    if(existing)
+      continue;
 
-        await supabaseClient
-          .from("user_movies")
-          .insert({
+    await supabaseClient
+      .from("user_movies")
+      .insert({
 
-            user_id:
-              user.id,
+        user_id:
+          user.id,
 
-            movie_id:
-              movie.id,
+        movie_id:
+          movie.id,
 
-            title:
-              movie.title,
+        title:
+          movie.title,
 
-            poster_path:
-              movie.poster_path,
+        poster_path:
+          movie.poster_path,
 
-            status:
-              "watched"
+        status:
+          "watched"
 
-          });
+      });
 
-      }catch(err){
+  }catch(err){
 
-        console.log(err);
-
-      }
-
-    }
-
-    alert(
-      "Import completato 🎬"
-    );
-
-    location.reload();
+    console.log(err);
 
   }
+
+}
+
+console.log(
+  "WATCHED",
+  watched
+);
+
+alert(
+  "Import completato 🎬"
+);
+
+location.reload();
+
+       }
 );
