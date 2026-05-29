@@ -575,13 +575,49 @@ if(
     "click",
     () => {
 
-      const list =
-        JSON.parse(
-          localStorage.getItem(
-            "paneacult_watchlist"
-          )
-        ) || [];
+      watchedBtn?.addEventListener(
+  "click",
+  async () => {
 
+    const {
+      data:{ user }
+    } =
+    await supabaseClient.auth
+      .getUser();
+
+    if(!user) return;
+
+    await supabaseClient
+      .from("user_movies")
+      .insert({
+
+        user_id:
+          user.id,
+
+        movie_id:
+          selectedMovieData.id,
+
+        title:
+          selectedMovieData.title,
+
+        poster_path:
+          selectedMovieData.poster_path,
+
+        status:
+          "watched"
+
+      });
+
+    watchedBtn.classList.add(
+      "active"
+    );
+
+    alert(
+      "Segnato come watched 👁"
+    );
+
+  }
+);
       if(
         !list.find(
           m => m.id === selectedMovieData.id
