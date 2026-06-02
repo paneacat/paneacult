@@ -585,7 +585,6 @@ if(year === "classic"){
 
 }
 
-  
 function populateFavoriteFilters(){
 
   const genreSelect =
@@ -593,20 +592,19 @@ function populateFavoriteFilters(){
       "favoriteGenre"
     );
 
-  if(!genreSelect)
-    return;
+  if(!genreSelect) return;
 
   const genres =
-  [...new Set(
+    [...new Set(
 
-    watchlist.flatMap(
-      movie =>
-        (movie.genres || [])
-          .map(g => g.name)
-    )
+      favorites.flatMap(
+        movie =>
+          (movie.genres || [])
+            .map(g => g.name)
+      )
 
-  )].sort();
-   
+    )].sort();
+
   genreSelect.innerHTML = `
     <option value="all">
       Tutti i generi
@@ -628,13 +626,13 @@ function populateFavoriteFilters(){
 }
 
 function populateWatchedFilters(){
+
   const genreSelect =
     document.getElementById(
       "watchedGenre"
     );
 
-  if(!genreSelect)
-    return;
+  if(!genreSelect) return;
 
   const genres =
     [...new Set(
@@ -642,7 +640,7 @@ function populateWatchedFilters(){
       watched.flatMap(
         movie =>
           (movie.genres || [])
-  .map(g => g.name)
+            .map(g => g.name)
       )
 
     )].sort();
@@ -706,7 +704,6 @@ function populateWatchlistFilters(){
   );
 
 }
-
 
 /* =========================
    CURRENT FAVORITE
