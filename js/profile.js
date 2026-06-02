@@ -446,7 +446,7 @@ async function loadWatched(){
     watchedGrid,
     watched
   );
-
+filterWatched();
 }
 
 loadWatched();
@@ -806,3 +806,21 @@ importInput?.addEventListener(
 
   }
 );
+
+document
+  .getElementById(
+    "watchedSearch"
+  )
+  ?.addEventListener(
+    "input",
+    filterWatched
+  );
+
+document
+  .getElementById(
+    "watchedFilter"
+  )
+  ?.addEventListener(
+    "change",
+    filterWatched
+  );
