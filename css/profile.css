@@ -1942,3 +1942,10 @@ opacity:1;
   flex:1;
   min-width:220px;
 }
+
+.watchlist-tools{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
