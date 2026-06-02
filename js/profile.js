@@ -608,7 +608,7 @@ function populateFavoriteFilters(){
 
   genreSelect.innerHTML = `
     <option value="all">
-      Generi
+      Tutti i generi
     </option>
   `;
 
@@ -645,7 +645,7 @@ function populateFavoriteFilters(){
 
   genreSelect.innerHTML = `
     <option value="all">
-      Generi
+      Tutti i generi
     </option>
   `;
 
