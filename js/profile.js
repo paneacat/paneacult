@@ -168,8 +168,8 @@ function filterWatched(){
     filtered =
       filtered.filter(
         movie =>
-          movie.genre_names
-            ?.includes(genre)
+         (movie.genres || [])
+  .some(g => g.name === genre) 
       );
 
   }
@@ -329,8 +329,8 @@ function filterWatched(){
     filtered =
       filtered.filter(
         movie =>
-          movie.genre_names
-            ?.includes(genre)
+          (movie.genres || [])
+  .some(g => g.name === genre)
       );
 
   }
@@ -488,8 +488,8 @@ function filterWatchlist(){
     filtered =
       filtered.filter(
         movie =>
-          movie.genre_names
-            ?.includes(genre)
+          (movie.genres || [])
+  .some(g => g.name === genre)
       );
 
   }
