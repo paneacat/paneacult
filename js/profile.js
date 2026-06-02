@@ -362,35 +362,6 @@ if(year === "classic"){
     }
   );
 
-  /* YEARS */
-
-  const years =
-    [...new Set(
-
-      watchlist.map(
-        movie =>
-          movie.release_date
-          ?.slice(0,4)
-      )
-
-    )]
-    .filter(Boolean)
-    .sort((a,b)=>b-a);
-
-  years.forEach(
-    year => {
-
-      yearSelect.innerHTML += `
-        <option value="${year}">
-          ${year}
-        </option>
-      `;
-
-    }
-  );
-
-  }
-
 /* =========================
    CURRENT FAVORITE
 ========================= */
