@@ -491,35 +491,6 @@ function setupMovieButtons(){
       "writeReviewBtn"
     );
 
-/* ACTIVE STATE */
-
-const watchlist =
-  JSON.parse(
-    localStorage.getItem(
-      "paneacult_watchlist"
-    )
-  ) || [];
-
-const watched =
-  JSON.parse(
-    localStorage.getItem(
-      "paneacult_watched"
-    )
-  ) || [];
-
-const favorites =
-  JSON.parse(
-    localStorage.getItem(
-      "paneacult_favorites"
-    )
-  ) || [];
-
-const desert =
-  JSON.parse(
-    localStorage.getItem(
-      "paneacult_desert_island"
-    )
-  );
 
 watchlistBtn?.classList.remove(
   "active"
@@ -537,31 +508,7 @@ desertBtn?.classList.remove(
   "active"
 );
 
-if(
-  watchlist.find(
-    m => m.id === selectedMovieData?.id
-  )
-){
-  watchlistBtn?.classList.add(
-    "active"
-  );
-}
 
-if(
-  watched.find(
-    m => m.id === selectedMovieData?.id
-  )
-){
-  watchedBtn?.classList.add(
-    "active"
-  );
-}
-
-if(
-  favorites.find(
-    m => m.id === selectedMovieData?.id
-  )
-){
   lovedBtn?.classList.add(
     "active"
   );
@@ -584,40 +531,6 @@ watchlistBtn?.addEventListener(
       "watchlist",
       watchlistBtn
     )
-);
-
-    const list =
-      JSON.parse(
-        localStorage.getItem(
-          "paneacult_watchlist"
-        )
-      ) || [];
-
-    if(
-      !list.find(
-        m => m.id === selectedMovieData.id
-      )
-    ){
-
-      list.push(
-        selectedMovieData
-      );
-
-      localStorage.setItem(
-        "paneacult_watchlist",
-        JSON.stringify(list)
-      );
-
-      watchlistBtn.classList.add(
-        "active"
-      );
-    }
-
-    alert(
-      "Aggiunto alla watchlist 🎬"
-    );
-
-  }
 );
 
   watchedBtn?.addEventListener(
