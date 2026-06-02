@@ -601,7 +601,8 @@ function populateFavoriteFilters(){
 
       favorites.flatMap(
         movie =>
-          movie.genre_names || []
+          (movie.genres || [])
+  .map(g => g.name)
       )
 
     )].sort();
@@ -640,7 +641,8 @@ function populateWatchedFilters(){
 
       watched.flatMap(
         movie =>
-          movie.genre_names || []
+          (movie.genres || [])
+  .map(g => g.name)
       )
 
     )].sort();
