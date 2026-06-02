@@ -209,6 +209,73 @@ function filterWatched(){
 
           return (
             y >= 2000 &&
+            y < 2020
+          );
+
+        }
+      );
+
+  }
+
+  if(year === "classic"){
+
+    filtered =
+      filtered.filter(
+        movie => {
+
+          const y =
+            parseInt(
+              movie.release_date
+              ?.slice(0,4)
+            );
+
+          return y < 2000;
+
+        }
+      );
+
+  }
+
+  /* ORDER */
+
+  if(filter === "az"){
+
+    filtered.sort(
+      (a,b) =>
+        a.title.localeCompare(
+          b.title
+        )
+    );
+
+  }
+
+  if(filter === "recent"){
+
+    filtered.reverse();
+
+  }
+
+  if(filter === "random"){
+
+    const movie =
+      filtered[
+        Math.floor(
+          Math.random() *
+          filtered.length
+        )
+      ];
+
+    filtered =
+      movie ? [movie] : [];
+
+  }
+
+  renderGrid(
+    watchedGrid,
+    filtered
+  );
+
+}
 
 function filterWatchlist(){
 
