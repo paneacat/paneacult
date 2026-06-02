@@ -1308,6 +1308,10 @@ const importInput =
     "letterboxdImport"
   );
 
+if(importInput){
+  importInput.multiple = true;
+}
+
 importBtn?.addEventListener(
   "click",
   () => {
@@ -1321,10 +1325,10 @@ importInput?.addEventListener(
   "change",
   async e => {
 
-    const file =
-      e.target.files?.[0];
+    const files =
+      [...e.target.files];
 
-    if(!file){
+    if(!files.length){
 
       alert(
         "Nessun file selezionato"
@@ -1333,14 +1337,6 @@ importInput?.addEventListener(
       return;
 
     }
-
-    const text =
-      await file.text();
-
-    const rows =
-      text
-        .split("\n")
-        .slice(1);
 
     const {
       data:{ user }
@@ -1361,146 +1357,233 @@ importInput?.addEventListener(
     let imported = 0;
 
     for(
-      const row of rows
+      const file of files
     ){
 
-      const cols =
-        row.split(",");
+      const text =
+        await file.text();
 
-      const title =
-        cols[1]
-          ?.replaceAll('"',"")
-          ?.trim();
+      const rows =
+        text
+          .split("\n")
+          .slice(1);
 
-      const rating =
-        cols[5]
-          ?.replaceAll('"',"")
-          ?.trim();
+      const filename =
+        file.name.toLowerCase();
 
-      const review =
-        cols[6]
-          ?.replaceAll('"',"")
-          ?.trim();
+      for(
+        const row of rows
+      ){
 
-      const watchedDate =
-        cols[4]
-          ?.replaceAll('"',"")
-          ?.trim();
+        const cols =
+          row.split(",");
 
-      if(!title)
-        continue;
+        const title =
+          cols[1]
+            ?.replaceAll('"',"")
+            ?.trim();
 
-      try{
-
-        const results =
-          await searchMovies(
-            title
-          );
-
-        const movie =
-          results?.[0];
-
-        if(!movie)
+        if(!title)
           continue;
 
-        /* STATUS */
+        try{
 
-        const status =
-          watchedDate
-            ? "watched"
-            : "watchlist";
+          const results =
+            await searchMovies(
+              title
+            );
 
-        /* USER_MOVIES */
+          const movie =
+            results?.[0];
 
-        await supabaseClient
-          .from("user_movies")
-          .upsert({
+          if(!movie)
+            continue;
 
-            user_id:
-              user.id,
+          /* WATCHED */
 
-            movie_id:
-              movie.id,
+          if(
+            filename.includes(
+              "watched"
+            )
+          ){
 
-            title:
-              movie.title,
+            await supabaseClient
+              .from("user_movies")
+              .upsert({
 
-            poster_path:
-              movie.poster_path,
+                user_id:
+                  user.id,
 
-            status:
-              status
+                movie_id:
+                  movie.id,
 
-          });
+                title:
+                  movie.title,
 
-        /* USER_REVIEWS */
+                poster_path:
+                  movie.poster_path,
 
-        if(
-          rating ||
-          review
-        ){
+                status:
+                  "watched"
 
-          await supabaseClient
-            .from("user_reviews")
-            .upsert({
+              });
 
-              user_id:
-                user.id,
+          }
 
-              movie_id:
-                movie.id,
+          /* WATCHLIST */
 
-              movie_title:
-                movie.title,
+          if(
+            filename.includes(
+              "watchlist"
+            )
+          ){
 
-              movie_poster:
-                movie.poster_path,
+            await supabaseClient
+              .from("user_movies")
+              .upsert({
 
-              rating:
-                rating
-                  ? parseFloat(
-                      rating
-                    )
-                  : null,
+                user_id:
+                  user.id,
 
-              review_text:
-                review || null,
+                movie_id:
+                  movie.id,
 
-              username:
-                localStorage.getItem(
-                  "paneacult_username"
-                ) || "cinefilo",
+                title:
+                  movie.title,
 
-              slug:
-                movie.title
-                  .toLowerCase()
-                  .replaceAll(
-                    " ",
-                    "-"
-                  )
-                  .replace(
-                    /[^\w-]+/g,
-                    ""
-                  )
+                poster_path:
+                  movie.poster_path,
 
-            });
+                status:
+                  "watchlist"
+
+              });
+
+          }
+
+          /* RATINGS */
+
+          if(
+            filename.includes(
+              "ratings"
+            )
+          ){
+
+            const rating =
+              cols[2]
+                ?.replaceAll(
+                  '"',
+                  ""
+                )
+                ?.trim();
+
+            await supabaseClient
+              .from("user_reviews")
+              .upsert({
+
+                user_id:
+                  user.id,
+
+                movie_id:
+                  movie.id,
+
+                movie_title:
+                  movie.title,
+
+                movie_poster:
+                  movie.poster_path,
+
+                rating:
+                  rating
+                    ? parseFloat(
+                        rating
+                      )
+                    : null,
+
+                username:
+                  localStorage.getItem(
+                    "paneacult_username"
+                  ) || "cinefilo"
+
+              });
+
+          }
+
+          /* REVIEWS */
+
+          if(
+            filename.includes(
+              "reviews"
+            )
+          ){
+
+            const rating =
+              cols[2]
+                ?.replaceAll(
+                  '"',
+                  ""
+                )
+                ?.trim();
+
+            const review =
+              cols[3]
+                ?.replaceAll(
+                  '"',
+                  ""
+                )
+                ?.trim();
+
+            await supabaseClient
+              .from("user_reviews")
+              .upsert({
+
+                user_id:
+                  user.id,
+
+                movie_id:
+                  movie.id,
+
+                movie_title:
+                  movie.title,
+
+                movie_poster:
+                  movie.poster_path,
+
+                rating:
+                  rating
+                    ? parseFloat(
+                        rating
+                      )
+                    : null,
+
+                review_text:
+                  review || null,
+
+                username:
+                  localStorage.getItem(
+                    "paneacult_username"
+                  ) || "cinefilo"
+
+              });
+
+          }
+
+          imported++;
+
+        }catch(err){
+
+          console.log(
+            err
+          );
 
         }
-
-        imported++;
-
-      }catch(err){
-
-        console.log(
-          err
-        );
 
       }
 
     }
 
     alert(
-      `${imported} film importati 🎬`
+      `${imported} import completati 🎬`
     );
 
     location.reload();
