@@ -277,7 +277,6 @@ function filterWatched(){
 
 }
 
-function filterWatchlist(){
 
    function filterFavorites(){
 
@@ -435,9 +434,11 @@ function filterWatchlist(){
   renderGrid(
     favoriteGrid,
     filtered
-  );
-
+  );  
    }
+
+function filterWatchlist(){
+
   const search =
     document
       .getElementById(
@@ -584,8 +585,7 @@ if(year === "classic"){
 
 }
 
-  function populateWatchlistFilters(){
-function populateWatchedFilters(){
+  
 function populateFavoriteFilters(){
 
   const genreSelect =
@@ -625,6 +625,8 @@ function populateFavoriteFilters(){
   );
 
 }
+
+function populateWatchedFilters(){
   const genreSelect =
     document.getElementById(
       "watchedGenre"
@@ -662,6 +664,8 @@ function populateFavoriteFilters(){
   );
 
 }
+
+function populateWatchlistFilters(){
   const genreSelect =
     document.getElementById(
       "watchlistGenre"
@@ -697,7 +701,7 @@ const genres =
 
 genreSelect.innerHTML = `
   <option value="all">
-    Generi
+    Tutti i eneri
   </option>
 `;
 
