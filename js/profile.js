@@ -528,7 +528,7 @@ filterWatched();
     filtered
   );
 
-}
+
 loadWatched();
 
 if(watchlistGrid){
