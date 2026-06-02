@@ -717,7 +717,6 @@ function setupMovieButtons(){
 
 
 
-
 async function checkPaneaReview(movieId){
 
   const btn =
