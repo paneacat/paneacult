@@ -8,18 +8,6 @@
 
   padding:120px 24px 80px;
 
-  background:
-  linear-gradient(
-    rgba(7,17,29,.72),
-    rgba(7,17,29,.96)
-  ),
-  url("img/explore-bg.jpg");
-
-  background-size:cover;
-  background-position:center;
-
-  overflow:hidden;
-
 }
 
 .explore-hero-content{
