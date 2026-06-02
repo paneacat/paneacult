@@ -345,6 +345,9 @@ localStorage.removeItem(
 
 reviewText.value = "";
 
+ratingSelect.value =
+  "default";
+     
 reviewRating.value = "";
 
 reviewQuote.value = "";
