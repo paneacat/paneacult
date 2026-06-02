@@ -240,6 +240,13 @@ if(hero && movie.backdrop_path){
     ✍ Scrivi recensione
   </button>
 
+<button
+  class="rate-btn"
+  onclick="openRating(${movie.id})"
+>
+  ⭐ Vota
+</button>
+
 </div>
 
     </div>
