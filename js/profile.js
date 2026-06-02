@@ -863,7 +863,12 @@ async function updateCounters(){
     document.getElementById(
       "reviewsCount"
     );
-
+   
+const ratedCount =
+  document.getElementById(
+    "ratedCount"
+  );
+   
   const favoritesCount =
     document.getElementById(
       "favoritesCount"
@@ -939,7 +944,39 @@ await supabaseClient
       count || 0;
 
   }
+if(
+  user &&
+  ratedCount
+){
 
+  const {
+    count
+  } =
+  await supabaseClient
+    .from(
+      "user_reviews"
+    )
+    .select(
+      "*",
+      {
+        count:"exact",
+        head:true
+      }
+    )
+    .eq(
+      "user_id",
+      user.id
+    )
+    .not(
+      "rating",
+      "is",
+      null
+    );
+
+  ratedCount.textContent =
+    count || 0;
+
+         }
 }
 
 /* =========================
