@@ -1294,7 +1294,6 @@ function goToMovie(id){
 }
 
 
-
 /* =========================
    LETTERBOXD IMPORT
 ========================= */
@@ -1366,109 +1365,57 @@ importInput?.addEventListener(
     ){
 
       const cols =
-  row.split(",");
+        row.split(",");
 
-const title =
-  cols[1]
-    ?.replaceAll('"',"")
-    ?.trim();
+      const title =
+        cols[1]
+          ?.replaceAll('"',"")
+          ?.trim();
 
-const rating =
-  cols[5]
-    ?.replaceAll('"',"")
-    ?.trim();
+      const rating =
+        cols[5]
+          ?.replaceAll('"',"")
+          ?.trim();
 
-const review =
-  cols[6]
-    ?.replaceAll('"',"")
-    ?.trim();
+      const review =
+        cols[6]
+          ?.replaceAll('"',"")
+          ?.trim();
 
-       
+      const watchedDate =
+        cols[4]
+          ?.replaceAll('"',"")
+          ?.trim();
+
       if(!title)
         continue;
 
       try{
 
-  const results =
-    await searchMovies(
-      title
-    );
+        const results =
+          await searchMovies(
+            title
+          );
 
-  const movie =
-    results?.[0];
+        const movie =
+          results?.[0];
 
-  if(!movie)
-    continue;
+        if(!movie)
+          continue;
 
-  /* WATCHED */
+        /* STATUS */
 
-  await supabaseClient
-    .from("user_movies")
-    .upsert({
+        const status =
+          watchedDate
+            ? "watched"
+            : "watchlist";
 
-      user_id:
-        user.id,
+        /* USER_MOVIES */
 
-      movie_id:
-        movie.id,
+        await supabaseClient
+          .from("user_movies")
+          .upsert({
 
-      title:
-        movie.title,
-
-      poster_path:
-        movie.poster_path,
-
-      status:
-        "watched"
-
-    });
-
-  /* RATING + REVIEW */
-
-  await supabaseClient
-    .from("user_reviews")
-    .upsert({
-
-      user_id:
-        user.id,
-
-      movie_id:
-        movie.id,
-
-      movie_title:
-        movie.title,
-
-      movie_poster:
-        movie.poster_path,
-
-      rating:
-        rating
-          ? parseFloat(rating)
-          : null,
-
-      review_text:
-        review || null,
-
-      username:
-        localStorage.getItem(
-          "paneacult_username"
-        ) || "cinefilo",
-
-      slug:
-        movie.title
-          .toLowerCase()
-          .replaceAll(" ","-")
-          .replace(/[^\w-]+/g,"")
-
-    });
-
-  imported++;
-
-}catch(err){
-
-  console.log(err);
-
-      }
             user_id:
               user.id,
 
@@ -1482,15 +1429,71 @@ const review =
               movie.poster_path,
 
             status:
-              "watched"
+              status
 
           });
+
+        /* USER_REVIEWS */
+
+        if(
+          rating ||
+          review
+        ){
+
+          await supabaseClient
+            .from("user_reviews")
+            .upsert({
+
+              user_id:
+                user.id,
+
+              movie_id:
+                movie.id,
+
+              movie_title:
+                movie.title,
+
+              movie_poster:
+                movie.poster_path,
+
+              rating:
+                rating
+                  ? parseFloat(
+                      rating
+                    )
+                  : null,
+
+              review_text:
+                review || null,
+
+              username:
+                localStorage.getItem(
+                  "paneacult_username"
+                ) || "cinefilo",
+
+              slug:
+                movie.title
+                  .toLowerCase()
+                  .replaceAll(
+                    " ",
+                    "-"
+                  )
+                  .replace(
+                    /[^\w-]+/g,
+                    ""
+                  )
+
+            });
+
+        }
 
         imported++;
 
       }catch(err){
 
-        console.log(err);
+        console.log(
+          err
+        );
 
       }
 
@@ -1504,112 +1507,3 @@ const review =
 
   }
 );
-
-document
-  .getElementById(
-    "watchedSearch"
-  )
-  ?.addEventListener(
-    "input",
-    filterWatched
-  );
-
-document
-  .getElementById(
-    "watchedFilter"
-  )
-  ?.addEventListener(
-    "change",
-    filterWatched
-  );
-document
-  .getElementById(
-    "watchlistSearch"
-  )
-  ?.addEventListener(
-    "input",
-    filterWatchlist
-  );
-     
-filterWatchlist();
-     
-document
-  .getElementById(
-    "watchlistFilter"
-  )
-  ?.addEventListener(
-    "change",
-    filterWatchlist
-  );
-
-document
-  .getElementById(
-    "watchlistGenre"
-  )
-  ?.addEventListener(
-    "change",
-    filterWatchlist
-  );
-
-document
-  .getElementById(
-    "watchlistYear"
-  )
-  ?.addEventListener(
-    "change",
-    filterWatchlist
-  );
-
-document
-  .getElementById(
-    "watchedGenre"
-  )
-  ?.addEventListener(
-    "change",
-    filterWatched
-  );
-
-document
-  .getElementById(
-    "watchedYear"
-  )
-  ?.addEventListener(
-    "change",
-    filterWatched
-  );
-
-         document
-  .getElementById(
-    "favoriteSearch"
-  )
-  ?.addEventListener(
-    "input",
-    filterFavorites
-  );
-
-document
-  .getElementById(
-    "favoriteGenre"
-  )
-  ?.addEventListener(
-    "change",
-    filterFavorites
-  );
-
-document
-  .getElementById(
-    "favoriteYear"
-  )
-  ?.addEventListener(
-    "change",
-    filterFavorites
-  );
-
-document
-  .getElementById(
-    "favoriteFilter"
-  )
-  ?.addEventListener(
-    "change",
-    filterFavorites
-  );
