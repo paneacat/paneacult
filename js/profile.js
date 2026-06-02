@@ -173,6 +173,81 @@ function filterWatched(){
 
 }
 
+function filterWatchlist(){
+
+  const search =
+    document
+      .getElementById(
+        "watchlistSearch"
+      )
+      ?.value
+      .toLowerCase() || "";
+
+  const filter =
+    document
+      .getElementById(
+        "watchlistFilter"
+      )
+      ?.value || "all";
+
+  let filtered =
+    [...watchlist];
+
+  /* SEARCH */
+
+  filtered =
+    filtered.filter(
+      movie =>
+        movie.title
+          ?.toLowerCase()
+          .includes(search)
+    );
+
+  /* FILTERS */
+
+  if(filter === "az"){
+
+    filtered.sort(
+      (a,b) =>
+        a.title.localeCompare(
+          b.title
+        )
+    );
+
+  }
+
+  if(filter === "recent"){
+
+    filtered.reverse();
+
+  }
+
+  if(filter === "poster"){
+
+    filtered =
+      filtered.filter(
+        movie =>
+          movie.poster_path ||
+          movie.poster
+      );
+
+  }
+
+  if(filter === "random"){
+
+    filtered.sort(
+      () => Math.random() - 0.5
+    );
+
+  }
+
+  renderGrid(
+    watchlistGrid,
+    filtered
+  );
+
+}
+
 /* =========================
    CURRENT FAVORITE
 ========================= */
@@ -448,13 +523,15 @@ async function loadWatched(){
   );
 filterWatched();
 }
+  renderGrid(
+    watchlistGrid,
+    filtered
+  );
 
+}
 loadWatched();
 
-renderGrid(
-  watchlistGrid,
-  watchlist
-);
+filterWatchlist();
 
 renderGrid(
   favoriteGrid,
@@ -823,4 +900,21 @@ document
   ?.addEventListener(
     "change",
     filterWatched
+  );
+document
+  .getElementById(
+    "watchlistSearch"
+  )
+  ?.addEventListener(
+    "input",
+    filterWatchlist
+  );
+
+document
+  .getElementById(
+    "watchlistFilter"
+  )
+  ?.addEventListener(
+    "change",
+    filterWatchlist
   );
