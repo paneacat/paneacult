@@ -1,4 +1,3 @@
-async function loadExploreReviews(){
 
 const exploreFeed =
   document.getElementById(
