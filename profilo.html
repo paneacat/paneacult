@@ -324,26 +324,42 @@
 <div class="watched-tools">
 
   <input
-    type="text"
-    id="watchedSearch"
-    placeholder="Cerca un film..."
-  >
+  id="watchedSearch"
+  placeholder="Cerca un film..."
+>
 
-  <select id="watchedFilter">
+<select id="watchedGenre">
+  <option value="all">
+    Generi
+  </option>
+</select>
 
-    <option value="all">
-      Tutti
-    </option>
+<select id="watchedYear">
+  <option value="all">
+    Uscita
+  </option>
+  <option value="new">
+    Nuovi (2020+)
+  </option>
+  <option value="modern">
+    Moderni (2000–2019)
+  </option>
+  <option value="classic">
+    Classici (<2000)
+  </option>
+</select>
 
-    <option value="recent">
-      Più recenti
-    </option>
-
-    <option value="az">
-      A-Z
-    </option>
-
-  </select>
+<select id="watchedFilter">
+  <option value="all">
+    Ordina
+  </option>
+  <option value="recent">
+    Più recenti
+  </option>
+  <option value="random">
+    Random
+  </option>
+</select>
 
 </div>
   <div
@@ -366,7 +382,56 @@
     </div>
 
   </div>
+<div class="favorite-tools">
 
+  <input
+    type="text"
+    id="favoriteSearch"
+    placeholder="Cerca nei loved..."
+  >
+
+  <select id="favoriteGenre">
+    <option value="all">
+      Generi
+    </option>
+  </select>
+
+  <select id="favoriteYear">
+    <option value="all">
+      Uscita
+    </option>
+    <option value="new">
+      Nuovi (2020+)
+    </option>
+    <option value="modern">
+      Moderni (2000–2019)
+    </option>
+    <option value="classic">
+      Classici (<2000)
+    </option>
+  </select>
+
+  <select id="favoriteFilter">
+
+    <option value="all">
+      Ordina
+    </option>
+
+    <option value="az">
+      A-Z
+    </option>
+
+    <option value="recent">
+      Più recenti
+    </option>
+
+    <option value="random">
+      Random ❤️
+    </option>
+
+  </select>
+
+</div>
   <div
     class="saved-grid"
     id="favoriteGrid"
