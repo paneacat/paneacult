@@ -248,56 +248,43 @@
 <div class="watchlist-tools">
 
   <input
-    type="text"
-    id="watchlistSearch"
-    placeholder="Cerca nella watchlist..."
-  >
+  id="watchlistSearch"
+  type="text"
+  placeholder="Cerca nella watchlist..."
+>
 
-  <select id="watchlistGenre">
-    <option value="all">
-      Tutti i generi
-    </option>
-  </select>
+<select id="watchlistGenre">
+  <option value="all">
+    Tutti i generi
+  </option>
+</select>
 
-  <select id="watchlistYear">
-
+<select id="watchlistYear">
   <option value="all">
     Uscita
   </option>
-
   <option value="new">
     Nuovi (2020+)
   </option>
-
   <option value="modern">
     Moderni (2000–2019)
   </option>
-
   <option value="classic">
-    Classici (<2000)
+    Classici (&lt;2000)
   </option>
+</select>
 
-  </select>
-
-  <select id="watchlistFilter">
-
-    <option value="all">
-      Ordina
-    </option>
-
-    <option value="recent">
-      ultimi aggiunti
-    </option>
-
-    <option value="old">
-      primi aggiunti
-    </option>
-
-    <option value="random">
-      Random 🎲
-    </option>
-
-  </select>
+<select id="watchlistFilter">
+  <option value="recent">
+    Ultimi aggiunti
+  </option>
+  <option value="az">
+    A-Z
+  </option>
+  <option value="random">
+  Random 🎲
+  </option>
+</select>
 
 </div>
   <div
@@ -325,7 +312,8 @@
 
   <input
   id="watchedSearch"
-  placeholder="Cerca un film..."
+  type="text"
+  placeholder="Cerca nei visti..."
 >
 
 <select id="watchedGenre">
@@ -345,19 +333,16 @@
     Moderni (2000–2019)
   </option>
   <option value="classic">
-    Classici (<2000)
+    Classici (&lt;2000)
   </option>
 </select>
 
 <select id="watchedFilter">
-  <option value="all">
-    Ordina
-  </option>
   <option value="recent">
-    Più recenti
+    Ultimi aggiunti
   </option>
-  <option value="random">
-    Random
+  <option value="az">
+    A-Z
   </option>
 </select>
 
@@ -385,52 +370,40 @@
 <div class="favorite-tools">
 
   <input
-    type="text"
-    id="favoriteSearch"
-    placeholder="Cerca nei loved..."
-  >
+  id="favoriteSearch"
+  type="text"
+  placeholder="Cerca nei loved..."
+>
 
-  <select id="favoriteGenre">
-    <option value="all">
-      Tutti i generi
-    </option>
-  </select>
+<select id="favoriteGenre">
+  <option value="all">
+    Tutti i generi
+  </option>
+</select>
 
-  <select id="favoriteYear">
-    <option value="all">
-      Uscita
-    </option>
-    <option value="new">
-      Nuovi (2020+)
-    </option>
-    <option value="modern">
-      Moderni (2000–2019)
-    </option>
-    <option value="classic">
-      Classici (<2000)
-    </option>
-  </select>
+<select id="favoriteYear">
+  <option value="all">
+    Uscita
+  </option>
+  <option value="new">
+    Nuovi (2020+)
+  </option>
+  <option value="modern">
+    Moderni (2000–2019)
+  </option>
+  <option value="classic">
+    Classici (&lt;2000)
+  </option>
+</select>
 
-  <select id="favoriteFilter">
-
-    <option value="all">
-      Ordina
-    </option>
-
-    <option value="az">
-      A-Z
-    </option>
-
-    <option value="recent">
-      Più recenti
-    </option>
-
-    <option value="random">
-      Random ❤️
-    </option>
-
-  </select>
-
+<select id="favoriteFilter">
+  <option value="recent">
+    Ultimi aggiunti
+  </option>
+  <option value="az">
+    A-Z
+  </option>
+</select>
 </div>
   <div
     class="saved-grid"
