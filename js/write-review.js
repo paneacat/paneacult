@@ -249,15 +249,15 @@ saveMovieStatus(
 
     }
 
-    const reviewText =
-  reviewInput.value;
+const reviewTextValue =
+  reviewText.value;
 
 const rating =
-  ratingSelect?.value || "";
+  reviewRating?.value || "";
 
 if(
   !rating &&
-  !reviewText.trim()
+  !reviewTextValue.trim()
 ){
 
   alert(
@@ -267,13 +267,13 @@ if(
   return;
 }
 
-    const slug =
-      selectedMovieData.title
-        .toLowerCase()
-        .replaceAll(" ", "-")
-        .replace(/[^\w-]+/g, "");
+const slug =
+  selectedMovieData.title
+    .toLowerCase()
+    .replaceAll(" ","-")
+    .replace(/[^\w-]+/g,"");
 
-    const { error } =
+const { error } =
   await supabaseClient
     .from("user_reviews")
     .upsert([{
@@ -282,19 +282,19 @@ if(
         user.id,
 
       movie_id:
-        movie.id,
+        selectedMovieData.id,
 
       movie_title:
-        movie.title,
+        selectedMovieData.title,
 
       movie_poster:
-        movie.poster_path,
+        selectedMovieData.poster_path,
 
       rating:
         rating || null,
 
       review_text:
-        reviewText.trim() || null,
+        reviewTextValue.trim() || null,
 
       username:
         username,
