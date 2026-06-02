@@ -117,6 +117,62 @@ grid.innerHTML =
 
 }
 
+function filterWatched(){
+
+  const search =
+    document
+      .getElementById(
+        "watchedSearch"
+      )
+      ?.value
+      .toLowerCase() || "";
+
+  const filter =
+    document
+      .getElementById(
+        "watchedFilter"
+      )
+      ?.value || "all";
+
+  let filtered =
+    [...watched];
+
+  /* SEARCH */
+
+  filtered =
+    filtered.filter(
+      movie =>
+        movie.title
+          ?.toLowerCase()
+          .includes(search)
+    );
+
+  /* FILTERS */
+
+  if(filter === "az"){
+
+    filtered.sort(
+      (a,b) =>
+        a.title.localeCompare(
+          b.title
+        )
+    );
+
+  }
+
+  if(filter === "recent"){
+
+    filtered.reverse();
+
+  }
+
+  renderGrid(
+    watchedGrid,
+    filtered
+  );
+
+}
+
 /* =========================
    CURRENT FAVORITE
 ========================= */
