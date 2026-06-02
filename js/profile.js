@@ -1025,7 +1025,9 @@ document
     "input",
     filterWatchlist
   );
-
+     
+filterWatchlist();
+     
 document
   .getElementById(
     "watchlistFilter"
@@ -1052,4 +1054,4 @@ document
     "change",
     filterWatchlist
   );
-filterWatchlist();
+
