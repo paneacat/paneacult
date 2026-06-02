@@ -47,15 +47,54 @@ function getMovies(key){
 
 let watched = [];
 
-const watchlist =
-  getMovies(
-    "paneacult_watchlist"
-  );
+let watchlist = [];
 
 const favorites =
   getMovies(
     "paneacult_favorites"
   );
+
+
+async function loadWatchlist(){
+
+  const {
+    data:{ user }
+  } =
+  await supabaseClient.auth
+    .getUser();
+
+  if(!user) return;
+
+  const {
+    data
+  } =
+  await supabaseClient
+    .from("user_movies")
+    .select("*")
+    .eq(
+      "user_id",
+      user.id
+    )
+    .eq(
+      "status",
+      "watchlist"
+    );
+
+  watchlist =
+    data || [];
+
+  populateWatchlistFilters();
+
+  renderGrid(
+    watchlistGrid,
+    watchlist
+  );
+
+  filterWatchlist();
+
+}
+
+
 
 /* =========================
    RENDER GRID
@@ -1054,14 +1093,7 @@ filterWatched();
 }
 loadWatched();
 
-if(watchlistGrid){
-  renderGrid(
-    watchlistGrid,
-    watchlist
-  );
-   populateWatchlistFilters();
-filterWatchlist();
-}
+loadWatchlist();
 
 if(favoriteGrid){
 
