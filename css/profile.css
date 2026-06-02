@@ -1943,9 +1943,30 @@ opacity:1;
   min-width:220px;
 }
 
-.watchlist-tools{
+.watchlist-tools,
+.watched-tools{
   display:flex;
   gap:10px;
   margin-bottom:20px;
+  align-items:center;
   flex-wrap:wrap;
+}
+
+.watchlist-tools input,
+.watched-tools input,
+.watchlist-tools select,
+.watched-tools select{
+
+  background:#111;
+  border:1px solid #333;
+  color:white;
+  padding:12px 14px;
+  border-radius:12px;
+  font-size:.95rem;
+}
+
+.watchlist-tools input,
+.watched-tools input{
+  flex:1;
+  min-width:220px;
 }
