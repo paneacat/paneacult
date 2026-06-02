@@ -1389,64 +1389,86 @@ const review =
 
       try{
 
-        const results =
-          await searchMovies(
-            title
-          );
+  const results =
+    await searchMovies(
+      title
+    );
 
-        const movie =
-          results?.[0];
+  const movie =
+    results?.[0];
 
-        if(!movie)
-          continue;
+  if(!movie)
+    continue;
 
-        await supabaseClient
-          .from("user_movies")
-          .upsert({
+  /* WATCHED */
 
-           
-   const numericRating =
-  rating
-    ? parseFloat(rating)
-    : null;
+  await supabaseClient
+    .from("user_movies")
+    .upsert({
 
-await supabaseClient
-  .from("user_reviews")
-  .upsert({
+      user_id:
+        user.id,
 
-    user_id:
-      user.id,
+      movie_id:
+        movie.id,
 
-    movie_id:
-      movie.id,
+      title:
+        movie.title,
 
-    movie_title:
-      movie.title,
+      poster_path:
+        movie.poster_path,
 
-    movie_poster:
-      movie.poster_path,
+      status:
+        "watched"
 
-    rating:
-      rating
-        ? parseFloat(rating)
-        : null,
+    });
 
-    review_text:
-      review || null,
+  /* RATING + REVIEW */
 
-    username:
-      localStorage.getItem(
-        "paneacult_username"
-      ) || "cinefilo",
+  await supabaseClient
+    .from("user_reviews")
+    .upsert({
 
-    slug:
-      movie.title
-        .toLowerCase()
-        .replaceAll(" ","-")
-        .replace(/[^\w-]+/g,"")
+      user_id:
+        user.id,
 
-  });
-         
+      movie_id:
+        movie.id,
+
+      movie_title:
+        movie.title,
+
+      movie_poster:
+        movie.poster_path,
+
+      rating:
+        rating
+          ? parseFloat(rating)
+          : null,
+
+      review_text:
+        review || null,
+
+      username:
+        localStorage.getItem(
+          "paneacult_username"
+        ) || "cinefilo",
+
+      slug:
+        movie.title
+          .toLowerCase()
+          .replaceAll(" ","-")
+          .replace(/[^\w-]+/g,"")
+
+    });
+
+  imported++;
+
+}catch(err){
+
+  console.log(err);
+
+      }
             user_id:
               user.id,
 
