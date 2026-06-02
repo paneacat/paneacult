@@ -916,33 +916,38 @@ await supabaseClient
 
   }
 
-  if(
-    user &&
-    reviewsCount
-  ){
 
-    const {
-      count
-    } =
-    await supabaseClient
-      .from(
-        "user_reviews"
-      )
-      .select(
-        "*",
-        {
-          count:"exact",
-          head:true
-        }
-      )
-      .eq(
-        "user_id",
-        user.id
-      );
+   if(
+  user &&
+  reviewsCount
+){
 
-    reviewsCount.textContent =
-      count || 0;
+  const {
+    count
+  } =
+  await supabaseClient
+    .from(
+      "user_reviews"
+    )
+    .select(
+      "*",
+      {
+        count:"exact",
+        head:true
+      }
+    )
+    .eq(
+      "user_id",
+      user.id
+    )
+    .not(
+      "review_text",
+      "is",
+      null
+    );
 
+  reviewsCount.textContent =
+    count || 0;
   }
 if(
   user &&
