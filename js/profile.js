@@ -597,16 +597,16 @@ function populateFavoriteFilters(){
     return;
 
   const genres =
-    [...new Set(
+  [...new Set(
 
-      favorites.flatMap(
-        movie =>
-          (movie.genres || [])
-  .map(g => g.name)
-      )
+    watchlist.flatMap(
+      movie =>
+        (movie.genres || [])
+          .map(g => g.name)
+    )
 
-    )].sort();
-
+  )].sort();
+   
   genreSelect.innerHTML = `
     <option value="all">
       Tutti i generi
