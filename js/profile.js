@@ -531,7 +531,12 @@ filterWatched();
 }
 loadWatched();
 
-filterWatchlist();
+if(watchlistGrid){
+  renderGrid(
+    watchlistGrid,
+    watchlist
+  );
+}
 
 renderGrid(
   favoriteGrid,
@@ -918,3 +923,5 @@ document
     "change",
     filterWatchlist
   );
+
+filterWatchlist();
