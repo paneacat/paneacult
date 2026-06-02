@@ -241,12 +241,14 @@ if(hero && movie.backdrop_path){
   </button>
 
 <button
-  class="rate-btn"
-  onclick="openRating(${movie.id})"
+  class="movie-action-btn"
+  onclick="
+    event.stopPropagation();
+    goToMovie(${movie.movie_id || movie.id})
+  "
 >
   ⭐ Vota
 </button>
-
 </div>
 
     </div>
