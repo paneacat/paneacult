@@ -127,6 +127,20 @@ function filterWatched(){
       ?.value
       .toLowerCase() || "";
 
+  const genre =
+    document
+      .getElementById(
+        "watchedGenre"
+      )
+      ?.value || "all";
+
+  const year =
+    document
+      .getElementById(
+        "watchedYear"
+      )
+      ?.value || "all";
+
   const filter =
     document
       .getElementById(
@@ -147,31 +161,54 @@ function filterWatched(){
           .includes(search)
     );
 
-  /* FILTERS */
+  /* GENRE */
 
-  if(filter === "az"){
+  if(genre !== "all"){
 
-    filtered.sort(
-      (a,b) =>
-        a.title.localeCompare(
-          b.title
-        )
-    );
-
-  }
-
-  if(filter === "recent"){
-
-    filtered.reverse();
+    filtered =
+      filtered.filter(
+        movie =>
+          movie.genre_names
+            ?.includes(genre)
+      );
 
   }
 
-  renderGrid(
-    watchedGrid,
-    filtered
-  );
+  /* YEAR */
 
-}
+  if(year === "new"){
+
+    filtered =
+      filtered.filter(
+        movie => {
+
+          const y =
+            parseInt(
+              movie.release_date
+              ?.slice(0,4)
+            );
+
+          return y >= 2020;
+
+        }
+      );
+
+  }
+
+  if(year === "modern"){
+
+    filtered =
+      filtered.filter(
+        movie => {
+
+          const y =
+            parseInt(
+              movie.release_date
+              ?.slice(0,4)
+            );
+
+          return (
+            y >= 2000 &&
 
 function filterWatchlist(){
 
@@ -322,7 +359,45 @@ if(year === "classic"){
 }
 
   function populateWatchlistFilters(){
+function populateWatchedFilters(){
 
+  const genreSelect =
+    document.getElementById(
+      "watchedGenre"
+    );
+
+  if(!genreSelect)
+    return;
+
+  const genres =
+    [...new Set(
+
+      watched.flatMap(
+        movie =>
+          movie.genre_names || []
+      )
+
+    )].sort();
+
+  genreSelect.innerHTML = `
+    <option value="all">
+      Generi
+    </option>
+  `;
+
+  genres.forEach(
+    genre => {
+
+      genreSelect.innerHTML += `
+        <option value="${genre}">
+          ${genre}
+        </option>
+      `;
+
+    }
+  );
+
+}
   const genreSelect =
     document.getElementById(
       "watchlistGenre"
@@ -338,29 +413,41 @@ if(year === "classic"){
     !yearSelect
   ) return;
 
-  /* GENRES */
+/* GENRES */
 
-  const genres =
-    [...new Set(
+const genres =
+  [...new Set(
 
-      watchlist.flatMap(
-        movie =>
-          movie.genre_names || []
-      )
+    watchlist.flatMap(
+      movie => {
 
-    )].sort();
+        if(movie.genre_names)
+          return movie.genre_names;
 
-  genres.forEach(
-    genre => {
+        return [];
 
-      genreSelect.innerHTML += `
-        <option value="${genre}">
-          ${genre}
-        </option>
-      `;
+      }
+    )
 
-    }
-  );
+  )].sort();
+
+genreSelect.innerHTML = `
+  <option value="all">
+    Generi
+  </option>
+`;
+
+genres.forEach(
+  genre => {
+
+    genreSelect.innerHTML += `
+      <option value="${genre}">
+        ${genre}
+      </option>
+    `;
+
+  }
+);
   }
 /* =========================
    CURRENT FAVORITE
@@ -631,6 +718,8 @@ async function loadWatched(){
   watched =
     data || [];
 
+   populateWatchedFilters();
+   
   renderGrid(
     watchedGrid,
     watched
@@ -1055,3 +1144,20 @@ document
     filterWatchlist
   );
 
+document
+  .getElementById(
+    "watchedGenre"
+  )
+  ?.addEventListener(
+    "change",
+    filterWatched
+  );
+
+document
+  .getElementById(
+    "watchedYear"
+  )
+  ?.addEventListener(
+    "change",
+    filterWatched
+  );
