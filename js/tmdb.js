@@ -579,7 +579,12 @@ if(
    
 watchlistBtn?.addEventListener(
   "click",
-  () => {
+  () =>
+    toggleMovieStatus(
+      "watchlist",
+      watchlistBtn
+    )
+);
 
     const list =
       JSON.parse(
@@ -616,9 +621,13 @@ watchlistBtn?.addEventListener(
 );
 
   watchedBtn?.addEventListener(
-    "click",
-    () => {
-
+  "click",
+  () =>
+    toggleMovieStatus(
+      "watched",
+      watchedBtn
+    )
+);
       const list =
         JSON.parse(
           localStorage.getItem(
@@ -653,8 +662,13 @@ watchedBtn.classList.add(
   );
 
   lovedBtn?.addEventListener(
-    "click",
-    () => {
+  "click",
+  () =>
+    toggleMovieStatus(
+      "favorite",
+      lovedBtn
+    )
+);
 
       const list =
         JSON.parse(
@@ -662,6 +676,7 @@ watchedBtn.classList.add(
             "paneacult_favorites"
           )
         ) || [];
+
 lovedBtn.classList.add(
   "active"
 );
@@ -690,8 +705,13 @@ lovedBtn.classList.add(
   );
 
   desertBtn?.addEventListener(
-    "click",
-    () => {
+  "click",
+  () =>
+    toggleMovieStatus(
+      "desert",
+      desertBtn
+    )
+);
 
       localStorage.setItem(
         "paneacult_desert_island",
