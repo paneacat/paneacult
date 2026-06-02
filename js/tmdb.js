@@ -237,18 +237,8 @@ if(hero && movie.backdrop_path){
     class="movie-action-btn review-btn"
     id="writeReviewBtn"
   >
-    ✍ Scrivi recensione
+    ✍ Scrivi recensione o vota
   </button>
-
-<button
-  class="movie-action-btn"
-  onclick="
-    event.stopPropagation();
-    goToMovie(${movie.movie_id || movie.id})
-  "
->
-  ⭐ Vota
-</button>
 </div>
 
     </div>
