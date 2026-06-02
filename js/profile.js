@@ -88,7 +88,7 @@ grid.innerHTML =
 
     <div
       class="saved-card"
-      onclick="goToMovie(${movie.id})"
+      onclick="goToMovie(${movie.movie_id || movie.id})"
     >
 
       <img
@@ -668,57 +668,46 @@ function populateWatchedFilters(){
 }
 
 function populateWatchlistFilters(){
+
   const genreSelect =
     document.getElementById(
       "watchlistGenre"
     );
 
-  const yearSelect =
-    document.getElementById(
-      "watchlistYear"
-    );
+  if(!genreSelect) return;
 
-  if(
-    !genreSelect ||
-    !yearSelect
-  ) return;
+  const genres =
+    [...new Set(
 
-/* GENRES */
+      watchlist.flatMap(
+        movie =>
+          (movie.genres || [])
+            .map(g => g.name)
+      )
 
-const genres =
-  [...new Set(
+    )].sort();
 
-    watchlist.flatMap(
-      movie => {
+  genreSelect.innerHTML = `
+    <option value="all">
+      Tutti i generi
+    </option>
+  `;
 
-        if(movie.genre_names)
-          return movie.genre_names;
+  genres.forEach(
+    genre => {
 
-        return [];
+      genreSelect.innerHTML += `
+        <option value="${genre}">
+          ${genre}
+        </option>
+      `;
 
-      }
-    )
+    }
+  );
 
-  )].sort();
+}
 
-genreSelect.innerHTML = `
-  <option value="all">
-    Tutti i generi
-  </option>
-`;
 
-genres.forEach(
-  genre => {
-
-    genreSelect.innerHTML += `
-      <option value="${genre}">
-        ${genre}
-      </option>
-    `;
-
-  }
-);
-  }
 /* =========================
    CURRENT FAVORITE
 ========================= */
@@ -791,7 +780,7 @@ function renderSignature(){
 
       <div
   class="signature-film"
-  onclick="goToMovie(${movie.id})"
+  goToMovie(${movie.movie_id || movie.id})
 >
 
         <img
@@ -847,7 +836,7 @@ function renderRecentActivity(){
 
   <div
     class="saved-card"
-    onclick="goToMovie(${movie.id})"
+    goToMovie(${movie.movie_id || movie.id})
   >
 
     <img
