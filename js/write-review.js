@@ -277,22 +277,35 @@ saveMovieStatus(
         .replace(/[^\w-]+/g, "");
 
     const { error } =
-      await supabaseClient
-  .from("user_reviews")
-  .upsert({
+  await supabaseClient
+    .from("user_reviews")
+    .upsert([{
 
-    user_id: user.id,
-    movie_id: movie.id,
-    movie_title: movie.title,
-    movie_poster: movie.poster_path,
-    rating: rating || null,
-    review_text:
-      reviewText.trim() || null,
-    username
+      user_id:
+        user.id,
 
-  });
+      movie_id:
+        movie.id,
 
-        }]);
+      movie_title:
+        movie.title,
+
+      movie_poster:
+        movie.poster_path,
+
+      rating:
+        rating || null,
+
+      review_text:
+        reviewText.trim() || null,
+
+      username:
+        username,
+
+      slug:
+        slug
+
+    }]);
 
     if(error){
 
