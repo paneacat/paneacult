@@ -631,11 +631,6 @@ async function loadMovieStatuses(){
 }
 
 
-
-
-
-
-
 function setupMovieButtons(){
 
   const watchlistBtn =
@@ -663,175 +658,62 @@ function setupMovieButtons(){
       "writeReviewBtn"
     );
 
-loadMovieStatuses();
-   
-watchlistBtn?.classList.remove(
-  "active"
-);
+  loadMovieStatuses();
 
-watchedBtn?.classList.remove(
-  "active"
-);
-
-lovedBtn?.classList.remove(
-  "active"
-);
-
-desertBtn?.classList.remove(
-  "active"
-);
-
-
-  lovedBtn?.classList.add(
-    "active"
+  watchlistBtn?.addEventListener(
+    "click",
+    () =>
+      toggleMovieStatus(
+        "watchlist",
+        watchlistBtn
+      )
   );
-}
-
-if(
-  desert?.id ===
-  selectedMovieData?.id
-){
-  desertBtn?.classList.add(
-    "active"
-  );
-}
-
-   
-watchlistBtn?.addEventListener(
-  "click",
-  () =>
-    toggleMovieStatus(
-      "watchlist",
-      watchlistBtn
-    )
-);
 
   watchedBtn?.addEventListener(
-  "click",
-  () =>
-    toggleMovieStatus(
-      "watched",
-      watchedBtn
-    )
-);
-      const list =
-        JSON.parse(
-          localStorage.getItem(
-            "paneacult_watched"
-          )
-        ) || [];
-
-      if(
-        !list.find(
-          m => m.id === selectedMovieData.id
-        )
-      ){
-
-        list.push(
-          selectedMovieData
-        );
-
-        localStorage.setItem(
-          "paneacult_watched",
-          JSON.stringify(list)
-        );
-watchedBtn.classList.add(
-  "active"
-);
-      }
-
-      alert(
-        "Segnato come watched 👁"
-      );
-
-    }
+    "click",
+    () =>
+      toggleMovieStatus(
+        "watched",
+        watchedBtn
+      )
   );
 
   lovedBtn?.addEventListener(
-  "click",
-  () =>
-    toggleMovieStatus(
-      "favorite",
-      lovedBtn
-    )
-);
-
-      const list =
-        JSON.parse(
-          localStorage.getItem(
-            "paneacult_favorites"
-          )
-        ) || [];
-
-lovedBtn.classList.add(
-  "active"
-);
-      if(
-        !list.find(
-          m => m.id === selectedMovieData.id
-        )
-      ){
-
-        list.push(
-          selectedMovieData
-        );
-
-        localStorage.setItem(
-          "paneacult_favorites",
-          JSON.stringify(list)
-        );
-
-      }
-
-      alert(
-        "Aggiunto ai Loved ❤️"
-      );
-
-    }
+    "click",
+    () =>
+      toggleMovieStatus(
+        "favorite",
+        lovedBtn
+      )
   );
 
   desertBtn?.addEventListener(
-  "click",
-  () =>
-    toggleMovieStatus(
-      "desert",
-      desertBtn
-    )
-);
+    "click",
+    () =>
+      toggleMovieStatus(
+        "desert",
+        desertBtn
+      )
+  );
 
-      localStorage.setItem(
-        "paneacult_desert_island",
-        JSON.stringify(
-          selectedMovieData
-        )
+  reviewBtn?.addEventListener(
+    "click",
+    () => {
+
+      reviewForm?.classList.remove(
+        "hidden-review-form"
       );
-desertBtn.classList.add(
-  "active"
-);
-      alert(
-        "Desert Island salvato 🌴"
-      );
+
+      reviewForm?.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
 
     }
   );
 
-  reviewBtn?.addEventListener(
-  "click",
-  () => {
-
-    reviewForm?.classList.remove(
-      "hidden-review-form"
-    );
-
-    reviewForm?.scrollIntoView({
-      behavior:"smooth",
-      block:"start"
-    });
-
-  }
-);
-
 }
+
 
 
 
