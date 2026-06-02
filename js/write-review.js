@@ -512,18 +512,10 @@ alert(
   "Recensione pubblicata 🎬"
 );
 
+await updateCounters();
 
-     if(
-  typeof updateCounters ===
-  "function"
-){
-  updateCounters();
-     }
-
-
- window.location.href =
-  "explore.html";    
-
+window.location.href =
+  "explore.html";
   }
 );
 
