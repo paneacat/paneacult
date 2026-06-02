@@ -475,18 +475,30 @@ imdb_rating:
           
     if(error){
 
-      console.log(error);
+  console.log(error);
 
-      alert(
-        "Errore pubblicazione"
-      );
+  alert(
+    "Errore pubblicazione"
+  );
 
-      return;
+  return;
+}
 
-    }
+alert(
+  "Recensione pubblicata 🎬"
+);
 
-    window.location.href =
-      `review.html?slug=${slug}`;
+
+     if(
+  typeof updateCounters ===
+  "function"
+){
+  updateCounters();
+     }
+
+
+ window.location.href =
+  "explore.html";    
 
   }
 );
