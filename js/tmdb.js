@@ -465,6 +465,13 @@ function goToMovie(id){
 }
 
 
+function openRating(id){
+
+  window.location.href =
+    `add-review.html?id=${id}`;
+
+}
+
 function setupMovieButtons(){
 
   const watchlistBtn =
