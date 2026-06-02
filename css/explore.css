@@ -218,3 +218,23 @@ align-items:center;
   padding:60px 0;
 
 }
+
+
+.explore-filters{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:24px;
+}
+
+.explore-filters input,
+.explore-filters select{
+
+  background:#101827;
+  border:1px solid #25324a;
+  color:#fff;
+
+  padding:12px 14px;
+  border-radius:14px;
+
+}
