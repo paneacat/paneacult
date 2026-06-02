@@ -800,42 +800,39 @@ desertBtn.classList.add(
 
 
 
-async function checkPaneaReview(movieId){
+async function checkPaneaReview(){
 
-  const paneaReviewBtn =
+  const btn =
     document.getElementById(
       "paneaReviewBtn"
     );
 
   if(
-    !paneaReviewBtn ||
-    !movieId
+    !btn ||
+    !movieDetails
   ) return;
 
   const {
-    data
+    data,
+    error
   } =
   await supabaseClient
     .from("reviews")
     .select("slug")
     .eq(
       "movie_id",
-      movieId
+      movieDetails.id
     )
-    .eq(
-      "author",
-      "paneacult"
-    )
-    .single();
+    .maybeSingle();
 
-  if(data){
+  if(
+    error ||
+    !data
+  ) return;
 
-    paneaReviewBtn.href =
-      `review.html?slug=${data.slug}`;
+  btn.style.display =
+    "inline-flex";
 
-    paneaReviewBtn.style.display =
-      "inline-flex";
-
-  }
-
+  btn.href =
+    `review.html?slug=${data.slug}`;
 }
