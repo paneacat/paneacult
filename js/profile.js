@@ -523,12 +523,6 @@ async function loadWatched(){
   );
 filterWatched();
 }
-  renderGrid(
-    watchlistGrid,
-    filtered
-  );
-
-
 loadWatched();
 
 if(watchlistGrid){
