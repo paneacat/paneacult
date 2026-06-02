@@ -232,17 +232,65 @@ function filterWatchlist(){
 
   /* YEAR */
 
-  if(year !== "all"){
+  if(year === "new"){
 
-    filtered =
-      filtered.filter(
-        movie =>
-          movie.release_date
-            ?.startsWith(year)
-      );
+  filtered =
+    filtered.filter(
+      movie => {
 
-  }
+        const y =
+          parseInt(
+            movie.release_date
+            ?.slice(0,4)
+          );
 
+        return y >= 2020;
+
+      }
+    );
+
+}
+
+if(year === "modern"){
+
+  filtered =
+    filtered.filter(
+      movie => {
+
+        const y =
+          parseInt(
+            movie.release_date
+            ?.slice(0,4)
+          );
+
+        return (
+          y >= 2000 &&
+          y < 2020
+        );
+
+      }
+    );
+
+}
+
+if(year === "classic"){
+
+  filtered =
+    filtered.filter(
+      movie => {
+
+        const y =
+          parseInt(
+            movie.release_date
+            ?.slice(0,4)
+          );
+
+        return y < 2000;
+
+      }
+    );
+
+}
   /* ORDER */
 
   if(filter === "recent"){
@@ -1016,8 +1064,6 @@ document
     filterWatchlist
   );
 
-filterWatchlist();
-
 document
   .getElementById(
     "watchlistGenre"
@@ -1035,3 +1081,4 @@ document
     "change",
     filterWatchlist
   );
+filterWatchlist();
