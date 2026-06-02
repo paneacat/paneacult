@@ -789,8 +789,7 @@ desertBtn.classList.add(
 
 
 
-
-async function checkPaneaReview(){
+async function checkPaneaReview(movieId){
 
   const btn =
     document.getElementById(
@@ -799,7 +798,7 @@ async function checkPaneaReview(){
 
   if(
     !btn ||
-    !movieDetails
+    !movieId
   ) return;
 
   const {
@@ -811,7 +810,7 @@ async function checkPaneaReview(){
     .select("slug")
     .eq(
       "movie_id",
-      movieDetails.id
+      movieId
     )
     .maybeSingle();
 
