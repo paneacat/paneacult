@@ -757,8 +757,9 @@ function renderCurrentFavorite(){
 currentFavorite.onclick = () => {
 
   goToMovie(
-    desertMovie.id
-  );
+  desertMovie.movie_id ||
+  desertMovie.id
+);
 
 };
    
@@ -778,11 +779,13 @@ function renderSignature(){
 
     movies.map(movie => `
 
-      <div
+   <div
   class="signature-film"
-  goToMovie(${movie.movie_id || movie.id})
+  onclick="goToMovie(${
+    movie.movie_id ||
+    movie.id
+  })"
 >
-
         <img
   src="${
     movie.poster_path
@@ -842,9 +845,14 @@ function renderRecentActivity(){
 })">
 
     <img
-      src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
-      alt="${movie.title}"
-    >
+  src="${
+    movie.poster_path
+      ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+      : movie.movie_poster ||
+        movie.poster
+  }"
+  alt="${movie.title}"
+>
 
   </div>
 
