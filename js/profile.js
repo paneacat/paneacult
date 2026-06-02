@@ -701,7 +701,7 @@ const genres =
 
 genreSelect.innerHTML = `
   <option value="all">
-    Tutti i eneri
+    Tutti i generi
   </option>
 `;
 
@@ -1005,8 +1005,17 @@ if(watchlistGrid){
 filterWatchlist();
 }
 
-populateFavoriteFilters();
-filterFavorites();
+if(favoriteGrid){
+
+  renderGrid(
+    favoriteGrid,
+    favorites
+  );
+
+  populateFavoriteFilters();
+  filterFavorites();
+
+}
 
 renderCurrentFavorite();
 
