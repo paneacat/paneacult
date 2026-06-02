@@ -103,14 +103,20 @@ grid.innerHTML =
         movie.posterUrl ||
         "img/poster-placeholder.webp"
   }"
-  alt="${movie.title}"
+alt="${
+  movie.title ||
+  movie.movie_title
+}"
 >
 
       <div class="saved-overlay">
 
         <h3>
-          ${movie.title}
-        </h3>
+  ${
+    movie.title ||
+    movie.movie_title
+  }
+</h3>
 
       </div>
 
@@ -792,13 +798,19 @@ function renderSignature(){
       ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
       : movie.poster
   }"
-  alt="${movie.title}"
+  alt="${
+  movie.title ||
+  movie.movie_title
+}"
 >
 
         <div class="signature-film-overlay">
 
           <h3>
-            ${movie.title}
+            ${
+  movie.title ||
+  movie.movie_title
+            }
           </h3>
 
         </div>
@@ -851,7 +863,10 @@ function renderRecentActivity(){
       : movie.movie_poster ||
         movie.poster
   }"
-  alt="${movie.title}"
+  alt="${
+  movie.title ||
+  movie.movie_title
+}"
 >
 
   </div>
