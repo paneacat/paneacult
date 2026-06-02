@@ -168,6 +168,156 @@ function renderExplore(
 
 }
 
+allReviews = data || [];
+
+renderExplore(
+  allReviews
+);
+
+function filterExplore(){
+
+  let filtered =
+    [...allReviews];
+
+  const search =
+    document
+      .getElementById(
+        "exploreSearch"
+      )
+      ?.value
+      .toLowerCase() || "";
+
+  const rating =
+    document
+      .getElementById(
+        "exploreRating"
+      )
+      ?.value || "all";
+
+  const type =
+    document
+      .getElementById(
+        "exploreType"
+      )
+      ?.value || "all";
+
+  const order =
+    document
+      .getElementById(
+        "exploreOrder"
+      )
+      ?.value || "recent";
+
+  filtered =
+    filtered.filter(
+      review =>
+        review.movie_title
+          ?.toLowerCase()
+          .includes(search)
+    );
+
+  if(rating !== "all"){
+
+    filtered =
+      filtered.filter(
+        review =>
+          String(review.rating)
+          === rating
+      );
+
+  }
+
+  if(type === "reviews"){
+
+    filtered =
+      filtered.filter(
+        review =>
+          review.review_text
+      );
+
+  }
+
+  if(type === "ratings"){
+
+    filtered =
+      filtered.filter(
+        review =>
+          !review.review_text
+      );
+
+  }
+
+  if(order === "highest"){
+
+    filtered.sort(
+      (a,b) =>
+        (b.rating || 0) -
+        (a.rating || 0)
+    );
+
+  }
+
+  if(order === "lowest"){
+
+    filtered.sort(
+      (a,b) =>
+        (a.rating || 0) -
+        (b.rating || 0)
+    );
+
+  }
+
+  if(order === "old"){
+
+    filtered.reverse();
+
+  }
+
+  renderExplore(
+    filtered
+  );
+
+}
+
+document
+  .getElementById(
+    "exploreSearch"
+  )
+  ?.addEventListener(
+    "input",
+    filterExplore
+  );
+
+document
+  .getElementById(
+    "exploreRating"
+  )
+  ?.addEventListener(
+    "change",
+    filterExplore
+  );
+
+document
+  .getElementById(
+    "exploreType"
+  )
+  ?.addEventListener(
+    "change",
+    filterExplore
+  );
+
+document
+  .getElementById(
+    "exploreOrder"
+  )
+  ?.addEventListener(
+    "change",
+    filterExplore
+  );
+
+
 loadExplore();
+
+let allReviews = [];
 
 
