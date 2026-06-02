@@ -1919,3 +1919,26 @@ opacity:1;
     rgba(253,193,3,.25);
 
 }
+
+
+.watched-tools{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+#watchedSearch,
+#watchedFilter{
+  background:#111;
+  border:1px solid #333;
+  color:white;
+  padding:10px 14px;
+  border-radius:12px;
+  font-size:.95rem;
+}
+
+#watchedSearch{
+  flex:1;
+  min-width:220px;
+}
