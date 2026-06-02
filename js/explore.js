@@ -1,38 +1,4 @@
 
-const exploreFeed =
-  document.getElementById(
-    "exploreFeed"
-  );
-
-async function loadExplore(){
-
-  const { data, error } =
-    await supabaseClient
-      .from("user_reviews")
-      .select("*")
-      .order(
-        "created_at",
-        { ascending:false }
-      );
-
-  if(error){
-
-  console.log(error);
-  return;
-
-}
-
-console.log(
-  "RECENSIONI:",
-  data
-);
-
-  renderExplore(data || []);
-
-}
-
-loadExplore();
-
 
 function renderExplore(reviews){
 
