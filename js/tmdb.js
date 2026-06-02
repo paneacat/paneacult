@@ -575,104 +575,45 @@ if(
     "active"
   );
 }
+
    
-
-  watchlistBtn?.addEventListener(
-    "click",
-    () => {
-
-      watchedBtn?.addEventListener(
+watchlistBtn?.addEventListener(
   "click",
-  async () => {
+  () => {
 
-    const {
-      data:{ user }
-    } =
-    await supabaseClient.auth
-      .getUser();
+    const list =
+      JSON.parse(
+        localStorage.getItem(
+          "paneacult_watchlist"
+        )
+      ) || [];
 
-    if(!user) return;
-
-    const {
-      data: existing
-    } =
-    await supabaseClient
-      .from("user_movies")
-      .select("id")
-      .eq(
-        "user_id",
-        user.id
+    if(
+      !list.find(
+        m => m.id === selectedMovieData.id
       )
-      .eq(
-        "movie_id",
-        selectedMovieData.id
-      )
-      .eq(
-        "status",
-        "watched"
-      )
-      .maybeSingle();
+    ){
 
-    if(!existing){
+      list.push(
+        selectedMovieData
+      );
 
-      await supabaseClient
-        .from("user_movies")
-        .insert({
+      localStorage.setItem(
+        "paneacult_watchlist",
+        JSON.stringify(list)
+      );
 
-          user_id:
-            user.id,
-
-          movie_id:
-            selectedMovieData.id,
-
-          title:
-            selectedMovieData.title,
-
-          poster_path:
-            selectedMovieData.poster_path,
-
-          status:
-            "watched"
-
-        });
-
+      watchlistBtn.classList.add(
+        "active"
+      );
     }
 
-    watchedBtn.classList.add(
-      "active"
-    );
-
     alert(
-      "Segnato come watched 👁"
+      "Aggiunto alla watchlist 🎬"
     );
 
   }
 );
-      if(
-        !list.find(
-          m => m.id === selectedMovieData.id
-        )
-      ){
-
-        list.push(
-          selectedMovieData
-        );
-
-        localStorage.setItem(
-          "paneacult_watchlist",
-          JSON.stringify(list)
-        );
-watchlistBtn.classList.add(
-  "active"
-);
-      }
-
-      alert(
-        "Aggiunto alla watchlist 🎬"
-      );
-
-    }
-  );
 
   watchedBtn?.addEventListener(
     "click",
