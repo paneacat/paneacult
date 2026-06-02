@@ -477,3 +477,48 @@ imdb_rating:
 
   }
 );
+
+
+/* =========================
+   AUTO LOAD FROM URL
+========================= */
+
+window.addEventListener(
+  "DOMContentLoaded",
+  async () => {
+
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
+
+    const movieId =
+      params.get("id");
+
+    if(!movieId) return;
+
+    try{
+
+      const movieDetails =
+        await fetchMovieDetails(
+          movieId
+        );
+
+      renderSelectedMovie(
+        movieDetails,
+        movieDetails
+      );
+
+      setupMovieButtons();
+
+    }catch(err){
+
+      console.log(
+        "Errore caricamento film",
+        err
+      );
+
+    }
+
+  }
+);
