@@ -88,7 +88,10 @@ grid.innerHTML =
 
     <div
       class="saved-card"
-      onclick="goToMovie(${movie.movie_id || movie.id})"
+    onclick="goToMovie(${
+  movie.id ||
+  movie.movie_id
+})"
     >
 
       <img
@@ -833,8 +836,10 @@ function renderRecentActivity(){
 
   <div
     class="saved-card"
-    goToMovie(${movie.movie_id || movie.id})
-  >
+    onclick="goToMovie(${
+  movie.id ||
+  movie.movie_id
+})">
 
     <img
       src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
@@ -1250,13 +1255,20 @@ editBtn?.addEventListener(
 
 function goToMovie(id){
 
-  if(!id) return;
+  if(!id){
+
+    console.log(
+      "movie id mancante"
+    );
+
+    return;
+
+  }
 
   window.location.href =
     `add-review.html?id=${id}`;
 
 }
-
 
 
 
