@@ -340,28 +340,36 @@ localStorage.removeItem(
 
 /* RESET UI */
 
-reviewText.value = "";
+if(reviewText){
+  reviewText.value = "";
+}
 
-reviewRating.value = "";
-     
-reviewRating.value = "";
+if(reviewRating){
+  reviewRating.selectedIndex = 0;
+}
 
-reviewQuote.value = "";
-     
-reviewCuriosita.value = "";
+if(reviewQuote){
+  reviewQuote.value = "";
+}
 
-selectedMovie.innerHTML = "";
+if(reviewCuriosita){
+  reviewCuriosita.value = "";
+}
 
-movieSearchInput.value = "";
+if(selectedMovie){
+  selectedMovie.innerHTML = "";
+}
 
-reviewForm.style.display =
-  "none";
+if(movieSearchInput){
+  movieSearchInput.value = "";
+}
+
+if(reviewForm){
+  reviewForm.style.display = "none";
+}
 
 selectedMovieData = null;
-    window.location.href =
-  `user-review.html?slug=${slug}`;
-  }
-);
+     
 /* =========================
    PUBLISH EDITORIAL
 ========================= */
