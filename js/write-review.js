@@ -369,7 +369,24 @@ if(reviewForm){
 }
 
 selectedMovieData = null;
-     
+
+alert(
+  "Recensione pubblicata 🎬"
+);
+
+if(
+  typeof updateCounters ===
+  "function"
+){
+  updateCounters();
+}
+
+window.location.href =
+  "explore.html";
+
+}
+);
+
 /* =========================
    PUBLISH EDITORIAL
 ========================= */
