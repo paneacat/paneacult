@@ -257,21 +257,18 @@ saveMovieStatus(
         reviewRating.value
       );
 
-     const quoteValue =
-  reviewQuote?.value.trim();
+    if(
+  !rating &&
+  !reviewText.trim()
+){
 
-const curiositaValue =
-  reviewCuriosita?.value.trim();
-     
-    if(!reviewTextValue){
+  alert(
+    "Aggiungi almeno un voto o una recensione"
+  );
 
-      alert(
-        "Scrivi la recensione."
-      );
+  return;
 
-      return;
-
-    }
+    } 
 
     const slug =
       selectedMovieData.title
@@ -281,31 +278,19 @@ const curiositaValue =
 
     const { error } =
       await supabaseClient
-        .from("user_reviews")
-        .insert([{
+  .from("user_reviews")
+  .upsert({
 
-          movie_id:
-            selectedMovieData.id,
+    user_id: user.id,
+    movie_id: movie.id,
+    movie_title: movie.title,
+    movie_poster: movie.poster_path,
+    rating: rating || null,
+    review_text:
+      reviewText.trim() || null,
+    username
 
-          movie_title:
-            selectedMovieData.title,
-
-          movie_poster:
-            `https://image.tmdb.org/t/p/w500${selectedMovieData.poster_path}`,
-
-
-          review_text:
-            reviewTextValue,
-
-          rating:
-  ratingValue,
-           
-slug,
-          user_id:
-  user.id,
-
-username:
-  username
+  });
 
         }]);
 
