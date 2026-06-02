@@ -212,6 +212,165 @@ function filterWatched(){
 
 function filterWatchlist(){
 
+   function filterFavorites(){
+
+  const search =
+    document
+      .getElementById(
+        "favoriteSearch"
+      )
+      ?.value
+      .toLowerCase() || "";
+
+  const genre =
+    document
+      .getElementById(
+        "favoriteGenre"
+      )
+      ?.value || "all";
+
+  const year =
+    document
+      .getElementById(
+        "favoriteYear"
+      )
+      ?.value || "all";
+
+  const filter =
+    document
+      .getElementById(
+        "favoriteFilter"
+      )
+      ?.value || "all";
+
+  let filtered =
+    [...favorites];
+
+  /* SEARCH */
+
+  filtered =
+    filtered.filter(
+      movie =>
+        movie.title
+          ?.toLowerCase()
+          .includes(search)
+    );
+
+  /* GENRE */
+
+  if(genre !== "all"){
+
+    filtered =
+      filtered.filter(
+        movie =>
+          movie.genre_names
+            ?.includes(genre)
+      );
+
+  }
+
+  /* YEAR */
+
+  if(year === "new"){
+
+    filtered =
+      filtered.filter(
+        movie => {
+
+          const y =
+            parseInt(
+              movie.release_date
+              ?.slice(0,4)
+            );
+
+          return y >= 2020;
+
+        }
+      );
+
+  }
+
+  if(year === "modern"){
+
+    filtered =
+      filtered.filter(
+        movie => {
+
+          const y =
+            parseInt(
+              movie.release_date
+              ?.slice(0,4)
+            );
+
+          return (
+            y >= 2000 &&
+            y < 2020
+          );
+
+        }
+      );
+
+  }
+
+  if(year === "classic"){
+
+    filtered =
+      filtered.filter(
+        movie => {
+
+          const y =
+            parseInt(
+              movie.release_date
+              ?.slice(0,4)
+            );
+
+          return y < 2000;
+
+        }
+      );
+
+  }
+
+  /* ORDER */
+
+  if(filter === "az"){
+
+    filtered.sort(
+      (a,b) =>
+        a.title.localeCompare(
+          b.title
+        )
+    );
+
+  }
+
+  if(filter === "recent"){
+
+    filtered.reverse();
+
+  }
+
+  if(filter === "random"){
+
+    const movie =
+      filtered[
+        Math.floor(
+          Math.random() *
+          filtered.length
+        )
+      ];
+
+    filtered =
+      movie ? [movie] : [];
+
+  }
+
+  renderGrid(
+    favoriteGrid,
+    filtered
+  );
+
+   }
   const search =
     document
       .getElementById(
@@ -360,7 +519,45 @@ if(year === "classic"){
 
   function populateWatchlistFilters(){
 function populateWatchedFilters(){
+function populateFavoriteFilters(){
 
+  const genreSelect =
+    document.getElementById(
+      "favoriteGenre"
+    );
+
+  if(!genreSelect)
+    return;
+
+  const genres =
+    [...new Set(
+
+      favorites.flatMap(
+        movie =>
+          movie.genre_names || []
+      )
+
+    )].sort();
+
+  genreSelect.innerHTML = `
+    <option value="all">
+      Generi
+    </option>
+  `;
+
+  genres.forEach(
+    genre => {
+
+      genreSelect.innerHTML += `
+        <option value="${genre}">
+          ${genre}
+        </option>
+      `;
+
+    }
+  );
+
+}
   const genreSelect =
     document.getElementById(
       "watchedGenre"
@@ -737,10 +934,8 @@ if(watchlistGrid){
 filterWatchlist();
 }
 
-renderGrid(
-  favoriteGrid,
-  favorites
-);
+populateFavoriteFilters();
+filterFavorites();
 
 renderCurrentFavorite();
 
