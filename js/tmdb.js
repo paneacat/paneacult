@@ -464,6 +464,178 @@ function openRating(id){
 
 }
 
+
+
+async function toggleMovieStatus(
+  status,
+  button
+){
+
+  const {
+    data:{ user }
+  } =
+  await supabaseClient.auth
+    .getUser();
+
+  if(
+    !user ||
+    !selectedMovieData
+  ) return;
+
+  const {
+    data: existing
+  } =
+  await supabaseClient
+    .from("user_movies")
+    .select("id")
+    .eq(
+      "user_id",
+      user.id
+    )
+    .eq(
+      "movie_id",
+      selectedMovieData.id
+    )
+    .eq(
+      "status",
+      status
+    )
+    .maybeSingle();
+
+  if(existing){
+
+    await supabaseClient
+      .from("user_movies")
+      .delete()
+      .eq(
+        "id",
+        existing.id
+      );
+
+    button?.classList.remove(
+      "active"
+    );
+
+    return;
+
+  }
+
+  await supabaseClient
+    .from("user_movies")
+    .insert({
+
+      user_id:
+        user.id,
+
+      movie_id:
+        selectedMovieData.id,
+
+      title:
+        selectedMovieData.title,
+
+      poster_path:
+        selectedMovieData.poster_path,
+
+      status:
+        status
+
+    });
+
+  button?.classList.add(
+    "active"
+  );
+
+}
+
+
+async function loadMovieStatuses(){
+
+  const {
+    data:{ user }
+  } =
+  await supabaseClient.auth
+    .getUser();
+
+  if(
+    !user ||
+    !selectedMovieData
+  ) return;
+
+  const {
+    data
+  } =
+  await supabaseClient
+    .from("user_movies")
+    .select("status")
+    .eq(
+      "user_id",
+      user.id
+    )
+    .eq(
+      "movie_id",
+      selectedMovieData.id
+    );
+
+  document
+    .getElementById(
+      "markWatchlistBtn"
+    )
+    ?.classList.toggle(
+      "active",
+      data?.some(
+        x =>
+          x.status ===
+          "watchlist"
+      )
+    );
+
+  document
+    .getElementById(
+      "markWatchedBtn"
+    )
+    ?.classList.toggle(
+      "active",
+      data?.some(
+        x =>
+          x.status ===
+          "watched"
+      )
+    );
+
+  document
+    .getElementById(
+      "markLovedBtn"
+    )
+    ?.classList.toggle(
+      "active",
+      data?.some(
+        x =>
+          x.status ===
+          "favorite"
+      )
+    );
+
+  document
+    .getElementById(
+      "markDesertBtn"
+    )
+    ?.classList.toggle(
+      "active",
+      data?.some(
+        x =>
+          x.status ===
+          "desert"
+      )
+    );
+
+}
+
+
+
+
+
+
+
 function setupMovieButtons(){
 
   const watchlistBtn =
@@ -491,7 +663,8 @@ function setupMovieButtons(){
       "writeReviewBtn"
     );
 
-
+loadMovieStatuses();
+   
 watchlistBtn?.classList.remove(
   "active"
 );
