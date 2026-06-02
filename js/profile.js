@@ -1356,3 +1356,39 @@ document
     "change",
     filterWatched
   );
+
+         document
+  .getElementById(
+    "favoriteSearch"
+  )
+  ?.addEventListener(
+    "input",
+    filterFavorites
+  );
+
+document
+  .getElementById(
+    "favoriteGenre"
+  )
+  ?.addEventListener(
+    "change",
+    filterFavorites
+  );
+
+document
+  .getElementById(
+    "favoriteYear"
+  )
+  ?.addEventListener(
+    "change",
+    filterFavorites
+  );
+
+document
+  .getElementById(
+    "favoriteFilter"
+  )
+  ?.addEventListener(
+    "change",
+    filterFavorites
+  );
