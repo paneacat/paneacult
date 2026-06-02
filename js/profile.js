@@ -644,20 +644,26 @@ importInput?.addEventListener(
   "change",
   async e => {
 
-    console.log(
-      "CSV CHANGE PARTITO"
-    );
-
     const file =
-      e.target.files[0];
+      e.target.files?.[0];
 
-    if(!file) return;
+    if(!file){
+
+      alert(
+        "Nessun file selezionato"
+      );
+
+      return;
+
+    }
 
     const text =
       await file.text();
 
     const rows =
-      text.split("\n").slice(1);
+      text
+        .split("\n")
+        .slice(1);
 
     const {
       data:{ user }
@@ -665,9 +671,21 @@ importInput?.addEventListener(
     await supabaseClient.auth
       .getUser();
 
-    if(!user) return;
+    if(!user){
 
-    for(const row of rows){
+      alert(
+        "Login richiesto"
+      );
+
+      return;
+
+    }
+
+    let imported = 0;
+
+    for(
+      const row of rows
+    ){
 
       const cols =
         row.split(",");
@@ -677,46 +695,25 @@ importInput?.addEventListener(
           ?.replaceAll('"',"")
           ?.trim();
 
-      if(!title) continue;
+      if(!title)
+        continue;
 
       try{
 
-        const result =
+        const results =
           await searchMovies(
             title
           );
 
         const movie =
-          result?.[0];
+          results?.[0];
 
-        if(!movie) continue;
-
-        const {
-          data: existing
-        } =
-        await supabaseClient
-          .from("user_movies")
-          .select("id")
-          .eq(
-            "user_id",
-            user.id
-          )
-          .eq(
-            "movie_id",
-            movie.id
-          )
-          .eq(
-            "status",
-            "watched"
-          )
-          .maybeSingle();
-
-        if(existing)
+        if(!movie)
           continue;
 
         await supabaseClient
           .from("user_movies")
-          .insert({
+          .upsert({
 
             user_id:
               user.id,
@@ -735,6 +732,8 @@ importInput?.addEventListener(
 
           });
 
+        imported++;
+
       }catch(err){
 
         console.log(err);
@@ -744,7 +743,7 @@ importInput?.addEventListener(
     }
 
     alert(
-      "Import completato 🎬"
+      `${imported} film importati 🎬`
     );
 
     location.reload();
