@@ -1944,7 +1944,8 @@ opacity:1;
 }
 
 .watchlist-tools,
-.watched-tools{
+.watched-tools,
+.favorite-tools{
   display:flex;
   gap:10px;
   margin-bottom:20px;
@@ -1954,9 +1955,10 @@ opacity:1;
 
 .watchlist-tools input,
 .watched-tools input,
+.favorite-tools input,
 .watchlist-tools select,
-.watched-tools select{
-
+.watched-tools select,
+.favorite-tools select{
   background:#111;
   border:1px solid #333;
   color:white;
@@ -1966,7 +1968,8 @@ opacity:1;
 }
 
 .watchlist-tools input,
-.watched-tools input{
+.watched-tools input,
+.favorite-tools input{
   flex:1;
   min-width:220px;
 }
