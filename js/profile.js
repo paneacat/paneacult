@@ -89,8 +89,8 @@ grid.innerHTML =
     <div
       class="saved-card"
     onclick="goToMovie(${
-  movie.id ||
-  movie.movie_id
+  movie.movie_id ||
+  movie.id
 })"
     >
 
@@ -852,8 +852,8 @@ function renderRecentActivity(){
   <div
     class="saved-card"
     onclick="goToMovie(${
-  movie.id ||
-  movie.movie_id
+  movie.movie_id ||
+  movie.id
 })">
 
     <img
