@@ -1366,13 +1366,24 @@ importInput?.addEventListener(
     ){
 
       const cols =
-        row.split(",");
+  row.split(",");
 
-      const title =
-        cols[1]
-          ?.replaceAll('"',"")
-          ?.trim();
+const title =
+  cols[1]
+    ?.replaceAll('"',"")
+    ?.trim();
 
+const rating =
+  cols[5]
+    ?.replaceAll('"',"")
+    ?.trim();
+
+const review =
+  cols[6]
+    ?.replaceAll('"',"")
+    ?.trim();
+
+       
       if(!title)
         continue;
 
@@ -1393,6 +1404,49 @@ importInput?.addEventListener(
           .from("user_movies")
           .upsert({
 
+           
+   const numericRating =
+  rating
+    ? parseFloat(rating)
+    : null;
+
+await supabaseClient
+  .from("user_reviews")
+  .upsert({
+
+    user_id:
+      user.id,
+
+    movie_id:
+      movie.id,
+
+    movie_title:
+      movie.title,
+
+    movie_poster:
+      movie.poster_path,
+
+    rating:
+      rating
+        ? parseFloat(rating)
+        : null,
+
+    review_text:
+      review || null,
+
+    username:
+      localStorage.getItem(
+        "paneacult_username"
+      ) || "cinefilo",
+
+    slug:
+      movie.title
+        .toLowerCase()
+        .replaceAll(" ","-")
+        .replace(/[^\w-]+/g,"")
+
+  });
+         
             user_id:
               user.id,
 
