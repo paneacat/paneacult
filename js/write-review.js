@@ -249,15 +249,13 @@ saveMovieStatus(
 
     }
 
-    const reviewTextValue =
-      reviewText.value.trim();
+    const reviewText =
+  reviewInput.value;
 
-    const ratingValue =
-      parseInt(
-        reviewRating.value
-      );
+const rating =
+  ratingSelect?.value || "";
 
-    if(
+if(
   !rating &&
   !reviewText.trim()
 ){
@@ -267,8 +265,7 @@ saveMovieStatus(
   );
 
   return;
-
-    } 
+}
 
     const slug =
       selectedMovieData.title
