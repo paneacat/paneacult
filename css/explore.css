@@ -292,8 +292,12 @@ align-items:center;
   display:flex;
   align-items:center;
 
+}.review-header,
+.review-film,
+.review-text,
+.review-date{
+  text-align:left;
 }
-
 /* ======================
    EXPLORE FILTERS
 ====================== */
