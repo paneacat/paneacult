@@ -471,6 +471,29 @@ async function toggleMovieStatus(
   button
 ){
 
+
+   if(status === "watched"){
+
+  await supabaseClient
+    .from("user_movies")
+    .delete()
+    .eq("user_id", user.id)
+    .eq("movie_id", selectedMovieData.id)
+    .eq("status", "watchlist");
+
+}
+
+if(status === "watchlist"){
+
+  await supabaseClient
+    .from("user_movies")
+    .delete()
+    .eq("user_id", user.id)
+    .eq("movie_id", selectedMovieData.id)
+    .eq("status", "watched");
+
+}
+   
   const {
     data:{ user }
   } =
