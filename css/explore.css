@@ -114,12 +114,6 @@ align-items:center;
   box-sizing:border-box;
 }
 
-#exploreReviews,
-#exploreRatings{
-  max-width:1200px;
-  margin:0 auto;
-}
-
 .explore-feed{
 
   display:flex;
@@ -132,6 +126,12 @@ align-items:center;
 
 }
 
+.explore-feed-section h2{
+  padding-left:60px;
+  margin-bottom:24px;
+  color:#fff;
+  font-size:2rem;
+}
 
 .review-content{
   flex:1;
@@ -539,10 +539,3 @@ TITOLI SEZIONE
     rgba(216,180,107,.2);
 
 }
-
-
-.explore-feed-section h2{
-  padding-left:40px;
-  margin-bottom:20px;
-}
-
