@@ -51,12 +51,28 @@ function renderExplore(reviews){
 
     return;
   }
+const reviewsOnly =
+  reviews.filter(
+    review => review.review_text
+  );
 
+const ratingsOnly =
+  reviews.filter(
+    review => !review.review_text
+  );
+
+const visibleReviewsOnly =
+  reviewsOnly.slice(
+    0,
+    visibleReviews
+  );
   let reviewsHtml = "";
   let ratingsHtml = "";
 
-  reviews.forEach(review => {
+  visibleReviewsOnly.forEach(review => {
+ratingsOnly.forEach(review => {
 
+  
     if(!review.review_text){
 
       ratingsHtml += `
