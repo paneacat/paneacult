@@ -1,55 +1,5 @@
 
 
-function renderExplore(reviews){
-
-  if(!exploreFeed) return;
-
-  if(!reviews.length){
-
-    exploreFeed.innerHTML = `
-      <p class="empty-text">
-        Nessuna recensione pubblicata.
-      </p>
-    `;
-
-    return;
-
-  }
-
-  exploreFeed.innerHTML =
-
-    reviews.map(review => `
-
-      <article class="review-card">
-
-        <div class="review-header">
-
-          <span class="review-user">
-            @${review.username}
-          </span>
-
-          <span class="review-rating">
-            ${review.rating || "-"} ★
-          </span>
-
-        </div>
-
-        <h3>
-          ${review.movie_title}
-        </h3>
-
-        <p>
-          ${
-            review.review_text ||
-            "Ha lasciato solo una valutazione."
-          }
-        </p>
-
-      </article>
-
-    `).join("");
-
-}
 
 
 
@@ -168,11 +118,31 @@ function renderExplore(
 
 }
 
-allReviews = data || [];
 
-renderExplore(
-  allReviews
-);
+async function loadExplore(){
+
+  const { data, error } =
+    await supabaseClient
+      .from("user_reviews")
+      .select("*")
+      .order(
+        "created_at",
+        { ascending:false }
+      );
+
+  if(error){
+    console.log(error);
+    return;
+  }
+
+  allReviews =
+    data || [];
+
+  renderExplore(
+    allReviews
+  );
+
+}
 
 function filterExplore(){
 
@@ -317,7 +287,5 @@ document
 
 
 loadExplore();
-
-let allReviews = [];
 
 
