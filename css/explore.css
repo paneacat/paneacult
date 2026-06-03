@@ -381,15 +381,26 @@ align-items:center;
 }
 
 .rating-card{
+
   display:flex;
   align-items:center;
-  gap:24px;
-}
 
-.rating-card .review-content{
-  flex:none;
+  gap:24px;
+
+  min-height:180px;
+
 }
 
 .rating-card .review-poster{
-  align-items:center;
+  flex:none;
+}
+
+.rating-card .review-content{
+
+  display:flex;
+  flex-direction:column;
+
+  justify-content:center;
+
+  flex:none;
 }
