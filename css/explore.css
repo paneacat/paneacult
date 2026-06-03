@@ -379,3 +379,11 @@ align-items:center;
   margin-top:8px;
 
 }
+
+.rating-card{
+
+  min-height:auto;
+
+  padding:20px 24px;
+
+}
