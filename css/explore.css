@@ -545,3 +545,36 @@ TITOLI SEZIONE
   padding-left:40px;
   margin-bottom:20px;
 }
+
+
+#loadMoreBtn{
+
+  display:block;
+
+  margin:40px auto;
+
+  padding:14px 26px;
+
+  border:none;
+
+  border-radius:14px;
+
+  background:#d8b46b;
+
+  color:#071019;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.25s;
+
+}
+
+#loadMoreBtn:hover{
+
+  transform:translateY(-2px);
+
+  opacity:.9;
+
+}
