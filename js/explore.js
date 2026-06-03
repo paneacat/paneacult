@@ -1,8 +1,3 @@
-
-
-
-
-
 const exploreFeed =
   document.getElementById(
     "exploreFeed"
@@ -24,10 +19,8 @@ async function loadExplore(){
       );
 
   if(error){
-
     console.log(error);
     return;
-
   }
 
   allReviews =
@@ -38,15 +31,28 @@ async function loadExplore(){
   );
 
 }
-  
+
+function renderExplore(
+  reviews
+){
+
+  if(!reviews.length){
+
+    exploreFeed.innerHTML = `
+      <p class="empty-text">
+        Nessuna recensione pubblicata.
+      </p>
+    `;
+
+    return;
+
+  }
 
   exploreFeed.innerHTML =
 
     reviews.map(review => `
 
-      <article
-        class="review-card"
-      >
+      <article class="review-card">
 
         <div class="review-poster">
 
@@ -61,38 +67,28 @@ async function loadExplore(){
 
           <div class="review-header">
 
-            <span
-              class="review-user"
-            >
+            <span class="review-user">
               @${review.username}
             </span>
 
-            <span
-              class="review-rating"
-            >
+            <span class="review-rating">
               ${review.rating || "-"} ★
             </span>
 
           </div>
 
-          <h3
-            class="review-film"
-          >
+          <h3 class="review-film">
             ${review.movie_title}
           </h3>
 
-          <p
-            class="review-text"
-          >
+          <p class="review-text">
             ${
               review.review_text ||
               "Ha lasciato solo una valutazione."
             }
           </p>
 
-          <div
-            class="review-date"
-          >
+          <div class="review-date">
             ${new Date(
               review.created_at
             ).toLocaleDateString(
@@ -108,24 +104,6 @@ async function loadExplore(){
 
 }
 
-
-async function loadExplore(){
-
-  const { data, error } =
-    await supabaseClient
-      .from("user_reviews")
-      .select("*")
-      .order(
-        "created_at",
-        { ascending:false }
-      );
-
-  if(error){
-    console.log(error);
-    return;
-  }
-
-}
 
 function filterExplore(){
 
