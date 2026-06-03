@@ -38,125 +38,132 @@ async function loadExplore(){
 
 }
 
+
+
+
 function renderExplore(reviews){
 
   if(!reviews.length){
 
-    exploreReviews.innerHTML =
-      `<p class="empty-text">
+    exploreReviews.innerHTML = `
+      <p class="empty-text">
         Nessuna recensione pubblicata.
-      </p>`;
+      </p>
+    `;
 
     exploreRatings.innerHTML = "";
 
     return;
+
   }
-const reviewsOnly =
-  reviews.filter(
-    review => review.review_text
-  );
 
-const ratingsOnly =
-  reviews.filter(
-    review => !review.review_text
-  );
+  const reviewsOnly =
+    reviews.filter(
+      review => review.review_text
+    );
 
-const visibleReviewsOnly =
-  reviewsOnly.slice(
-    0,
-    visibleReviews
-  );
+  const ratingsOnly =
+    reviews.filter(
+      review => !review.review_text
+    );
+
+  const visibleReviewsOnly =
+    reviewsOnly.slice(
+      0,
+      visibleReviews
+    );
+
   let reviewsHtml = "";
   let ratingsHtml = "";
 
   visibleReviewsOnly.forEach(review => {
-ratingsOnly.forEach(review => {
 
-  
-    if(!review.review_text){
+    reviewsHtml += `
 
-      ratingsHtml += `
+      <article class="review-card">
 
-        <article class="rating-card">
+        <div class="review-poster">
 
           <img
-            class="rating-card-poster"
             src="https://image.tmdb.org/t/p/w500${review.movie_poster}"
             alt="${review.movie_title}"
           >
 
-          <h3 class="rating-card-title">
+        </div>
+
+        <div class="review-content">
+
+          <div class="review-header">
+
+            <span class="review-user">
+              @${review.username}
+            </span>
+
+            <span class="review-rating">
+              ${review.rating || "-"} ★
+            </span>
+
+          </div>
+
+          <h3 class="review-film">
             ${review.movie_title}
           </h3>
 
-          <div class="rating-only-stars">
-            ${review.rating || "-"} ★
-          </div>
+          <p class="review-text">
+            ${review.review_text}
+          </p>
 
-          <div class="rating-user">
-            @${review.username}
-          </div>
-
-          <div class="rating-date">
+          <div class="review-date">
             ${new Date(
               review.created_at
-            ).toLocaleDateString("it-IT")}
+            ).toLocaleDateString(
+              "it-IT"
+            )}
           </div>
 
-        </article>
+        </div>
 
-      `;
+      </article>
 
-    } else {
+    `;
 
-      reviewsHtml += `
+  });
 
-        <article class="review-card">
+  ratingsOnly.forEach(review => {
 
-          <div class="review-poster">
+    ratingsHtml += `
 
-            <img
-              src="https://image.tmdb.org/t/p/w500${review.movie_poster}"
-              alt="${review.movie_title}"
-            >
+      <article class="rating-card">
 
-          </div>
+        <img
+          class="rating-card-poster"
+          src="https://image.tmdb.org/t/p/w500${review.movie_poster}"
+          alt="${review.movie_title}"
+        >
 
-          <div class="review-content">
+        <h3 class="rating-card-title">
+          ${review.movie_title}
+        </h3>
 
-            <div class="review-header">
+        <div class="rating-only-stars">
+          ${review.rating || "-"} ★
+        </div>
 
-              <span class="review-user">
-                @${review.username}
-              </span>
+        <div class="rating-user">
+          @${review.username}
+        </div>
 
-              <span class="review-rating">
-                ${review.rating || "-"} ★
-              </span>
+        <div class="rating-date">
+          ${new Date(
+            review.created_at
+          ).toLocaleDateString(
+            "it-IT"
+          )}
+        </div>
 
-            </div>
+      </article>
 
-            <h3 class="review-film">
-              ${review.movie_title}
-            </h3>
-
-            <p class="review-text">
-              ${review.review_text}
-            </p>
-
-            <div class="review-date">
-              ${new Date(
-                review.created_at
-              ).toLocaleDateString("it-IT")}
-            </div>
-
-          </div>
-
-        </article>
-
-      `;
-
-    }
+    `;
 
   });
 
@@ -167,9 +174,6 @@ ratingsOnly.forEach(review => {
     ratingsHtml;
 
 }
-
-
-
 
 
 
