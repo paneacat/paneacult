@@ -140,6 +140,7 @@ reviews.map(review => {
 
 }).join("");
 
+}
 
 function filterExplore(){
 
