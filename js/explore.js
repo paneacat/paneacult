@@ -9,6 +9,7 @@ const exploreRatings =
   );
 
 let allReviews = [];
+let visibleReviews = 10;
 
 async function loadExplore(){
 
