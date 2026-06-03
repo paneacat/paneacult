@@ -126,13 +126,11 @@ align-items:center;
 
 .review-content{
   flex:1;
-  text-align:left;
-   
   display:flex;
   flex-direction:column;
-   
   justify-content:flex-start;
-
+  align-items:flex-start;
+  text-align:left;
 }
 
 .review-header{
@@ -274,20 +272,17 @@ align-items:center;
 
 .review-poster{
   display:flex;
-  align-items:flex-start;
+  align-items:center;
   justify-content:center;
 }
 
 .review-poster img{
-  width:140px;
-  height:210px;
-
+  width:160px;
+  height:240px;
   object-fit:cover;
-
   border-radius:16px;
-
-  transition:.25s;
 }
+
 
 .review-card:hover .review-poster img{
   transform:scale(1.03);
@@ -298,6 +293,11 @@ align-items:center;
 .review-text,
 .review-date{
   text-align:left;
+}
+
+.review-placeholder{
+  text-align:left;
+  width:100%;
 }
 /* ======================
    EXPLORE FILTERS
