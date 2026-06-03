@@ -128,7 +128,7 @@ align-items:center;
 
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:flex-start;
 
 }
 
@@ -189,9 +189,9 @@ align-items:center;
 
   color:
     rgba(255,255,255,.82);
-
+  min-height:240px;
   line-height:1.8;
-
+  margin-top:12px;
   font-size:.96rem;
 
 }
