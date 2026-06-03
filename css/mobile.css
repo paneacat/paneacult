@@ -2044,6 +2044,24 @@ section{
   width:100%;
 
 }
+  .review-card{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .review-poster img{
+
+    height:260px;
+
+  }
+
+  .review-film{
+
+    font-size:1.4rem;
+
+  }
+  
  }
 
 
