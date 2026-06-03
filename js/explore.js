@@ -82,10 +82,25 @@ function renderExplore(
           </h3>
 
           <p class="review-text review-placeholder">
-  ${
-    review.review_text ||
-    "Ha lasciato solo una valutazione."
-  }
+  ${review.review_text ? `
+
+  <p class="review-text">
+    ${review.review_text}
+  </p>
+
+` : `
+
+  <div class="rating-only">
+    ⭐ Ha lasciato solo una valutazione
+  </div>
+
+`}
+
+<div class="review-date">
+  ${new Date(
+    review.created_at
+  ).toLocaleDateString("it-IT")}
+</div>
 </p>
           <div class="review-date">
             ${new Date(
