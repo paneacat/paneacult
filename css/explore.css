@@ -111,6 +111,12 @@ align-items:center;
 
 }
 
+.explore-section{
+  max-width:1400px;
+  margin:0 auto;
+  padding:0 32px 80px;
+}
+
 .explore-feed{
 
   display:flex;
@@ -255,6 +261,33 @@ align-items:center;
   transition:.25s;
 
 }
+
+/* ======================
+   RECENSIONI
+====================== */
+
+#exploreReviews{
+
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+
+}
+
+.review-card{
+
+  width:100%;
+
+  max-width:none;
+
+}
+
+.review-text{
+
+  max-width:800px;
+
+}
+
 
 .review-card:hover{
 
