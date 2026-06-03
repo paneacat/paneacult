@@ -404,3 +404,71 @@ align-items:center;
 
   flex:none;
 }
+
+.rating-card{
+
+  max-width:320px;
+
+  margin:auto;
+
+  padding:24px;
+
+  text-align:center;
+
+  border-radius:22px;
+
+  background:
+    rgba(7,15,25,.45);
+
+  border:
+    1px solid rgba(255,255,255,.06);
+
+  backdrop-filter:blur(20px);
+
+}
+
+.rating-card-poster{
+
+  width:140px;
+
+  border-radius:16px;
+
+  margin-bottom:16px;
+
+}
+
+.rating-card-title{
+
+  font-size:1.3rem;
+
+  margin-bottom:10px;
+
+}
+
+.rating-only-stars{
+
+  color:#f3d18c;
+
+  font-size:1.1rem;
+
+  font-weight:700;
+
+  margin-bottom:10px;
+
+}
+
+.rating-user{
+
+  color:#d8b46b;
+
+  margin-bottom:8px;
+
+}
+
+.rating-date{
+
+  color:rgba(255,255,255,.5);
+
+  font-size:.8rem;
+
+}
