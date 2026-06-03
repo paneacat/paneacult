@@ -507,15 +507,31 @@ TITOLI SEZIONE
 
 .explore-title{
 
-font-family:
-"Playfair Display",
-serif;
+  display:flex;
+  align-items:center;
+  gap:12px;
 
-font-size:2rem;
+  font-family:
+    "Playfair Display",
+    serif;
 
-color:#fff;
+  font-size:2rem;
 
-margin:
-50px 0 24px;
+  margin:50px 0 24px;
+
+  color:#fff;
+
+}
+
+.explore-title::after{
+
+  content:"";
+
+  flex:1;
+
+  height:1px;
+
+  background:
+    rgba(216,180,107,.2);
 
 }
