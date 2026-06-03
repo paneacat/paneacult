@@ -50,54 +50,41 @@ function renderExplore(
 
   exploreFeed.innerHTML =
 
-    reviews.map(review => `
+reviews.map(review => {
 
-      <article class="
-  review-card
-  ${!review.review_text ? "rating-card" : ""}
-">
+  if(!review.review_text){
 
-        <div class="review-poster">
+    return `
+    
+      <article class="rating-card">
 
-          <img
-            src="https://image.tmdb.org/t/p/w500${review.movie_poster}"
-            alt="${review.movie_title}"
-          >
+        <img
+          src="https://image.tmdb.org/t/p/w500${review.movie_poster}"
+          alt="${review.movie_title}"
+        >
 
+        <h3>${review.movie_title}</h3>
+
+        <div class="rating-only-stars">
+          ${review.rating} ★
         </div>
 
-        <div class="review-content">
+        <div class="rating-user">
+          @${review.username}
+        </div>
 
-          <div class="review-header">
+        <div class="rating-date">
+          ${new Date(review.created_at)
+            .toLocaleDateString("it-IT")}
+        </div>
 
-            <span class="review-user">
-              @${review.username}
-            </span>
+      </article>
+    `;
 
-            <span class="review-rating">
-              ${review.rating || "-"} ★
-            </span>
+  }
 
-          </div>
-
-          <h3 class="review-film">
-            ${review.movie_title}
-          </h3>
-
-      
-  ${review.review_text ? `
-
-  <p class="review-text">
-    ${review.review_text}
-  </p>
-
-` : `
-
-  <div class="rating-only">
-    ⭐ Ha lasciato solo una valutazione
-  </div>
-
-`}
+  return `
+  
           <div class="review-date">
             ${new Date(
               review.created_at
@@ -110,7 +97,8 @@ function renderExplore(
 
       </article>
 
-    `).join("");
+    `;
+}).join("");
 
 }
 
