@@ -543,6 +543,47 @@ if(status === "watchlist"){
 
   }
 
+
+if(status === "watched"){
+
+  await supabaseClient
+    .from("user_movies")
+    .delete()
+    .eq("user_id", user.id)
+    .eq("movie_id", selectedMovieData.id)
+    .eq("status", "watchlist");
+
+  document
+    .getElementById(
+      "markWatchlistBtn"
+    )
+    ?.classList.remove(
+      "active"
+    );
+
+}
+
+if(status === "watchlist"){
+
+  await supabaseClient
+    .from("user_movies")
+    .delete()
+    .eq("user_id", user.id)
+    .eq("movie_id", selectedMovieData.id)
+    .eq("status", "watched");
+
+  document
+    .getElementById(
+      "markWatchedBtn"
+    )
+    ?.classList.remove(
+      "active"
+    );
+
+}
+
+
+   
   await supabaseClient
     .from("user_movies")
     .insert({
