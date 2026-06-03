@@ -127,24 +127,23 @@ align-items:center;
 .review-content{
   flex:1;
   text-align:left;
+   
   display:flex;
   flex-direction:column;
+   
   justify-content:flex-start;
 
 }
 
 .review-header{
+  width:100%;
 
   display:flex;
-
   justify-content:space-between;
-
   align-items:center;
 
   margin-bottom:12px;
-
 }
-
 
 .review-user{
 
@@ -244,7 +243,7 @@ align-items:center;
   gap:24px;
   padding:24px;
   border-radius:22px;
-  min-height:240px;
+  min-height:auto;
    
   background:
     rgba(7,15,25,.45);
@@ -273,24 +272,26 @@ align-items:center;
 
 }
 
-.review-poster img{
+.review-poster{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
 
-  width:170px;
-  height:255px;
+.review-poster img{
+  width:140px;
+  height:210px;
 
   object-fit:cover;
 
   border-radius:16px;
-  box-shadow:
-    0 10px 25px
-    rgba(0,0,0,.25);
 
+  transition:.25s;
 }
 
-.review-poster{
-
-  display:flex;
-  align-items:center;
+.review-card:hover .review-poster img{
+  transform:scale(1.03);
+}
 
 }.review-header,
 .review-film,
