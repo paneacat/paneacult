@@ -1134,7 +1134,7 @@ renderCurrentFavorite();
 
 renderSignature();
 
-await renderRecentActivity();
+renderRecentActivity();
 
 updateCounters();
 
