@@ -81,13 +81,12 @@ function renderExplore(
             ${review.movie_title}
           </h3>
 
-          <p class="review-text">
-            ${
-              review.review_text ||
-              "Ha lasciato solo una valutazione."
-            }
-          </p>
-
+          <p class="review-text review-placeholder">
+  ${
+    review.review_text ||
+    "Ha lasciato solo una valutazione."
+  }
+</p>
           <div class="review-date">
             ${new Date(
               review.created_at
