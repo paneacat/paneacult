@@ -354,3 +354,28 @@ align-items:center;
     0 0 20px
     rgba(216,180,107,.25);
 }
+
+.rating-only{
+
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  padding:10px 14px;
+
+  background:
+    rgba(216,180,107,.12);
+
+  border:
+    1px solid rgba(216,180,107,.2);
+
+  border-radius:12px;
+
+  color:#d8b46b;
+
+  font-size:.9rem;
+  font-weight:600;
+
+  margin-top:8px;
+
+}
