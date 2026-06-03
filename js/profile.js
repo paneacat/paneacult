@@ -861,22 +861,41 @@ function renderSignature(){
 }
 
 
-function renderRecentActivity(){
+
+async function renderRecentActivity(){
 
   if(!activityFeed) return;
 
-  const recent =
-    JSON.parse(
-      localStorage.getItem(
-        "paneacult_recent"
-      )
-    ) || [];
+  const {
+    data:{ user }
+  } =
+  await supabaseClient.auth
+    .getUser();
 
-  if(!recent.length){
+  if(!user) return;
+
+  const {
+    data: reviews
+  } =
+  await supabaseClient
+    .from("user_reviews")
+    .select("*")
+    .eq(
+      "user_id",
+      user.id
+    )
+    .order(
+      "created_at",
+      {
+        ascending:false
+      }
+    );
+
+  if(!reviews?.length){
 
     activityFeed.innerHTML = `
       <p class="empty-text">
-        Nessuna attività recente.
+        Nessun film votato.
       </p>
     `;
 
@@ -886,33 +905,37 @@ function renderRecentActivity(){
 
   activityFeed.innerHTML =
 
-    recent.map(movie => `
+    reviews.map(review => `
 
-  <div
-    class="saved-card"
-    onclick="goToMovie(${
-  movie.movie_id ||
-  movie.id
-})">
+      <div
+        class="saved-card"
+        onclick="goToMovie(${review.movie_id})"
+      >
 
-    <img
-  src="${
-    movie.poster_path
-      ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-      : movie.movie_poster ||
-        movie.poster
-  }"
-  alt="${
-  movie.title ||
-  movie.movie_title
-}"
->
+        <img
+          src="https://image.tmdb.org/t/p/w500${review.movie_poster}"
+          alt="${review.movie_title}"
+        >
 
-  </div>
+        <div class="saved-overlay">
 
-`).join("");
+          <h3>
+            ${review.movie_title}
+          </h3>
+
+          <span>
+            ${review.rating || "-"} ★
+          </span>
+
+        </div>
+
+      </div>
+
+    `).join("");
 
 }
+
+
 
 
 /* =========================
@@ -1111,7 +1134,7 @@ renderCurrentFavorite();
 
 renderSignature();
 
-renderRecentActivity();
+await renderRecentActivity();
 
 updateCounters();
 
