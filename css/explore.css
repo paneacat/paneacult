@@ -189,7 +189,6 @@ align-items:center;
 
   color:
     rgba(255,255,255,.82);
-  min-height:240px;
   line-height:1.8;
   margin-top:12px;
   font-size:.96rem;
@@ -247,7 +246,7 @@ align-items:center;
   padding:24px;
 
   border-radius:22px;
-
+ min-height:240px;
   background:
     rgba(7,15,25,.45);
 
