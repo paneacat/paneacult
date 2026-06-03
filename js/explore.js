@@ -54,11 +54,39 @@ reviews.map(review => {
 
   if(!review.review_text){
 
-    return `
-      <article class="rating-card">
-        ...
-      </article>
-    `;
+  return `
+
+    <article class="rating-card">
+
+      <img
+        class="rating-card-poster"
+        src="https://image.tmdb.org/t/p/w500${review.movie_poster}"
+        alt="${review.movie_title}"
+      >
+
+      <h3 class="rating-card-title">
+        ${review.movie_title}
+      </h3>
+
+      <div class="rating-only-stars">
+        ${review.rating || "-"} ★
+      </div>
+
+      <div class="rating-user">
+        @${review.username}
+      </div>
+
+      <div class="rating-date">
+        ${new Date(
+          review.created_at
+        ).toLocaleDateString(
+          "it-IT"
+        )}
+      </div>
+
+    </article>
+
+  `;
   }
 
   return `
