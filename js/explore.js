@@ -1,6 +1,11 @@
-const exploreFeed =
+const exploreReviews =
   document.getElementById(
-    "exploreFeed"
+    "exploreReviews"
+  );
+
+const exploreRatings =
+  document.getElementById(
+    "exploreRatings"
   );
 
 let allReviews = [];
@@ -35,7 +40,15 @@ async function loadExplore(){
 function renderExplore(
   reviews
 ){
+const reviewsOnly =
+  reviews.filter(
+    review => review.review_text
+  );
 
+const ratingsOnly =
+  reviews.filter(
+    review => !review.review_text
+  );
   if(!reviews.length){
 
     exploreFeed.innerHTML = `
