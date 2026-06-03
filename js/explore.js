@@ -8,6 +8,8 @@ const exploreFeed =
     "exploreFeed"
   );
 
+let allReviews = [];
+
 async function loadExplore(){
 
   const { data, error } =
@@ -28,27 +30,15 @@ async function loadExplore(){
 
   }
 
+  allReviews =
+    data || [];
+
   renderExplore(
-    data || []
+    allReviews
   );
 
 }
-
-function renderExplore(
-  reviews
-){
-
-  if(!reviews.length){
-
-    exploreFeed.innerHTML = `
-      <p class="empty-text">
-        Nessuna recensione pubblicata.
-      </p>
-    `;
-
-    return;
-
-  }
+  
 
   exploreFeed.innerHTML =
 
@@ -134,13 +124,6 @@ async function loadExplore(){
     console.log(error);
     return;
   }
-
-  allReviews =
-    data || [];
-
-  renderExplore(
-    allReviews
-  );
 
 }
 
