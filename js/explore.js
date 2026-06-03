@@ -55,36 +55,47 @@ reviews.map(review => {
   if(!review.review_text){
 
     return `
-    
       <article class="rating-card">
-
-        <img
-          src="https://image.tmdb.org/t/p/w500${review.movie_poster}"
-          alt="${review.movie_title}"
-        >
-
-        <h3>${review.movie_title}</h3>
-
-        <div class="rating-only-stars">
-          ${review.rating} ★
-        </div>
-
-        <div class="rating-user">
-          @${review.username}
-        </div>
-
-        <div class="rating-date">
-          ${new Date(review.created_at)
-            .toLocaleDateString("it-IT")}
-        </div>
-
+        ...
       </article>
     `;
-
   }
 
   return `
-  
+
+      <article class="review-card">
+
+        <div class="review-poster">
+
+          <img
+            src="https://image.tmdb.org/t/p/w500${review.movie_poster}"
+            alt="${review.movie_title}"
+          >
+
+        </div>
+
+        <div class="review-content">
+
+          <div class="review-header">
+
+            <span class="review-user">
+              @${review.username}
+            </span>
+
+            <span class="review-rating">
+              ${review.rating || "-"} ★
+            </span>
+
+          </div>
+
+          <h3 class="review-film">
+            ${review.movie_title}
+          </h3>
+
+          <p class="review-text">
+            ${review.review_text}
+          </p>
+
           <div class="review-date">
             ${new Date(
               review.created_at
@@ -97,10 +108,9 @@ reviews.map(review => {
 
       </article>
 
-    `;
-}).join("");
+  `;
 
-}
+}).join("");
 
 
 function filterExplore(){
