@@ -465,35 +465,11 @@ function openRating(id){
 }
 
 
-
 async function toggleMovieStatus(
   status,
   button
 ){
 
-
-   if(status === "watched"){
-
-  await supabaseClient
-    .from("user_movies")
-    .delete()
-    .eq("user_id", user.id)
-    .eq("movie_id", selectedMovieData.id)
-    .eq("status", "watchlist");
-
-}
-
-if(status === "watchlist"){
-
-  await supabaseClient
-    .from("user_movies")
-    .delete()
-    .eq("user_id", user.id)
-    .eq("movie_id", selectedMovieData.id)
-    .eq("status", "watched");
-
-}
-   
   const {
     data:{ user }
   } =
@@ -543,47 +519,64 @@ if(status === "watchlist"){
 
   }
 
+  /* WATCHLIST ↔ WATCHED */
 
-if(status === "watched"){
+  if(status === "watched"){
 
-  await supabaseClient
-    .from("user_movies")
-    .delete()
-    .eq("user_id", user.id)
-    .eq("movie_id", selectedMovieData.id)
-    .eq("status", "watchlist");
+    await supabaseClient
+      .from("user_movies")
+      .delete()
+      .eq(
+        "user_id",
+        user.id
+      )
+      .eq(
+        "movie_id",
+        selectedMovieData.id
+      )
+      .eq(
+        "status",
+        "watchlist"
+      );
 
-  document
-    .getElementById(
-      "markWatchlistBtn"
-    )
-    ?.classList.remove(
-      "active"
-    );
+    document
+      .getElementById(
+        "markWatchlistBtn"
+      )
+      ?.classList.remove(
+        "active"
+      );
 
-}
+  }
 
-if(status === "watchlist"){
+  if(status === "watchlist"){
 
-  await supabaseClient
-    .from("user_movies")
-    .delete()
-    .eq("user_id", user.id)
-    .eq("movie_id", selectedMovieData.id)
-    .eq("status", "watched");
+    await supabaseClient
+      .from("user_movies")
+      .delete()
+      .eq(
+        "user_id",
+        user.id
+      )
+      .eq(
+        "movie_id",
+        selectedMovieData.id
+      )
+      .eq(
+        "status",
+        "watched"
+      );
 
-  document
-    .getElementById(
-      "markWatchedBtn"
-    )
-    ?.classList.remove(
-      "active"
-    );
+    document
+      .getElementById(
+        "markWatchedBtn"
+      )
+      ?.classList.remove(
+        "active"
+      );
 
-}
+  }
 
-
-   
   await supabaseClient
     .from("user_movies")
     .insert({
@@ -610,6 +603,7 @@ if(status === "watchlist"){
   );
 
 }
+
 
 
 async function loadMovieStatuses(){
