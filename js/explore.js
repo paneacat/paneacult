@@ -84,7 +84,7 @@ function renderExplore(
             ${review.movie_title}
           </h3>
 
-          <p class="review-text review-placeholder">
+      
   ${review.review_text ? `
 
   <p class="review-text">
