@@ -2,10 +2,13 @@
    EXPLORE
 ========================= */
 .explore-section{
-  max-width:1200px;
+  width:100%;
+  max-width:1300px;
   margin:0 auto;
-  padding:0 32px 80px;
+  padding:0 60px 80px;
+  box-sizing:border-box;
 }
+
 
 #exploreFeed{
 
@@ -109,12 +112,6 @@ align-items:center;
 align-items:center;
   padding:20px 24px 80px;
 
-}
-
-.explore-section{
-  max-width:1400px;
-  margin:0 auto;
-  padding:0 32px 80px;
 }
 
 .explore-feed{
