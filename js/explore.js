@@ -168,13 +168,29 @@ function renderExplore(reviews){
   });
 
   exploreReviews.innerHTML =
-    reviewsHtml;
+  reviewsHtml;
 
-  exploreRatings.innerHTML =
-    ratingsHtml;
+exploreRatings.innerHTML =
+  ratingsHtml;
+
+const loadMoreBtn =
+  document.getElementById(
+    "loadMoreBtn"
+  );
+
+if(loadMoreBtn){
+
+  loadMoreBtn.style.display =
+
+    reviewsOnly.length >
+    visibleReviews
+
+      ? "block"
+
+      : "none";
 
 }
-
+  
 
 
 
@@ -323,6 +339,25 @@ document
   );
 
 
+
+  document
+  .getElementById(
+    "loadMoreBtn"
+  )
+  ?.addEventListener(
+    "click",
+    () => {
+
+      visibleReviews += 10;
+
+      renderExplore(
+        allReviews
+      );
+
+    }
+  );
+
+  
 loadExplore();
 
 
