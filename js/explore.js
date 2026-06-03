@@ -52,7 +52,10 @@ function renderExplore(
 
     reviews.map(review => `
 
-      <article class="review-card">
+      <article class="
+  review-card
+  ${!review.review_text ? "rating-card" : ""}
+">
 
         <div class="review-poster">
 
@@ -95,13 +98,6 @@ function renderExplore(
   </div>
 
 `}
-
-<div class="review-date">
-  ${new Date(
-    review.created_at
-  ).toLocaleDateString("it-IT")}
-</div>
-</p>
           <div class="review-date">
             ${new Date(
               review.created_at
