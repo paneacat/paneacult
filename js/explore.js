@@ -37,131 +37,129 @@ async function loadExplore(){
 
 }
 
-function renderExplore(
-  reviews
-){
-const reviewsOnly =
-  reviews.filter(
-    review => review.review_text
-  );
+function renderExplore(reviews){
 
-const ratingsOnly =
-  reviews.filter(
-    review => !review.review_text
-  );
-  
   if(!reviews.length){
-let reviewsHtml = "";
-let ratingsHtml = "";
 
-    
-    exploreFeed.innerHTML = `
-      <p class="empty-text">
+    exploreReviews.innerHTML =
+      `<p class="empty-text">
         Nessuna recensione pubblicata.
-      </p>
-    `;
+      </p>`;
+
+    exploreRatings.innerHTML = "";
 
     return;
-
   }
+
+  let reviewsHtml = "";
+  let ratingsHtml = "";
 
   reviews.forEach(review => {
-  if(!review.review_text){
 
-  ratingsHtml += `
-  ...
-`;
-return;
+    if(!review.review_text){
 
-    <article class="rating-card">
+      ratingsHtml += `
 
-      <img
-        class="rating-card-poster"
-        src="https://image.tmdb.org/t/p/w500${review.movie_poster}"
-        alt="${review.movie_title}"
-      >
-
-      <h3 class="rating-card-title">
-        ${review.movie_title}
-      </h3>
-
-      <div class="rating-only-stars">
-        ${review.rating || "-"} ★
-      </div>
-
-      <div class="rating-user">
-        @${review.username}
-      </div>
-
-      <div class="rating-date">
-        ${new Date(
-          review.created_at
-        ).toLocaleDateString(
-          "it-IT"
-        )}
-      </div>
-
-    </article>
-
-  `;
-  }
-
-  return `
-
-      <article class="review-card">
-
-        <div class="review-poster">
+        <article class="rating-card">
 
           <img
+            class="rating-card-poster"
             src="https://image.tmdb.org/t/p/w500${review.movie_poster}"
             alt="${review.movie_title}"
           >
 
-        </div>
-
-        <div class="review-content">
-
-          <div class="review-header">
-
-            <span class="review-user">
-              @${review.username}
-            </span>
-
-            <span class="review-rating">
-              ${review.rating || "-"} ★
-            </span>
-
-          </div>
-
-          <h3 class="review-film">
+          <h3 class="rating-card-title">
             ${review.movie_title}
           </h3>
 
-          <p class="review-text">
-            ${review.review_text}
-          </p>
-
-          <div class="review-date">
-            ${new Date(
-              review.created_at
-            ).toLocaleDateString(
-              "it-IT"
-            )}
+          <div class="rating-only-stars">
+            ${review.rating || "-"} ★
           </div>
 
-        </div>
+          <div class="rating-user">
+            @${review.username}
+          </div>
 
-      </article>
+          <div class="rating-date">
+            ${new Date(
+              review.created_at
+            ).toLocaleDateString("it-IT")}
+          </div>
 
-  `;
+        </article>
 
-exploreReviews.innerHTML =
-  reviewsHtml;
+      `;
 
-exploreRatings.innerHTML =
-  ratingsHtml;
+    } else {
+
+      reviewsHtml += `
+
+        <article class="review-card">
+
+          <div class="review-poster">
+
+            <img
+              src="https://image.tmdb.org/t/p/w500${review.movie_poster}"
+              alt="${review.movie_title}"
+            >
+
+          </div>
+
+          <div class="review-content">
+
+            <div class="review-header">
+
+              <span class="review-user">
+                @${review.username}
+              </span>
+
+              <span class="review-rating">
+                ${review.rating || "-"} ★
+              </span>
+
+            </div>
+
+            <h3 class="review-film">
+              ${review.movie_title}
+            </h3>
+
+            <p class="review-text">
+              ${review.review_text}
+            </p>
+
+            <div class="review-date">
+              ${new Date(
+                review.created_at
+              ).toLocaleDateString("it-IT")}
+            </div>
+
+          </div>
+
+        </article>
+
+      `;
+
+    }
+
+  });
+
+  exploreReviews.innerHTML =
+    reviewsHtml;
+
+  exploreRatings.innerHTML =
+    ratingsHtml;
 
 }
+
+
+
+
+
+
+
+
+
+
 function filterExplore(){
 
   let filtered =
