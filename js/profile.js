@@ -1571,7 +1571,7 @@ importInput?.addEventListener(
               "reviews"
             )
           ){
-
+console.log(cols);
             const rating =
               cols[2]
                 ?.replaceAll(
@@ -1615,9 +1615,9 @@ importInput?.addEventListener(
                   review || null,
 
                 username:
-                  localStorage.getItem(
-                    "paneacult_username"
-                  ) || "cinefilo"
+  localStorage.getItem(
+    "paneacult_username"
+  ) || user.user_metadata?.username || "utente"
 
               });
 
