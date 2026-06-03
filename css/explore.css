@@ -381,16 +381,15 @@ align-items:center;
 }
 
 .rating-card{
-  min-height:auto;
-  grid-template-columns: 140px auto;
-  padding:20px 24px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
 
+.rating-card .review-content{
+  flex:none;
 }
 
 .rating-card .review-poster{
   align-items:center;
-}
-
-.rating-card .review-content{
-  max-width:400px;
 }
