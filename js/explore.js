@@ -49,8 +49,12 @@ const ratingsOnly =
   reviews.filter(
     review => !review.review_text
   );
+  
   if(!reviews.length){
+let reviewsHtml = "";
+let ratingsHtml = "";
 
+    
     exploreFeed.innerHTML = `
       <p class="empty-text">
         Nessuna recensione pubblicata.
@@ -61,13 +65,13 @@ const ratingsOnly =
 
   }
 
-  exploreFeed.innerHTML =
-
-reviews.map(review => {
-
+  reviews.forEach(review => {
   if(!review.review_text){
 
-  return `
+  ratingsHtml += `
+  ...
+`;
+return;
 
     <article class="rating-card">
 
@@ -151,10 +155,13 @@ reviews.map(review => {
 
   `;
 
-}).join("");
+exploreReviews.innerHTML =
+  reviewsHtml;
+
+exploreRatings.innerHTML =
+  ratingsHtml;
 
 }
-
 function filterExplore(){
 
   let filtered =
