@@ -1525,7 +1525,7 @@ importInput?.addEventListener(
           ){
 
             const rating =
-              cols[2]
+              cols[4]
                 ?.replaceAll(
                   '"',
                   ""
@@ -1556,9 +1556,11 @@ importInput?.addEventListener(
                     : null,
 
                 username:
-                  localStorage.getItem(
-                    "paneacult_username"
-                  ) || "cinefilo"
+  localStorage.getItem(
+    "paneacult_username"
+  ) ||
+  profileUsername?.textContent ||
+  "utente"
 
               });
 
@@ -1573,54 +1575,39 @@ importInput?.addEventListener(
           ){
 console.log(cols);
             const rating =
-              cols[2]
-                ?.replaceAll(
-                  '"',
-                  ""
-                )
-                ?.trim();
+  cols[2]
+    ?.replaceAll('"',"")
+    ?.trim();
 
             const review =
-              cols[3]
-                ?.replaceAll(
-                  '"',
-                  ""
-                )
-                ?.trim();
+              cols[4]
+                ?.replaceAll('"',"")
+    ?.trim();
+
 
             await supabaseClient
               .from("user_reviews")
-              .upsert({
+                .upsert({
 
-                user_id:
-                  user.id,
+  user_id: user.id,
 
-                movie_id:
-                  movie.id,
+  username: username,
 
-                movie_title:
-                  movie.title,
+  movie_id: movie.id,
 
-                movie_poster:
-                  movie.poster_path,
+  movie_title: movie.title,
 
-                rating:
-                  rating
-                    ? parseFloat(
-                        rating
-                      )
-                    : null,
+  movie_poster: movie.poster_path,
 
-                review_text:
-                  review || null,
+  rating:
+    rating
+      ? parseFloat(rating)
+      : null,
 
-                username:
-  localStorage.getItem(
-    "paneacult_username"
-  ) || user.user_metadata?.username || "utente"
+  review_text:
+    review || null
 
-              });
-
+});
           }
 
           imported++;
