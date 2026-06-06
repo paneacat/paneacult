@@ -88,29 +88,8 @@ function renderSelectedMovie(movie, movieDetails){
   selectedMovieData =
   movieDetails || movie;
 
-   /* RECENT ACTIVITY */
-
-let recent =
-  JSON.parse(
-    localStorage.getItem(
-      "paneacult_recent"
-    )
-  ) || [];
-
-recent =
-  recent.filter(
-    m => m.id !== selectedMovieData.id
-  );
-
-recent.unshift(
-  selectedMovieData
-);
-
-recent =
-  recent.slice(0,10);
-
-localStorage.setItem(
-  "paneacult_recent",
+   
+paneacult_recent",
   JSON.stringify(recent)
 );
 
