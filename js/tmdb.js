@@ -514,10 +514,23 @@ if(status === "watched"){
     .eq("movie_id", selectedMovieData.id);
 
   console.log(
-    "DOPO DELETE WATCHLIST",
-    checkRows
-  );
+  "Sto eliminando watchlist",
+  user.id,
+  selectedMovieData.id
+);
+   console.log(
+  "FILM ID",
+  selectedMovieData.id
+);
+const result =
+await supabaseClient
+  .from("user_movies")
+  .delete()
+  .eq("user_id", user.id)
+  .eq("movie_id", selectedMovieData.id)
+  .eq("status", "watchlist");
 
+console.log(result);
 }
    
   if(status === "watchlist"){
