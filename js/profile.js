@@ -37,23 +37,11 @@ const activityFeed =
    LOAD MOVIES
 ========================= */
 
-function getMovies(key){
-
-  return JSON.parse(
-    localStorage.getItem(key)
-  ) || [];
-
-}
-
 let watched = [];
 
 let watchlist = [];
 
-const favorites =
-  getMovies(
-    "paneacult_favorites"
-  );
-
+let favorites = [];
 
 async function loadWatchlist(){
 
@@ -95,6 +83,44 @@ async function loadWatchlist(){
 }
 
 
+async function loadFavorites(){
+
+  const {
+    data:{ user }
+  } =
+  await supabaseClient.auth
+    .getUser();
+
+  if(!user) return;
+
+  const {
+    data
+  } =
+  await supabaseClient
+    .from("user_movies")
+    .select("*")
+    .eq(
+      "user_id",
+      user.id
+    )
+    .eq(
+      "status",
+      "favorite"
+    );
+
+  favorites =
+    data || [];
+
+  populateFavoriteFilters();
+
+  renderGrid(
+    favoriteGrid,
+    favorites
+  );
+
+  filterFavorites();
+
+}
 
 /* =========================
    RENDER GRID
