@@ -438,62 +438,201 @@ function openRating(id){
 }
 
 
-async function toggleMovieStatus(
-  status,
-  button
-){
+async function toggleMovieStatus(status){
 
   const {
     data:{ user }
   } =
-  await supabaseClient.auth
-    .getUser();
+  await supabaseClient.auth.getUser();
 
   if(
     !user ||
     !selectedMovieData
   ) return;
 
-  const {
-    data: existing
-  } =
-  await supabaseClient
-    .from("user_movies")
-    .select("id")
-    .eq(
-      "user_id",
-      user.id
-    )
-    .eq(
-      "movie_id",
-      selectedMovieData.id
-    )
-    .eq(
-      "status",
-      status
-    )
-    .maybeSingle();
+  const movieId =
+    selectedMovieData.id;
 
-  if(
-  existing &&
-  status !== "desert"
-){
+  /* WATCHLIST */
 
-  await supabaseClient
-    .from("user_movies")
-    .delete()
-    .eq(
-      "id",
-      existing.id
-    );
+  if(status === "watchlist"){
 
-  button?.classList.remove(
-    "active"
-  );
+    await supabaseClient
+      .from("user_movies")
+      .delete()
+      .eq("user_id", user.id)
+      .eq("movie_id", movieId)
+      .eq("status", "watched");
 
-  return;
+    await supabaseClient
+      .from("user_movies")
+      .delete()
+      .eq("user_id", user.id)
+      .eq("movie_id", movieId)
+      .eq("status", "watchlist");
+
+    await supabaseClient
+      .from("user_movies")
+      .insert({
+        user_id:user.id,
+        movie_id:movieId,
+        title:selectedMovieData.title,
+        poster_path:selectedMovieData.poster_path,
+        status:"watchlist"
+      });
 
   }
+
+  /* WATCHED */
+
+  if(status === "watched"){
+
+    await supabaseClient
+      .from("user_movies")
+      .delete()
+      .eq("user_id", user.id)
+      .eq("movie_id", movieId)
+      .eq("status", "watchlist");
+
+    await supabaseClient
+      .from("user_movies")
+      .delete()
+      .eq("user_id", user.id)
+      .eq("movie_id", movieId)
+      .eq("status", "watched");
+
+    await supabaseClient
+      .from("user_movies")
+      .insert({
+        user_id:user.id,
+        movie_id:movieId,
+        title:selectedMovieData.title,
+        poster_path:selectedMovieData.poster_path,
+        status:"watched"
+      });
+
+  }
+
+  /* FAVORITE */
+
+  if(status === "favorite"){
+
+    await supabaseClient
+      .from("user_movies")
+      .delete()
+      .eq("user_id", user.id)
+      .eq("movie_id", movieId)
+      .eq("status", "watchlist");
+
+    const {
+      data: watchedExists
+    } =
+    await supabaseClient
+      .from("user_movies")
+      .select("id")
+      .eq("user_id", user.id)
+      .eq("movie_id", movieId)
+      .eq("status", "watched")
+      .maybeSingle();
+
+    if(!watchedExists){
+
+      await supabaseClient
+        .from("user_movies")
+        .insert({
+          user_id:user.id,
+          movie_id:movieId,
+          title:selectedMovieData.title,
+          poster_path:selectedMovieData.poster_path,
+          status:"watched"
+        });
+
+    }
+
+    const {
+      data: favoriteExists
+    } =
+    await supabaseClient
+      .from("user_movies")
+      .select("id")
+      .eq("user_id", user.id)
+      .eq("movie_id", movieId)
+      .eq("status", "favorite")
+      .maybeSingle();
+
+    if(!favoriteExists){
+
+      await supabaseClient
+        .from("user_movies")
+        .insert({
+          user_id:user.id,
+          movie_id:movieId,
+          title:selectedMovieData.title,
+          poster_path:selectedMovieData.poster_path,
+          status:"favorite"
+        });
+
+    }
+
+  }
+
+  /* DESERT */
+
+  if(status === "desert"){
+
+    await supabaseClient
+      .from("user_movies")
+      .delete()
+      .eq("user_id", user.id)
+      .eq("status", "desert");
+
+    const statuses =
+      ["watched","favorite"];
+
+    for(const s of statuses){
+
+      const {
+        data: exists
+      } =
+      await supabaseClient
+        .from("user_movies")
+        .select("id")
+        .eq("user_id", user.id)
+        .eq("movie_id", movieId)
+        .eq("status", s)
+        .maybeSingle();
+
+      if(!exists){
+
+        await supabaseClient
+          .from("user_movies")
+          .insert({
+            user_id:user.id,
+            movie_id:movieId,
+            title:selectedMovieData.title,
+            poster_path:selectedMovieData.poster_path,
+            status:s
+          });
+
+      }
+
+    }
+
+    await supabaseClient
+      .from("user_movies")
+      .insert({
+        user_id:user.id,
+        movie_id:movieId,
+        title:selectedMovieData.title,
+        poster_path:selectedMovieData.poster_path,
+        status:"desert"
+      });
+
+  }
+
+  await loadMovieStatuses();
+
+}
 
   /* WATCHLIST ↔ WATCHED */
 
@@ -879,85 +1018,59 @@ async function loadMovieStatuses(){
 
 function setupMovieButtons(){
 
-  const watchlistBtn =
-    document.getElementById(
+  document
+    .getElementById(
       "markWatchlistBtn"
-    );
+    )
+    ?.onclick =
+      () => toggleMovieStatus(
+        "watchlist"
+      );
 
-  const watchedBtn =
-    document.getElementById(
+  document
+    .getElementById(
       "markWatchedBtn"
-    );
+    )
+    ?.onclick =
+      () => toggleMovieStatus(
+        "watched"
+      );
 
-  const lovedBtn =
-    document.getElementById(
+  document
+    .getElementById(
       "markLovedBtn"
-    );
+    )
+    ?.onclick =
+      () => toggleMovieStatus(
+        "favorite"
+      );
 
-  const desertBtn =
-    document.getElementById(
+  document
+    .getElementById(
       "markDesertBtn"
-    );
+    )
+    ?.onclick =
+      () => toggleMovieStatus(
+        "desert"
+      );
 
-  const reviewBtn =
-    document.getElementById(
+  document
+    .getElementById(
       "writeReviewBtn"
-    );
-
-  loadMovieStatuses();
-
-  watchlistBtn?.addEventListener(
-    "click",
-    () =>
-      toggleMovieStatus(
-        "watchlist",
-        watchlistBtn
-      )
-  );
-
-  watchedBtn?.addEventListener(
-    "click",
-    () =>
-      toggleMovieStatus(
-        "watched",
-        watchedBtn
-      )
-  );
-
-  lovedBtn?.addEventListener(
-    "click",
-    () =>
-      toggleMovieStatus(
-        "favorite",
-        lovedBtn
-      )
-  );
-
-  desertBtn?.addEventListener(
-    "click",
-    () =>
-      toggleMovieStatus(
-        "desert",
-        desertBtn
-      )
-  );
-
-  reviewBtn?.addEventListener(
-    "click",
-    () => {
+    )
+    ?.onclick = () => {
 
       reviewForm?.classList.remove(
         "hidden-review-form"
       );
 
       reviewForm?.scrollIntoView({
-        behavior:"smooth",
-        block:"start"
+        behavior:"smooth"
       });
 
-    }
-  );
+    };
 
+  loadMovieStatuses();
 }
 
 
