@@ -637,8 +637,7 @@ if(status === "favorite"){
       poster_path:
         selectedMovieData.poster_path,
 
-      status:
-        status
+      status: "watched"
 
     });
 
