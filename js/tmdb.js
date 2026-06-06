@@ -501,15 +501,10 @@ async function toggleMovieStatus(
     )
     .maybeSingle();
 
-  if(existing){
-
-    await supabaseClient
-      .from("user_movies")
-      .delete()
-      .eq(
-        "id",
-        existing.id
-      );
+  if(
+  existing &&
+  status !== "desert"
+){
 
     button?.classList.remove(
       "active"
@@ -734,6 +729,51 @@ if(status === "desert"){
 
   }
 
+   const {
+  data: favoriteExists
+} =
+await supabaseClient
+  .from("user_movies")
+  .select("id")
+  .eq(
+    "user_id",
+    user.id
+  )
+  .eq(
+    "movie_id",
+    selectedMovieData.id
+  )
+  .eq(
+    "status",
+    "favorite"
+  )
+  .maybeSingle();
+
+if(!favoriteExists){
+
+  await supabaseClient
+    .from("user_movies")
+    .insert({
+
+      user_id:
+        user.id,
+
+      movie_id:
+        selectedMovieData.id,
+
+      title:
+        selectedMovieData.title,
+
+      poster_path:
+        selectedMovieData.poster_path,
+
+      status:
+        "favorite"
+
+    });
+
+}
+   
 }
 
 
