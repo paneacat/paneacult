@@ -404,34 +404,6 @@ async function loadSingleReview(){
 const movieId =
   data.movie_id;
 
-const watchedMovies =
-  JSON.parse(
-    localStorage.getItem(
-      "paneacult_watched"
-    )
-  ) || [];
-
-const watchlistMovies =
-  JSON.parse(
-    localStorage.getItem(
-      "paneacult_watchlist"
-    )
-  ) || [];
-
-const favorites =
-  JSON.parse(
-    localStorage.getItem(
-      "paneacult_favorites"
-    )
-  ) || [];
-
-const desertMovie =
-  JSON.parse(
-    localStorage.getItem(
-      "paneacult_desert_island"
-    )
-  );
-
 const isWatched =
   watchedMovies.some(
     m => m.id == movieId
