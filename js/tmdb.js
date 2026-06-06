@@ -485,11 +485,19 @@ async function toggleMovieStatus(
   status !== "desert"
 ){
 
-    button?.classList.remove(
-      "active"
+  await supabaseClient
+    .from("user_movies")
+    .delete()
+    .eq(
+      "id",
+      existing.id
     );
 
-    return;
+  button?.classList.remove(
+    "active"
+  );
+
+  return;
 
   }
 
