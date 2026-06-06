@@ -212,9 +212,8 @@ checkEditorialAccess();
 publishReviewBtn?.addEventListener(
   "click",
   async () => {
-await saveMovieStatus(
-  "watched"
-);
+
+     // await saveMovieStatus("watched");
    
     if(!selectedMovieData){
 
