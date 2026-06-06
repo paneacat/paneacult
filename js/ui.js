@@ -38,82 +38,6 @@ document.addEventListener(
 
   }
 );
-/* =========================
-   BUTTON STATES
-========================= */
-
-function updateMovieButtons(status){
-
-  const watchedBtn =
-    document.getElementById(
-      "markWatchedBtn"
-    );
-
-  const watchlistBtn =
-    document.getElementById(
-      "markWatchlistBtn"
-    );
-
-  const desertBtn =
-    document.getElementById(
-      "markDesertBtn"
-    );
-
-  watchedBtn?.classList.remove(
-    "active"
-  );
-
-  watchlistBtn?.classList.remove(
-    "active"
-  );
-
-  desertBtn?.classList.remove(
-    "active"
-  );
-
-  if(status === "watched"){
-
-    watchedBtn?.classList.add(
-      "active"
-    );
-
-  }
-
-  if(status === "watchlist"){
-
-    watchlistBtn?.classList.add(
-      "active"
-    );
-
-  }
-
-  if(status === "desert"){
-
-    desertBtn?.classList.add(
-      "active"
-    );
-
-  }
-
-}
-
-
-/* =========================
-   SAVE MOVIE STATUS
-========================= */
-
-function saveMovieStatus(status){
-
-  currentMovieStatus = status;
-
-  localStorage.setItem(
-    `paneacult_movie_status_${selectedMovieData.id}`,
-    status
-  );
-
-  updateMovieButtons(status);
-
-}
 
 
 /* =========================
@@ -215,49 +139,35 @@ const markDesertBtn =
   );
 
   markWatchedBtn?.addEventListener(
-    "click",
-    () => {
-
-      saveMovieStatus(
-        "watched"
-      );
-
-    }
-  );
-
-  markWatchlistBtn?.addEventListener(
-    "click",
-    () => {
-
-      saveMovieStatus(
-        "watchlist"
-      );
-
-    }
-  );
-
-   markDesertBtn?.addEventListener(
   "click",
   () => {
-
-    localStorage.setItem(
-      "paneacult_desert_island",
-      JSON.stringify(
-        selectedMovieData
-      )
+    toggleMovieStatus(
+      "watched",
+      markWatchedBtn
     );
-
-    toggleMovieList(
-      "paneacult_favorites"
-    );
-
-    markDesertBtn.classList.add(
-      "active"
-    );
-
   }
 );
-}
+   
+  markWatchlistBtn?.addEventListener(
+  "click",
+  () => {
+    toggleMovieStatus(
+      "watchlist",
+      markWatchlistBtn
+    );
+  }
+);
+
+markDesertBtn?.addEventListener(
+  "click",
+  () => {
+    toggleMovieStatus(
+      "desert",
+      markDesertBtn
+    );
+  }
+);
+   
 async function loadMovieStatuses(){
 
   const {
