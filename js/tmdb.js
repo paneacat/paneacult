@@ -88,17 +88,11 @@ function renderSelectedMovie(movie, movieDetails){
   selectedMovieData =
   movieDetails || movie;
 
-   
-paneacult_recent",
-  JSON.stringify(recent)
-);
-
-   
 const hero =
   document.querySelector(
     ".profile-hero"
   );
-
+   
 if(hero && movie.backdrop_path){
 
   hero.style.backgroundImage =
