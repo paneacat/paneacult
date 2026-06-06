@@ -577,6 +577,157 @@ async function toggleMovieStatus(
 
   }
 
+
+   /* FAVORITE -> WATCHED */
+
+if(status === "favorite"){
+
+  await supabaseClient
+    .from("user_movies")
+    .delete()
+    .eq(
+      "user_id",
+      user.id
+    )
+    .eq(
+      "movie_id",
+      selectedMovieData.id
+    )
+    .eq(
+      "status",
+      "watchlist"
+    );
+
+  const {
+    data: watchedExists
+  } =
+  await supabaseClient
+    .from("user_movies")
+    .select("id")
+    .eq(
+      "user_id",
+      user.id
+    )
+    .eq(
+      "movie_id",
+      selectedMovieData.id
+    )
+    .eq(
+      "status",
+      "watched"
+    )
+    .maybeSingle();
+
+  if(!watchedExists){
+
+    await supabaseClient
+      .from("user_movies")
+      .insert({
+
+        user_id:
+          user.id,
+
+        movie_id:
+          selectedMovieData.id,
+
+        title:
+          selectedMovieData.title,
+
+        poster_path:
+          selectedMovieData.poster_path,
+
+        status:
+          "watched"
+
+      });
+
+  }
+
+}
+
+
+   /* DESERT -> WATCHED + UNICO */
+
+if(status === "desert"){
+
+  await supabaseClient
+    .from("user_movies")
+    .delete()
+    .eq(
+      "user_id",
+      user.id
+    )
+    .eq(
+      "movie_id",
+      selectedMovieData.id
+    )
+    .eq(
+      "status",
+      "watchlist"
+    );
+
+  await supabaseClient
+    .from("user_movies")
+    .delete()
+    .eq(
+      "user_id",
+      user.id
+    )
+    .eq(
+      "status",
+      "desert"
+    );
+
+  const {
+    data: watchedExists
+  } =
+  await supabaseClient
+    .from("user_movies")
+    .select("id")
+    .eq(
+      "user_id",
+      user.id
+    )
+    .eq(
+      "movie_id",
+      selectedMovieData.id
+    )
+    .eq(
+      "status",
+      "watched"
+    )
+    .maybeSingle();
+
+  if(!watchedExists){
+
+    await supabaseClient
+      .from("user_movies")
+      .insert({
+
+        user_id:
+          user.id,
+
+        movie_id:
+          selectedMovieData.id,
+
+        title:
+          selectedMovieData.title,
+
+        poster_path:
+          selectedMovieData.poster_path,
+
+        status:
+          "watched"
+
+      });
+
+  }
+
+}
+
+
+
+   
   await supabaseClient
     .from("user_movies")
     .insert({
