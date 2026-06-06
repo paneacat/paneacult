@@ -1183,13 +1183,20 @@ filterWatched();
 loadWatched();
 
 loadWatchlist();
+favorites = data || [];
+
+renderSignature();
+
+populateFavoriteFilters();
+renderGrid(
+  favoriteGrid,
+  favorites
+);
 
 loadFavorites();
-
   populateFavoriteFilters();
   filterFavorites();
 
-}
 
 renderCurrentFavorite();
 
@@ -1652,8 +1659,13 @@ console.log(cols);
 
   user_id: user.id,
 
-  username: username,
-
+  username:
+  localStorage.getItem(
+    "paneacult_username"
+  ) ||
+  profileUsername?.textContent ||
+  "utente",
+                   
   movie_id: movie.id,
 
   movie_title: movie.title,
