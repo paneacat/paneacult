@@ -522,13 +522,6 @@ if(status === "watched"){
   "FILM ID",
   selectedMovieData.id
 );
-const result =
-await supabaseClient
-  .from("user_movies")
-  .delete()
-  .eq("user_id", user.id)
-  .eq("movie_id", selectedMovieData.id)
-  .eq("status", "watchlist");
 
 console.log(result);
 }
@@ -780,27 +773,19 @@ if(!favoriteExists){
 
 
    
-  await supabaseClient
-    .from("user_movies")
-    .insert({
+  console.log("INSERISCO", status);
 
-      user_id:
-        user.id,
+await supabaseClient
+  .from("user_movies")
+  .insert({
+    user_id: user.id,
+    movie_id: selectedMovieData.id,
+    title: selectedMovieData.title,
+    poster_path: selectedMovieData.poster_path,
+    status: status
+  });
 
-      movie_id:
-        selectedMovieData.id,
-
-      title:
-        selectedMovieData.title,
-
-      poster_path:
-        selectedMovieData.poster_path,
-
-      status:
-        status
-
-    });
-
+   
   button?.classList.add(
     "active"
   );
