@@ -400,22 +400,6 @@ async function loadSingleReview(){
 /* =========================
    REVIEW BADGES
 ========================= */
-
-const movieId =
-  data.movie_id;
-
-const isWatched =
-  watchedMovies.some(
-    m => m.id == movieId
-  );
-
-const isWatchlist =
-  watchlistMovies.some(
-    m => m.id == movieId
-  );
-
-const isDesert =
-  desertMovie?.id == movieId;
    
 reviewContainer.innerHTML = `
 
@@ -736,10 +720,7 @@ ${
 <div id="userReviewsSection"></div>
 </section>
 `;
-initMovieButtons(
-  movieId,
-  data
-);
+
    const userReviewsSection =
   document.getElementById(
     "userReviewsSection"
