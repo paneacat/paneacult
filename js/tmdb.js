@@ -710,7 +710,16 @@ if(status === "desert"){
 
   }
 
-   const {
+  document
+  .getElementById(
+    "markWatchedBtn"
+  )
+  ?.classList.add(
+    "active"
+  );
+   
+
+const {
   data: favoriteExists
 } =
 await supabaseClient
