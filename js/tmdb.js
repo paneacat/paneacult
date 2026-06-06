@@ -598,6 +598,7 @@ if(status === "favorite"){
   if(!watchedExists){
 
     const { error } =
+       
   await supabaseClient
     .from("user_movies")
     .insert({
@@ -617,7 +618,9 @@ if(status === "favorite"){
       status: "watched"
 
     });
-
+     
+await loadMovieStatuses();
+     
 console.log(
   "STATUS:",
   status
@@ -665,7 +668,7 @@ if(status === "desert"){
       "status",
       "desert"
     );
-
+   
   const {
     data: watchedExists
   } =
