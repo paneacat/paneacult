@@ -212,7 +212,7 @@ checkEditorialAccess();
 publishReviewBtn?.addEventListener(
   "click",
   async () => {
-saveMovieStatus(
+await saveMovieStatus(
   "watched"
 );
    
@@ -232,13 +232,14 @@ saveMovieStatus(
     await supabaseClient.auth.getUser();
 
     const username =
-
+  localStorage.getItem(
+    "paneacult_username"
+  ) ||
   user.email
     ?.split("@")[0]
-
   ||
-
   "cinefilo";
+
      
      if(!user){
 
