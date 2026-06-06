@@ -497,8 +497,15 @@ async function toggleMovieStatus(
 
   /* WATCHLIST ↔ WATCHED */
 
-  if(status === "watched"){
+if(status === "watched"){
 
+  console.log(
+    "Sto eliminando watchlist",
+    user.id,
+    selectedMovieData.id
+  );
+
+  const result =
     await supabaseClient
       .from("user_movies")
       .delete()
@@ -515,15 +522,9 @@ async function toggleMovieStatus(
         "watchlist"
       );
 
-    document
-      .getElementById(
-        "markWatchlistBtn"
-      )
-      ?.classList.remove(
-        "active"
-      );
+  console.log(result);
 
-  }
+}
 
   if(status === "watchlist"){
 
