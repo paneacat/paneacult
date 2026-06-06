@@ -499,33 +499,27 @@ async function toggleMovieStatus(
 
 if(status === "watched"){
 
+  await supabaseClient
+    .from("user_movies")
+    .delete()
+    .eq("user_id", user.id)
+    .eq("movie_id", selectedMovieData.id)
+    .eq("status", "watchlist");
+
+  const { data: checkRows } =
+  await supabaseClient
+    .from("user_movies")
+    .select("*")
+    .eq("user_id", user.id)
+    .eq("movie_id", selectedMovieData.id);
+
   console.log(
-    "Sto eliminando watchlist",
-    user.id,
-    selectedMovieData.id
+    "DOPO DELETE WATCHLIST",
+    checkRows
   );
 
-  const result =
-    await supabaseClient
-      .from("user_movies")
-      .delete()
-      .eq(
-        "user_id",
-        user.id
-      )
-      .eq(
-        "movie_id",
-        selectedMovieData.id
-      )
-      .eq(
-        "status",
-        "watchlist"
-      );
-
-  console.log(result);
-
 }
-
+   
   if(status === "watchlist"){
 
     await supabaseClient
