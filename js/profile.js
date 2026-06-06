@@ -1183,28 +1183,6 @@ filterWatched();
 loadWatched();
 
 loadWatchlist();
-favorites = data || [];
-
-renderSignature();
-
-populateFavoriteFilters();
-renderGrid(
-  favoriteGrid,
-  favorites
-);
-
-loadFavorites();
-  populateFavoriteFilters();
-  filterFavorites();
-
-
-renderCurrentFavorite();
-
-renderSignature();
-
-renderRecentActivity();
-
-updateCounters();
 
 /* =========================
    CUSTOM PROFILE
