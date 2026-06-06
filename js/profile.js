@@ -782,31 +782,51 @@ function populateWatchlistFilters(){
 /* =========================
    CURRENT FAVORITE
 ========================= */
+async function renderCurrentFavorite(){
 
-function renderCurrentFavorite(){
+  if(!currentFavorite) return;
 
-  const desertMovie =
-    JSON.parse(
-      localStorage.getItem(
-        "paneacult_desert_island"
-      )
-    );
+  const {
+    data:{ user }
+  } =
+  await supabaseClient.auth
+    .getUser();
 
-  if(
-    !desertMovie ||
-    !currentFavorite
-  ) return;
+  if(!user) return;
+
+  const {
+    data: desertMovie
+  } =
+  await supabaseClient
+    .from("user_movies")
+    .select("*")
+    .eq(
+      "user_id",
+      user.id
+    )
+    .eq(
+      "status",
+      "desert"
+    )
+    .maybeSingle();
+
+  if(!desertMovie){
+
+    currentFavorite.innerHTML = `
+      <p class="empty-text">
+        Nessun Desert Island Film.
+      </p>
+    `;
+
+    return;
+  }
 
   currentFavorite.innerHTML = `
 
-  <img
-    src="${
-      desertMovie.poster_path
-        ? `https://image.tmdb.org/t/p/w500${desertMovie.poster_path}`
-        : desertMovie.poster
-    }"
-    alt="${desertMovie.title}"
-  >
+    <img
+      src="https://image.tmdb.org/t/p/w500${desertMovie.poster_path}"
+      alt="${desertMovie.title}"
+    >
 
     <div class="current-favorite-content">
 
@@ -824,17 +844,19 @@ function renderCurrentFavorite(){
       </span>
 
     </div>
+
   `;
-currentFavorite.onclick = () => {
 
-  goToMovie(
-  desertMovie.movie_id ||
-  desertMovie.id
-);
+  currentFavorite.onclick = () => {
 
-};
-   
+    goToMovie(
+      desertMovie.movie_id
+    );
+
+  };
+
 }
+
 /* =========================
    SIGNATURE FILMS
 ========================= */
@@ -990,11 +1012,6 @@ const ratedCount =
       "favoritesCount"
     );
 
-  const favorites =
-    getMovies(
-      "paneacult_favorites"
-    );
-
    const {
   data:{ user }
 } =
@@ -1025,13 +1042,36 @@ await supabaseClient
   watchedCloud?.length || 0;
   }
 
-  if(favoritesCount){
+  if(
+  user &&
+  favoritesCount
+){
 
-    favoritesCount.textContent =
-      favorites.length;
+  const {
+    count
+  } =
+  await supabaseClient
+    .from("user_movies")
+    .select(
+      "*",
+      {
+        count:"exact",
+        head:true
+      }
+    )
+    .eq(
+      "user_id",
+      user.id
+    )
+    .eq(
+      "status",
+      "favorite"
+    );
+
+  favoritesCount.textContent =
+    count || 0;
 
   }
-
 
    if(
   user &&
@@ -1144,12 +1184,7 @@ loadWatched();
 
 loadWatchlist();
 
-if(favoriteGrid){
-
-  renderGrid(
-    favoriteGrid,
-    favorites
-  );
+loadFavorites();
 
   populateFavoriteFilters();
   filterFavorites();
