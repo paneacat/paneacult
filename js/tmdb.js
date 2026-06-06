@@ -620,27 +620,39 @@ if(status === "favorite"){
 
   if(!watchedExists){
 
-    await supabaseClient
-      .from("user_movies")
-      .insert({
+    const { error } =
+  await supabaseClient
+    .from("user_movies")
+    .insert({
 
-        user_id:
-          user.id,
+      user_id:
+        user.id,
 
-        movie_id:
-          selectedMovieData.id,
+      movie_id:
+        selectedMovieData.id,
 
-        title:
-          selectedMovieData.title,
+      title:
+        selectedMovieData.title,
 
-        poster_path:
-          selectedMovieData.poster_path,
+      poster_path:
+        selectedMovieData.poster_path,
 
-        status:
-          "watched"
+      status:
+        status
 
-      });
+    });
 
+console.log(
+  "STATUS:",
+  status
+);
+
+console.log(
+  "ERROR:",
+  error
+);
+
+     
   }
 
 }
