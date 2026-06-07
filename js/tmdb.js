@@ -487,13 +487,16 @@ async function toggleMovieStatus(status){
    
    if(status === "watched"){
 
-    await supabaseClient
-      .from("user_movies")
-      .delete()
-      .eq("user_id", user.id)
-      .eq("movie_id", movieId)
-      .eq("status", "watchlist");
+    const result =
+await supabaseClient
+  .from("user_movies")
+  .delete()
+  .eq("user_id", user.id)
+  .eq("movie_id", movieId)
+  .eq("status", "watchlist");
 
+console.log(result);
+      
     await supabaseClient
       .from("user_movies")
       .delete()
