@@ -765,26 +765,30 @@ if(desertBtn){
     );
 }
 
-  document
-    .getElementById(
-      "writeReviewBtn"
-    )
-    ?.onclick = () => {
+ const writeReviewBtn =
+  document.getElementById(
+    "writeReviewBtn"
+  );
 
-      reviewForm?.classList.remove(
-        "hidden-review-form"
-      );
+if(writeReviewBtn){
 
-      reviewForm?.scrollIntoView({
-        behavior:"smooth"
-      });
+  writeReviewBtn.onclick = () => {
 
-    };
+    reviewForm?.classList.remove(
+      "hidden-review-form"
+    );
 
-  loadMovieStatuses();
+    reviewForm?.scrollIntoView({
+      behavior:"smooth"
+    });
+
+  };
+
 }
 
+loadMovieStatuses();
 
+} 
 
 
 async function checkPaneaReview(movieId){
