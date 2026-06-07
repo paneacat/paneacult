@@ -1184,6 +1184,14 @@ loadWatched();
 
 loadWatchlist();
 
+loadFavorites();
+
+renderCurrentFavorite();
+
+renderSignature();
+
+updateCounters();
+
 /* =========================
    CUSTOM PROFILE
 ========================= */
