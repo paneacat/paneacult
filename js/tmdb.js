@@ -440,7 +440,9 @@ function openRating(id){
 
 async function toggleMovieStatus(status){
 
-  const {
+  console.log("STATUS CLICCATO:", status);
+   
+const {
     data:{ user }
   } =
   await supabaseClient.auth.getUser();
