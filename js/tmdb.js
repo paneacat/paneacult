@@ -484,12 +484,7 @@ async function toggleMovieStatus(status){
   }
 
   /* WATCHED */
-
- console.log(
-  "MOVIE ID",
-  movieId
-);
-
+   
    if(status === "watched"){
 
     await supabaseClient
