@@ -604,20 +604,6 @@ async function toggleMovieStatus(status){
 
       if(!exists){
 
-        await supabaseClient
-          .from("user_movies")
-          .insert({
-            user_id:user.id,
-            movie_id:movieId,
-            title:selectedMovieData.title,
-            poster_path:selectedMovieData.poster_path,
-            status:s
-          });
-
-      }
-
-    }
-
     await supabaseClient
       .from("user_movies")
       .insert({
@@ -629,6 +615,7 @@ async function toggleMovieStatus(status){
       });
 
   }
+       await loadMovieStatuses();
 }
 
 async function loadMovieStatuses(){
