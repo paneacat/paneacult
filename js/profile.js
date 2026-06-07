@@ -938,12 +938,7 @@ async function renderRecentActivity(){
         ascending:false
       }
     );
-
-   console.log("USER:", user.id);
-
-console.log("REVIEWS:", reviews);
-
-   
+  
   if(!reviews?.length){
 
     activityFeed.innerHTML = `
