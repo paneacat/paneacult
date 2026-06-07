@@ -629,10 +629,6 @@ async function toggleMovieStatus(status){
       });
 
   }
-
- 
-await loadMovieStatuses();
-
 }
 
 async function loadMovieStatuses(){
@@ -720,61 +716,57 @@ async function loadMovieStatuses(){
 
 function setupMovieButtons(){
 
-  document
-    .getElementById(
-      "markWatchlistBtn"
-    )
-    ?.onclick =
-      () => toggleMovieStatus(
-        "watchlist"
-      );
+  const watchlistBtn =
+    document.getElementById("markWatchlistBtn");
 
-  document
-    .getElementById(
-      "markWatchedBtn"
-    )
-    ?.onclick =
-      () => toggleMovieStatus(
-        "watched"
-      );
+  if (watchlistBtn) {
+    watchlistBtn.onclick =
+      () => toggleMovieStatus("watchlist");
+  }
 
-  document
-    .getElementById(
-      "markLovedBtn"
-    )
-    ?.onclick =
-      () => toggleMovieStatus(
-        "favorite"
-      );
+  const watchedBtn =
+    document.getElementById("markWatchedBtn");
 
-  document
-    .getElementById(
-      "markDesertBtn"
-    )
-    ?.onclick =
-      () => toggleMovieStatus(
-        "desert"
-      );
+  if (watchedBtn) {
+    watchedBtn.onclick =
+      () => toggleMovieStatus("watched");
+  }
 
-  document
-    .getElementById(
-      "writeReviewBtn"
-    )
-    ?.onclick = () => {
+  const lovedBtn =
+    document.getElementById("markLovedBtn");
+
+  if (lovedBtn) {
+    lovedBtn.onclick =
+      () => toggleMovieStatus("favorite");
+  }
+
+  const desertBtn =
+    document.getElementById("markDesertBtn");
+
+  if (desertBtn) {
+    desertBtn.onclick =
+      () => toggleMovieStatus("desert");
+  }
+
+  const reviewBtn =
+    document.getElementById("writeReviewBtn");
+
+  if (reviewBtn) {
+    reviewBtn.onclick = () => {
 
       reviewForm?.classList.remove(
         "hidden-review-form"
       );
 
       reviewForm?.scrollIntoView({
-        behavior:"smooth"
+        behavior: "smooth"
       });
 
     };
+  }
 
   loadMovieStatuses();
 }
-
 
 
 
