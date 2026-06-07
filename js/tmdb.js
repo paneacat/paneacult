@@ -630,10 +630,10 @@ async function toggleMovieStatus(status){
 
   }
 
- 
-
 async function loadMovieStatuses(){
 
+  }
+   
   const {
     data:{ user }
   } =
