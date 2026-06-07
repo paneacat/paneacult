@@ -629,10 +629,10 @@ async function toggleMovieStatus(status){
       });
 
   }
+await loadMovieStatuses();
 
+}
 async function loadMovieStatuses(){
-
-  }
    
   const {
     data:{ user }
