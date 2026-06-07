@@ -439,8 +439,6 @@ function openRating(id){
 
 
 async function toggleMovieStatus(status){
-
-  console.log("STATUS CLICCATO:", status);
    
 const {
     data:{ user }
@@ -454,6 +452,18 @@ const {
 
   const movieId =
     selectedMovieData.id;
+   
+const {
+  data: existing
+} =
+await supabaseClient
+  .from("user_movies")
+  .select("id")
+  .eq("user_id", user.id)
+  .eq("movie_id", movieId)
+  .eq("status", status)
+  .maybeSingle();
+   
 const {
   data: watchedExists
 } =
