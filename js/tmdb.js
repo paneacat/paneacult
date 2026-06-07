@@ -604,6 +604,20 @@ async function toggleMovieStatus(status){
 
       if(!exists){
 
+        await supabaseClient
+          .from("user_movies")
+          .insert({
+            user_id:user.id,
+            movie_id:movieId,
+            title:selectedMovieData.title,
+            poster_path:selectedMovieData.poster_path,
+            status:s
+          });
+
+      }
+
+    }
+
     await supabaseClient
       .from("user_movies")
       .insert({
@@ -615,8 +629,8 @@ async function toggleMovieStatus(status){
       });
 
   }
-       await loadMovieStatuses();
-}
+
+ 
 
 async function loadMovieStatuses(){
 
@@ -703,57 +717,61 @@ async function loadMovieStatuses(){
 
 function setupMovieButtons(){
 
-  const watchlistBtn =
-    document.getElementById("markWatchlistBtn");
+  document
+    .getElementById(
+      "markWatchlistBtn"
+    )
+    ?.onclick =
+      () => toggleMovieStatus(
+        "watchlist"
+      );
 
-  if (watchlistBtn) {
-    watchlistBtn.onclick =
-      () => toggleMovieStatus("watchlist");
-  }
+  document
+    .getElementById(
+      "markWatchedBtn"
+    )
+    ?.onclick =
+      () => toggleMovieStatus(
+        "watched"
+      );
 
-  const watchedBtn =
-    document.getElementById("markWatchedBtn");
+  document
+    .getElementById(
+      "markLovedBtn"
+    )
+    ?.onclick =
+      () => toggleMovieStatus(
+        "favorite"
+      );
 
-  if (watchedBtn) {
-    watchedBtn.onclick =
-      () => toggleMovieStatus("watched");
-  }
+  document
+    .getElementById(
+      "markDesertBtn"
+    )
+    ?.onclick =
+      () => toggleMovieStatus(
+        "desert"
+      );
 
-  const lovedBtn =
-    document.getElementById("markLovedBtn");
-
-  if (lovedBtn) {
-    lovedBtn.onclick =
-      () => toggleMovieStatus("favorite");
-  }
-
-  const desertBtn =
-    document.getElementById("markDesertBtn");
-
-  if (desertBtn) {
-    desertBtn.onclick =
-      () => toggleMovieStatus("desert");
-  }
-
-  const reviewBtn =
-    document.getElementById("writeReviewBtn");
-
-  if (reviewBtn) {
-    reviewBtn.onclick = () => {
+  document
+    .getElementById(
+      "writeReviewBtn"
+    )
+    ?.onclick = () => {
 
       reviewForm?.classList.remove(
         "hidden-review-form"
       );
 
       reviewForm?.scrollIntoView({
-        behavior: "smooth"
+        behavior:"smooth"
       });
 
     };
-  }
 
   loadMovieStatuses();
 }
+
 
 
 
