@@ -483,65 +483,86 @@ if(
 
   if(status === "watchlist"){
 
-    await supabaseClient
-      .from("user_movies")
-      .delete()
-      .eq("user_id", user.id)
-      .eq("movie_id", movieId)
-      .eq("status", "watched");
+  if(existing){
 
     await supabaseClient
       .from("user_movies")
       .delete()
-      .eq("user_id", user.id)
-      .eq("movie_id", movieId)
-      .eq("status", "watchlist");
+      .eq("id", existing.id);
 
-    await supabaseClient
-      .from("user_movies")
-      .insert({
-        user_id:user.id,
-        movie_id:movieId,
-        title:selectedMovieData.title,
-        poster_path:selectedMovieData.poster_path,
-        status:"watchlist"
-      });
-
+    await loadMovieStatuses();
+    return;
   }
 
-  /* WATCHED */
-   
-   if(status === "watched"){
+  await supabaseClient
+    .from("user_movies")
+    .delete()
+    .eq("user_id", user.id)
+    .eq("movie_id", movieId)
+    .eq("status", "watched");
 
-    const result =
-await supabaseClient
-  .from("user_movies")
-  .delete()
-  .eq("user_id", user.id)
-  .eq("movie_id", movieId)
-  .eq("status", "watchlist");
- 
+  await supabaseClient
+    .from("user_movies")
+    .insert({
+      user_id:user.id,
+      movie_id:movieId,
+      title:selectedMovieData.title,
+      poster_path:selectedMovieData.poster_path,
+      status:"watchlist"
+    });
+
+  await loadMovieStatuses();
+  return;
+  }
+   
+  /* WATCHED */
+if(status === "watched"){
+
+  if(existing){
+
     await supabaseClient
       .from("user_movies")
       .delete()
-      .eq("user_id", user.id)
-      .eq("movie_id", movieId)
-      .eq("status", "watched");
+      .eq("id", existing.id);
 
-    await supabaseClient
-      .from("user_movies")
-      .insert({
-        user_id:user.id,
-        movie_id:movieId,
-        title:selectedMovieData.title,
-        poster_path:selectedMovieData.poster_path,
-        status:"watched"
-      });
+    await loadMovieStatuses();
+    return;
+  }
 
-   }
+  await supabaseClient
+    .from("user_movies")
+    .delete()
+    .eq("user_id", user.id)
+    .eq("movie_id", movieId)
+    .eq("status", "watchlist");
+
+  await supabaseClient
+    .from("user_movies")
+    .insert({
+      user_id:user.id,
+      movie_id:movieId,
+      title:selectedMovieData.title,
+      poster_path:selectedMovieData.poster_path,
+      status:"watched"
+    });
+
+  await loadMovieStatuses();
+  return;
+}
    
   /* FAVORITE */
 
+if(existing){
+
+  await supabaseClient
+    .from("user_movies")
+    .delete()
+    .eq("id", existing.id);
+
+  await loadMovieStatuses();
+  return;
+}
+   
   if(status === "favorite"){
 
     await supabaseClient
@@ -604,6 +625,17 @@ await supabaseClient
   }
 
   /* DESERT */
+
+   if(existing){
+
+  await supabaseClient
+    .from("user_movies")
+    .delete()
+    .eq("id", existing.id);
+
+  await loadMovieStatuses();
+  return;
+   }
 
   if(status === "desert"){
 
