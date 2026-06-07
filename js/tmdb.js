@@ -497,7 +497,10 @@ await supabaseClient
   .eq("movie_id", movieId)
   .eq("status", "watchlist");
 
-console.log(result);
+console.log(
+  "DELETE WATCHLIST",
+  result
+);
       
     await supabaseClient
       .from("user_movies")
