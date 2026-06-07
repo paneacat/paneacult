@@ -454,7 +454,31 @@ const {
 
   const movieId =
     selectedMovieData.id;
+const {
+  data: watchedExists
+} =
+await supabaseClient
+  .from("user_movies")
+  .select("id")
+  .eq("user_id", user.id)
+  .eq("movie_id", movieId)
+  .eq("status", "watched")
+  .maybeSingle();
 
+if(
+  status === "watched" &&
+  watchedExists
+){
+
+  await supabaseClient
+    .from("user_movies")
+    .delete()
+    .eq("id", watchedExists.id);
+
+  await loadMovieStatuses();
+
+  return;
+}
   /* WATCHLIST */
 
   if(status === "watchlist"){
@@ -496,12 +520,7 @@ await supabaseClient
   .eq("user_id", user.id)
   .eq("movie_id", movieId)
   .eq("status", "watchlist");
-
-console.log(
-  "DELETE WATCHLIST",
-  result
-);
-      
+ 
     await supabaseClient
       .from("user_movies")
       .delete()
