@@ -1590,13 +1590,13 @@
   z-index:9999;
 
   padding:20px 0;
+backdrop-filter:blur(18px);
 
-  background:transparent;
+  background:
+    rgba(8,22,35,.72);
 
-  backdrop-filter:none;
-
-  border:none;
-
+  border-bottom:
+    1px solid rgba(255,255,255,.05);
   box-shadow:none;
 
 }
