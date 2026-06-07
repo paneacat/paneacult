@@ -717,41 +717,53 @@ async function loadMovieStatuses(){
 
 function setupMovieButtons(){
 
-  document
-    .getElementById(
-      "markWatchlistBtn"
-    )
-    ?.onclick =
-      () => toggleMovieStatus(
-        "watchlist"
-      );
+  const watchlistBtn =
+  document.getElementById(
+    "markWatchlistBtn"
+  );
 
-  document
-    .getElementById(
-      "markWatchedBtn"
-    )
-    ?.onclick =
-      () => toggleMovieStatus(
-        "watched"
-      );
+if(watchlistBtn){
+  watchlistBtn.onclick =
+    () => toggleMovieStatus(
+      "watchlist"
+    );
+}
 
-  document
-    .getElementById(
-      "markLovedBtn"
-    )
-    ?.onclick =
-      () => toggleMovieStatus(
-        "favorite"
-      );
+const watchedBtn =
+  document.getElementById(
+    "markWatchedBtn"
+  );
 
-  document
-    .getElementById(
-      "markDesertBtn"
-    )
-    ?.onclick =
-      () => toggleMovieStatus(
-        "desert"
-      );
+if(watchedBtn){
+  watchedBtn.onclick =
+    () => toggleMovieStatus(
+      "watched"
+    );
+}
+
+const lovedBtn =
+  document.getElementById(
+    "markLovedBtn"
+  );
+
+if(lovedBtn){
+  lovedBtn.onclick =
+    () => toggleMovieStatus(
+      "favorite"
+    );
+}
+
+const desertBtn =
+  document.getElementById(
+    "markDesertBtn"
+  );
+
+if(desertBtn){
+  desertBtn.onclick =
+    () => toggleMovieStatus(
+      "desert"
+    );
+}
 
   document
     .getElementById(
