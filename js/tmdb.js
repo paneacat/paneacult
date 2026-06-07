@@ -485,7 +485,12 @@ async function toggleMovieStatus(status){
 
   /* WATCHED */
 
-  if(status === "watched"){
+ console.log(
+  "MOVIE ID",
+  movieId
+);
+
+   if(status === "watched"){
 
     await supabaseClient
       .from("user_movies")
@@ -511,8 +516,8 @@ async function toggleMovieStatus(status){
         status:"watched"
       });
 
-  }
-
+   }
+   
   /* FAVORITE */
 
   if(status === "favorite"){
