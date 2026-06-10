@@ -1189,8 +1189,9 @@ renderCurrentFavorite();
 
 renderSignature();
 
-updateCounters();
+renderRecentActivity();
 
+updateCounters();
 /* =========================
    CUSTOM PROFILE
 ========================= */
