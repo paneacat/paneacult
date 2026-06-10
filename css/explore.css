@@ -265,9 +265,9 @@ backdrop-filter:blur(18px);
 
 .review-card{
 
-  display:grid;
-  grid-template-columns:170px 1fr;
-  gap:24px;
+  display: grid;
+grid-template-columns: 180px 1fr;
+gap: 24px;
   padding:24px;
   border-radius:22px;
   min-height:auto;
