@@ -95,15 +95,29 @@ function renderExplore(reviews){
 
           <div class="review-header">
 
-            <span class="review-user">
-              @${review.username}
-            </span>
+  <div class="review-user-box">
 
-            <span class="review-rating">
-              ${review.rating || "-"} ★
-            </span>
+    <img
+      class="review-avatar"
+      src="${
+        review.avatar_url ||
+        'img/default-avatar.webp'
+      }"
+      alt="${review.username}"
+    >
 
-          </div>
+    <span class="review-user">
+      @${review.username}
+    </span>
+
+  </div>
+
+  <span class="review-rating">
+    ${review.rating || "-"} ★
+  </span>
+
+</div>
+
 
           <h3 class="review-film">
             ${review.movie_title}
