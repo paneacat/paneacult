@@ -191,8 +191,7 @@ if(loadMoreBtn){
 
 }
   
-
-
+}
 
 
 
