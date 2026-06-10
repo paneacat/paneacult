@@ -213,6 +213,7 @@ if(hero && movie.backdrop_path){
     ✍ Scrivi recensione o vota
   </button>
 </div>
+<div id="userReviewsSection"></div>
 
     </div>
 
