@@ -569,3 +569,50 @@ window.addEventListener(
 
   }
 );
+
+async function loadMovieReviews(){
+
+  if(!selectedMovieData)
+    return;
+
+  const { data } =
+    await supabaseClient
+      .from("user_reviews")
+      .select("*")
+      .eq(
+        "movie_id",
+        selectedMovieData.id
+      );
+
+  const container =
+    document.getElementById(
+      "movieReviews"
+    );
+
+  if(!container) return;
+
+  container.innerHTML =
+
+    (data || [])
+      .map(review => `
+
+      <div class="movie-review-card">
+
+        <strong>
+          @${review.username}
+        </strong>
+
+        <span>
+          ${review.rating || "-"} ★
+        </span>
+
+        <p>
+          ${review.review_text || ""}
+        </p>
+
+      </div>
+
+    `)
+    .join("");
+
+}
