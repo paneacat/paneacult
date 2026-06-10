@@ -285,6 +285,15 @@ gap: 24px;
 
 }
 
+.review-rating{
+  position:absolute;
+  top:20px;
+  right:20px;
+
+  padding:12px 18px;
+  border-radius:999px;
+}
+
 /* ======================
    RECENSIONI
 ====================== */
