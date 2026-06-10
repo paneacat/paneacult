@@ -606,3 +606,21 @@ TITOLI SEZIONE
   opacity:.9;
 
 }
+
+.review-user-box{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.review-avatar{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.review-user{
+  font-weight:600;
+  color:#d7b56d;
+}
