@@ -341,9 +341,7 @@ document
 
 
   document
-  .getElementById(
-    "loadMoreBtn"
-  )
+  .getElementById("loadMoreBtn")
   ?.addEventListener(
     "click",
     () => {
@@ -357,7 +355,4 @@ document
     }
   );
 
-  
 loadExplore();
-
-
