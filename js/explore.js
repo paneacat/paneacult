@@ -80,8 +80,10 @@ function renderExplore(reviews){
 
     reviewsHtml += `
 
-      <article class="review-card">
-
+      <article
+  class="review-card"
+  onclick="goToMovie(${review.movie_id})"
+>
         <div class="review-poster">
 
           <img
