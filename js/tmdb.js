@@ -31,17 +31,48 @@ let currentMovieStatus = null;
 
 async function searchMovies(query){
 
-  const response = await fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=it-IT&query=${encodeURIComponent(query)}`
-  );
+  const movieResponse =
+    await fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=it-IT&query=${encodeURIComponent(query)}`
+    );
 
-  const data =
-    await response.json();
+  const movieData =
+    await movieResponse.json();
 
-  return data.results || [];
+  if(movieData.results?.length){
+
+    return movieData.results;
+
+  }
+
+  const personResponse =
+    await fetch(
+      `https://api.themoviedb.org/3/search/person?api_key=${API_KEY}&language=it-IT&query=${encodeURIComponent(query)}`
+    );
+
+  const personData =
+    await personResponse.json();
+
+  if(
+    !personData.results?.length
+  ){
+
+    return [];
+
+  }
+
+  const knownFor =
+    personData.results[0]
+      .known_for
+      ?.filter(
+        item =>
+          item.media_type ===
+          "movie"
+      );
+
+  return knownFor || [];
 
 }
-
 
 async function fetchMovieDetails(movieId){
 
