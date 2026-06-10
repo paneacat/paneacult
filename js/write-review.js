@@ -582,6 +582,12 @@ async function loadMovieReviews(){
       .eq(
         "movie_id",
         selectedMovieData.id
+      )
+      .order(
+        "created_at",
+        {
+          ascending:false
+        }
       );
 
   const container =
@@ -591,10 +597,21 @@ async function loadMovieReviews(){
 
   if(!container) return;
 
+  if(!data?.length){
+
+    container.innerHTML = `
+      <p>
+        Nessuna recensione della community.
+      </p>
+    `;
+
+    return;
+
+  }
+
   container.innerHTML =
 
-    (data || [])
-      .map(review => `
+    data.map(review => `
 
       <div class="movie-review-card">
 
@@ -612,7 +629,6 @@ async function loadMovieReviews(){
 
       </div>
 
-    `)
-    .join("");
+    `).join("");
 
 }
