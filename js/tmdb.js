@@ -227,7 +227,9 @@ if(hero && movie.backdrop_path){
    checkPaneaReview(
   movie.id
 );
-   
+loadCommunityReviews(
+  movie.id
+);   
   localStorage.setItem(
     "paneacult_selected_movie_html",
     selectedMovie.innerHTML
@@ -897,3 +899,82 @@ async function checkPaneaReview(movieId){
   btn.href =
     `review.html?slug=${data.slug}`;
 }
+
+async function loadCommunityReviews(movieId){
+
+  const section =
+    document.getElementById(
+      "userReviewsSection"
+    );
+
+  if(!section) return;
+
+  const {
+    data: reviews,
+    error
+  } =
+  await supabaseClient
+    .from("user_reviews")
+    .select("*")
+    .eq("movie_id", movieId)
+    .order(
+      "created_at",
+      {
+        ascending:false
+      }
+    );
+
+  if(
+    error ||
+    !reviews?.length
+  ){
+
+    section.innerHTML = "";
+
+    return;
+
+  }
+
+  section.innerHTML = `
+
+    <section class="community-section">
+
+      <h2 class="community-title">
+        Recensioni della community
+      </h2>
+
+      <div class="community-grid">
+
+        ${reviews.map(review => `
+
+          <article
+            class="community-card"
+          >
+
+            <strong>
+              @${review.username}
+            </strong>
+
+            <div>
+              ${review.rating || "-"} ★
+            </div>
+
+            <p>
+              ${
+                review.review_text ||
+                "Ha lasciato solo un voto."
+              }
+            </p>
+
+          </article>
+
+        `).join("")}
+
+      </div>
+
+    </section>
+
+  `;
+
+}
+
