@@ -120,13 +120,16 @@ function renderExplore(reviews){
 
 
           <h3 class="review-film">
-            ${review.movie_title}
-          </h3>
+  ${review.movie_title}
+</h3>
 
-          <p class="review-text">
-            ${review.review_text}
-          </p>
+<div class="review-tag">
+  RECENSIONE
+</div>
 
+<p class="review-text">
+  ${review.review_text}
+</p>
           <div class="review-date">
             ${new Date(
               review.created_at
