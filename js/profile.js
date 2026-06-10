@@ -1034,12 +1034,6 @@ await supabaseClient
     "status",
     "watched"
   );
-
-   console.log(
-  "USER REVIEWS:",
-  reviews
-);
-
    
   if(filmsCount){
 
