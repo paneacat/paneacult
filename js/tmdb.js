@@ -373,20 +373,16 @@ movieResults.style.display =
 
     }
 
-    const response = await fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=it-IT&query=${encodeURIComponent(query)}`
-    );
-
-    const data =
-      await response.json();
+    const results =
+  await searchMovies(query);
 
     movieResults.innerHTML = "";
     movieResults.style.display =
       "block";
 
-    data.results
-      .slice(0,5)
-      .forEach(movie => {
+    results
+  .slice(0,5)
+  .forEach(movie => {
 
         const div =
           document.createElement("div");
