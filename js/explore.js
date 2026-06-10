@@ -372,3 +372,12 @@ document
   );
 
 loadExplore();
+
+function goToMovie(id){
+
+  if(!id) return;
+
+  window.location.href =
+    `add-review.html?id=${id}`;
+
+}
