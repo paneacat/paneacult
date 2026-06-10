@@ -298,6 +298,9 @@ const { error } =
 
       username:
         username,
+       
+       avatar_url: 
+          avatarUrl,
 
       slug:
         slug
