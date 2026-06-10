@@ -733,9 +733,9 @@ const {
     .from("user_reviews")
     .select("*")
     .eq(
-      "movie_id",
-      data.movie_id
-    )
+  "movie_title",
+  data.movie_title
+)
     .order(
       "created_at",
       {
