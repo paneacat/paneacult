@@ -299,9 +299,12 @@ const { error } =
       username:
         username,
        
-       avatar_url: 
-          avatarUrl,
+       avatar_url:
+  localStorage.getItem(
+    "paneacult_avatar"
+  ) || null,
 
+       
       slug:
         slug
 
