@@ -295,6 +295,7 @@ async function loadReviews(){
       <article
         class="review-card"
         data-title="${review.movie_title}"
+        data-director="${review.director}"
         data-rating="${review.rating}"
       >
 
