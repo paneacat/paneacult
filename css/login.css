@@ -451,7 +451,7 @@ opacity:.72;
 .login-cta {
 
   margin-top: 24px;
-
+  color: var(--panea-yellow);
 }
 
 .login-cta a {
