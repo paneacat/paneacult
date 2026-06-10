@@ -141,7 +141,7 @@ if(movieId){
       movieDetails,
       movieDetails
     );
-
+loadMovieReviews();
     setupMovieButtons();
 
     if(movieSearchInput){
