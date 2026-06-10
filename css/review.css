@@ -1843,17 +1843,15 @@ letter-spacing:.04em;
 }
 
 .community-title{
-
   font-family:
     "Playfair Display",
     serif;
-
-  font-size:4rem;
-  line-height:.95;
-  margin-bottom:30px;
-
-}
-
+  font-size:1.8rem;
+  font-weight:700;
+  margin-bottom:20px;
+  opacity:.9;
+  }
+  
 .community-grid{
 
   display:grid;
