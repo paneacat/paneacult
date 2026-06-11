@@ -147,14 +147,17 @@ function renderGrid(
 
   }
 
+const isMobile =
+  window.innerWidth <= 768;
+
 const moviesToShow =
 
-  window.innerWidth <= 768
+  isMobile
 
     ? movies.slice(0,4)
 
     : movies;
-
+   
 grid.innerHTML =
 
 moviesToShow.map(movie => `
@@ -196,7 +199,23 @@ alt="${
     </div>
 
   `).join("");
+if(
+  isMobile &&
+  movies.length > 4
+){
 
+  grid.innerHTML += `
+
+    <button
+      class="load-more-btn"
+      onclick="location.reload()"
+    >
+      Mostra tutti (${movies.length})
+    </button>
+
+  `;
+
+}
 }
 
 function filterWatched(){
