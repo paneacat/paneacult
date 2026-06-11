@@ -199,6 +199,7 @@ alt="${
     </div>
 
   `).join("");
+   
 if(
   isMobile &&
   movies.length > 4
@@ -210,7 +211,7 @@ if(
       class="load-more-btn"
       onclick="location.reload()"
     >
-      Mostra tutti (${movies.length})
+      Vedi tutti (${movies.length})
     </button>
 
   `;
