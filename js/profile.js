@@ -199,7 +199,7 @@ alt="${
     </div>
 
   `).join("");
-}
+   
 if(
   isMobile &&
   movies.length > 4
@@ -208,65 +208,15 @@ if(
   grid.innerHTML += `
 
     <button
-      class="view-all-btn"
+      class="load-more-btn"
+      onclick="location.reload()"
     >
       Vedi tutti (${movies.length})
     </button>
 
   `;
 
-  const btn =
-    grid.querySelector(
-      ".view-all-btn"
-    );
-
-  btn.onclick = () => {
-
-    renderGrid(
-      grid,
-      movies
-    );
-
-    grid.innerHTML =
-
-      movies.map(movie => `
-
-        <div
-          class="saved-card"
-          onclick="goToMovie(${
-            movie.movie_id ||
-            movie.id
-          })"
-        >
-
-          <img
-            src="${
-              movie.poster_path
-                ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                : movie.movie_poster ||
-                  movie.poster ||
-                  movie.posterUrl ||
-                  'img/poster-placeholder.webp'
-            }"
-          >
-
-          <div class="saved-overlay">
-
-            <h3>
-              ${
-                movie.title ||
-                movie.movie_title
-              }
-            </h3>
-
-          </div>
-
-        </div>
-
-      `).join("");
-
-  };
-
+}
 }
 
 function filterWatched(){
