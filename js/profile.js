@@ -147,9 +147,17 @@ function renderGrid(
 
   }
 
+const moviesToShow =
+
+  window.innerWidth <= 768
+
+    ? movies.slice(0,4)
+
+    : movies;
+
 grid.innerHTML =
 
-  movies.map(movie => `
+moviesToShow.map(movie => `
 
     <div
       class="saved-card"
