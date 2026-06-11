@@ -446,7 +446,7 @@ function limitMobileCards(){
 
     cards.forEach((card,index) => {
 
-      if(index >= 8){
+      if(index >= 4){
 
         card.style.display =
           "none";
@@ -455,7 +455,7 @@ function limitMobileCards(){
 
     });
 
-    if(cards.length > 8){
+    if(cards.length > 4){
 
       const btn =
         document.createElement(
