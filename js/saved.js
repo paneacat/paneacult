@@ -296,10 +296,7 @@ async function loadSavedMovies(){
 
 }
 
-loadSavedMovies().then(() => {
-  limitMobileCards();
-});
-  
+loadSavedMovies(); 
 /* =========================
    CHECK SAVED
 ========================= */
@@ -409,9 +406,7 @@ document.addEventListener(
         .delete()
         .eq("id", id);
 
-      loadSavedMovies().then(() => {
-  limitMobileCards();
-});
+      loadSavedMovies();
 
     }
 
@@ -420,71 +415,3 @@ document.addEventListener(
 
 
 
-function limitMobileCards(){
-
-  if(window.innerWidth > 768){
-    return;
-  }
-alert("FUNZIONA");
-  const sections = [
-    "savedGrid",
-    "watchedGrid",
-    "favoriteGrid"
-  ];
-
-  sections.forEach(id => {
-
-    const grid =
-      document.getElementById(id);
-
-    if(!grid) return;
-
-    const cards =
-      grid.querySelectorAll(
-        ".saved-card"
-      );
-
-    cards.forEach((card,index) => {
-
-      if(index >= 4){
-
-        card.style.display =
-          "none";
-
-      }
-
-    });
-
-    if(cards.length > 4){
-
-      const btn =
-        document.createElement(
-          "button"
-        );
-
-      btn.innerText =
-        "Mostra altri";
-
-      btn.className =
-        "load-more-btn";
-
-      btn.onclick = () => {
-
-        cards.forEach(card => {
-
-          card.style.display =
-            "";
-
-        });
-
-        btn.remove();
-
-      };
-
-      grid.after(btn);
-
-    }
-
-  });
-
-}
