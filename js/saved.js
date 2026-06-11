@@ -425,7 +425,7 @@ function limitMobileCards(){
   if(window.innerWidth > 768){
     return;
   }
-
+alert("FUNZIONA");
   const sections = [
     "savedGrid",
     "watchedGrid",
