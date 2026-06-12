@@ -1497,17 +1497,6 @@ function openMoviesModal(
 
 }
 
-setTimeout(() => {
-
-  openMoviesModal(
-    "TEST",
-    watchlist
-  );
-
-}, 1000);
-
-
-
 function goToMovie(id){
 
   if(!id){
