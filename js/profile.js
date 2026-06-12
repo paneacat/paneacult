@@ -1848,6 +1848,9 @@ console.log(cols);
   }
 );
 
+/* =========================
+   EVENTI FILTRI
+========================= */
 
 document
   .getElementById("watchlistSearch")
@@ -1857,8 +1860,80 @@ document
   );
 
 document
+  .getElementById("watchlistGenre")
+  ?.addEventListener(
+    "change",
+    filterWatchlist
+  );
+
+document
+  .getElementById("watchlistYear")
+  ?.addEventListener(
+    "change",
+    filterWatchlist
+  );
+
+document
   .getElementById("watchlistFilter")
   ?.addEventListener(
     "change",
     filterWatchlist
+  );
+
+
+document
+  .getElementById("watchedSearch")
+  ?.addEventListener(
+    "input",
+    filterWatched
+  );
+
+document
+  .getElementById("watchedGenre")
+  ?.addEventListener(
+    "change",
+    filterWatched
+  );
+
+document
+  .getElementById("watchedYear")
+  ?.addEventListener(
+    "change",
+    filterWatched
+  );
+
+document
+  .getElementById("watchedFilter")
+  ?.addEventListener(
+    "change",
+    filterWatched
+  );
+
+
+document
+  .getElementById("favoriteSearch")
+  ?.addEventListener(
+    "input",
+    filterFavorites
+  );
+
+document
+  .getElementById("favoriteGenre")
+  ?.addEventListener(
+    "change",
+    filterFavorites
+  );
+
+document
+  .getElementById("favoriteYear")
+  ?.addEventListener(
+    "change",
+    filterFavorites
+  );
+
+document
+  .getElementById("favoriteFilter")
+  ?.addEventListener(
+    "change",
+    filterFavorites
   );
