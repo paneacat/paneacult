@@ -208,11 +208,10 @@ if(
   grid.innerHTML += `
 
     <button
-      class="load-more-btn"
-      onclick="location.reload()"
-    >
-      Vedi tutti (${movies.length})
-    </button>
+  class="view-all-btn"
+>
+  Vedi tutti (${movies.length})
+</button>
 
   `;
 
