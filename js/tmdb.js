@@ -544,12 +544,23 @@ if(
   await supabaseClient
     .from("user_movies")
     .insert({
-      user_id:user.id,
-      movie_id:movieId,
-      title:selectedMovieData.title,
-      poster_path:selectedMovieData.poster_path,
-      status:"watchlist"
-    });
+  user_id:user.id,
+  movie_id:movieId,
+  title:selectedMovieData.title,
+  poster_path:selectedMovieData.poster_path,
+
+  genre:
+    selectedMovieData.genres
+      ?.map(g => g.name)
+      .join(", ") || "",
+
+  release_year:
+    Number(
+      selectedMovieData.release_date?.slice(0,4)
+    ) || null,
+
+  status:"watchlist"
+});
 
   await loadMovieStatuses();
   return;
@@ -579,12 +590,23 @@ if(status === "watched"){
   await supabaseClient
     .from("user_movies")
     .insert({
-      user_id:user.id,
-      movie_id:movieId,
-      title:selectedMovieData.title,
-      poster_path:selectedMovieData.poster_path,
-      status:"watched"
-    });
+  user_id:user.id,
+  movie_id:movieId,
+  title:selectedMovieData.title,
+  poster_path:selectedMovieData.poster_path,
+
+  genre:
+    selectedMovieData.genres
+      ?.map(g => g.name)
+      .join(", ") || "",
+
+  release_year:
+    Number(
+      selectedMovieData.release_date?.slice(0,4)
+    ) || null,
+
+  status:"watchlist"
+});
 
   await loadMovieStatuses();
   return;
@@ -628,12 +650,23 @@ if(existing){
       await supabaseClient
         .from("user_movies")
         .insert({
-          user_id:user.id,
-          movie_id:movieId,
-          title:selectedMovieData.title,
-          poster_path:selectedMovieData.poster_path,
-          status:"watched"
-        });
+  user_id:user.id,
+  movie_id:movieId,
+  title:selectedMovieData.title,
+  poster_path:selectedMovieData.poster_path,
+
+  genre:
+    selectedMovieData.genres
+      ?.map(g => g.name)
+      .join(", ") || "",
+
+  release_year:
+    Number(
+      selectedMovieData.release_date?.slice(0,4)
+    ) || null,
+
+  status:"watchlist"
+});
 
     }
 
@@ -653,12 +686,23 @@ if(existing){
       await supabaseClient
         .from("user_movies")
         .insert({
-          user_id:user.id,
-          movie_id:movieId,
-          title:selectedMovieData.title,
-          poster_path:selectedMovieData.poster_path,
-          status:"favorite"
-        });
+  user_id:user.id,
+  movie_id:movieId,
+  title:selectedMovieData.title,
+  poster_path:selectedMovieData.poster_path,
+
+  genre:
+    selectedMovieData.genres
+      ?.map(g => g.name)
+      .join(", ") || "",
+
+  release_year:
+    Number(
+      selectedMovieData.release_date?.slice(0,4)
+    ) || null,
+
+  status:"watchlist"
+});
 
     }
 
@@ -705,13 +749,24 @@ if(existing){
 
         await supabaseClient
           .from("user_movies")
-          .insert({
-            user_id:user.id,
-            movie_id:movieId,
-            title:selectedMovieData.title,
-            poster_path:selectedMovieData.poster_path,
-            status:s
-          });
+      .insert({
+  user_id:user.id,
+  movie_id:movieId,
+  title:selectedMovieData.title,
+  poster_path:selectedMovieData.poster_path,
+
+  genre:
+    selectedMovieData.genres
+      ?.map(g => g.name)
+      .join(", ") || "",
+
+  release_year:
+    Number(
+      selectedMovieData.release_date?.slice(0,4)
+    ) || null,
+
+  status:"watchlist"
+});
 
       }
 
