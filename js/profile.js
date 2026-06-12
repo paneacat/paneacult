@@ -698,7 +698,18 @@ if(year === "classic"){
 
   }
 
-  if(filter === "random"){
+ if(filter === "az"){
+
+  filtered.sort(
+    (a,b) =>
+      a.title.localeCompare(
+        b.title
+      )
+  );
+
+ }if  
+
+  (filter === "random"){
 
     const movie =
       filtered[
