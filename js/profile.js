@@ -1412,6 +1412,48 @@ editBtn?.addEventListener(
   }
 );
 
+
+function showOnlySection(
+  sectionId
+){
+
+  document
+    .getElementById(
+      "watchlistSection"
+    )
+    .style.display = "none";
+
+  document
+    .getElementById(
+      "watchedSection"
+    )
+    .style.display = "none";
+
+  document
+    .getElementById(
+      "favoriteSection"
+    )
+    .style.display = "none";
+
+  document
+    .getElementById(
+      sectionId
+    )
+    .style.display = "block";
+
+}
+
+showOnlySection(
+  "watchlistSection"
+);
+
+
+
+
+
+
+
+
 function goToMovie(id){
 
   if(!id){
