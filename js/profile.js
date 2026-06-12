@@ -629,16 +629,17 @@ function populateFavoriteFilters(){
   if(!genreSelect) return;
 
   const genres =
-    [...new Set(
+[...new Set(
 
-      favorites.flatMap(
-        movie =>
-          (movie.genres || [])
-            .map(g => g.name)
-      )
+  favorites.flatMap(
+    movie =>
+      movie.genre
+        ? movie.genre.split(", ")
+        : []
+  )
 
-    )].sort();
-
+)].sort();
+   
   genreSelect.innerHTML = `
     <option value="all">
       Tutti i generi
@@ -669,15 +670,16 @@ function populateWatchedFilters(){
   if(!genreSelect) return;
 
   const genres =
-    [...new Set(
+[...new Set(
 
-      watched.flatMap(
-        movie =>
-          (movie.genres || [])
-            .map(g => g.name)
-      )
+  watched.flatMap(
+    movie =>
+      movie.genre
+        ? movie.genre.split(", ")
+        : []
+  )
 
-    )].sort();
+)].sort();
 
   genreSelect.innerHTML = `
     <option value="all">
@@ -709,15 +711,16 @@ function populateWatchlistFilters(){
   if(!genreSelect) return;
 
   const genres =
-    [...new Set(
+[...new Set(
 
-      watchlist.flatMap(
-        movie =>
-          (movie.genres || [])
-            .map(g => g.name)
-      )
+  watched.flatMap(
+    movie =>
+      movie.genre
+        ? movie.genre.split(", ")
+        : []
+  )
 
-    )].sort();
+)].sort();
 
   genreSelect.innerHTML = `
     <option value="all">
