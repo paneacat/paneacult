@@ -1413,6 +1413,101 @@ editBtn?.addEventListener(
   }
 );
 
+function openMoviesModal(
+  title,
+  movies
+){
+
+  const modal =
+    document.getElementById(
+      "moviesModal"
+    );
+
+  modal.innerHTML = `
+
+    <button
+      class="modal-close"
+    >
+      ← Chiudi
+    </button>
+
+    <h2>
+      ${title}
+    </h2>
+
+    <div class="modal-grid">
+
+      ${movies.map(movie => `
+
+        <div
+          class="saved-card"
+          onclick="goToMovie(${
+            movie.movie_id ||
+            movie.id
+          })"
+        >
+
+          <img
+            src="${
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                : movie.movie_poster ||
+                  movie.poster ||
+                  movie.posterUrl ||
+                  'img/poster-placeholder.webp'
+            }"
+          >
+
+          <div
+            class="saved-overlay"
+          >
+
+            <h3>
+              ${
+                movie.title ||
+                movie.movie_title
+              }
+            </h3>
+
+          </div>
+
+        </div>
+
+      `).join("")}
+
+    </div>
+
+  `;
+
+  modal.classList.add(
+    "open"
+  );
+
+  modal
+    .querySelector(
+      ".modal-close"
+    )
+    .onclick = () => {
+
+      modal.classList.remove(
+        "open"
+      );
+
+    };
+
+}
+
+setTimeout(() => {
+
+  openMoviesModal(
+    "TEST",
+    watchlist
+  );
+
+}, 1000);
+
+
+
 function goToMovie(id){
 
   if(!id){
