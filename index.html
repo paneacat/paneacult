@@ -177,6 +177,31 @@ paneacult • Recensioni cinematografiche
 </head>
 
 <body class="home">
+  <script>
+const PASSWORD = "paneacult2026";
+
+const password = prompt("Paneacult è attualmente in beta privata.\nInserisci la password:");
+
+if (password !== PASSWORD) {
+  document.body.innerHTML = `
+    <div style="
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      font-family:sans-serif;
+      background:#111;
+      color:white;
+      text-align:center;
+      padding:20px;
+    ">
+      <h1>Accesso negato</h1>
+      <p>Questo sito è attualmente privato.</p>
+    </div>
+  `;
+}
+  </script>
 <div class="cursor"></div>
 
   <!-- =========================
