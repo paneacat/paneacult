@@ -1450,6 +1450,8 @@ function showOnlySection(
     "watchedSection",
 
     "favoriteSection"
+     
+    "reviewsSection"
 
   ];
 
@@ -1807,6 +1809,8 @@ console.log(cols);
 
   }
 );
+
+
 
 function limitMobileCards(){
 
