@@ -300,77 +300,39 @@ function filterWatched(){
 
   if(genre !== "all"){
 
-    filtered =
-      filtered.filter(
-        movie =>
-         (movie.genres || [])
-  .some(g => g.name === genre) 
-      );
+  filtered = filtered.filter(
+    movie =>
+      movie.genre?.includes(genre)
+  );
 
-  }
-
+}
   /* YEAR */
 
-  if(year === "new"){
+  if(year !== "all"){
 
-    filtered =
-      filtered.filter(
-        movie => {
+  filtered = filtered.filter(movie => {
 
-          const y =
-            parseInt(
-              movie.release_date
-              ?.slice(0,4)
-            );
+    const y =
+      movie.release_year;
 
-          return y >= 2020;
+    if(year === "new"){
+      return y >= 2020;
+    }
 
-        }
-      );
+    if(year === "modern"){
+      return y >= 2000 && y < 2020;
+    }
 
+    if(year === "classic"){
+      return y < 2000;
+    }
+
+    return true;
+
+  });
   }
 
-  if(year === "modern"){
-
-    filtered =
-      filtered.filter(
-        movie => {
-
-          const y =
-            parseInt(
-              movie.release_date
-              ?.slice(0,4)
-            );
-
-          return (
-            y >= 2000 &&
-            y < 2020
-          );
-
-        }
-      );
-
-  }
-
-  if(year === "classic"){
-
-    filtered =
-      filtered.filter(
-        movie => {
-
-          const y =
-            parseInt(
-              movie.release_date
-              ?.slice(0,4)
-            );
-
-          return y < 2000;
-
-        }
-      );
-
-  }
-
+  
   /* ORDER */
 
   if(filter === "az"){
@@ -461,77 +423,38 @@ function filterWatched(){
 
   if(genre !== "all"){
 
-    filtered =
-      filtered.filter(
-        movie =>
-          (movie.genres || [])
-  .some(g => g.name === genre)
-      );
+  filtered = filtered.filter(
+    movie =>
+      movie.genre?.includes(genre)
+  );
 
   }
-
   /* YEAR */
 
-  if(year === "new"){
+  if(year !== "all"){
 
-    filtered =
-      filtered.filter(
-        movie => {
+  filtered = filtered.filter(movie => {
 
-          const y =
-            parseInt(
-              movie.release_date
-              ?.slice(0,4)
-            );
+    const y =
+      movie.release_year;
 
-          return y >= 2020;
+    if(year === "new"){
+      return y >= 2020;
+    }
 
-        }
-      );
+    if(year === "modern"){
+      return y >= 2000 && y < 2020;
+    }
 
-  }
+    if(year === "classic"){
+      return y < 2000;
+    }
 
-  if(year === "modern"){
+    return true;
 
-    filtered =
-      filtered.filter(
-        movie => {
-
-          const y =
-            parseInt(
-              movie.release_date
-              ?.slice(0,4)
-            );
-
-          return (
-            y >= 2000 &&
-            y < 2020
-          );
-
-        }
-      );
+  });
 
   }
-
-  if(year === "classic"){
-
-    filtered =
-      filtered.filter(
-        movie => {
-
-          const y =
-            parseInt(
-              movie.release_date
-              ?.slice(0,4)
-            );
-
-          return y < 2000;
-
-        }
-      );
-
-  }
-
   /* ORDER */
 
   if(filter === "az"){
@@ -631,65 +554,30 @@ function filterWatchlist(){
 
   /* YEAR */
 
-  if(year === "new"){
+  if(year !== "all"){
 
-  filtered =
-    filtered.filter(
-      movie => {
+  filtered = filtered.filter(movie => {
 
-        const y =
-          parseInt(
-            movie.release_date
-            ?.slice(0,4)
-          );
+    const y =
+      movie.release_year;
 
-        return y >= 2020;
+    if(year === "new"){
+      return y >= 2020;
+    }
 
-      }
-    );
+    if(year === "modern"){
+      return y >= 2000 && y < 2020;
+    }
 
-}
+    if(year === "classic"){
+      return y < 2000;
+    }
 
-if(year === "modern"){
+    return true;
 
-  filtered =
-    filtered.filter(
-      movie => {
+  });
 
-        const y =
-          parseInt(
-            movie.release_date
-            ?.slice(0,4)
-          );
-
-        return (
-          y >= 2000 &&
-          y < 2020
-        );
-
-      }
-    );
-
-}
-
-if(year === "classic"){
-
-  filtered =
-    filtered.filter(
-      movie => {
-
-        const y =
-          parseInt(
-            movie.release_date
-            ?.slice(0,4)
-          );
-
-        return y < 2000;
-
-      }
-    );
-
-}
+  }
   /* ORDER */
 
   if(filter === "recent"){
