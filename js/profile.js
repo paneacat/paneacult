@@ -1688,16 +1688,11 @@ importInput?.addEventListener(
                 poster_path:
                   movie.poster_path,
 
-                 genre:
-  selectedMovieData.genres
-    ?.map(g => g.name)
-    .join(", "),
+               genre: "",
 
-release_year:
-  parseInt(
-    selectedMovieData.release_date
-      ?.slice(0,4)
-  ),
+release_year: null,
+
+                 
                 status:
                   "watched"
 
@@ -1729,16 +1724,10 @@ release_year:
                 poster_path:
                   movie.poster_path,
 
-                 genre:
-  selectedMovieData.genres
-    ?.map(g => g.name)
-    .join(", "),
+                 genre: "",
 
-release_year:
-  parseInt(
-    selectedMovieData.release_date
-      ?.slice(0,4)
-  ),
+release_year: null,
+                 
                 status:
                   "watchlist"
 
