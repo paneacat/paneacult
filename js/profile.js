@@ -205,16 +205,49 @@ if(
   movies.length > 4
 ){
 
+  let title = "";
+
+  if(
+    grid.id === "watchlistGrid"
+  ){
+    title = "Watchlist";
+  }
+
+  if(
+    grid.id === "watchedGrid"
+  ){
+    title = "Watched";
+  }
+
+  if(
+    grid.id === "favoriteGrid"
+  ){
+    title = "Loved";
+  }
+
   grid.innerHTML += `
 
     <button
       class="load-more-btn"
-      onclick="location.reload()"
     >
       Vedi tutti (${movies.length})
     </button>
 
   `;
+
+  const btn =
+    grid.querySelector(
+      ".load-more-btn"
+    );
+
+  btn.onclick = () => {
+
+    openMoviesModal(
+      title,
+      movies
+    );
+
+  };
 
 }
 }
