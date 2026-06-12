@@ -101,3 +101,17 @@ authRegisterBtn?.addEventListener(
 
   }
 );
+
+
+const PASSWORD = "PaneaCult2026!";
+
+if (sessionStorage.getItem("authenticated") !== "true") {
+  const password = prompt("Inserisci la password");
+
+  if (password === PASSWORD) {
+    sessionStorage.setItem("authenticated", "true");
+  } else {
+    document.body.innerHTML = "<h1>Accesso negato</h1>";
+    throw new Error("Access denied");
+  }
+}
