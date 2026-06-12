@@ -1,3 +1,4 @@
+
 /* =========================
    PROFILE MOVIES
 ========================= */
@@ -207,10 +208,11 @@ if(
   grid.innerHTML += `
 
     <button
-  class="view-all-btn"
->
-  Vedi tutti (${movies.length})
-</button>
+      class="load-more-btn"
+      onclick="location.reload()"
+    >
+      Vedi tutti (${movies.length})
+    </button>
 
   `;
 
@@ -1410,71 +1412,6 @@ editBtn?.addEventListener(
 
   }
 );
-
-
-
-
-function showOnlySection(
-  sectionId
-){
-
-  const sections = [
-
-    "watchlistSection",
-
-    "watchedSection",
-
-    "favoriteSection"
-
-  ];
-
-  sections.forEach(id => {
-
-    document
-      .getElementById(id)
-      .style.display =
-        id === sectionId
-          ? "block"
-          : "none";
-
-  });
-
-  if(
-    !document.getElementById(
-      "backToProfileBtn"
-    )
-  ){
-
-    document.body.insertAdjacentHTML(
-      "afterbegin",
-      `
-      <button
-        id="backToProfileBtn"
-        class="load-more-btn"
-      >
-        ← Torna al profilo
-      </button>
-      `
-    );
-
-    document
-      .getElementById(
-        "backToProfileBtn"
-      )
-      .onclick = () => {
-
-        location.reload();
-
-      };
-
-  }
-
-}
-
-
-
-
-
 
 function goToMovie(id){
 
