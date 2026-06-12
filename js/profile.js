@@ -1848,3 +1848,17 @@ console.log(cols);
   }
 );
 
+
+document
+  .getElementById("watchlistSearch")
+  ?.addEventListener(
+    "input",
+    filterWatchlist
+  );
+
+document
+  .getElementById("watchlistFilter")
+  ?.addEventListener(
+    "change",
+    filterWatchlist
+  );
