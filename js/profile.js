@@ -1413,41 +1413,64 @@ editBtn?.addEventListener(
 );
 
 
+
+
 function showOnlySection(
   sectionId
 ){
 
-  document
-    .getElementById(
-      "watchlistSection"
-    )
-    .style.display = "none";
+  const sections = [
 
-  document
-    .getElementById(
-      "watchedSection"
-    )
-    .style.display = "none";
+    "watchlistSection",
 
-  document
-    .getElementById(
-      "favoriteSection"
-    )
-    .style.display = "none";
+    "watchedSection",
 
-  document
-    .getElementById(
-      sectionId
+    "favoriteSection"
+
+  ];
+
+  sections.forEach(id => {
+
+    document
+      .getElementById(id)
+      .style.display =
+        id === sectionId
+          ? "block"
+          : "none";
+
+  });
+
+  if(
+    !document.getElementById(
+      "backToProfileBtn"
     )
-    .style.display = "block";
+  ){
+
+    document.body.insertAdjacentHTML(
+      "afterbegin",
+      `
+      <button
+        id="backToProfileBtn"
+        class="load-more-btn"
+      >
+        ← Torna al profilo
+      </button>
+      `
+    );
+
+    document
+      .getElementById(
+        "backToProfileBtn"
+      )
+      .onclick = () => {
+
+        location.reload();
+
+      };
+
+  }
 
 }
-
-showOnlySection(
-  "watchlistSection"
-);
-
-
 
 
 
