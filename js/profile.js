@@ -205,13 +205,37 @@ if(
   movies.length > 4
 ){
 
+  let sectionId = "";
+
+  if(
+    grid.id === "watchlistGrid"
+  ){
+    sectionId =
+      "watchlistSection";
+  }
+
+  if(
+    grid.id === "watchedGrid"
+  ){
+    sectionId =
+      "watchedSection";
+  }
+
+  if(
+    grid.id === "favoriteGrid"
+  ){
+    sectionId =
+      "favoriteSection";
+  }
+
   grid.innerHTML += `
 
     <button
-  class="view-all-btn"
->
-  Vedi tutti (${movies.length})
-</button>
+      class="load-more-btn"
+      onclick="showOnlySection('${sectionId}')"
+    >
+      Vedi tutti (${movies.length})
+    </button>
 
   `;
 
