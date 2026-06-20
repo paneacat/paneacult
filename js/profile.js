@@ -630,17 +630,15 @@ function populateFavoriteFilters(){
 
   if(!genreSelect) return;
 
-  const genres =
-[...new Set(
-
-  favorite.flatMap(
+  const genres = [...new Set(
+  favorites.flatMap(
     movie =>
       movie.genre
         ? movie.genre.split(", ")
         : []
   )
-
 )].sort();
+
    
   genreSelect.innerHTML = `
     <option value="all">
