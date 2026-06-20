@@ -669,7 +669,8 @@ function populateWatchedFilters(){
 
   if(!genreSelect) return;
 
-  const genres =
+  
+const genres =
 [...new Set(
 
   watched.flatMap(
@@ -680,7 +681,7 @@ function populateWatchedFilters(){
   )
 
 )].sort();
-
+   
   genreSelect.innerHTML = `
     <option value="all">
       Tutti i generi
@@ -710,10 +711,10 @@ function populateWatchlistFilters(){
 
   if(!genreSelect) return;
 
-  const genres =
+const genres =
 [...new Set(
 
-  watchlist.flatMap(
+  watched.flatMap(
     movie =>
       movie.genre
         ? movie.genre.split(", ")
