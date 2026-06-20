@@ -28,9 +28,33 @@ const reviewForm =
 let selectedMovieData = null;
 let currentMovieStatus = null;
 
-
 async function searchMovies(query){
 
+  // PERSONE
+  const personResponse =
+    await fetch(
+      `https://api.themoviedb.org/3/search/person?api_key=${API_KEY}&language=it-IT&query=${encodeURIComponent(query)}`
+    );
+
+  const personData =
+    await personResponse.json();
+
+  if(personData.results?.length){
+
+    const knownFor =
+      personData.results[0]
+        .known_for
+        ?.filter(
+          item => item.media_type === "movie"
+        );
+
+    if(knownFor?.length){
+      return knownFor;
+    }
+
+  }
+
+  // FILM
   const movieResponse =
     await fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=it-IT&query=${encodeURIComponent(query)}`
@@ -39,46 +63,9 @@ async function searchMovies(query){
   const movieData =
     await movieResponse.json();
 
-  if(movieData.results?.length){
-
-    return movieData.results;
-
-  }
-
-  const personResponse =
-  await fetch(
-    `https://api.themoviedb.org/3/search/person?api_key=${API_KEY}&language=it-IT&query=${encodeURIComponent(query)}`
-  );
-
-const personData =
-  await personResponse.json();
-
-if(personData.results?.length){
-
-  const knownFor =
-    personData.results[0]
-      .known_for
-      ?.filter(
-        item =>
-          item.media_type === "movie"
-      );
-
-  if(knownFor?.length){
-    return knownFor;
-  }
+  return movieData.results || [];
 
 }
-
- const movieResponse =
-  await fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=it-IT&query=${encodeURIComponent(query)}`
-  );
-
-const movieData =
-  await movieResponse.json();
-
-return movieData.results || [];
-
    
 
 async function fetchMovieDetails(movieId){
