@@ -339,11 +339,12 @@ function filterWatched(){
   if(filter === "az"){
 
     filtered.sort(
-      (a,b) =>
-        a.title.localeCompare(
-          b.title
-        )
-    );
+  (a,b) =>
+    (a.title || a.movie_title)
+      .localeCompare(
+        b.title || b.movie_title
+      )
+);
 
   }
 
@@ -589,11 +590,12 @@ function filterWatchlist(){
  if(filter === "az"){
 
   filtered.sort(
-    (a,b) =>
-      a.title.localeCompare(
-        b.title
+  (a,b) =>
+    (a.title || a.movie_title)
+      .localeCompare(
+        b.title || b.movie_title
       )
-  );
+);
 
  }if  
 
