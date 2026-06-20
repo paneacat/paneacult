@@ -605,7 +605,7 @@ if(status === "watched"){
       selectedMovieData.release_date?.slice(0,4)
     ) || null,
 
-  status:"watchlist"
+  status:"watched"
 });
 
   await loadMovieStatuses();
@@ -665,7 +665,7 @@ if(existing){
       selectedMovieData.release_date?.slice(0,4)
     ) || null,
 
-  status:"watchlist"
+  status:"watched"
 });
 
     }
@@ -701,7 +701,7 @@ if(existing){
       selectedMovieData.release_date?.slice(0,4)
     ) || null,
 
-  status:"watchlist"
+  status:"favorite"
 });
 
     }
@@ -749,7 +749,7 @@ if(existing){
 
         await supabaseClient
           .from("user_movies")
-      .insert({
+.insert({
   user_id:user.id,
   movie_id:movieId,
   title:selectedMovieData.title,
@@ -765,7 +765,7 @@ if(existing){
       selectedMovieData.release_date?.slice(0,4)
     ) || null,
 
-  status:"watchlist"
+  status:s
 });
 
       }
