@@ -742,3 +742,192 @@ async function loadCommunityReviews(movieId){
 
 }
 
+async function saveMovie(status){
+
+  const {
+    data:{ user }
+  } =
+  await supabaseClient.auth.getUser();
+
+  if(!user || !selectedMovieData) return;
+
+  await supabaseClient
+    .from("user_movies")
+    .upsert({
+      user_id:user.id,
+      movie_id:selectedMovieData.id,
+      title:selectedMovieData.title,
+      poster_path:selectedMovieData.poster_path,
+
+      genre:
+        selectedMovieData.genres
+          ?.map(g => g.name)
+          .join(", ") || "",
+
+      release_year:
+        Number(
+          selectedMovieData.release_date?.slice(0,4)
+        ) || null,
+
+      status
+    });
+
+}
+
+async function removeStatus(status){
+
+  const {
+    data:{ user }
+  } =
+  await supabaseClient.auth.getUser();
+
+  if(!user || !selectedMovieData) return;
+
+  await supabaseClient
+    .from("user_movies")
+    .delete()
+    .eq("user_id", user.id)
+    .eq("movie_id", selectedMovieData.id)
+    .eq("status", status);
+
+}
+
+async function toggleMovieStatus(status){
+
+  const {
+    data:{ user }
+  } =
+  await supabaseClient.auth.getUser();
+
+  if(!user || !selectedMovieData) return;
+
+  const movieId =
+    selectedMovieData.id;
+
+  const { data } =
+    await supabaseClient
+      .from("user_movies")
+      .select("status")
+      .eq("user_id", user.id)
+      .eq("movie_id", movieId);
+
+  const statuses =
+    data?.map(x => x.status) || [];
+
+  const watchlistExists =
+    statuses.includes("watchlist");
+
+  const watchedExists =
+    statuses.includes("watched");
+
+  const favoriteExists =
+    statuses.includes("favorite");
+
+  const desertExists =
+    statuses.includes("desert");
+
+
+  switch(status){
+
+    case "watchlist":
+
+      if(watchlistExists){
+
+        await removeStatus("watchlist");
+
+      }else{
+
+        await removeStatus("watched");
+        await removeStatus("favorite");
+        await removeStatus("desert");
+
+        await saveMovie("watchlist");
+
+      }
+
+      break;
+
+
+    case "watched":
+
+      if(watchedExists){
+
+        await removeStatus("desert");
+        await removeStatus("favorite");
+        await removeStatus("watched");
+
+      }else{
+
+        await removeStatus("watchlist");
+
+        await saveMovie("watched");
+
+      }
+
+      break;
+
+
+    case "favorite":
+
+      if(favoriteExists){
+
+        await removeStatus("favorite");
+
+      }else{
+
+        if(!watchedExists){
+
+          await saveMovie("watched");
+
+        }
+
+        await removeStatus("watchlist");
+
+        await saveMovie("favorite");
+
+      }
+
+      break;
+
+
+    case "desert":
+
+      if(desertExists){
+
+        await removeStatus("desert");
+
+      }else{
+
+        await supabaseClient
+          .from("user_movies")
+          .delete()
+          .eq("user_id", user.id)
+          .eq("status", "desert");
+
+        if(!watchedExists){
+
+          await saveMovie("watched");
+
+        }
+
+        if(!favoriteExists){
+
+          await saveMovie("favorite");
+
+        }
+
+        await removeStatus("watchlist");
+
+        await saveMovie("desert");
+
+      }
+
+      break;
+
+  }
+
+  await loadMovieStatuses();
+
+}
+
+
