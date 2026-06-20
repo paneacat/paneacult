@@ -300,7 +300,8 @@ function filterWatched(){
 
   if(genre !== "all"){
 
-  filtered = filtered.filter(
+  filtered =
+  filtered.filter(
     movie =>
       movie.genre?.includes(genre)
   );
@@ -544,11 +545,10 @@ function filterWatchlist(){
   if(genre !== "all"){
 
     filtered =
-      filtered.filter(
-        movie =>
-          (movie.genres || [])
-  .some(g => g.name === genre)
-      );
+  filtered.filter(
+    movie =>
+      movie.genre?.includes(genre)
+  );
 
   }
 
@@ -631,7 +631,7 @@ function populateFavoriteFilters(){
   const genres =
 [...new Set(
 
-  favorites.flatMap(
+  favorite.flatMap(
     movie =>
       movie.genre
         ? movie.genre.split(", ")
@@ -714,7 +714,7 @@ function populateWatchlistFilters(){
 const genres =
 [...new Set(
 
-  watched.flatMap(
+  watchlist.flatMap(
     movie =>
       movie.genre
         ? movie.genre.split(", ")
