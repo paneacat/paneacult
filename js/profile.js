@@ -713,7 +713,7 @@ function populateWatchlistFilters(){
   const genres =
 [...new Set(
 
-  watched.flatMap(
+  watchlist.flatMap(
     movie =>
       movie.genre
         ? movie.genre.split(", ")
