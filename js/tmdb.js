@@ -41,16 +41,34 @@ async function searchMovies(query){
 
   if(personData.results?.length){
 
-    const knownFor =
-      personData.results[0]
-        .known_for
-        ?.filter(
-          item => item.media_type === "movie"
-        );
+    const personId =
+  personData.results[0].id;
 
-    if(knownFor?.length){
-      return knownFor;
-    }
+const creditsResponse =
+  await fetch(
+    `https://api.themoviedb.org/3/person/${personId}/movie_credits?api_key=${API_KEY}&language=it-IT`
+  );
+
+const creditsData =
+  await creditsResponse.json();
+
+const directedMovies =
+  creditsData.crew
+    .filter(
+      movie =>
+        movie.job === "Director"
+    )
+    .sort(
+      (a,b) =>
+        (b.release_date || "")
+          .localeCompare(
+            a.release_date || ""
+          )
+    );
+
+if(directedMovies.length){
+  return directedMovies;
+}
 
   }
 
