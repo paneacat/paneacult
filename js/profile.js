@@ -935,9 +935,9 @@ async function renderRecentActivity(){
             ${review.movie_title}
           </h3>
 
-          <span>
-            ${review.rating || "-"} ★
-          </span>
+          <span class="rating-stars">
+  ${renderStars(data.rating)}
+</span>
 
         </div>
 
