@@ -372,7 +372,45 @@ document
 
     }
   );
+function populateGenres(){
 
+  const genres =
+    [...new Set(
+
+      allReviews.flatMap(
+        review =>
+          review.genre
+            ? review.genre.split(", ")
+            : []
+      )
+
+    )].sort();
+
+  const select =
+    document.getElementById(
+      "exploreGenre"
+    );
+
+  if(!select) return;
+
+  select.innerHTML =
+    `
+      <option value="all">
+        Tutti i generi
+      </option>
+    `;
+
+  genres.forEach(genre => {
+
+    select.innerHTML += `
+      <option value="${genre}">
+        ${genre}
+      </option>
+    `;
+
+  });
+
+}
 loadExplore();
 
 function goToMovie(id){
