@@ -31,7 +31,7 @@ async function loadExplore(){
 
   allReviews =
     data || [];
-
+populateGenres();
   renderExplore(
     allReviews
   );
@@ -248,7 +248,20 @@ function filterExplore(){
         "exploreOrder"
       )
       ?.value || "recent";
+const genre =
+  document
+    .getElementById(
+      "exploreGenre"
+    )
+    ?.value || "all";
 
+const year =
+  document
+    .getElementById(
+      "exploreYear"
+    )
+    ?.value || "all";
+  
   filtered =
     filtered.filter(
       review =>
@@ -288,6 +301,52 @@ function filterExplore(){
 
   }
 
+  if(genre !== "all"){
+
+  filtered =
+    filtered.filter(
+      review =>
+        review.genre?.includes(
+          genre
+        )
+    );
+
+  }
+
+  if(year === "new"){
+
+  filtered =
+    filtered.filter(
+      review =>
+        review.release_year >=
+        2020
+    );
+
+}
+
+if(year === "modern"){
+
+  filtered =
+    filtered.filter(
+      review =>
+        review.release_year >=
+        2000 &&
+        review.release_year < 2020
+    );
+
+}
+
+if(year === "classic"){
+
+  filtered =
+    filtered.filter(
+      review =>
+        review.release_year <
+        2000
+    );
+
+}
+  
   if(order === "highest"){
 
     filtered.sort(
@@ -357,6 +416,23 @@ document
   );
 
 
+document
+  .getElementById(
+    "exploreGenre"
+  )
+  ?.addEventListener(
+    "change",
+    filterExplore
+  );
+
+document
+  .getElementById(
+    "exploreYear"
+  )
+  ?.addEventListener(
+    "change",
+    filterExplore
+  );
 
   document
   .getElementById("loadMoreBtn")
