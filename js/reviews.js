@@ -321,15 +321,9 @@ async function loadReviews(){
 
           <div class="film-stars">
 
-            ${
-              "★".repeat(review.rating) +
-              "☆".repeat(
-                5 - review.rating
-              )
-            }
+  ${renderStars(review.rating)}
 
-          </div>
-
+</div>
         </div>
 
       </article>
