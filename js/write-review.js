@@ -483,7 +483,14 @@ imdb_rating:
    
       review_text:
         reviewTextValue,
-
+director:
+  movieDetails?.credits?.crew
+    ?.find(
+      person =>
+        person.job ===
+        "Director"
+    )
+    ?.name || "",
       rating:
         ratingValue,
 
