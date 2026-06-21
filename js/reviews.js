@@ -751,18 +751,9 @@ if(
   class="community-card"
 >
 
-  <div
-    class="community-stars"
-  >
-    ${
-      "★".repeat(
-        review.rating
-      ) +
-      "☆".repeat(
-        5-review.rating
-      )
-    }
-  </div>
+  <div class="community-stars">
+  ${renderStars(review.rating)}
+</div>
 
   <p
     class="community-text"
