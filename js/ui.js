@@ -287,6 +287,8 @@ document
 
 function renderStars(rating){
 
+  rating = Number(rating);
+
   const fullStars =
     Math.floor(rating);
 
