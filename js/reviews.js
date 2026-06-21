@@ -633,22 +633,16 @@ ${
 
     <div class="rating">
 
-      <span class="rating-stars">
+  <span class="rating-stars">
+    ${renderStars(data.rating)}
+  </span>
 
-        ${
-          "★".repeat(data.rating) +
-          "☆".repeat(5-data.rating)
-        }
+  <span class="rating-text">
+    ${data.rating}
+  </span>
 
-      </span>
+</div>
 
-      <span class="rating-text">
-
-        — ${data.rating}/5
-
-      </span>
-
-    </div>
 ${
   data.mood
   ? `
