@@ -392,7 +392,16 @@ if(year === "classic"){
     filtered.reverse();
 
   }
+  
+if(order === "recent"){
 
+  filtered.sort(
+    (a,b) =>
+      new Date(b.created_at) -
+      new Date(a.created_at)
+  );
+
+}
   renderExplore(
     filtered
   );
