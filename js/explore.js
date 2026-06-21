@@ -263,13 +263,33 @@ const year =
     ?.value || "all";
   
   filtered =
-    filtered.filter(
-      review =>
-        review.movie_title
-          ?.toLowerCase()
-          .includes(search)
-    );
+  filtered.filter(
+    review =>
 
+      review.movie_title
+        ?.toLowerCase()
+        .includes(search)
+
+      ||
+
+      review.username
+        ?.toLowerCase()
+        .includes(search)
+
+      ||
+
+      review.director
+        ?.toLowerCase()
+        .includes(search)
+
+      ||
+
+      review.review_text
+        ?.toLowerCase()
+        .includes(search)
+  );
+
+  
   if(rating !== "all"){
 
     filtered =
