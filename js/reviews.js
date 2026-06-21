@@ -637,10 +637,6 @@ ${
     ${renderStars(data.rating)}
   </span>
 
-  <span class="rating-text">
-    ${data.rating}
-  </span>
-
 </div>
 
 ${
