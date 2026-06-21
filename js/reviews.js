@@ -296,7 +296,7 @@ async function loadReviews(){
         class="review-card"
         data-title="${review.movie_title}"
         data-director="${review.director}"
-        data-rating="${review.rating}"
+        data-rating="${renderStars(review.rating)}"
       >
 
         <a
