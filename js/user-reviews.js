@@ -84,10 +84,7 @@ async function loadUserReview(){
 
       <span class="rating-stars">
 
-        ${
-          "★".repeat(data.rating) +
-          "☆".repeat(5-data.rating)
-        }
+        ${renderStars(data.rating)}
 
       </span>
 
