@@ -1580,14 +1580,12 @@ importInput?.addEventListener(
                 poster_path:
                   movie.poster_path,
 
-               genre:
-  selectedMovieData.genres?.[0]?.name || "",
+               genre: null,
 
 release_year:
-  Number(
-    selectedMovieData.release_date?.slice(0,4)
-  ) || null,
-
+  movie.release_date
+    ? Number(movie.release_date.slice(0,4))
+    : null,
                  
                 status:
                   "watched"
@@ -1620,13 +1618,12 @@ release_year:
                 poster_path:
                   movie.poster_path,
 
-                 genre:
-  selectedMovieData.genres?.[0]?.name || "",
+                 genre: null,
 
 release_year:
-  Number(
-    selectedMovieData.release_date?.slice(0,4)
-  ) || null,
+  movie.release_date
+    ? Number(movie.release_date.slice(0,4))
+    : null,
                  
                 status:
                   "watchlist"
