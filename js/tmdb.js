@@ -770,7 +770,9 @@ async function saveMovie(status){
       movie_id:selectedMovieData.id,
       title:selectedMovieData.title,
       poster_path:selectedMovieData.poster_path,
-
+      director:
+  selectedMovieData.director ||
+  "",
       genre:
         selectedMovieData.genres
           ?.map(g => g.name)
