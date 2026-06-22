@@ -262,13 +262,6 @@ function filterWatched(){
       ?.value
       .toLowerCase() || "";
 
-  const genre =
-    document
-      .getElementById(
-        "watchedGenre"
-      )
-      ?.value || "all";
-
   const year =
     document
       .getElementById(
@@ -296,17 +289,7 @@ function filterWatched(){
   .includes(search)
     );
 
-  /* GENRE */
-
-  if(genre !== "all"){
-
-  filtered =
-  filtered.filter(
-    movie =>
-      movie.genre?.includes(genre)
-  );
-
-}
+  
   /* YEAR */
 
   if(year !== "all"){
