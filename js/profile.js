@@ -282,12 +282,18 @@ function filterWatched(){
   /* SEARCH */
 
   filtered =
-    filtered.filter(
-      movie =>
-        (movie.title || movie.movie_title || "")
-  .toLowerCase()
-  .includes(search)
-    );
+  filtered.filter(
+    movie =>
+
+      (
+        (movie.title || movie.movie_title || "") +
+        " " +
+        (movie.director || "")
+      )
+      .toLowerCase()
+      .includes(search)
+
+  );
 
   
   /* YEAR */
@@ -397,12 +403,18 @@ function filterWatched(){
   /* SEARCH */
 
   filtered =
-    filtered.filter(
-      movie =>
-        (movie.title || movie.movie_title || "")
-  .toLowerCase()
-  .includes(search)
-    );
+  filtered.filter(
+    movie =>
+
+      (
+        (movie.title || movie.movie_title || "") +
+        " " +
+        (movie.director || "")
+      )
+      .toLowerCase()
+      .includes(search)
+
+  );
 
   /* GENRE */
 
@@ -517,12 +529,18 @@ function filterWatchlist(){
   /* SEARCH */
 
   filtered =
-    filtered.filter(
-      movie =>
-        (movie.title || movie.movie_title || "")
-  .toLowerCase()
-  .includes(search)
-    );
+  filtered.filter(
+    movie =>
+
+      (
+        (movie.title || movie.movie_title || "") +
+        " " +
+        (movie.director || "")
+      )
+      .toLowerCase()
+      .includes(search)
+
+  );
 
   /* GENRE */
 
