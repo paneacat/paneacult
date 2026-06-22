@@ -936,7 +936,7 @@ async function renderRecentActivity(){
           </h3>
 
           <span class="rating-stars">
-  ${renderStars(data.rating)}
+  ${renderStars(review.rating)}
 </span>
 
         </div>
