@@ -2015,3 +2015,12 @@ opacity:1;
   gap:12px;
 
 }
+
+
+.movie-director{
+  display:block;
+  margin-top:4px;
+  font-size:.85rem;
+  color:rgba(255,255,255,.65);
+  font-style:italic;
+}
