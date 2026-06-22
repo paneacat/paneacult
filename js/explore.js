@@ -30,11 +30,12 @@ async function loadExplore(){
   }
 
   allReviews =
-    data || [];
+  data || [];
+
+console.log(data);
+
 populateGenres();
-  renderExplore(
-    allReviews
-  );
+renderExplore(allReviews);
 
 }
 
