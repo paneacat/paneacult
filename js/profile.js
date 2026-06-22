@@ -940,16 +940,6 @@ async function renderRecentActivity(){
           <span class="rating-stars">
   ${renderStars(review.rating)}
 </span>
-
-        </div>
-
-      </div>
-
-    `).join("");
-
-}
-
-
 <div class="review-actions">
 
   <button
@@ -967,6 +957,35 @@ async function renderRecentActivity(){
   </button>
 
 </div>
+      </div>
+
+    `).join("");
+document
+  .querySelectorAll(".delete-review-btn")
+  .forEach(btn => {
+
+    btn.onclick = async () => {
+
+      if(
+        !confirm(
+          "Eliminare la recensione?"
+        )
+      ) return;
+
+      await supabaseClient
+        .from("user_reviews")
+        .delete()
+        .eq(
+          "id",
+          btn.dataset.id
+        );
+
+      loadReviews();
+
+    };
+
+  });
+}
 
 /* =========================
    PROFILE COUNTERS
