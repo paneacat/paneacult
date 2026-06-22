@@ -89,8 +89,8 @@ if(directedMovies.length){
 async function fetchMovieDetails(movieId){
 
   const response = await fetch(
-    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=it-IT&append_to_response=credits`
-  );
+`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=it-IT&append_to_response=credits`
+);
 
   const movieData =
     await response.json();
