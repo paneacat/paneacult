@@ -1558,6 +1558,18 @@ importInput?.addEventListener(
           if(!movie)
             continue;
 
+           const details =
+await fetchMovieDetails(
+  movie.id
+);
+
+const director =
+details?.credits?.crew?.find(
+  person =>
+    person.job === "Director"
+)?.name || null;
+           
+
           /* WATCHED */
 
           if(
@@ -1588,7 +1600,9 @@ release_year:
   movie.release_date
     ? Number(movie.release_date.slice(0,4))
     : null,
-                 
+                 director:
+director,
+                  
                 status:
                   "watched"
 
@@ -1626,6 +1640,10 @@ release_year:
   movie.release_date
     ? Number(movie.release_date.slice(0,4))
     : null,
+
+                 director:
+                    director,
+                 
                  
                 status:
                   "watchlist"
