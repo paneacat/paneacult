@@ -256,7 +256,6 @@ if(hero && movie.backdrop_path){
     ✍ Scrivi recensione o vota
   </button>
 </div>
-<div id="userReviewsSection"></div>
 
     </div>
 
@@ -270,9 +269,7 @@ if(hero && movie.backdrop_path){
    checkPaneaReview(
   movie.id
 );
-loadCommunityReviews(
-  movie.id
-);   
+
   localStorage.setItem(
     "paneacult_selected_movie_html",
     selectedMovie.innerHTML
