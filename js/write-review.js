@@ -391,7 +391,7 @@ if(
 }
 
 window.location.href =
-  "explore.html";
+  "profilo.html";
 
 }
 );
@@ -531,7 +531,7 @@ alert(
 await updateCounters();
 
 window.location.href =
-  "explore.html";
+  "profilo.html";
   }
 );
 
