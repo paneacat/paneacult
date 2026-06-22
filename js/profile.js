@@ -950,7 +950,23 @@ async function renderRecentActivity(){
 }
 
 
+<div class="review-actions">
 
+  <button
+    class="edit-review-btn"
+    data-id="${review.id}"
+  >
+    ✏️ Modifica
+  </button>
+
+  <button
+    class="delete-review-btn"
+    data-id="${review.id}"
+  >
+    🗑 Elimina
+  </button>
+
+</div>
 
 /* =========================
    PROFILE COUNTERS
