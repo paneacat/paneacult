@@ -289,7 +289,9 @@ const { error } =
 
       movie_poster:
         selectedMovieData.poster_path,
-
+      director:
+  selectedMovieData.director || "",
+       
       rating:
         rating || null,
 
