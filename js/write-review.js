@@ -274,6 +274,11 @@ const slug =
     .replace(/[^\w-]+/g,"");
 
 const { error } =
+
+   console.log(selectedMovieData);
+console.log(selectedMovieData.director);
+
+     
   await supabaseClient
     .from("user_reviews")
     .upsert([{
