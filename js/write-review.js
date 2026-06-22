@@ -141,7 +141,7 @@ if(movieId){
       movieDetails,
       movieDetails
     );
-loadMovieReviews();
+     
     setupMovieButtons();
 
     if(movieSearchInput){
@@ -273,10 +273,6 @@ const slug =
     .replaceAll(" ","-")
     .replace(/[^\w-]+/g,"");
 
-
-
-   console.log(selectedMovieData);
-console.log(selectedMovieData.director);
 
    const { error } =  
   await supabaseClient
@@ -583,66 +579,3 @@ window.addEventListener(
 
   }
 );
-
-async function loadMovieReviews(){
-
-  if(!selectedMovieData)
-    return;
-
-  const { data } =
-    await supabaseClient
-      .from("user_reviews")
-      .select("*")
-      .eq(
-        "movie_id",
-        selectedMovieData.id
-      )
-      .order(
-        "created_at",
-        {
-          ascending:false
-        }
-      );
-
-  const container =
-    document.getElementById(
-      "movieReviews"
-    );
-
-  if(!container) return;
-
-  if(!data?.length){
-
-    container.innerHTML = `
-      <p>
-        Nessuna recensione della community.
-      </p>
-    `;
-
-    return;
-
-  }
-
-  container.innerHTML =
-
-    data.map(review => `
-
-      <div class="movie-review-card">
-
-        <strong>
-          @${review.username}
-        </strong>
-
-        <span>
-          ${review.rating || "-"} ★
-        </span>
-
-        <p>
-          ${review.review_text || ""}
-        </p>
-
-      </div>
-
-    `).join("");
-
-}
