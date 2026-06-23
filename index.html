@@ -827,6 +827,12 @@ if (password !== PASSWORD) {
     </div>
 
   </footer>
+  <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js")
+    .then(() => console.log("Service Worker registrato"));
+}
+  </script>
   <script src="js/ui.js"></script>
 <script src="js/slider.js"></script>
 </body>
