@@ -16,16 +16,16 @@
     {
       "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-home.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
     }
   ]
 }
-
-"screenshots": [
-  {
-    "src": "screenshot-home.png",
-    "sizes": "1080x1920",
-    "type": "image/png",
-    "form_factor": "narrow"
-  }
-]
