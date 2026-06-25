@@ -921,27 +921,45 @@ async function renderRecentActivity(){
 
     reviews.map(review => `
 
-      <div
-        class="saved-card"
-        onclick="goToMovie(${review.movie_id})"
-      >
+      <div class="review-card">
 
-        <img
-          src="https://image.tmdb.org/t/p/w500${review.movie_poster}"
-          alt="${review.movie_title}"
-        >
+        <div class="review-left">
+
+<img
+  src="https://image.tmdb.org/t/p/w200${review.movie_poster}"
+  class="review-poster"
+>
+
+</div>
+
+<div class="review-right">
 
         <div class="saved-overlay">
 
-          <h3>
-            ${review.movie_title}
-          </h3>
+          <div class="review-header">
 
-          <span class="rating-stars">
+  <h3>${review.movie_title}</h3>
+
+</div>
+
+<div class="review-stars">
+
   ${renderStars(review.rating)}
-</span>
-<div class="review-actions">
 
+</div>
+
+<p class="review-text">
+
+  ${review.review_text || ""}
+
+</p>
+
+<small class="review-date">
+
+  ${new Date(review.created_at).toLocaleDateString("it-IT")}
+
+</small>
+<div class="review-actions">
   <button
     class="edit-review-btn"
     data-id="${review.id}"
@@ -957,7 +975,8 @@ async function renderRecentActivity(){
   </button>
 
 </div>
-      </div>
+</div>
+</div>
 
     `).join("");
 document
