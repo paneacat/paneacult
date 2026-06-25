@@ -329,7 +329,7 @@ section{
 
     font-size:2.3rem;
 
-    margin-bottom:6px;
+    margin-bottom:3px;
 
   }
 
@@ -341,7 +341,11 @@ section{
 
   }
 
+.activity-section{
 
+  margin-top: 2rem;
+
+}
 /* =========================
      USER BOX
   ========================= */
