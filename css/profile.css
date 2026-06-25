@@ -2128,17 +2128,30 @@ margin-left:6px;
 }
 
 .review-status{
-
-padding:5px 12px;
-
+display:inline-flex;
+padding:4px 10px;
 border-radius:999px;
-
 font-size:12px;
+font-weight:700;
+margin-top:8px;
+}
 
-font-weight:600;
+.review-status.watched{
+background:#1d3f28;
+color:#9cff9c;
+}
 
-background:#183b28;
+.review-status.favorite{
+background:#472538;
+color:#ff8ab8;
+}
 
-color:#8cff8c;
+.review-status.desert{
+background:#4b3511;
+color:#ffd15a;
+}
 
+.review-status.watchlist{
+background:#20364f;
+color:#86c7ff;
 }
