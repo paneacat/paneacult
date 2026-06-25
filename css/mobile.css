@@ -323,7 +323,16 @@ section{
 
   }
 
+  /* Contenitore dei contatori */
+  .profile-stats {
+    margin-bottom: 3px;   /* diminuisci questo valore */
+  }
 
+  /* Card Desert Island Film */
+  .desert-film,
+  .desert-island-film {
+    margin-top: 0;
+}
 
   .profile-stat span{
 
@@ -341,11 +350,6 @@ section{
 
   }
 
-.activity-section{
-
-  margin-top: 2rem;
-
-}
 /* =========================
      USER BOX
   ========================= */
