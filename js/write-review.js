@@ -290,6 +290,9 @@ const slug =
 
       movie_poster:
         selectedMovieData.poster_path,
+       status:
+  currentMovieStatus || "watched",
+       
       director:
   selectedMovieData.director || "",
        
