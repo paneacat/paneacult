@@ -938,7 +938,33 @@ async function renderRecentActivity(){
 
           <div class="review-header">
 
-  <h3>${review.movie_title}</h3>
+  <div>
+
+    <h3>
+      ${review.movie_title}
+      <span class="review-year">
+        ${review.release_year || ""}
+      </span>
+    </h3>
+
+  </div>
+
+  <span class="review-status">
+
+    ${
+      review.status === "desert"
+      ? "🌴 DESERT"
+
+      : review.status === "favorite"
+      ? "❤️ ADORATO"
+
+      : review.status === "watched"
+      ? "👁 VISTO"
+
+      : "🎬 WATCHLIST"
+    }
+
+  </span>
 
 </div>
 
