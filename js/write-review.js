@@ -290,8 +290,8 @@ const slug =
 
       movie_poster:
         selectedMovieData.poster_path,
-       status:
-  currentMovieStatus || "watched",
+     status:
+  currentMovieStatus || "watched",  
        
       director:
   selectedMovieData.director || "",
@@ -301,7 +301,7 @@ const slug =
 
       review_text:
         reviewTextValue.trim() || null,
-
+       
       username:
         username,
        
