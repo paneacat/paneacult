@@ -978,21 +978,31 @@ async function renderRecentActivity(){
 
   ${new Date(review.created_at).toLocaleDateString("it-IT")}
 
-</small>
-<div class="review-actions">
-  <button
-    class="edit-review-btn"
-    data-id="${review.id}"
-  >
-    ✏️ Modifica
-  </button>
+<div class="review-menu">
 
   <button
-    class="delete-review-btn"
-    data-id="${review.id}"
+    class="review-menu-btn"
   >
-    🗑 Elimina
+    ⋮
   </button>
+
+  <div class="review-dropdown">
+
+    <button
+      class="edit-review-btn"
+      data-id="${review.id}"
+    >
+      ✏️ Modifica
+    </button>
+
+    <button
+      class="delete-review-btn"
+      data-id="${review.id}"
+    >
+      🗑️ Elimina
+    </button>
+
+  </div>
 
 </div>
 </div>
