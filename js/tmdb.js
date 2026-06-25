@@ -483,7 +483,7 @@ async function loadMovieStatuses(){
     data:{ user }
   } =
   await supabaseClient.auth
-    .getUser();
+    .getUser(); 
 
   if(
     !user ||
@@ -504,7 +504,10 @@ async function loadMovieStatuses(){
       "movie_id",
       selectedMovieData.id
     );
-
+   
+currentMovieStatus =
+  data?.[0]?.status || null;
+   
   document
     .getElementById(
       "markWatchlistBtn"
@@ -859,7 +862,7 @@ async function toggleMovieStatus(status){
       break;
 
   }
-
+currentMovieStatus = status;
   await loadMovieStatuses();
 
 }
