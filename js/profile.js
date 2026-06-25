@@ -949,23 +949,17 @@ async function renderRecentActivity(){
 
   </div>
 
-  <span class="review-status">
-
-    ${
-      review.status === "desert"
-      ? "🌴 DESERT"
-
+<div class="review-status ${review.status || ""}">
+  ${
+    review.status === "desert"
+      ? "🌴 Desert Island"
       : review.status === "favorite"
-      ? "❤️ ADORATO"
-
-      : review.status === "watched"
-      ? "👁 VISTO"
-
-      : "🎬 WATCHLIST"
-    }
-
-  </span>
-
+      ? "❤️ Adorato"
+      : review.status === "watchlist"
+      ? "🎬 Watchlist"
+      : "👁 Visto"
+  }
+</div>
 </div>
 
 <div class="review-stars">
