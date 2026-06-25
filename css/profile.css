@@ -2114,3 +2114,31 @@ margin-top:auto;
 }
 
 
+
+.review-year{
+
+font-size:16px;
+
+font-weight:400;
+
+opacity:.6;
+
+margin-left:6px;
+
+}
+
+.review-status{
+
+padding:5px 12px;
+
+border-radius:999px;
+
+font-size:12px;
+
+font-weight:600;
+
+background:#183b28;
+
+color:#8cff8c;
+
+}
