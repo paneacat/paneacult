@@ -955,20 +955,13 @@ reviews
 
     <div class="review-actions">
 
-        <button
-            class="review-btn edit edit-review-btn"
-            data-id="${review.id}">
-            <i class="fa-solid fa-pencil"></i>
-<span>Modifica</span>
-        </button>
+        <button class="review-btn edit edit-review-btn" data-id="${review.id}">
+    <i class="fa-solid fa-pen"></i>
+</button>
 
-        <button
-            class="review-btn delete delete-review-btn"
-            data-id="${review.id}">
-            <i class="fa-solid fa-trash"></i>
-<span>Elimina</span>
-        </button>
-
+<button class="review-btn delete delete-review-btn" data-id="${review.id}">
+    <i class="fa-solid fa-trash"></i>
+</button>
     </div>
 
 </div>
