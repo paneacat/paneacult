@@ -917,8 +917,6 @@ async function renderRecentActivity(){
 
   }
 
-  activityFeed.innerHTML =
-     
    const allReviews =
 document.getElementById("allReviews");
 
@@ -930,7 +928,7 @@ if(allReviews){
     `).join("");
 
 }
-   
+  activityFeed.innerHTML =
 reviews
 .slice(0,3)
 .map(review => `
