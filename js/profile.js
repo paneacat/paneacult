@@ -918,97 +918,63 @@ async function renderRecentActivity(){
   }
 
   activityFeed.innerHTML =
+reviews
+.slice(0,3)
+.map(review => `
 
-    reviews.map(review => `
+<div class="review-card">
 
-      <div class="review-card">
-
-        <div class="review-left">
-
-<img
-  src="https://image.tmdb.org/t/p/w200${review.movie_poster}"
-  class="review-poster"
->
-
-</div>
-
-<div class="review-right">
-
-        <div class="saved-overlay">
-
-          <div class="review-header">
-
-  <div>
-
-    <h3>
-      ${review.movie_title}
-      <span class="review-year">
-        ${review.release_year || ""}
-      </span>
-    </h3>
-
-  </div>
-
-<div class="review-status ${review.status || ""}">
-  ${
-    review.status === "desert"
-      ? "🌴 Desert Island"
-      : review.status === "favorite"
-      ? "❤️ Adorato"
-      : review.status === "watchlist"
-      ? "🎬 Watchlist"
-      : "👁 Visto"
-  }
-</div>
-</div>
-
-<div class="review-stars">
-
-  ${renderStars(review.rating)}
-
-</div>
-
-<p class="review-text">
-
-  ${review.review_text || ""}
-
-</p>
-
-<small class="review-date">
-
-  ${new Date(review.created_at).toLocaleDateString("it-IT")}
-
-<div class="review-menu">
-
-  <button
-    class="review-menu-btn"
-  >
-    ⋮
-  </button>
-
-  <div class="review-dropdown">
-
-    <button
-      class="edit-review-btn"
-      data-id="${review.id}"
+    <img
+        class="review-poster"
+        src="https://image.tmdb.org/t/p/w200${review.movie_poster}"
     >
-      ✏️ Modifica
-    </button>
 
-    <button
-      class="delete-review-btn"
-      data-id="${review.id}"
-    >
-      🗑️ Elimina
-    </button>
+    <div class="review-content">
 
-  </div>
+        <h3 class="review-title">
+            ${review.movie_title}
+            <span class="review-year">
+                ${review.release_year || ""}
+            </span>
+        </h3>
+
+        <div class="review-stars">
+            ${renderStars(review.rating)}
+        </div>
+
+        <p class="review-text">
+            ${review.review_text || ""}
+        </p>
+
+        <div class="review-date">
+            ${new Date(review.created_at).toLocaleDateString("it-IT")}
+        </div>
+
+    </div>
+
+    <div class="review-actions">
+
+        <button
+            class="review-btn edit edit-review-btn"
+            data-id="${review.id}">
+            ✏️
+            <span>Modifica</span>
+        </button>
+
+        <button
+            class="review-btn delete delete-review-btn"
+            data-id="${review.id}">
+            🗑️
+            <span>Elimina</span>
+        </button>
+
+    </div>
 
 </div>
-</div>
-</div>
 
-    `).join("");
+`).join("");
+
+   
 document
   .querySelectorAll(".delete-review-btn")
   .forEach(btn => {
