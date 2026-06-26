@@ -2076,8 +2076,12 @@ section{
     display:none;
   }
   .favorite-section{
-    transform: translateY(-40px);
-  
+
+    margin-top:-30px !important;
+
+    padding-top:0 !important;
+
+  }
  }
 
 
