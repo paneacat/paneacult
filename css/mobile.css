@@ -2077,6 +2077,31 @@ section{
     margin-top:-20px !important;
 
   }
+  .review-card{
+  padding:14px;
+  gap:14px;
+}
+
+.review-poster{
+  width:72px;
+}
+
+.review-actions{
+
+  flex-direction:column;
+
+  gap:8px;
+}
+
+.review-btn{
+
+  width:58px;
+  height:58px;
+}
+
+.review-title{
+  font-size:1.2rem;
+}
  }
 
 
