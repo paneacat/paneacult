@@ -1948,14 +1948,8 @@ document
     filterFavorites
   );
 
-document.querySelector(".see-all-reviews").onclick = () => {
-
-  document.getElementById("reviewsOverlay").classList.add("open");
-
-};
-
-document.getElementById("closeReviews").onclick = () => {
+document.getElementById("closeReviews").addEventListener("click", function () {
 
   document.getElementById("reviewsOverlay").classList.remove("open");
 
-};
+});
