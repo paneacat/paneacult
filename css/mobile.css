@@ -293,7 +293,8 @@ section{
 
     min-height:auto;
 
-    padding:120px 24px 60px;
+    padding-top:120px 
+    padding-bottom:24px
 
   }
 
@@ -1569,7 +1570,7 @@ section{
     max-width:340px;
 
     margin:14px auto 0;
-    margin-bottom:16px !important;
+    margin-bottom:0 !important;
 
     padding-top:0 !important;
 
