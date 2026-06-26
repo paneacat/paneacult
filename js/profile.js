@@ -917,23 +917,10 @@ async function renderRecentActivity(){
 
   }
 
-   const allReviews =
-document.getElementById("allReviews");
+   function renderReviewCards(reviews){
 
-if(allReviews){
-
-    allReviews.innerHTML =
-    reviews.map(review => `
-        ...
-    `).join("");
-
-}
-  activityFeed.innerHTML =
-reviews
-.slice(0,3)
-.map(review => `
-
-<div class="review-card">
+    return reviews.map(review => `
+        <div class="review-card">
 
     <img
         class="review-poster"
@@ -962,6 +949,23 @@ reviews
         </div>
 
     </div>
+    `).join("");
+
+   }
+   activityFeed.innerHTML =
+renderReviewCards(reviews.slice(0,3));
+
+   const allReviews =
+document.getElementById("allReviews");
+
+if(allReviews){
+
+    allReviews.innerHTML =
+    renderReviewCards(reviews);
+
+}
+
+
 
     <div class="review-actions">
 
