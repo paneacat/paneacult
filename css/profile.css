@@ -2134,26 +2134,34 @@ font-size:.9rem;
 }
 
 .review-btn{
-    width:56px;
-    height:56px;
+    background:none;
+    border:none;
 
-    border-radius:14px;
-
-    background:#111b23;
-    border:1px solid rgba(255,255,255,.08);
+    padding:4px 0;
 
     display:flex;
-    flex-direction:column;
     align-items:center;
-    justify-content:center;
+    gap:6px;
 
     cursor:pointer;
-}
-.review-btn i{
-    font-size:1rem;
-    margin-bottom:4px;
+
+    font-size:.9rem;
+    font-weight:600;
 }
 
+.review-btn.edit{
+    color:#ffffff;
+}
+
+.review-btn.delete{
+    color:#ff5d5d;
+}
+
+
+.review-btn i{
+    font-size:1rem;
+    margin:0;
+}
 .review-btn span{
     font-size:.72rem;
     font-weight:600;
