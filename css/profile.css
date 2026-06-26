@@ -2237,3 +2237,60 @@ display:flex;
 flex-direction:column;
 
 }
+
+
+.current-favorite{
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    padding:22px;
+
+    border-radius:28px;
+
+    background:linear-gradient(
+        135deg,
+        #173848,
+        #233f39
+    );
+}
+
+.current-favorite img{
+
+    width:120px;
+
+    border-radius:18px;
+
+    flex-shrink:0;
+
+}
+
+.favorite-info{
+
+    flex:1;
+
+}
+
+.favorite-kicker{
+
+    color:#fdc103;
+
+    letter-spacing:4px;
+
+    font-size:13px;
+
+}
+
+.favorite-info h2{
+
+    margin:12px 0;
+
+    font-size:42px;
+
+}
+
+.favorite-info p{
+
+    opacity:.8;
+
+}
