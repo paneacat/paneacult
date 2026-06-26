@@ -1950,20 +1950,27 @@ document
 
 document
 .querySelector(".see-all-reviews")
-.onclick=()=>{
+.onclick = () => {
 
-document
-.getElementById("reviewsOverlay")
-.classList.add("open");
+  document
+    .getElementById("allReviews")
+    .innerHTML =
+      document
+        .getElementById("activityFeed")
+        .innerHTML;
+
+  document
+    .getElementById("reviewsOverlay")
+    .classList.add("open");
 
 };
 
 document
 .getElementById("closeReviews")
-.onclick=()=>{
+.onclick = () => {
 
-document
-.getElementById("reviewsOverlay")
-.classList.remove("open");
+  document
+    .getElementById("reviewsOverlay")
+    .classList.remove("open");
 
 };
