@@ -186,10 +186,6 @@ alt="${
 
       <div class="saved-overlay">
 
-        <h3>
-  ${movie.movie_title}
-</h3>
-
 <span class="movie-director">
   ${movie.director ? "di " + movie.director : ""}
 </span>
