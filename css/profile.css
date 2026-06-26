@@ -2026,63 +2026,6 @@ opacity:1;
 }
 
 
-.review-card{
-
-display:flex;
-gap:16px;
-
-padding:16px;
-margin-bottom:18px;
-
-background:#10222f;
-
-border-radius:18px;
-
-align-items:flex-start;
-
-}
-
-.review-poster{
-
-width:85px;
-
-border-radius:12px;
-
-display:block;
-
-}
-
-.review-btn{
-
-  width:72px;
-  height:72px;
-
-  border-radius:18px;
-
-  background:#111b23;
-
-  border:1px solid rgba(255,255,255,.08);
-
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-
-  cursor:pointer;
-}
-
-.review-btn i{
-  font-size:1.4rem;
-  margin-bottom:8px;
-}
-
-.review-btn.edit{
-  color:#fdc103;
-}
-
-.review-btn.delete{
-  color:#ff5d5d;
-}
 
 .reviews-overlay{
 
