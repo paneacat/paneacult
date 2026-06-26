@@ -2100,9 +2100,11 @@ flex:1;
 }
 
 .review-title{
-font-size:1.45rem;
-line-height:1.2;
-margin-bottom:6px;
+    font-family:"Playfair Display",serif;
+    font-size:2rem;
+    font-weight:700;
+    margin-bottom:8px;
+    color:#fff;
 }
 
 .review-year{
@@ -2116,8 +2118,9 @@ margin-bottom:10px;
 }
 
 .review-text{
-color:#d8d8d8;
-line-height:1.6;
+font-size:1rem;
+    color:#d9dde2;
+    line-height:1.6;
 margin-bottom:16px;
 display:-webkit-box;
 -webkit-line-clamp:2;
@@ -2131,29 +2134,29 @@ font-size:.9rem;
 }
 
 .review-actions{
-
-  display:flex;
-
-  gap:14px;
-
-  align-items:flex-start;
-
+    display:flex;
+    gap:14px;
+    align-items:center;
 }
 
 .review-btn{
+    width:90px;
+    height:90px;
 
-  background:none;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
-  border:none;
+    border-radius:18px;
 
-  width:auto;
+    background:#111b23;
 
-  height:auto;
+    border:1px solid rgba(255,255,255,.08);
 
-  padding:0;
+    color:white;
 
-  cursor:pointer;
-
+    font-size:.9rem;
 }
 
 .review-btn i{
