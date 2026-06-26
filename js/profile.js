@@ -1953,3 +1953,10 @@ document.getElementById("closeReviews").addEventListener("click", function () {
   document.getElementById("reviewsOverlay").classList.remove("open");
 
 });
+
+
+document.getElementById("closeReviews").addEventListener("click", function () {
+
+  document.getElementById("reviewsOverlay").classList.remove("open");
+
+});
