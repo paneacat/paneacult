@@ -2079,10 +2079,11 @@ gap:18px;
 }
 
 .review-card{
-display:flex;
-gap:18px;
-align-items:flex-start;
-padding:20px 24px;
+   display:grid;
+    grid-template-columns:120px 1fr 110px;
+    gap:28px;
+    align-items:center;
+    padding:24px 28px;
 justify-content:space-between;
 border-radius:24px;
 background:rgba(14,28,36,.75);
@@ -2090,13 +2091,15 @@ border:1px solid rgba(255,255,255,.06);
 }
 
 .review-poster{
-width:80px;
-border-radius:14px;
-flex-shrink:0;
+    width:120px;
+    height:180px;
+    object-fit:cover;
+    border-radius:18px;
 }
 
 .review-content{
 flex:1;
+  width:100%; 
 }
 
 .review-title{
@@ -2114,11 +2117,12 @@ margin-left:8px;
 
 .review-stars{
 color:#fdc103;
+   font-size:1.4rem;
 margin-bottom:10px;
 }
 
 .review-text{
-font-size:1rem;
+font-size:1.4rem;
     color:#d9dde2;
     line-height:1.6;
 margin-bottom:16px;
