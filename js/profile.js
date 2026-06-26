@@ -958,15 +958,15 @@ reviews
         <button
             class="review-btn edit edit-review-btn"
             data-id="${review.id}">
-            ✏️
-            <span>Modifica</span>
+            <i class="fa-solid fa-pencil"></i>
+<span>Modifica</span>
         </button>
 
         <button
             class="review-btn delete delete-review-btn"
             data-id="${review.id}">
-            🗑️
-            <span>Elimina</span>
+            <i class="fa-solid fa-trash"></i>
+<span>Elimina</span>
         </button>
 
     </div>
