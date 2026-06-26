@@ -2135,8 +2135,8 @@ font-size:.9rem;
 
 .review-actions{
     display:flex;
-    gap:14px;
-    align-items:center;
+    flex-direction:column;
+    gap:16px;
 }
 
 .review-btn{
