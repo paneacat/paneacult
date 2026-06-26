@@ -1860,12 +1860,10 @@ section{
     display:block !important;
 
   } 
-  .profile-edit{
 
-  width:100%;
-
-  margin-top:26px;
-
+.profile-edit{
+    margin:0 !important;
+    padding:0 !important;
 }
 
 #saveProfileBtn{
@@ -2075,11 +2073,11 @@ section{
   .movie-card.hidden-mobile{
     display:none;
   }
+  
   .favorite-section{
-
     margin-top:-30px !important;
-
-    padding-top:0 !important;
+    padding-top:0 !important
+    margin-top:-25px !important;
 
   }
  }
