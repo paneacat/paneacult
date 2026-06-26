@@ -917,17 +917,6 @@ async function renderRecentActivity(){
 
   }
 
-   const allReviews =
-document.getElementById("allReviews");
-
-if(allReviews){
-
-    allReviews.innerHTML =
-    reviews.map(review => `
-        ...
-    `).join("");
-
-}
   activityFeed.innerHTML =
 reviews
 .slice(0,3)
@@ -980,31 +969,38 @@ reviews
 
    
 document
-  .querySelectorAll(".delete-review-btn")
-  .forEach(btn => {
+.querySelectorAll(".delete-review-btn")
+.forEach(btn => {
 
-    btn.onclick = async () => {
+  btn.onclick = async () => {
 
-      if(
-        !confirm(
-          "Eliminare la recensione?"
-        )
-      ) return;
+    if(!confirm("Eliminare la recensione?")) return;
 
-      await supabaseClient
-        .from("user_reviews")
-        .delete()
-        .eq(
-          "id",
-          btn.dataset.id
-        );
+    await supabaseClient
+      .from("user_reviews")
+      .delete()
+      .eq("id", btn.dataset.id);
 
-      loadReviews();
+    await renderRecentActivity();
+    updateCounters();
 
-    };
+  };
 
-  });
-}
+});
+
+
+document
+.querySelectorAll(".edit-review-btn")
+.forEach(btn => {
+
+  btn.onclick = () => {
+
+    window.location.href =
+      `add-review.html?edit=${btn.dataset.id}`;
+
+  };
+
+});
 
 /* =========================
    PROFILE COUNTERS
