@@ -2122,7 +2122,7 @@ margin-bottom:10px;
 }
 
 .review-text{
-font-size:1.4rem;
+font-size:1rem;
     color:#d9dde2;
     line-height:1.6;
 margin-bottom:16px;
@@ -2140,41 +2140,31 @@ font-size:.9rem;
 .review-actions{
     display:flex;
     flex-direction:column;
-    gap:16px;
+    gap:8px;
 }
 
 .review-btn{
-    width:90px;
-    height:90px;
+    width:56px;
+    height:56px;
+
+    border-radius:14px;
+
+    background:#111b23;
+    border:1px solid rgba(255,255,255,.08);
 
     display:flex;
     flex-direction:column;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
 
-    border-radius:18px;
-
-    background:#111b23;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    color:white;
-
-    font-size:.9rem;
+    cursor:pointer;
 }
-
 .review-btn i{
-
-  font-size:1.2rem;
-
-  margin:0;
-
+    font-size:1rem;
+    margin-bottom:4px;
 }
 
-.review-btn.edit{
-color:#fdc103;
-}
-
-.review-btn.delete{
-color:#ff5d5d;
+.review-btn span{
+    font-size:.72rem;
+    font-weight:600;
 }
