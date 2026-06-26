@@ -2078,6 +2078,11 @@ section{
   .movie-card.hidden-mobile{
     display:none;
   }
+  .favorite-section{
+    margin-top:0 !important;
+    padding-top:0 !important;
+  }
+  
  }
 
 
