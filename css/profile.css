@@ -101,7 +101,7 @@
 
   font-family:"Playfair Display", serif;
 
-  font-size:clamp(1.8rem,4vw,3rem);
+  font-size:1rem;
 
   line-height:1.3;
 
@@ -278,7 +278,7 @@ letter-spacing:.04em;
 
 .profile-username{
 
-  font-size:.82rem;
+  font-size:1.3rem;
 
   letter-spacing:.28em;
 
@@ -291,7 +291,7 @@ letter-spacing:.04em;
 
 .profile-bio{
 
-  font-size:1.1rem;
+  font-size:1.2rem;
 
   line-height:1.7;
 
@@ -327,16 +327,6 @@ letter-spacing:.04em;
   overflow:hidden;
 
   padding:2px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #0b2f44,
-      #1d5d86
-    );
-
-  box-shadow:
-    0 12px 35px rgba(11,47,68,.25);
 
 }
 
@@ -1442,7 +1432,7 @@ letter-spacing:.04em;
 
 .section-kicker{
 
-  font-size:.72rem;
+  font-size:1.4rem;
 
   letter-spacing:.24em;
 
