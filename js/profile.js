@@ -919,6 +919,18 @@ async function renderRecentActivity(){
 
   activityFeed.innerHTML =
      
+   const allReviews =
+document.getElementById("allReviews");
+
+if(allReviews){
+
+    allReviews.innerHTML =
+    reviews.map(review => `
+        ...
+    `).join("");
+
+}
+   
 reviews
 .slice(0,3)
 .map(review => `
