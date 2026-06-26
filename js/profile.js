@@ -1,4 +1,4 @@
-/* =========================
+=
    PROFILE MOVIES
 ========================= */
 
@@ -917,10 +917,23 @@ async function renderRecentActivity(){
 
   }
 
-   function renderReviewCards(reviews){
+   const allReviews =
+document.getElementById("allReviews");
 
-    return reviews.map(review => `
-        <div class="review-card">
+if(allReviews){
+
+    allReviews.innerHTML =
+    reviews.map(review => `
+        ...
+    `).join("");
+
+}
+  activityFeed.innerHTML =
+reviews
+.slice(0,3)
+.map(review => `
+
+<div class="review-card">
 
     <img
         class="review-poster"
@@ -949,23 +962,6 @@ async function renderRecentActivity(){
         </div>
 
     </div>
-    `).join("");
-
-   }
-   activityFeed.innerHTML =
-renderReviewCards(reviews.slice(0,3));
-
-   const allReviews =
-document.getElementById("allReviews");
-
-if(allReviews){
-
-    allReviews.innerHTML =
-    renderReviewCards(reviews);
-
-}
-
-
 
     <div class="review-actions">
 
