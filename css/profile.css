@@ -2130,39 +2130,34 @@ font-size:.9rem;
 .review-actions{
     display:flex;
     flex-direction:column;
-    gap:8px;
+    gap:10px;
+    align-items:center;
 }
 
 .review-btn{
     background:none;
     border:none;
-
-    padding:4px 0;
-
-    display:flex;
-    align-items:center;
-    gap:6px;
-
+    padding:6px;
     cursor:pointer;
+}
 
-    font-size:.9rem;
-    font-weight:600;
+.review-btn i{
+    font-size:1.1rem;
+    margin:0;
+}
+
+.review-btn span{
+    display:none;
 }
 
 .review-btn.edit{
-    color:#ffffff;
+    color:#fff;
 }
 
 .review-btn.delete{
     color:#ff5d5d;
 }
 
-
-.review-btn i{
-    font-size:1rem;
-    margin:0;
-}
-.review-btn span{
-    font-size:.72rem;
-    font-weight:600;
+.review-btn:hover{
+    opacity:.75;
 }
