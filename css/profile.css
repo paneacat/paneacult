@@ -2359,3 +2359,20 @@ flex-direction:column;
   display:block;
 
 }
+
+
+.reviews-overlay-header{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  margin-bottom:30px;
+}
+
+#closeReviews{
+  background:none;
+  border:none;
+  color:#fdc103;
+  font-size:1rem;
+  cursor:pointer;
+  z-index:10001;
+}
