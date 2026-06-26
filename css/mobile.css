@@ -1630,11 +1630,7 @@ section{
     align-items:center !important;
 
     justify-content:flex-start !important;
-
-    gap:18px !important;
-    margin-top:0 !important;
-
-    padding:12px !important;
+    margin:10px auto 0;
 
   }
 
