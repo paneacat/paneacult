@@ -874,133 +874,148 @@ function renderSignature(){
 
 }
 
-
-
 async function renderRecentActivity(){
 
   if(!activityFeed) return;
 
-  const {
-    data:{ user }
-  } =
-  await supabaseClient.auth
-    .getUser();
+  const { data:{ user } } =
+    await supabaseClient.auth.getUser();
 
   if(!user) return;
 
-  const {
-    data: reviews
-  } =
-  await supabaseClient
-    .from("user_reviews")
-    .select("*")
-    .eq(
-      "user_id",
-      user.id
-    )
-    .order(
-      "created_at",
-      {
-        ascending:false
-      }
-    );
-  
-  if(!reviews?.length){
+  const { data: reviews } =
+    await supabaseClient
+      .from("user_reviews")
+      .select("*")
+      .eq("user_id", user.id)
+      .order("created_at",{ascending:false});
 
-    activityFeed.innerHTML = `
+  if(!reviews || reviews.length===0){
+
+    activityFeed.innerHTML=`
       <p class="empty-text">
-        Nessun film votato.
+        Nessuna recensione.
       </p>
     `;
 
+    const overlay=document.getElementById("allReviews");
+    if(overlay) overlay.innerHTML="";
+
     return;
+  }
+
+  function card(review){
+
+    return `
+
+<div class="review-card">
+
+<img
+class="review-poster"
+src="https://image.tmdb.org/t/p/w200${review.movie_poster}"
+>
+
+<div class="review-content">
+
+<h3 class="review-title">
+${review.movie_title}
+<span class="review-year">
+${review.release_year || ""}
+</span>
+</h3>
+
+<div class="review-stars">
+${renderStars(review.rating)}
+</div>
+
+<p class="review-text">
+${review.review_text || ""}
+</p>
+
+<div class="review-date">
+${new Date(review.created_at).toLocaleDateString("it-IT")}
+</div>
+
+</div>
+
+<div class="review-actions">
+
+<button
+class="review-btn edit-review-btn"
+data-id="${review.id}">
+<i class="fa-solid fa-pen"></i>
+</button>
+
+<button
+class="review-btn delete-review-btn"
+data-id="${review.id}">
+<i class="fa-solid fa-trash"></i>
+</button>
+
+</div>
+
+</div>
+
+`;
 
   }
 
   activityFeed.innerHTML =
-reviews
-.slice(0,3)
-.map(review => `
+    reviews
+      .slice(0,3)
+      .map(card)
+      .join("");
 
-<div class="review-card">
+  const allReviews =
+    document.getElementById("allReviews");
 
-    <img
-        class="review-poster"
-        src="https://image.tmdb.org/t/p/w200${review.movie_poster}"
-    >
+  if(allReviews){
 
-    <div class="review-content">
+    allReviews.innerHTML =
+      reviews
+        .map(card)
+        .join("");
 
-        <h3 class="review-title">
-            ${review.movie_title}
-            <span class="review-year">
-                ${review.release_year || ""}
-            </span>
-        </h3>
+  }
 
-        <div class="review-stars">
-            ${renderStars(review.rating)}
-        </div>
+  document
+    .querySelectorAll(".edit-review-btn")
+    .forEach(btn=>{
 
-        <p class="review-text">
-            ${review.review_text || ""}
-        </p>
+      btn.onclick=()=>{
 
-        <div class="review-date">
-            ${new Date(review.created_at).toLocaleDateString("it-IT")}
-        </div>
+        window.location.href=
+`add-review.html?edit=${btn.dataset.id}`;
 
-    </div>
+      };
 
-    <div class="review-actions">
+    });
 
-        <button class="review-btn edit edit-review-btn" data-id="${review.id}">
-    <i class="fa-solid fa-pen"></i>
-</button>
+  document
+    .querySelectorAll(".delete-review-btn")
+    .forEach(btn=>{
 
-<button class="review-btn delete delete-review-btn" data-id="${review.id}">
-    <i class="fa-solid fa-trash"></i>
-</button>
-    </div>
+      btn.onclick=async()=>{
 
-</div>
+        if(!confirm("Eliminare la recensione?"))
+          return;
 
-`).join("");
+        await supabaseClient
+          .from("user_reviews")
+          .delete()
+          .eq("id",btn.dataset.id);
 
-   
-document
-.querySelectorAll(".delete-review-btn")
-.forEach(btn => {
+        await renderRecentActivity();
+        updateCounters();
 
-  btn.onclick = async () => {
+      };
 
-    if(!confirm("Eliminare la recensione?")) return;
+    });
 
-    await supabaseClient
-      .from("user_reviews")
-      .delete()
-      .eq("id", btn.dataset.id);
-
-    await renderRecentActivity();
-    updateCounters();
-
-  };
-
-});
+}
 
 
-document
-.querySelectorAll(".edit-review-btn")
-.forEach(btn => {
 
-  btn.onclick = () => {
-
-    window.location.href =
-      `add-review.html?edit=${btn.dataset.id}`;
-
-  };
-
-});
 
 /* =========================
    PROFILE COUNTERS
