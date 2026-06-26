@@ -1630,14 +1630,14 @@ section{
     align-items:center !important;
     justify-content:flex-start !important;
     margin:10px auto 0 !important;
-    gap:18px !important;
+    gap:14px !important;
     margin-top: 0 !important;
-
+    padding:18px;
   }
 
   .current-favorite img{
 
-    width:110px !important;
+    width:105px !important;
 
     min-width:110px !important;
 
@@ -1662,10 +1662,9 @@ section{
   }
   
 
-  .current-favorite h3{
+  .current-favorite h2{
 
-    font-size:2rem;
-
+    font-size:32px;
     margin-bottom:10px;
 
   }
