@@ -2237,3 +2237,102 @@ display:flex;
 flex-direction:column;
 
 }
+
+
+.reviews-section{
+  margin-top:70px;
+}
+
+.reviews-list{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.review-card{
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+
+  padding:18px;
+
+  border-radius:24px;
+
+  background:rgba(14,28,36,.75);
+
+  border:1px solid rgba(255,255,255,.06);
+}
+
+.review-poster{
+  width:90px;
+  border-radius:14px;
+  flex-shrink:0;
+}
+
+.review-content{
+  flex:1;
+}
+
+.review-title{
+  font-family:"Playfair Display",serif;
+  font-size:1.6rem;
+  margin-bottom:8px;
+}
+
+.review-year{
+  color:#9caab3;
+  margin-left:8px;
+}
+
+.review-stars{
+  color:#fdc103;
+  margin-bottom:10px;
+}
+
+.review-text{
+  color:#d8d8d8;
+  line-height:1.6;
+  margin-bottom:16px;
+}
+
+.review-date{
+  color:#8a9aa5;
+  font-size:.9rem;
+}
+
+.review-actions{
+  display:flex;
+  gap:12px;
+}
+
+.review-btn{
+
+  width:72px;
+  height:72px;
+
+  border-radius:18px;
+
+  background:#111b23;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+}
+
+.review-btn i{
+  font-size:1.4rem;
+  margin-bottom:8px;
+}
+
+.review-btn.edit{
+  color:#fdc103;
+}
+
+.review-btn.delete{
+  color:#ff5d5d;
+}
