@@ -2075,8 +2075,8 @@ section{
   }
   
   .favorite-section{
-    margin: 1rem auto !important;
-    padding-top: 24px !important;
+    margin-top:-20px !important;
+
   }
  }
 
