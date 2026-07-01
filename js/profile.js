@@ -1116,15 +1116,16 @@ if(cinephileLevel){
   const currentLevel =
     getCinephileLevel(watched);
 
-  cinephileLevel.textContent =
-    `${currentLevel.level} • ${watched} film visti`;
+   const {
+  data: profile
+} = await supabaseClient
+  .from("profiles")
+  .select("cinephile_rank")
+  .eq("id", user.id)
+  .single();
 
-}
-
-   const previousRank =
-  Number(
-    localStorage.getItem("cinephile_rank") || 0
-  );
+const previousRank =
+  profile?.cinephile_rank || 1;
 
 if(currentLevel.rank > previousRank){
 
@@ -1132,10 +1133,12 @@ if(currentLevel.rank > previousRank){
     `🎉 Congratulazioni!\n\nHai raggiunto il livello\n${currentLevel.level}!`
   );
 
-  localStorage.setItem(
-    "cinephile_rank",
-    currentLevel.rank
-  );
+  await supabaseClient
+    .from("profiles")
+    .update({
+      cinephile_rank: currentLevel.rank
+    })
+    .eq("id", user.id);
 
 }
    
