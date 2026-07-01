@@ -25,6 +25,10 @@ const reviewForm =
     "reviewForm"
   );
 
+if (reviewForm) {
+  reviewForm.classList.add("hidden-review-form");
+}
+
 let selectedMovieData = null;
 let currentMovieStatus = null;
 
