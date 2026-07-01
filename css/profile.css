@@ -1609,20 +1609,15 @@ opacity:1;
    PROFILE EDIT
 ========================= */
 #editProfileBtn{
-    background: transparent;
-    border: 1px solid #fcc10e;
-    color: #fcc10e;
-    padding: 10px 18px;
-    border-radius: 999px;
+    all: unset;
+    color: #fff;
     cursor: pointer;
-    font-size: .95rem;
-    font-weight: 600;
-    transition: .2s;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 #editProfileBtn:hover{
-    background: #fcc10e;
-    color: #193c4e;
+    color: #fcc10e;
 }
 
 /* TEXTAREA */
