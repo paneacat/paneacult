@@ -156,9 +156,11 @@ if(movieId){
 
     if (window.innerWidth > 768) {
         reviewForm.classList.add("hidden-review-form");
+    } else {
+        reviewForm.classList.remove("hidden-review-form");
     }
     }
-
+     
   });
 
 }
