@@ -151,15 +151,12 @@ if(movieId){
 
     }
 
-    if(reviewForm){
+    if (reviewForm) {
+    reviewForm.style.display = "block";
 
-      reviewForm.style.display =
-        "block";
-
-      reviewForm.classList.add(
-        "hidden-review-form"
-      );
-
+    if (window.innerWidth > 768) {
+        reviewForm.classList.add("hidden-review-form");
+    }
     }
 
   });
