@@ -2104,8 +2104,12 @@ section{
 }
 
  #writeReviewBtn {
-    display: none;
- }
+        display: none;
+    }
+
+    #reviewForm.hidden-review-form {
+        display: block !important;
+    }
  }
 
 
