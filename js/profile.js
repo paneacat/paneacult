@@ -1350,18 +1350,23 @@ saveProfileBtn?.addEventListener("click", async () => {
   data: { user }
 } = await supabaseClient.auth.getUser();
 
-const { error } = await supabaseClient
+if (!user) {
+  console.log("Utente non trovato");
+  return;
+}
+
+const { data, error } = await supabaseClient
   .from("profiles")
   .upsert({
     id: user.id,
     username: newUsername,
     bio: newBio
-  });
+  })
+  .select();
 
-if (error) {
-  console.error(error);
-}
-
+console.log("USER:", user);
+console.log("DATA:", data);
+console.log("ERROR:", error);
        
     }
 
