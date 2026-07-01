@@ -1619,15 +1619,6 @@ opacity:1;
 
 }
 
-/* FOCUS */
-
-.profile-edit input:focus,
-.profile-edit textarea:focus{
-
-  border-color:#f3c94d;
-
-}
-
 /* BUTTON */
 
 #saveProfileBtn{
