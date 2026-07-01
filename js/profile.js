@@ -1142,7 +1142,7 @@ if(currentLevel.rank > previousRank){
       cinephile_rank: currentLevel.rank
     })
     .eq("id", user.id);
-
+}
 }
    
   if(
