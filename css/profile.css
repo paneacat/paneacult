@@ -1617,16 +1617,6 @@ opacity:1;
 
   padding:0 22px;
 
-  border-radius:999px;
-
-  border:
-    1px solid rgba(255,255,255,.08);
-
-  background:
-    rgba(255,255,255,.04);
-
-  backdrop-filter:blur(12px);
-
   color:rgba(255,255,255,.92);
 
   font-size:.84rem;
@@ -1641,15 +1631,6 @@ opacity:1;
 
 }
 
-#editProfileBtn:hover{
-
-  background:var(--panea-yellow);
-
-  color:#08131d;
-
-  transform:translateY(-2px);
-
-}
 /* TEXTAREA */
 
 .profile-edit textarea{
