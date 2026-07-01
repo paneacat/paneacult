@@ -1024,21 +1024,32 @@ data-id="${review.id}">
 function getCinephileLevel(count){
 
   if(count >= 1000){
-    return "🎥 Mito del Cinema";
+    return {
+      level: "🎥 Mito del Cinema",
+      rank: 4
+    };
   }
 
   if(count >= 500){
-    return "🎞️ Esperto";
+    return {
+      level: "🎞️ Collezionista",
+      rank: 3
+    };
   }
 
   if(count >= 300){
-    return "🎬 Cinefilo";
+    return {
+      level: "🎬 Cinefilo",
+      rank: 2
+    };
   }
 
-  return "🍿 Spettatore";
+  return {
+    level: "🍿 Spettatore",
+    rank: 1
+  };
 
 }
-
 
 async function updateCounters(){
 
@@ -1087,10 +1098,12 @@ await supabaseClient
    
   if(filmsCount){
 
-    filmsCount.textContent =
-  watchedCloud?.length || 0;
-     
-     const cinephileLevel =
+  filmsCount.textContent =
+    watchedCloud?.length || 0;
+
+}
+
+const cinephileLevel =
   document.getElementById(
     "cinephileLevel"
   );
@@ -1100,12 +1113,32 @@ if(cinephileLevel){
   const watched =
     watchedCloud?.length || 0;
 
+  const currentLevel =
+    getCinephileLevel(watched);
+
   cinephileLevel.textContent =
-    `${getCinephileLevel(watched)} • ${watched} film visti`;
+    `${currentLevel.level} • ${watched} film visti`;
 
 }
-  }
 
+   const previousRank =
+  Number(
+    localStorage.getItem("cinephile_rank") || 0
+  );
+
+if(currentLevel.rank > previousRank){
+
+  alert(
+    `🎉 Congratulazioni!\n\nHai raggiunto il livello\n${currentLevel.level}!`
+  );
+
+  localStorage.setItem(
+    "cinephile_rank",
+    currentLevel.rank
+  );
+
+}
+   
   if(
   user &&
   favoritesCount
