@@ -2105,11 +2105,7 @@ section{
 
  #writeReviewBtn {
         display: none;
-    }
-
-    #reviewForm.hidden-review-form {
-        display: block !important;
-    }
+ }
  }
 
 
