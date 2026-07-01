@@ -1609,28 +1609,6 @@ opacity:1;
    PROFILE EDIT
 ========================= */
 
-#editProfileBtn{
-
-  margin-top:22px;
-
-  height:48px;
-
-  padding:0 22px;
-
-  color:rgba(255,255,255,.92);
-
-  font-size:.84rem;
-
-  letter-spacing:.08em;
-
-  font-weight:600;
-
-  cursor:pointer;
-
-  transition:.28s ease;
-
-}
-
 /* TEXTAREA */
 
 .profile-edit textarea{
