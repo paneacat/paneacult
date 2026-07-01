@@ -2104,7 +2104,13 @@ section{
 }
 
  #writeReviewBtn {
-        display: none;
+    width: 100%;
+    max-width: 320px;
+    margin: 12px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
  }
  }
 
