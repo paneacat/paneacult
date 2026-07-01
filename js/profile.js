@@ -1023,15 +1023,15 @@ data-id="${review.id}">
 
 function getCinephileLevel(count){
 
-  if(count >= 500){
-    return "👑 Leggenda del cinema";
+  if(count >= 1000){
+    return "🎥 Mito del Cinema";
   }
 
-  if(count >= 200){
+  if(count >= 500){
     return "🎞️ Esperto";
   }
 
-  if(count >= 50){
+  if(count >= 300){
     return "🎬 Cinefilo";
   }
 
@@ -1089,6 +1089,7 @@ await supabaseClient
 
     filmsCount.textContent =
   watchedCloud?.length || 0;
+     
      const cinephileLevel =
   document.getElementById(
     "cinephileLevel"
@@ -1096,8 +1097,11 @@ await supabaseClient
 
 if(cinephileLevel){
 
+  const watched =
+    watchedCloud?.length || 0;
+
   cinephileLevel.textContent =
-    `${getCinephileLevel(watchedCloud?.length || 0)} • ${watchedCloud?.length || 0} film visti`;
+    `${getCinephileLevel(watched)} • ${watched} film visti`;
 
 }
   }
