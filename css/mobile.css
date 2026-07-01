@@ -2111,7 +2111,13 @@ section{
     justify-content: center;
     align-items: center;
  }
- }
+
+  #markDesertBtn,
+  #writeReviewBtn {
+    flex: 0 0 100%;
+    max-width: 320px;
+    margin: 10px auto 0;
+  }
  }
 
 
