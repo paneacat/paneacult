@@ -1266,73 +1266,51 @@ const profileEdit =
   document.querySelector(
     ".profile-edit"
   );
+
 /* LOAD */
 
-const savedAvatar =
-  localStorage.getItem(
-    "paneacult_avatar"
-  );
+(async () => {
 
-const savedUsername =
-  localStorage.getItem(
-    "paneacult_username"
-  );
+  const {
+    data: { user }
+  } = await supabaseClient.auth.getUser();
 
-const savedBio =
-  localStorage.getItem(
-    "paneacult_bio"
-  );
+  if (!user) return;
 
-if(
-  savedAvatar &&
-  profileAvatarImg
-){
+  const { data: profile, error } = await supabaseClient
+    .from("profiles")
+    .select("*")
+    .eq("id", user.id)
+    .single();
 
-  profileAvatarImg.src =
-    savedAvatar;
+  if (error || !profile) return;
 
-}
+  if (profile.username && profileUsername) {
+    profileUsername.textContent = profile.username;
 
-if(
-  savedUsername &&
-  profileUsername
-){
-
-  profileUsername.textContent =
-    savedUsername;
-
-  if(usernameInput){
-
-    usernameInput.value =
-      savedUsername;
-
+    if (usernameInput) {
+      usernameInput.value = profile.username;
+    }
   }
 
-}
+  if (profile.bio && profileBio) {
+    profileBio.textContent = profile.bio;
 
-if(
-  savedBio &&
-  profileBio
-){
-
-  profileBio.textContent =
-    savedBio;
-
-  if(bioInput){
-
-    bioInput.value =
-      savedBio;
-
+    if (bioInput) {
+      bioInput.value = profile.bio;
+    }
   }
 
-}
+  if (profile.avatar_url && profileAvatarImg) {
+    profileAvatarImg.src = profile.avatar_url;
+  }
+
+})();
 
 /* SAVE */
 
-saveProfileBtn?.addEventListener(
-  "click",
-  () => {
-
+saveProfileBtn?.addEventListener("click", async () => {
+   
     const newUsername =
       usernameInput?.value.trim();
 
@@ -1367,6 +1345,24 @@ saveProfileBtn?.addEventListener(
         newBio
       );
 
+
+       const {
+  data: { user }
+} = await supabaseClient.auth.getUser();
+
+const { error } = await supabaseClient
+  .from("profiles")
+  .upsert({
+    id: user.id,
+    username: newUsername,
+    bio: newBio
+  });
+
+if (error) {
+  console.error(error);
+}
+
+       
     }
 
     if(
