@@ -2123,28 +2123,6 @@ section{
     width:fit-content;
     margin:12px auto 0;
   }
-
-  .review-card{
-    display:flex;
-    gap:16px;
-    align-items:flex-start;
-}
-
-.review-poster{
-    width:85px;
-    flex-shrink:0;
-}
-
-.review-content{
-    flex:1;
-}
-
-.review-actions{
-    display:flex;
-    justify-content:flex-end;
-    gap:12px;
-    margin-top:10px;
-}
  }
 
 
