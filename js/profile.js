@@ -1021,6 +1021,25 @@ data-id="${review.id}">
    PROFILE COUNTERS
 ========================= */
 
+function getCinephileLevel(count){
+
+  if(count >= 500){
+    return "👑 Leggenda del cinema";
+  }
+
+  if(count >= 200){
+    return "🎞️ Esperto";
+  }
+
+  if(count >= 50){
+    return "🎬 Cinefilo";
+  }
+
+  return "🍿 Spettatore";
+
+}
+
+
 async function updateCounters(){
 
   const filmsCount =
@@ -1070,6 +1089,17 @@ await supabaseClient
 
     filmsCount.textContent =
   watchedCloud?.length || 0;
+     const cinephileLevel =
+  document.getElementById(
+    "cinephileLevel"
+  );
+
+if(cinephileLevel){
+
+  cinephileLevel.textContent =
+    `${getCinephileLevel(watchedCloud?.length || 0)} • ${watchedCloud?.length || 0} film visti`;
+
+}
   }
 
   if(
