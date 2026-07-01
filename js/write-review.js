@@ -1,5 +1,4 @@
 
-
 /* =========================
    AUTOSAVE REVIEW
 ========================= */
@@ -151,16 +150,17 @@ if(movieId){
 
     }
 
-    if (reviewForm) {
-    reviewForm.style.display = "block";
+    if(reviewForm){
 
-    if (window.innerWidth > 768) {
-        reviewForm.classList.add("hidden-review-form");
-    } else {
-        reviewForm.classList.remove("hidden-review-form");
+      reviewForm.style.display =
+        "block";
+
+      reviewForm.classList.add(
+        "hidden-review-form"
+      );
+
     }
-    }
-     
+
   });
 
 }
