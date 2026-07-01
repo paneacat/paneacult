@@ -2118,6 +2118,11 @@ section{
     max-width: 320px;
     margin: 10px auto 0;
   }
+  .cinephile-level{
+    display:flex;
+    width:fit-content;
+    margin:12px auto 0;
+  }
  }
 
 
