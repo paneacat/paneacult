@@ -162,13 +162,41 @@ if(hero && movie.backdrop_path){
     "center";
 
 }
+
+   const title =
+  movie.title || movie.name;
+
+const year =
+  (movie.release_date || movie.first_air_date || "").slice(0,4);
+
+const mediaType =
+  movie.media_type === "tv"
+    ? "📺 Serie TV"
+    : "🎬 Film";
+
+   const directorLabel =
+  movie.media_type === "tv"
+    ? "Creatore"
+    : "Regia";
+
+const runtimeLabel =
+  movie.media_type === "tv"
+    ? "Stagioni"
+    : "Durata";
+
+const runtimeValue =
+  movie.media_type === "tv"
+    ? (movieDetails.number_of_seasons || "-")
+    : ((movieDetails.runtime || "-") + " min");
+
+   
   selectedMovie.innerHTML = `
 
     <div class="selected-movie-card">
 
       <img
   src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
-  alt="${movie.title}"
+  alt="${title}"
 >
 
       <div class="selected-movie-content">
@@ -182,11 +210,11 @@ if(hero && movie.backdrop_path){
         </p>
 
         <h2>
-          ${movie.title}
+          ${title}
         </h2>
 
         <p class="selected-movie-year">
-          ${movie.release_date?.slice(0,4) || ""}
+          ${mediaType} • ${year}
         </p>
 
         <p class="selected-movie-overview">
@@ -202,7 +230,7 @@ if(hero && movie.backdrop_path){
         <div class="selected-movie-meta">
 
           <p>
-            <strong>Regia:</strong>
+            <strong>${directorLabel}:</strong>
             ${director?.name || "-"}
           </p>
 
@@ -212,8 +240,8 @@ if(hero && movie.backdrop_path){
           </p>
 
           <p>
-            <strong>Durata:</strong>
-            ${movieDetails.runtime || "-"} min
+            <strong>${runtimeLabel}:</strong>
+${runtimeValue}
           </p>
 
         </div>
