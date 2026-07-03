@@ -363,7 +363,7 @@ movieResults.style.display =
         <div>
 
           <h3>
-            ${movie.title}
+            ${title}
           </h3>
 
           <p>
@@ -381,7 +381,7 @@ movieResults.style.display =
 
     const movieDetails =
       await fetchMovieDetails(
-        movie.id
+        movie.id,
       movie.media_type || "movie"
       );
 
@@ -460,7 +460,7 @@ movieResults.style.display =
           >
 
           <div>
-            <h3>${movie.title}</h3>
+            <h3>${title}</h3>
             <p>
               ${movie.release_date?.slice(0,4) || ""}
             </p>
@@ -473,7 +473,7 @@ movieResults.style.display =
 
             const movieDetails =
               await fetchMovieDetails(
-                movie.id
+                movie.id,
                  movie.media_type || "movie"
               );
 
@@ -489,8 +489,7 @@ movieResults.style.display =
               "none";
 
             movieSearchInput.value =
-              movie.title;
-
+            title;
           }
         );
 
