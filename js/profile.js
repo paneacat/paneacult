@@ -1720,6 +1720,7 @@ importInput?.addEventListener(
            const details =
 await fetchMovieDetails(
   movie.id
+movie.media_type || "movie"
 );
 
 const director =
