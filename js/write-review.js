@@ -292,6 +292,8 @@ const slug =
      status:
   currentMovieStatus || "watched",  
        
+    media_type: movie.media_type || "movie", 
+       
       director:
   selectedMovieData.director || "",
        
