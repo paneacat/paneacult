@@ -1095,11 +1095,22 @@ await supabaseClient
     "status",
     "watched"
   );
+
+   const watchedMovies =
+  watchedCloud?.filter(
+    item => item.media_type === "movie"
+  ) || [];
+
+const watchedTv =
+  watchedCloud?.filter(
+    item => item.media_type === "tv"
+  ) || [];
+
    
   if(filmsCount){
 
   filmsCount.textContent =
-    watchedCloud?.length || 0;
+  watchedMovies.length;
 
 }
 
@@ -1111,7 +1122,7 @@ const cinephileLevel =
 if(cinephileLevel){
 
   const watched =
-    watchedCloud?.length || 0;
+  watchedMovies.length;
 
   const currentLevel =
     getCinephileLevel(watched);
