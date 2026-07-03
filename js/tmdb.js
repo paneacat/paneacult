@@ -346,6 +346,9 @@ movieResults.style.display =
     .slice(0, 5)
     .forEach(movie => {
 
+       console.log(movie.media_type, movie.title, movie.name);
+
+       
       const div =
         document.createElement("div");
 
