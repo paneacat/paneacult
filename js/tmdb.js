@@ -79,13 +79,17 @@ if(directedMovies.length){
   // FILM
   const movieResponse =
     await fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=it-IT&query=${encodeURIComponent(query)}`
+      `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&language=it-IT&query=${encodeURIComponent(query)}`
     );
 
   const movieData =
     await movieResponse.json();
 
-  return movieData.results || [];
+  return movieData.results.filter(
+  item =>
+    item.media_type === "movie" ||
+    item.media_type === "tv"
+);
 
 }
    
