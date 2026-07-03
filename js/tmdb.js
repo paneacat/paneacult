@@ -363,8 +363,8 @@ movieResults.style.display =
         <div>
 
           <h3>
-            ${title}
-          </h3>
+  ${movie.title}
+</h3>
 
           <p>
             ${movie.release_date?.slice(0,4) || ""}
@@ -446,6 +446,14 @@ movieResults.style.display =
   .slice(0,5)
   .forEach(movie => {
 
+
+     const title =
+  movie.title || movie.name;
+
+const year =
+  (movie.release_date || movie.first_air_date || "").slice(0,4);
+
+     
         const div =
           document.createElement("div");
 
@@ -462,7 +470,7 @@ movieResults.style.display =
           <div>
             <h3>${title}</h3>
             <p>
-              ${movie.release_date?.slice(0,4) || ""}
+              ${year}
             </p>
           </div>
         `;
