@@ -1053,6 +1053,11 @@ function getCinephileLevel(count){
 
 async function updateCounters(){
 
+
+   const tvCount =
+  document.getElementById("tvCount");
+
+   
   const filmsCount =
     document.getElementById(
       "filmsCount"
@@ -1112,6 +1117,10 @@ const watchedTv =
   filmsCount.textContent =
   watchedMovies.length;
 
+     if(tvCount){
+  tvCount.textContent =
+    watchedTv.length;
+     }
 }
 
 const cinephileLevel =
