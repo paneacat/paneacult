@@ -94,11 +94,15 @@ if(directedMovies.length){
 }
    
 
-async function fetchMovieDetails(movieId){
-
+async function fetchMovieDetails(
+  movieId,
+  mediaType = "movie"
+){
+   
   const response = await fetch(
-`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=it-IT&append_to_response=credits`
+`https://api.themoviedb.org/3/${mediaType}/${movieId}?api_key=${API_KEY}&language=it-IT&append_to_response=credits`
 );
+
 
   const movieData =
     await response.json();
@@ -377,6 +381,7 @@ movieResults.style.display =
     const movieDetails =
       await fetchMovieDetails(
         movie.id
+      movie.media_type || "movie"
       );
 
     renderSelectedMovie(
@@ -468,6 +473,7 @@ movieResults.style.display =
             const movieDetails =
               await fetchMovieDetails(
                 movie.id
+                 movie.media_type || "movie"
               );
 
             renderSelectedMovie(
@@ -740,7 +746,7 @@ async function saveMovie(status){
       movie_id:selectedMovieData.id,
       title:selectedMovieData.title,
       poster_path:selectedMovieData.poster_path,
-      media_type: movie.media_type || "movie",
+      media_type: selectedMovieData.media_type || "movie",
       director:
   selectedMovieData.director ||
   "",
