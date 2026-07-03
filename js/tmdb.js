@@ -701,6 +701,7 @@ async function saveMovie(status){
       movie_id:selectedMovieData.id,
       title:selectedMovieData.title,
       poster_path:selectedMovieData.poster_path,
+      media_type: movie.media_type || "movie",
       director:
   selectedMovieData.director ||
   "",
