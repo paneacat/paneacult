@@ -563,6 +563,7 @@ window.addEventListener(
       const movieDetails =
         await fetchMovieDetails(
           movieId
+           movie.media_type || "movie"
         );
 
       renderSelectedMovie(
