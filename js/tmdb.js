@@ -244,6 +244,17 @@ const runtimeValue =
 ${runtimeValue}
           </p>
 
+${
+  movie.media_type === "tv"
+  ? `
+  <p>
+    <strong>Episodi:</strong>
+    ${movieDetails.number_of_episodes || "-"}
+  </p>
+  `
+  : ""
+}
+
         </div>
 
         <div class="movie-actions">
