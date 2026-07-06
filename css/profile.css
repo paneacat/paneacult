@@ -337,42 +337,37 @@ letter-spacing:.04em;
 ========================= */
 .profile-stats{
 
-  display:flex;
-
-  justify-content:center;
-
-  align-items:center;
-
-  flex-wrap:wrap;
-
+  display:grid;
+  grid-template-columns:repeat(2,minmax(140px,220px));
   gap:18px;
-
   width:100%;
-
-  margin-top:12px;
+  max-width:480px;
+  margin:24px auto 0;
 
 }
 
 .profile-stat{
 
-  min-width:160px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
 
-  padding:18px 22px;
+  min-height:130px;
 
-  transition:.25s;
-   
-  border-radius:18px;
+  padding:22px;
 
-  background:
-    rgba(255,255,255,.04);
+  border-radius:22px;
 
-  border:
-    1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(252,193,14,.12);
 
   backdrop-filter:blur(18px);
 
-}
+  transition:.25s;
 
+}
 
 .profile-stat span{
 
@@ -380,7 +375,7 @@ letter-spacing:.04em;
 
   margin-bottom:8px;
 
-  font-size:2.4rem;
+  font-size:3rem;
 
   font-family:"Playfair Display", serif;
 
