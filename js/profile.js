@@ -857,9 +857,8 @@ function renderSignature(){
 >
 
         <div class="signature-film-overlay">
-
-          <h3>
-  ${movie.movie_title}
+<h3>
+  ${movie.title || movie.movie_title}
 </h3>
 
 <span class="movie-director">
@@ -1563,7 +1562,7 @@ function openMoviesModal(
           >
 
             <h3>
-  ${movie.movie_title}
+  ${movie.title || movie.movie_title}
 </h3>
 
 <span class="movie-director">
