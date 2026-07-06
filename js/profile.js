@@ -1750,9 +1750,8 @@ details?.credits?.crew?.find(
 
                 movie_id:
                   movie.id,
-
-                title:
-                  movie.title,
+title:
+  movie.title || movie.name,
 
                 poster_path:
                   movie.poster_path,
@@ -1792,7 +1791,7 @@ director,
                   movie.id,
 
                 title:
-                  movie.title,
+  movie.title || movie.name,
 
                 poster_path:
                   movie.poster_path,
@@ -1841,8 +1840,8 @@ release_year:
                 movie_id:
                   movie.id,
 
-                movie_title:
-                  movie.title,
+                title:
+  movie.title || movie.name,
 
                 movie_poster:
                   movie.poster_path,
@@ -1899,7 +1898,8 @@ console.log(cols);
                    
   movie_id: movie.id,
 
-  movie_title: movie.title,
+  title:
+  movie.title || movie.name,
 
   movie_poster: movie.poster_path,
 
