@@ -1754,7 +1754,9 @@ title:
 
                 poster_path:
                   movie.poster_path,
-
+media_type:
+  movie.media_type || "movie",
+                 
                genre: null,
 
 release_year:
@@ -1796,7 +1798,9 @@ director,
 
                 poster_path:
                   movie.poster_path,
-
+media_type:
+  movie.media_type || "movie",
+                 
                  genre: null,
 
 release_year:
@@ -1849,7 +1853,9 @@ release_year:
                  
                 movie_poster:
                   movie.poster_path,
-
+media_type:
+  movie.media_type || "movie",
+                 
                 rating:
                   rating
                     ? parseFloat(
@@ -1906,7 +1912,8 @@ console.log(cols);
   movie.title || movie.name,
 
   movie_poster: movie.poster_path,
-
+ media_type:
+  movie.media_type || "movie",
   rating:
     rating
       ? parseFloat(rating)
