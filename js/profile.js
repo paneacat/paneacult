@@ -1856,6 +1856,13 @@ release_year:
 media_type:
   movie.media_type || "movie",
                  
+            release_year:
+  (movie.release_date || movie.first_air_date)
+    ? Number(
+        (movie.release_date || movie.first_air_date).slice(0,4)
+      )
+    : null,
+                 
                 rating:
                   rating
                     ? parseFloat(
