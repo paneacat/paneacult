@@ -1758,8 +1758,10 @@ title:
                genre: null,
 
 release_year:
-  movie.release_date
-    ? Number(movie.release_date.slice(0,4))
+  (movie.release_date || movie.first_air_date)
+    ? Number(
+        (movie.release_date || movie.first_air_date).slice(0,4)
+      )
     : null,
                  director:
 director,
@@ -1798,8 +1800,10 @@ director,
                  genre: null,
 
 release_year:
-  movie.release_date
-    ? Number(movie.release_date.slice(0,4))
+  (movie.release_date || movie.first_air_date)
+    ? Number(
+        (movie.release_date || movie.first_air_date).slice(0,4)
+      )
     : null,
 
                  director:
@@ -1842,6 +1846,7 @@ release_year:
                 title:
   movie.title || movie.name,
 
+                 
                 movie_poster:
                   movie.poster_path,
 
