@@ -2188,3 +2188,61 @@ font-size:.9rem;
 }
 
 
+.watchtime-section{
+
+  width:min(520px,92%);
+  margin:28px auto 0;
+
+}
+
+.watchtime-title{
+
+  text-align:center;
+  color:var(--panea-yellow);
+  font-family:"Playfair Display",serif;
+  font-size:1.6rem;
+  margin-bottom:18px;
+
+}
+
+.watchtime-grid{
+
+  display:grid;
+  gap:16px;
+
+}
+
+.watchtime-card{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:18px 22px;
+
+  border-radius:18px;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(252,193,14,.12);
+
+}
+
+.watchtime-card span{
+
+  color:rgba(255,255,255,.75);
+
+}
+
+.watchtime-card strong{
+
+  font-size:1.3rem;
+  color:var(--panea-yellow);
+
+}
+
+.watchtime-card.total{
+
+  border:1px solid rgba(252,193,14,.3);
+
+}
