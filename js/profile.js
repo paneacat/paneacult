@@ -1055,7 +1055,10 @@ async function updateCounters(){
 
 
    const tvCount =
-  document.getElementById("tvCount");
+  document.getElementById(
+     "tvCount"
+  
+);
 
    
   const filmsCount =
@@ -1719,7 +1722,7 @@ importInput?.addEventListener(
 
            const details =
 await fetchMovieDetails(
-  movie.id
+  movie.id,
 movie.media_type || "movie"
 );
 
