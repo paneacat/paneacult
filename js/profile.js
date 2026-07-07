@@ -560,33 +560,64 @@ if (!user) return;
 
 console.log(existing);
 console.log(error);
+}
      
-     const seriesFile = files.find(file =>
-  file.includes("series") &&
-  file.endsWith(".json")
-);
+     async function importMovie(movie) {
+     
+console.log(movie.title);
 
-console.log(seriesFile);
+  const results =
+  await searchMovies(movie.title);
 
-const seriesText =
-  await zip.file(seriesFile).async("string");
+console.log(results);
 
-const series =
-  JSON.parse(seriesText);
+const tmdbMovie =
+  results.find(movie =>
+    movie.release_date?.startsWith(
+      String(movie.year)
+    )
+  ) || results[0];
 
-console.log("Serie trovate:", series.length);
+console.log(tmdbMovie);
 
-console.log(series[0]);
+const {
+  data: { user }
+} = await supabaseClient.auth.getUser();
 
-for (const movie of movies) {
-  await importMovie(movie);
-}
+if (!user) return;
 
-console.log("Film importati!");
-}
-);
+     console.log({
+  user: user.id,
+  movie_id: tmdbMovie.id,
+  status: "watched"
+});
 
+     const { error } =
+  await supabaseClient
+    .from("user_movies")
+    .insert({
+      user_id: user.id,
+      movie_id: tmdbMovie.id,
+      title: tmdbMovie.title,
+      poster_path: tmdbMovie.poster_path,
+      status: "watched",
+      release_year: movie.year,
+      media_type: "movie"
+    });
 
+     const existing =
+  await supabaseClient
+    .from("user_movies")
+    .select("*")
+    .eq("user_id", user.id)
+    .eq("movie_id", tmdbMovie.id)
+    .eq("status", "watched");
+
+console.log(existing);
+console.log(error);
+     }
+     
+   
 
 /* =========================
    RENDER GRID
