@@ -1080,6 +1080,11 @@ const ratedCount =
       "favoritesCount"
     );
 
+   const tvFavoritesCount =
+  document.getElementById(
+    "tvFavoritesCount"
+  );
+   
    const {
   data:{ user }
 } =
@@ -1103,6 +1108,7 @@ await supabaseClient
     "watched"
   );
 
+   
    const watchedMovies =
   watchedCloud?.filter(
     item => item.media_type === "movie"
@@ -1167,33 +1173,23 @@ if(currentLevel.rank > previousRank){
 }
 }
    
-  if(
+  if (
   user &&
-  favoritesCount
-){
+  tvFavoritesCount
+) {
 
-  const {
-    count
-  } =
-  await supabaseClient
-    .from("user_movies")
-    .select(
-      "*",
-      {
-        count:"exact",
-        head:true
-      }
-    )
-    .eq(
-      "user_id",
-      user.id
-    )
-    .eq(
-      "status",
-      "favorite"
-    );
+  const { count } =
+    await supabaseClient
+      .from("user_movies")
+      .select("*", {
+        count: "exact",
+        head: true
+      })
+      .eq("user_id", user.id)
+      .eq("status", "favorite")
+      .eq("media_type", "tv");
 
-  favoritesCount.textContent =
+  tvFavoritesCount.textContent =
     count || 0;
 
   }
