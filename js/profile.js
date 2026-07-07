@@ -538,10 +538,9 @@ if (!user) return;
   status: "watched"
 });
 
-     const { error } =
-  await supabaseClient
-    .from("user_movies")
-    .insert({
+    await supabaseClient
+  .from("user_movies")
+  .upsert({
       user_id: user.id,
       movie_id: tmdbMovie.id,
       title: tmdbMovie.title,
@@ -560,7 +559,11 @@ if (!user) return;
     .eq("status", "watched");
 
 console.log(existing);
+console.log(error);
 
+if (!error) {
+  alert("Primo film importato!");
+}
      
      const seriesFile = files.find(file =>
   file.includes("series") &&
