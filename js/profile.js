@@ -530,8 +530,15 @@ const {
   data: { user }
 } = await supabaseClient.auth.getUser();
 
-if (!user) return;
+console.log("Auth UID:", user.id);
 
+const { data: session } =
+  await supabaseClient.auth.getSession();
+
+console.log(session);
+
+if (!user) return;
+     
      console.log({
   user: user.id,
   movie_id: tmdbMovie.id,
