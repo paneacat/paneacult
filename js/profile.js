@@ -538,7 +538,8 @@ if (!user) return;
   status: "watched"
 });
 
-    await supabaseClient
+    const { error } =
+await supabaseClient
   .from("user_movies")
   .upsert({
       user_id: user.id,
