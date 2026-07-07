@@ -506,7 +506,20 @@ tvTimeInput?.addEventListener(
 
 const movies =
   JSON.parse(moviesText);
- 
+
+
+     const firstMovie = movies[0];
+
+console.log(firstMovie.title);
+
+const results =
+  await searchMovies(firstMovie.title);
+
+console.log(results);
+
+
+
+     
      const seriesFile = files.find(file =>
   file.includes("series") &&
   file.endsWith(".json")
