@@ -63,33 +63,42 @@ let tvWatchlist = [];
 
 let tvFavorites = [];
 
-async function loadWatchlist(){
+
+
+
+async function loadLibrary(
+  mediaType,
+  status
+){
 
   const {
     data:{ user }
   } =
-  await supabaseClient.auth
-    .getUser();
+  await supabaseClient.auth.getUser();
 
-  if(!user) return;
+  if(!user)
+    return [];
 
-  const {
-    data
-  } =
-  await supabaseClient
-    .from("user_movies")
-    .select("*")
-    .eq(
-      "user_id",
-      user.id
-    )
-    .eq(
-      "status",
-      "watchlist"
-    );
+  const { data } =
+    await supabaseClient
+      .from("user_movies")
+      .select("*")
+      .eq("user_id", user.id)
+      .eq("media_type", mediaType)
+      .eq("status", status);
+
+  return data || [];
+
+}
+
+
+async function loadWatchlist(){
 
   watchlist =
-    data || [];
+    await loadLibrary(
+      "movie",
+      "watchlist"
+    );
 
   populateWatchlistFilters();
 
@@ -102,34 +111,63 @@ async function loadWatchlist(){
 
 }
 
+async function loadTvWatchlist(){
+
+  tvWatchlist =
+    await loadLibrary(
+      "tv",
+      "watchlist"
+    );
+
+  renderGrid(
+    tvWatchlistGrid,
+    tvWatchlist
+  );
+
+}
+
+async function loadWatched(){
+
+  watched =
+    await loadLibrary(
+      "movie",
+      "watched"
+    );
+
+  populateWatchedFilters();
+
+  renderGrid(
+    watchedGrid,
+    watched
+  );
+
+  filterWatched();
+
+}
+
+async function loadTvWatched(){
+
+  tvWatched =
+    await loadLibrary(
+      "tv",
+      "watched"
+    );
+
+  renderGrid(
+    tvWatchedGrid,
+    tvWatched
+  );
+
+}
+
 
 async function loadFavorites(){
 
-  const {
-    data:{ user }
-  } =
-  await supabaseClient.auth
-    .getUser();
-
-  if(!user) return;
-
-  const {
-    data
-  } =
-  await supabaseClient
-    .from("user_movies")
-    .select("*")
-    .eq(
-      "user_id",
-      user.id
-    )
-    .eq(
-      "status",
+  favorites =
+    await loadLibrary(
+      "movie",
       "favorite"
     );
-
-  favorites =
-    data || [];
 
   populateFavoriteFilters();
 
@@ -139,6 +177,21 @@ async function loadFavorites(){
   );
 
   filterFavorites();
+
+}
+
+async function loadTvFavorites(){
+
+  tvFavorites =
+    await loadLibrary(
+      "tv",
+      "favorite"
+    );
+
+  renderGrid(
+    tvFavoriteGrid,
+    tvFavorites
+  );
 
 }
 
@@ -1993,10 +2046,13 @@ async function loadWatched(){
 filterWatched();
 }
 loadWatched();
+loadTvWatched();
 
 loadWatchlist();
+loadTvWatchlist();
 
 loadFavorites();
+loadTvFavorites();
 
 renderCurrentFavorite();
 
