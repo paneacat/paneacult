@@ -2008,43 +2008,6 @@ if(
 /* =========================
    INIT
 ========================= */
-
-async function loadWatched(){
-
-  const {
-    data:{ user }
-  } =
-  await supabaseClient.auth
-    .getUser();
-
-  if(!user) return;
-
-  const {
-    data
-  } =
-  await supabaseClient
-    .from("user_movies")
-    .select("*")
-    .eq(
-      "user_id",
-      user.id
-    )
-    .eq(
-      "status",
-      "watched"
-    );
-
-  watched =
-    data || [];
-
-   populateWatchedFilters();
-   
-  renderGrid(
-    watchedGrid,
-    watched
-  );
-filterWatched();
-}
 loadWatched();
 loadTvWatched();
 
