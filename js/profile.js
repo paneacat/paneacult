@@ -629,7 +629,9 @@ tvTimeBtn.textContent =
      
     let importedMovies = 0;
     let importedSeries = 0;
+    const notFound = [];
 
+     
      const totalItems =
   movies.length + series.length;
 
@@ -703,8 +705,54 @@ if (!title) {
   return false;
 }
 
-const results =
+let results =
   await searchMovies(title);
+
+/* secondo tentativo */
+
+if (!results?.length) {
+
+  results =
+    await searchMovies(
+      title.replace(/[:\-–]/g, " ")
+    );
+
+}
+
+/* terzo tentativo */
+
+if (!results?.length) {
+
+  results =
+    await searchMovies(
+      title.split(":")[0].trim()
+    );
+
+}
+
+/* quarto tentativo */
+
+if (!results?.length) {
+
+  results =
+    await searchMovies(
+      title.split("-")[0].trim()
+    );
+
+}
+
+if (!results?.length) {
+
+  console.log("❌ Non trovato:", title);
+
+  notFound.push({
+    title,
+    mediaType
+  });
+
+  return false;
+
+}
 
 if (!results || !results.length) {
 
@@ -832,15 +880,22 @@ await new Promise(resolve =>
   setTimeout(resolve, 120)
 );
       }
-    alert(
+    
+     alert(
 
-      `Importazione completata!
+`✅ Importazione completata
 
 🎬 Film: ${importedMovies}
 
-📺 Serie: ${importedSeries}`
+📺 Serie: ${importedSeries}
 
-    );
+❌ Non trovati: ${notFound.length}`
+
+);
+
+console.table(notFound);
+
+     
 tvTimeBtn.disabled = false;
 
 tvTimeBtn.textContent =
