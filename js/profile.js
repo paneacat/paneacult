@@ -548,10 +548,73 @@ tvTimeInput?.addEventListener(
       return;
 
     }
-
+     
+tvTimeBtn.disabled = true;
+tvTimeBtn.textContent =
+  "Importazione...";
+     
     let importedMovies = 0;
     let importedSeries = 0;
 
+     const totalItems =
+  movies.length + series.length;
+
+let completedItems = 0;
+
+const progress =
+  document.createElement("div");
+
+progress.style.cssText = `
+margin-top:16px;
+padding:16px;
+background:#17384a;
+color:#fff;
+border-radius:12px;
+font-weight:600;
+text-align:center;
+line-height:1.8;
+`;
+
+tvTimeBtn.after(progress);
+
+function updateProgress(type){
+
+  completedItems++;
+
+  const percent =
+    Math.round(
+      completedItems / totalItems * 100
+    );
+
+  progress.innerHTML = `
+    <div style="margin-bottom:10px">
+      Importazione TV Time...
+    </div>
+
+    <progress
+      value="${completedItems}"
+      max="${totalItems}"
+      style="width:100%;height:18px">
+    </progress>
+
+    <div style="margin-top:10px">
+      ${percent}% completato
+    </div>
+
+    <div style="margin-top:6px">
+      🎬 ${importedMovies}/${movies.length}
+      &nbsp;&nbsp;
+      📺 ${importedSeries}/${series.length}
+    </div>
+
+    <div style="margin-top:6px;font-size:13px;opacity:.8">
+      Ultimo: ${type}
+    </div>
+  `;
+
+}
+
+     
        async function importItem(
       item,
       mediaType
@@ -663,7 +726,7 @@ if (!results || !results.length) {
       if (imported) {
 
         importedMovies++;
-
+        updateProgress(movie.title);
       }
 
       console.log(
@@ -685,7 +748,7 @@ await new Promise(resolve =>
       if (imported) {
 
         importedSeries++;
-
+        updateProgress(serie.title || serie.name);
       }
 
       console.log(
@@ -704,7 +767,24 @@ await new Promise(resolve =>
 📺 Serie: ${importedSeries}`
 
     );
+tvTimeBtn.disabled = false;
 
+tvTimeBtn.textContent =
+  "Importa da TV Time";
+
+progress.innerHTML = `
+<h3 style="margin:0 0 12px">
+✅ Importazione completata
+</h3>
+
+🎬 Film importati:
+<b>${importedMovies}</b>
+
+<br><br>
+
+📺 Serie importate:
+<b>${importedSeries}</b>
+`;
     location.reload();
 
   }
