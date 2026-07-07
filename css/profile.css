@@ -2098,12 +2098,12 @@ font-size:.9rem;
 }
 
 .cinephile-level{
-    display:inline-flex;
+   display:flex;
+    justify-content:center;
     align-items:center;
+    width:fit-content;
+    margin:0 auto 24px;
     gap:6px;
-    margin-top:12px;
-    margin-left:auto;
-    margin-right:auto;
     padding:8px 14px;
     border-radius:999px;
     background:#193c4e;
