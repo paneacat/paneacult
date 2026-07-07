@@ -531,6 +531,23 @@ const {
 } = await supabaseClient.auth.getUser();
 
 if (!user) return;
+
+
+     const { error } =
+  await supabaseClient
+    .from("user_movies")
+    .insert({
+      user_id: user.id,
+      movie_id: tmdbMovie.id,
+      title: tmdbMovie.title,
+      poster_path: tmdbMovie.poster_path,
+      status: "watched",
+      release_year: firstMovie.year,
+      media_type: "movie"
+    });
+
+console.log(error);
+
      
      const seriesFile = files.find(file =>
   file.includes("series") &&
