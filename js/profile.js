@@ -532,6 +532,11 @@ const {
 
 if (!user) return;
 
+     console.log({
+  user: user.id,
+  movie_id: tmdbMovie.id,
+  status: "watched"
+});
 
      const { error } =
   await supabaseClient
@@ -546,7 +551,15 @@ if (!user) return;
       media_type: "movie"
     });
 
-console.log(error);
+     const existing =
+  await supabaseClient
+    .from("user_movies")
+    .select("*")
+    .eq("user_id", user.id)
+    .eq("movie_id", tmdbMovie.id)
+    .eq("status", "watched");
+
+console.log(existing);
 
      
      const seriesFile = files.find(file =>
