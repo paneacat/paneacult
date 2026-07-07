@@ -562,7 +562,7 @@ window.addEventListener(
 
       const movieDetails =
         await fetchMovieDetails(
-          movieId
+          movieId,
            movie.media_type || "movie"
         );
 
