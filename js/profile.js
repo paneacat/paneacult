@@ -507,6 +507,21 @@ tvTimeInput?.addEventListener(
 const movies =
   JSON.parse(moviesText);
 
+const seriesFile = files.find(file =>
+  file.includes("series") &&
+  file.endsWith(".json")
+);
+
+const seriesText =
+  await zip.file(seriesFile).async("string");
+
+const series =
+  JSON.parse(seriesText);
+
+console.log("Film trovati:", movies.length);
+console.log("Serie trovate:", series.length);
+
+     
 async function importMovie(movie) {
      
 console.log(movie.title);
