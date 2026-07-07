@@ -517,7 +517,14 @@ const results =
 
 console.log(results);
 
+const tmdbMovie =
+  results.find(movie =>
+    movie.release_date?.startsWith(
+      String(firstMovie.year)
+    )
+  ) || results[0];
 
+console.log(tmdbMovie);
 
      
      const seriesFile = files.find(file =>
