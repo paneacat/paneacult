@@ -336,13 +336,12 @@ letter-spacing:.04em;
    STATS
 ========================= */
 .profile-stats{
-
-  display:grid;
-  grid-template-columns:repeat(2,minmax(140px,220px));
-  gap:18px;
   width:100%;
   max-width:480px;
   margin:24px auto 0;
+ display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 
 }
 
