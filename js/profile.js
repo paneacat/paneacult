@@ -562,13 +562,20 @@ tvTimeInput?.addEventListener(
   item.name ||
   item.show_name;
 
+if (!title) {
+  return false;
+}
+
 const results =
   await searchMovies(title);
 
-      if(
-        !results ||
-        !results.length
-      ) return false;
+if (!results || !results.length) {
+
+  console.log("Non trovato:", title);
+
+  return false;
+
+}
 
       const tmdbItem =
 
@@ -590,6 +597,13 @@ const results =
 
         results[0];
 
+          console.log(
+  "Salvo:",
+  tmdbItem.title || tmdbItem.name,
+  mediaType
+);
+
+          
       const { error } =
         await supabaseClient
           .from("user_movies")
@@ -655,7 +669,9 @@ const results =
       console.log(
         `🎬 Film ${importedMovies}/${movies.length}`
       );
-
+await new Promise(resolve =>
+  setTimeout(resolve, 120)
+);
     }
      
       for (const serie of series) {
@@ -675,7 +691,9 @@ const results =
       console.log(
         `📺 Serie ${importedSeries}/${series.length}`
       );
-
+await new Promise(resolve =>
+  setTimeout(resolve, 120)
+);
       }
     alert(
 
