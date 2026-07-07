@@ -526,6 +526,11 @@ const tmdbMovie =
 
 console.log(tmdbMovie);
 
+const {
+  data: { user }
+} = await supabaseClient.auth.getUser();
+
+if (!user) return;
      
      const seriesFile = files.find(file =>
   file.includes("series") &&
