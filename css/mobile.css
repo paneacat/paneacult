@@ -326,6 +326,7 @@ section{
   /* Contenitore dei contatori */
   .profile-stats {
     margin-bottom: 3px;   /* diminuisci questo valore */
+    grid-template-columns:repeat(2,1fr);
   }
 
   /* Card Desert Island Film */
@@ -353,10 +354,6 @@ section{
 /* =========================
      USER BOX
   ========================= */
-
-  .profile-stats{
-    margin-bottom: 8px;
-  }
   
   .profile-user{
 
