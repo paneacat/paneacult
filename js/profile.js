@@ -548,15 +548,20 @@ if (!user) return;
     const { error } =
 await supabaseClient
   .from("user_movies")
-  .upsert({
-      user_id: user.id,
-      movie_id: tmdbMovie.id,
-      title: tmdbMovie.title,
-      poster_path: tmdbMovie.poster_path,
-      status: "watched",
-      release_year: firstMovie.year,
-      media_type: "movie"
-    });
+  .upsert(
+  {
+    user_id: user.id,
+    movie_id: tmdbMovie.id,
+    title: tmdbMovie.title,
+    poster_path: tmdbMovie.poster_path,
+    status: "watched",
+    release_year: firstMovie.year,
+    media_type: "movie"
+  },
+  {
+    onConflict: "user_id,movie_id,status"
+  }
+);
 
      console.log("Errore upsert:", error);
 
