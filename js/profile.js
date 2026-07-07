@@ -509,7 +509,8 @@ console.log(moviesFile);
 const movies =
   JSON.parse(moviesText);
 
-console.log(movies[0]);
+console.log("Film trovati:", movies.length);
+     console.log(movies.slice(0,5));
   }
 );
 
