@@ -32,6 +32,21 @@ const activityFeed =
     "activityFeed"
   );
 
+const tvWatchedGrid =
+  document.getElementById(
+    "tvWatchedGrid"
+  );
+
+const tvWatchlistGrid =
+  document.getElementById(
+    "tvWatchlistGrid"
+  );
+
+const tvFavoriteGrid =
+  document.getElementById(
+    "tvFavoriteGrid"
+  );
+
 /* =========================
    LOAD MOVIES
 ========================= */
@@ -41,6 +56,12 @@ let watched = [];
 let watchlist = [];
 
 let favorites = [];
+
+let tvWatched = [];
+
+let tvWatchlist = [];
+
+let tvFavorites = [];
 
 async function loadWatchlist(){
 
