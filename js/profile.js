@@ -560,7 +560,7 @@ if (!user) return;
     .eq("status", "watched");
 
 console.log(existing);
-
+console.log(error);
      
      const seriesFile = files.find(file =>
   file.includes("series") &&
