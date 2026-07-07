@@ -538,6 +538,13 @@ if (!user) return;
   status: "watched"
 });
 
+     console.log("Sto salvando:", {
+  user_id: user.id,
+  movie_id: tmdbMovie.id,
+  status: "watched"
+});
+
+     
     const { error } =
 await supabaseClient
   .from("user_movies")
@@ -551,6 +558,9 @@ await supabaseClient
       media_type: "movie"
     });
 
+     console.log("Errore upsert:", error);
+
+     
      const existing =
   await supabaseClient
     .from("user_movies")
