@@ -501,6 +501,15 @@ tvTimeInput?.addEventListener(
 
 console.log(moviesFile);
 
+     const moviesText =
+  await zip
+    .file(moviesFile)
+    .async("string");
+
+const movies =
+  JSON.parse(moviesText);
+
+console.log(movies[0]);
   }
 );
 
