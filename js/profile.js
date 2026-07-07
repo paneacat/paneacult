@@ -575,12 +575,16 @@ const series =
   JSON.parse(seriesText);
 
 console.log("Serie trovate:", series.length);
-console.log(series[0]);
-     
-     console.log(movies.slice(0,5));
-  }
-);
 
+console.log(series[0]);
+
+for (const movie of movies) {
+  await importMovie(movie);
+}
+
+console.log("Film importati!");
+}
+);
 
 
 
