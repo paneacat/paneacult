@@ -762,25 +762,31 @@ if (!results || !results.length) {
 
 }
 
-      const tmdbItem =
+          const filteredResults =
+  results.filter(result =>
+    result.media_type === mediaType
+  );
 
-        results.find(result => {
+const tmdbItem =
 
-          const date =
+  filteredResults.find(result => {
 
-            mediaType === "movie"
+    const date =
 
-              ? result.release_date
+      mediaType === "movie"
+        ? result.release_date
+        : result.first_air_date;
 
-              : result.first_air_date;
+    return date?.startsWith(
+      String(item.year)
+    );
 
-          return date?.startsWith(
-            String(item.year)
-          );
+  }) ||
 
-        }) ||
+  filteredResults[0] ||
 
-        results[0];
+  results[0];
+          
 
           console.log(
   "Salvo:",
@@ -885,16 +891,19 @@ await new Promise(resolve =>
 
 `✅ Importazione completata
 
-🎬 Film: ${importedMovies}
+🎬 Film importati: ${importedMovies}
 
-📺 Serie: ${importedSeries}
+📺 Serie importate: ${importedSeries}
 
 ❌ Non trovati: ${notFound.length}`
 
 );
 
-console.table(notFound);
+if (notFound.length) {
 
+  console.table(notFound);
+
+}
      
 tvTimeBtn.disabled = false;
 
