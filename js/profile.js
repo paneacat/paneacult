@@ -492,7 +492,9 @@ tvTimeInput?.addEventListener(
     const zip =
       await JSZip.loadAsync(file);
 
-    console.log(zip);
+    const files = Object.keys(zip.files);
+
+console.log(files);
 
   }
 );
