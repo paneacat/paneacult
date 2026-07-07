@@ -507,20 +507,19 @@ tvTimeInput?.addEventListener(
 const movies =
   JSON.parse(moviesText);
 
+async function importMovie(movie) {
+     
+console.log(movie.title);
 
-     const firstMovie = movies[0];
-
-console.log(firstMovie.title);
-
-const results =
-  await searchMovies(firstMovie.title);
+  const results =
+  await searchMovies(movie.title);
 
 console.log(results);
 
 const tmdbMovie =
   results.find(movie =>
     movie.release_date?.startsWith(
-      String(firstMovie.year)
+      String(movie.year)
     )
   ) || results[0];
 
@@ -547,7 +546,7 @@ if (!user) return;
       title: tmdbMovie.title,
       poster_path: tmdbMovie.poster_path,
       status: "watched",
-      release_year: firstMovie.year,
+      release_year: movie.year,
       media_type: "movie"
     });
 
