@@ -462,6 +462,11 @@ console.log(cols);
   }
 );
 
+
+/* =========================
+   TV TIME IMPORT
+========================= */
+
 const tvTimeBtn =
   document.getElementById(
     "importTvTimeBtn"
@@ -475,9 +480,7 @@ const tvTimeInput =
 tvTimeBtn?.addEventListener(
   "click",
   () => {
-
     tvTimeInput.click();
-
   }
 );
 
@@ -485,119 +488,207 @@ tvTimeInput?.addEventListener(
   "change",
   async (e) => {
 
-    const file = e.target.files[0];
+    const file =
+      e.target.files[0];
 
-    if(!file) return;
+    if (!file) return;
 
     const zip =
       await JSZip.loadAsync(file);
 
-    const files = Object.keys(zip.files);
+    const files =
+      Object.keys(zip.files);
 
-     const moviesFile = files.find(file =>
-  file.includes("movies") &&
-  file.endsWith(".json")
-);
+    const moviesFile =
+      files.find(file =>
+        file.includes("movies") &&
+        file.endsWith(".json")
+      );
 
-     const moviesText =
-  await zip
-    .file(moviesFile)
-    .async("string");
+    const seriesFile =
+      files.find(file =>
+        file.includes("series") &&
+        file.endsWith(".json")
+      );
 
-const movies =
-  JSON.parse(moviesText);
+    if (!moviesFile || !seriesFile) {
 
+      alert(
+        "Archivio TV Time non valido."
+      );
 
-     const firstMovie = movies[0];
+      return;
 
-console.log(firstMovie.title);
+    }
 
-const results =
-  await searchMovies(firstMovie.title);
+    const movies =
+      JSON.parse(
+        await zip
+          .file(moviesFile)
+          .async("string")
+      );
 
-console.log(results);
+    const series =
+      JSON.parse(
+        await zip
+          .file(seriesFile)
+          .async("string")
+      );
 
-const tmdbMovie =
-  results.find(movie =>
-    movie.release_date?.startsWith(
-      String(firstMovie.year)
-    )
-  ) || results[0];
+    const {
+      data:{ user }
+    } =
+    await supabaseClient.auth
+      .getUser();
 
-console.log(tmdbMovie);
+    if(!user){
 
-const {
-  data: { user }
-} = await supabaseClient.auth.getUser();
+      alert("Login richiesto");
 
-console.log("Auth UID:", user.id);
+      return;
 
-const { data: session } =
-  await supabaseClient.auth.getSession();
+    }
 
-console.log(session);
+    let importedMovies = 0;
+    let importedSeries = 0;
 
-if (!user) return;
+       async function importItem(
+      item,
+      mediaType
+    ){
+
+      const results =
+        await searchMovies(
+          item.title
+        );
+
+      if(
+        !results ||
+        !results.length
+      ) return false;
+
+      const tmdbItem =
+
+        results.find(result => {
+
+          const date =
+
+            mediaType === "movie"
+
+              ? result.release_date
+
+              : result.first_air_date;
+
+          return date?.startsWith(
+            String(item.year)
+          );
+
+        }) ||
+
+        results[0];
+
+      const { error } =
+        await supabaseClient
+          .from("user_movies")
+          .upsert(
+            {
+
+              user_id:
+                user.id,
+
+              movie_id:
+                tmdbItem.id,
+
+              title:
+                tmdbItem.title ||
+                tmdbItem.name,
+
+              poster_path:
+                tmdbItem.poster_path,
+
+              release_year:
+                item.year,
+
+              media_type:
+                mediaType,
+
+              status:
+                "watched"
+
+            },
+            {
+              onConflict:
+                "user_id,movie_id,status"
+            }
+          );
+
+      if(error){
+
+        console.log(
+          error
+        );
+
+        return false;
+
+      }
+
+      return true;
+
+       }
+    for (const movie of movies) {
+
+      const imported =
+        await importItem(
+          movie,
+          "movie"
+        );
+
+      if (imported) {
+
+        importedMovies++;
+
+      }
+
+      console.log(
+        `🎬 Film ${importedMovies}/${movies.length}`
+      );
+
+    }
      
-     console.log({
-  user: user.id,
-  movie_id: tmdbMovie.id,
-  status: "watched"
-});
+      for (const serie of series) {
 
-     console.log("Sto salvando:", {
-  user_id: user.id,
-  movie_id: tmdbMovie.id,
-  status: "watched"
-});
+      const imported =
+        await importItem(
+          serie,
+          "tv"
+        );
 
-     
-    const { error } =
-await supabaseClient
-  .from("user_movies")
-  .upsert(
-  {
-    user_id: user.id,
-    movie_id: tmdbMovie.id,
-    title: tmdbMovie.title,
-    poster_path: tmdbMovie.poster_path,
-    status: "watched",
-    release_year: firstMovie.year,
-    media_type: "movie"
-  },
-  {
-    onConflict: "user_id,movie_id,status"
+      if (imported) {
+
+        importedSeries++;
+
+      }
+
+      console.log(
+        `📺 Serie ${importedSeries}/${series.length}`
+      );
+
+      }
+    alert(
+
+      `Importazione completata!
+
+🎬 Film: ${importedMovies}
+
+📺 Serie: ${importedSeries}`
+
+    );
+
+    location.reload();
+
   }
 );
-
-     console.log("Errore upsert:", error);
-
      
-     const existing =
-  await supabaseClient
-    .from("user_movies")
-    .select("*")
-    .eq("user_id", user.id)
-    .eq("movie_id", tmdbMovie.id)
-    .eq("status", "watched");
-
-console.log(existing);
-console.log(error);
-
-if (!error) {
-  alert("Primo film importato!");
-}
-  }
-   for (const movie of movies) {
-  await importMovie(movie);
-}
-
-console.log("Film importati!");
-
-);
-
-
-
 
 /* =========================
    RENDER GRID
