@@ -290,9 +290,7 @@ importInput?.addEventListener(
         try{
 
           const results =
-            await searchMovies(
-              title
-            );
+  await searchMovieSmart(title);
 
           const movie =
             results?.[0];
