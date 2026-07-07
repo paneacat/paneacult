@@ -494,7 +494,12 @@ tvTimeInput?.addEventListener(
 
     const files = Object.keys(zip.files);
 
-console.log(files);
+     const moviesFile = files.find(file =>
+  file.includes("movies") &&
+  file.endsWith(".json")
+);
+
+console.log(moviesFile);
 
   }
 );
