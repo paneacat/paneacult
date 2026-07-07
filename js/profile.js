@@ -557,10 +557,13 @@ tvTimeInput?.addEventListener(
       mediaType
     ){
 
-      const results =
-        await searchMovies(
-          item.title
-        );
+        const title =
+  item.title ||
+  item.name ||
+  item.show_name;
+
+const results =
+  await searchMovies(title);
 
       if(
         !results ||
