@@ -462,6 +462,43 @@ console.log(cols);
   }
 );
 
+const tvTimeBtn =
+  document.getElementById(
+    "importTvTimeBtn"
+  );
+
+const tvTimeInput =
+  document.getElementById(
+    "tvtimeImport"
+  );
+
+tvTimeBtn?.addEventListener(
+  "click",
+  () => {
+
+    tvTimeInput.click();
+
+  }
+);
+
+tvTimeInput?.addEventListener(
+  "change",
+  async (e) => {
+
+    const file = e.target.files[0];
+
+    if(!file) return;
+
+    const zip =
+      await JSZip.loadAsync(file);
+
+    console.log(zip);
+
+  }
+);
+
+
+
 
 /* =========================
    RENDER GRID
