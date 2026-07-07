@@ -587,25 +587,13 @@ console.log(error);
 if (!error) {
   alert("Primo film importato!");
 }
-     
-     const seriesFile = files.find(file =>
-  file.includes("series") &&
-  file.endsWith(".json")
-);
-
-console.log(seriesFile);
-
-const seriesText =
-  await zip.file(seriesFile).async("string");
-
-const series =
-  JSON.parse(seriesText);
-
-console.log("Serie trovate:", series.length);
-console.log(series[0]);
-     
-     console.log(movies.slice(0,5));
   }
+   for (const movie of movies) {
+  await importMovie(movie);
+}
+
+console.log("Film importati!");
+
 );
 
 
