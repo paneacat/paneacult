@@ -507,34 +507,20 @@ tvTimeInput?.addEventListener(
 const movies =
   JSON.parse(moviesText);
 
-const seriesFile = files.find(file =>
-  file.includes("series") &&
-  file.endsWith(".json")
-);
 
-const seriesText =
-  await zip.file(seriesFile).async("string");
+     const firstMovie = movies[0];
 
-const series =
-  JSON.parse(seriesText);
+console.log(firstMovie.title);
 
-console.log("Film trovati:", movies.length);
-console.log("Serie trovate:", series.length);
-
-     
-async function importMovie(movie) {
-     
-console.log(movie.title);
-
-  const results =
-  await searchMovies(movie.title);
+const results =
+  await searchMovies(firstMovie.title);
 
 console.log(results);
 
 const tmdbMovie =
   results.find(movie =>
     movie.release_date?.startsWith(
-      String(movie.year)
+      String(firstMovie.year)
     )
   ) || results[0];
 
@@ -561,7 +547,7 @@ if (!user) return;
       title: tmdbMovie.title,
       poster_path: tmdbMovie.poster_path,
       status: "watched",
-      release_year: movie.year,
+      release_year: firstMovie.year,
       media_type: "movie"
     });
 
@@ -574,16 +560,30 @@ if (!user) return;
     .eq("status", "watched");
 
 console.log(existing);
-console.log(error);
-}
 
-     for (const movie of movies) {
-  await importMovie(movie);
-}
-
-console.log("Film importati!");
-
+     
+     const seriesFile = files.find(file =>
+  file.includes("series") &&
+  file.endsWith(".json")
 );
+
+console.log(seriesFile);
+
+const seriesText =
+  await zip.file(seriesFile).async("string");
+
+const series =
+  JSON.parse(seriesText);
+
+console.log("Serie trovate:", series.length);
+console.log(series[0]);
+     
+     console.log(movies.slice(0,5));
+  }
+);
+
+
+
 
 /* =========================
    RENDER GRID
