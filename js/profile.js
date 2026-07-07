@@ -690,6 +690,48 @@ function updateProgress(type){
 
 }
 
+     async function searchMovieSmart(title) {
+
+  const attempts = [
+
+    title,
+
+    title.replace(/[:–-]/g, " "),
+
+    title.replace(/\(.*?\)/g, "").trim(),
+
+    title.split(":")[0].trim(),
+
+    title.split("-")[0].trim(),
+
+    title.replace(/[^\w\s]/g, "").trim()
+
+  ];
+
+  const tried = new Set();
+
+  for (const query of attempts) {
+
+    if (!query || tried.has(query)) continue;
+
+    tried.add(query);
+
+    const results =
+      await searchMovies(query);
+
+    if (results?.length) {
+
+      return results;
+
+    }
+
+  }
+
+  return [];
+
+     }
+
+     
      
        async function importItem(
       item,
