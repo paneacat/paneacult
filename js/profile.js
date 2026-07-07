@@ -499,8 +499,6 @@ tvTimeInput?.addEventListener(
   file.endsWith(".json")
 );
 
-console.log(moviesFile);
-
      const moviesText =
   await zip
     .file(moviesFile)
@@ -508,8 +506,23 @@ console.log(moviesFile);
 
 const movies =
   JSON.parse(moviesText);
+ 
+     const seriesFile = files.find(file =>
+  file.includes("series") &&
+  file.endsWith(".json")
+);
 
-console.log("Film trovati:", movies.length);
+console.log(seriesFile);
+
+const seriesText =
+  await zip.file(seriesFile).async("string");
+
+const series =
+  JSON.parse(seriesText);
+
+console.log("Serie trovate:", series.length);
+console.log(series[0]);
+     
      console.log(movies.slice(0,5));
   }
 );
