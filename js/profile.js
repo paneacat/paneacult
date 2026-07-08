@@ -688,6 +688,47 @@ function updateProgress(type){
 
 }
 
+     function scoreResult(result, item, mediaType) {
+
+  let score = 0;
+
+  const title =
+    (result.title || result.name || "").toLowerCase();
+
+  const original =
+    (result.original_title || result.original_name || "").toLowerCase();
+
+  const target =
+    (item.title || item.name || item.show_name || "").toLowerCase();
+
+  if (title === target)
+    score += 50;
+
+  if (original === target)
+    score += 30;
+
+  if (result.media_type === mediaType)
+    score += 100;
+
+  const year = (
+    result.release_date ||
+    result.first_air_date ||
+    ""
+  ).slice(0,4);
+
+  if (String(item.year) === year)
+    score += 100;
+
+  score += Math.min(
+    result.popularity || 0,
+    20
+  );
+
+  return score;
+
+     }
+
+     
      async function searchMovieSmart(title) {
 
   const attempts = [
@@ -802,30 +843,21 @@ if (!results || !results.length) {
 
 }
 
-          const filteredResults =
-  results.filter(result =>
-    result.media_type === mediaType
-  );
-
-const tmdbItem =
-
-  filteredResults.find(result => {
-
-    const date =
-
-      mediaType === "movie"
-        ? result.release_date
-        : result.first_air_date;
-
-    return date?.startsWith(
-      String(item.year)
-    );
-
-  }) ||
-
-  filteredResults[0] ||
-
-  results[0];
+          const tmdbItem =
+  results
+    .sort(
+      (a,b)=>
+        scoreResult(
+          b,
+          item,
+          mediaType
+        ) -
+        scoreResult(
+          a,
+          item,
+          mediaType
+        )
+    )[0];
           
 
           console.log(
