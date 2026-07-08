@@ -2264,3 +2264,62 @@ font-size:.9rem;
   font-size:.95rem;
 
 }
+
+.selected-movie-ratings{
+
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:20px;
+
+}
+
+.rating-badge{
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  padding:12px 16px;
+
+  border-radius:14px;
+
+  background:rgba(255,255,255,.06);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  min-width:150px;
+
+}
+
+.rating-badge strong{
+
+  display:block;
+  font-size:.85rem;
+
+}
+
+.rating-badge span{
+
+  font-size:1rem;
+  font-weight:700;
+
+}
+
+.imdb{
+
+  border-left:4px solid #f5c518;
+
+}
+
+.rotten{
+
+  border-left:4px solid #fa320a;
+
+}
+
+.meta{
+
+  border-left:4px solid #66cc33;
+
+}
