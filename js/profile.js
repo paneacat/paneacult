@@ -1014,24 +1014,25 @@ await new Promise(resolve =>
      
       for (const serie of series) {
 
-      const imported =
-        await importItem(
-          serie,
-          "tv"
-        );
+  const imported =
+    await importItem(
+      serie,
+      "tv"
+    );
 
-      if (imported) {
+  if (!imported)
+    continue;
 
-        importedSeries++;
-        updateProgress(serie.title || serie.name);
-      }
+  importedSeries++;
 
-      console.log(
-        `📺 Serie ${importedSeries}/${series.length}`
-      );
-await new Promise(resolve =>
-  setTimeout(resolve, 120)
-);
+  updateProgress(
+    serie.title
+  );
+
+  console.log(
+    serie.seasons
+  );
+
       }
 
      alert(
