@@ -841,10 +841,6 @@ if (!isNaN(year) && !isNaN(targetYear)) {
 
      }
 
-     const tvdbToTmdb =
-  new Map();
-     
-     
        async function importItem(
       item,
       mediaType
@@ -936,11 +932,6 @@ if (
   mediaType === "tv" &&
   item.id?.tvdb
 ) {
-
-  tvdbToTmdb.set(
-    item.id.tvdb,
-    tmdbItem.id
-  );
 
 }
           
