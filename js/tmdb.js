@@ -141,8 +141,11 @@ function renderSelectedMovie(movie, movieDetails){
       .map(actor => actor.name)
       .join(", ");
 
-  selectedMovieData =
-  movieDetails || movie;
+  selectedMovieData = {
+  ...movieDetails,
+  media_type: movie.media_type,
+  id: movie.id
+};
 
 const hero =
   document.querySelector(
@@ -916,6 +919,7 @@ async function toggleMovieStatus(status){
 
         }
 
+         
         await removeStatus("watchlist");
 
         await saveMovie("desert");
