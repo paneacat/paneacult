@@ -607,6 +607,23 @@ tvTimeInput?.addEventListener(
           .async("string")
       );
 
+     let episodes = [];
+
+if (episodesFile) {
+
+  const episodesText =
+    await zip
+      .file(episodesFile)
+      .async("string");
+
+  episodes =
+    episodesText
+      .split("\n")
+      .slice(1)
+      .filter(Boolean);
+
+}
+     
     const {
       data:{ user }
     } =
