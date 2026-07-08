@@ -583,6 +583,12 @@ tvTimeInput?.addEventListener(
         file.endsWith(".json")
       );
 
+     const episodesFile =
+  files.find(file =>
+    file.includes("series-episodes") &&
+    file.endsWith(".csv")
+  );
+
     if (!moviesFile || !seriesFile) {
 
       alert(
@@ -859,6 +865,8 @@ if (!isNaN(year) && !isNaN(targetYear)) {
 
      }
 
+     const tvdbToTmdb =
+  new Map();
      
      
        async function importItem(
@@ -948,7 +956,18 @@ if (!results || !results.length) {
         )
     )[0];
           
+if (
+  mediaType === "tv" &&
+  item.id?.tvdb
+) {
 
+  tvdbToTmdb.set(
+    item.id.tvdb,
+    tmdbItem.id
+  );
+
+}
+          
           console.log(
   "Salvo:",
   tmdbItem.title || tmdbItem.name,
