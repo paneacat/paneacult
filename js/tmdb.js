@@ -768,9 +768,13 @@ async function saveMovie(status){
           .join(", ") || "",
 
       release_year:
-        Number(
-          selectedMovieData.release_date?.slice(0,4)
-        ) || null,
+  Number(
+    (
+      selectedMovieData.release_date ||
+      selectedMovieData.first_air_date ||
+      ""
+    ).slice(0,4)
+  ) || null,
 
       status
     });
