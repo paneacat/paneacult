@@ -611,39 +611,41 @@
   <div id="allReviews"></div>
 
 </div>
-  
-  <div class="import-box">
 
-  <h3>Importa la tua libreria</h3>
+
+ <div class="import-box">
+
+  <h3>Importa i tuoi dati da altre app!</h3>
 
   <p>
-    Importa film, serie TV, watchlist, preferiti, voti e recensioni da altre piattaforme.
+    Importa watchlist, watched, voti e recensioni!
   </p>
 
   <input
     type="file"
-    id="libraryImport"
-    accept=".zip,.csv"
+    id="letterboxdImport"
+    accept=".csv"
     hidden
   >
 
   <button
-    id="importLibraryBtn"
+    id="importLetterboxdBtn"
     class="movie-action-btn"
   >
-    📥 Importa i dati da altre app!
+    Importa da Letterboxd (.csv)
   </button>
 
-  <p class="import-info">
-    Supportati:
-    <br>
-    📦 TV Time (.zip)
-    <br>
-    📄 Letterboxd (.csv)
-    <br><br>
-    Il formato verrà riconosciuto automaticamente.
-  </p>
+<button id="importTvTimeBtn" class="profile-btn">
+    <i class="fa-solid fa-tv"></i>
+    Importa da TV Time (.zip)
+</button>
 
+<input
+    type="file"
+    id="tvtimeImport"
+    accept=".zip"
+    hidden
+>
   </div>
     
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
