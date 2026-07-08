@@ -229,6 +229,27 @@ importInput?.addEventListener(
     const files =
       [...e.target.files];
 
+     const firstFile = files[0];
+
+if (
+  firstFile &&
+  firstFile.name
+    .toLowerCase()
+    .endsWith(".zip")
+) {
+
+  tvTimeInput.files =
+    importInput.files;
+
+  tvTimeInput.dispatchEvent(
+    new Event("change")
+  );
+
+  return;
+
+}
+
+     
     if(!files.length){
 
       alert(
@@ -539,22 +560,9 @@ console.log(cols);
    TV TIME IMPORT
 ========================= */
 
-const tvTimeBtn =
-  document.getElementById(
-    "importTvTimeBtn"
-  );
+const tvTimeBtn = importBtn;
 
-const tvTimeInput =
-  document.getElementById(
-    "tvtimeImport"
-  );
-
-tvTimeBtn?.addEventListener(
-  "click",
-  () => {
-    tvTimeInput.click();
-  }
-);
+const tvTimeInput = importInput;
 
 tvTimeInput?.addEventListener(
   "change",
