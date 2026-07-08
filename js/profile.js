@@ -692,21 +692,74 @@ function updateProgress(type){
 
   let score = 0;
 
-  const title =
-    (result.title || result.name || "").toLowerCase();
+  function normalizeTitle(text){
 
-  const original =
-    (result.original_title || result.original_name || "").toLowerCase();
+  return (text || "")
 
-  const target =
-    (item.title || item.name || item.show_name || "").toLowerCase();
+    .normalize("NFD")
 
+    .replace(/[\u0300-\u036f]/g, "")
+
+    .replace(/[^\w\s]/g, " ")
+
+    .replace(/\s+/g, " ")
+
+    .trim()
+
+    .toLowerCase();
+
+}
+
+const title =
+  normalizeTitle(
+    result.title ||
+    result.name
+  );
+
+const original =
+  normalizeTitle(
+    result.original_title ||
+    result.original_name
+  );
+
+const target =
+  normalizeTitle(
+    item.title ||
+    item.name ||
+    item.show_name
+  );
+
+        
   if (title === target)
     score += 50;
 
   if (original === target)
     score += 30;
 
+  if (
+
+  title.includes(target) ||
+
+  target.includes(title)
+
+){
+
+  score += 20;
+
+}
+
+if (
+
+  original.includes(target) ||
+
+  target.includes(original)
+
+){
+
+  score += 15;
+
+}
+        
   if (result.media_type === mediaType)
     score += 100;
 
