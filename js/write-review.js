@@ -127,10 +127,14 @@ const params =
 const movieId =
   params.get("id");
 
+const mediaType =
+  params.get("type") || "movie";
+
 if(movieId){
 
   fetchMovieDetails(
-    movieId
+    movieId,
+    mediaType
   ).then(movieDetails => {
 
     selectedMovieData =
