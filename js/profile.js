@@ -591,22 +591,6 @@ tvTimeInput?.addEventListener(
         file.endsWith(".json")
       );
 
-     const episodesFile =
-  files.find(file =>
-    file.includes("series-episodes") &&
-    file.endsWith(".csv")
-  );
-
-    if (!moviesFile || !seriesFile) {
-
-      alert(
-        "Archivio TV Time non valido."
-      );
-
-      return;
-
-    }
-
     const movies =
       JSON.parse(
         await zip
@@ -620,60 +604,6 @@ tvTimeInput?.addEventListener(
           .file(seriesFile)
           .async("string")
       );
-
-     let episodes = [];
-
-if (episodesFile) {
-
-  const episodesText =
-    await zip
-      .file(episodesFile)
-      .async("string");
-
-  episodes =
-    episodesText
-      .split("\n")
-      .slice(1)
-      .filter(Boolean);
-
-}
-const episodeRows = [];
-
-     for (const row of episodes) {
-
-  const cols = row.split(",");
-
-  episodeRows.push({
-
-    series_tvdb_id:
-      Number(cols[0]),
-
-    title:
-      cols[3],
-
-    season:
-      Number(cols[4]),
-
-    episode:
-      Number(cols[5]),
-
-    is_watched:
-      cols[7]
-        ?.toLowerCase() === "true",
-
-    watched_at:
-      cols[8] || null,
-
-    rewatch_count:
-      Number(cols[9] || 0),
-
-    special:
-      cols[10]
-        ?.toLowerCase() === "true"
-
-  });
-
-     }
 
      
     const {
