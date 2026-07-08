@@ -1066,7 +1066,101 @@ await new Promise(resolve =>
   setTimeout(resolve, 120)
 );
       }
-    
+
+
+
+     /* =========================
+   IMPORT EPISODI
+========================= */
+
+let importedEpisodes = 0;
+
+for (const row of episodes) {
+
+  try {
+
+    const cols = row.split(",");
+
+    const seriesTvdbId =
+      Number(cols[0]);
+
+    const seasonNumber =
+      Number(cols[2]);
+
+    const episodeNumber =
+      Number(cols[3]);
+
+    const watched =
+      cols[6] === "true";
+
+    const watchedAt =
+      cols[7]
+        ? new Date(cols[7]).toISOString()
+        : null;
+
+    const rewatchCount =
+      Number(cols[8] || 0);
+
+    if (!watched)
+      continue;
+
+    const seriesId =
+      tvdbToTmdb.get(seriesTvdbId);
+
+    if (!seriesId)
+      continue;
+
+    const { error } =
+      await supabaseClient
+        .from("user_episode_progress")
+        .upsert(
+          {
+
+            user_id:
+              user.id,
+
+            series_id:
+              seriesId,
+
+            season_number:
+              seasonNumber,
+
+            episode_number:
+              episodeNumber,
+
+            watched: true,
+
+            watched_at:
+              watchedAt,
+
+            rewatch_count:
+              rewatchCount
+
+          },
+          {
+            onConflict:
+              "user_id,series_id,season_number,episode_number"
+          }
+        );
+
+    if (!error) {
+
+      importedEpisodes++;
+
+    }
+
+  } catch (err) {
+
+    console.log(
+      "Errore episodio:",
+      err
+    );
+
+  }
+
+}
+
+     
      alert(
 
 `✅ Importazione completata
@@ -1075,10 +1169,12 @@ await new Promise(resolve =>
 
 📺 Serie importate: ${importedSeries}
 
+🎞️ Episodi importati: ${importedEpisodes}
+
 ❌ Non trovati: ${notFound.length}`
 
 );
-
+     
 if (notFound.length) {
 
   console.table(notFound);
