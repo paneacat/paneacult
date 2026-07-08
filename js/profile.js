@@ -1115,10 +1115,14 @@ moviesToShow.map(movie => `
 
     <div
       class="saved-card"
-    onclick="goToMovie(${
-  movie.movie_id ||
-  movie.id
-})"
+onclick="goToMovie(
+  ${
+    movie.movie_id || movie.id
+  },
+  '${
+    movie.media_type || "movie"
+  }'
+)"
     >
 
       <img
