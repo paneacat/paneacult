@@ -124,6 +124,14 @@ async function fetchMovieDetails(
   movieData.imdb_votes =
     omdbData.imdbVotes || "";
 
+   movieData.rotten_tomatoes =
+  omdbData.Ratings?.find(
+    r => r.Source === "Rotten Tomatoes"
+  )?.Value || "";
+
+movieData.metacritic =
+  omdbData.Metascore || "";
+   
   return movieData;
 
 }
@@ -264,6 +272,45 @@ ${
 }
 
         </div>
+
+<div class="selected-movie-ratings">
+
+  ${
+    movieDetails.imdb_rating
+      ? `
+      <p>
+        ⭐ <strong>IMDb:</strong>
+        ${movieDetails.imdb_rating}/10
+        (${movieDetails.imdb_votes} voti)
+      </p>
+      `
+      : ""
+  }
+
+  ${
+    movieDetails.rotten_tomatoes
+      ? `
+      <p>
+        🍅 <strong>Rotten Tomatoes:</strong>
+        ${movieDetails.rotten_tomatoes}
+      </p>
+      `
+      : ""
+  }
+
+  ${
+    movieDetails.metacritic &&
+    movieDetails.metacritic !== "N/A"
+      ? `
+      <p>
+        🏆 <strong>Metacritic:</strong>
+        ${movieDetails.metacritic}/100
+      </p>
+      `
+      : ""
+  }
+
+</div>
 
         <div class="movie-actions">
 
