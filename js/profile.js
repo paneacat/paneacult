@@ -629,6 +629,44 @@ if (episodesFile) {
       .filter(Boolean);
 
 }
+const episodeRows = [];
+
+     for (const row of episodes) {
+
+  const cols = row.split(",");
+
+  episodeRows.push({
+
+    series_tvdb_id:
+      Number(cols[0]),
+
+    title:
+      cols[3],
+
+    season:
+      Number(cols[4]),
+
+    episode:
+      Number(cols[5]),
+
+    is_watched:
+      cols[7]
+        ?.toLowerCase() === "true",
+
+    watched_at:
+      cols[8] || null,
+
+    rewatch_count:
+      Number(cols[9] || 0),
+
+    special:
+      cols[10]
+        ?.toLowerCase() === "true"
+
+  });
+
+     }
+
      
     const {
       data:{ user }
@@ -1158,8 +1196,7 @@ for (const row of episodes) {
 
   }
 
-}
-
+}    
      
      alert(
 
@@ -1174,6 +1211,7 @@ for (const row of episodes) {
 ❌ Non trovati: ${notFound.length}`
 
 );
+     
      
 if (notFound.length) {
 
