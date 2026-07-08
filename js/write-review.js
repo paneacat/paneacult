@@ -565,10 +565,14 @@ window.addEventListener(
     try{
 
       const movieDetails =
-        await fetchMovieDetails(
-          movieId,
-           movie.media_type || "movie"
-        );
+        const mediaType =
+  params.get("type") || "movie";
+
+const movieDetails =
+  await fetchMovieDetails(
+    movieId,
+    mediaType
+  );
 
       renderSelectedMovie(
         movieDetails,
