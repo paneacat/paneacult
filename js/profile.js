@@ -1032,8 +1032,6 @@ if (!tmdbSerie)
     serie.title
   );
 
-  let importedEpisodes = 0;
-
 for (const season of (serie.seasons || [])) {
 
   for (const episode of (season.episodes || [])) {
