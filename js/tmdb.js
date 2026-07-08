@@ -278,11 +278,13 @@ ${
   ${
     movieDetails.imdb_rating
       ? `
-      <p>
-        ⭐ <strong>IMDb:</strong>
-        ${movieDetails.imdb_rating}/10
-        (${movieDetails.imdb_votes} voti)
-      </p>
+      <div class="rating-badge imdb">
+        ⭐
+        <div>
+          <strong>IMDb</strong>
+          <span>${movieDetails.imdb_rating}/10</span>
+        </div>
+      </div>
       `
       : ""
   }
@@ -290,10 +292,13 @@ ${
   ${
     movieDetails.rotten_tomatoes
       ? `
-      <p>
-        🍅 <strong>Rotten Tomatoes:</strong>
-        ${movieDetails.rotten_tomatoes}
-      </p>
+      <div class="rating-badge rotten">
+        🍅
+        <div>
+          <strong>Rotten</strong>
+          <span>${movieDetails.rotten_tomatoes}</span>
+        </div>
+      </div>
       `
       : ""
   }
@@ -302,10 +307,13 @@ ${
     movieDetails.metacritic &&
     movieDetails.metacritic !== "N/A"
       ? `
-      <p>
-        🏆 <strong>Metacritic:</strong>
-        ${movieDetails.metacritic}/100
-      </p>
+      <div class="rating-badge meta">
+        🏆
+        <div>
+          <strong>Metacritic</strong>
+          <span>${movieDetails.metacritic}/100</span>
+        </div>
+      </div>
       `
       : ""
   }
