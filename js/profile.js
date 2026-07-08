@@ -623,11 +623,15 @@ tvTimeInput?.addEventListener(
 tvTimeBtn.disabled = true;
 tvTimeBtn.textContent =
   "Importazione...";
-     
-    let importedMovies = 0;
-    let importedSeries = 0;
-    const notFound = [];
 
+     
+let importedMovies = 0;
+
+let importedSeries = 0;
+
+let importedEpisodes = 0;
+
+const notFound = [];
      
      const totalItems =
   movies.length + series.length;
@@ -979,30 +983,29 @@ if (
 
       if(error){
 
-        console.log(
-          error
-        );
+  console.log(error);
 
-        return false;
+  return null;
 
-      }
+}
 
-      return true;
+return tmdbItem;
 
        }
     for (const movie of movies) {
 
-      const imported =
-        await importItem(
-          movie,
-          "movie"
-        );
+      const tmdbMovie =
+  await importItem(
+    movie,
+    "movie"
+  );
 
-      if (imported) {
+if (!tmdbMovie)
+  continue;
 
-        importedMovies++;
-        updateProgress(movie.title);
-      }
+importedMovies++;
+
+updateProgress(movie.title);
 
       console.log(
         `🎬 Film ${importedMovies}/${movies.length}`
@@ -1014,14 +1017,14 @@ await new Promise(resolve =>
      
       for (const serie of series) {
 
-  const imported =
-    await importItem(
-      serie,
-      "tv"
-    );
+  const tmdbSerie =
+  await importItem(
+    serie,
+    "tv"
+  );
 
-  if (!imported)
-    continue;
+if (!tmdbSerie)
+  continue;
 
   importedSeries++;
 
@@ -1029,10 +1032,56 @@ await new Promise(resolve =>
     serie.title
   );
 
-  console.log(
-    serie.seasons
-  );
+  let importedEpisodes = 0;
 
+for (const season of (serie.seasons || [])) {
+
+  for (const episode of (season.episodes || [])) {
+
+    if (!episode.is_watched)
+      continue;
+
+    const { error } =
+      await supabaseClient
+        .from("user_episode_progress")
+        .upsert({
+
+          user_id:
+            user.id,
+
+          series_id:
+            tmdbSerie.id,
+
+          season_number:
+            season.number,
+
+          episode_number:
+            episode.number,
+
+          watched: true,
+
+          watched_at:
+            episode.watched_at,
+
+          rewatch_count:
+            episode.rewatch_count || 0
+
+        }, {
+
+          onConflict:
+            "user_id,series_id,season_number,episode_number"
+
+        });
+
+    if (!error) {
+
+      importedEpisodes++;
+
+    }
+
+  }
+
+}       
       }
 
      alert(
@@ -1071,7 +1120,10 @@ progress.innerHTML = `
 
 📺 Serie importate:
 <b>${importedSeries}</b>
-`;
+
+     🎞️ Episodi importati: 
+  <b>${importedEpisodes}</b>
+  `; 
     location.reload();
 
   }
