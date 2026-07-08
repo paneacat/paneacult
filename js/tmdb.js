@@ -523,12 +523,10 @@ const TMDB_BACKDROP =
 
 
 
-function goToMovie(id){
-
-  if(!id) return;
+function goToMovie(id, mediaType){
 
   window.location.href =
-    `add-review.html?id=${id}`;
+    `add-review.html?id=${id}&type=${mediaType}`;
 
 }
 
@@ -536,7 +534,7 @@ function goToMovie(id){
 function openRating(id){
 
   window.location.href =
-    `add-review.html?id=${id}`;
+    `add-review.html?id=${id}&type=${mediaType}`;
 
 }
 
