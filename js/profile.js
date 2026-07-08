@@ -710,14 +710,33 @@ function updateProgress(type){
   if (result.media_type === mediaType)
     score += 100;
 
-  const year = (
+  const year = parseInt(
+  (
     result.release_date ||
     result.first_air_date ||
     ""
-  ).slice(0,4);
+  ).slice(0, 4)
+);
 
-  if (String(item.year) === year)
+const targetYear =
+  parseInt(item.year);
+
+if (!isNaN(year) && !isNaN(targetYear)) {
+
+  const diff =
+    Math.abs(year - targetYear);
+
+  if (diff === 0) {
+
     score += 100;
+
+  } else if (diff === 1) {
+
+    score += 70;
+
+  }
+
+}
 
   score += Math.min(
     result.popularity || 0,
