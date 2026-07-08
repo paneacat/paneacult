@@ -201,12 +201,12 @@ async function loadTvFavorites(){
 
 const importBtn =
   document.getElementById(
-    "importLetterboxdBtn"
+    "importLibraryBtn"
   );
 
 const importInput =
   document.getElementById(
-    "letterboxdImport"
+    "libraryImport"
   );
 
 if(importInput){
