@@ -207,7 +207,7 @@ il cinema e le serie TV.
 
 <p class="subtitle">
 Paneacult è un progetto indipendente nato per chi vive film e serie come una passione.
-Entra nella lista d'attesa e sarai tra i primi a ricevere l'accesso il giorno del lancio.
+<span class="highlight">Entra nella lista d'attesa</span> e sarai tra i primi a ricevere l'accesso il giorno del lancio.
 </p>
 
 <form id="waitlist-form">
@@ -315,8 +315,7 @@ setInterval(() => {
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
   document.getElementById("countdown").innerHTML =
-    `⏳ Mancano <strong>${days}</strong> giorni, <strong>${hours}</strong> ore e <strong>${minutes}</strong> minuti`;
-}, 1000);
+  `⏳ Mancano <strong>${days}</strong> giorni, <strong>${hours}</strong> ore e <strong>${minutes}</strong> minuti`;
 </script>
 </body>
 </html>
