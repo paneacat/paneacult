@@ -643,12 +643,126 @@ const csvParsers = {
 
 };
 
+async function importTvTimeJson(zip, files){
 
+  console.log(
+    "📦 Import TV Time JSON"
+  );
 
+   
+  const moviesFile =
+      files.find(file =>
+        file.includes("movies") &&
+        file.endsWith(".json")
+      );
 
+    const seriesFile =
+      files.find(file =>
+        file.includes("series") &&
+        file.endsWith(".json")
+      );
 
+    const movies =
+      JSON.parse(
+        await zip
+          .file(moviesFile)
+          .async("string")
+      );
 
- function scoreResult(result, item, mediaType) {
+    const series =
+      JSON.parse(
+        await zip
+          .file(seriesFile)
+          .async("string")
+      );
+
+     
+    const {
+      data:{ user }
+    } =
+    await supabaseClient.auth
+      .getUser();
+
+    if(!user){
+
+      alert("Login richiesto");
+
+      return;
+
+    }
+     
+tvTimeBtn.disabled = true;
+tvTimeBtn.textContent =
+  "Importazione...";
+
+     
+let importedMovies = 0;
+
+let importedSeries = 0;
+
+let importedEpisodes = 0;
+
+const notFound = [];
+     
+     const totalItems =
+  movies.length + series.length;
+
+let completedItems = 0;
+
+const progress =
+  document.createElement("div");
+
+progress.style.cssText = `
+margin-top:16px;
+padding:16px;
+background:#17384a;
+color:#fff;
+border-radius:12px;
+font-weight:600;
+text-align:center;
+line-height:1.8;
+`;
+
+tvTimeBtn.after(progress);
+
+function updateProgress(type){
+
+  completedItems++;
+
+  const percent =
+    Math.round(
+      completedItems / totalItems * 100
+    );
+
+  progress.innerHTML = `
+    <div style="margin-bottom:10px">
+      Importazione TV Time...
+    </div>
+
+    <progress
+      value="${completedItems}"
+      max="${totalItems}"
+      style="width:100%;height:18px">
+    </progress>
+
+    <div style="margin-top:10px">
+      ${percent}% completato
+    </div>
+
+    <div style="margin-top:6px">
+      🎬 ${importedMovies}/${movies.length}
+      &nbsp;&nbsp;
+      📺 ${importedSeries}/${series.length}
+    </div>
+
+    <div style="margin-top:6px;font-size:13px;opacity:.8">
+      Ultimo: ${type}
+    </div>
+  `;
+
+}
+
+     function scoreResult(result, item, mediaType) {
 
   let score = 0;
 
@@ -760,9 +874,6 @@ if (!isNaN(year) && !isNaN(targetYear)) {
 
      }
 
-
-
-   
      
      async function searchMovieSmart(title) {
 
@@ -805,110 +916,7 @@ if (!isNaN(year) && !isNaN(targetYear)) {
 
      }
 
-      
-
-for (const season of (serie.seasons || [])) {
-
-  for (const episode of (season.episodes || [])) {
-
-    if (!episode.is_watched)
-      continue;
-
-
-     console.log(
-  "Salvo episodio:",
-  tmdbSerie.id,
-  season.number,
-  episode.number
-);
-
-     
-    const { error } =
-      await supabaseClient
-        .from("user_episode_progress")
-        .upsert({
-
-          user_id:
-            user.id,
-
-          series_id:
-            tmdbSerie.id,
-
-          season_number:
-            season.number,
-
-          episode_number:
-            episode.number,
-
-          watched: true,
-
-          watched_at:
-            episode.watched_at,
-
-          rewatch_count:
-            episode.rewatch_count || 0
-
-        }, {
-
-          onConflict:
-            "user_id,series_id,season_number,episode_number"
-
-        });
-
-    if (error) {
-
-  console.error(error);
-
-} else {
-
-  importedEpisodes++;
-
-    }
-
-  }
-
-}       
-         await new Promise(resolve =>
-  setTimeout(resolve, 120)
-);
-      }
-
-     
-if (notFound.length) {
-
-  console.table(notFound);
-
-}
-     
-tvTimeBtn.disabled = false;
-
-tvTimeBtn.textContent =
-  "Importa da TV Time";
-
-progress.innerHTML = `
-<h3 style="margin:0 0 12px">
-✅ Importazione completata
-</h3>
-
-🎬 Film importati:
-<b>${importedMovies}</b>
-
-<br><br>
-
-📺 Serie importate:
-<b>${importedSeries}</b>
-
-     🎞️ Episodi importati: 
-  <b>${importedEpisodes}</b>
-  `; 
-    location.reload();
-
- 
-}
-
-
-
- async function importItem(
+       async function importItem(
       item,
       mediaType
     ){
@@ -1100,134 +1108,118 @@ if (!tmdbSerie)
     serie.title
   );
 
+for (const season of (serie.seasons || [])) {
+
+  for (const episode of (season.episodes || [])) {
+
+    if (!episode.is_watched)
+      continue;
 
 
-
-
-         
-async function importTvTimeJson(zip, files){
-
-  console.log(
-    "📦 Import TV Time JSON"
-  );
-
-   
-  const moviesFile =
-      files.find(file =>
-        file.includes("movies") &&
-        file.endsWith(".json")
-      );
-
-    const seriesFile =
-      files.find(file =>
-        file.includes("series") &&
-        file.endsWith(".json")
-      );
-
-    const movies =
-      JSON.parse(
-        await zip
-          .file(moviesFile)
-          .async("string")
-      );
-
-    const series =
-      JSON.parse(
-        await zip
-          .file(seriesFile)
-          .async("string")
-      );
+     console.log(
+  "Salvo episodio:",
+  tmdbSerie.id,
+  season.number,
+  episode.number
+);
 
      
-    const {
-      data:{ user }
-    } =
-    await supabaseClient.auth
-      .getUser();
+    const { error } =
+      await supabaseClient
+        .from("user_episode_progress")
+        .upsert({
 
-    if(!user){
+          user_id:
+            user.id,
 
-      alert("Login richiesto");
+          series_id:
+            tmdbSerie.id,
 
-      return;
+          season_number:
+            season.number,
+
+          episode_number:
+            episode.number,
+
+          watched: true,
+
+          watched_at:
+            episode.watched_at,
+
+          rewatch_count:
+            episode.rewatch_count || 0
+
+        }, {
+
+          onConflict:
+            "user_id,series_id,season_number,episode_number"
+
+        });
+
+    if (error) {
+
+  console.error(error);
+
+} else {
+
+  importedEpisodes++;
 
     }
+
+  }
+
+}       
+         await new Promise(resolve =>
+  setTimeout(resolve, 120)
+);
+      }
+
+     alert(
+
+`✅ Importazione completata
+
+🎬 Film importati: ${importedMovies}
+
+📺 Serie importate: ${importedSeries}
+
+🎞️ Episodi importati: ${importedEpisodes}
+
+❌ Non trovati: ${notFound.length}`
+
+);
      
-tvTimeBtn.disabled = true;
-tvTimeBtn.textContent =
-  "Importazione...";
-
      
-let importedMovies = 0;
+if (notFound.length) {
 
-let importedSeries = 0;
-
-let importedEpisodes = 0;
-
-const notFound = [];
-     
-     const totalItems =
-  movies.length + series.length;
-
-let completedItems = 0;
-
-const progress =
-  document.createElement("div");
-
-progress.style.cssText = `
-margin-top:16px;
-padding:16px;
-background:#17384a;
-color:#fff;
-border-radius:12px;
-font-weight:600;
-text-align:center;
-line-height:1.8;
-`;
-
-tvTimeBtn.after(progress);
-
-function updateProgress(type){
-
-  completedItems++;
-
-  const percent =
-    Math.round(
-      completedItems / totalItems * 100
-    );
-
-  progress.innerHTML = `
-    <div style="margin-bottom:10px">
-      Importazione TV Time...
-    </div>
-
-    <progress
-      value="${completedItems}"
-      max="${totalItems}"
-      style="width:100%;height:18px">
-    </progress>
-
-    <div style="margin-top:10px">
-      ${percent}% completato
-    </div>
-
-    <div style="margin-top:6px">
-      🎬 ${importedMovies}/${movies.length}
-      &nbsp;&nbsp;
-      📺 ${importedSeries}/${series.length}
-    </div>
-
-    <div style="margin-top:6px;font-size:13px;opacity:.8">
-      Ultimo: ${type}
-    </div>
-  `;
+  console.table(notFound);
 
 }
+     
+tvTimeBtn.disabled = false;
 
+tvTimeBtn.textContent =
+  "Importa da TV Time";
 
+progress.innerHTML = `
+<h3 style="margin:0 0 12px">
+✅ Importazione completata
+</h3>
 
-   
-    
+🎬 Film importati:
+<b>${importedMovies}</b>
+
+<br><br>
+
+📺 Serie importate:
+<b>${importedSeries}</b>
+
+     🎞️ Episodi importati: 
+  <b>${importedEpisodes}</b>
+  `; 
+    location.reload();
+
+ 
+}
 
 async function importTvTimeCsv(zip, files){
 
@@ -1406,21 +1398,7 @@ return;
 
   }
 );
-
-   
-     alert(
-
-`✅ Importazione completata
-
-🎬 Film importati: ${importedMovies}
-
-📺 Serie importate: ${importedSeries}
-
-🎞️ Episodi importati: ${importedEpisodes}
-
-❌ Non trovati: ${notFound.length}`
-
-);
+     
      
   
 
