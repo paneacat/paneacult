@@ -614,6 +614,7 @@ console.log(
 );
 
 console.log(groupedSeries);
+}
 
 async function importRatings(csvText){
 
