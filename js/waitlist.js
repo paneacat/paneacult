@@ -1,3 +1,4 @@
+const honeypot = document.getElementById("website");
 const nameInput = document.getElementById("waitlist-name");
 const form = document.getElementById("waitlist-form");
 const emailInput = document.getElementById("waitlist-email");
@@ -21,7 +22,9 @@ async function loadCount() {
 }
 
 loadCount();
-
+if (honeypot.value !== "") {
+  return;
+}
 // Gestione iscrizione
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -33,6 +36,19 @@ form.addEventListener("submit", async (e) => {
 
   message.textContent = "⏳ Ti stiamo iscrivendo...";
 
+  if (name.length < 2 || name.length > 50) {
+  message.textContent = "Inserisci un nome valido.";
+  return;
+}
+
+const emailRegex =
+/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+if (!emailRegex.test(email)) {
+  message.textContent = "Email non valida.";
+  return;
+}
+  
   const { error } = await supabaseClient
     .from("waitlist")
     .insert([
