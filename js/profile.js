@@ -584,12 +584,11 @@ async function importTracking(csvText){
      
     episodes.push(row);
 
-    if (i <= 5) {
+    if (i === 1) {
 
-      console.log(row);
-console.log(Object.keys(row));
+  console.log(row);
+
     }
-
   }  
      
 const groupedSeries = {};
