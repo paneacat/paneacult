@@ -614,7 +614,26 @@ console.log(
 );
 
 console.log(groupedSeries);
+
+   const {
+  data: { user }
+} = await supabaseClient.auth.getUser();
+
+if (!user) {
+  alert("Login richiesto");
+  return;
 }
+
+let importedSeries = 0;
+let importedEpisodes = 0;
+
+   for (const [seriesName, episodes] of Object.entries(groupedSeries)) {
+
+  console.log("Cerco:", seriesName);
+
+   }
+}
+
 
 async function importRatings(csvText){
 
