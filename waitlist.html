@@ -317,22 +317,29 @@ Ci vediamo il <strong>1° settembre 2026.</strong> 🍿
 <script src="js/supabase.js"></script>
 <script src="js/waitlist.js"></script>
 <script>
+
 const launchDate = new Date("September 1, 2026 18:00:00").getTime();
 
 setInterval(() => {
+
   const now = new Date().getTime();
   const distance = launchDate - now;
- if (distance < 0) {
-  document.getElementById("countdown").innerHTML =
-    "🚀 Paneacult è online!";
-  return;
- }
+
+  if (distance < 0) {
+    document.getElementById("countdown").innerHTML =
+      "🚀 Paneacult è online!";
+    return;
+  }
+
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
   document.getElementById("countdown").innerHTML =
-  `⏳ Mancano <strong>${days}</strong> giorni, <strong>${hours}</strong> ore e <strong>${minutes}</strong> minuti`;
+    `⏳ Mancano <strong>${days}</strong> giorni, <strong>${hours}</strong> ore e <strong>${minutes}</strong> minuti`;
+
+}, 1000);
+
 </script>
 </body>
 </html>
