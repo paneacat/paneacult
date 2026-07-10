@@ -590,12 +590,6 @@ headers.forEach((header, index) => {
 
 }
 
-console.log(
-  "Header:",
-  headers
-);
-
-
 async function importRatings(csvText){
 
   console.log(
