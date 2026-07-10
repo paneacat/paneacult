@@ -566,6 +566,8 @@ console.log(
 const headers =
   rows[0].split(",");
 
+   const episodes = [];
+   
    for (let i = 1; i < rows.length; i++) {
 
     const values =
@@ -580,13 +582,36 @@ headers.forEach((header, index) => {
 
 });
 
+  episodes.push(row);
+      
       if (i <= 5) {
 
   console.log(row);
 
       }
       
+
+      const groupedSeries = {};
+
+episodes.forEach(ep => {
+
+  const name = ep.series_name;
+
+  if (!name) return;
+
+  if (!groupedSeries[name]) {
+
+    groupedSeries[name] = [];
+
   }
+
+  groupedSeries[name].push(ep);
+
+});
+
+console.log("Serie trovate:", Object.keys(groupedSeries).length);
+
+console.log(groupedSeries);
 
 }
 
