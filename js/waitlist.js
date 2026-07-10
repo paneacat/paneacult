@@ -22,13 +22,15 @@ async function loadCount() {
 }
 
 loadCount();
-if (honeypot.value !== "") {
-  return;
-}
+
 // Gestione iscrizione
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  if (honeypot.value !== "") {
+  return;
+  }
+  
   const name = nameInput.value.trim();
   const email = emailInput.value.trim().toLowerCase();
 
