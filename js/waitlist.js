@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>paneacult | In arrivo</title>
-
+<div id="countdown"></div>
+  
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,7 +20,12 @@ box-sizing:border-box;
 
 body{
 font-family:Poppins,sans-serif;
-background:#0f1115;
+background:
+linear-gradient(rgba(15,17,21,.90),rgba(15,17,21,.96)),
+url("img/cinema.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 color:#fff;
 display:flex;
 justify-content:center;
@@ -157,6 +163,12 @@ font-size:34px;
 font-size:16px;
 }
 
+#countdown{
+margin:30px 0;
+font-size:20px;
+font-weight:600;
+color:#ffbf00;
+}
 }
 </style>
 
@@ -205,7 +217,10 @@ required>
 <p id="waitlist-message"></p>
 
 </form>
-
+<p id="members-count">
+🎬 Caricamento...
+</p>
+  
 </section>
 
 <section class="features">
@@ -260,6 +275,20 @@ Ci vediamo il <strong>1° settembre 2026.</strong> 🍿
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase.js"></script>
 <script src="js/waitlist.js"></script>
+<script>
+const launchDate = new Date("September 1, 2026 00:00:00").getTime();
 
+setInterval(() => {
+  const now = new Date().getTime();
+  const distance = launchDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  document.getElementById("countdown").innerHTML =
+    `⏳ Mancano <strong>${days}</strong> giorni, <strong>${hours}</strong> ore e <strong>${minutes}</strong> minuti`;
+}, 1000);
+</script>
 </body>
 </html>
