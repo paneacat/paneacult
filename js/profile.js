@@ -966,7 +966,12 @@ if (
                 tmdbItem.poster_path,
 
               release_year:
-                item.year,
+
+tmdbItem.release_date
+  ? Number(tmdbItem.release_date.slice(0, 4))
+  : tmdbItem.first_air_date
+    ? Number(tmdbItem.first_air_date.slice(0, 4))
+    : null,
 
               media_type:
                 mediaType,
@@ -1080,6 +1085,9 @@ for (const season of (serie.seasons || [])) {
   }
 
 }       
+         await new Promise(resolve =>
+  setTimeout(resolve, 120)
+);
       }
 
      alert(
