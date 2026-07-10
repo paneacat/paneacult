@@ -572,6 +572,22 @@ console.log(cols);
 
           imported++;
 
+           progress.innerHTML = `
+<div style="margin-bottom:10px">
+Importazione Letterboxd...
+</div>
+
+<progress
+value="${imported}"
+max="100"
+style="width:100%;height:18px">
+</progress>
+
+<div style="margin-top:10px">
+${imported} film importati
+</div>
+`;
+           
         }catch(err){
 
           console.log(
