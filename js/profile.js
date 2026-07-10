@@ -560,6 +560,7 @@ tvTimeBtn?.addEventListener(
   }
 );
 
+
 async function importTracking(csvText){
 
   console.log(
@@ -567,6 +568,24 @@ async function importTracking(csvText){
   );
 
 }
+
+async function importRatings(csvText){
+
+  console.log(
+    "⭐ Parser Ratings"
+  );
+
+}
+
+
+async function importRewatched(csvText){
+
+  console.log(
+    "🔄 Parser Rewatched"
+  );
+
+}
+
 tvTimeInput?.addEventListener(
   "change",
   async (e) => {
