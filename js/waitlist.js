@@ -6,23 +6,20 @@ const membersCount = document.getElementById("members-count");
 
 // Carica il numero di iscritti
 async function loadCount() {
-  const { count, error } = await supabaseClient
-    .from("waitlist")
-    .select("*", {
-      count: "exact",
-      head: true
-    });
 
-  if (!error) {
-    membersCount.textContent =
-      `🎬 ${count} appassionati sono già nella lista d'attesa`;
-  } else {
-    membersCount.textContent = "";
+  const { data, error } = await supabaseClient
+    .rpc("get_waitlist_count");
+
+  if (error) {
     console.error(error);
+    return;
   }
+
+  membersCount.textContent =
+    `🎬 ${data} appassionati sono già nella lista d'attesa`;
+
 }
 
-// Carica il contatore all'apertura della pagina
 loadCount();
 
 // Gestione iscrizione
