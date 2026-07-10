@@ -1170,84 +1170,11 @@ async function importTvTimeCsv(zip, files){
     "📄 Import TV Time CSV"
   );
 
-}
-tvTimeBtn?.addEventListener(
-  "click",
-  () => {
-
-    tvTimeInput.click();
-
-  }
-);
-
-
-tvTimeInput?.addEventListener(
-  "change",
-  async (e) => {
-
-    const file =
-      e.target.files[0];
-
-    if (!file) return;
-
-    const zip =
-      await JSZip.loadAsync(file);
-
-    const files =
-      Object.keys(zip.files);
-
-
    const csvFiles =
-  files.filter(file =>
-    file.toLowerCase().endsWith(".csv")
-  );
-
-
-     const hasJsonExport =
-
-  files.some(file =>
-    file.endsWith("movies.json")
-  ) &&
-
-  files.some(file =>
-    file.endsWith("series.json")
-  );
-
-const hasCsvExport =
-  csvFiles.length > 0;
-
-console.log(
-  "JSON Export:",
-  hasJsonExport
-);
-
-console.log(
-  "CSV Export:",
-  hasCsvExport
-);
-
-if (hasJsonExport) {
-
-  await importTvTimeJson(zip);
-
-  return;
-
-}
-
-if (hasCsvExport) {
-
-  await importTvTimeCsv(zip);
-
-  return;
-
-}
-
-alert(
-  "Formato TV Time non riconosciuto."
-);
-
-return;
-     
+    files.filter(file =>
+      file.toLowerCase().endsWith(".csv")
+    );
+   
 console.log(csvFiles);
 
    for (const fileName of csvFiles) {
@@ -1348,7 +1275,87 @@ console.log(
 
      }
      
-      }
+   }
+   
+}
+tvTimeBtn?.addEventListener(
+  "click",
+  () => {
+
+    tvTimeInput.click();
+
+  }
+);
+
+
+tvTimeInput?.addEventListener(
+  "change",
+  async (e) => {
+
+    const file =
+      e.target.files[0];
+
+    if (!file) return;
+
+    const zip =
+      await JSZip.loadAsync(file);
+
+    const files =
+      Object.keys(zip.files);
+
+
+   const csvFiles =
+  files.filter(file =>
+    file.toLowerCase().endsWith(".csv")
+  );
+
+
+     const hasJsonExport =
+
+  files.some(file =>
+    file.endsWith("movies.json")
+  ) &&
+
+  files.some(file =>
+    file.endsWith("series.json")
+  );
+
+const hasCsvExport =
+  csvFiles.length > 0;
+
+console.log(
+  "JSON Export:",
+  hasJsonExport
+);
+
+console.log(
+  "CSV Export:",
+  hasCsvExport
+);
+
+if (hasJsonExport) {
+
+  await importTvTimeJson(zip, files);
+
+  return;
+
+}
+
+if (hasCsvExport) {
+
+  await importTvTimeCsv(zip, files);
+
+  return;
+
+}
+     
+alert(
+  "Formato TV Time non riconosciuto."
+);
+
+return;
+
+  }
 );
      
      
