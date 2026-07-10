@@ -1830,7 +1830,8 @@ opacity:1;
 
 }
 
-#importLetterboxdBtn:hover{
+#importLetterboxdBtn:hover,
+#importTvTimeBtn:hover{
 
   background:
     var(--panea-yellow);
