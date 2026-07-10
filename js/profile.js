@@ -590,23 +590,30 @@ async function importTracking(csvText){
 console.log(Object.keys(row));
     }
 
-  }   // <-- QUI FINISCE IL FOR
+  }  
      
 const groupedSeries = {};
 
-  episodes.forEach(ep => {
-     
-  });
+episodes.forEach(ep => {
 
-  console.log(
-    "Serie trovate:",
-    Object.keys(groupedSeries).length
-  );
+  const key = ep.series_name;
 
-  console.log(groupedSeries);
+  if (!key) return;
 
-} 
+  if (!groupedSeries[key]) {
+    groupedSeries[key] = [];
+  }
 
+  groupedSeries[key].push(ep);
+
+});
+
+console.log(
+  "Serie trovate:",
+  Object.keys(groupedSeries).length
+);
+
+console.log(groupedSeries);
 
 async function importRatings(csvText){
 
