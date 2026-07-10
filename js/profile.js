@@ -562,6 +562,15 @@ const tvTimeBtn =
 const tvTimeInput =
   document.getElementById("tvtimeImport");
 
+tvTimeBtn?.addEventListener(
+  "click",
+  () => {
+
+    tvTimeInput.click();
+
+  }
+);
+
 tvTimeInput?.addEventListener(
   "change",
   async (e) => {
