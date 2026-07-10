@@ -201,12 +201,12 @@ async function loadTvFavorites(){
 
 const importBtn =
   document.getElementById(
-    "importLibraryBtn"
+    "importLetterboxdBtn"
   );
 
 const importInput =
   document.getElementById(
-    "libraryImport"
+    "letterboxdImport"
   );
 
 if(importInput){
@@ -560,9 +560,25 @@ console.log(cols);
    TV TIME IMPORT
 ========================= */
 
-const tvTimeBtn = importBtn;
+const tvTimeBtn =
+  document.getElementById(
+    "importTvTimeBtn"
+  );
 
-const tvTimeInput = importInput;
+const tvTimeInput =
+  document.getElementById(
+    "tvtimeImport"
+  );
+
+tvTimeBtn?.addEventListener(
+  "click",
+  () => {
+
+    tvTimeInput.click();
+
+  }
+);
+
 
 tvTimeInput?.addEventListener(
   "change",
