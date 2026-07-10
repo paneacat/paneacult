@@ -224,7 +224,12 @@ importInput?.addEventListener(
 
     const files =
       [...e.target.files];
+     
+importBtn.disabled = true;
 
+importBtn.textContent =
+  "Importazione...";
+     
      const firstFile = files[0];
 
 if (
@@ -545,7 +550,12 @@ console.log(cols);
     alert(
       `${imported} import completati 🎬`
     );
+     
+importBtn.disabled = false;
 
+importBtn.textContent =
+  "Importa da Letterboxd";
+     
     location.reload();
 
   }
