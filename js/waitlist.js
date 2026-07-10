@@ -1,3 +1,4 @@
+const nameInput = document.getElementById("waitlist-name");
 const form = document.getElementById("waitlist-form");
 const emailInput = document.getElementById("waitlist-email");
 const message = document.getElementById("waitlist-message");
@@ -9,10 +10,17 @@ form.addEventListener("submit", async (e) => {
 
   if (!email) return;
 
-  const { error } = await supabaseClient
-    .from("waitlist")
-    .insert([{ email }]);
+  const name = nameInput.value.trim();
 
+const { error } = await supabaseClient
+  .from("waitlist")
+  .insert([
+    {
+      name,
+      email
+    }
+  ]);
+  
   if (error) {
     if (error.code === "23505") {
       message.textContent = "✨ Sei già nella lista d'attesa!";
