@@ -555,27 +555,46 @@ async function importTracking(csvText){
 
   console.log("🚀 Parser Tracking");
 
-  const rows =
-    csvText
-      .trim()
-      .split("\n");
+const rows =
+  csvText.trim().split("\n");
 
-  console.log(
-    "Righe trovate:",
-    rows.length
-  );
+console.log(
+  "Righe trovate:",
+  rows.length
+);
 
-  console.log(
-    "Prima riga:",
-    rows[0]
-  );
+const headers =
+  rows[0].split(",");
 
-  console.log(
-    "Seconda riga:",
-    rows[1]
-  );
+   for (let i = 1; i < rows.length; i++) {
+
+    const values =
+      rows[i].split(",");
+
+      const row = {};
+
+headers.forEach((header, index) => {
+
+  row[header.trim()] =
+    values[index]?.trim() || "";
+
+});
+
+      if (i <= 5) {
+
+  console.log(row);
+
+      }
+      
+  }
 
 }
+
+console.log(
+  "Header:",
+  headers
+);
+
 
 async function importRatings(csvText){
 
