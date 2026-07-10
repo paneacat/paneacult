@@ -312,10 +312,6 @@ style="width:100%;height:18px">
 </div>
 `;
      
-}
-
-
-     
     for(
       const file of files
     ){
