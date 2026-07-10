@@ -565,7 +565,6 @@ window.addEventListener(
 
     try{
 
-      const movieDetails =
         const mediaType =
   params.get("type") || "movie";
 
@@ -574,7 +573,6 @@ const movieDetails =
     movieId,
     mediaType
   );
-
       renderSelectedMovie(
         movieDetails,
         movieDetails
