@@ -229,6 +229,23 @@ importBtn.disabled = true;
 
 importBtn.textContent =
   "Importazione...";
+
+     const progress =
+  document.createElement("div");
+
+progress.style.cssText = `
+margin-top:16px;
+padding:16px;
+background:#17384a;
+color:#fff;
+border-radius:12px;
+font-weight:600;
+text-align:center;
+line-height:1.8;
+`;
+
+importBtn.after(progress);
+
      
      const firstFile = files[0];
 
@@ -279,6 +296,44 @@ if (
 
     let imported = 0;
 
+
+     const totalItems =
+  files.length;
+
+let completedItems = 0;
+
+function updateProgress(fileName){
+
+  completedItems++;
+
+  const percent =
+    Math.round(
+      completedItems / totalItems * 100
+    );
+
+  progress.innerHTML = `
+    <div style="margin-bottom:10px">
+      Importazione Letterboxd...
+    </div>
+
+    <progress
+      value="${completedItems}"
+      max="${totalItems}"
+      style="width:100%;height:18px">
+    </progress>
+
+    <div style="margin-top:10px">
+      ${percent}% completato
+    </div>
+
+    <div style="margin-top:6px">
+      File: ${fileName}
+    </div>
+  `;
+}
+
+
+     
     for(
       const file of files
     ){
