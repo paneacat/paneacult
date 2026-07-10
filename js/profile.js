@@ -1044,6 +1044,15 @@ for (const season of (serie.seasons || [])) {
     if (!episode.is_watched)
       continue;
 
+
+     console.log(
+  "Salvo episodio:",
+  tmdbSerie.id,
+  season.number,
+  episode.number
+);
+
+     
     const { error } =
       await supabaseClient
         .from("user_episode_progress")
@@ -1076,9 +1085,13 @@ for (const season of (serie.seasons || [])) {
 
         });
 
-    if (!error) {
+    if (error) {
 
-      importedEpisodes++;
+  console.error(error);
+
+} else {
+
+  importedEpisodes++;
 
     }
 
@@ -1097,6 +1110,8 @@ for (const season of (serie.seasons || [])) {
 🎬 Film importati: ${importedMovies}
 
 📺 Serie importate: ${importedSeries}
+
+🎞️ Episodi importati: ${importedEpisodes}
 
 ❌ Non trovati: ${notFound.length}`
 
