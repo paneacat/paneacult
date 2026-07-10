@@ -560,7 +560,13 @@ tvTimeBtn?.addEventListener(
   }
 );
 
+async function importTracking(csvText){
 
+  console.log(
+    "🚀 Parser Tracking"
+  );
+
+}
 tvTimeInput?.addEventListener(
   "change",
   async (e) => {
@@ -607,6 +613,46 @@ console.log(
   );
 
    }
+
+ let csvType = "ignore";
+
+if (
+  header.includes("watch_type") ||
+  header.includes("series_name")
+) {
+
+  csvType = "tracking";
+
+}
+
+else if (
+  header.includes("rating")
+) {
+
+  csvType = "ratings";
+
+}
+
+else if (
+  header.includes("emotion")
+) {
+
+  csvType = "emotions";
+
+}
+
+else if (
+  header.includes("rewatch")
+) {
+
+  csvType = "rewatched";
+
+}
+
+console.log(
+  "Tipo:",
+  csvType
+);
 
      
     const moviesFile =
