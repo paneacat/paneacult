@@ -614,7 +614,7 @@ console.log("Serie trovate:", Object.keys(groupedSeries).length);
 console.log(groupedSeries);
 
 }
-
+}
 async function importRatings(csvText){
 
   console.log(
