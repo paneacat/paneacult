@@ -560,15 +560,9 @@ console.log(cols);
    TV TIME IMPORT
 ========================= */
 
-const tvTimeBtn =
-document.getElementById("importTvTimeBtn");
+const tvTimeBtn = importBtn;
 
-const tvTimeInput =
-document.getElementById("tvtimeImport");
-
-tvTimeInput?.addEventListener(
-  "change",
-  async (e) => {
+const tvTimeInput = importInput;
 
     const file =
       e.target.files[0];
