@@ -1217,43 +1217,30 @@ console.log(
     fileName
   );
 
- let csvType = "ignore";
+ 
+let csvType = "ignore";
+
+const lowerName = fileName.toLowerCase();
 
 if (
-
-  header.includes("watch_type") ||
-
-  header.includes("watch_count") ||
-
-  header.includes("movie_watch_count")
-
+  lowerName.includes("tracking-prod-records")
 ) {
 
   csvType = "tracking";
 
 }
-
 else if (
-  header.includes("rating")
-) {
-
-  csvType = "ratings";
-
-}
-
-else if (
-  header.includes("emotion")
-) {
-
-  csvType = "ignore";
-
-}
-
-else if (
-  header.includes("rewatch")
+  lowerName.includes("rewatched")
 ) {
 
   csvType = "rewatched";
+
+}
+else if (
+  lowerName.includes("ratings")
+) {
+
+  csvType = "ratings";
 
 }
 
