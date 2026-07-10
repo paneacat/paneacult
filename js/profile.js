@@ -586,7 +586,21 @@ const csvParsers = {
 
 };
 
+async function importTvTimeJson(zip){
 
+  console.log(
+    "📦 Import TV Time JSON"
+  );
+
+}
+
+async function importTvTimeCsv(zip){
+
+  console.log(
+    "📄 Import TV Time CSV"
+  );
+
+}
 tvTimeBtn?.addEventListener(
   "click",
   () => {
@@ -618,6 +632,31 @@ tvTimeInput?.addEventListener(
     file.toLowerCase().endsWith(".csv")
   );
 
+
+     const hasJsonExport =
+
+  files.some(file =>
+    file.endsWith("movies.json")
+  ) &&
+
+  files.some(file =>
+    file.endsWith("series.json")
+  );
+
+const hasCsvExport =
+  csvFiles.length > 0;
+
+console.log(
+  "JSON Export:",
+  hasJsonExport
+);
+
+console.log(
+  "CSV Export:",
+  hasCsvExport
+);
+
+     
 console.log(csvFiles);
 
    for (const fileName of csvFiles) {
@@ -641,8 +680,6 @@ console.log(
     "📄",
     fileName
   );
-
-   }
 
  let csvType = "ignore";
 
