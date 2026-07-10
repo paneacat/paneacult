@@ -586,201 +586,12 @@ const csvParsers = {
 
 };
 
-async function importTvTimeJson(zip){
+async function importTvTimeJson(zip, files){
 
   console.log(
     "📦 Import TV Time JSON"
   );
-
-}
-
-async function importTvTimeCsv(zip){
-
-  console.log(
-    "📄 Import TV Time CSV"
-  );
-
-}
-tvTimeBtn?.addEventListener(
-  "click",
-  () => {
-
-    tvTimeInput.click();
-
-  }
-);
-
-
-tvTimeInput?.addEventListener(
-  "change",
-  async (e) => {
-
-    const file =
-      e.target.files[0];
-
-    if (!file) return;
-
-    const zip =
-      await JSZip.loadAsync(file);
-
-    const files =
-      Object.keys(zip.files);
-
-
-   const csvFiles =
-  files.filter(file =>
-    file.toLowerCase().endsWith(".csv")
-  );
-
-
-     const hasJsonExport =
-
-  files.some(file =>
-    file.endsWith("movies.json")
-  ) &&
-
-  files.some(file =>
-    file.endsWith("series.json")
-  );
-
-const hasCsvExport =
-  csvFiles.length > 0;
-
-console.log(
-  "JSON Export:",
-  hasJsonExport
-);
-
-console.log(
-  "CSV Export:",
-  hasCsvExport
-);
-
-if (hasJsonExport) {
-
-  await importTvTimeJson(zip);
-
-  return;
-
-}
-
-if (hasCsvExport) {
-
-  await importTvTimeCsv(zip);
-
-  return;
-
-}
-
-alert(
-  "Formato TV Time non riconosciuto."
-);
-
-return;
-     
-console.log(csvFiles);
-
-   for (const fileName of csvFiles) {
-
-  const csvText =
-    await zip
-      .file(fileName)
-      .async("string");
-
-      const header =
-  csvText
-    .split("\n")[0]
-    .toLowerCase();
-
-console.log(
-  "Header:",
-  header
-);
-      
-  console.log(
-    "📄",
-    fileName
-  );
-
- let csvType = "ignore";
-
-if (
-  header.includes("watch_type") ||
-  header.includes("series_name")
-) {
-
-  csvType = "tracking";
-
-}
-
-else if (
-  header.includes("rating")
-) {
-
-  csvType = "ratings";
-
-}
-
-else if (
-  header.includes("emotion")
-) {
-
-  csvType = "ignore";
-
-}
-
-else if (
-  header.includes("rewatch")
-) {
-
-  csvType = "rewatched";
-
-}
-
-console.log(
-  "Tipo:",
-  csvType
-);
-
-     switch (csvType) {
-
-  case "tracking":
-
-    await importTracking(
-      csvText
-    );
-
-    break;
-
-  case "ratings":
-
-    await importRatings(
-      csvText
-    );
-
-    break;
-
-  case "emotions":
-
-    await importEmotions(
-      csvText
-    );
-
-    break;
-
-  case "rewatched":
-
-    await importRewatched(
-      csvText
-    );
-
-    break;
-
-     }
-     
-     
-     
-    const moviesFile =
+  const moviesFile =
       files.find(file =>
         file.includes("movies") &&
         file.endsWith(".json")
@@ -1348,9 +1159,198 @@ progress.innerHTML = `
   `; 
     location.reload();
 
+ 
+}
+
+async function importTvTimeCsv(zip, files){
+
+  console.log(
+    "📄 Import TV Time CSV"
+  );
+
+}
+tvTimeBtn?.addEventListener(
+  "click",
+  () => {
+
+    tvTimeInput.click();
+
   }
 );
+
+
+tvTimeInput?.addEventListener(
+  "change",
+  async (e) => {
+
+    const file =
+      e.target.files[0];
+
+    if (!file) return;
+
+    const zip =
+      await JSZip.loadAsync(file);
+
+    const files =
+      Object.keys(zip.files);
+
+
+   const csvFiles =
+  files.filter(file =>
+    file.toLowerCase().endsWith(".csv")
+  );
+
+
+     const hasJsonExport =
+
+  files.some(file =>
+    file.endsWith("movies.json")
+  ) &&
+
+  files.some(file =>
+    file.endsWith("series.json")
+  );
+
+const hasCsvExport =
+  csvFiles.length > 0;
+
+console.log(
+  "JSON Export:",
+  hasJsonExport
+);
+
+console.log(
+  "CSV Export:",
+  hasCsvExport
+);
+
+if (hasJsonExport) {
+
+  await importTvTimeJson(zip);
+
+  return;
+
+}
+
+if (hasCsvExport) {
+
+  await importTvTimeCsv(zip);
+
+  return;
+
+}
+
+alert(
+  "Formato TV Time non riconosciuto."
+);
+
+return;
      
+console.log(csvFiles);
+
+   for (const fileName of csvFiles) {
+
+  const csvText =
+    await zip
+      .file(fileName)
+      .async("string");
+
+      const header =
+  csvText
+    .split("\n")[0]
+    .toLowerCase();
+
+console.log(
+  "Header:",
+  header
+);
+      
+  console.log(
+    "📄",
+    fileName
+  );
+
+ let csvType = "ignore";
+
+if (
+  header.includes("watch_type") ||
+  header.includes("series_name")
+) {
+
+  csvType = "tracking";
+
+}
+
+else if (
+  header.includes("rating")
+) {
+
+  csvType = "ratings";
+
+}
+
+else if (
+  header.includes("emotion")
+) {
+
+  csvType = "ignore";
+
+}
+
+else if (
+  header.includes("rewatch")
+) {
+
+  csvType = "rewatched";
+
+}
+
+console.log(
+  "Tipo:",
+  csvType
+);
+
+     switch (csvType) {
+
+  case "tracking":
+
+    await importTracking(
+      csvText
+    );
+
+    break;
+
+  case "ratings":
+
+    await importRatings(
+      csvText
+    );
+
+    break;
+
+  case "emotions":
+
+    await importEmotions(
+      csvText
+    );
+
+    break;
+
+  case "rewatched":
+
+    await importRewatched(
+      csvText
+    );
+
+    break;
+
+     }
+     
+      }
+);
+     
+     
+  
 
 /* =========================
    RENDER GRID
