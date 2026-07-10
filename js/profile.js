@@ -654,6 +654,16 @@ console.log(
   csvType
 );
 
+     if (
+  csvType === "tracking"
+) {
+
+  await importTracking(
+    csvText
+  );
+
+     }
+     
      
     const moviesFile =
       files.find(file =>
