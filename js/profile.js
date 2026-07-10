@@ -631,7 +631,8 @@ let importedEpisodes = 0;
 
   console.log("Cerco:", seriesName);
       
- const results = await searchMovies(seriesName);
+ 
+      
 const results = await searchMovieSmart(seriesName);
       
 if (!results?.length) {
