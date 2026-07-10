@@ -656,7 +656,7 @@ else if (
   header.includes("emotion")
 ) {
 
-  csvType = "emotions";
+  csvType = "ignore";
 
 }
 
@@ -673,15 +673,42 @@ console.log(
   csvType
 );
 
-     if (
-  csvType === "tracking"
-) {
+     switch (csvType) {
 
-  await importTracking(
-    csvText
-  );
+  case "tracking":
+
+    await importTracking(
+      csvText
+    );
+
+    break;
+
+  case "ratings":
+
+    await importRatings(
+      csvText
+    );
+
+    break;
+
+  case "emotions":
+
+    await importEmotions(
+      csvText
+    );
+
+    break;
+
+  case "rewatched":
+
+    await importRewatched(
+      csvText
+    );
+
+    break;
 
      }
+     
      
      
     const moviesFile =
