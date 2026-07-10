@@ -551,6 +551,132 @@ const tvTimeInput =
     "tvtimeImport"
   );
 
+
+async function syncLibraryItem(
+  tmdbItem,
+  mediaType,
+  status
+){
+
+  const {
+    data:{ user }
+  } =
+  await supabaseClient.auth.getUser();
+
+  if(!user) return false;
+   
+  const { data: existing } =
+  await supabaseClient
+    .from("user_movies")
+    .select("*")
+    .eq("user_id", user.id)
+    .eq("movie_id", tmdbItem.id)
+    .eq("media_type", mediaType);
+   
+  console.log(
+  "Sync:",
+  tmdbItem.name || tmdbItem.title
+);
+
+console.log(
+  "Record esistenti:",
+  existing
+);
+const watched =
+  existing.find(
+    item => item.status === "watched"
+  );
+
+if (watched) {
+
+  console.log(
+    "✅ Già presente come watched"
+  );
+
+  return watched;
+
+}
+const watchlist =
+  existing.find(
+    item => item.status === "watchlist"
+  );
+
+if (watchlist) {
+
+  console.log(
+    "🔄 Da watchlist a watched"
+  );
+
+  const { error } =
+    await supabaseClient
+      .from("user_movies")
+      .update({
+        status: "watched"
+      })
+      .eq("id", watchlist.id);
+
+  if (error) {
+    console.error(error);
+    return false;
+  }
+
+  return true;
+
+}
+ const { error } =
+  await supabaseClient
+    .from("user_movies")
+    .insert({
+
+      user_id: user.id,
+
+      movie_id: tmdbItem.id,
+
+      title:
+        tmdbItem.title ||
+        tmdbItem.name,
+
+      poster_path:
+        tmdbItem.poster_path,
+
+      release_year:
+        tmdbItem.release_date
+          ? Number(
+              tmdbItem.release_date.slice(0,4)
+            )
+          : tmdbItem.first_air_date
+            ? Number(
+                tmdbItem.first_air_date.slice(0,4)
+              )
+            : null,
+
+      media_type:
+        mediaType,
+
+      status:
+        status
+
+    });
+
+if (error) {
+
+  console.error(error);
+
+  return false;
+
+}
+
+console.log(
+  "✅ Creato nuovo record"
+);
+
+return true;  
+
+   
+}
+
+
+
 async function importTracking(csvText){
 
   console.log("🚀 Parser Tracking");
@@ -648,6 +774,53 @@ console.log(
   "✅ Trovata:",
   tmdbSerie.name
 );
+
+ await syncLibraryItem(
+  tmdbSerie,
+  "tv",
+  "watched"
+);
+      
+      
+      const { error } =
+  await supabaseClient
+    .from("user_movies")
+    .upsert(
+      {
+        user_id: user.id,
+
+        movie_id: tmdbSerie.id,
+
+        title: tmdbSerie.name,
+
+        poster_path: tmdbSerie.poster_path,
+
+        release_year:
+          tmdbSerie.first_air_date
+            ? Number(
+                tmdbSerie.first_air_date.slice(0, 4)
+              )
+            : null,
+
+        media_type: "tv",
+
+        status: "watched"
+      },
+      {
+        onConflict:
+          "user_id,movie_id,status"
+      }
+    );
+
+if (error) {
+
+  console.error(error);
+
+  continue;
+
+}
+
+importedSeries++;
       
    }
 }
