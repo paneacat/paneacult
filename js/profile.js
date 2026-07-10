@@ -296,40 +296,22 @@ if (
 
     let imported = 0;
 
+progress.innerHTML = `
+<div style="margin-bottom:10px">
+Importazione Letterboxd...
+</div>
 
-     const totalItems =
-  files.length;
+<progress
+value="0"
+max="100"
+style="width:100%;height:18px">
+</progress>
 
-let completedItems = 0;
-
-function updateProgress(fileName){
-
-  completedItems++;
-
-  const percent =
-    Math.round(
-      completedItems / totalItems * 100
-    );
-
-  progress.innerHTML = `
-    <div style="margin-bottom:10px">
-      Importazione Letterboxd...
-    </div>
-
-    <progress
-      value="${completedItems}"
-      max="${totalItems}"
-      style="width:100%;height:18px">
-    </progress>
-
-    <div style="margin-top:10px">
-      ${percent}% completato
-    </div>
-
-    <div style="margin-top:6px">
-      File: ${fileName}
-    </div>
-  `;
+<div style="margin-top:10px">
+0 film importati
+</div>
+`;
+     
 }
 
 
