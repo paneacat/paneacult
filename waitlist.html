@@ -201,25 +201,35 @@ Entra nella lista d'attesa e sarai tra i primi a ricevere l'accesso il giorno de
 
 <form id="waitlist-form">
 
-<input
-id="waitlist-name"
-type="text"
-placeholder="Il tuo nome"
-required>
+  <input
+    id="waitlist-name"
+    type="text"
+    placeholder="Il tuo nome"
+    required>
 
-<input
-id="waitlist-email"
-type="email"
-placeholder="La tua email"
-required>
+  <input
+    id="waitlist-email"
+    type="email"
+    placeholder="La tua email"
+    required>
 
-<button type="submit">
-🚀 Entra nella lista d'attesa
-</button>
+  <!-- Honeypot anti-bot -->
+  <input
+    type="text"
+    id="website"
+    name="website"
+    autocomplete="off"
+    tabindex="-1"
+    style="display:none">
 
-<p id="waitlist-message"></p>
+  <button type="submit">
+    🚀 Entra nella lista d'attesa
+  </button>
+
+  <p id="waitlist-message"></p>
 
 </form>
+
 <p id="members-count">
 🎬 Caricamento...
 </p>
