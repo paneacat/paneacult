@@ -200,14 +200,10 @@ async function loadTvFavorites(){
 ========================= */
 
 const importBtn =
-  document.getElementById(
-    "importLibraryBtn"
-  );
+  document.getElementById("importLetterboxdBtn");
 
 const importInput =
-  document.getElementById(
-    "libraryImport"
-  );
+  document.getElementById("letterboxdImport");
 
 if(importInput){
   importInput.multiple = true;
