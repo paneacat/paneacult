@@ -238,15 +238,9 @@ if (
     .endsWith(".zip")
 ) {
 
-  tvTimeInput.files =
-    importInput.files;
-
-  tvTimeInput.dispatchEvent(
-    new Event("change")
-  );
+  await importTvTime(file);
 
   return;
-
 }
 
      
