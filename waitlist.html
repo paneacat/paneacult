@@ -134,16 +134,19 @@ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 justify-content:center;
 }
-
 #countdown{
-display:inline-flex;
+display:flex;
 justify-content:center;
 align-items:center;
+flex-wrap:wrap;
 gap:8px;
+
+width:fit-content;
+max-width:90%;
 
 margin:30px auto;
 
-padding:14px 24px;
+padding:16px 24px;
 
 background:#1c2028;
 border:1px solid rgba(255,191,0,.25);
@@ -152,6 +155,8 @@ border-radius:999px;
 color:#ffbf00;
 font-size:18px;
 font-weight:600;
+line-height:1.5;
+text-align:center;
 
 box-shadow:0 0 20px rgba(255,191,0,.08);
 }
@@ -336,7 +341,7 @@ setInterval(() => {
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
   document.getElementById("countdown").innerHTML =
-    `⏳ Mancano <strong>${days}</strong> giorni, <strong>${hours}</strong> ore e <strong>${minutes}</strong> minuti`;
+    `⏳ ${days}</strong> giorni, <strong>${hours}</strong> ore e <strong>${minutes}</strong> minuti`;
 
 }, 1000);
 
