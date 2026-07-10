@@ -238,7 +238,7 @@ if (
     .endsWith(".zip")
 ) {
 
-  await importTvTime(file);
+  await importTvTime(firstFile);
 
   return;
 }
