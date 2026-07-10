@@ -586,7 +586,7 @@ const csvParsers = {
 
 };
 
-await importTvTimeJson(zip, files);
+async function importTvTimeJson(zip, files){
 
   console.log(
     "📦 Import TV Time JSON"
