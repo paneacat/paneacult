@@ -560,9 +560,11 @@ console.log(cols);
    TV TIME IMPORT
 ========================= */
 
-const tvTimeBtn = importBtn;
+const tvTimeBtn =
+document.getElementById("importTvTimeBtn");
 
-const tvTimeInput = importInput;
+const tvTimeInput =
+document.getElementById("tvtimeImport");
 
 tvTimeInput?.addEventListener(
   "change",
