@@ -201,12 +201,12 @@ async function loadTvFavorites(){
 
 const importBtn =
   document.getElementById(
-    "importLetterboxdBtn"
+    "importLibraryBtn"
   );
 
 const importInput =
   document.getElementById(
-    "letterboxdImport"
+    "libraryImport"
   );
 
 if(importInput){
@@ -229,6 +229,25 @@ importInput?.addEventListener(
     const files =
       [...e.target.files];
 
+     const firstFile = files[0];
+
+if (
+  firstFile &&
+  firstFile.name
+    .toLowerCase()
+    .endsWith(".zip")
+) {
+
+  tvTimeInput.files =
+    importInput.files;
+
+  tvTimeInput.dispatchEvent(
+    new Event("change")
+  );
+
+  return;
+
+}
 
      
     if(!files.length){
@@ -541,326 +560,26 @@ console.log(cols);
    TV TIME IMPORT
 ========================= */
 
-const tvTimeBtn =
-  document.getElementById(
-    "importTvTimeBtn"
-  );
+const tvTimeBtn = importBtn;
 
-const tvTimeInput =
-  document.getElementById(
-    "tvtimeImport"
-  );
+const tvTimeInput = importInput;
 
+tvTimeInput?.addEventListener(
+  "change",
+  async (e) => {
 
-async function syncLibraryItem(
-  tmdbItem,
-  mediaType,
-  status
-){
+    const file =
+      e.target.files[0];
 
-  const {
-    data:{ user }
-  } =
-  await supabaseClient.auth.getUser();
+    if (!file) return;
 
-  if(!user) return false;
-   
-  const { data: existing } =
-  await supabaseClient
-    .from("user_movies")
-    .select("*")
-    .eq("user_id", user.id)
-    .eq("movie_id", tmdbItem.id)
-    .eq("media_type", mediaType);
-   
-  console.log(
-  "Sync:",
-  tmdbItem.name || tmdbItem.title
-);
+    const zip =
+      await JSZip.loadAsync(file);
 
-console.log(
-  "Record esistenti:",
-  existing
-);
-const watched =
-  existing.find(
-    item => item.status === "watched"
-  );
+    const files =
+      Object.keys(zip.files);
 
-if (watched) {
-
-  console.log(
-    "✅ Già presente come watched"
-  );
-
-  return watched;
-
-}
-const watchlist =
-  existing.find(
-    item => item.status === "watchlist"
-  );
-
-if (watchlist) {
-
-  console.log(
-    "🔄 Da watchlist a watched"
-  );
-
-  const { error } =
-    await supabaseClient
-      .from("user_movies")
-      .update({
-        status: "watched"
-      })
-      .eq("id", watchlist.id);
-
-  if (error) {
-    console.error(error);
-    return false;
-  }
-
-  return true;
-
-}
- const { error } =
-  await supabaseClient
-    .from("user_movies")
-    .insert({
-
-      user_id: user.id,
-
-      movie_id: tmdbItem.id,
-
-      title:
-        tmdbItem.title ||
-        tmdbItem.name,
-
-      poster_path:
-        tmdbItem.poster_path,
-
-      release_year:
-        tmdbItem.release_date
-          ? Number(
-              tmdbItem.release_date.slice(0,4)
-            )
-          : tmdbItem.first_air_date
-            ? Number(
-                tmdbItem.first_air_date.slice(0,4)
-              )
-            : null,
-
-      media_type:
-        mediaType,
-
-      status:
-        status
-
-    });
-
-if (error) {
-
-  console.error(error);
-
-  return false;
-
-}
-
-console.log(
-  "✅ Creato nuovo record"
-);
-
-return true;  
-
-   
-}
-
-
-
-async function importTracking(csvText){
-
-  console.log("🚀 Parser Tracking");
-
-  const rows =
-    csvText.trim().split("\n");
-
-  console.log(
-    "Righe trovate:",
-    rows.length
-  );
-
-  const headers =
-    rows[0].split(",");
-
-  const episodes = [];
-
-  for (let i = 1; i < rows.length; i++) {
-
-    const values =
-      rows[i].split(",");
-
-    const row = {};
-
-    headers.forEach((header, index) => {
-
-      row[header.trim()] =
-        values[index]?.trim() || "";
-
-    });
-     
-    episodes.push(row);
-
-    if (i === 1) {
-
-  console.log(row);
-
-    }
-  }  
-     
-const groupedSeries = {};
-
-episodes.forEach(ep => {
-
-  const key = ep.series_name;
-
-  if (!key) return;
-
-  if (!groupedSeries[key]) {
-    groupedSeries[key] = [];
-  }
-
-  groupedSeries[key].push(ep);
-
-});
-
-console.log(
-  "Serie trovate:",
-  Object.keys(groupedSeries).length
-);
-
-console.log(groupedSeries);
-
-   const {
-  data: { user }
-} = await supabaseClient.auth.getUser();
-
-if (!user) {
-  alert("Login richiesto");
-  return;
-}
-
-let importedSeries = 0;
-let importedEpisodes = 0;
-
-   for (const [seriesName, episodes] of Object.entries(groupedSeries)) {
-
-  console.log("Cerco:", seriesName);
-      
-const results = await searchMovies(seriesName);
-
-if (!results?.length) {
-
-  console.log("❌ Non trovata:", seriesName);
-
-  continue;
-
-}
-
-const tmdbSerie =
-  results.find(r => r.media_type === "tv")
-  || results[0];
-
-console.log(
-  "✅ Trovata:",
-  tmdbSerie.name
-);
-
- await syncLibraryItem(
-  tmdbSerie,
-  "tv",
-  "watched"
-);
-      
-      
-      const { error } =
-  await supabaseClient
-    .from("user_movies")
-    .upsert(
-      {
-        user_id: user.id,
-
-        movie_id: tmdbSerie.id,
-
-        title: tmdbSerie.name,
-
-        poster_path: tmdbSerie.poster_path,
-
-        release_year:
-          tmdbSerie.first_air_date
-            ? Number(
-                tmdbSerie.first_air_date.slice(0, 4)
-              )
-            : null,
-
-        media_type: "tv",
-
-        status: "watched"
-      },
-      {
-        onConflict:
-          "user_id,movie_id,status"
-      }
-    );
-
-if (error) {
-
-  console.error(error);
-
-  continue;
-
-}
-
-importedSeries++;
-      
-   }
-}
-
-
-async function importRatings(csvText){
-
-  console.log(
-    "⭐ Parser Ratings"
-  );
-
-}
-
-
-async function importRewatched(csvText){
-
-  console.log(
-    "🔄 Parser Rewatched"
-  );
-
-}
-
-const csvParsers = {
-
-  tracking: importTracking,
-
-  ratings: importRatings,
-
-  rewatched: importRewatched
-
-};
-
-async function importTvTimeJson(zip, files){
-
-  console.log(
-    "📦 Import TV Time JSON"
-  );
-
-   
-  const moviesFile =
+    const moviesFile =
       files.find(file =>
         file.includes("movies") &&
         file.endsWith(".json")
@@ -904,15 +623,11 @@ async function importTvTimeJson(zip, files){
 tvTimeBtn.disabled = true;
 tvTimeBtn.textContent =
   "Importazione...";
-
      
-let importedMovies = 0;
+    let importedMovies = 0;
+    let importedSeries = 0;
+    const notFound = [];
 
-let importedSeries = 0;
-
-let importedEpisodes = 0;
-
-const notFound = [];
      
      const totalItems =
   movies.length + series.length;
@@ -1247,12 +962,7 @@ if (
                 tmdbItem.poster_path,
 
               release_year:
-
-tmdbItem.release_date
-  ? Number(tmdbItem.release_date.slice(0, 4))
-  : tmdbItem.first_air_date
-    ? Number(tmdbItem.first_air_date.slice(0, 4))
-    : null,
+                item.year,
 
               media_type:
                 mediaType,
@@ -1269,29 +979,30 @@ tmdbItem.release_date
 
       if(error){
 
-  console.log(error);
+        console.log(
+          error
+        );
 
-  return null;
+        return false;
 
-}
+      }
 
-return tmdbItem;
+      return true;
 
        }
     for (const movie of movies) {
 
-      const tmdbMovie =
-  await importItem(
-    movie,
-    "movie"
-  );
+      const imported =
+        await importItem(
+          movie,
+          "movie"
+        );
 
-if (!tmdbMovie)
-  continue;
+      if (imported) {
 
-importedMovies++;
-
-updateProgress(movie.title);
+        importedMovies++;
+        updateProgress(movie.title);
+      }
 
       console.log(
         `🎬 Film ${importedMovies}/${movies.length}`
@@ -1303,14 +1014,14 @@ await new Promise(resolve =>
      
       for (const serie of series) {
 
-  const tmdbSerie =
-  await importItem(
-    serie,
-    "tv"
-  );
+  const imported =
+    await importItem(
+      serie,
+      "tv"
+    );
 
-if (!tmdbSerie)
-  continue;
+  if (!imported)
+    continue;
 
   importedSeries++;
 
@@ -1318,70 +1029,10 @@ if (!tmdbSerie)
     serie.title
   );
 
-for (const season of (serie.seasons || [])) {
+  console.log(
+    serie.seasons
+  );
 
-  for (const episode of (season.episodes || [])) {
-
-    if (!episode.is_watched)
-      continue;
-
-
-     console.log(
-  "Salvo episodio:",
-  tmdbSerie.id,
-  season.number,
-  episode.number
-);
-
-     
-    const { error } =
-      await supabaseClient
-        .from("user_episode_progress")
-        .upsert({
-
-          user_id:
-            user.id,
-
-          series_id:
-            tmdbSerie.id,
-
-          season_number:
-            season.number,
-
-          episode_number:
-            episode.number,
-
-          watched: true,
-
-          watched_at:
-            episode.watched_at,
-
-          rewatch_count:
-            episode.rewatch_count || 0
-
-        }, {
-
-          onConflict:
-            "user_id,series_id,season_number,episode_number"
-
-        });
-
-    if (error) {
-
-  console.error(error);
-
-} else {
-
-  importedEpisodes++;
-
-    }
-
-  }
-
-}       
-         await new Promise(resolve =>
-  setTimeout(resolve, 120)
-);
       }
 
      alert(
@@ -1391,8 +1042,6 @@ for (const season of (serie.seasons || [])) {
 🎬 Film importati: ${importedMovies}
 
 📺 Serie importate: ${importedSeries}
-
-🎞️ Episodi importati: ${importedEpisodes}
 
 ❌ Non trovati: ${notFound.length}`
 
@@ -1422,195 +1071,12 @@ progress.innerHTML = `
 
 📺 Serie importate:
 <b>${importedSeries}</b>
-
-     🎞️ Episodi importati: 
-  <b>${importedEpisodes}</b>
-  `; 
+`;
     location.reload();
 
- 
-}
-
-async function importTvTimeCsv(zip, files){
-
-  console.log(
-    "📄 Import TV Time CSV"
-  );
-
-   const csvFiles =
-    files.filter(file =>
-      file.toLowerCase().endsWith(".csv")
-    );
-   
-console.log(csvFiles);
-
-   for (const fileName of csvFiles) {
-
-  const csvText =
-    await zip
-      .file(fileName)
-      .async("string");
-
-      const header =
-  csvText
-    .split("\n")[0]
-    .toLowerCase();
-
-console.log(
-  "Header:",
-  header
-);
-      
-  console.log(
-    "📄",
-    fileName
-  );
-
- 
-let csvType = "ignore";
-
-const lowerName = fileName.toLowerCase();
-
-if (
-  lowerName.includes("tracking-prod-records")
-) {
-
-  csvType = "tracking";
-
-}
-else if (
-  lowerName.includes("rewatched")
-) {
-
-  csvType = "rewatched";
-
-}
-else if (
-  lowerName.includes("ratings")
-) {
-
-  csvType = "ratings";
-
-}
-
-console.log(
-  "Tipo:",
-  csvType
-);
-
-     switch (csvType) {
-
-  case "tracking":
-
-    await importTracking(
-      csvText
-    );
-
-    break;
-
-  case "ratings":
-
-    await importRatings(
-      csvText
-    );
-
-    break;
-
-  case "rewatched":
-
-    await importRewatched(
-      csvText
-    );
-
-    break;
-
-     }
-     
-   }
-   
-}
-tvTimeBtn?.addEventListener(
-  "click",
-  () => {
-
-    tvTimeInput.click();
-
-  }
-);
-
-
-tvTimeInput?.addEventListener(
-  "change",
-  async (e) => {
-
-    const file =
-      e.target.files[0];
-
-    if (!file) return;
-
-    const zip =
-      await JSZip.loadAsync(file);
-
-    const files =
-      Object.keys(zip.files);
-
-
-   const csvFiles =
-  files.filter(file =>
-    file.toLowerCase().endsWith(".csv")
-  );
-
-
-     const hasJsonExport =
-
-  files.some(file =>
-    file.endsWith("movies.json")
-  ) &&
-
-  files.some(file =>
-    file.endsWith("series.json")
-  );
-
-const hasCsvExport =
-  csvFiles.length > 0;
-
-console.log(
-  "JSON Export:",
-  hasJsonExport
-);
-
-console.log(
-  "CSV Export:",
-  hasCsvExport
-);
-
-if (hasJsonExport) {
-
-  await importTvTimeJson(zip, files);
-
-  return;
-
-}
-
-if (hasCsvExport) {
-
-  await importTvTimeCsv(zip, files);
-
-  return;
-
-}
-     
-alert(
-  "Formato TV Time non riconosciuto."
-);
-
-return;
-
   }
 );
      
-     
-  
 
 /* =========================
    RENDER GRID
