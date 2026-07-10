@@ -17,7 +17,7 @@ async function loadCount() {
   }
 
   membersCount.textContent =
-    `🎬 ${data} appassionati sono già nella lista d'attesa`;
+    `🎬 ${data} appassionati sono già in lista d'attesa`;
 
 }
 
