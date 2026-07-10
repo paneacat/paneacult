@@ -157,11 +157,10 @@ line-height:1.5;
 box-shadow:0 0 20px rgba(255,191,0,.08);
 }
 
-#countdown strong{
-color:#ffffff;
-font-weight:700;
-}
-
+#countdown span{
+    white-space:nowrap;
+  }
+  
 #countdown strong{
 color:#ffffff;
 font-weight:700;
@@ -341,9 +340,14 @@ setInterval(() => {
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-  document.getElementById("countdown").innerHTML =
-`⏳ <strong>${days}</strong> giorni • <strong>${hours}</strong> ore • <strong>${minutes}</strong> minuti`;
-}, 1000);
+  document.getElementById("countdown").innerHTML = `
+⏳
+<span><strong>${days}</strong> giorni</span>
+•
+<span><strong>${hours}</strong> ore</span>
+•
+<span><strong>${minutes}</strong> minuti</span>
+`;
 
 </script>
 </body>
