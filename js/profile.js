@@ -656,6 +656,27 @@ console.log(
   hasCsvExport
 );
 
+if (hasJsonExport) {
+
+  await importTvTimeJson(zip);
+
+  return;
+
+}
+
+if (hasCsvExport) {
+
+  await importTvTimeCsv(zip);
+
+  return;
+
+}
+
+alert(
+  "Formato TV Time non riconosciuto."
+);
+
+return;
      
 console.log(csvFiles);
 
