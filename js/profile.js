@@ -1220,8 +1220,13 @@ console.log(
  let csvType = "ignore";
 
 if (
+
   header.includes("watch_type") ||
-  header.includes("series_name")
+
+  header.includes("watch_count") ||
+
+  header.includes("movie_watch_count")
+
 ) {
 
   csvType = "tracking";
