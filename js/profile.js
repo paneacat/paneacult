@@ -368,11 +368,11 @@ details?.credits?.crew?.find(
 
           /* WATCHED */
 
-          if(
-            filename.includes(
-              "watched"
-            )
-          ){
+          if (
+  filename.includes("watched") ||
+  filename.includes("diary")
+)
+          {
 
             await supabaseClient
               .from("user_movies")
