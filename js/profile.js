@@ -630,7 +630,22 @@ let importedEpisodes = 0;
    for (const [seriesName, episodes] of Object.entries(groupedSeries)) {
 
   console.log("Cerco:", seriesName);
+ const results = await searchMovies(seriesName);
 
+if (!results?.length) {
+
+  console.log("❌ Non trovata:", seriesName);
+
+  continue;
+
+}
+
+const tmdbSerie = results[0];
+
+console.log(
+  "✅ Trovata:",
+  tmdbSerie.name
+);
    }
 }
 
