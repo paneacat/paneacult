@@ -576,6 +576,39 @@ tvTimeInput?.addEventListener(
     const files =
       Object.keys(zip.files);
 
+
+   const csvFiles =
+  files.filter(file =>
+    file.toLowerCase().endsWith(".csv")
+  );
+
+console.log(csvFiles);
+
+   for (const fileName of csvFiles) {
+
+  const csvText =
+    await zip
+      .file(fileName)
+      .async("string");
+
+      const header =
+  csvText
+    .split("\n")[0]
+    .toLowerCase();
+
+console.log(
+  "Header:",
+  header
+);
+      
+  console.log(
+    "📄",
+    fileName
+  );
+
+   }
+
+     
     const moviesFile =
       files.find(file =>
         file.includes("movies") &&
