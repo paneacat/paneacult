@@ -553,8 +553,26 @@ const tvTimeInput =
 
 async function importTracking(csvText){
 
+  console.log("🚀 Parser Tracking");
+
+  const rows =
+    csvText
+      .trim()
+      .split("\n");
+
   console.log(
-    "🚀 Parser Tracking"
+    "Righe trovate:",
+    rows.length
+  );
+
+  console.log(
+    "Prima riga:",
+    rows[0]
+  );
+
+  console.log(
+    "Seconda riga:",
+    rows[1]
   );
 
 }
@@ -1252,14 +1270,6 @@ console.log(
   case "ratings":
 
     await importRatings(
-      csvText
-    );
-
-    break;
-
-  case "emotions":
-
-    await importEmotions(
       csvText
     );
 
