@@ -607,14 +607,7 @@ const groupedSeries = {};
 
 } 
 
-  episodes.push(row);
-      
-      if (i <= 5) {
 
-  console.log(row);
-
-      }
-      
 async function importRatings(csvText){
 
   console.log(
