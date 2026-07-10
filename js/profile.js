@@ -555,32 +555,57 @@ async function importTracking(csvText){
 
   console.log("🚀 Parser Tracking");
 
-const rows =
-  csvText.trim().split("\n");
+  const rows =
+    csvText.trim().split("\n");
 
-console.log(
-  "Righe trovate:",
-  rows.length
-);
+  console.log(
+    "Righe trovate:",
+    rows.length
+  );
 
-const headers =
-  rows[0].split(",");
+  const headers =
+    rows[0].split(",");
 
-   const episodes = [];
-   
-   for (let i = 1; i < rows.length; i++) {
+  const episodes = [];
+
+  for (let i = 1; i < rows.length; i++) {
 
     const values =
       rows[i].split(",");
 
-      const row = {};
+    const row = {};
 
-headers.forEach((header, index) => {
+    headers.forEach((header, index) => {
 
-  row[header.trim()] =
-    values[index]?.trim() || "";
+      row[header.trim()] =
+        values[index]?.trim() || "";
 
-});
+    });
+     
+    episodes.push(row);
+
+    if (i <= 5) {
+
+      console.log(row);
+
+    }
+
+  }   // <-- QUI FINISCE IL FOR
+     
+const groupedSeries = {};
+
+  episodes.forEach(ep => {
+     
+  });
+
+  console.log(
+    "Serie trovate:",
+    Object.keys(groupedSeries).length
+  );
+
+  console.log(groupedSeries);
+
+} 
 
   episodes.push(row);
       
@@ -590,31 +615,6 @@ headers.forEach((header, index) => {
 
       }
       
-
-      const groupedSeries = {};
-
-episodes.forEach(ep => {
-
-  const name = ep.series_name;
-
-  if (!name) return;
-
-  if (!groupedSeries[name]) {
-
-    groupedSeries[name] = [];
-
-  }
-
-  groupedSeries[name].push(ep);
-
-});
-
-console.log("Serie trovate:", Object.keys(groupedSeries).length);
-
-console.log(groupedSeries);
-
-}
-}
 async function importRatings(csvText){
 
   console.log(
