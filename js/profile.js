@@ -551,16 +551,6 @@ const tvTimeInput =
     "tvtimeImport"
   );
 
-tvTimeBtn?.addEventListener(
-  "click",
-  () => {
-
-    tvTimeInput.click();
-
-  }
-);
-
-
 async function importTracking(csvText){
 
   console.log(
@@ -585,6 +575,27 @@ async function importRewatched(csvText){
   );
 
 }
+
+const csvParsers = {
+
+  tracking: importTracking,
+
+  ratings: importRatings,
+
+  rewatched: importRewatched
+
+};
+
+
+tvTimeBtn?.addEventListener(
+  "click",
+  () => {
+
+    tvTimeInput.click();
+
+  }
+);
+
 
 tvTimeInput?.addEventListener(
   "change",
