@@ -92,6 +92,13 @@ strong{
     color:#fdc103;
 }
 
+  .features{
+    margin-top:80px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:24px;
+  }
+  
 form{
     width:100%;
     max-width:520px;
@@ -146,13 +153,32 @@ button:active{
   
 .card{
     background:#14394b;
+    border:1px solid rgba(253,193,3,.15);
+    border-radius:22px;
+    padding:30px;
+    transition:.25s;
+    box-shadow:0 8px 24px rgba(0,0,0,.18);
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:#fdc103;
+    box-shadow:0 14px 35px rgba(253,193,3,.18);
+}
+  
+ .card h3{
     color:#F8F8F6;
-}
-
+    font-size:24px;
+    margin-bottom:16px;
+    font-weight:700;
+ }
+  
 .card p{
-    color:#D8DEE3;
+    color:rgba(248,248,246,.82);
+    font-size:17px;
+    line-height:1.8;
 }
-
+  
 .footer{
     color:#D8DEE3;
 }
@@ -175,6 +201,18 @@ color:#ffbf00;
 }
 
 @media(max-width:700px){
+
+.card{
+    padding:26px;
+}
+
+.card h3{
+    font-size:22px;
+}
+
+.card p{
+    font-size:16px;
+}
 
 .logo{
 font-size:42px;
