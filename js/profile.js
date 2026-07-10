@@ -631,10 +631,8 @@ let importedEpisodes = 0;
 
   console.log("Cerco:", seriesName);
       
- 
-      
-const results = await searchMovieSmart(seriesName);
-      
+const results = await searchMovies(seriesName);
+
 if (!results?.length) {
 
   console.log("❌ Non trovata:", seriesName);
@@ -643,12 +641,15 @@ if (!results?.length) {
 
 }
 
-const tmdbSerie = results[0];
+const tmdbSerie =
+  results.find(r => r.media_type === "tv")
+  || results[0];
 
 console.log(
   "✅ Trovata:",
   tmdbSerie.name
 );
+      
    }
 }
 
