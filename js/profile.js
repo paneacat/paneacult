@@ -623,15 +623,11 @@ tvTimeInput?.addEventListener(
 tvTimeBtn.disabled = true;
 tvTimeBtn.textContent =
   "Importazione...";
-
      
-let importedMovies = 0;
+    let importedMovies = 0;
+    let importedSeries = 0;
+    const notFound = [];
 
-let importedSeries = 0;
-
-let importedEpisodes = 0;
-
-const notFound = [];
      
      const totalItems =
   movies.length + series.length;
@@ -845,6 +841,10 @@ if (!isNaN(year) && !isNaN(targetYear)) {
 
      }
 
+     const tvdbToTmdb =
+  new Map();
+     
+     
        async function importItem(
       item,
       mediaType
@@ -937,6 +937,11 @@ if (
   item.id?.tvdb
 ) {
 
+  tvdbToTmdb.set(
+    item.id.tvdb,
+    tmdbItem.id
+  );
+
 }
           
           console.log(
@@ -983,29 +988,30 @@ if (
 
       if(error){
 
-  console.log(error);
+        console.log(
+          error
+        );
 
-  return null;
+        return false;
 
-}
+      }
 
-return tmdbItem;
+      return true;
 
        }
     for (const movie of movies) {
 
-      const tmdbMovie =
-  await importItem(
-    movie,
-    "movie"
-  );
+      const imported =
+        await importItem(
+          movie,
+          "movie"
+        );
 
-if (!tmdbMovie)
-  continue;
+      if (imported) {
 
-importedMovies++;
-
-updateProgress(movie.title);
+        importedMovies++;
+        updateProgress(movie.title);
+      }
 
       console.log(
         `🎬 Film ${importedMovies}/${movies.length}`
@@ -1017,59 +1023,101 @@ await new Promise(resolve =>
      
       for (const serie of series) {
 
-  const tmdbSerie =
-  await importItem(
-    serie,
-    "tv"
-  );
+      const imported =
+        await importItem(
+          serie,
+          "tv"
+        );
 
-if (!tmdbSerie)
-  continue;
+      if (imported) {
 
-  importedSeries++;
+        importedSeries++;
+        updateProgress(serie.title || serie.name);
+      }
 
-  updateProgress(
-    serie.title
-  );
+      console.log(
+        `📺 Serie ${importedSeries}/${series.length}`
+      );
+await new Promise(resolve =>
+  setTimeout(resolve, 120)
+);
+      }
 
-for (const season of (serie.seasons || [])) {
 
-  for (const episode of (season.episodes || [])) {
 
-    if (!episode.is_watched)
+     /* =========================
+   IMPORT EPISODI
+========================= */
+
+let importedEpisodes = 0;
+
+for (const row of episodes) {
+
+  try {
+
+    const cols = row.split(",");
+
+    const seriesTvdbId =
+      Number(cols[0]);
+
+    const seasonNumber =
+      Number(cols[2]);
+
+    const episodeNumber =
+      Number(cols[3]);
+
+    const watched =
+      cols[6] === "true";
+
+    const watchedAt =
+      cols[7]
+        ? new Date(cols[7]).toISOString()
+        : null;
+
+    const rewatchCount =
+      Number(cols[8] || 0);
+
+    if (!watched)
+      continue;
+
+    const seriesId =
+      tvdbToTmdb.get(seriesTvdbId);
+
+    if (!seriesId)
       continue;
 
     const { error } =
       await supabaseClient
         .from("user_episode_progress")
-        .upsert({
+        .upsert(
+          {
 
-          user_id:
-            user.id,
+            user_id:
+              user.id,
 
-          series_id:
-            tmdbSerie.id,
+            series_id:
+              seriesId,
 
-          season_number:
-            season.number,
+            season_number:
+              seasonNumber,
 
-          episode_number:
-            episode.number,
+            episode_number:
+              episodeNumber,
 
-          watched: true,
+            watched: true,
 
-          watched_at:
-            episode.watched_at,
+            watched_at:
+              watchedAt,
 
-          rewatch_count:
-            episode.rewatch_count || 0
+            rewatch_count:
+              rewatchCount
 
-        }, {
-
-          onConflict:
-            "user_id,series_id,season_number,episode_number"
-
-        });
+          },
+          {
+            onConflict:
+              "user_id,series_id,season_number,episode_number"
+          }
+        );
 
     if (!error) {
 
@@ -1077,11 +1125,17 @@ for (const season of (serie.seasons || [])) {
 
     }
 
+  } catch (err) {
+
+    console.log(
+      "Errore episodio:",
+      err
+    );
+
   }
 
-}       
-      }
-
+}    
+     
      alert(
 
 `✅ Importazione completata
@@ -1089,6 +1143,8 @@ for (const season of (serie.seasons || [])) {
 🎬 Film importati: ${importedMovies}
 
 📺 Serie importate: ${importedSeries}
+
+🎞️ Episodi importati: ${importedEpisodes}
 
 ❌ Non trovati: ${notFound.length}`
 
@@ -1118,10 +1174,7 @@ progress.innerHTML = `
 
 📺 Serie importate:
 <b>${importedSeries}</b>
-
-     🎞️ Episodi importati: 
-  <b>${importedEpisodes}</b>
-  `; 
+`;
     location.reload();
 
   }
