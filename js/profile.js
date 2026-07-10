@@ -587,7 +587,7 @@ async function importTracking(csvText){
     if (i <= 5) {
 
       console.log(row);
-
+console.log(Object.keys(row));
     }
 
   }   // <-- QUI FINISCE IL FOR
