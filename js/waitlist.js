@@ -51,14 +51,13 @@ if (!emailRegex.test(email)) {
   return;
 }
   
-  const { error } = await supabaseClient
-    .from("waitlist")
-    .insert([
-      {
-        name,
-        email
-      }
-    ]);
+  const { error } = await supabaseClient.rpc(
+  "join_waitlist",
+  {
+    p_name: name,
+    p_email: email
+  }
+);
 
   if (error) {
 
