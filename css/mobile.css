@@ -637,7 +637,7 @@ section{
 ========================= */
 
 .review-hero {
-  min-height: 520px;
+  min-height: 450px;
   padding: 0;
   display: flex;
   align-items: flex-end;
@@ -1398,7 +1398,7 @@ section{
   .contact-card,
   .about-card{
     min-height:auto;
-    padding:26px;
+    padding:26px; grazie 
     border-radius:24px;
   }
 
@@ -2247,22 +2247,28 @@ section{
   border-bottom: 1px solid rgba(255,255,255,.10);
 }
 
-.sidebar-item:last-child {
-  border-bottom: none;
+.sidebar-item {
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
 }
 
 .sidebar-label {
-  flex-shrink: 0;
   font-size: .65rem;
-  letter-spacing: .18em;
+  letter-spacing: .2em;
+  flex-shrink: 0;
   margin: 0;
   white-space: nowrap;
 }
 
 .sidebar-value {
-  margin: 0;
   font-size: .9rem;
-  line-height: 1.35;
+  line-height: 1.4;
+  margin: 0;
   text-align: right;
 }
 
