@@ -2363,9 +2363,8 @@ section{
   .review-page .review-extra {
     width: 100%;
     box-sizing: border-box;
-
-    margin: 45px 0;
-    padding: 30px 24px;
+   margin: 35px 0;
+  padding: 26px 22px;
   }
 
   .review-page .review-extra h3 {
@@ -2376,16 +2375,13 @@ section{
 
   .review-page .review-extra p,
   .review-page .review-extra li {
-    font-size: 17px;
-    line-height: 1.75;
+      font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 18px;
   }
 
   .review-page .review-extra ul {
     padding-left: 20px;
-  }
-
-  .review-page .review-extra li {
-    margin-bottom: 22px;
   }
 
 
