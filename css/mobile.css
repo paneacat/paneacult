@@ -2214,62 +2214,6 @@ section{
 
 
   /* -----------------------------------------
-     HERO
-  ----------------------------------------- */
-
-  .review-page .review-hero {
-    min-height: 620px;
-    height: auto;
-
-    background-position: center center !important;
-
-    display: flex;
-    align-items: flex-end;
-  }
-
-  .review-page .review-hero-content {
-    width: 100%;
-    padding: 60px 28px 55px;
-    box-sizing: border-box;
-  }
-
-  .review-page .review-info {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .review-page .review-kicker {
-    font-size: 14px;
-    letter-spacing: 4px;
-    margin-bottom: 18px;
-  }
-
-  .review-page .review-title {
-    font-size: 36px;
-    line-height: 1.08;
-    margin: 0 0 24px;
-  }
-
-  .review-page .review-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 28px;
-    margin-bottom: 24px;
-  }
-
-  .review-page .review-meta .meta-pill {
-    font-size: 18px;
-  }
-
-  .review-page .review-subtitle {
-    font-size: 20px;
-    line-height: 1.5;
-    margin: 0;
-    max-width: 100%;
-  }
-
-
-  /* -----------------------------------------
      LAYOUT GENERALE
   ----------------------------------------- */
 
@@ -2341,7 +2285,7 @@ section{
     max-width: 100%;
     box-sizing: border-box;
 
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.85;
 
     padding: 0 4px;
