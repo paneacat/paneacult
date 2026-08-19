@@ -611,17 +611,6 @@ ${
 }
 </div>
 
-<div class="movie-actions">
-
-  <a
-    href="add-review.html?id=${movieId}"
-    class="hero-watch-btn"
-  >
-    🎬 Apri scheda film
-  </a>
-
-</div>
-
   </aside>
 
 <section class="review-content">
