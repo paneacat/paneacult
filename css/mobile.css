@@ -2224,14 +2224,13 @@ section{
     box-sizing: border-box;
   }
 
-/* =========================
+  /* =========================
    SCHEDA FILM — MOBILE
 ========================= */
 
 .sidebar-box {
   display: flex;
   flex-direction: column;
-  gap: 0;
   padding: 0;
   background: transparent;
   border: none;
@@ -2239,47 +2238,40 @@ section{
 }
 
 .sidebar-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
   width: 100%;
-  padding: 18px 0;
+  padding: 10px 0;
   border-bottom: 1px solid rgba(255,255,255,.10);
-}
-
-.sidebar-item:first-child {
-  padding-top: 0;
 }
 
 .sidebar-item:last-child {
   border-bottom: none;
 }
 
-/* ETICHETTA */
-
 .sidebar-label {
-  font-size: .7rem;
-  letter-spacing: .22em;
-  margin-bottom: 7px;
+  flex-shrink: 0;
+  font-size: .65rem;
+  letter-spacing: .18em;
+  margin: 0;
   white-space: nowrap;
 }
 
-/* VALORE */
-
 .sidebar-value {
-  font-size: 1rem;
-  line-height: 1.45;
   margin: 0;
-  overflow-wrap: break-word;
+  font-size: .9rem;
+  line-height: 1.35;
+  text-align: right;
 }
 
-/* RUBRICA */
+/* valori lunghi */
 
-.sidebar-rubrica .sidebar-value {
-  white-space: normal;
-}
-
-/* niente colonne su mobile */
-
-.sidebar-rubrica {
-  grid-column: auto;
+.sidebar-rubrica .sidebar-value,
+.sidebar-genre .sidebar-value,
+.sidebar-screenplay .sidebar-value {
+  max-width: 65%;
 }
   
   /* -----------------------------------------
