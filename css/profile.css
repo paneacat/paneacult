@@ -2328,30 +2328,37 @@ font-size:.9rem;
 .levels-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 1.5rem;
+  gap: 18px;
+  margin: 1.2rem 0 1.5rem;
 }
 
 .profile-stat {
-  padding: 18px 0;
-  border-top: 1px solid rgba(255,255,255,.12);
+  padding: 14px 20px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+  text-align: center;
+  background: rgba(255,255,255,.025);
 }
 
 .profile-stat-label {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   color: #fcc10e;
-  font-size: .75rem;
-  letter-spacing: .22em;
+  font-size: .68rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
 }
 
 .profile-stat strong {
   display: block;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
+  line-height: 1.2;
   font-weight: 500;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .profile-stat span {
-  font-size: .8rem;
+  display: block;
+  font-size: .72rem;
   opacity: .65;
 }
+
