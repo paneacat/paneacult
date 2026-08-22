@@ -2438,25 +2438,20 @@ section{
     margin-top: 50px;
   }
 
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
 
   .levels-row {
-    gap: 12px;
-    margin: 1.2rem 0 1.5rem;
+    gap: 10px;
+    margin: 1.2rem auto 1.5rem;
   }
 
   .profile-stat {
-    padding: 18px 10px;
-    border-radius: 14px;
+    width: 145px;
+    padding: 17px 10px;
   }
 
   .profile-stat-label {
-    font-size: .72rem;
-    letter-spacing: .16em;
-    margin-bottom: 8px;
+    font-size: .65rem;
+    letter-spacing: .15em;
   }
 
   .profile-stat strong {
@@ -2464,7 +2459,7 @@ section{
   }
 
   .profile-stat span {
-    font-size: .82rem;
+    font-size: .75rem;
   }
 
 }
