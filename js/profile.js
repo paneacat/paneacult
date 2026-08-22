@@ -2127,6 +2127,35 @@ function getCinephileLevel(count){
 
 }
 
+function getSeriesLevel(count){
+
+    if(count >= 1000){
+        return {
+            level: "📺 Mito delle Serie",
+            rank: 4
+        };
+    }
+
+    if(count >= 500){
+        return {
+            level: "📚 Collezionista",
+            rank: 3
+        };
+    }
+
+    if(count >= 300){
+        return {
+            level: "🔥 Serial addicted",
+            rank: 2
+        };
+    }
+
+    return {
+        level: "📺 Spettatore seriale",
+        rank: 1
+    };
+}
+
 async function updateCounters(){
 
 
