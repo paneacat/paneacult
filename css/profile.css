@@ -2324,98 +2324,37 @@ font-size:.9rem;
 
 }
 
-/* =========================
-   LIVELLI SPETTATORE
-========================= */
-
-.levels-row {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 20px;
-  margin: 1.5rem auto 2rem;
-}
-
-.profile-stat {
-  width: 190px;
-  padding: 20px 18px;
-  border: 1px solid rgba(255,255,255,.15);
-  border-radius: 16px;
-  text-align: center;
-  background: rgba(255,255,255,.025);
-}
-
-.profile-stat-label {
-  margin: 0 0 10px;
-  color: #fcc10e;
-  font-size: .8rem;
-  font-weight: 500;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-}
-
-.profile-stat strong {
-  display: block;
-  font-size: 2rem;
-  line-height: 1;
-  font-weight: 600;
-  margin-bottom: 7px;
-}
-
-.profile-stat span {
-  display: block;
-
-}
-
-/* TEMPO DI VISIONE */
-
-.watchtime-section {
-    max-width: 620px;
-    margin: 50px auto;
-    padding: 0 20px;
-}
-
-.watchtime-title {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.watchtime-grid {
+.profile-badges {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
+    margin: 22px auto 28px;
 }
 
-.watchtime-card {
-    width: 100%;
-    max-width: 560px;
-    min-height: 52px;
-    box-sizing: border-box;
-
+.profile-badge {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 8px;
 
-    padding: 12px 20px;
+    padding: 8px 14px;
 
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 14px;
-    background: rgba(255,255,255,0.035);
-}
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
 
-.watchtime-card span {
-    font-size: 1rem;
-    font-weight: 500;
-}
+    background: rgba(255, 255, 255, 0.06);
 
-.watchtime-card strong {
-    font-size: 1.05rem;
-    color: #fcc10e;
     white-space: nowrap;
 }
 
-.watchtime-card.total {
-    background: rgba(252,193,14,0.06);
-    border-color: rgba(252,193,14,0.25);
+.badge-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    opacity: 0.65;
+}
+
+.level-badge {
+    font-size: 0.82rem;
+    font-weight: 600;
 }
