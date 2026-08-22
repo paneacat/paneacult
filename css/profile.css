@@ -2329,14 +2329,16 @@ font-size:.9rem;
 ========================= */
 
 .levels-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
   gap: 20px;
-  margin: 1.5rem 0 2rem;
+  margin: 1.5rem auto 2rem;
 }
 
 .profile-stat {
-  padding: 22px 24px;
+  width: 190px;
+  padding: 20px 18px;
   border: 1px solid rgba(255,255,255,.15);
   border-radius: 16px;
   text-align: center;
@@ -2346,20 +2348,16 @@ font-size:.9rem;
 .profile-stat-label {
   margin: 0 0 10px;
   color: #fcc10e;
-  font-size: .85rem;
+  font-size: .8rem;
   font-weight: 500;
-  letter-spacing: .22em;
+  letter-spacing: .2em;
   text-transform: uppercase;
 }
 
 .profile-stat strong {
   display: block;
   font-size: 2rem;
-  line-height: 1.1;
+  line-height: 1;
   font-weight: 600;
   margin-bottom: 7px;
 }
-
-
-
-
