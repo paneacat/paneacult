@@ -2261,8 +2261,8 @@ if(cinephileLevel){
 const previousRank =
   profile?.cinephile_rank || 1;
 
-   cinephileLevel.textContent =
-  `${currentLevel.level} • ${watched} film visti`;
+cinephileLevel.textContent =
+    currentLevel.level;
    
 if(currentLevel.rank > previousRank){
 
