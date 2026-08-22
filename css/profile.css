@@ -2367,50 +2367,55 @@ font-size:.9rem;
 
 }
 
-/* =========================
-   TEMPO DI VISIONE
-========================= */
+/* TEMPO DI VISIONE */
 
 .watchtime-section {
-  max-width: 620px;
-  margin: 2rem auto;
+    max-width: 620px;
+    margin: 50px auto;
+    padding: 0 20px;
 }
 
-.watchtime-section h3,
 .watchtime-title {
-  text-align: center;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 .watchtime-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .watchtime-card {
-  width: 100%;
-  max-width: 560px;
-  min-height: 55px;
-  padding: 12px 20px;
+    width: 100%;
+    max-width: 560px;
+    min-height: 52px;
+    box-sizing: border-box;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 14px;
+    padding: 12px 20px;
 
-  background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.035);
 }
 
 .watchtime-card span {
-  font-size: .85rem;
-  opacity: .8;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .watchtime-card strong {
-  color: #fcc10e;
-  font-size: 1rem;
-  font-weight: 600;
+    font-size: 1.05rem;
+    color: #fcc10e;
+    white-space: nowrap;
+}
+
+.watchtime-card.total {
+    background: rgba(252,193,14,0.06);
+    border-color: rgba(252,193,14,0.25);
 }
