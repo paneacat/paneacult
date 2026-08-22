@@ -2403,3 +2403,13 @@ font-size:.9rem;
     color: #fcc10e;
     white-space: nowrap;
 }
+
+.media-divider {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #F5F7FA;
+    margin: 35px auto 25px;
+}
