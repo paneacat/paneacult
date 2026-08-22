@@ -2364,3 +2364,53 @@ font-size:.9rem;
 
 .profile-stat span {
   display: block;
+
+}
+
+/* =========================
+   TEMPO DI VISIONE
+========================= */
+
+.watchtime-section {
+  max-width: 620px;
+  margin: 2rem auto;
+}
+
+.watchtime-section h3,
+.watchtime-title {
+  text-align: center;
+}
+
+.watchtime-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.watchtime-card {
+  width: 100%;
+  max-width: 560px;
+  min-height: 55px;
+  padding: 12px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+
+  background: rgba(255,255,255,.025);
+}
+
+.watchtime-card span {
+  font-size: .85rem;
+  opacity: .8;
+}
+
+.watchtime-card strong {
+  color: #fcc10e;
+  font-size: 1rem;
+  font-weight: 600;
+}
