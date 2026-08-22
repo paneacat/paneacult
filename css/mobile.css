@@ -2460,6 +2460,27 @@ section{
 
   .profile-stat span {
     font-size: .75rem;
+  }.watchtime-section {
+    max-width: 340px;
+    margin: 1.5rem auto;
+  }
+
+  .watchtime-grid {
+    gap: 8px;
+  }
+
+  .watchtime-card {
+    max-width: 100%;
+    min-height: 48px;
+    padding: 10px 15px;
+  }
+
+  .watchtime-card span {
+    font-size: .8rem;
+  }
+
+  .watchtime-card strong {
+    font-size: .9rem;
   }
 
 }
