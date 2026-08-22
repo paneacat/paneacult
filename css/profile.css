@@ -2324,3 +2324,34 @@ font-size:.9rem;
   border-left:4px solid #66cc33;
 
 }
+
+.levels-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 1.5rem;
+}
+
+.profile-stat {
+  padding: 18px 0;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.profile-stat-label {
+  margin: 0 0 8px;
+  color: #fcc10e;
+  font-size: .75rem;
+  letter-spacing: .22em;
+}
+
+.profile-stat strong {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.profile-stat span {
+  font-size: .8rem;
+  opacity: .65;
+}
