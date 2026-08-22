@@ -2439,3 +2439,19 @@ section{
   }
 
 }
+
+
+@media (max-width: 600px) {
+  .levels-row {
+    gap: 16px;
+  }
+
+  .profile-stat {
+    padding: 14px 0;
+  }
+
+  .profile-stat strong {
+    font-size: 1rem;
+  }
+}
+
