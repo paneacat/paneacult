@@ -2364,8 +2364,15 @@ if(
   ratedCount.textContent =
     count || 0;
 
+   document.getElementById("cinephileLevel").textContent =
+    getCinephileLevel(watchedMovies.length).level;
+
+document.getElementById("seriesLevel").textContent =
+    getSeriesLevel(watchedTv.length);
          }
 }
+
+
 
 /* =========================
    INIT
