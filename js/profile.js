@@ -2226,15 +2226,12 @@ const watchedTv =
   ) || [];
 
    
-  if(filmsCount){
+if (filmsCount) {
+  filmsCount.textContent = watchedMovies.length;
+}
 
-  filmsCount.textContent =
-  watchedMovies.length;
-
-     if(tvCount){
-  tvCount.textContent =
-    watchedTv.length;
-     }
+if (tvCount) {
+  tvCount.textContent = watchedTv.length;
 }
 
 const cinephileLevel =
@@ -2368,7 +2365,7 @@ if(
     getCinephileLevel(watchedMovies.length).level;
 
 document.getElementById("seriesLevel").textContent =
-    getSeriesLevel(watchedTv.length);
+    getSeriesLevel(watchedTv.length).level;
          }
 }
 
