@@ -2246,8 +2246,7 @@ const cinephileLevel =
   );
 
 
-
-/* =========================
+   /* =========================
    WATCH TIME
 ========================= */
 
@@ -2256,65 +2255,31 @@ async function updateWatchTime(watchedMovies, watchedTv, user) {
   let movieMinutes = 0;
   let tvMinutes = 0;
 
-  /* =========================
-     FILM
-  ========================= */
+  /* FILM */
 
   for (const movie of watchedMovies) {
 
-    try {
+    const details = await fetchMovieDetails(
+      movie.movie_id,
+      "movie"
+    );
 
-      const details = await fetchMovieDetails(
-        movie.movie_id,
-        "movie"
-      );
-
-      const runtime = Number(details?.runtime);
-
-      if (runtime > 0) {
-        movieMinutes += runtime;
-      }
-
-    } catch (error) {
-
-      console.log(
-        "Errore durata film:",
-        movie.title,
-        error
-      );
-
+    if (details?.runtime) {
+      movieMinutes += details.runtime;
     }
 
   }
 
 
-  /* =========================
-     EPISODI SERIE VISTI
-  ========================= */
+  /* SERIE TV */
 
-  const {
-    data: episodes,
-    error: episodesError
-  } = await supabaseClient
-    .from("user_episode_progress")
-    .select("series_id, season_number, episode_number, watched")
-    .eq("user_id", user.id)
-    .eq("watched", true);
+  const { data: episodes } =
+    await supabaseClient
+      .from("user_episode_progress")
+      .select("*")
+      .eq("user_id", user.id)
+      .eq("watched", true);
 
-
-  if (episodesError) {
-
-    console.log(
-      "Errore episodi:",
-      episodesError
-    );
-
-  }
-
-
-  /* =========================
-     DURATA EPISODI
-  ========================= */
 
   if (episodes?.length) {
 
@@ -2322,62 +2287,30 @@ async function updateWatchTime(watchedMovies, watchedTv, user) {
 
     for (const episode of episodes) {
 
-      try {
+      if (!seriesCache[episode.series_id]) {
 
-        const seriesId =
-          episode.series_id;
+        const details =
+          await fetchMovieDetails(
+            episode.series_id,
+            "tv"
+          );
 
-        if (!seriesCache[seriesId]) {
-
-          const details =
-            await fetchMovieDetails(
-              seriesId,
-              "tv"
-            );
-
-          let runtime =
-            Number(
-              details?.episode_run_time?.[0]
-            );
-
-          /* Se TMDB non restituisce
-             la durata, usiamo 45 minuti */
-
-          if (!runtime || runtime <= 0) {
-            runtime = 45;
-          }
-
-          seriesCache[seriesId] =
-            runtime;
-
-        }
-
-        tvMinutes +=
-          seriesCache[seriesId];
-
-      } catch (error) {
-
-        console.log(
-          "Errore durata episodio:",
-          episode,
-          error
-        );
+        seriesCache[episode.series_id] =
+          details?.episode_run_time?.[0] || 45;
 
       }
+
+      tvMinutes +=
+        seriesCache[episode.series_id];
 
     }
 
   }
 
 
-  /* =========================
-     FORMATTA TEMPO
-  ========================= */
+  /* FORMATTA TEMPO */
 
   function formatWatchTime(minutes) {
-
-    minutes =
-      Math.round(Number(minutes) || 0);
 
     const days =
       Math.floor(minutes / 1440);
@@ -2394,10 +2327,6 @@ async function updateWatchTime(watchedMovies, watchedTv, user) {
 
   }
 
-
-  /* =========================
-     AGGIORNA HTML
-  ========================= */
 
   const movieTime =
     document.getElementById(
@@ -2416,46 +2345,165 @@ async function updateWatchTime(watchedMovies, watchedTv, user) {
 
 
   if (movieTime) {
-
     movieTime.textContent =
-      formatWatchTime(
-        movieMinutes
-      );
-
+      formatWatchTime(movieMinutes);
   }
-
 
   if (tvTime) {
-
     tvTime.textContent =
-      formatWatchTime(
-        tvMinutes
-      );
-
+      formatWatchTime(tvMinutes);
   }
 
-
   if (totalTime) {
-
     totalTime.textContent =
       formatWatchTime(
         movieMinutes + tvMinutes
       );
+  }
+
+}
+
+
+
+
+
+   
+if(cinephileLevel){
+
+  const watched =
+  watchedMovies.length;
+
+  const currentLevel =
+    getCinephileLevel(watched);
+
+   const {
+  data: profile
+} = await supabaseClient
+  .from("profiles")
+  .select("cinephile_rank")
+  .eq("id", user.id)
+  .single();
+
+const previousRank =
+  profile?.cinephile_rank || 1;
+
+cinephileLevel.textContent =
+    currentLevel.level;
+   
+if(currentLevel.rank > previousRank){
+
+  alert(
+    `🎉 Congratulazioni!\n\nHai raggiunto il livello\n${currentLevel.level}!`
+  );
+
+  await supabaseClient
+    .from("profiles")
+    .update({
+      cinephile_rank: currentLevel.rank
+    })
+    .eq("id", user.id);
+}
+}
+   
+  if (
+  user &&
+  tvFavoritesCount
+) {
+
+  const { count } =
+    await supabaseClient
+      .from("user_movies")
+      .select("*", {
+        count: "exact",
+        head: true
+      })
+      .eq("user_id", user.id)
+      .eq("status", "favorite")
+      .eq("media_type", "tv");
+
+  tvFavoritesCount.textContent =
+    count || 0;
 
   }
 
+   if(
+  user &&
+  reviewsCount
+){
 
-  console.log(
-    "WATCH TIME:",
-    {
-      film: movieMinutes,
-      serie: tvMinutes,
-      totale:
-        movieMinutes + tvMinutes
-    }
-  );
+  const {
+    count
+  } =
+  await supabaseClient
+    .from(
+      "user_reviews"
+    )
+    .select(
+      "*",
+      {
+        count:"exact",
+        head:true
+      }
+    )
+    .eq(
+      "user_id",
+      user.id
+    )
+    .not(
+      "review_text",
+      "is",
+      null
+    );
 
+  reviewsCount.textContent =
+    count || 0;
+  }
+if(
+  user &&
+  ratedCount
+){
+
+  const {
+    count
+  } =
+  await supabaseClient
+    .from(
+      "user_reviews"
+    )
+    .select(
+      "*",
+      {
+        count:"exact",
+        head:true
+      }
+    )
+    .eq(
+      "user_id",
+      user.id
+    )
+    .not(
+      "rating",
+      "is",
+      null
+    );
+
+  ratedCount.textContent =
+    count || 0;
+
+   document.getElementById("cinephileLevel").textContent =
+    getCinephileLevel(watchedMovies.length).level;
+
+document.getElementById("seriesLevel").textContent =
+    getSeriesLevel(watchedTv.length).level;
+
+   await updateWatchTime(
+  watchedMovies,
+  watchedTv,
+  user
+);
+         }
 }
+
 
 
 /* =========================
