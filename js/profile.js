@@ -2228,7 +2228,8 @@ const watchedTv =
 const seriesLevel = document.getElementById("seriesLevel");
 
 if (seriesLevel) {
-    seriesLevel.textContent = getSeriesLevel(watchedTv.length);
+    const currentSeriesLevel = getSeriesLevel(watchedTv.length);
+    seriesLevel.textContent = currentSeriesLevel.level;
 }
    
 if (filmsCount) {
