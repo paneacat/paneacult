@@ -2225,6 +2225,11 @@ const watchedTv =
     item => item.media_type === "tv"
   ) || [];
 
+const seriesLevel = document.getElementById("seriesLevel");
+
+if (seriesLevel) {
+    seriesLevel.textContent = getSeriesLevel(watchedTv.length);
+}
    
 if (filmsCount) {
   filmsCount.textContent = watchedMovies.length;
