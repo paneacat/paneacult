@@ -2245,6 +2245,129 @@ const cinephileLevel =
     "cinephileLevel"
   );
 
+
+   /* =========================
+   WATCH TIME
+========================= */
+
+async function updateWatchTime(watchedMovies, watchedTv, user) {
+
+  let movieMinutes = 0;
+  let tvMinutes = 0;
+
+  /* FILM */
+
+  for (const movie of watchedMovies) {
+
+    const details = await fetchMovieDetails(
+      movie.movie_id,
+      "movie"
+    );
+
+    if (details?.runtime) {
+      movieMinutes += details.runtime;
+    }
+
+  }
+
+
+  /* SERIE TV */
+
+  const { data: episodes } =
+    await supabaseClient
+      .from("user_episode_progress")
+      .select("*")
+      .eq("user_id", user.id)
+      .eq("watched", true);
+
+
+  if (episodes?.length) {
+
+    const seriesCache = {};
+
+    for (const episode of episodes) {
+
+      if (!seriesCache[episode.series_id]) {
+
+        const details =
+          await fetchMovieDetails(
+            episode.series_id,
+            "tv"
+          );
+
+        seriesCache[episode.series_id] =
+          details?.episode_run_time?.[0] || 45;
+
+      }
+
+      tvMinutes +=
+        seriesCache[episode.series_id];
+
+    }
+
+  }
+
+
+  /* FORMATTA TEMPO */
+
+  function formatWatchTime(minutes) {
+
+    const days =
+      Math.floor(minutes / 1440);
+
+    const hours =
+      Math.floor(
+        (minutes % 1440) / 60
+      );
+
+    const mins =
+      minutes % 60;
+
+    return `${days}g ${hours}h ${mins}m`;
+
+  }
+
+
+  const movieTime =
+    document.getElementById(
+      "movieWatchTime"
+    );
+
+  const tvTime =
+    document.getElementById(
+      "tvWatchTime"
+    );
+
+  const totalTime =
+    document.getElementById(
+      "totalWatchTime"
+    );
+
+
+  if (movieTime) {
+    movieTime.textContent =
+      formatWatchTime(movieMinutes);
+  }
+
+  if (tvTime) {
+    tvTime.textContent =
+      formatWatchTime(tvMinutes);
+  }
+
+  if (totalTime) {
+    totalTime.textContent =
+      formatWatchTime(
+        movieMinutes + tvMinutes
+      );
+  }
+
+}
+
+
+
+
+
+   
 if(cinephileLevel){
 
   const watched =
@@ -2372,6 +2495,12 @@ if(
 
 document.getElementById("seriesLevel").textContent =
     getSeriesLevel(watchedTv.length).level;
+
+   await updateWatchTime(
+  watchedMovies,
+  watchedTv,
+  user
+);
          }
 }
 
