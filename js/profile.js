@@ -2245,100 +2245,366 @@ const cinephileLevel =
     "cinephileLevel"
   );
 
-
-   /* =========================
+/* =========================================================
    WATCH TIME
-========================= */
+   ========================================================= */
 
 async function updateWatchTime(watchedMovies, watchedTv, user) {
+
+  console.log("========================================");
+  console.log("🎬 WATCH TIME: AVVIO");
+  console.log("Film ricevuti:", watchedMovies?.length || 0);
+  console.log("Serie ricevute:", watchedTv?.length || 0);
+  console.log("User:", user?.id);
+  console.log("========================================");
 
   let movieMinutes = 0;
   let tvMinutes = 0;
 
-  /* FILM */
+  /* =====================================================
+     FUNZIONE SICURA PER OTTENERE LA DURATA DI UN FILM
+     ===================================================== */
 
-   for (const movie of watchedMovies) {
+  async function getMovieRuntime(movie) {
+
+    const movieId =
+      movie?.movie_id ??
+      movie?.id ??
+      null;
+
+    if (!movieId) {
+      console.warn(
+        "⚠️ Film senza ID:",
+        movie
+      );
+      return 0;
+    }
+
+    try {
+
+      console.log(
+        "🎬 Recupero durata film:",
+        movie.title || movie.movie_title,
+        "ID:",
+        movieId
+      );
+
+      const details =
+        await fetchMovieDetails(
+          movieId,
+          "movie"
+        );
+
+      const runtime =
+        Number(details?.runtime);
+
+      if (
+        Number.isFinite(runtime) &&
+        runtime > 0
+      ) {
+
+        console.log(
+          "✅ Durata film:",
+          movie.title || movie.movie_title,
+          runtime,
+          "min"
+        );
+
+        return runtime;
+      }
+
+      console.warn(
+        "⚠️ TMDB non ha restituito una durata per:",
+        movie.title || movie.movie_title,
+        details
+      );
+
+    } catch (error) {
+
+      console.error(
+        "❌ Errore durata film:",
+        movie.title || movie.movie_title,
+        error
+      );
+
+    }
+
+    return 0;
+  }
+
+
+  /* =====================================================
+     FILM
+     ===================================================== */
+
+  for (const movie of watchedMovies || []) {
+
+    const runtime =
+      await getMovieRuntime(movie);
+
+    movieMinutes += runtime;
+
+  }
+
+
+  console.log(
+    "🎬 TOTALE FILM:",
+    movieMinutes,
+    "minuti"
+  );
+
+
+  /* =====================================================
+     EPISODI SERIE TV
+     ===================================================== */
 
   try {
 
-    const details = await fetchMovieDetails(
-      movie.movie_id,
-      "movie"
-    );
+    const {
+      data: episodes,
+      error: episodesError
+    } =
+      await supabaseClient
+        .from("user_episode_progress")
+        .select(
+          "series_id,season_number,episode_number,watched"
+        )
+        .eq(
+          "user_id",
+          user.id
+        )
+        .eq(
+          "watched",
+          true
+        );
 
-    if (details?.runtime) {
-      movieMinutes += Number(details.runtime);
+
+    if (episodesError) {
+
+      console.error(
+        "❌ Errore caricamento episodi:",
+        episodesError
+      );
+
+    } else {
+
+      console.log(
+        "📺 Episodi trovati:",
+        episodes?.length || 0
+      );
+
+
+      /* ===============================================
+         CACHE DURATA SERIE
+         =============================================== */
+
+      const seriesCache = new Map();
+
+
+      for (const episode of episodes || []) {
+
+        const seriesId =
+          episode?.series_id;
+
+        if (!seriesId) {
+
+          console.warn(
+            "⚠️ Episodio senza series_id:",
+            episode
+          );
+
+          continue;
+        }
+
+
+        /* ---------------------------------------------
+           RECUPERA DURATA DELLA SERIE UNA SOLA VOLTA
+           --------------------------------------------- */
+
+        if (!seriesCache.has(seriesId)) {
+
+          let runtime = 0;
+
+          try {
+
+            console.log(
+              "📺 Recupero durata serie:",
+              seriesId
+            );
+
+            const details =
+              await fetchMovieDetails(
+                seriesId,
+                "tv"
+              );
+
+
+            if (
+              Array.isArray(
+                details?.episode_run_time
+              )
+            ) {
+
+              const validTimes =
+                details.episode_run_time
+                  .map(Number)
+                  .filter(
+                    n =>
+                      Number.isFinite(n) &&
+                      n > 0
+                  );
+
+              if (validTimes.length) {
+
+                runtime =
+                  validTimes.reduce(
+                    (sum, value) =>
+                      sum + value,
+                    0
+                  ) / validTimes.length;
+
+              }
+
+            }
+
+
+            /* Fallback */
+
+            if (!runtime) {
+
+              runtime =
+                Number(
+                  details?.runtime
+                ) || 0;
+
+            }
+
+
+            if (!runtime) {
+
+              console.warn(
+                "⚠️ Durata serie non disponibile:",
+                seriesId,
+                details
+              );
+
+            } else {
+
+              console.log(
+                "✅ Durata episodio:",
+                seriesId,
+                runtime,
+                "min"
+              );
+
+            }
+
+          } catch (error) {
+
+            console.error(
+              "❌ Errore durata serie:",
+              seriesId,
+              error
+            );
+
+          }
+
+
+          seriesCache.set(
+            seriesId,
+            runtime
+          );
+
+        }
+
+
+        const episodeRuntime =
+          seriesCache.get(seriesId) || 0;
+
+
+        tvMinutes +=
+          episodeRuntime;
+
+      }
+
     }
 
   } catch (error) {
 
-    console.log(
-      "Errore durata film:",
-      movie.movie_id,
+    console.error(
+      "❌ Errore generale Watch Time TV:",
       error
     );
 
   }
 
-   }
+
+  /* =====================================================
+     RISULTATI
+     ===================================================== */
+
+  const totalMinutes =
+    movieMinutes +
+    tvMinutes;
 
 
-  /* SERIE TV */
+  console.log("========================================");
+  console.log(
+    "🎬 FILM:",
+    movieMinutes,
+    "min"
+  );
 
-  const { data: episodes } =
-    await supabaseClient
-      .from("user_episode_progress")
-      .select("*")
-      .eq("user_id", user.id)
-      .eq("watched", true);
+  console.log(
+    "📺 SERIE:",
+    tvMinutes,
+    "min"
+  );
 
+  console.log(
+    "⏱️ TOTALE:",
+    totalMinutes,
+    "min"
+  );
 
-  if (episodes?.length) {
-
-    const seriesCache = {};
-
-    for (const episode of episodes) {
-
-      if (!seriesCache[episode.series_id]) {
-
-        const details =
-          await fetchMovieDetails(
-            episode.series_id,
-            "tv"
-          );
-
-        seriesCache[episode.series_id] =
-          details?.episode_run_time?.[0] || 45;
-
-      }
-
-      tvMinutes +=
-        seriesCache[episode.series_id];
-
-    }
-
-  }
+  console.log("========================================");
 
 
-  /* FORMATTA TEMPO */
+  /* =====================================================
+     FORMATTAZIONE
+     ===================================================== */
 
   function formatWatchTime(minutes) {
 
+    const safeMinutes =
+      Number(minutes) || 0;
+
+    const total =
+      Math.round(
+        safeMinutes
+      );
+
     const days =
-      Math.floor(minutes / 1440);
+      Math.floor(
+        total / 1440
+      );
 
     const hours =
       Math.floor(
-        (minutes % 1440) / 60
+        (total % 1440) / 60
       );
 
     const mins =
-      minutes % 60;
+      total % 60;
 
     return `${days}g ${hours}h ${mins}m`;
 
   }
 
+
+  /* =====================================================
+     ELEMENTI HTML
+     ===================================================== */
 
   const movieTime =
     document.getElementById(
@@ -2356,27 +2622,64 @@ async function updateWatchTime(watchedMovies, watchedTv, user) {
     );
 
 
+  /* =====================================================
+     AGGIORNAMENTO INTERFACCIA
+     ===================================================== */
+
   if (movieTime) {
+
     movieTime.textContent =
-      formatWatchTime(movieMinutes);
+      formatWatchTime(
+        movieMinutes
+      );
+
+  } else {
+
+    console.warn(
+      "⚠️ Elemento #movieWatchTime non trovato"
+    );
+
   }
+
 
   if (tvTime) {
+
     tvTime.textContent =
-      formatWatchTime(tvMinutes);
+      formatWatchTime(
+        tvMinutes
+      );
+
+  } else {
+
+    console.warn(
+      "⚠️ Elemento #tvWatchTime non trovato"
+    );
+
   }
+
 
   if (totalTime) {
+
     totalTime.textContent =
       formatWatchTime(
-        movieMinutes + tvMinutes
+        totalMinutes
       );
+
+  } else {
+
+    console.warn(
+      "⚠️ Elemento #totalWatchTime non trovato"
+    );
+
   }
 
+
+  console.log(
+    "✅ WATCH TIME: INTERFACCIA AGGIORNATA"
+  );
+
 }
-
-
-
+ 
 
 
    
