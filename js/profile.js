@@ -2937,7 +2937,7 @@ async function calculateWatchTime() {
     await supabaseClient
       .from("user_movies")
       .select("movie_id")
-      .eq("user_id", currentUser.id)
+.eq("user_id", user.id)
       .eq("media_type", "movie")
       .eq("status", "watched");
 
@@ -2982,7 +2982,7 @@ async function calculateWatchTime() {
     await supabaseClient
       .from("user_episode_progress")
       .select("series_id")
-      .eq("user_id", currentUser.id)
+      .eq("user_id", user.id)
       .eq("watched", true);
 
   if (episodesError) {
