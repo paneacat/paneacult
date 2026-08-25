@@ -1873,3 +1873,16 @@ letter-spacing:.04em;
 }
 
 
+.star-filled {
+  color: #fcc10e;
+}
+
+.star-empty {
+  color: #ffffff;
+  opacity: 0.45;
+}
+
+.rating-score {
+  color: #ffffff;
+  margin-left: 6px;
+}
