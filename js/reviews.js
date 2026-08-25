@@ -732,7 +732,4 @@ reviewContainer.innerHTML = `
 `;
 }
 
-}
-
-
 loadSingleReview();
