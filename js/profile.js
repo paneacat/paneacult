@@ -1131,6 +1131,8 @@ for (const season of (serie.seasons || [])) {
 
 📺 Serie importate: ${importedSeries}
 
+🎞️ Episodi importati: ${importedEpisodes}
+
 ❌ Non trovati: ${notFound.length}`
 
 );
