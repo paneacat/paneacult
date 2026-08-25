@@ -2833,44 +2833,97 @@ async function getEpisodeRuntime(seriesId, seasonNumber, episodeNumber) {
         );
       }
 
-
       /* =====================================================
-         SOMMIAMO LA DURATA DI OGNI EPISODIO VISTO
-         ===================================================== */
+   SOMMIAMO LA DURATA DI OGNI EPISODIO VISTO
+   ===================================================== */
 
-      for (
-  const episode of episodes || []
-) {
+const seasonRuntimeCache = new Map();
+
+for (const episode of episodes || []) {
+
+  const seriesId = episode?.series_id;
+  const seasonNumber = episode?.season_number;
+  const episodeNumber = episode?.episode_number;
 
   let runtime =
-    seriesRuntimeCache.get(
-      episode?.series_id
-    ) || 0;
+    seriesRuntimeCache.get(seriesId) || 0;
 
-  // Se la durata media della serie non è disponibile,
-  // recuperiamo la durata dell'episodio direttamente da TMDB
-  if (!runtime) {
+  /*
+   * Se abbiamo già la durata media della serie,
+   * usiamo quella.
+   */
+  if (runtime > 0) {
+    tvMinutes += runtime;
+    continue;
+  }
 
-    runtime =
-      await getEpisodeRuntime(
-        episode?.series_id,
-        episode?.season_number,
-        episode?.episode_number
+  /*
+   * FALLBACK:
+   * recuperiamo la durata specifica dell'episodio
+   * dalla stagione TMDB.
+   */
+
+  const seasonKey =
+    `${seriesId}_${seasonNumber}`;
+
+  if (!seasonRuntimeCache.has(seasonKey)) {
+
+    let seasonData = null;
+
+    try {
+
+      const response = await fetch(
+        `https://api.themoviedb.org/3/tv/${seriesId}/season/${seasonNumber}?api_key=${API_KEY}&language=it-IT`
       );
 
-  }
+      if (response.ok) {
 
-  tvMinutes += runtime;
+        seasonData =
+          await response.json();
+
+      } else {
+
+        console.warn(
+          "⚠️ TMDB errore stagione:",
+          seriesId,
+          seasonNumber,
+          response.status
+        );
+
       }
 
+    } catch (error) {
 
-  } catch (error) {
+      console.warn(
+        "⚠️ Errore recupero stagione:",
+        seriesId,
+        seasonNumber,
+        error
+      );
 
-    console.error(
-      "❌ Errore generale Watch Time TV:",
-      error
+    }
+
+    seasonRuntimeCache.set(
+      seasonKey,
+      seasonData
     );
   }
+
+  const season =
+    seasonRuntimeCache.get(seasonKey);
+
+  const tmdbEpisode =
+    season?.episodes?.find(
+      ep =>
+        Number(ep.episode_number) ===
+        Number(episodeNumber)
+    );
+
+  const episodeRuntime =
+    Number(tmdbEpisode?.runtime) || 0;
+
+  tvMinutes += episodeRuntime;
+}
 
 
   /* =========================================================
