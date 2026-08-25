@@ -2276,15 +2276,16 @@ async function updateWatchTime(watchedMovies, watchedTv, user) {
 
   function formatWatchTime(minutes) {
 
-    const total = Math.round(Number(minutes) || 0);
+  const total = Math.round(Number(minutes) || 0);
 
-    const days = Math.floor(total / 1440);
-    const hours = Math.floor((total % 1440) / 60);
-    const mins = total % 60;
+  const years = Math.floor(total / 525600);
+  const months = Math.floor((total % 525600) / 43200);
+  const days = Math.floor((total % 43200) / 1440);
+  const hours = Math.floor((total % 1440) / 60);
+  const mins = total % 60;
 
-    return `${days}g ${hours}h ${mins}m`;
+  return `${years}a ${months}mesi ${days}g ${hours}h ${mins}m`;
   }
-
 
   function renderWatchTime(movieMinutes, tvMinutes) {
 
