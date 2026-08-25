@@ -2839,15 +2839,28 @@ async function getEpisodeRuntime(seriesId, seasonNumber, episodeNumber) {
          ===================================================== */
 
       for (
-        const episode of episodes || []
-      ) {
+  const episode of episodes || []
+) {
 
-        const runtime =
-          seriesRuntimeCache.get(
-            episode?.series_id
-          ) || 0;
+  let runtime =
+    seriesRuntimeCache.get(
+      episode?.series_id
+    ) || 0;
 
-        tvMinutes += runtime;
+  // Se la durata media della serie non è disponibile,
+  // recuperiamo la durata dell'episodio direttamente da TMDB
+  if (!runtime) {
+
+    runtime =
+      await getEpisodeRuntime(
+        episode?.series_id,
+        episode?.season_number,
+        episode?.episode_number
+      );
+
+  }
+
+  tvMinutes += runtime;
       }
 
 
