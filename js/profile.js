@@ -2907,11 +2907,23 @@ document
     filterFavorites
   );
 
-console.log("TEST WATCH TIME: entrata nella funzione");
-console.log("currentUser:", currentUser);
 
 async function calculateWatchTime() {
 
+    console.log("TEST WATCH TIME: entrata nella funzione");
+
+    const {
+        data: { user },
+        error: authError
+    } = await supabaseClient.auth.getUser();
+
+    if (authError || !user) {
+        console.error("Errore utente:", authError);
+        return;
+    }
+
+    console.log("UTENTE TROVATO:", user.id);
+   
   if (!currentUser) return;
 
   let movieMinutes = 0;
