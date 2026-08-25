@@ -836,49 +836,49 @@
 .sidebar-box {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
   width: 100%;
+  gap: 0;
 }
 
 .sidebar-item {
   min-width: 0;
+  padding: 24px 22px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
-  gap: 6px;
-  padding: 28px 24px;
+  gap: 7px;
+
   border-bottom: 1px solid rgba(255,255,255,.10);
-  text-align: left;
 }
 
 .sidebar-label {
   margin: 0;
   padding: 0;
+
   color: var(--panea-yellow);
-  font-size: .68rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
+
+  font-size: .65rem;
   font-weight: 600;
-  text-align: left;
+  letter-spacing: .18em;
+  line-height: 1.2;
+
+  text-transform: uppercase;
 }
 
 .sidebar-value {
-  min-width: 0;
   width: 100%;
+  min-width: 0;
+
   margin: 0;
   padding: 0;
-  color: rgba(255,255,255,.92);
-  font-size: 1rem;
-  line-height: 1.7;
-  font-weight: 500;
-  text-align: left;
-  overflow-wrap: anywhere;
-}
 
-/* RUBRICA */
-.sidebar-rubrica {
-  grid-column: 1 / -1;
+  color: rgba(255,255,255,.92);
+
+  font-size: .95rem;
+  font-weight: 500;
+  line-height: 1.5;
+
+  overflow-wrap: break-word;
 }
 
 .sidebar-series {
@@ -887,14 +887,9 @@
   letter-spacing: .06em;
 }
 
-/* niente regole speciali che rompano la griglia */
-.sidebar-regia,
-.sidebar-screenplay,
-.sidebar-genre,
-.sidebar-imdb,
-.sidebar-country,
-.sidebar-runtime {
-  grid-column: auto;
+/* Rubrica occupa tutta la riga */
+.sidebar-rubrica {
+  grid-column: 1 / -1;
 }
 
 /* =========================
