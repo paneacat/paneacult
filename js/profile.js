@@ -2764,7 +2764,6 @@ async function updateWatchTime(watchedMovies, watchedTv, user) {
 
         tvMinutes += runtime;
       }
-    }
 
 
   } catch (error) {
