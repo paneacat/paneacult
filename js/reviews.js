@@ -250,6 +250,33 @@ resetFilters?.addEventListener(
 );
 
 
+function renderStars(rating){
+
+  rating = Number(rating);
+
+  const fullStars = Math.floor(rating);
+
+  let stars = "";
+
+  for(let i = 0; i < 5; i++){
+
+    if(i < fullStars){
+
+      stars += `<span class="star-filled">★</span>`;
+
+    }else{
+
+      stars += `<span class="star-empty">☆</span>`;
+
+    }
+
+  }
+
+  return `${stars} <span class="rating-score">- ${rating}/5</span>`;
+
+}
+
+
 /* =========================
    LOAD REVIEWS FROM SUPABASE
 ========================= */
