@@ -2203,13 +2203,6 @@ const watchedTv =
   ) || [];
 
 
-/* Avvia il watch time senza bloccare il caricamento del profilo */
-updateWatchTime(
-  watchedMovies,
-  watchedTv,
-  user
-);
-
 const seriesLevel = document.getElementById("seriesLevel");
 
 if (seriesLevel) {
@@ -2225,6 +2218,15 @@ if (tvCount) {
   tvCount.textContent = watchedTv.length;
 }
 
+   /* Avvia il watch time dopo aver aggiornato subito i contatori */
+
+updateWatchTime(
+  watchedMovies,
+  watchedTV,
+  user
+);
+
+   
 const cinephileLevel =
   document.getElementById(
     "cinephileLevel"
