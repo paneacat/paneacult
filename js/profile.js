@@ -2259,9 +2259,14 @@ async function updateWatchTime(watchedMovies, watchedTv, user) {
 
   for (const movie of watchedMovies) {
 
- const runtime = Number(movie.runtime) || 0;
+  const details = await fetchMovieDetails(
+    movie.movie_id,
+    "movie"
+  );
 
-movieMinutes += runtime;   
+  if (details?.runtime) {
+    movieMinutes += Number(details.runtime);
+  }
 
   }
 
