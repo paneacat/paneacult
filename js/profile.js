@@ -926,40 +926,7 @@ if (!title) {
 }
 
 let results =
-  await searchMovies(title);
-
-/* secondo tentativo */
-
-if (!results?.length) {
-
-  results =
-    await searchMovies(
-      title.replace(/[:\-–]/g, " ")
-    );
-
-}
-
-/* terzo tentativo */
-
-if (!results?.length) {
-
-  results =
-    await searchMovies(
-      title.split(":")[0].trim()
-    );
-
-}
-
-/* quarto tentativo */
-
-if (!results?.length) {
-
-  results =
-    await searchMovies(
-      title.split("-")[0].trim()
-    );
-
-}
+  await searchMovieSmart(title);
 
 if (!results?.length) {
 
