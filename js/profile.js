@@ -2233,6 +2233,14 @@ const watchedTv =
     item => item.media_type === "tv"
   ) || [];
 
+
+/* Avvia il watch time senza bloccare il caricamento del profilo */
+updateWatchTime(
+  watchedMovies,
+  watchedTv,
+  user
+);
+
 const seriesLevel = document.getElementById("seriesLevel");
 
 if (seriesLevel) {
