@@ -2906,3 +2906,206 @@ document
     "change",
     filterFavorites
   );
+
+
+
+async function calculateWatchTime() {
+
+  if (!currentUser) return;
+
+  let movieMinutes = 0;
+  let tvMinutes = 0;
+
+  /* =========================
+     FILM VISTI
+  ========================= */
+
+  const { data: movies, error: moviesError } =
+    await supabaseClient
+      .from("user_movies")
+      .select("movie_id")
+      .eq("user_id", currentUser.id)
+      .eq("media_type", "movie")
+      .eq("status", "watched");
+
+  if (moviesError) {
+    console.log("Errore film:", moviesError);
+    return;
+  }
+
+  for (const movie of movies || []) {
+
+    try {
+
+      const details =
+        await fetchMovieDetails(
+          movie.movie_id,
+          "movie"
+        );
+
+      if (details?.runtime) {
+        movieMinutes +=
+          Number(details.runtime);
+      }
+
+    } catch (error) {
+
+      console.log(
+        "Errore durata film:",
+        movie.movie_id,
+        error
+      );
+
+    }
+
+  }
+
+
+  /* =========================
+     EPISODI SERIE VISTI
+  ========================= */
+
+  const { data: episodes, error: episodesError } =
+    await supabaseClient
+      .from("user_episode_progress")
+      .select("series_id")
+      .eq("user_id", currentUser.id)
+      .eq("watched", true);
+
+  if (episodesError) {
+
+    console.log(
+      "Errore episodi:",
+      episodesError
+    );
+
+    return;
+  }
+
+
+  /* =========================
+     EVITIAMO DI CHIAMARE TMDB
+     PIÙ VOLTE PER LA STESSA SERIE
+  ========================= */
+
+  const seriesCache = {};
+
+  for (const episode of episodes || []) {
+
+    try {
+
+      const seriesId =
+        episode.series_id;
+
+      if (!seriesCache[seriesId]) {
+
+        const details =
+          await fetchMovieDetails(
+            seriesId,
+            "tv"
+          );
+
+        seriesCache[seriesId] =
+          Number(
+            details?.episode_run_time?.[0]
+          ) || 45;
+
+      }
+
+      tvMinutes +=
+        seriesCache[seriesId];
+
+    } catch (error) {
+
+      console.log(
+        "Errore durata serie:",
+        episode.series_id,
+        error
+      );
+
+    }
+
+  }
+
+
+  /* =========================
+     FORMATTAZIONE
+  ========================= */
+
+  function formatTime(minutes) {
+
+    const total =
+      Math.round(minutes);
+
+    const days =
+      Math.floor(total / 1440);
+
+    const hours =
+      Math.floor(
+        (total % 1440) / 60
+      );
+
+    const mins =
+      total % 60;
+
+    return `${days}g ${hours}h ${mins}m`;
+  }
+
+
+  /* =========================
+     AGGIORNA I CONTATORI
+  ========================= */
+
+  const movieWatchTime =
+    document.getElementById(
+      "movieWatchTime"
+    );
+
+  const tvWatchTime =
+    document.getElementById(
+      "tvWatchTime"
+    );
+
+  const totalWatchTime =
+    document.getElementById(
+      "totalWatchTime"
+    );
+
+
+  if (movieWatchTime) {
+
+    movieWatchTime.textContent =
+      formatTime(movieMinutes);
+
+  }
+
+  if (tvWatchTime) {
+
+    tvWatchTime.textContent =
+      formatTime(tvMinutes);
+
+  }
+
+  if (totalWatchTime) {
+
+    totalWatchTime.textContent =
+      formatTime(
+        movieMinutes + tvMinutes
+      );
+
+  }
+
+
+  console.log(
+    "WATCH TIME:",
+    {
+      film: movieMinutes,
+      serie: tvMinutes,
+      totale:
+        movieMinutes + tvMinutes
+    }
+  );
+
+}
+
+calculateWatchTime();
