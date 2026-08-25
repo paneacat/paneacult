@@ -67,33 +67,6 @@ const registerBtn =
 
 
  /* =========================
-       CUSTOM CURSOR
-    ========================= */
-
-    const cursor =
-      document.querySelector(".cursor");
-
-    if(
-  cursor &&
-  window.innerWidth > 768
-){
-      document.addEventListener(
-        "mousemove",
-        (e) => {
-
-          cursor.style.left =
-            e.clientX + "px";
-
-          cursor.style.top =
-            e.clientY + "px";
-
-        }
-      );
-
-    }
-
-
- /* =========================
        CREDITS
     ========================= */
 
@@ -281,34 +254,3 @@ document
     );
 
   });
-
-
-
-
-function renderStars(rating){
-
-  rating = Number(rating);
-
-  const fullStars =
-    Math.floor(rating);
-
-  const halfStar =
-    rating % 1 >= 0.5;
-
-  let stars = "";
-
-  for(let i = 0; i < fullStars; i++){
-
-    stars += "★";
-
-  }
-
-  if(halfStar){
-
-    stars += "½";
-
-  }
-
-  return stars;
-
-}
