@@ -2593,6 +2593,91 @@ async function updateWatchTime(watchedMovies, watchedTv, user) {
       const seriesRuntimeCache =
         new Map();
 
+   const seriesEpisodeRuntimeCache = new Map();
+
+async function getEpisodeRuntime(seriesId, seasonNumber, episodeNumber) {
+
+  if (!seriesId || seasonNumber == null || episodeNumber == null) {
+    return 0;
+  }
+
+  const seasonKey =
+    `${seriesId}_${seasonNumber}`;
+
+  let seasonEpisodes =
+    seriesEpisodeRuntimeCache.get(seasonKey);
+
+  // Se non abbiamo ancora caricato questa stagione
+  if (!seasonEpisodes) {
+
+    seasonEpisodes = new Map();
+
+    try {
+
+      const response = await fetch(
+        `https://api.themoviedb.org/3/tv/${seriesId}/season/${seasonNumber}?api_key=${API_KEY}&language=it-IT`
+      );
+
+      if (!response.ok) {
+
+        console.warn(
+          "⚠️ TMDB errore stagione:",
+          seriesId,
+          seasonNumber,
+          response.status
+        );
+
+        seriesEpisodeRuntimeCache.set(
+          seasonKey,
+          seasonEpisodes
+        );
+
+        return 0;
+      }
+
+      const details =
+        await response.json();
+
+      (details?.episodes || [])
+        .forEach(ep => {
+
+          const runtime =
+            Number(ep?.runtime) || 0;
+
+          if (ep?.episode_number != null) {
+
+            seasonEpisodes.set(
+              Number(ep.episode_number),
+              runtime
+            );
+
+          }
+
+        });
+
+    } catch (error) {
+
+      console.error(
+        "❌ Errore durata stagione:",
+        seriesId,
+        seasonNumber,
+        error
+      );
+
+    }
+
+    seriesEpisodeRuntimeCache.set(
+      seasonKey,
+      seasonEpisodes
+    );
+  }
+
+  return (
+    seasonEpisodes.get(
+      Number(episodeNumber)
+    ) || 0
+  );
+}
 
       async function getSeriesRuntime(seriesId) {
 
