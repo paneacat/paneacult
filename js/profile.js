@@ -1137,12 +1137,20 @@ for (const season of (serie.seasons || [])) {
 
         });
 
-    if (!error) {
-
-      importedEpisodes++;
-
+    if (error) {
+  console.error(
+    "❌ ERRORE SALVATAGGIO EPISODIO:",
+    {
+      serie: serie.title,
+      tmdbSerieId: tmdbSerie.id,
+      stagione: season.number,
+      episodio: episode.number,
+      errore: error
     }
-
+  );
+} else {
+  importedEpisodes++;
+    }
   }
 
 }       
