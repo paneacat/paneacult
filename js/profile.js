@@ -3268,11 +3268,6 @@ document.getElementById("seriesLevel").textContent =
 
 
          }
-   await updateWatchTime(
-  watchedMovies,
-  watchedTv,
-  user
-);
 }
 
 
