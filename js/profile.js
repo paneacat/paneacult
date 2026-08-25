@@ -610,7 +610,6 @@ importBtn.textContent =
   }
 );
 
-
 /* =========================
    TV TIME IMPORT
 ========================= */
@@ -621,401 +620,385 @@ const tvTimeBtn =
 const tvTimeInput =
   document.getElementById("tvtimeImport");
 
-tvTimeBtn?.addEventListener(
-  "click",
-  () => {
 
-    tvTimeInput.click();
+/* =========================
+   IMPORT TV TIME JSON
+========================= */
 
-  }
-);
+async function importTvTimeJson(zip, files) {
 
-tvTimeInput?.addEventListener(
-  "change",
-  async (e) => {
+  console.log("📦 Import TV Time JSON");
 
-    const file =
-      e.target.files[0];
+  try {
 
-    if (!file) return;
-
-    const zip =
-      await JSZip.loadAsync(file);
-
-    const files =
-      Object.keys(zip.files);
+    /* -------------------------
+       TROVA I FILE
+    ------------------------- */
 
     const moviesFile =
       files.find(file =>
-        file.includes("movies") &&
-        file.endsWith(".json")
+        file.toLowerCase().endsWith("movies.json")
       );
 
     const seriesFile =
       files.find(file =>
-        file.includes("series") &&
-        file.endsWith(".json")
+        file.toLowerCase().endsWith("series.json")
       );
 
-    const movies =
-      JSON.parse(
-        await zip
-          .file(moviesFile)
-          .async("string")
+
+    if (!moviesFile && !seriesFile) {
+
+      alert(
+        "❌ Non trovo movies.json o series.json nell'esportazione TV Time."
       );
-
-    const series =
-      JSON.parse(
-        await zip
-          .file(seriesFile)
-          .async("string")
-      );
-
-     
-    const {
-      data:{ user }
-    } =
-    await supabaseClient.auth
-      .getUser();
-
-    if(!user){
-
-      alert("Login richiesto");
 
       return;
 
     }
-     
-tvTimeBtn.disabled = true;
-tvTimeBtn.textContent =
-  "Importazione...";
 
-     
-let importedMovies = 0;
 
-let importedSeries = 0;
+    /* -------------------------
+       LEGGI FILM
+    ------------------------- */
 
-let importedEpisodes = 0;
+    let movies = [];
 
-const notFound = [];
-     
-     const totalItems =
-  movies.length + series.length;
+    if (moviesFile) {
 
-let completedItems = 0;
+      const moviesText =
+        await zip
+          .file(moviesFile)
+          .async("string");
 
-const progress =
-  document.createElement("div");
-
-progress.style.cssText = `
-margin-top:16px;
-padding:16px;
-background:#17384a;
-color:#fff;
-border-radius:12px;
-font-weight:600;
-text-align:center;
-line-height:1.8;
-`;
-
-tvTimeBtn.after(progress);
-
-function updateProgress(type){
-
-  completedItems++;
-
-  const percent =
-    Math.round(
-      completedItems / totalItems * 100
-    );
-
-  progress.innerHTML = `
-    <div style="margin-bottom:10px">
-      Importazione TV Time...
-    </div>
-
-    <progress
-      value="${completedItems}"
-      max="${totalItems}"
-      style="width:100%;height:18px">
-    </progress>
-
-    <div style="margin-top:10px">
-      ${percent}% completato
-    </div>
-
-    <div style="margin-top:6px">
-      🎬 ${importedMovies}/${movies.length}
-      &nbsp;&nbsp;
-      📺 ${importedSeries}/${series.length}
-    </div>
-
-    <div style="margin-top:6px;font-size:13px;opacity:.8">
-      Ultimo: ${type}
-    </div>
-  `;
-
-}
-
-     function scoreResult(result, item, mediaType) {
-
-  let score = 0;
-
-  function normalizeTitle(text){
-
-  return (text || "")
-
-    .normalize("NFD")
-
-    .replace(/[\u0300-\u036f]/g, "")
-
-    .replace(/[^\w\s]/g, " ")
-
-    .replace(/\s+/g, " ")
-
-    .trim()
-
-    .toLowerCase();
-
-}
-
-const title =
-  normalizeTitle(
-    result.title ||
-    result.name
-  );
-
-const original =
-  normalizeTitle(
-    result.original_title ||
-    result.original_name
-  );
-
-const target =
-  normalizeTitle(
-    item.title ||
-    item.name ||
-    item.show_name
-  );
-
-        
-  if (title === target)
-    score += 50;
-
-  if (original === target)
-    score += 30;
-
-  if (
-
-  title.includes(target) ||
-
-  target.includes(title)
-
-){
-
-  score += 20;
-
-}
-
-if (
-
-  original.includes(target) ||
-
-  target.includes(original)
-
-){
-
-  score += 15;
-
-}
-        
-  if (result.media_type === mediaType)
-    score += 100;
-
-  const year = parseInt(
-  (
-    result.release_date ||
-    result.first_air_date ||
-    ""
-  ).slice(0, 4)
-);
-
-const targetYear =
-  parseInt(item.year);
-
-if (!isNaN(year) && !isNaN(targetYear)) {
-
-  const diff =
-    Math.abs(year - targetYear);
-
-  if (diff === 0) {
-
-    score += 100;
-
-  } else if (diff === 1) {
-
-    score += 70;
-
-  }
-
-}
-
-  score += Math.min(
-    result.popularity || 0,
-    20
-  );
-
-  return score;
-
-     }
-
-     
-     async function searchMovieSmart(title) {
-
-  const attempts = [
-
-    title,
-
-    title.replace(/[:–-]/g, " "),
-
-    title.replace(/\(.*?\)/g, "").trim(),
-
-    title.split(":")[0].trim(),
-
-    title.split("-")[0].trim(),
-
-    title.replace(/[^\w\s]/g, "").trim()
-
-  ];
-
-  const tried = new Set();
-
-  for (const query of attempts) {
-
-    if (!query || tried.has(query)) continue;
-
-    tried.add(query);
-
-    const results =
-      await searchMovies(query);
-
-    if (results?.length) {
-
-      return results;
+      movies =
+        JSON.parse(moviesText);
 
     }
 
-  }
 
-  return [];
+    /* -------------------------
+       LEGGI SERIE
+    ------------------------- */
 
-     }
+    let series = [];
 
-       async function importItem(
+    if (seriesFile) {
+
+      const seriesText =
+        await zip
+          .file(seriesFile)
+          .async("string");
+
+      series =
+        JSON.parse(seriesText);
+
+    }
+
+
+    console.log(
+      "🎬 Film TV Time:",
+      movies.length
+    );
+
+    console.log(
+      "📺 Serie TV Time:",
+      series.length
+    );
+
+
+    /* -------------------------
+       UTENTE
+    ------------------------- */
+
+    const {
+      data: { user },
+      error: userError
+    } =
+      await supabaseClient.auth.getUser();
+
+
+    if (userError || !user) {
+
+      alert(
+        "❌ Devi essere autenticata per importare i dati."
+      );
+
+      return;
+
+    }
+
+
+    /* -------------------------
+       UI
+    ------------------------- */
+
+    tvTimeBtn.disabled = true;
+
+    tvTimeBtn.textContent =
+      "Importazione...";
+
+
+    let importedMovies = 0;
+    let importedSeries = 0;
+    let importedEpisodes = 0;
+
+    const notFound = [];
+
+    const totalItems =
+      movies.length +
+      series.length;
+
+    let completedItems = 0;
+
+
+    const progress =
+      document.createElement("div");
+
+
+    progress.style.cssText = `
+      margin-top:16px;
+      padding:16px;
+      background:#17384a;
+      color:#fff;
+      border-radius:12px;
+      font-weight:600;
+      text-align:center;
+      line-height:1.8;
+    `;
+
+
+    tvTimeBtn.after(progress);
+
+
+    function updateProgress(type) {
+
+      completedItems++;
+
+      const percent =
+        totalItems > 0
+          ? Math.round(
+              completedItems /
+              totalItems *
+              100
+            )
+          : 100;
+
+
+      progress.innerHTML = `
+
+        <div style="margin-bottom:10px">
+          📦 Importazione TV Time...
+        </div>
+
+        <progress
+          value="${completedItems}"
+          max="${totalItems}"
+          style="width:100%;height:18px">
+        </progress>
+
+        <div style="margin-top:10px">
+          ${percent}% completato
+        </div>
+
+        <div style="margin-top:6px">
+          🎬 ${importedMovies}/${movies.length}
+          &nbsp;&nbsp;
+          📺 ${importedSeries}/${series.length}
+        </div>
+
+        <div style="
+          margin-top:6px;
+          font-size:13px;
+          opacity:.8
+        ">
+          Ultimo: ${type}
+        </div>
+
+      `;
+
+    }
+
+
+    /* =========================
+       IMPORT SINGOLO ELEMENTO
+    ========================= */
+
+    async function importItem(
       item,
       mediaType
-    ){
+    ) {
 
-        const title =
-  item.title ||
-  item.name ||
-  item.show_name;
+      const title =
+        item.title ||
+        item.name ||
+        item.show_name;
 
-if (!title) {
-  return false;
-}
 
-let results =
-  await searchMovies(title);
+      if (!title) {
 
-/* secondo tentativo */
+        return null;
 
-if (!results?.length) {
+      }
 
-  results =
-    await searchMovies(
-      title.replace(/[:\-–]/g, " ")
-    );
 
-}
+      /* -------------------------
+         RICERCA TMDB
+      ------------------------- */
 
-/* terzo tentativo */
+      let results = [];
 
-if (!results?.length) {
 
-  results =
-    await searchMovies(
-      title.split(":")[0].trim()
-    );
+      const attempts = [
 
-}
+        title,
 
-/* quarto tentativo */
+        title.replace(
+          /[:\-–]/g,
+          " "
+        ),
 
-if (!results?.length) {
+        title.replace(
+          /\(.*?\)/g,
+          ""
+        ).trim(),
 
-  results =
-    await searchMovies(
-      title.split("-")[0].trim()
-    );
+        title.split(":")[0].trim(),
 
-}
+        title.split("-")[0].trim(),
 
-if (!results?.length) {
+        title
+          .replace(
+            /[^\w\s]/g,
+            ""
+          )
+          .trim()
 
-  console.log("❌ Non trovato:", title);
+      ];
 
-  notFound.push({
-    title,
-    mediaType
-  });
 
-  return false;
+      const tried =
+        new Set();
 
-}
 
-if (!results || !results.length) {
+      for (
+        const query of attempts
+      ) {
 
-  console.log("Non trovato:", title);
+        if (
+          !query ||
+          tried.has(query)
+        ) {
+          continue;
+        }
 
-  return false;
 
-}
+        tried.add(query);
 
-          const tmdbItem =
-  results
-    .sort(
-      (a,b)=>
-        scoreResult(
-          b,
-          item,
+
+        try {
+
+          const found =
+            await searchMovies(query);
+
+
+          if (
+            found &&
+            found.length
+          ) {
+
+            results = found;
+
+            break;
+
+          }
+
+        } catch (err) {
+
+          console.error(
+            "Errore ricerca TMDB:",
+            title,
+            err
+          );
+
+        }
+
+      }
+
+
+      if (
+        !results ||
+        !results.length
+      ) {
+
+        console.log(
+          "❌ Non trovato:",
+          title
+        );
+
+
+        notFound.push({
+          title,
           mediaType
-        ) -
-        scoreResult(
-          a,
-          item,
+        });
+
+
+        return null;
+
+      }
+
+
+      /* -------------------------
+         SCEGLI RISULTATO MIGLIORE
+      ------------------------- */
+
+      const tmdbItem =
+        results
+          .sort(
+            (a, b) =>
+              scoreResult(
+                b,
+                item,
+                mediaType
+              ) -
+              scoreResult(
+                a,
+                item,
+                mediaType
+              )
+          )[0];
+
+
+      if (!tmdbItem) {
+
+        notFound.push({
+          title,
           mediaType
-        )
-    )[0];
-          
-if (
-  mediaType === "tv" &&
-  item.id?.tvdb
-) {
+        });
 
-}
-          
-          console.log(
-  "Salvo:",
-  tmdbItem.title || tmdbItem.name,
-  mediaType
-);
+        return null;
 
-          
-      const { error } =
+      }
+
+
+      console.log(
+        "💾 Salvo:",
+        tmdbItem.title ||
+        tmdbItem.name,
+        mediaType
+      );
+
+
+      /* -------------------------
+         SALVA IN USER_MOVIES
+      ------------------------- */
+
+      const {
+        error
+      } =
         await supabaseClient
           .from("user_movies")
           .upsert(
+
             {
 
               user_id:
@@ -1032,7 +1015,19 @@ if (
                 tmdbItem.poster_path,
 
               release_year:
-                item.year,
+                tmdbItem.release_date
+                  ? Number(
+                      tmdbItem.release_date
+                        .slice(0, 4)
+                    )
+
+                  : tmdbItem.first_air_date
+                    ? Number(
+                        tmdbItem.first_air_date
+                          .slice(0, 4)
+                      )
+
+                    : null,
 
               media_type:
                 mediaType,
@@ -1041,166 +1036,456 @@ if (
                 "watched"
 
             },
+
             {
+
               onConflict:
                 "user_id,movie_id,status"
+
             }
+
           );
 
-      if(error){
 
-  console.log(error);
+      if (error) {
 
-  return null;
+        console.error(
+          "❌ Errore Supabase:",
+          title,
+          error
+        );
 
-}
+        return null;
 
-return tmdbItem;
-
-       }
-    for (const movie of movies) {
-
-      const tmdbMovie =
-  await importItem(
-    movie,
-    "movie"
-  );
-
-if (!tmdbMovie)
-  continue;
-
-importedMovies++;
-
-updateProgress(movie.title);
-
-      console.log(
-        `🎬 Film ${importedMovies}/${movies.length}`
-      );
-await new Promise(resolve =>
-  setTimeout(resolve, 120)
-);
-    }
-     
-      for (const serie of series) {
-
-  const tmdbSerie =
-  await importItem(
-    serie,
-    "tv"
-  );
-
-if (!tmdbSerie)
-  continue;
-
-  importedSeries++;
-
-  updateProgress(
-    serie.title
-  );
-
-for (const season of (serie.seasons || [])) {
-
-  for (const episode of (season.episodes || [])) {
-
-    if (!episode.is_watched)
-      continue;
-
-    const { error } =
-      await supabaseClient
-        .from("user_episode_progress")
-        .upsert({
-
-          user_id:
-            user.id,
-
-          series_id:
-            tmdbSerie.id,
-
-          season_number:
-            season.number,
-
-          episode_number:
-            episode.number,
-
-          watched: true,
-
-          watched_at:
-            episode.watched_at,
-
-          rewatch_count:
-            episode.rewatch_count || 0
-
-        }, {
-
-          onConflict:
-            "user_id,series_id,season_number,episode_number"
-
-        });
-
-    if (error) {
-  console.error(
-    "❌ ERRORE SALVATAGGIO EPISODIO:",
-    {
-      serie: serie.title,
-      tmdbSerieId: tmdbSerie.id,
-      stagione: season.number,
-      episodio: episode.number,
-      errore: error
-    }
-  );
-} else {
-  importedEpisodes++;
-    }
-  }
-
-}       
       }
 
-     alert(
 
-`✅ Importazione completata
+      return tmdbItem;
+
+    }
+
+
+    /* =========================
+       FILM
+    ========================= */
+
+    for (
+      const movie of movies
+    ) {
+
+      try {
+
+        const tmdbMovie =
+          await importItem(
+            movie,
+            "movie"
+          );
+
+
+        if (tmdbMovie) {
+
+          importedMovies++;
+
+        }
+
+
+        updateProgress(
+          movie.title ||
+          movie.name ||
+          "Film"
+        );
+
+
+        await new Promise(
+          resolve =>
+            setTimeout(
+              resolve,
+              120
+            )
+        );
+
+
+      } catch (err) {
+
+        console.error(
+          "Errore import film:",
+          movie,
+          err
+        );
+
+      }
+
+    }
+
+
+    /* =========================
+       SERIE
+    ========================= */
+
+    for (
+      const serie of series
+    ) {
+
+      try {
+
+        const tmdbSerie =
+          await importItem(
+            serie,
+            "tv"
+          );
+
+
+        if (!tmdbSerie) {
+
+          updateProgress(
+            serie.title ||
+            serie.name ||
+            "Serie"
+          );
+
+          continue;
+
+        }
+
+
+        importedSeries++;
+
+
+        /* -------------------------
+           EPISODI VISTI
+        ------------------------- */
+
+        for (
+          const season of
+          (serie.seasons || [])
+        ) {
+
+          for (
+            const episode of
+            (season.episodes || [])
+          ) {
+
+            if (
+              !episode.is_watched
+            ) {
+              continue;
+            }
+
+
+            const {
+              error:
+                episodeError
+            } =
+              await supabaseClient
+                .from(
+                  "user_episode_progress"
+                )
+                .upsert(
+
+                  {
+
+                    user_id:
+                      user.id,
+
+                    series_id:
+                      tmdbSerie.id,
+
+                    season_number:
+                      season.number,
+
+                    episode_number:
+                      episode.number,
+
+                    watched:
+                      true,
+
+                    watched_at:
+                      episode.watched_at ||
+                      null,
+
+                    rewatch_count:
+                      episode.rewatch_count ||
+                      0
+
+                  },
+
+                  {
+
+                    onConflict:
+                      "user_id,series_id,season_number,episode_number"
+
+                  }
+
+                );
+
+
+            if (
+              episodeError
+            ) {
+
+              console.error(
+                "❌ Errore episodio:",
+                serie.title,
+                season.number,
+                episode.number,
+                episodeError
+              );
+
+            } else {
+
+              importedEpisodes++;
+
+            }
+
+          }
+
+        }
+
+
+        updateProgress(
+          serie.title ||
+          serie.name ||
+          "Serie"
+        );
+
+
+        await new Promise(
+          resolve =>
+            setTimeout(
+              resolve,
+              120
+            )
+        );
+
+
+      } catch (err) {
+
+        console.error(
+          "Errore import serie:",
+          serie,
+          err
+        );
+
+      }
+
+    }
+
+
+    /* =========================
+       RISULTATO
+    ========================= */
+
+    console.log(
+      "🎉 IMPORT COMPLETATO"
+    );
+
+    console.log(
+      "Film:",
+      importedMovies
+    );
+
+    console.log(
+      "Serie:",
+      importedSeries
+    );
+
+    console.log(
+      "Episodi:",
+      importedEpisodes
+    );
+
+    console.log(
+      "Non trovati:",
+      notFound
+    );
+
+
+    let notFoundText = "";
+
+
+    if (
+      notFound.length
+    ) {
+
+      notFoundText =
+        `\n\n❌ Non trovati: ${notFound.length}`;
+
+    }
+
+
+    alert(
+
+      `✅ Importazione completata!
 
 🎬 Film importati: ${importedMovies}
 
 📺 Serie importate: ${importedSeries}
 
-❌ Non trovati: ${notFound.length}`
+🎞️ Episodi importati: ${importedEpisodes}
 
-);
-     
-     
-if (notFound.length) {
+${notFoundText}`
 
-  console.table(notFound);
+    );
+
+
+    tvTimeBtn.disabled = false;
+
+    tvTimeBtn.textContent =
+      "Importa da TV Time";
+
+
+    location.reload();
+
+
+  } catch (error) {
+
+    console.error(
+      "❌ ERRORE IMPORT TV TIME:",
+      error
+    );
+
+
+    alert(
+      "❌ Si è verificato un errore durante l'importazione TV Time. Controlla la console."
+    );
+
+
+    tvTimeBtn.disabled = false;
+
+    tvTimeBtn.textContent =
+      "Importa da TV Time";
+
+  }
 
 }
-     
-tvTimeBtn.disabled = false;
 
-tvTimeBtn.textContent =
-  "Importa da TV Time";
 
-progress.innerHTML = `
-<h3 style="margin:0 0 12px">
-✅ Importazione completata
-</h3>
+/* =========================
+   CLICK IMPORTA
+========================= */
 
-🎬 Film importati:
-<b>${importedMovies}</b>
+tvTimeBtn?.addEventListener(
+  "click",
+  () => {
 
-<br><br>
+    console.log(
+      "📂 Apertura import TV Time"
+    );
 
-📺 Serie importate:
-<b>${importedSeries}</b>
-
-     🎞️ Episodi importati: 
-  <b>${importedEpisodes}</b>
-  `; 
-    location.reload();
+    tvTimeInput?.click();
 
   }
 );
-     
+
+
+/* =========================
+   FILE SELEZIONATO
+========================= */
+
+tvTimeInput?.addEventListener(
+  "change",
+  async (e) => {
+
+    try {
+
+      const file =
+        e.target.files?.[0];
+
+
+      if (!file) {
+
+        console.log(
+          "Nessun file selezionato"
+        );
+
+        return;
+
+      }
+
+
+      console.log(
+        "📦 File TV Time:",
+        file.name
+      );
+
+
+      const zip =
+        await JSZip.loadAsync(
+          file
+        );
+
+
+      const files =
+        Object.keys(
+          zip.files
+        );
+
+
+      console.log(
+        "📁 File trovati nello ZIP:",
+        files
+      );
+
+
+      const hasMovies =
+        files.some(
+          file =>
+            file
+              .toLowerCase()
+              .endsWith(
+                "movies.json"
+              )
+        );
+
+
+      const hasSeries =
+        files.some(
+          file =>
+            file
+              .toLowerCase()
+              .endsWith(
+                "series.json"
+              )
+        );
+
+
+      if (
+        !hasMovies &&
+        !hasSeries
+      ) {
+
+        alert(
+          "❌ Questo ZIP non sembra essere un'esportazione TV Time valida."
+        );
+
+        return;
+
+      }
+
+
+      await importTvTimeJson(
+        zip,
+        files
+      );
+
+
+    } catch (error) {
+
+      console.error(
+        "❌ Errore lettura ZIP TV Time:",
+        error
+      );
+
+
+      alert(
+        "❌ Non riesco a leggere il file ZIP di TV Time."
+      );
+
+    }
+
+  }
+);
+
 
 /* =========================
    RENDER GRID
