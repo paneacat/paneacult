@@ -2412,3 +2412,52 @@ font-size:.9rem;
     color: #F5F7FA;
     margin: 35px auto 25px;
 }
+
+
+/* =========================
+   REVIEW SIDEBAR
+========================= */
+
+.sidebar-box {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+}
+
+.sidebar-item {
+  min-width: 0;
+  padding: 28px 24px;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.sidebar-value {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* PRIME DUE CELLE */
+.sidebar-regia {
+  grid-column: span 2;
+}
+
+.sidebar-screenplay {
+  grid-column: span 2;
+}
+
+/* SECONDA RIGA */
+.sidebar-genre,
+.sidebar-imdb,
+.sidebar-country,
+.sidebar-runtime {
+  grid-column: span 1;
+}
+
+/* TERZA RIGA */
+.sidebar-rubrica {
+  grid-column: span 2;
+}
+
+.sidebar-mood {
+  grid-column: span 2;
+}
