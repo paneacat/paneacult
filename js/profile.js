@@ -2974,72 +2974,24 @@ async function calculateWatchTime() {
   }
 
 
-  /* =========================
-     EPISODI SERIE VISTI
-  ========================= */
+ /* =========================
+   TEMPO SERIE TV
+========================= */
 
-  const { data: episodes, error: episodesError } =
-    await supabaseClient
-      .from("user_episode_progress")
-      .select("series_id")
-      .eq("user_id", user.id)
-      .eq("watched", true);
+let tvMinutes = 0;
 
-  if (episodesError) {
+for (const serie of watchedTv || []) {
 
-    console.log(
-      "Errore episodi:",
-      episodesError
-    );
+    const episodesWatched =
+        Number(serie.episodes_watched) || 0;
 
-    return;
-  }
+    const episodeRuntime =
+        Number(serie.runtime) || 0;
 
-
-  /* =========================
-     EVITIAMO DI CHIAMARE TMDB
-     PIÙ VOLTE PER LA STESSA SERIE
-  ========================= */
-
-  const seriesCache = {};
-
-  for (const episode of episodes || []) {
-
-    try {
-
-      const seriesId =
-        episode.series_id;
-
-      if (!seriesCache[seriesId]) {
-
-        const details =
-          await fetchMovieDetails(
-            seriesId,
-            "tv"
-          );
-
-        seriesCache[seriesId] =
-          Number(
-            details?.episode_run_time?.[0]
-          ) || 45;
-
-      }
-
-      tvMinutes +=
-        seriesCache[seriesId];
-
-    } catch (error) {
-
-      console.log(
-        "Errore durata serie:",
-        episode.series_id,
-        error
-      );
-
-    }
-
-  }
-
+    tvMinutes +=
+        episodeRuntime * episodesWatched;
+}
+   
 
   /* =========================
      FORMATTAZIONE
