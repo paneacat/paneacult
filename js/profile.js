@@ -2175,21 +2175,53 @@ await supabaseClient.auth
   .getUser();
 
 if(!user) return;
+let watchedCloud = [];
 
-const {
-  data: watchedCloud
-} =
-await supabaseClient
-  .from("user_movies")
-  .select("*")
-  .eq(
-    "user_id",
-    user.id
-  )
-  .eq(
-    "status",
-    "watched"
-  );
+let from = 0;
+const pageSize = 1000;
+
+while (true) {
+
+  const {
+    data,
+    error
+  } =
+  await supabaseClient
+    .from("user_movies")
+    .select("*")
+    .eq(
+      "user_id",
+      user.id
+    )
+    .eq(
+      "status",
+      "watched"
+    )
+    .range(
+      from,
+      from + pageSize - 1
+    );
+
+  if (error) {
+    console.error(
+      "Errore caricamento user_movies:",
+      error
+    );
+    break;
+  }
+
+  if (!data || data.length === 0) {
+    break;
+  }
+
+  watchedCloud.push(...data);
+
+  if (data.length < pageSize) {
+    break;
+  }
+
+  from += pageSize;
+}
 
    
    const watchedMovies =
