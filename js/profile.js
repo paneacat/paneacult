@@ -2361,46 +2361,161 @@ async function updateWatchTime(watchedMovies, watchedTv, user) {
     "minuti"
   );
 
+/* =====================================================
+   EPISODI SERIE TV
+   ===================================================== */
 
-  /* =====================================================
-     EPISODI SERIE TV
-     ===================================================== */
+try {
 
-  try {
+  const {
+    data: episodes,
+    error: episodesError
+  } = await supabaseClient
+    .from("user_episode_progress")
+    .select("series_id,season_number,episode_number,watched")
+    .eq("user_id", user.id)
+    .eq("watched", true);
 
-    const {
-      data: episodes,
-      error: episodesError
-    } =
-      await supabaseClient
-        .from("user_episode_progress")
-        .select(
-          "series_id,season_number,episode_number,watched"
-        )
-        .eq(
-          "user_id",
-          user.id
-        )
-        .eq(
-          "watched",
-          true
+  if (episodesError) {
+    console.error(
+      "❌ Errore caricamento episodi:",
+      episodesError
+    );
+
+  } else {
+
+    console.log(
+      "📺 Episodi trovati:",
+      episodes?.length || 0
+    );
+
+    /* Cache: una sola richiesta TMDB per ogni serie */
+    const seriesCache = new Map();
+
+    for (const episode of episodes || []) {
+
+      const seriesId = episode?.series_id;
+
+      if (!seriesId) {
+        console.warn(
+          "⚠️ Episodio senza series_id:",
+          episode
+        );
+        continue;
+      }
+
+      /* ---------------------------------------------
+         RECUPERA DURATA MEDIA DELLA SERIE
+         --------------------------------------------- */
+
+      if (!seriesCache.has(seriesId)) {
+
+        let runtime = 0;
+
+        try {
+
+          console.log(
+            "📺 Recupero durata serie:",
+            seriesId
+          );
+
+          const response = await fetch(
+            `https://api.themoviedb.org/3/tv/${seriesId}?api_key=${API_KEY}&language=it-IT`
+          );
+
+          if (!response.ok) {
+
+            console.warn(
+              "⚠️ TMDB errore serie:",
+              seriesId,
+              response.status
+            );
+
+            seriesCache.set(seriesId, 0);
+            continue;
+          }
+
+          const details = await response.json();
+
+          /* TMDB restituisce normalmente un array
+             episode_run_time */
+
+          if (
+            Array.isArray(details?.episode_run_time)
+          ) {
+
+            const validTimes =
+              details.episode_run_time
+                .map(Number)
+                .filter(
+                  n =>
+                    Number.isFinite(n) &&
+                    n > 0
+                );
+
+            if (validTimes.length) {
+
+              runtime =
+                validTimes.reduce(
+                  (sum, value) =>
+                    sum + value,
+                  0
+                ) / validTimes.length;
+
+            }
+
+          }
+
+          /* Fallback */
+          if (!runtime) {
+
+            runtime =
+              Number(details?.runtime) || 0;
+
+          }
+
+          console.log(
+            "✅ Durata episodio:",
+            seriesId,
+            runtime,
+            "min"
+          );
+
+        } catch (error) {
+
+          console.error(
+            "❌ Errore durata serie:",
+            seriesId,
+            error
+          );
+
+        }
+
+        seriesCache.set(
+          seriesId,
+          runtime
         );
 
+      }
 
-    if (episodesError) {
+      const episodeRuntime =
+        seriesCache.get(seriesId) || 0;
 
-      console.error(
-        "❌ Errore caricamento episodi:",
-        episodesError
-      );
+      tvMinutes += episodeRuntime;
 
-    } else {
+    }
 
-      console.log(
-        "📺 Episodi trovati:",
-        episodes?.length || 0
-      );
+  }
 
+} catch (error) {
+
+  console.error(
+    "❌ Errore generale Watch Time TV:",
+    error
+  );
+
+}
+ 
 
       /* ===============================================
          CACHE DURATA SERIE
