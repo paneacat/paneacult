@@ -2257,18 +2257,30 @@ async function updateWatchTime(watchedMovies, watchedTv, user) {
 
   /* FILM */
 
-  for (const movie of watchedMovies) {
+   for (const movie of watchedMovies) {
 
-  const details = await fetchMovieDetails(
-    movie.movie_id,
-    "movie"
-  );
+  try {
 
-  if (details?.runtime) {
-    movieMinutes += Number(details.runtime);
+    const details = await fetchMovieDetails(
+      movie.movie_id,
+      "movie"
+    );
+
+    if (details?.runtime) {
+      movieMinutes += Number(details.runtime);
+    }
+
+  } catch (error) {
+
+    console.log(
+      "Errore durata film:",
+      movie.movie_id,
+      error
+    );
+
   }
 
-  }
+   }
 
 
   /* SERIE TV */
