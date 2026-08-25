@@ -2412,4 +2412,23 @@ section{
     .level-badge {
         font-size: 0.72rem;
     }
+
+
+  .sidebar-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sidebar-item,
+  .sidebar-rubrica {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,.10);
+  }
+
+  .sidebar-value {
+    font-size: .9rem;
+    line-height: 1.45;
+  }
   }
