@@ -2254,7 +2254,7 @@ if (tvCount) {
 
 updateWatchTime(
   watchedMovies,
-  watchedTV,
+  watchedTv,
   user
 );
 
