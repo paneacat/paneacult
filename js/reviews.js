@@ -395,14 +395,12 @@ async function loadSingleReview(){
 /* =========================
    REVIEW BADGES
 ========================= */
-   
 reviewContainer.innerHTML = `
 
 <section
   class="review-hero"
   style="
-    background-image:
-      url('${data.movie_backdrop}');
+    background-image: url('${data.movie_backdrop}');
     background-size: cover;
     background-position: center;
   "
@@ -422,55 +420,56 @@ reviewContainer.innerHTML = `
 
       <div class="review-meta">
 
-     
-  ${
-    data.year
-    ? `
-    <span class="meta-pill">
-      ${data.year}
-    </span>
-    `
-    : ""
-  }
+        ${
+          data.year
+          ? `
+          <span class="meta-pill">
+            ${data.year}
+          </span>
+          `
+          : ""
+        }
 
-  ${
-    data.director
-    ? `
-    <span class="meta-pill">
-      ${data.director}
-    </span>
-    `
-    : ""
-  }
+        ${
+          data.director
+          ? `
+          <span class="meta-pill">
+            ${data.director}
+          </span>
+          `
+          : ""
+        }
 
-</div>
+      </div>
 
-${
-  data.subtitle
-  ? `
-  <p class="review-subtitle">
-    ${data.subtitle}
-  </p>
-  `
-  : ""
-}
-${
-  data.watch_link
-  ? `
-  <div class="where-watch">
+      ${
+        data.subtitle
+        ? `
+        <p class="review-subtitle">
+          ${data.subtitle}
+        </p>
+        `
+        : ""
+      }
 
-    <a
-      href="${data.watch_link}"
-      target="_blank"
-      class="hero-watch-btn"
-    >
-      ${data.watch_label || "Guarda ora"}
-    </a>
+      ${
+        data.watch_link
+        ? `
+        <div class="where-watch">
 
-  </div>
-  `
-  : ""
-}
+          <a
+            href="${data.watch_link}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero-watch-btn"
+          >
+            ${data.watch_label || "Guarda ora"}
+          </a>
+
+        </div>
+        `
+        : ""
+      }
 
     </div>
 
@@ -485,167 +484,196 @@ ${
 
     <div class="sidebar-box">
 
-${
-  data.director
-  ? `
-<div class="sidebar-item sidebar-regia">
+      ${
+        data.director
+        ? `
+        <div class="sidebar-item sidebar-regia">
 
-    <p class="sidebar-label">
-      Regia
-    </p>
+          <p class="sidebar-label">
+            Regia
+          </p>
 
-    <p class="sidebar-value">
-      ${data.director}
-    </p>
+          <p class="sidebar-value">
+            ${data.director}
+          </p>
 
-  </div>
-  `
-  : ""
-}
+        </div>
+        `
+        : ""
+      }
 
-${
-  data.screenplay
-  ? `
-  <div class="sidebar-item sidebar-screenplay">
 
-    <p class="sidebar-label">
-      Sceneggiatura
-    </p>
+      ${
+        data.screenplay
+        ? `
+        <div class="sidebar-item sidebar-screenplay">
 
-    <p class="sidebar-value">
-      ${data.screenplay}
-    </p>
+          <p class="sidebar-label">
+            Sceneggiatura
+          </p>
 
-  </div>
-  `
-  : ""
-}
+          <p class="sidebar-value">
+            ${data.screenplay}
+          </p>
 
-${
-  data.genre
-  ? `
-  <div class="sidebar-item sidebar-genre">
+        </div>
+        `
+        : ""
+      }
 
-    <p class="sidebar-label">
-      Genere
-    </p>
 
-    <p class="sidebar-value">
-      ${data.genre}
-    </p>
+      ${
+        data.year
+        ? `
+        <div class="sidebar-item sidebar-year">
 
-  </div>
-  `
-  : ""
-}
-   
-   ${
-  data.imdb_rating
-  ? `
-  <div class="sidebar-item sidebar-imdb">
+          <p class="sidebar-label">
+            Anno
+          </p>
 
-    <p class="sidebar-label">
-      IMDb
-    </p>
+          <p class="sidebar-value">
+            ${data.year}
+          </p>
 
-    <p class="sidebar-value">
-      ${data.imdb_rating} /10
-    </p>
+        </div>
+        `
+        : ""
+      }
 
-  </div>
-  `
-  : ""
-   }
-${
-  data.country
-  ? `
-  <div class="sidebar-item sidebar-country">
 
-  <p class="sidebar-label">
-    Paese
-  </p>
+      ${
+        data.genre
+        ? `
+        <div class="sidebar-item sidebar-genre">
 
-  <p class="sidebar-value">
-    ${data.country}
-  </p>
+          <p class="sidebar-label">
+            Genere
+          </p>
 
-</div>
-  `
-  : ""
-}
+          <p class="sidebar-value">
+            ${data.genre}
+          </p>
 
-${
-  data.runtime
-  ? `
-  <div class="sidebar-item sidebar-runtime">
+        </div>
+        `
+        : ""
+      }
 
-    <p class="sidebar-label">
-      Durata
-    </p>
 
-    <p class="sidebar-value">
-      ${data.runtime}
-    </p>
+      ${
+        data.imdb_rating
+        ? `
+        <div class="sidebar-item sidebar-imdb">
 
-  </div>
-  `
-  : ""
-}
+          <p class="sidebar-label">
+            IMDb
+          </p>
 
-${
-  data.rubrica
-  ? `
-  <div class="sidebar-item sidebar-rubrica">
+          <p class="sidebar-value">
+            ${data.imdb_rating} /10
+          </p>
 
-    <p class="sidebar-label">
-      Rubrica
-    </p>
+        </div>
+        `
+        : ""
+      }
 
-    <p class="sidebar-value sidebar-series">
-      ${data.rubrica}
-    </p>
 
-  </div>
-  `
-  : ""
-}
-</div>
+      ${
+        data.country
+        ? `
+        <div class="sidebar-item sidebar-country">
+
+          <p class="sidebar-label">
+            Paese
+          </p>
+
+          <p class="sidebar-value">
+            ${data.country}
+          </p>
+
+        </div>
+        `
+        : ""
+      }
+
+
+      ${
+        data.runtime
+        ? `
+        <div class="sidebar-item sidebar-runtime">
+
+          <p class="sidebar-label">
+            Durata
+          </p>
+
+          <p class="sidebar-value">
+            ${data.runtime}
+          </p>
+
+        </div>
+        `
+        : ""
+      }
+
+
+      ${
+        data.rubrica
+        ? `
+        <div class="sidebar-item sidebar-rubrica">
+
+          <p class="sidebar-label">
+            Rubrica
+          </p>
+
+          <p class="sidebar-value sidebar-series">
+            ${data.rubrica}
+          </p>
+
+        </div>
+        `
+        : ""
+      }
+
+    </div>
 
   </aside>
 
-<section class="review-content">
+
+  <section class="review-content">
 
     <div class="review-body">
+      ${data.review_text}
+    </div>
 
-  ${data.review_text}
-</div>
 
     <div class="rating">
 
-  <span class="rating-stars">
-    ${renderStars(data.rating)}
-  </span>
+      <span class="rating-stars">
+        ${renderStars(data.rating)}
+      </span>
 
-</div>
+    </div>
 
-${
-  data.mood
-  ? `
-  <div class="review-mood">
 
-    <span class="review-mood-label">
-      MOOD
-    </span>
+    ${
+      data.mood
+      ? `
+      <div class="review-mood">
 
-    <span class="review-mood-value">
-      ${data.mood}
-    </span>
+        <span class="review-mood-label">
+          MOOD
+        </span>
 
-  </div>
-  `
-  : ""
-}
-   
+        <span class="review-mood-value">
+          ${data.mood}
+        </span>
+
+      </div>
+      `
+      : ""
+    }
+
 
     ${
       data.quote
@@ -656,6 +684,7 @@ ${
       `
       : ""
     }
+
 
     ${
       data.curiosita
@@ -675,6 +704,7 @@ ${
       : ""
     }
 
+
     <div class="review-author">
 
       <img
@@ -691,77 +721,15 @@ ${
       </div>
 
     </div>
-<div id="userReviewsSection"></div>
+
+
+    <div id="userReviewsSection"></div>
+
+  </section>
+
 </section>
+
 `;
-
-   const userReviewsSection =
-  document.getElementById(
-    "userReviewsSection"
-  );
-
-const {
-  data: userReviews
-} =
-  await supabaseClient
-    .from("user_reviews")
-    .select("*")
-    .eq(
-  "movie_title",
-  data.movie_title
-)
-    .order(
-      "created_at",
-      {
-        ascending:false
-      }
-    );
-
-if(
-  userReviews &&
-  userReviews.length
-){
-
-  userReviewsSection.innerHTML = `
-
-    <section class="community-section">
-
-      <h2 class="community-title">
-        Community
-      </h2>
-
-      <div class="community-grid">
-
-        ${
-          userReviews.map(
-            review => `
-
-            <article
-  class="community-card"
->
-
-  <div class="community-stars">
-  ${renderStars(review.rating)}
-</div>
-
-  <p
-    class="community-text"
-  >
-    ${review.review_text}
-  </p>
-
-</article>
-
-          `
-          ).join("")
-        }
-
-      </div>
-
-    </section>
-
-  `;
-
 }
 
 }
