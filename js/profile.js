@@ -2531,38 +2531,47 @@ async function updateWatchTime(watchedMovies, watchedTv, user) {
 
   try {
 
-    const {
-      data: episodes,
-      error: episodesError
-    } =
-      await supabaseClient
-        .from("user_episode_progress")
-        .select(
-          "series_id,season_number,episode_number,watched"
-        )
-        .eq(
-          "user_id",
-          user.id
-        )
-        .eq(
-          "watched",
-          true
-        );
+  let episodes = [];
+  let from = 0;
+  const pageSize = 1000;
 
+  while (true) {
+
+    const {
+      data,
+      error: episodesError
+    } = await supabaseClient
+      .from("user_episode_progress")
+      .select("series_id,season_number,episode_number,watched")
+      .eq("user_id", user.id)
+      .eq("watched", true)
+      .range(from, from + pageSize - 1);
 
     if (episodesError) {
-
       console.error(
         "❌ Errore caricamento episodi:",
         episodesError
       );
+      break;
+    }
 
-    } else {
+    if (!data || data.length === 0) {
+      break;
+    }
 
-      console.log(
-        "📺 Episodi trovati:",
-        episodes?.length || 0
-      );
+    episodes.push(...data);
+
+    if (data.length < pageSize) {
+      break;
+    }
+
+    from += pageSize;
+  }
+
+  console.log(
+    "📺 Episodi trovati:",
+    episodes.length
+  );
 
 
       /* =====================================================
