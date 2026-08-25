@@ -2924,7 +2924,7 @@ async function calculateWatchTime() {
 
     console.log("UTENTE TROVATO:", user.id);
    
-  if (!currentUser) return;
+  if (!user) return;
 
   let movieMinutes = 0;
   let tvMinutes = 0;
