@@ -107,30 +107,6 @@ async function fetchMovieDetails(
 
   const movieData =
     await response.json();
-
-  /* IMDb */
-
-  const omdbResponse =
-    await fetch(
-      `https://www.omdbapi.com/?apikey=86e58e8e&i=${movieData.imdb_id}`
-    );
-
-  const omdbData =
-    await omdbResponse.json();
-
-  movieData.imdb_rating =
-    omdbData.imdbRating || "";
-
-  movieData.imdb_votes =
-    omdbData.imdbVotes || "";
-
-   movieData.rotten_tomatoes =
-  omdbData.Ratings?.find(
-    r => r.Source === "Rotten Tomatoes"
-  )?.Value || "";
-
-movieData.metacritic =
-  omdbData.Metascore || "";
    
   return movieData;
 
