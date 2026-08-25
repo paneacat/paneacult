@@ -2811,12 +2811,13 @@ if(
 document.getElementById("seriesLevel").textContent =
     getSeriesLevel(watchedTv.length).level;
 
+
+         }
    await updateWatchTime(
   watchedMovies,
   watchedTv,
   user
 );
-         }
 }
 
 
