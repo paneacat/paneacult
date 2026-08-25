@@ -2907,7 +2907,8 @@ document
     filterFavorites
   );
 
-
+console.log("TEST WATCH TIME: entrata nella funzione");
+console.log("currentUser:", currentUser);
 
 async function calculateWatchTime() {
 
@@ -3108,4 +3109,5 @@ async function calculateWatchTime() {
 
 }
 
+console.log("TEST WATCH TIME: la funzione viene chiamata");
 calculateWatchTime();
