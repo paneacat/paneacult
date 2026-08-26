@@ -2845,7 +2845,8 @@ async function getEpisodeRuntime(seriesId, seasonNumber, episodeNumber) {
       /* =====================================================
          SOMMIAMO LA DURATA DI OGNI EPISODIO VISTO
          ===================================================== */
-
+const missingSeriesIds = new Set();
+   
       for (
   const episode of episodes || []
 ) {
@@ -2858,17 +2859,19 @@ async function getEpisodeRuntime(seriesId, seasonNumber, episodeNumber) {
   // Se la durata media della serie non è disponibile,
   // non recuperiamo la durata dell'episodio direttamente da TMDB
   if (!runtime) {
-    console.warn(
-        "⚠️ Durata non disponibile per serie:",
-        episode?.series_id
-    );
+    missingSeriesIds.add(episode?.series_id);
     continue;
   }
        
   tvMinutes += runtime;
       }
 
-
+console.log(
+    "📊 SERIE SENZA DURATA:",
+    missingSeriesIds.size,
+    [...missingSeriesIds]
+);
+   
   } catch (error) {
 
     console.error(
