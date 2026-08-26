@@ -2856,18 +2856,15 @@ async function getEpisodeRuntime(seriesId, seasonNumber, episodeNumber) {
     ) || 0;
 
   // Se la durata media della serie non è disponibile,
-  // recuperiamo la durata dell'episodio direttamente da TMDB
+  // non recuperiamo la durata dell'episodio direttamente da TMDB
   if (!runtime) {
-
-    runtime =
-      await getEpisodeRuntime(
-        episode?.series_id,
-        episode?.season_number,
-        episode?.episode_number
-      );
-
+    console.warn(
+        "⚠️ Durata non disponibile per serie:",
+        episode?.series_id
+    );
+    continue;
   }
-
+       
   tvMinutes += runtime;
       }
 
