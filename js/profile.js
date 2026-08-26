@@ -1987,7 +1987,7 @@ async function renderRecentActivity(){
 
     return;
   }
-
+ 
 function renderStars(rating) {
   rating = Number(rating) || 0;
   const fullStars = Math.round(rating);
@@ -1995,8 +1995,8 @@ function renderStars(rating) {
   return "★".repeat(fullStars) + "☆".repeat(5 - fullStars);
 }
 
-function card(review) {
-
+function card(review){
+ 
     return `
 
 <div class="review-card">
