@@ -870,45 +870,68 @@ if (!isNaN(year) && !isNaN(targetYear)) {
      }
 
      
-     async function searchMovieSmart(title) {
+     async function searchMovieSmart(title, mediaType = null) {
 
   const attempts = [
-
     title,
-
     title.replace(/[:–-]/g, " "),
-
     title.replace(/\(.*?\)/g, "").trim(),
-
     title.split(":")[0].trim(),
-
     title.split("-")[0].trim(),
-
     title.replace(/[^\w\s]/g, "").trim()
-
   ];
 
   const tried = new Set();
 
   for (const query of attempts) {
 
-    if (!query || tried.has(query)) continue;
+    if (!query || tried.has(query))
+      continue;
 
     tried.add(query);
 
     const results =
       await searchMovies(query);
 
-    if (results?.length) {
+    if (!results?.length)
+      continue;
 
-      return results;
+    // Se stiamo cercando una serie,
+    // teniamo SOLO risultati TV.
+    if (mediaType === "tv") {
 
+      const tvResults =
+        results.filter(
+          item =>
+            item.media_type === "tv"
+        );
+
+      if (tvResults.length)
+        return tvResults;
     }
 
+    // Se stiamo cercando un film,
+    // teniamo SOLO risultati movie.
+    if (mediaType === "movie") {
+
+      const movieResults =
+        results.filter(
+          item =>
+            item.media_type === "movie"
+        );
+
+      if (movieResults.length)
+        return movieResults;
+    }
+
+    // Compatibilità con le altre parti
+    // del sito che usano questa funzione
+    // senza specificare il tipo.
+    if (!mediaType)
+      return results;
   }
 
   return [];
-
      }
 
        async function importItem(
@@ -926,7 +949,10 @@ if (!title) {
 }
 
 let results =
-    await searchMovieSmart(title);
+    await searchMovieSmart(
+      title,
+      mediaType
+    );
 
 if (mediaType === "tv") {
     results =
