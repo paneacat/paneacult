@@ -926,7 +926,19 @@ if (!title) {
 }
 
 let results =
-  await searchMovieSmart(title);
+    await searchMovieSmart(title);
+
+if (mediaType === "tv") {
+    results =
+        results.filter(
+            item => item.media_type === "tv"
+        );
+} else {
+    results =
+        results.filter(
+            item => item.media_type === "movie"
+        );
+}
 
 if (!results?.length) {
 
@@ -964,12 +976,7 @@ if (!results || !results.length) {
           mediaType
         )
     )[0];
-          
-if (
-  mediaType === "tv" &&
-  item.id?.tvdb
-) {
-
+         
 }
           
           console.log(
