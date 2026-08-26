@@ -2573,7 +2573,14 @@ async function updateWatchTime(watchedMovies, watchedTv, user) {
     episodes.length
   );
 
-
+console.log(
+    "📺 PRIMI 20 SERIES ID:",
+    [...new Set(
+        episodes
+            .map(e => e.series_id)
+            .filter(Boolean)
+    )].slice(0, 20)
+);
       /* =====================================================
          UNA SOLA RICHIESTA PER OGNI SERIE
          ===================================================== */
