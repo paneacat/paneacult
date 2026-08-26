@@ -2327,7 +2327,7 @@ function formatWatchTime(minutes) {
   const mins = remainingAfterMonths % 60;
 
   if (years > 0) {
-    return `${years} a${years} ${months}m ${days}g ${hours}h ${mins}m`;
+    return `${years}a ${months}m ${days}g ${hours}h ${mins}m`;
   }
 
   return `${months}m ${days}g ${hours}h ${mins}m`;
