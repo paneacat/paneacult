@@ -1988,14 +1988,14 @@ async function renderRecentActivity(){
     return;
   }
 
- function renderStars(rating) {
-  const value = Number(rating) || 0;
-  const fullStars = Math.round(value);
+function renderStars(rating) {
+  rating = Number(rating) || 0;
+  const fullStars = Math.round(rating);
 
   return "★".repeat(fullStars) + "☆".repeat(5 - fullStars);
- }
- 
-  function card(review){
+}
+
+function card(review) {
 
     return `
 
