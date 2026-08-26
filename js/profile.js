@@ -2016,7 +2016,7 @@ ${review.release_year || ""}
 </h3>
 
 <div class="review-stars">
-${renderStars(review.rating)}
+${"★".repeat(Math.round(Number(review.rating) || 0))}${"☆".repeat(5 - Math.round(Number(review.rating) || 0))}
 </div>
 
 <p class="review-text">
