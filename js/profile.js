@@ -2278,18 +2278,27 @@ async function updateWatchTime(watchedMovies, watchedTv, user) {
 
   const watchTimeCacheKey =
     `paneacult_watch_time_v3_${user.id}`;
-
-  function formatWatchTime(minutes) {
+ 
+function formatWatchTime(minutes) {
 
   const total = Math.round(Number(minutes) || 0);
 
-  const months = Math.floor((total % 525600) / 43200);
-  const days = Math.floor((total % 43200) / 1440);
-  const hours = Math.floor((total % 1440) / 60);
-  const mins = total % 60;
+  const years = Math.floor(total / 525600);
+  const remainingAfterYears = total % 525600;
+
+  const months = Math.floor(remainingAfterYears / 43200);
+  const remainingAfterMonths = remainingAfterYears % 43200;
+
+  const days = Math.floor(remainingAfterMonths / 1440);
+  const hours = Math.floor((remainingAfterMonths % 1440) / 60);
+  const mins = remainingAfterMonths % 60;
+
+  if (years > 0) {
+    return `${years} anno${years !== 1 ? "i" : ""} ${months}m ${days}g ${hours}h ${mins}m`;
+  }
 
   return `${months}m ${days}g ${hours}h ${mins}m`;
-  }
+}
 
   function renderWatchTime(movieMinutes, tvMinutes) {
 
