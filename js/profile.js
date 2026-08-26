@@ -2690,7 +2690,8 @@ async function getEpisodeRuntime(seriesId, seasonNumber, episodeNumber) {
 
         if (!seriesId) return 0;
 
-
+      console.log("🔎 TMDB CHIAMATA SERIE:", seriesId);
+       
         /* Cache locale permanente */
 
         const cached =
