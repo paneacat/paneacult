@@ -2866,18 +2866,30 @@ const missingSeriesIds = new Set();
 ) {
 
   let runtime =
-    seriesRuntimeCache.get(
-      episode?.series_id
-    ) || 0;
+  seriesRuntimeCache.get(
+    episode?.series_id
+  ) || 0;
 
-  // Se la durata media della serie non è disponibile,
-  // non recuperiamo la durata dell'episodio direttamente da TMDB
-  if (!runtime) {
-    missingSeriesIds.add(episode?.series_id);
-    continue;
-  }
-       
+if (runtime) {
   tvMinutes += runtime;
+  continue;
+}
+
+/* FALLBACK: durata del singolo episodio */
+const episodeRuntime =
+  await getEpisodeRuntime(
+    episode?.series_id,
+    episode?.season_number,
+    episode?.episode_number
+  );
+
+if (episodeRuntime > 0) {
+  tvMinutes += episodeRuntime;
+} else {
+  missingSeriesIds.add(
+    episode?.series_id
+  );
+}
       }
 
 console.log(
