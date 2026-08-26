@@ -1988,6 +1988,13 @@ async function renderRecentActivity(){
     return;
   }
 
+ function renderStars(rating) {
+  const value = Number(rating) || 0;
+  const fullStars = Math.round(value);
+
+  return "★".repeat(fullStars) + "☆".repeat(5 - fullStars);
+ }
+ 
   function card(review){
 
     return `
