@@ -2121,14 +2121,14 @@ function getCinephileLevel(count){
     };
   }
 
-  if(count >= 500){
+  if(count >= 800){
     return {
       level: "🎞️ Collezionista",
       rank: 3
     };
   }
 
-  if(count >= 300){
+  if(count >= 400){
     return {
       level: "🎬 Cinefilo",
       rank: 2
@@ -2151,14 +2151,14 @@ function getSeriesLevel(count){
         };
     }
 
-    if(count >= 500){
+    if(count >= 800){
         return {
             level: "📚 Collezionista",
             rank: 3
         };
     }
 
-    if(count >= 300){
+    if(count >= 400){
         return {
             level: "🔥 Serial addicted",
             rank: 2
